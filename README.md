@@ -1,7 +1,5 @@
 # xray_core_flutter
 
-## 目前此项目代码完全由ai生成，没有任何测试  
-
 Typed Dart models for generating Xray JSON configs in Flutter apps.
 
 This module does not reimplement the Xray proxy core. It mirrors the Go config
@@ -87,7 +85,7 @@ if (issues.isNotEmpty) {
 config.assertValid();
 ```
 
-## SDK Packaging
+## SDK packaging
 
 This module is a configuration helper SDK. It does not bundle or call
 `LibXray.xcframework`, `libXray.aar`, or any native Xray runtime. Host apps can
@@ -108,6 +106,11 @@ flutter build ios-framework
 
 The generated helper artifacts expose the Flutter module. The host app remains
 responsible for calling the native Xray core with `config.toJson()` output.
+
+Flutter modules can generate Android AARs and iOS frameworks. Desktop native
+artifacts such as Windows DLLs, Linux shared objects, or macOS frameworks require
+a separate native/FFI layer because this package currently contains Dart config
+models only.
 
 ## File map
 
