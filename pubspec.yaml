@@ -1,0 +1,39 @@
+name: xray_core_flutter
+description: Strongly typed Flutter/Dart models for creating, validating, and exporting Xray JSON configs.
+
+version: 0.1.0
+homepage: https://github.com/wanliyunyan/xray_core_flutter
+repository: https://github.com/wanliyunyan/xray_core_flutter
+issue_tracker: https://github.com/wanliyunyan/xray_core_flutter/issues
+license: MIT
+topics:
+  - xray
+  - flutter
+  - dart
+  - proxy
+  - config
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.11.0
+
+dev_dependencies:
+  build_runner: ^2.15.0
+  freezed: ^3.2.5
+  flutter_test:
+    sdk: flutter
+  json_serializable: ^6.13.2
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  module:
+    androidX: true
+    androidPackage: com.example.xray_core_flutter
+    iosBundleIdentifier: com.example.xrayCoreFlutter

@@ -1,0 +1,11 @@
+.android/
+.ios/
+.dart_tool/
+.idea/
+build/
+DerivedData/
+.generated/
+*.iml
+*.log
+.DS_Store
+pubspec.lock
