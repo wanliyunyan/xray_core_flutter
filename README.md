@@ -87,30 +87,15 @@ config.assertValid();
 
 ## SDK packaging
 
-This module is a configuration helper SDK. It does not bundle or call
+This package is a configuration helper SDK. It does not bundle or call
 `LibXray.xcframework`, `libXray.aar`, or any native Xray runtime. Host apps can
 use these Dart models to create and validate JSON, then pass that JSON to their
 own Xray runtime integration.
 
-Build Android AAR artifacts:
-
-```sh
-flutter build aar
-```
-
-Build iOS framework artifacts:
-
-```sh
-flutter build ios-framework
-```
-
-The generated helper artifacts expose the Flutter module. The host app remains
-responsible for calling the native Xray core with `config.toJson()` output.
-
-Flutter modules can generate Android AARs and iOS frameworks. Desktop native
-artifacts such as Windows DLLs, Linux shared objects, or macOS frameworks require
-a separate native/FFI layer because this package currently contains Dart config
-models only.
+The package includes a native FFI scaffold for Android, iOS, macOS, Linux, and
+Windows. The scaffold currently exports a small ABI/version surface through
+`package:xray_core_flutter/xray_native.dart`; the actual Xray Core runtime still
+needs to be linked in a later native integration step.
 
 ## File map
 

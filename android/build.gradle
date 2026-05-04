@@ -1,0 +1,42 @@
+group = 'com.wanliyunyan.xray_core_flutter'
+version = '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.6.1'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    namespace = 'com.wanliyunyan.xray_core_flutter'
+    compileSdk = 35
+
+    defaultConfig {
+        minSdk = 21
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_STL=c++_shared'
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path '../src/CMakeLists.txt'
+        }
+    }
+}

@@ -1,3 +1,9 @@
+## 0.2.0
+
+- Added native FFI plugin scaffolding for Android, iOS, macOS, Linux, and Windows.
+- Added a small C ABI surface for verifying native library loading.
+- Added a Dart native helper entrypoint at `package:xray_core_flutter/xray_native.dart`.
+
 ## 0.1.1
 
 - Removed the default Flutter counter demo widget and test from the SDK package.
