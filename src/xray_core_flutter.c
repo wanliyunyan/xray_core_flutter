@@ -5,5 +5,5 @@ int32_t xray_core_flutter_abi_version(void) {
 }
 
 const char* xray_core_flutter_version(void) {
-  return "0.2.1";
+  return "0.2.2";
 }

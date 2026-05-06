@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(xray_core_flutter_library VERSION 0.2.1 LANGUAGES C)
+project(xray_core_flutter_library VERSION 0.2.2 LANGUAGES C)
 
 add_library(xray_core_flutter SHARED
   xray_core_flutter.c

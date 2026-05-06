@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Fixed GitHub Release asset upload matching so iOS and macOS XCFramework archives are attached separately.
+
 ## 0.2.1
 
 - Added native FFI plugin scaffolding for Android, iOS, macOS, Linux, and Windows.
