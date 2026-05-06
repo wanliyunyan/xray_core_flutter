@@ -1,8 +1,9 @@
-## 0.2.0
+## 0.2.1
 
 - Added native FFI plugin scaffolding for Android, iOS, macOS, Linux, and Windows.
 - Added a small C ABI surface for verifying native library loading.
 - Added a Dart native helper entrypoint at `package:xray_core_flutter/xray_native.dart`.
+- Added native SDK build commands and GitHub Actions packaging for Android, Apple, Linux, and Windows artifacts.
 
 ## 0.1.1
 

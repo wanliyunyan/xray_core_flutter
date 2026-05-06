@@ -1,0 +1,200 @@
+name: build-native
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    name: Android AAR
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK components
+        run: |
+          sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;26.1.10909125"
+
+      - name: Build AAR
+        working-directory: android
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assembleRelease
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xray-core-flutter-android-aar
+          path: android/build/outputs/aar/*.aar
+
+  apple:
+    name: Apple XCFrameworks
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build iOS XCFramework
+        run: |
+          set -euo pipefail
+
+          mkdir -p build/native/ios/iphoneos build/native/ios/iphonesimulator
+
+          xcrun clang -c src/xray_core_flutter.c \
+            -I src/include \
+            -isysroot "$(xcrun --sdk iphoneos --show-sdk-path)" \
+            -arch arm64 \
+            -miphoneos-version-min=12.0 \
+            -o build/native/ios/iphoneos/xray_core_flutter.o
+
+          xcrun libtool -static \
+            -o build/native/ios/iphoneos/libxray_core_flutter.a \
+            build/native/ios/iphoneos/xray_core_flutter.o
+
+          xcrun clang -c src/xray_core_flutter.c \
+            -I src/include \
+            -isysroot "$(xcrun --sdk iphonesimulator --show-sdk-path)" \
+            -arch arm64 \
+            -mios-simulator-version-min=12.0 \
+            -o build/native/ios/iphonesimulator/xray_core_flutter_arm64.o
+
+          xcrun clang -c src/xray_core_flutter.c \
+            -I src/include \
+            -isysroot "$(xcrun --sdk iphonesimulator --show-sdk-path)" \
+            -arch x86_64 \
+            -mios-simulator-version-min=12.0 \
+            -o build/native/ios/iphonesimulator/xray_core_flutter_x86_64.o
+
+          xcrun libtool -static \
+            -o build/native/ios/iphonesimulator/libxray_core_flutter.a \
+            build/native/ios/iphonesimulator/xray_core_flutter_arm64.o \
+            build/native/ios/iphonesimulator/xray_core_flutter_x86_64.o
+
+          xcodebuild -create-xcframework \
+            -library build/native/ios/iphoneos/libxray_core_flutter.a \
+            -headers src/include \
+            -library build/native/ios/iphonesimulator/libxray_core_flutter.a \
+            -headers src/include \
+            -output build/native/ios/XrayCoreFlutter.xcframework
+
+      - name: Build macOS XCFramework
+        run: |
+          set -euo pipefail
+
+          mkdir -p build/native/macos
+
+          xcrun clang -dynamiclib src/xray_core_flutter.c \
+            -I src/include \
+            -arch arm64 -arch x86_64 \
+            -mmacosx-version-min=10.14 \
+            -install_name @rpath/libxray_core_flutter.dylib \
+            -o build/native/macos/libxray_core_flutter.dylib
+
+          xcodebuild -create-xcframework \
+            -library build/native/macos/libxray_core_flutter.dylib \
+            -headers src/include \
+            -output build/native/macos/XrayCoreFlutterMacOS.xcframework
+
+      - name: Package Apple artifacts
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent \
+            build/native/ios/XrayCoreFlutter.xcframework \
+            build/native/ios/XrayCoreFlutter.xcframework.zip
+          ditto -c -k --sequesterRsrc --keepParent \
+            build/native/macos/XrayCoreFlutterMacOS.xcframework \
+            build/native/macos/XrayCoreFlutterMacOS.xcframework.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xray-core-flutter-apple-xcframeworks
+          path: |
+            build/native/ios/XrayCoreFlutter.xcframework.zip
+            build/native/macos/XrayCoreFlutterMacOS.xcframework.zip
+
+  linux:
+    name: Linux shared library
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake
+
+      - name: Build Linux shared object
+        run: |
+          cmake -S src -B build/native/linux -DCMAKE_BUILD_TYPE=Release
+          cmake --build build/native/linux --config Release
+
+      - name: Package Linux artifact
+        run: |
+          mkdir -p dist/linux/include
+          cp build/native/linux/libxray_core_flutter.so dist/linux/
+          cp -R src/include/xray_core_flutter dist/linux/include/
+          tar -czf xray-core-flutter-linux-x64.tar.gz -C dist linux
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xray-core-flutter-linux-x64
+          path: xray-core-flutter-linux-x64.tar.gz
+
+  windows:
+    name: Windows DLL
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Windows DLL
+        shell: pwsh
+        run: |
+          cmake -S src -B build/native/windows -G "Visual Studio 17 2022" -A x64
+          cmake --build build/native/windows --config Release
+
+      - name: Package Windows artifact
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist/windows/include | Out-Null
+          Copy-Item build/native/windows/Release/xray_core_flutter.dll dist/windows/
+          Copy-Item build/native/windows/Release/xray_core_flutter.lib dist/windows/
+          Copy-Item -Recurse src/include/xray_core_flutter dist/windows/include/
+          Compress-Archive -Path dist/windows -DestinationPath xray-core-flutter-windows-x64.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xray-core-flutter-windows-x64
+          path: xray-core-flutter-windows-x64.zip
+
+  release:
+    name: GitHub Release
+    runs-on: ubuntu-latest
+    needs:
+      - android
+      - apple
+      - linux
+      - windows
+    if: startsWith(github.ref, 'refs/tags/')
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-artifacts
+          merge-multiple: true
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release-artifacts/*

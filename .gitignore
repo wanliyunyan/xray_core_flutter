@@ -38,6 +38,8 @@ Icon?
 .tags*
 
 build/
+**/.cxx/
+**/.gradle/
 .android/
 .ios/
 .flutter-plugins-dependencies
