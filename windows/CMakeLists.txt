@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(xray_core_flutter_plugin LANGUAGES C)
+project(XrayCoreSDK LANGUAGES C)
 
-add_library(xray_core_flutter_plugin SHARED
+add_library(XrayCoreSDK SHARED
   "../src/xray_core_flutter.c"
 )
 
-target_include_directories(xray_core_flutter_plugin PUBLIC
+target_include_directories(XrayCoreSDK PUBLIC
   "../src/include"
 )
 
-set_target_properties(xray_core_flutter_plugin PROPERTIES
-  OUTPUT_NAME "xray_core_flutter"
+set_target_properties(XrayCoreSDK PROPERTIES
+  OUTPUT_NAME "XrayCoreSDK"
 )

@@ -97,6 +97,12 @@ Windows. The scaffold currently exports a small ABI/version surface through
 `package:xray_core_flutter/xray_native.dart`; the actual Xray Core runtime still
 needs to be linked in a later native integration step.
 
+Apple clients import the native SDK as:
+
+```swift
+import XrayCoreSDK
+```
+
 ### Native artifact builds
 
 Install Flutter dependencies first:
@@ -122,40 +128,40 @@ xcrun clang -c src/xray_core_flutter.c \
   -isysroot "$(xcrun --sdk iphoneos --show-sdk-path)" \
   -arch arm64 \
   -miphoneos-version-min=12.0 \
-  -o build/native/ios/iphoneos/xray_core_flutter.o
+  -o build/native/ios/iphoneos/XrayCoreSDK.o
 
 xcrun libtool -static \
-  -o build/native/ios/iphoneos/libxray_core_flutter.a \
-  build/native/ios/iphoneos/xray_core_flutter.o
+  -o build/native/ios/iphoneos/libXrayCoreSDK.a \
+  build/native/ios/iphoneos/XrayCoreSDK.o
 
 xcrun clang -c src/xray_core_flutter.c \
   -I src/include \
   -isysroot "$(xcrun --sdk iphonesimulator --show-sdk-path)" \
   -arch arm64 \
   -mios-simulator-version-min=12.0 \
-  -o build/native/ios/iphonesimulator/xray_core_flutter_arm64.o
+  -o build/native/ios/iphonesimulator/XrayCoreSDK_arm64.o
 
 xcrun clang -c src/xray_core_flutter.c \
   -I src/include \
   -isysroot "$(xcrun --sdk iphonesimulator --show-sdk-path)" \
   -arch x86_64 \
   -mios-simulator-version-min=12.0 \
-  -o build/native/ios/iphonesimulator/xray_core_flutter_x86_64.o
+  -o build/native/ios/iphonesimulator/XrayCoreSDK_x86_64.o
 
 xcrun libtool -static \
-  -o build/native/ios/iphonesimulator/libxray_core_flutter.a \
-  build/native/ios/iphonesimulator/xray_core_flutter_arm64.o \
-  build/native/ios/iphonesimulator/xray_core_flutter_x86_64.o
+  -o build/native/ios/iphonesimulator/libXrayCoreSDK.a \
+  build/native/ios/iphonesimulator/XrayCoreSDK_arm64.o \
+  build/native/ios/iphonesimulator/XrayCoreSDK_x86_64.o
 
 xcodebuild -create-xcframework \
-  -library build/native/ios/iphoneos/libxray_core_flutter.a \
+  -library build/native/ios/iphoneos/libXrayCoreSDK.a \
   -headers src/include \
-  -library build/native/ios/iphonesimulator/libxray_core_flutter.a \
+  -library build/native/ios/iphonesimulator/libXrayCoreSDK.a \
   -headers src/include \
-  -output build/native/ios/XrayCoreFlutter.xcframework
+  -output build/native/ios/XrayCoreSDK.xcframework
 ```
 
-macOS dynamic library:
+macOS XCFramework:
 
 ```sh
 mkdir -p build/native/macos
@@ -164,7 +170,13 @@ xcrun clang -dynamiclib src/xray_core_flutter.c \
   -I src/include \
   -arch arm64 -arch x86_64 \
   -mmacosx-version-min=10.14 \
-  -o build/native/macos/libxray_core_flutter.dylib
+  -install_name @rpath/libXrayCoreSDK.dylib \
+  -o build/native/macos/libXrayCoreSDK.dylib
+
+xcodebuild -create-xcframework \
+  -library build/native/macos/libXrayCoreSDK.dylib \
+  -headers src/include \
+  -output build/native/macos/XrayCoreSDK.xcframework
 ```
 
 Linux shared object:
@@ -184,6 +196,14 @@ cmake --build build/native/windows --config Release
 Platform builds must run on matching toolchains: iOS and macOS on macOS with
 Xcode, Windows on Windows with Visual Studio Build Tools, Linux on Linux with
 CMake and a C compiler, and Android with the Android SDK/NDK plus Gradle.
+
+GitHub Releases use these public artifact names:
+
+- `XrayCoreSDK-android.aar`
+- `XrayCoreSDK-iOS.xcframework.zip`
+- `XrayCoreSDK-macOS.xcframework.zip`
+- `XrayCoreSDK-linux-x64.tar.gz`
+- `XrayCoreSDK-windows-x64.zip`
 
 ## File map
 

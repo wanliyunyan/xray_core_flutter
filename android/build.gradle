@@ -1,5 +1,5 @@
-group = 'com.wanliyunyan.xray_core_flutter'
-version = '1.0'
+group = 'com.wanliyunyan.xraycoresdk'
+version = '0.2.3'
 
 buildscript {
     repositories {
@@ -15,7 +15,7 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    namespace = 'com.wanliyunyan.xray_core_flutter'
+    namespace = 'com.wanliyunyan.xraycoresdk'
     compileSdk = 35
 
     defaultConfig {

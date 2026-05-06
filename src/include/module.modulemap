@@ -1,0 +1,4 @@
+module XrayCoreSDK {
+  umbrella header "XrayCoreSDK/XrayCoreSDK.h"
+  export *
+}

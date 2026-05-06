@@ -9,37 +9,37 @@ typedef _AbiVersionDart = int Function();
 typedef _VersionNative = Pointer<Utf8> Function();
 typedef _VersionDart = Pointer<Utf8> Function();
 
-final class XrayCoreFlutterNative {
-  XrayCoreFlutterNative._();
+final class XrayCoreSDK {
+  XrayCoreSDK._();
 
   static final DynamicLibrary _library = _open();
 
   static int abiVersion() {
     final fn = _library.lookupFunction<_AbiVersionNative, _AbiVersionDart>(
-      'xray_core_flutter_abi_version',
+      'xray_core_sdk_abi_version',
     );
     return fn();
   }
 
   static String version() {
     final fn = _library.lookupFunction<_VersionNative, _VersionDart>(
-      'xray_core_flutter_version',
+      'xray_core_sdk_version',
     );
     return fn().toDartString();
   }
 
   static DynamicLibrary _open() {
     if (Platform.isAndroid || Platform.isLinux) {
-      return DynamicLibrary.open('libxray_core_flutter.so');
+      return DynamicLibrary.open('libXrayCoreSDK.so');
     }
     if (Platform.isWindows) {
-      return DynamicLibrary.open('xray_core_flutter.dll');
+      return DynamicLibrary.open('XrayCoreSDK.dll');
     }
     if (Platform.isMacOS || Platform.isIOS) {
       return DynamicLibrary.process();
     }
     throw UnsupportedError(
-      'xray_core_flutter native library is not available on this platform.',
+      'XrayCoreSDK native library is not available on this platform.',
     );
   }
 }

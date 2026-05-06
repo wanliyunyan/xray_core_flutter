@@ -1,3 +1,7 @@
+## 0.2.3
+
+- Renamed native SDK artifacts and import/module surface to `XrayCoreSDK`.
+
 ## 0.2.2
 
 - Fixed GitHub Release asset upload matching so iOS and macOS XCFramework archives are attached separately.

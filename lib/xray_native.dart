@@ -1,1 +1,1 @@
-export 'src/native/xray_core_flutter_native.dart';
+export 'src/native/xray_core_sdk_native.dart';
