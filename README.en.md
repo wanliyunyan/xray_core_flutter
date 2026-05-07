@@ -1,39 +1,39 @@
 # xray_core_flutter
 
-[English](README.en.md)
+[中文](README.md)
 
-`xray_core_flutter` 是一个同时服务 Flutter 项目和原生平台集成的 Xray SDK 工程。它既可以被 Flutter 项目直接引用，用强类型 Dart 模型创建、校验和导出 Xray 兼容的 JSON 配置；也可以打包出 Android、iOS、macOS、Linux、Windows 五个平台对应的原生 SDK 产物。
+`xray_core_flutter` is an Xray SDK project for both Flutter apps and native platform integrations. It can be used directly by Flutter projects to create, validate, and export Xray-compatible JSON configs with strongly typed Dart models, and it can also package native SDK artifacts for Android, iOS, macOS, Linux, and Windows.
 
-> 说明：当前 Flutter/Dart 层已经可以直接创建 Xray 配置；原生层目前提供五平台 SDK/FFI 打包能力和 ABI/version 示例接口。若需要在 App 内直接启动、停止或控制 Xray Core，还需要继续接入真实的 Xray Core 原生运行时。
+> Note: the Flutter/Dart layer can already create Xray configs directly. The native layer currently provides five-platform SDK/FFI packaging plus sample ABI/version APIs. To start, stop, or control Xray Core inside an app, the real native Xray Core runtime still needs to be integrated.
 
-## 支持平台
+## Supported Platforms
 
-| 平台 | 支持内容 | 产物 |
+| Platform | Support | Artifact |
 | --- | --- | --- |
-| Android | Flutter FFI 插件、AAR 打包支持 | `XrayCoreSDK-android.aar` |
-| iOS | Flutter FFI 插件、XCFramework 打包支持 | `XrayCoreSDK-iOS.xcframework.zip` |
-| macOS | Flutter FFI 插件、XCFramework 打包支持 | `XrayCoreSDK-macOS.xcframework.zip` |
-| Linux | Flutter FFI 插件、动态库打包支持 | `XrayCoreSDK-linux-x64.tar.gz` |
-| Windows | Flutter FFI 插件、DLL 打包支持 | `XrayCoreSDK-windows-x64.zip` |
+| Android | Flutter FFI plugin and AAR packaging support | `XrayCoreSDK-android.aar` |
+| iOS | Flutter FFI plugin and XCFramework packaging support | `XrayCoreSDK-iOS.xcframework.zip` |
+| macOS | Flutter FFI plugin and XCFramework packaging support | `XrayCoreSDK-macOS.xcframework.zip` |
+| Linux | Flutter FFI plugin and shared-library packaging support | `XrayCoreSDK-linux-x64.tar.gz` |
+| Windows | Flutter FFI plugin and DLL packaging support | `XrayCoreSDK-windows-x64.zip` |
 
-原生 FFI 脚手架目前通过 `package:xray_core_flutter/xray_native.dart` 暴露 ABI/version 级别接口；真正的 Xray Core 运行时需要在宿主 App 或后续原生集成中链接。
+The native FFI scaffold currently exposes a small ABI/version surface through `package:xray_core_flutter/xray_native.dart`. The actual Xray Core runtime still needs to be linked by the host app or a later native integration layer.
 
-## 使用方式概览
+## Usage Overview
 
-本项目提供两类使用方式：
+This project supports two integration paths:
 
-1. Flutter 项目直接引用：通过 `package:xray_core_flutter/xray_config.dart` 创建、校验并导出 Xray JSON 配置。
-2. 原生平台 SDK 集成：通过本仓库打包 Android AAR、iOS/macOS XCFramework、Linux shared object、Windows DLL，并在宿主工程中接入对应产物。
+1. Direct Flutter dependency: use `package:xray_core_flutter/xray_config.dart` to create, validate, and export Xray JSON configs.
+2. Native platform SDK integration: use this repository to package Android AAR, iOS/macOS XCFramework, Linux shared object, and Windows DLL artifacts, then integrate them into host projects.
 
-## Flutter 项目接入
+## Flutter Integration
 
-在 Flutter 项目中添加依赖：
+Add the package to a Flutter project:
 
 ```sh
 flutter pub add xray_core_flutter
 ```
 
-如果使用 Git 仓库版本：
+Or use the Git repository version:
 
 ```yaml
 dependencies:
@@ -42,21 +42,21 @@ dependencies:
       url: https://github.com/wanliyunyan/xray_core_flutter.git
 ```
 
-然后获取依赖：
+Then fetch dependencies:
 
 ```sh
 flutter pub get
 ```
 
-## Flutter 配置模型使用
+## Flutter Config Model Usage
 
-公共配置入口：
+Public config entrypoint:
 
 ```dart
 import 'package:xray_core_flutter/xray_config.dart';
 ```
 
-构建一个 Xray JSON 配置：
+Build an Xray JSON config:
 
 ```dart
 final config = XrayConfig(
@@ -96,7 +96,7 @@ final config = XrayConfig(
 final json = config.toJson();
 ```
 
-生成给用户使用的配置前，建议先校验：
+Validate configs before using them in user-facing flows:
 
 ```dart
 final issues = config.validate();
@@ -107,15 +107,15 @@ if (issues.isNotEmpty) {
 config.assertValid();
 ```
 
-原生 FFI 接口入口：
+Native FFI API entrypoint:
 
 ```dart
 import 'package:xray_core_flutter/xray_native.dart';
 ```
 
-## 常用 API 示例
+## Common API Examples
 
-### 创建入站配置
+### Create an inbound
 
 ```dart
 final inbound = InboundDetourConfig.socks(
@@ -129,7 +129,7 @@ final inbound = InboundDetourConfig.socks(
 );
 ```
 
-### 创建出站配置
+### Create outbounds
 
 ```dart
 final outbound = OutboundDetourConfig.vless(
@@ -145,7 +145,7 @@ final outbound = OutboundDetourConfig.vless(
 final direct = OutboundDetourConfig.direct(tag: 'direct');
 ```
 
-### 配置 TLS 或 REALITY 传输
+### Configure TLS or REALITY transport
 
 ```dart
 final tlsStream = StreamConfig.tls(
@@ -162,7 +162,7 @@ final realityStream = StreamConfig.reality(
 );
 ```
 
-### 配置 DNS、路由和指标
+### Configure DNS, routing, and metrics
 
 ```dart
 final dns = DNSConfig.withServers([
@@ -186,16 +186,16 @@ final routing = RouterConfig(
 final metrics = MetricsConfig.listen('127.0.0.1:11111');
 ```
 
-## 平台接入说明
+## Platform Integration
 
 ### Android
 
-Flutter App 添加依赖后，Android 平台会通过 Flutter FFI 插件注册。应用可在 Dart 层生成配置 JSON，并交由宿主 Android Xray 运行时使用。
+After adding the package to a Flutter app, the Android platform is registered through the Flutter FFI plugin. The app can build config JSON in Dart and pass it to the host Android Xray runtime.
 
-如需单独集成原生 AAR：
+To integrate the native AAR separately:
 
-1. 将 `XrayCoreSDK-android.aar` 放入宿主 Android 项目的 `app/libs/`。
-2. 在 `app/build.gradle` 中添加：
+1. Put `XrayCoreSDK-android.aar` into the host Android project's `app/libs/`.
+2. Add this to `app/build.gradle`:
 
 ```gradle
 dependencies {
@@ -203,71 +203,71 @@ dependencies {
 }
 ```
 
-3. 在宿主 Android 项目中链接或加载实际的 Xray Core 运行时。
+3. Link or load the actual Xray Core runtime in the host Android project.
 
 ### iOS
 
-Flutter App 添加依赖后，iOS 平台会通过 Flutter FFI 插件注册。应用可在 Dart 层生成配置 JSON，并交由宿主 iOS Xray 运行时使用。
+After adding the package to a Flutter app, the iOS platform is registered through the Flutter FFI plugin. The app can build config JSON in Dart and pass it to the host iOS Xray runtime.
 
-如需单独集成 iOS XCFramework：
+To integrate the iOS XCFramework separately:
 
-1. 解压 `XrayCoreSDK-iOS.xcframework.zip`。
-2. 将 `XrayCoreSDK.xcframework` 加入 Xcode 项目的 Frameworks。
-3. 在 Swift 中导入：
+1. Unzip `XrayCoreSDK-iOS.xcframework.zip`.
+2. Add `XrayCoreSDK.xcframework` to the Xcode project's Frameworks.
+3. Import it in Swift:
 
 ```swift
 import XrayCoreSDK
 ```
 
-4. 在宿主 App 中链接实际的 Xray Core iOS 运行时。
+4. Link the actual Xray Core iOS runtime in the host app.
 
 ### macOS
 
-Flutter macOS App 添加依赖后，macOS 平台会通过 Flutter FFI 插件注册。
+After adding the package to a Flutter macOS app, the macOS platform is registered through the Flutter FFI plugin.
 
-如需单独集成 macOS XCFramework：
+To integrate the macOS XCFramework separately:
 
-1. 解压 `XrayCoreSDK-macOS.xcframework.zip`。
-2. 将 `XrayCoreSDK.xcframework` 加入 Xcode 的 Frameworks and Libraries。
-3. 在 Swift 中导入：
+1. Unzip `XrayCoreSDK-macOS.xcframework.zip`.
+2. Add `XrayCoreSDK.xcframework` to Xcode's Frameworks and Libraries.
+3. Import it in Swift:
 
 ```swift
 import XrayCoreSDK
 ```
 
-4. 确认运行时搜索路径包含 framework 或 dylib 所在目录，并链接实际的 Xray Core macOS 运行时。
+4. Ensure the runtime search path includes the framework or dylib location, then link the actual Xray Core macOS runtime.
 
 ### Linux
 
-Flutter Linux App 添加依赖后，Linux 平台会通过 Flutter FFI 插件注册。
+After adding the package to a Flutter Linux app, the Linux platform is registered through the Flutter FFI plugin.
 
-如需单独集成 Linux 动态库：
+To integrate the Linux shared library separately:
 
-1. 解压 `XrayCoreSDK-linux-x64.tar.gz`。
-2. 将 `libXrayCoreSDK.so` 放到宿主程序可加载的位置。
-3. 将 `include/XrayCoreSDK` 提供给 C/C++ 编译器。
-4. 运行时设置动态库路径，例如：
+1. Extract `XrayCoreSDK-linux-x64.tar.gz`.
+2. Put `libXrayCoreSDK.so` somewhere the host app can load it.
+3. Provide `include/XrayCoreSDK` to your C/C++ compiler.
+4. Configure the runtime library path, for example:
 
 ```sh
 export LD_LIBRARY_PATH=/path/to/lib:$LD_LIBRARY_PATH
 ```
 
-5. 在宿主程序中加载实际的 Xray Core Linux 运行时。
+5. Load the actual Xray Core Linux runtime in the host app.
 
 ### Windows
 
-Flutter Windows App 添加依赖后，Windows 平台会通过 Flutter FFI 插件注册。
+After adding the package to a Flutter Windows app, the Windows platform is registered through the Flutter FFI plugin.
 
-如需单独集成 Windows DLL：
+To integrate the Windows DLL separately:
 
-1. 解压 `XrayCoreSDK-windows-x64.zip`。
-2. 将 `XrayCoreSDK.dll` 放到 `.exe` 同目录，或放到系统 `PATH` 可搜索的位置。
-3. C/C++ 项目链接 `XrayCoreSDK.lib`，并包含 `include/XrayCoreSDK`。
-4. 在宿主程序中加载实际的 Xray Core Windows 运行时。
+1. Extract `XrayCoreSDK-windows-x64.zip`.
+2. Put `XrayCoreSDK.dll` next to the `.exe`, or put it in a directory available from `PATH`.
+3. Link `XrayCoreSDK.lib` from C/C++ projects and include `include/XrayCoreSDK`.
+4. Load the actual Xray Core Windows runtime in the host app.
 
-## 原生 SDK 打包命令
+## Native SDK Packaging Commands
 
-先安装 Flutter 依赖：
+Install Flutter dependencies first:
 
 ```sh
 flutter pub get
@@ -275,14 +275,14 @@ flutter pub get
 
 ### Android AAR
 
-需要 Android SDK、NDK、JDK 17 和 Gradle。
+Requires Android SDK, NDK, JDK 17, and Gradle.
 
 ```sh
 cd android
 ./gradlew assembleRelease
 ```
 
-产物位置：
+Output:
 
 ```text
 android/build/outputs/aar/
@@ -290,7 +290,7 @@ android/build/outputs/aar/
 
 ### iOS XCFramework
 
-需要在 macOS 上安装 Xcode。
+Requires macOS with Xcode.
 
 ```sh
 mkdir -p build/native/ios/iphoneos build/native/ios/iphonesimulator
@@ -333,7 +333,7 @@ xcodebuild -create-xcframework \
   -output build/native/ios/XrayCoreSDK.xcframework
 ```
 
-压缩发布包：
+Zip the release artifact:
 
 ```sh
 ditto -c -k --sequesterRsrc --keepParent \
@@ -343,7 +343,7 @@ ditto -c -k --sequesterRsrc --keepParent \
 
 ### macOS XCFramework
 
-需要在 macOS 上安装 Xcode。
+Requires macOS with Xcode.
 
 ```sh
 mkdir -p build/native/macos
@@ -361,7 +361,7 @@ xcodebuild -create-xcframework \
   -output build/native/macos/XrayCoreSDK.xcframework
 ```
 
-压缩发布包：
+Zip the release artifact:
 
 ```sh
 ditto -c -k --sequesterRsrc --keepParent \
@@ -371,14 +371,14 @@ ditto -c -k --sequesterRsrc --keepParent \
 
 ### Linux shared object
 
-需要 Linux、CMake 和 C 编译器。
+Requires Linux, CMake, and a C compiler.
 
 ```sh
 cmake -S src -B build/native/linux -DCMAKE_BUILD_TYPE=Release
 cmake --build build/native/linux --config Release
 ```
 
-打包发布包：
+Package the release artifact:
 
 ```sh
 mkdir -p dist/linux/include
@@ -389,14 +389,14 @@ tar -czf XrayCoreSDK-linux-x64.tar.gz -C dist linux
 
 ### Windows DLL
 
-需要 Windows、CMake 和 Visual Studio 2022 Build Tools。
+Requires Windows, CMake, and Visual Studio 2022 Build Tools.
 
 ```powershell
 cmake -S src -B build/native/windows -G "Visual Studio 17 2022" -A x64
 cmake --build build/native/windows --config Release
 ```
 
-打包发布包：
+Package the release artifact:
 
 ```powershell
 New-Item -ItemType Directory -Force dist/windows/include | Out-Null
@@ -406,9 +406,9 @@ Copy-Item -Recurse src/include/XrayCoreSDK dist/windows/include/
 Compress-Archive -Path dist/windows -DestinationPath XrayCoreSDK-windows-x64.zip
 ```
 
-## GitHub Release 产物
+## GitHub Release Artifacts
 
-打 `v*` 标签后，`.github/workflows/build-native.yml` 会构建并上传这些公开产物：
+When a `v*` tag is pushed, `.github/workflows/build-native.yml` builds and uploads:
 
 - `XrayCoreSDK-android.aar`
 - `XrayCoreSDK-iOS.xcframework.zip`
@@ -416,34 +416,34 @@ Compress-Archive -Path dist/windows -DestinationPath XrayCoreSDK-windows-x64.zip
 - `XrayCoreSDK-linux-x64.tar.gz`
 - `XrayCoreSDK-windows-x64.zip`
 
-## 当前模型覆盖
+## Current Coverage
 
-- Common：address、ports、string/network lists、int ranges、durations、users、sniffing、target strategies。
-- Core：top-level config、inbound/outbound detours、log、mux、proxy settings。
-- Protocols：vless、vmess、trojan、shadowsocks、socks、http、freedom、blackhole、dns outbound、dokodemo-door、loopback、wireguard、hysteria、tun。
-- Transport：tcp/raw、websocket/ws、grpc、httpupgrade、splithttp/xhttp、kcp、hysteria、tls、reality、socket options、finalmask。
-- Apps：dns、routing、policy、api、metrics、stats、reverse、observatory、burstObservatory、fakeDns、version、geodata。
+- Common: address, ports, string/network lists, int ranges, durations, users, sniffing, target strategies.
+- Core: top-level config, inbound/outbound detours, log, mux, proxy settings.
+- Protocols: vless, vmess, trojan, shadowsocks, socks, http, freedom, blackhole, dns outbound, dokodemo-door, loopback, wireguard, hysteria, tun.
+- Transport: tcp/raw, websocket/ws, grpc, httpupgrade, splithttp/xhttp, kcp, hysteria, tls, reality, socket options, finalmask.
+- Apps: dns, routing, policy, api, metrics, stats, reverse, observatory, burstObservatory, fakeDns, version, geodata.
 
-## 设计规则
+## Design Rules
 
-- Dart 模型名和 JSON 字段名尽量贴近 `Xray-core/infra/conf` 中的 Go config struct。
-- 适合数据模型的地方使用 `freezed`。
-- 只有 Xray 构建配置时真正必需的字段才标记为 `required`。
-- Xray 已经拥有默认值的字段，不在 Dart 侧额外添加默认值。
-- 保留 Xray 兼容的 union JSON 结构，并在 Go 使用 loader-style `json.RawMessage` 的位置提供 raw escape hatch。
-- 对稳定的 protocol、strategy、network、security、service 值优先使用 enum。
+- Keep Dart model names and JSON field names close to the Go config structs under `Xray-core/infra/conf`.
+- Use `freezed` for data models where it fits.
+- Only fields that Xray requires during config build are marked `required`.
+- Do not add Dart defaults for fields where Xray already owns defaults.
+- Preserve Xray-compatible union JSON shapes with typed wrappers and raw escape hatches where Go uses loader-style `json.RawMessage`.
+- Prefer enums for stable protocol, strategy, network, security, and service values.
 
-## 维护流程
+## Maintenance Flow
 
-当 Xray 更新 `infra/conf` 后，先对比 Go struct 和 JSON tag，再同步 `lib/src/xray` 下的 Dart 模型。
+When Xray updates `infra/conf`, compare Go structs and JSON tags, then sync the Dart models under `lib/src/xray`.
 
-运行 parity check：
+Run the parity check:
 
 ```sh
 dart run tool/check_xray_conf_parity.dart /path/to/Xray-core/infra/conf
 ```
 
-重新生成并检查：
+Regenerate and verify:
 
 ```sh
 dart run build_runner build
@@ -451,7 +451,7 @@ flutter analyze
 flutter test
 ```
 
-运行示例：
+Run examples:
 
 ```sh
 dart run example/build_config.dart
