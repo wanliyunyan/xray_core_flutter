@@ -9,7 +9,8 @@ abstract class ShadowsocksServerConfig
     String? password,
     int? level,
     String? email,
-    @JsonKey(name: 'clients') List<ShadowsocksUserConfig>? users,
+    List<ShadowsocksUserConfig>? users,
+    List<ShadowsocksUserConfig>? clients,
     @JsonKey(name: 'network') XrayNetworkList? networkList,
   }) = _ShadowsocksServerConfig;
 
@@ -19,13 +20,14 @@ abstract class ShadowsocksServerConfig
     int? level,
     String? email,
     XrayNetworkList? networkList,
-  }) => ShadowsocksServerConfig(
-    cipher: cipher,
-    password: password,
-    level: level,
-    email: email,
-    networkList: networkList,
-  );
+  }) =>
+      ShadowsocksServerConfig(
+        cipher: cipher,
+        password: password,
+        level: level,
+        email: email,
+        networkList: networkList,
+      );
 
   factory ShadowsocksServerConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'shadowsocks inbound');
@@ -34,7 +36,10 @@ abstract class ShadowsocksServerConfig
       password: map['password'] as String?,
       level: map['level'] as int?,
       email: map['email'] as String?,
-      users: map['clients'] == null
+      users: map['users'] == null
+          ? null
+          : asJsonList(map['users'], ShadowsocksUserConfig.fromJson),
+      clients: map['clients'] == null
           ? null
           : asJsonList(map['clients'], ShadowsocksUserConfig.fromJson),
       networkList: map['network'] == null
@@ -47,11 +52,12 @@ abstract class ShadowsocksServerConfig
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'method': cipher,
-    'password': password,
-    'level': level,
-    'email': email,
-    'clients': users?.map((item) => item.toJson()).toList(),
-    'network': networkList?.toJson(),
-  });
+        'method': cipher,
+        'password': password,
+        'level': level,
+        'email': email,
+        'users': users?.map((item) => item.toJson()).toList(),
+        'clients': clients?.map((item) => item.toJson()).toList(),
+        'network': networkList?.toJson(),
+      });
 }

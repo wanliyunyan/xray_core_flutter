@@ -6,6 +6,7 @@ abstract class SocksServerConfig
     implements XrayInboundSettings {
   const factory SocksServerConfig({
     @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
+    List<SocksAccount>? users,
     List<SocksAccount>? accounts,
     bool? udp,
     @JsonKey(name: 'ip') XrayAddress? host,
@@ -15,9 +16,11 @@ abstract class SocksServerConfig
   factory SocksServerConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'socks inbound');
     return SocksServerConfig(
-      authMethod: map['auth'] == null
+      authMethod:
+          map['auth'] == null ? null : SocksAuthMethod.fromJson(map['auth']),
+      users: map['users'] == null
           ? null
-          : SocksAuthMethod.fromJson(map['auth']),
+          : asJsonList(map['users'], SocksAccount.fromJson),
       accounts: map['accounts'] == null
           ? null
           : asJsonList(map['accounts'], SocksAccount.fromJson),
@@ -31,10 +34,11 @@ abstract class SocksServerConfig
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'auth': authMethod?.toJson(),
-    'accounts': accounts?.map((item) => item.toJson()).toList(),
-    'udp': udp,
-    'ip': host?.toJson(),
-    'userLevel': userLevel,
-  });
+        'auth': authMethod?.toJson(),
+        'users': users?.map((item) => item.toJson()).toList(),
+        'accounts': accounts?.map((item) => item.toJson()).toList(),
+        'udp': udp,
+        'ip': host?.toJson(),
+        'userLevel': userLevel,
+      });
 }

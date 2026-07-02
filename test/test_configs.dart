@@ -1,15 +1,4 @@
-import 'dart:convert';
-
 import 'package:xray_core_flutter/xray_config.dart';
-
-void main() {
-  final config = buildExampleConfig();
-  final json = const JsonEncoder.withIndent('  ').convert(config.toJson());
-
-  // Print the Xray-compatible JSON that can be passed to the native core.
-  // ignore: avoid_print
-  print(json);
-}
 
 XrayConfig buildExampleConfig() {
   return XrayConfig(

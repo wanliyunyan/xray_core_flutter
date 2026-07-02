@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:xray_core_flutter/xray_config.dart';
 
-import '../example/build_config.dart';
+import 'test_configs.dart';
 
 void main() {
   final cases = <String, XrayConfig Function()>{

@@ -18,6 +18,10 @@ void main() {
         XrayDuration.fromDuration(const Duration(seconds: 10)).toJson(),
         '10s',
       );
+      expect(
+        XrayUser.fromJson({'email': 'user@example.com', 'level': 1}).toJson(),
+        {'email': 'user@example.com', 'level': 1},
+      );
     });
 
     test('maps shared enums to xray json values', () {
@@ -28,7 +32,12 @@ void main() {
       );
       expect(XrayOutboundProtocol.fromJson('direct').toJson(), 'direct');
       expect(TransportProtocol.fromJson('xhttp').toJson(), 'xhttp');
+      expect(TransportProtocol.fromJson('h2').toJson(), 'h2');
+      expect(TransportProtocol.fromJson('h3').toJson(), 'h3');
+      expect(TransportProtocol.fromJson('http').toJson(), 'http');
+      expect(TransportProtocol.fromJson('quic').toJson(), 'quic');
       expect(SecurityProtocol.fromJson('reality').toJson(), 'reality');
+      expect(SecurityProtocol.fromJson('xtls').toJson(), 'xtls');
       expect(
         RouterDomainStrategy.fromJson('IPIfNonMatch').toJson(),
         'IPIfNonMatch',
@@ -91,6 +100,115 @@ void main() {
           'method': 'aes-128-gcm',
           'password': 'secret',
           'network': ['tcp'],
+        },
+      );
+    });
+
+    test('preserves inbound user alias field names per xray structs', () {
+      expect(
+        const HTTPServerConfig(
+          users: [HTTPAccount(username: 'u')],
+          accounts: [HTTPAccount(username: 'a')],
+        ).toJson(),
+        {
+          'users': [
+            {'user': 'u'},
+          ],
+          'accounts': [
+            {'user': 'a'},
+          ],
+        },
+      );
+
+      expect(
+        const SocksServerConfig(
+          users: [SocksAccount(username: 'u')],
+          accounts: [SocksAccount(username: 'a')],
+        ).toJson(),
+        {
+          'users': [
+            {'user': 'u'},
+          ],
+          'accounts': [
+            {'user': 'a'},
+          ],
+        },
+      );
+
+      expect(
+        const ShadowsocksServerConfig(
+          users: [ShadowsocksUserConfig(password: 'u')],
+          clients: [ShadowsocksUserConfig(password: 'c')],
+        ).toJson(),
+        {
+          'users': [
+            {'password': 'u'},
+          ],
+          'clients': [
+            {'password': 'c'},
+          ],
+        },
+      );
+
+      expect(
+        const VMessInboundConfig(
+          users: [VMessUser(id: 'u')],
+          clients: [VMessUser(id: 'c')],
+        ).toJson(),
+        {
+          'users': [
+            {'id': 'u'},
+          ],
+          'clients': [
+            {'id': 'c'},
+          ],
+        },
+      );
+
+      expect(
+        const VLessInboundConfig(
+          users: [VLessUser(id: 'u')],
+          clients: [VLessUser(id: 'c')],
+          decryption: 'none',
+        ).toJson(),
+        {
+          'users': [
+            {'id': 'u'},
+          ],
+          'clients': [
+            {'id': 'c'},
+          ],
+          'decryption': 'none',
+        },
+      );
+
+      expect(
+        const TrojanServerConfig(
+          users: [TrojanUserConfig(password: 'u')],
+          clients: [TrojanUserConfig(password: 'c')],
+        ).toJson(),
+        {
+          'users': [
+            {'password': 'u'},
+          ],
+          'clients': [
+            {'password': 'c'},
+          ],
+        },
+      );
+
+      expect(
+        const HysteriaServerConfig(
+          users: [HysteriaUserConfig(auth: 'u')],
+          clients: [HysteriaUserConfig(auth: 'c')],
+        ).toJson(),
+        {
+          'users': [
+            {'auth': 'u'},
+          ],
+          'clients': [
+            {'auth': 'c'},
+          ],
         },
       );
     });

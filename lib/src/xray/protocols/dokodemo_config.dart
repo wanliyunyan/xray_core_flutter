@@ -5,6 +5,9 @@ abstract class DokodemoConfig
     with _$DokodemoConfig
     implements XrayInboundSettings {
   const factory DokodemoConfig({
+    XrayNetworkList? allowedNetwork,
+    XrayAddress? rewriteAddress,
+    int? rewritePort,
     XrayAddress? address,
     int? port,
     Map<String, String>? portMap,
@@ -16,9 +19,15 @@ abstract class DokodemoConfig
   factory DokodemoConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'dokodemo inbound');
     return DokodemoConfig(
-      address: map['address'] == null
+      allowedNetwork: map['allowedNetwork'] == null
           ? null
-          : XrayAddress.fromJson(map['address']),
+          : XrayNetworkList.fromJson(map['allowedNetwork']),
+      rewriteAddress: map['rewriteAddress'] == null
+          ? null
+          : XrayAddress.fromJson(map['rewriteAddress']),
+      rewritePort: map['rewritePort'] as int?,
+      address:
+          map['address'] == null ? null : XrayAddress.fromJson(map['address']),
       port: map['port'] as int?,
       portMap: (map['portMap'] as Map?)?.cast<String, String>(),
       network: map['network'] == null
@@ -33,11 +42,14 @@ abstract class DokodemoConfig
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'address': address?.toJson(),
-    'port': port,
-    'portMap': portMap,
-    'network': network?.toJson(),
-    'followRedirect': followRedirect,
-    'userLevel': userLevel,
-  });
+        'allowedNetwork': allowedNetwork?.toJson(),
+        'rewriteAddress': rewriteAddress?.toJson(),
+        'rewritePort': rewritePort,
+        'address': address?.toJson(),
+        'port': port,
+        'portMap': portMap,
+        'network': network?.toJson(),
+        'followRedirect': followRedirect,
+        'userLevel': userLevel,
+      });
 }

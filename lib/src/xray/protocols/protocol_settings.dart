@@ -11,6 +11,7 @@ part 'dns_outbound_rule_config.dart';
 part 'dokodemo_config.dart';
 part 'fragment.dart';
 part 'freedom_config.dart';
+part 'freedom_final_rule_config.dart';
 part 'http_account.dart';
 part 'http_client_config.dart';
 part 'http_remote_config.dart';

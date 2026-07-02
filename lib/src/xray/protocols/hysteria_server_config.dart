@@ -6,14 +6,18 @@ abstract class HysteriaServerConfig
     implements XrayInboundSettings {
   const factory HysteriaServerConfig({
     int? version,
-    @JsonKey(name: 'clients') List<HysteriaUserConfig>? users,
+    List<HysteriaUserConfig>? users,
+    List<HysteriaUserConfig>? clients,
   }) = _HysteriaServerConfig;
 
   factory HysteriaServerConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'hysteria inbound');
     return HysteriaServerConfig(
       version: map['version'] as int?,
-      users: map['clients'] == null
+      users: map['users'] == null
+          ? null
+          : asJsonList(map['users'], HysteriaUserConfig.fromJson),
+      clients: map['clients'] == null
           ? null
           : asJsonList(map['clients'], HysteriaUserConfig.fromJson),
     );
@@ -23,7 +27,8 @@ abstract class HysteriaServerConfig
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'version': version,
-    'clients': users?.map((item) => item.toJson()).toList(),
-  });
+        'version': version,
+        'users': users?.map((item) => item.toJson()).toList(),
+        'clients': clients?.map((item) => item.toJson()).toList(),
+      });
 }

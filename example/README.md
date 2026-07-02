@@ -1,21 +1,25 @@
 # Examples
 
-## Build A Typed Xray Config
+## Visual Config Builder
 
 ```sh
-dart run example/build_config.dart
+cd example
+flutter run -d macos
 ```
 
-This creates a typed Xray configuration and prints Xray-compatible JSON.
+In Android Studio or IntelliJ, open `example/lib/main.dart` and run it with the
+macOS device selected. This opens a visual Xray config builder with selectable
+protocols, transport options, module checkboxes, and generated JSON on the
+right.
 
-## SDK Usage Flow
+The app groups controls by config area. Users can tick modules, choose inbound
+and outbound protocols, choose transport/security options, enter detailed
+values, and compose the generated JSON in real time.
+
+If `flutter run -d macos` builds successfully and then waits forever on a Flutter
+master/dev toolchain, launch the app without the debug attach step:
 
 ```sh
-dart run example/sdk_usage_example.dart
+cd example
+./run_macos_app.sh
 ```
-
-This shows how to:
-
-- Build a config with Dart models.
-- Validate the config before passing it to Xray.
-- Import existing JSON back into typed models.

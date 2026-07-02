@@ -5,6 +5,9 @@ abstract class DNSOutboundConfig
     with _$DNSOutboundConfig
     implements XrayOutboundSettings {
   const factory DNSOutboundConfig({
+    XrayNetwork? rewriteNetwork,
+    XrayAddress? rewriteAddress,
+    int? rewritePort,
     XrayNetwork? network,
     XrayAddress? address,
     int? port,
@@ -17,12 +20,17 @@ abstract class DNSOutboundConfig
   factory DNSOutboundConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'dns outbound');
     return DNSOutboundConfig(
-      network: map['network'] == null
+      rewriteNetwork: map['rewriteNetwork'] == null
           ? null
-          : XrayNetwork.fromJson(map['network']),
-      address: map['address'] == null
+          : XrayNetwork.fromJson(map['rewriteNetwork']),
+      rewriteAddress: map['rewriteAddress'] == null
           ? null
-          : XrayAddress.fromJson(map['address']),
+          : XrayAddress.fromJson(map['rewriteAddress']),
+      rewritePort: map['rewritePort'] as int?,
+      network:
+          map['network'] == null ? null : XrayNetwork.fromJson(map['network']),
+      address:
+          map['address'] == null ? null : XrayAddress.fromJson(map['address']),
       port: map['port'] as int?,
       userLevel: map['userLevel'] as int?,
       rules: map['rules'] == null
@@ -37,12 +45,15 @@ abstract class DNSOutboundConfig
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'network': network?.name,
-    'address': address?.toJson(),
-    'port': port,
-    'userLevel': userLevel,
-    'rules': rules?.map((item) => item.toJson()).toList(),
-    'nonIPQuery': nonIPQuery,
-    'blockTypes': blockTypes,
-  });
+        'rewriteNetwork': rewriteNetwork?.name,
+        'rewriteAddress': rewriteAddress?.toJson(),
+        'rewritePort': rewritePort,
+        'network': network?.name,
+        'address': address?.toJson(),
+        'port': port,
+        'userLevel': userLevel,
+        'rules': rules?.map((item) => item.toJson()).toList(),
+        'nonIPQuery': nonIPQuery,
+        'blockTypes': blockTypes,
+      });
 }

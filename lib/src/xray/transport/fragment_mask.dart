@@ -13,12 +13,10 @@ abstract class FragmentMask with _$FragmentMask implements FinalMaskSettings {
     final map = asJsonMap(json, 'fragment mask');
     return FragmentMask(
       packets: map['packets'] as String?,
-      length: map['length'] == null
-          ? null
-          : XrayInt32Range.fromJson(map['length']),
-      delay: map['delay'] == null
-          ? null
-          : XrayInt32Range.fromJson(map['delay']),
+      length:
+          map['length'] == null ? null : XrayInt32Range.fromJson(map['length']),
+      delay:
+          map['delay'] == null ? null : XrayInt32Range.fromJson(map['delay']),
       maxSplit: map['maxSplit'] == null
           ? null
           : XrayInt32Range.fromJson(map['maxSplit']),
@@ -29,9 +27,9 @@ abstract class FragmentMask with _$FragmentMask implements FinalMaskSettings {
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'packets': packets,
-    'length': length?.toJson(),
-    'delay': delay?.toJson(),
-    'maxSplit': maxSplit?.toJson(),
-  });
+        'packets': packets,
+        'length': length?.toJson(),
+        'delay': delay?.toJson(),
+        'maxSplit': maxSplit?.toJson(),
+      });
 }

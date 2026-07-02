@@ -6,7 +6,9 @@ enum SecurityProtocol {
   @JsonValue('tls')
   tls,
   @JsonValue('reality')
-  reality;
+  reality,
+  @JsonValue('xtls')
+  xtls;
 
   factory SecurityProtocol.fromJson(Object? json) {
     if (json is String) {
@@ -14,6 +16,7 @@ enum SecurityProtocol {
         'none' => SecurityProtocol.none,
         'tls' => SecurityProtocol.tls,
         'reality' => SecurityProtocol.reality,
+        'xtls' => SecurityProtocol.xtls,
         _ => throw FormatException('unknown security protocol: $json'),
       };
     }

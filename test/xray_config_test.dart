@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:xray_core_flutter/xray_config.dart';
 
-import '../example/build_config.dart';
+import 'test_configs.dart';
 
 void main() {
   test('serializes common union helper types', () {
@@ -41,6 +41,76 @@ void main() {
       },
     });
     expect(buildExampleConfig().validate(), isEmpty);
+  });
+
+  test('serializes Xray 26.6 protocol additions', () {
+    expect(
+      FreedomConfig(
+        finalRules: [
+          FreedomFinalRuleConfig(
+            action: 'block',
+            network: const XrayNetworkList.tcpAndUdp(),
+            port: XrayPortList.single(443),
+            ip: const XrayStringList(['geoip:private']),
+            blockDelay: XrayInt32Range.single(50),
+          ),
+        ],
+      ).toJson(),
+      {
+        'finalRules': [
+          {
+            'action': 'block',
+            'network': ['tcp', 'udp'],
+            'port': 443,
+            'ip': ['geoip:private'],
+            'blockDelay': 50,
+          },
+        ],
+      },
+    );
+
+    expect(
+      const DokodemoConfig(
+        allowedNetwork: XrayNetworkList.tcpAndUdp(),
+        rewriteAddress: XrayAddress('127.0.0.1'),
+        rewritePort: 80,
+      ).toJson(),
+      {
+        'allowedNetwork': ['tcp', 'udp'],
+        'rewriteAddress': '127.0.0.1',
+        'rewritePort': 80,
+      },
+    );
+
+    expect(
+      DNSOutboundConfig(
+        rewriteNetwork: XrayNetwork.udp,
+        rewriteAddress: const XrayAddress('8.8.8.8'),
+        rewritePort: 53,
+        rules: [
+          DNSOutboundRuleConfig(
+            action: DNSOutboundRuleAction.returnResponse,
+            qType: XrayPortList.single(28),
+            domain: const XrayStringList(['domain:example.com']),
+            rCode: 3,
+          ),
+        ],
+      ).toJson(),
+      {
+        'rewriteNetwork': 'udp',
+        'rewriteAddress': '8.8.8.8',
+        'rewritePort': 53,
+        'rules': [
+          {
+            'action': 'return',
+            'qType': 28,
+            'domain': ['domain:example.com'],
+            'rCode': 3,
+          },
+        ],
+      },
+    );
+    expect(DNSOutboundRuleAction.reject.toJson(), 'return');
   });
 
   test('validates common sdk configuration mistakes', () {
@@ -202,6 +272,10 @@ void main() {
   test('serializes extended typed detour helper constructors', () {
     final config = XrayConfig(
       inbounds: [
+        InboundDetourConfig.tunnel(
+          port: XrayPortList.single(10000),
+          settings: const DokodemoConfig(address: XrayAddress('127.0.0.1')),
+        ),
         InboundDetourConfig.vmess(
           port: XrayPortList.single(10001),
           settings: VMessInboundConfig.single(
@@ -220,6 +294,22 @@ void main() {
             cipher: 'aes-128-gcm',
             password: 'secret',
           ),
+        ),
+        InboundDetourConfig.dokodemoDoor(
+          port: XrayPortList.single(10004),
+          settings: const DokodemoConfig(followRedirect: true),
+        ),
+        InboundDetourConfig.mixed(
+          port: XrayPortList.single(10005),
+          settings: const SocksServerConfig(udp: true),
+        ),
+        InboundDetourConfig.wireguard(
+          port: XrayPortList.single(10006),
+          settings: const WireGuardConfig(secretKey: 'secret-key'),
+        ),
+        InboundDetourConfig.hysteria(
+          port: XrayPortList.single(10007),
+          settings: const HysteriaServerConfig(version: 2),
         ),
         InboundDetourConfig.tun(settings: const TunConfig(name: 'xray0')),
       ],
@@ -252,11 +342,19 @@ void main() {
             port: 1080,
           ),
         ),
+        OutboundDetourConfig.loopback(
+          settings: const LoopbackConfig(inboundTag: 'socks-in'),
+        ),
       ],
     );
 
     expect(config.toJson(), {
       'inbounds': [
+        {
+          'protocol': 'tunnel',
+          'port': 10000,
+          'settings': {'address': '127.0.0.1'},
+        },
         {
           'protocol': 'vmess',
           'port': 10001,
@@ -279,6 +377,26 @@ void main() {
           'protocol': 'shadowsocks',
           'port': 10003,
           'settings': {'method': 'aes-128-gcm', 'password': 'secret'},
+        },
+        {
+          'protocol': 'dokodemo-door',
+          'port': 10004,
+          'settings': {'followRedirect': true},
+        },
+        {
+          'protocol': 'mixed',
+          'port': 10005,
+          'settings': {'udp': true},
+        },
+        {
+          'protocol': 'wireguard',
+          'port': 10006,
+          'settings': {'secretKey': 'secret-key'},
+        },
+        {
+          'protocol': 'hysteria',
+          'port': 10007,
+          'settings': {'version': 2},
         },
         {
           'protocol': 'tun',
@@ -314,6 +432,10 @@ void main() {
         {
           'protocol': 'socks',
           'settings': {'address': '127.0.0.1', 'port': 1080},
+        },
+        {
+          'protocol': 'loopback',
+          'settings': {'inboundTag': 'socks-in'},
         },
       ],
     });
@@ -1086,7 +1208,7 @@ void main() {
             'address': '8.8.8.8',
             'port': 53,
             'rules': [
-              {'action': 'hijack', 'qtype': '1-28'},
+              {'action': 'hijack', 'qType': '1-28'},
             ],
           },
         },
@@ -1383,6 +1505,8 @@ void main() {
         'xPaddingBytes': '10-20',
         'xPaddingPlacement': 'queryInHeader',
         'xPaddingMethod': 'repeat-x',
+        'sessionPlacement': 'header',
+        'sessionKey': 'X-Session',
         'xmux': {'maxConcurrency': '1-4'},
       },
       'grpcSettings': {
@@ -1429,6 +1553,8 @@ void main() {
         'xPaddingBytes': '10-20',
         'xPaddingPlacement': 'queryInHeader',
         'xPaddingMethod': 'repeat-x',
+        'sessionPlacement': 'header',
+        'sessionKey': 'X-Session',
         'xmux': {'maxConcurrency': '1-4'},
       },
       'httpupgradeSettings': {'host': 'example.com', 'path': '/up'},
@@ -1493,7 +1619,10 @@ void main() {
         'tcp': [
           {
             'type': 'fragment',
-            'settings': {'packets': 'tlshello', 'length': '10-20'},
+            'settings': {
+              'packets': 'tlshello',
+              'length': '10-20',
+            },
           },
           {
             'type': 'sudoku',
@@ -1514,6 +1643,25 @@ void main() {
             'type': 'xdns',
             'settings': {
               'resolvers': ['https+udp://1.1.1.1/dns-query'],
+            },
+          },
+          {
+            'type': 'salamander',
+            'settings': {'password': 'p', 'packetSize': '100-200'},
+          },
+          {
+            'type': 'xicmp',
+            'settings': {
+              'dgram': true,
+              'ips': ['1.1.1.1'],
+            },
+          },
+          {
+            'type': 'realm',
+            'settings': {
+              'url': 'realm://token@example.com/id',
+              'stunServers': ['stun.example.com:3478'],
+              'tlsConfig': {'serverName': 'realm.example.com'},
             },
           },
         ],
@@ -1527,6 +1675,9 @@ void main() {
     expect(stream.finalmask?.tcp?[1].settings, isA<Sudoku>());
     expect(stream.finalmask?.udp?.first.settings, isA<NoiseMask>());
     expect(stream.finalmask?.udp?[1].settings, isA<Xdns>());
+    expect(stream.finalmask?.udp?[2].settings, isA<Salamander>());
+    expect(stream.finalmask?.udp?[3].settings, isA<Xicmp>());
+    expect(stream.finalmask?.udp?[4].settings, isA<Realm>());
     expect(stream.finalmask?.quicParams, isA<QuicParamsConfig>());
     expect(stream.toJson(), {
       'network': 'hysteria',
@@ -1534,7 +1685,10 @@ void main() {
         'tcp': [
           {
             'type': 'fragment',
-            'settings': {'packets': 'tlshello', 'length': '10-20'},
+            'settings': {
+              'packets': 'tlshello',
+              'length': '10-20',
+            },
           },
           {
             'type': 'sudoku',
@@ -1555,6 +1709,25 @@ void main() {
             'type': 'xdns',
             'settings': {
               'resolvers': ['https+udp://1.1.1.1/dns-query'],
+            },
+          },
+          {
+            'type': 'salamander',
+            'settings': {'password': 'p', 'packetSize': '100-200'},
+          },
+          {
+            'type': 'xicmp',
+            'settings': {
+              'dgram': true,
+              'ips': ['1.1.1.1'],
+            },
+          },
+          {
+            'type': 'realm',
+            'settings': {
+              'url': 'realm://token@example.com/id',
+              'stunServers': ['stun.example.com:3478'],
+              'tlsConfig': {'serverName': 'realm.example.com'},
             },
           },
         ],
@@ -1677,14 +1850,39 @@ void main() {
     });
     final finalmask = FinalMask.fromJson({
       'tcp': [
-        {'type': 'header-dtls', 'settings': {}},
-        {'type': 'header-srtp', 'settings': {}},
-        {'type': 'mkcp-original', 'settings': {}},
+        {'type': 'fragment', 'settings': {}},
+        {'type': 'sudoku', 'settings': {}},
       ],
       'udp': [
-        {'type': 'header-utp', 'settings': {}},
-        {'type': 'header-wechat', 'settings': {}},
-        {'type': 'header-wireguard', 'settings': {}},
+        {'type': 'mkcp-legacy', 'settings': {}},
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'dns', 'value': 'example.com'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'dtls'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'srtp'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'utp'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'wechat'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'wireguard'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'value': 'secret'},
+        },
         {
           'type': 'future-mask',
           'settings': {'keep': true},
@@ -1693,26 +1891,55 @@ void main() {
     });
 
     expect(blackhole.response, isA<HttpResponse>());
-    expect(finalmask.tcp?[0].settings, isA<Dtls>());
-    expect(finalmask.tcp?[1].settings, isA<Srtp>());
-    expect(finalmask.tcp?[2].settings, isA<Original>());
-    expect(finalmask.udp?[0].settings, isA<Utp>());
-    expect(finalmask.udp?[1].settings, isA<Wechat>());
-    expect(finalmask.udp?[2].settings, isA<Wireguard>());
-    expect(finalmask.udp?[3].settings, isA<RawFinalMaskSettings>());
+    expect(finalmask.tcp?[0].settings, isA<FragmentMask>());
+    expect(finalmask.tcp?[1].settings, isA<Sudoku>());
+    expect(finalmask.udp?[0].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[1].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[2].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[3].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[4].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[5].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[6].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[7].settings, isA<MkcpLegacy>());
+    expect(finalmask.udp?[8].settings, isA<RawFinalMaskSettings>());
     expect(blackhole.toJson(), {
       'response': {'type': 'http'},
     });
     expect(finalmask.toJson(), {
       'tcp': [
-        {'type': 'header-dtls', 'settings': {}},
-        {'type': 'header-srtp', 'settings': {}},
-        {'type': 'mkcp-original', 'settings': {}},
+        {'type': 'fragment', 'settings': {}},
+        {'type': 'sudoku', 'settings': {}},
       ],
       'udp': [
-        {'type': 'header-utp', 'settings': {}},
-        {'type': 'header-wechat', 'settings': {}},
-        {'type': 'header-wireguard', 'settings': {}},
+        {'type': 'mkcp-legacy', 'settings': {}},
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'dns', 'value': 'example.com'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'dtls'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'srtp'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'utp'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'wechat'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'header': 'wireguard'},
+        },
+        {
+          'type': 'mkcp-legacy',
+          'settings': {'value': 'secret'},
+        },
         {
           'type': 'future-mask',
           'settings': {'keep': true},
@@ -1926,6 +2153,9 @@ void main() {
             strategy: StrategyConfig(
               type: BalancingStrategyType.leastload,
               settings: StrategyLeastLoadConfig(
+                costs: const [
+                  StrategyWeight(regexp: true, match: 'proxy-', value: 5),
+                ],
                 baselines: [
                   XrayDuration.raw('100ms'),
                   XrayDuration.fromDuration(Duration(seconds: 1)),
@@ -1968,6 +2198,9 @@ void main() {
             'strategy': {
               'type': 'leastload',
               'settings': {
+                'costs': [
+                  {'regexp': true, 'match': 'proxy-', 'value': 5.0},
+                ],
                 'baselines': ['100ms', '1s'],
                 'expected': 1,
                 'maxRTT': '3s',
@@ -2035,7 +2268,7 @@ void main() {
             rules: [
               DNSOutboundRuleConfig(
                 action: DNSOutboundRuleAction.hijack,
-                qtype: XrayPortList([const XrayPortRange(from: 1, to: 28)]),
+                qType: XrayPortList([const XrayPortRange(from: 1, to: 28)]),
               ),
             ],
           ),
@@ -2149,7 +2382,7 @@ void main() {
             'address': '8.8.8.8',
             'port': 53,
             'rules': [
-              {'action': 'hijack', 'qtype': '1-28'},
+              {'action': 'hijack', 'qType': '1-28'},
             ],
           },
         },
