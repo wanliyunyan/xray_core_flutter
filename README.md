@@ -25,6 +25,21 @@
 1. Flutter 项目直接引用：通过 `package:xray_core_flutter/xray_config.dart` 创建、校验并导出 Xray JSON 配置。
 2. 原生平台 SDK 集成：通过本仓库打包 Android AAR、iOS/macOS XCFramework、Linux shared object、Windows DLL，并在宿主工程中接入对应产物。
 
+## Xray 配置覆盖和对照
+
+当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.6.1：
+
+- 覆盖 Xray-core 配置结构中可解析的 JSON 字段，导出的 JSON 字段名保持 Xray 兼容。
+- 覆盖所有 loader-style 可创建配置入口，包括入站、出站、blackhole response、TCP header、routing strategy、TCP/UDP finalmask。
+- 对 Go 使用 `json.RawMessage` 的 union 配置提供类型化封装，并保留 raw escape hatch，方便跟进 Xray 新增实验字段。
+- 仓库内置 parity check，会校验 JSON tag、结构字段、额外 Dart key，以及 config creator loader ID，避免 Xray-core 更新后漏字段或漏类型。
+
+运行对照检查：
+
+```sh
+dart run tool/check_xray_conf_parity.dart /path/to/Xray-core/infra/conf
+```
+
 ## Flutter 项目接入
 
 在 Flutter 项目中添加依赖：
@@ -419,10 +434,10 @@ Compress-Archive -Path dist/windows -DestinationPath XrayCoreSDK-windows-x64.zip
 ## 当前模型覆盖
 
 - Common：address、ports、string/network lists、int ranges、durations、users、sniffing、target strategies。
-- Core：top-level config、inbound/outbound detours、log、mux、proxy settings。
+- Core：top-level config、inbound/outbound detours、log、mux、proxy settings，以及所有入站/出站 protocol loader ID。
 - Protocols：vless、vmess、trojan、shadowsocks、socks、http、freedom、blackhole、dns outbound、dokodemo-door、loopback、wireguard、hysteria、tun。
-- Transport：tcp/raw、websocket/ws、grpc、httpupgrade、splithttp/xhttp、kcp、hysteria、tls、reality、socket options、finalmask。
-- Apps：dns、routing、policy、api、metrics、stats、reverse、observatory、burstObservatory、fakeDns、version、geodata。
+- Transport：tcp/raw、websocket/ws、grpc、httpupgrade、splithttp/xhttp、kcp、hysteria、tls、reality、socket options、finalmask、TCP header、QUIC params。
+- Apps：dns、routing、policy、api、metrics、stats、reverse、observatory、burstObservatory、fakeDns、version、geodata、balancing strategies。
 
 ## 设计规则
 
@@ -447,13 +462,13 @@ dart run tool/check_xray_conf_parity.dart /path/to/Xray-core/infra/conf
 
 ```sh
 dart run build_runner build
-flutter analyze
+dart analyze
 flutter test
 ```
 
-运行示例：
+在仓库源码中运行可视化示例 App：
 
 ```sh
-dart run example/build_config.dart
-dart run example/sdk_usage_example.dart
+cd example
+flutter run -d macos
 ```

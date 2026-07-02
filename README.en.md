@@ -25,6 +25,21 @@ This project supports two integration paths:
 1. Direct Flutter dependency: use `package:xray_core_flutter/xray_config.dart` to create, validate, and export Xray JSON configs.
 2. Native platform SDK integration: use this repository to package Android AAR, iOS/macOS XCFramework, Linux shared object, and Windows DLL artifacts, then integrate them into host projects.
 
+## Xray Config Coverage and Parity
+
+The current Dart config models are aligned with Xray-core `infra/conf` v26.6.1:
+
+- Covers the JSON fields parsed by Xray-core config structs and keeps exported JSON field names Xray-compatible.
+- Covers every loader-style creatable config entry, including inbounds, outbounds, blackhole responses, TCP headers, routing strategies, and TCP/UDP finalmask.
+- Provides typed wrappers for union configs where Go uses `json.RawMessage`, while keeping raw escape hatches for new or experimental Xray fields.
+- Includes a parity checker that validates JSON tags, per-struct field shape, unexpected Dart keys, and config creator loader IDs, so Xray-core updates do not silently drop fields or creatable config types.
+
+Run the parity check:
+
+```sh
+dart run tool/check_xray_conf_parity.dart /path/to/Xray-core/infra/conf
+```
+
 ## Flutter Integration
 
 Add the package to a Flutter project:
@@ -419,10 +434,10 @@ When a `v*` tag is pushed, `.github/workflows/build-native.yml` builds and uploa
 ## Current Coverage
 
 - Common: address, ports, string/network lists, int ranges, durations, users, sniffing, target strategies.
-- Core: top-level config, inbound/outbound detours, log, mux, proxy settings.
+- Core: top-level config, inbound/outbound detours, log, mux, proxy settings, and all inbound/outbound protocol loader IDs.
 - Protocols: vless, vmess, trojan, shadowsocks, socks, http, freedom, blackhole, dns outbound, dokodemo-door, loopback, wireguard, hysteria, tun.
-- Transport: tcp/raw, websocket/ws, grpc, httpupgrade, splithttp/xhttp, kcp, hysteria, tls, reality, socket options, finalmask.
-- Apps: dns, routing, policy, api, metrics, stats, reverse, observatory, burstObservatory, fakeDns, version, geodata.
+- Transport: tcp/raw, websocket/ws, grpc, httpupgrade, splithttp/xhttp, kcp, hysteria, tls, reality, socket options, finalmask, TCP header, QUIC params.
+- Apps: dns, routing, policy, api, metrics, stats, reverse, observatory, burstObservatory, fakeDns, version, geodata, balancing strategies.
 
 ## Design Rules
 
@@ -447,13 +462,13 @@ Regenerate and verify:
 
 ```sh
 dart run build_runner build
-flutter analyze
+dart analyze
 flutter test
 ```
 
-Run examples:
+Run the visual example app from a repository checkout:
 
 ```sh
-dart run example/build_config.dart
-dart run example/sdk_usage_example.dart
+cd example
+flutter run -d macos
 ```

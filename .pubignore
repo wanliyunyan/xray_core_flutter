@@ -5,6 +5,7 @@
 build/
 DerivedData/
 .generated/
+example/
 *.iml
 *.log
 .DS_Store

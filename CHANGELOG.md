@@ -1,3 +1,11 @@
+## 0.3.0
+
+- Synced the typed Dart config models with Xray-core `infra/conf` v26.6.1.
+- Added coverage for newly exposed protocol, transport, app, finalmask, and helper config fields.
+- Expanded Go parity checks to validate JSON tags, per-struct JSON shape, unexpected Dart keys, and config creator loader IDs.
+- Added broader realistic config round-trip and contract tests for Xray-compatible JSON output.
+- Updated the example into a visual Xray config builder app.
+
 ## 0.2.3
 
 - Renamed native SDK artifacts and import/module surface to `XrayCoreSDK`.
