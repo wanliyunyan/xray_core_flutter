@@ -168,7 +168,7 @@ jobs:
       - name: Build Windows DLL
         shell: pwsh
         run: |
-          cmake -S src -B build/native/windows -G "Visual Studio 17 2022" -A x64
+          cmake -S src -B build/native/windows -A x64
           cmake --build build/native/windows --config Release
 
       - name: Package Windows artifact
