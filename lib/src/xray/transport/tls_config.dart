@@ -18,10 +18,8 @@ abstract class TLSConfig with _$TLSConfig {
     String? masterKeyLog,
     String? pinnedPeerCertSha256,
     String? verifyPeerCertByName,
-    List<String>? verifyPeerCertInNames,
     String? echServerKeys,
     String? echConfigList,
-    ECHForceQuery? echForceQuery,
     @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
   }) = _TLSConfig;
 
@@ -47,13 +45,8 @@ abstract class TLSConfig with _$TLSConfig {
       masterKeyLog: map['masterKeyLog'] as String?,
       pinnedPeerCertSha256: map['pinnedPeerCertSha256'] as String?,
       verifyPeerCertByName: map['verifyPeerCertByName'] as String?,
-      verifyPeerCertInNames: (map['verifyPeerCertInNames'] as List?)
-          ?.cast<String>(),
       echServerKeys: map['echServerKeys'] as String?,
       echConfigList: map['echConfigList'] as String?,
-      echForceQuery: map['echForceQuery'] == null
-          ? null
-          : ECHForceQuery.fromJson(map['echForceQuery']),
       echSocketSettings: map['echSockopt'] == null
           ? null
           : SocketConfig.fromJson(map['echSockopt']),
@@ -63,25 +56,23 @@ abstract class TLSConfig with _$TLSConfig {
   const TLSConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-    'allowInsecure': allowInsecure,
-    'certificates': certs?.map((item) => item.toJson()).toList(),
-    'serverName': serverName,
-    'alpn': alpn?.toJson(),
-    'enableSessionResumption': enableSessionResumption,
-    'disableSystemRoot': disableSystemRoot,
-    'minVersion': minVersion,
-    'maxVersion': maxVersion,
-    'cipherSuites': cipherSuites,
-    'fingerprint': fingerprint,
-    'rejectUnknownSni': rejectUnknownSNI,
-    'curvePreferences': curvePreferences?.toJson(),
-    'masterKeyLog': masterKeyLog,
-    'pinnedPeerCertSha256': pinnedPeerCertSha256,
-    'verifyPeerCertByName': verifyPeerCertByName,
-    'verifyPeerCertInNames': verifyPeerCertInNames,
-    'echServerKeys': echServerKeys,
-    'echConfigList': echConfigList,
-    'echForceQuery': echForceQuery?.toJson(),
-    'echSockopt': echSocketSettings?.toJson(),
-  });
+        'allowInsecure': allowInsecure,
+        'certificates': certs?.map((item) => item.toJson()).toList(),
+        'serverName': serverName,
+        'alpn': alpn?.toJson(),
+        'enableSessionResumption': enableSessionResumption,
+        'disableSystemRoot': disableSystemRoot,
+        'minVersion': minVersion,
+        'maxVersion': maxVersion,
+        'cipherSuites': cipherSuites,
+        'fingerprint': fingerprint,
+        'rejectUnknownSni': rejectUnknownSNI,
+        'curvePreferences': curvePreferences?.toJson(),
+        'masterKeyLog': masterKeyLog,
+        'pinnedPeerCertSha256': pinnedPeerCertSha256,
+        'verifyPeerCertByName': verifyPeerCertByName,
+        'echServerKeys': echServerKeys,
+        'echConfigList': echConfigList,
+        'echSockopt': echSocketSettings?.toJson(),
+      });
 }

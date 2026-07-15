@@ -43,7 +43,7 @@ void main() {
     expect(buildExampleConfig().validate(), isEmpty);
   });
 
-  test('serializes Xray 26.6 protocol additions', () {
+  test('serializes Xray 26.7 protocol additions', () {
     expect(
       FreedomConfig(
         finalRules: [
@@ -980,8 +980,6 @@ void main() {
             'port': 8388,
             'method': '2022-blake3-aes-128-gcm',
             'password': 'secret',
-            'uot': true,
-            'uotVersion': 2,
           },
         },
       ],
@@ -1026,8 +1024,6 @@ void main() {
           'port': 8388,
           'method': '2022-blake3-aes-128-gcm',
           'password': 'secret',
-          'uot': true,
-          'uotVersion': 2,
         },
       },
     ]);
@@ -1486,7 +1482,6 @@ void main() {
         'serverName': 'example.com',
         'alpn': 'h2,http/1.1',
         'fingerprint': 'chrome',
-        'echForceQuery': 'half',
       },
       'sockopt': {
         'dialerProxy': 'proxy',
@@ -1505,8 +1500,10 @@ void main() {
         'xPaddingBytes': '10-20',
         'xPaddingPlacement': 'queryInHeader',
         'xPaddingMethod': 'repeat-x',
-        'sessionPlacement': 'header',
-        'sessionKey': 'X-Session',
+        'sessionIDPlacement': 'header',
+        'sessionIDKey': 'X-Session',
+        'sessionIDTable': 'base64url',
+        'sessionIDLength': '8-12',
         'xmux': {'maxConcurrency': '1-4'},
       },
       'grpcSettings': {
@@ -1535,7 +1532,6 @@ void main() {
         'serverName': 'example.com',
         'alpn': ['h2', 'http/1.1'],
         'fingerprint': 'chrome',
-        'echForceQuery': 'half',
       },
       'sockopt': {
         'tproxy': 'redirect',
@@ -1553,8 +1549,10 @@ void main() {
         'xPaddingBytes': '10-20',
         'xPaddingPlacement': 'queryInHeader',
         'xPaddingMethod': 'repeat-x',
-        'sessionPlacement': 'header',
-        'sessionKey': 'X-Session',
+        'sessionIDPlacement': 'header',
+        'sessionIDKey': 'X-Session',
+        'sessionIDTable': 'base64url',
+        'sessionIDLength': '8-12',
         'xmux': {'maxConcurrency': '1-4'},
       },
       'httpupgradeSettings': {'host': 'example.com', 'path': '/up'},

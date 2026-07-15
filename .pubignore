@@ -5,7 +5,9 @@
 build/
 DerivedData/
 .generated/
+.codex/
 example/
+AGENTS.md
 *.iml
 *.log
 .DS_Store

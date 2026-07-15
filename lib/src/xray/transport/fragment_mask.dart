@@ -6,6 +6,8 @@ abstract class FragmentMask with _$FragmentMask implements FinalMaskSettings {
     String? packets,
     XrayInt32Range? length,
     XrayInt32Range? delay,
+    List<XrayInt32Range>? lengths,
+    List<XrayInt32Range>? delays,
     XrayInt32Range? maxSplit,
   }) = _FragmentMask;
 
@@ -17,6 +19,12 @@ abstract class FragmentMask with _$FragmentMask implements FinalMaskSettings {
           map['length'] == null ? null : XrayInt32Range.fromJson(map['length']),
       delay:
           map['delay'] == null ? null : XrayInt32Range.fromJson(map['delay']),
+      lengths: map['lengths'] == null
+          ? null
+          : asJsonList(map['lengths'], XrayInt32Range.fromJson),
+      delays: map['delays'] == null
+          ? null
+          : asJsonList(map['delays'], XrayInt32Range.fromJson),
       maxSplit: map['maxSplit'] == null
           ? null
           : XrayInt32Range.fromJson(map['maxSplit']),
@@ -30,6 +38,8 @@ abstract class FragmentMask with _$FragmentMask implements FinalMaskSettings {
         'packets': packets,
         'length': length?.toJson(),
         'delay': delay?.toJson(),
+        'lengths': lengths?.map((item) => item.toJson()).toList(),
+        'delays': delays?.map((item) => item.toJson()).toList(),
         'maxSplit': maxSplit?.toJson(),
       });
 }

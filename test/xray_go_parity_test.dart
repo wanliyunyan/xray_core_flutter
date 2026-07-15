@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('dart source covers xray infra/conf json tags', () {
-    final goConf = Directory('/Volumes/ext/xray/Xray-core/infra/conf');
+    final goConf = Directory('../Xray-core/infra/conf');
     if (!goConf.existsSync()) {
       markTestSkipped('Xray-core infra/conf directory is not available.');
       return;

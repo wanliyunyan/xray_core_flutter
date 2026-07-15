@@ -1,3 +1,9 @@
+## 0.3.1
+
+- Synced the typed Dart config models with Xray-core `infra/conf` v26.7.11.
+- Added coverage for the new root `env`, stream `method`, SplitHTTP session ID, Loopback sniffing, WireGuard peer metadata, Fragment multi-range, and XMC finalmask fields.
+- Removed fields no longer present in Xray-core `infra/conf` v26.7.11, including Shadowsocks UoT options, WireGuard workers, and removed TLS ECH force query / peer-name-list options.
+
 ## 0.3.0
 
 - Synced the typed Dart config models with Xray-core `infra/conf` v26.6.1.

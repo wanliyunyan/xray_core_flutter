@@ -2833,6 +2833,8 @@ mixin _$FragmentMask {
   String? get packets;
   XrayInt32Range? get length;
   XrayInt32Range? get delay;
+  List<XrayInt32Range>? get lengths;
+  List<XrayInt32Range>? get delays;
   XrayInt32Range? get maxSplit;
 
   /// Create a copy of FragmentMask
@@ -2851,17 +2853,25 @@ mixin _$FragmentMask {
             (identical(other.packets, packets) || other.packets == packets) &&
             (identical(other.length, length) || other.length == length) &&
             (identical(other.delay, delay) || other.delay == delay) &&
+            const DeepCollectionEquality().equals(other.lengths, lengths) &&
+            const DeepCollectionEquality().equals(other.delays, delays) &&
             (identical(other.maxSplit, maxSplit) ||
                 other.maxSplit == maxSplit));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, packets, length, delay, maxSplit);
+  int get hashCode => Object.hash(
+      runtimeType,
+      packets,
+      length,
+      delay,
+      const DeepCollectionEquality().hash(lengths),
+      const DeepCollectionEquality().hash(delays),
+      maxSplit);
 
   @override
   String toString() {
-    return 'FragmentMask(packets: $packets, length: $length, delay: $delay, maxSplit: $maxSplit)';
+    return 'FragmentMask(packets: $packets, length: $length, delay: $delay, lengths: $lengths, delays: $delays, maxSplit: $maxSplit)';
   }
 }
 
@@ -2875,6 +2885,8 @@ abstract mixin class $FragmentMaskCopyWith<$Res> {
       {String? packets,
       XrayInt32Range? length,
       XrayInt32Range? delay,
+      List<XrayInt32Range>? lengths,
+      List<XrayInt32Range>? delays,
       XrayInt32Range? maxSplit});
 
   $XrayInt32RangeCopyWith<$Res>? get length;
@@ -2897,6 +2909,8 @@ class _$FragmentMaskCopyWithImpl<$Res> implements $FragmentMaskCopyWith<$Res> {
     Object? packets = freezed,
     Object? length = freezed,
     Object? delay = freezed,
+    Object? lengths = freezed,
+    Object? delays = freezed,
     Object? maxSplit = freezed,
   }) {
     return _then(_self.copyWith(
@@ -2912,6 +2926,14 @@ class _$FragmentMaskCopyWithImpl<$Res> implements $FragmentMaskCopyWith<$Res> {
           ? _self.delay
           : delay // ignore: cast_nullable_to_non_nullable
               as XrayInt32Range?,
+      lengths: freezed == lengths
+          ? _self.lengths
+          : lengths // ignore: cast_nullable_to_non_nullable
+              as List<XrayInt32Range>?,
+      delays: freezed == delays
+          ? _self.delays
+          : delays // ignore: cast_nullable_to_non_nullable
+              as List<XrayInt32Range>?,
       maxSplit: freezed == maxSplit
           ? _self.maxSplit
           : maxSplit // ignore: cast_nullable_to_non_nullable
@@ -3055,16 +3077,21 @@ extension FragmentMaskPatterns on FragmentMask {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? packets, XrayInt32Range? length,
-            XrayInt32Range? delay, XrayInt32Range? maxSplit)?
+    TResult Function(
+            String? packets,
+            XrayInt32Range? length,
+            XrayInt32Range? delay,
+            List<XrayInt32Range>? lengths,
+            List<XrayInt32Range>? delays,
+            XrayInt32Range? maxSplit)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _FragmentMask() when $default != null:
-        return $default(
-            _that.packets, _that.length, _that.delay, _that.maxSplit);
+        return $default(_that.packets, _that.length, _that.delay, _that.lengths,
+            _that.delays, _that.maxSplit);
       case _:
         return orElse();
     }
@@ -3085,15 +3112,20 @@ extension FragmentMaskPatterns on FragmentMask {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? packets, XrayInt32Range? length,
-            XrayInt32Range? delay, XrayInt32Range? maxSplit)
+    TResult Function(
+            String? packets,
+            XrayInt32Range? length,
+            XrayInt32Range? delay,
+            List<XrayInt32Range>? lengths,
+            List<XrayInt32Range>? delays,
+            XrayInt32Range? maxSplit)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FragmentMask():
-        return $default(
-            _that.packets, _that.length, _that.delay, _that.maxSplit);
+        return $default(_that.packets, _that.length, _that.delay, _that.lengths,
+            _that.delays, _that.maxSplit);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -3113,15 +3145,20 @@ extension FragmentMaskPatterns on FragmentMask {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? packets, XrayInt32Range? length,
-            XrayInt32Range? delay, XrayInt32Range? maxSplit)?
+    TResult? Function(
+            String? packets,
+            XrayInt32Range? length,
+            XrayInt32Range? delay,
+            List<XrayInt32Range>? lengths,
+            List<XrayInt32Range>? delays,
+            XrayInt32Range? maxSplit)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FragmentMask() when $default != null:
-        return $default(
-            _that.packets, _that.length, _that.delay, _that.maxSplit);
+        return $default(_that.packets, _that.length, _that.delay, _that.lengths,
+            _that.delays, _that.maxSplit);
       case _:
         return null;
     }
@@ -3131,8 +3168,16 @@ extension FragmentMaskPatterns on FragmentMask {
 /// @nodoc
 
 class _FragmentMask extends FragmentMask {
-  const _FragmentMask({this.packets, this.length, this.delay, this.maxSplit})
-      : super._();
+  const _FragmentMask(
+      {this.packets,
+      this.length,
+      this.delay,
+      final List<XrayInt32Range>? lengths,
+      final List<XrayInt32Range>? delays,
+      this.maxSplit})
+      : _lengths = lengths,
+        _delays = delays,
+        super._();
 
   @override
   final String? packets;
@@ -3140,6 +3185,26 @@ class _FragmentMask extends FragmentMask {
   final XrayInt32Range? length;
   @override
   final XrayInt32Range? delay;
+  final List<XrayInt32Range>? _lengths;
+  @override
+  List<XrayInt32Range>? get lengths {
+    final value = _lengths;
+    if (value == null) return null;
+    if (_lengths is EqualUnmodifiableListView) return _lengths;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<XrayInt32Range>? _delays;
+  @override
+  List<XrayInt32Range>? get delays {
+    final value = _delays;
+    if (value == null) return null;
+    if (_delays is EqualUnmodifiableListView) return _delays;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final XrayInt32Range? maxSplit;
 
@@ -3159,17 +3224,25 @@ class _FragmentMask extends FragmentMask {
             (identical(other.packets, packets) || other.packets == packets) &&
             (identical(other.length, length) || other.length == length) &&
             (identical(other.delay, delay) || other.delay == delay) &&
+            const DeepCollectionEquality().equals(other._lengths, _lengths) &&
+            const DeepCollectionEquality().equals(other._delays, _delays) &&
             (identical(other.maxSplit, maxSplit) ||
                 other.maxSplit == maxSplit));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, packets, length, delay, maxSplit);
+  int get hashCode => Object.hash(
+      runtimeType,
+      packets,
+      length,
+      delay,
+      const DeepCollectionEquality().hash(_lengths),
+      const DeepCollectionEquality().hash(_delays),
+      maxSplit);
 
   @override
   String toString() {
-    return 'FragmentMask(packets: $packets, length: $length, delay: $delay, maxSplit: $maxSplit)';
+    return 'FragmentMask(packets: $packets, length: $length, delay: $delay, lengths: $lengths, delays: $delays, maxSplit: $maxSplit)';
   }
 }
 
@@ -3185,6 +3258,8 @@ abstract mixin class _$FragmentMaskCopyWith<$Res>
       {String? packets,
       XrayInt32Range? length,
       XrayInt32Range? delay,
+      List<XrayInt32Range>? lengths,
+      List<XrayInt32Range>? delays,
       XrayInt32Range? maxSplit});
 
   @override
@@ -3211,6 +3286,8 @@ class __$FragmentMaskCopyWithImpl<$Res>
     Object? packets = freezed,
     Object? length = freezed,
     Object? delay = freezed,
+    Object? lengths = freezed,
+    Object? delays = freezed,
     Object? maxSplit = freezed,
   }) {
     return _then(_FragmentMask(
@@ -3226,6 +3303,14 @@ class __$FragmentMaskCopyWithImpl<$Res>
           ? _self.delay
           : delay // ignore: cast_nullable_to_non_nullable
               as XrayInt32Range?,
+      lengths: freezed == lengths
+          ? _self._lengths
+          : lengths // ignore: cast_nullable_to_non_nullable
+              as List<XrayInt32Range>?,
+      delays: freezed == delays
+          ? _self._delays
+          : delays // ignore: cast_nullable_to_non_nullable
+              as List<XrayInt32Range>?,
       maxSplit: freezed == maxSplit
           ? _self.maxSplit
           : maxSplit // ignore: cast_nullable_to_non_nullable
@@ -11749,8 +11834,10 @@ mixin _$SplitHTTPConfig {
   SplitHTTPPlacement? get xPaddingPlacement;
   SplitHTTPPaddingMethod? get xPaddingMethod;
   String? get uplinkHTTPMethod;
-  SplitHTTPPlacement? get sessionPlacement;
-  String? get sessionKey;
+  SplitHTTPPlacement? get sessionIDPlacement;
+  String? get sessionIDKey;
+  String? get sessionIDTable;
+  XrayInt32Range? get sessionIDLength;
   SplitHTTPPlacement? get seqPlacement;
   String? get seqKey;
   SplitHTTPPlacement? get uplinkDataPlacement;
@@ -11798,10 +11885,14 @@ mixin _$SplitHTTPConfig {
                 other.xPaddingMethod == xPaddingMethod) &&
             (identical(other.uplinkHTTPMethod, uplinkHTTPMethod) ||
                 other.uplinkHTTPMethod == uplinkHTTPMethod) &&
-            (identical(other.sessionPlacement, sessionPlacement) ||
-                other.sessionPlacement == sessionPlacement) &&
-            (identical(other.sessionKey, sessionKey) ||
-                other.sessionKey == sessionKey) &&
+            (identical(other.sessionIDPlacement, sessionIDPlacement) ||
+                other.sessionIDPlacement == sessionIDPlacement) &&
+            (identical(other.sessionIDKey, sessionIDKey) ||
+                other.sessionIDKey == sessionIDKey) &&
+            (identical(other.sessionIDTable, sessionIDTable) ||
+                other.sessionIDTable == sessionIDTable) &&
+            (identical(other.sessionIDLength, sessionIDLength) ||
+                other.sessionIDLength == sessionIDLength) &&
             (identical(other.seqPlacement, seqPlacement) ||
                 other.seqPlacement == seqPlacement) &&
             (identical(other.seqKey, seqKey) || other.seqKey == seqKey) &&
@@ -11845,8 +11936,10 @@ mixin _$SplitHTTPConfig {
         xPaddingPlacement,
         xPaddingMethod,
         uplinkHTTPMethod,
-        sessionPlacement,
-        sessionKey,
+        sessionIDPlacement,
+        sessionIDKey,
+        sessionIDTable,
+        sessionIDLength,
         seqPlacement,
         seqKey,
         uplinkDataPlacement,
@@ -11866,7 +11959,7 @@ mixin _$SplitHTTPConfig {
 
   @override
   String toString() {
-    return 'SplitHTTPConfig(host: $host, path: $path, mode: $mode, headers: $headers, xPaddingBytes: $xPaddingBytes, xPaddingObfsMode: $xPaddingObfsMode, xPaddingKey: $xPaddingKey, xPaddingHeader: $xPaddingHeader, xPaddingPlacement: $xPaddingPlacement, xPaddingMethod: $xPaddingMethod, uplinkHTTPMethod: $uplinkHTTPMethod, sessionPlacement: $sessionPlacement, sessionKey: $sessionKey, seqPlacement: $seqPlacement, seqKey: $seqKey, uplinkDataPlacement: $uplinkDataPlacement, uplinkDataKey: $uplinkDataKey, uplinkChunkSize: $uplinkChunkSize, noGRPCHeader: $noGRPCHeader, noSSEHeader: $noSSEHeader, scMaxEachPostBytes: $scMaxEachPostBytes, scMinPostsIntervalMs: $scMinPostsIntervalMs, scMaxBufferedPosts: $scMaxBufferedPosts, scStreamUpServerSecs: $scStreamUpServerSecs, serverMaxHeaderBytes: $serverMaxHeaderBytes, xmux: $xmux, downloadSettings: $downloadSettings, extra: $extra)';
+    return 'SplitHTTPConfig(host: $host, path: $path, mode: $mode, headers: $headers, xPaddingBytes: $xPaddingBytes, xPaddingObfsMode: $xPaddingObfsMode, xPaddingKey: $xPaddingKey, xPaddingHeader: $xPaddingHeader, xPaddingPlacement: $xPaddingPlacement, xPaddingMethod: $xPaddingMethod, uplinkHTTPMethod: $uplinkHTTPMethod, sessionIDPlacement: $sessionIDPlacement, sessionIDKey: $sessionIDKey, sessionIDTable: $sessionIDTable, sessionIDLength: $sessionIDLength, seqPlacement: $seqPlacement, seqKey: $seqKey, uplinkDataPlacement: $uplinkDataPlacement, uplinkDataKey: $uplinkDataKey, uplinkChunkSize: $uplinkChunkSize, noGRPCHeader: $noGRPCHeader, noSSEHeader: $noSSEHeader, scMaxEachPostBytes: $scMaxEachPostBytes, scMinPostsIntervalMs: $scMinPostsIntervalMs, scMaxBufferedPosts: $scMaxBufferedPosts, scStreamUpServerSecs: $scStreamUpServerSecs, serverMaxHeaderBytes: $serverMaxHeaderBytes, xmux: $xmux, downloadSettings: $downloadSettings, extra: $extra)';
   }
 }
 
@@ -11888,8 +11981,10 @@ abstract mixin class $SplitHTTPConfigCopyWith<$Res> {
       SplitHTTPPlacement? xPaddingPlacement,
       SplitHTTPPaddingMethod? xPaddingMethod,
       String? uplinkHTTPMethod,
-      SplitHTTPPlacement? sessionPlacement,
-      String? sessionKey,
+      SplitHTTPPlacement? sessionIDPlacement,
+      String? sessionIDKey,
+      String? sessionIDTable,
+      XrayInt32Range? sessionIDLength,
       SplitHTTPPlacement? seqPlacement,
       String? seqKey,
       SplitHTTPPlacement? uplinkDataPlacement,
@@ -11907,6 +12002,7 @@ abstract mixin class $SplitHTTPConfigCopyWith<$Res> {
       Map<String, dynamic>? extra});
 
   $XrayInt32RangeCopyWith<$Res>? get xPaddingBytes;
+  $XrayInt32RangeCopyWith<$Res>? get sessionIDLength;
   $XrayInt32RangeCopyWith<$Res>? get uplinkChunkSize;
   $XrayInt32RangeCopyWith<$Res>? get scMaxEachPostBytes;
   $XrayInt32RangeCopyWith<$Res>? get scMinPostsIntervalMs;
@@ -11939,8 +12035,10 @@ class _$SplitHTTPConfigCopyWithImpl<$Res>
     Object? xPaddingPlacement = freezed,
     Object? xPaddingMethod = freezed,
     Object? uplinkHTTPMethod = freezed,
-    Object? sessionPlacement = freezed,
-    Object? sessionKey = freezed,
+    Object? sessionIDPlacement = freezed,
+    Object? sessionIDKey = freezed,
+    Object? sessionIDTable = freezed,
+    Object? sessionIDLength = freezed,
     Object? seqPlacement = freezed,
     Object? seqKey = freezed,
     Object? uplinkDataPlacement = freezed,
@@ -12002,14 +12100,22 @@ class _$SplitHTTPConfigCopyWithImpl<$Res>
           ? _self.uplinkHTTPMethod
           : uplinkHTTPMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      sessionPlacement: freezed == sessionPlacement
-          ? _self.sessionPlacement
-          : sessionPlacement // ignore: cast_nullable_to_non_nullable
+      sessionIDPlacement: freezed == sessionIDPlacement
+          ? _self.sessionIDPlacement
+          : sessionIDPlacement // ignore: cast_nullable_to_non_nullable
               as SplitHTTPPlacement?,
-      sessionKey: freezed == sessionKey
-          ? _self.sessionKey
-          : sessionKey // ignore: cast_nullable_to_non_nullable
+      sessionIDKey: freezed == sessionIDKey
+          ? _self.sessionIDKey
+          : sessionIDKey // ignore: cast_nullable_to_non_nullable
               as String?,
+      sessionIDTable: freezed == sessionIDTable
+          ? _self.sessionIDTable
+          : sessionIDTable // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sessionIDLength: freezed == sessionIDLength
+          ? _self.sessionIDLength
+          : sessionIDLength // ignore: cast_nullable_to_non_nullable
+              as XrayInt32Range?,
       seqPlacement: freezed == seqPlacement
           ? _self.seqPlacement
           : seqPlacement // ignore: cast_nullable_to_non_nullable
@@ -12084,6 +12190,20 @@ class _$SplitHTTPConfigCopyWithImpl<$Res>
 
     return $XrayInt32RangeCopyWith<$Res>(_self.xPaddingBytes!, (value) {
       return _then(_self.copyWith(xPaddingBytes: value));
+    });
+  }
+
+  /// Create a copy of SplitHTTPConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XrayInt32RangeCopyWith<$Res>? get sessionIDLength {
+    if (_self.sessionIDLength == null) {
+      return null;
+    }
+
+    return $XrayInt32RangeCopyWith<$Res>(_self.sessionIDLength!, (value) {
+      return _then(_self.copyWith(sessionIDLength: value));
     });
   }
 
@@ -12277,8 +12397,10 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
             SplitHTTPPlacement? xPaddingPlacement,
             SplitHTTPPaddingMethod? xPaddingMethod,
             String? uplinkHTTPMethod,
-            SplitHTTPPlacement? sessionPlacement,
-            String? sessionKey,
+            SplitHTTPPlacement? sessionIDPlacement,
+            String? sessionIDKey,
+            String? sessionIDTable,
+            XrayInt32Range? sessionIDLength,
             SplitHTTPPlacement? seqPlacement,
             String? seqKey,
             SplitHTTPPlacement? uplinkDataPlacement,
@@ -12312,8 +12434,10 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
             _that.xPaddingPlacement,
             _that.xPaddingMethod,
             _that.uplinkHTTPMethod,
-            _that.sessionPlacement,
-            _that.sessionKey,
+            _that.sessionIDPlacement,
+            _that.sessionIDKey,
+            _that.sessionIDTable,
+            _that.sessionIDLength,
             _that.seqPlacement,
             _that.seqKey,
             _that.uplinkDataPlacement,
@@ -12361,8 +12485,10 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
             SplitHTTPPlacement? xPaddingPlacement,
             SplitHTTPPaddingMethod? xPaddingMethod,
             String? uplinkHTTPMethod,
-            SplitHTTPPlacement? sessionPlacement,
-            String? sessionKey,
+            SplitHTTPPlacement? sessionIDPlacement,
+            String? sessionIDKey,
+            String? sessionIDTable,
+            XrayInt32Range? sessionIDLength,
             SplitHTTPPlacement? seqPlacement,
             String? seqKey,
             SplitHTTPPlacement? uplinkDataPlacement,
@@ -12395,8 +12521,10 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
             _that.xPaddingPlacement,
             _that.xPaddingMethod,
             _that.uplinkHTTPMethod,
-            _that.sessionPlacement,
-            _that.sessionKey,
+            _that.sessionIDPlacement,
+            _that.sessionIDKey,
+            _that.sessionIDTable,
+            _that.sessionIDLength,
             _that.seqPlacement,
             _that.seqKey,
             _that.uplinkDataPlacement,
@@ -12443,8 +12571,10 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
             SplitHTTPPlacement? xPaddingPlacement,
             SplitHTTPPaddingMethod? xPaddingMethod,
             String? uplinkHTTPMethod,
-            SplitHTTPPlacement? sessionPlacement,
-            String? sessionKey,
+            SplitHTTPPlacement? sessionIDPlacement,
+            String? sessionIDKey,
+            String? sessionIDTable,
+            XrayInt32Range? sessionIDLength,
             SplitHTTPPlacement? seqPlacement,
             String? seqKey,
             SplitHTTPPlacement? uplinkDataPlacement,
@@ -12477,8 +12607,10 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
             _that.xPaddingPlacement,
             _that.xPaddingMethod,
             _that.uplinkHTTPMethod,
-            _that.sessionPlacement,
-            _that.sessionKey,
+            _that.sessionIDPlacement,
+            _that.sessionIDKey,
+            _that.sessionIDTable,
+            _that.sessionIDLength,
             _that.seqPlacement,
             _that.seqKey,
             _that.uplinkDataPlacement,
@@ -12515,8 +12647,10 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
       this.xPaddingPlacement,
       this.xPaddingMethod,
       this.uplinkHTTPMethod,
-      this.sessionPlacement,
-      this.sessionKey,
+      this.sessionIDPlacement,
+      this.sessionIDKey,
+      this.sessionIDTable,
+      this.sessionIDLength,
       this.seqPlacement,
       this.seqKey,
       this.uplinkDataPlacement,
@@ -12567,9 +12701,13 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
   @override
   final String? uplinkHTTPMethod;
   @override
-  final SplitHTTPPlacement? sessionPlacement;
+  final SplitHTTPPlacement? sessionIDPlacement;
   @override
-  final String? sessionKey;
+  final String? sessionIDKey;
+  @override
+  final String? sessionIDTable;
+  @override
+  final XrayInt32Range? sessionIDLength;
   @override
   final SplitHTTPPlacement? seqPlacement;
   @override
@@ -12639,10 +12777,14 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
                 other.xPaddingMethod == xPaddingMethod) &&
             (identical(other.uplinkHTTPMethod, uplinkHTTPMethod) ||
                 other.uplinkHTTPMethod == uplinkHTTPMethod) &&
-            (identical(other.sessionPlacement, sessionPlacement) ||
-                other.sessionPlacement == sessionPlacement) &&
-            (identical(other.sessionKey, sessionKey) ||
-                other.sessionKey == sessionKey) &&
+            (identical(other.sessionIDPlacement, sessionIDPlacement) ||
+                other.sessionIDPlacement == sessionIDPlacement) &&
+            (identical(other.sessionIDKey, sessionIDKey) ||
+                other.sessionIDKey == sessionIDKey) &&
+            (identical(other.sessionIDTable, sessionIDTable) ||
+                other.sessionIDTable == sessionIDTable) &&
+            (identical(other.sessionIDLength, sessionIDLength) ||
+                other.sessionIDLength == sessionIDLength) &&
             (identical(other.seqPlacement, seqPlacement) ||
                 other.seqPlacement == seqPlacement) &&
             (identical(other.seqKey, seqKey) || other.seqKey == seqKey) &&
@@ -12686,8 +12828,10 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
         xPaddingPlacement,
         xPaddingMethod,
         uplinkHTTPMethod,
-        sessionPlacement,
-        sessionKey,
+        sessionIDPlacement,
+        sessionIDKey,
+        sessionIDTable,
+        sessionIDLength,
         seqPlacement,
         seqKey,
         uplinkDataPlacement,
@@ -12707,7 +12851,7 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
 
   @override
   String toString() {
-    return 'SplitHTTPConfig(host: $host, path: $path, mode: $mode, headers: $headers, xPaddingBytes: $xPaddingBytes, xPaddingObfsMode: $xPaddingObfsMode, xPaddingKey: $xPaddingKey, xPaddingHeader: $xPaddingHeader, xPaddingPlacement: $xPaddingPlacement, xPaddingMethod: $xPaddingMethod, uplinkHTTPMethod: $uplinkHTTPMethod, sessionPlacement: $sessionPlacement, sessionKey: $sessionKey, seqPlacement: $seqPlacement, seqKey: $seqKey, uplinkDataPlacement: $uplinkDataPlacement, uplinkDataKey: $uplinkDataKey, uplinkChunkSize: $uplinkChunkSize, noGRPCHeader: $noGRPCHeader, noSSEHeader: $noSSEHeader, scMaxEachPostBytes: $scMaxEachPostBytes, scMinPostsIntervalMs: $scMinPostsIntervalMs, scMaxBufferedPosts: $scMaxBufferedPosts, scStreamUpServerSecs: $scStreamUpServerSecs, serverMaxHeaderBytes: $serverMaxHeaderBytes, xmux: $xmux, downloadSettings: $downloadSettings, extra: $extra)';
+    return 'SplitHTTPConfig(host: $host, path: $path, mode: $mode, headers: $headers, xPaddingBytes: $xPaddingBytes, xPaddingObfsMode: $xPaddingObfsMode, xPaddingKey: $xPaddingKey, xPaddingHeader: $xPaddingHeader, xPaddingPlacement: $xPaddingPlacement, xPaddingMethod: $xPaddingMethod, uplinkHTTPMethod: $uplinkHTTPMethod, sessionIDPlacement: $sessionIDPlacement, sessionIDKey: $sessionIDKey, sessionIDTable: $sessionIDTable, sessionIDLength: $sessionIDLength, seqPlacement: $seqPlacement, seqKey: $seqKey, uplinkDataPlacement: $uplinkDataPlacement, uplinkDataKey: $uplinkDataKey, uplinkChunkSize: $uplinkChunkSize, noGRPCHeader: $noGRPCHeader, noSSEHeader: $noSSEHeader, scMaxEachPostBytes: $scMaxEachPostBytes, scMinPostsIntervalMs: $scMinPostsIntervalMs, scMaxBufferedPosts: $scMaxBufferedPosts, scStreamUpServerSecs: $scStreamUpServerSecs, serverMaxHeaderBytes: $serverMaxHeaderBytes, xmux: $xmux, downloadSettings: $downloadSettings, extra: $extra)';
   }
 }
 
@@ -12731,8 +12875,10 @@ abstract mixin class _$SplitHTTPConfigCopyWith<$Res>
       SplitHTTPPlacement? xPaddingPlacement,
       SplitHTTPPaddingMethod? xPaddingMethod,
       String? uplinkHTTPMethod,
-      SplitHTTPPlacement? sessionPlacement,
-      String? sessionKey,
+      SplitHTTPPlacement? sessionIDPlacement,
+      String? sessionIDKey,
+      String? sessionIDTable,
+      XrayInt32Range? sessionIDLength,
       SplitHTTPPlacement? seqPlacement,
       String? seqKey,
       SplitHTTPPlacement? uplinkDataPlacement,
@@ -12751,6 +12897,8 @@ abstract mixin class _$SplitHTTPConfigCopyWith<$Res>
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get xPaddingBytes;
+  @override
+  $XrayInt32RangeCopyWith<$Res>? get sessionIDLength;
   @override
   $XrayInt32RangeCopyWith<$Res>? get uplinkChunkSize;
   @override
@@ -12789,8 +12937,10 @@ class __$SplitHTTPConfigCopyWithImpl<$Res>
     Object? xPaddingPlacement = freezed,
     Object? xPaddingMethod = freezed,
     Object? uplinkHTTPMethod = freezed,
-    Object? sessionPlacement = freezed,
-    Object? sessionKey = freezed,
+    Object? sessionIDPlacement = freezed,
+    Object? sessionIDKey = freezed,
+    Object? sessionIDTable = freezed,
+    Object? sessionIDLength = freezed,
     Object? seqPlacement = freezed,
     Object? seqKey = freezed,
     Object? uplinkDataPlacement = freezed,
@@ -12852,14 +13002,22 @@ class __$SplitHTTPConfigCopyWithImpl<$Res>
           ? _self.uplinkHTTPMethod
           : uplinkHTTPMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      sessionPlacement: freezed == sessionPlacement
-          ? _self.sessionPlacement
-          : sessionPlacement // ignore: cast_nullable_to_non_nullable
+      sessionIDPlacement: freezed == sessionIDPlacement
+          ? _self.sessionIDPlacement
+          : sessionIDPlacement // ignore: cast_nullable_to_non_nullable
               as SplitHTTPPlacement?,
-      sessionKey: freezed == sessionKey
-          ? _self.sessionKey
-          : sessionKey // ignore: cast_nullable_to_non_nullable
+      sessionIDKey: freezed == sessionIDKey
+          ? _self.sessionIDKey
+          : sessionIDKey // ignore: cast_nullable_to_non_nullable
               as String?,
+      sessionIDTable: freezed == sessionIDTable
+          ? _self.sessionIDTable
+          : sessionIDTable // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sessionIDLength: freezed == sessionIDLength
+          ? _self.sessionIDLength
+          : sessionIDLength // ignore: cast_nullable_to_non_nullable
+              as XrayInt32Range?,
       seqPlacement: freezed == seqPlacement
           ? _self.seqPlacement
           : seqPlacement // ignore: cast_nullable_to_non_nullable
@@ -12934,6 +13092,20 @@ class __$SplitHTTPConfigCopyWithImpl<$Res>
 
     return $XrayInt32RangeCopyWith<$Res>(_self.xPaddingBytes!, (value) {
       return _then(_self.copyWith(xPaddingBytes: value));
+    });
+  }
+
+  /// Create a copy of SplitHTTPConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XrayInt32RangeCopyWith<$Res>? get sessionIDLength {
+    if (_self.sessionIDLength == null) {
+      return null;
+    }
+
+    return $XrayInt32RangeCopyWith<$Res>(_self.sessionIDLength!, (value) {
+      return _then(_self.copyWith(sessionIDLength: value));
     });
   }
 
@@ -13026,6 +13198,7 @@ class __$SplitHTTPConfigCopyWithImpl<$Res>
 mixin _$StreamConfig {
   XrayAddress? get address;
   int? get port;
+  TransportProtocol? get method;
   TransportProtocol? get network;
   SecurityProtocol? get security;
   FinalMask? get finalmask;
@@ -13057,6 +13230,7 @@ mixin _$StreamConfig {
             other is StreamConfig &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.port, port) || other.port == port) &&
+            (identical(other.method, method) || other.method == method) &&
             (identical(other.network, network) || other.network == network) &&
             (identical(other.security, security) ||
                 other.security == security) &&
@@ -13092,6 +13266,7 @@ mixin _$StreamConfig {
       runtimeType,
       address,
       port,
+      method,
       network,
       security,
       finalmask,
@@ -13110,7 +13285,7 @@ mixin _$StreamConfig {
 
   @override
   String toString() {
-    return 'StreamConfig(address: $address, port: $port, network: $network, security: $security, finalmask: $finalmask, rawSettings: $rawSettings, tcpSettings: $tcpSettings, xhttpSettings: $xhttpSettings, kcpSettings: $kcpSettings, wsSettings: $wsSettings, httpupgradeSettings: $httpupgradeSettings, splithttpSettings: $splithttpSettings, grpcSettings: $grpcSettings, hysteriaSettings: $hysteriaSettings, tlsSettings: $tlsSettings, realitySettings: $realitySettings, sockopt: $sockopt)';
+    return 'StreamConfig(address: $address, port: $port, method: $method, network: $network, security: $security, finalmask: $finalmask, rawSettings: $rawSettings, tcpSettings: $tcpSettings, xhttpSettings: $xhttpSettings, kcpSettings: $kcpSettings, wsSettings: $wsSettings, httpupgradeSettings: $httpupgradeSettings, splithttpSettings: $splithttpSettings, grpcSettings: $grpcSettings, hysteriaSettings: $hysteriaSettings, tlsSettings: $tlsSettings, realitySettings: $realitySettings, sockopt: $sockopt)';
   }
 }
 
@@ -13123,6 +13298,7 @@ abstract mixin class $StreamConfigCopyWith<$Res> {
   $Res call(
       {XrayAddress? address,
       int? port,
+      TransportProtocol? method,
       TransportProtocol? network,
       SecurityProtocol? security,
       FinalMask? finalmask,
@@ -13168,6 +13344,7 @@ class _$StreamConfigCopyWithImpl<$Res> implements $StreamConfigCopyWith<$Res> {
   $Res call({
     Object? address = freezed,
     Object? port = freezed,
+    Object? method = freezed,
     Object? network = freezed,
     Object? security = freezed,
     Object? finalmask = freezed,
@@ -13193,6 +13370,10 @@ class _$StreamConfigCopyWithImpl<$Res> implements $StreamConfigCopyWith<$Res> {
           ? _self.port
           : port // ignore: cast_nullable_to_non_nullable
               as int?,
+      method: freezed == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as TransportProtocol?,
       network: freezed == network
           ? _self.network
           : network // ignore: cast_nullable_to_non_nullable
@@ -13536,6 +13717,7 @@ extension StreamConfigPatterns on StreamConfig {
     TResult Function(
             XrayAddress? address,
             int? port,
+            TransportProtocol? method,
             TransportProtocol? network,
             SecurityProtocol? security,
             FinalMask? finalmask,
@@ -13560,6 +13742,7 @@ extension StreamConfigPatterns on StreamConfig {
         return $default(
             _that.address,
             _that.port,
+            _that.method,
             _that.network,
             _that.security,
             _that.finalmask,
@@ -13598,6 +13781,7 @@ extension StreamConfigPatterns on StreamConfig {
     TResult Function(
             XrayAddress? address,
             int? port,
+            TransportProtocol? method,
             TransportProtocol? network,
             SecurityProtocol? security,
             FinalMask? finalmask,
@@ -13621,6 +13805,7 @@ extension StreamConfigPatterns on StreamConfig {
         return $default(
             _that.address,
             _that.port,
+            _that.method,
             _that.network,
             _that.security,
             _that.finalmask,
@@ -13658,6 +13843,7 @@ extension StreamConfigPatterns on StreamConfig {
     TResult? Function(
             XrayAddress? address,
             int? port,
+            TransportProtocol? method,
             TransportProtocol? network,
             SecurityProtocol? security,
             FinalMask? finalmask,
@@ -13681,6 +13867,7 @@ extension StreamConfigPatterns on StreamConfig {
         return $default(
             _that.address,
             _that.port,
+            _that.method,
             _that.network,
             _that.security,
             _that.finalmask,
@@ -13708,6 +13895,7 @@ class _StreamConfig extends StreamConfig {
   const _StreamConfig(
       {this.address,
       this.port,
+      this.method,
       this.network,
       this.security,
       this.finalmask,
@@ -13729,6 +13917,8 @@ class _StreamConfig extends StreamConfig {
   final XrayAddress? address;
   @override
   final int? port;
+  @override
+  final TransportProtocol? method;
   @override
   final TransportProtocol? network;
   @override
@@ -13775,6 +13965,7 @@ class _StreamConfig extends StreamConfig {
             other is _StreamConfig &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.port, port) || other.port == port) &&
+            (identical(other.method, method) || other.method == method) &&
             (identical(other.network, network) || other.network == network) &&
             (identical(other.security, security) ||
                 other.security == security) &&
@@ -13810,6 +14001,7 @@ class _StreamConfig extends StreamConfig {
       runtimeType,
       address,
       port,
+      method,
       network,
       security,
       finalmask,
@@ -13828,7 +14020,7 @@ class _StreamConfig extends StreamConfig {
 
   @override
   String toString() {
-    return 'StreamConfig(address: $address, port: $port, network: $network, security: $security, finalmask: $finalmask, rawSettings: $rawSettings, tcpSettings: $tcpSettings, xhttpSettings: $xhttpSettings, kcpSettings: $kcpSettings, wsSettings: $wsSettings, httpupgradeSettings: $httpupgradeSettings, splithttpSettings: $splithttpSettings, grpcSettings: $grpcSettings, hysteriaSettings: $hysteriaSettings, tlsSettings: $tlsSettings, realitySettings: $realitySettings, sockopt: $sockopt)';
+    return 'StreamConfig(address: $address, port: $port, method: $method, network: $network, security: $security, finalmask: $finalmask, rawSettings: $rawSettings, tcpSettings: $tcpSettings, xhttpSettings: $xhttpSettings, kcpSettings: $kcpSettings, wsSettings: $wsSettings, httpupgradeSettings: $httpupgradeSettings, splithttpSettings: $splithttpSettings, grpcSettings: $grpcSettings, hysteriaSettings: $hysteriaSettings, tlsSettings: $tlsSettings, realitySettings: $realitySettings, sockopt: $sockopt)';
   }
 }
 
@@ -13843,6 +14035,7 @@ abstract mixin class _$StreamConfigCopyWith<$Res>
   $Res call(
       {XrayAddress? address,
       int? port,
+      TransportProtocol? method,
       TransportProtocol? network,
       SecurityProtocol? security,
       FinalMask? finalmask,
@@ -13902,6 +14095,7 @@ class __$StreamConfigCopyWithImpl<$Res>
   $Res call({
     Object? address = freezed,
     Object? port = freezed,
+    Object? method = freezed,
     Object? network = freezed,
     Object? security = freezed,
     Object? finalmask = freezed,
@@ -13927,6 +14121,10 @@ class __$StreamConfigCopyWithImpl<$Res>
           ? _self.port
           : port // ignore: cast_nullable_to_non_nullable
               as int?,
+      method: freezed == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as TransportProtocol?,
       network: freezed == network
           ? _self.network
           : network // ignore: cast_nullable_to_non_nullable
@@ -16130,10 +16328,8 @@ mixin _$TLSConfig {
   String? get masterKeyLog;
   String? get pinnedPeerCertSha256;
   String? get verifyPeerCertByName;
-  List<String>? get verifyPeerCertInNames;
   String? get echServerKeys;
   String? get echConfigList;
-  ECHForceQuery? get echForceQuery;
   @JsonKey(name: 'echSockopt')
   SocketConfig? get echSocketSettings;
 
@@ -16178,46 +16374,39 @@ mixin _$TLSConfig {
                 other.pinnedPeerCertSha256 == pinnedPeerCertSha256) &&
             (identical(other.verifyPeerCertByName, verifyPeerCertByName) ||
                 other.verifyPeerCertByName == verifyPeerCertByName) &&
-            const DeepCollectionEquality()
-                .equals(other.verifyPeerCertInNames, verifyPeerCertInNames) &&
             (identical(other.echServerKeys, echServerKeys) ||
                 other.echServerKeys == echServerKeys) &&
             (identical(other.echConfigList, echConfigList) ||
                 other.echConfigList == echConfigList) &&
-            (identical(other.echForceQuery, echForceQuery) ||
-                other.echForceQuery == echForceQuery) &&
             (identical(other.echSocketSettings, echSocketSettings) ||
                 other.echSocketSettings == echSocketSettings));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        allowInsecure,
-        const DeepCollectionEquality().hash(certs),
-        serverName,
-        alpn,
-        enableSessionResumption,
-        disableSystemRoot,
-        minVersion,
-        maxVersion,
-        cipherSuites,
-        fingerprint,
-        rejectUnknownSNI,
-        curvePreferences,
-        masterKeyLog,
-        pinnedPeerCertSha256,
-        verifyPeerCertByName,
-        const DeepCollectionEquality().hash(verifyPeerCertInNames),
-        echServerKeys,
-        echConfigList,
-        echForceQuery,
-        echSocketSettings
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      allowInsecure,
+      const DeepCollectionEquality().hash(certs),
+      serverName,
+      alpn,
+      enableSessionResumption,
+      disableSystemRoot,
+      minVersion,
+      maxVersion,
+      cipherSuites,
+      fingerprint,
+      rejectUnknownSNI,
+      curvePreferences,
+      masterKeyLog,
+      pinnedPeerCertSha256,
+      verifyPeerCertByName,
+      echServerKeys,
+      echConfigList,
+      echSocketSettings);
 
   @override
   String toString() {
-    return 'TLSConfig(allowInsecure: $allowInsecure, certs: $certs, serverName: $serverName, alpn: $alpn, enableSessionResumption: $enableSessionResumption, disableSystemRoot: $disableSystemRoot, minVersion: $minVersion, maxVersion: $maxVersion, cipherSuites: $cipherSuites, fingerprint: $fingerprint, rejectUnknownSNI: $rejectUnknownSNI, curvePreferences: $curvePreferences, masterKeyLog: $masterKeyLog, pinnedPeerCertSha256: $pinnedPeerCertSha256, verifyPeerCertByName: $verifyPeerCertByName, verifyPeerCertInNames: $verifyPeerCertInNames, echServerKeys: $echServerKeys, echConfigList: $echConfigList, echForceQuery: $echForceQuery, echSocketSettings: $echSocketSettings)';
+    return 'TLSConfig(allowInsecure: $allowInsecure, certs: $certs, serverName: $serverName, alpn: $alpn, enableSessionResumption: $enableSessionResumption, disableSystemRoot: $disableSystemRoot, minVersion: $minVersion, maxVersion: $maxVersion, cipherSuites: $cipherSuites, fingerprint: $fingerprint, rejectUnknownSNI: $rejectUnknownSNI, curvePreferences: $curvePreferences, masterKeyLog: $masterKeyLog, pinnedPeerCertSha256: $pinnedPeerCertSha256, verifyPeerCertByName: $verifyPeerCertByName, echServerKeys: $echServerKeys, echConfigList: $echConfigList, echSocketSettings: $echSocketSettings)';
   }
 }
 
@@ -16242,10 +16431,8 @@ abstract mixin class $TLSConfigCopyWith<$Res> {
       String? masterKeyLog,
       String? pinnedPeerCertSha256,
       String? verifyPeerCertByName,
-      List<String>? verifyPeerCertInNames,
       String? echServerKeys,
       String? echConfigList,
-      ECHForceQuery? echForceQuery,
       @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings});
 
   $SocketConfigCopyWith<$Res>? get echSocketSettings;
@@ -16278,10 +16465,8 @@ class _$TLSConfigCopyWithImpl<$Res> implements $TLSConfigCopyWith<$Res> {
     Object? masterKeyLog = freezed,
     Object? pinnedPeerCertSha256 = freezed,
     Object? verifyPeerCertByName = freezed,
-    Object? verifyPeerCertInNames = freezed,
     Object? echServerKeys = freezed,
     Object? echConfigList = freezed,
-    Object? echForceQuery = freezed,
     Object? echSocketSettings = freezed,
   }) {
     return _then(_self.copyWith(
@@ -16345,10 +16530,6 @@ class _$TLSConfigCopyWithImpl<$Res> implements $TLSConfigCopyWith<$Res> {
           ? _self.verifyPeerCertByName
           : verifyPeerCertByName // ignore: cast_nullable_to_non_nullable
               as String?,
-      verifyPeerCertInNames: freezed == verifyPeerCertInNames
-          ? _self.verifyPeerCertInNames
-          : verifyPeerCertInNames // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       echServerKeys: freezed == echServerKeys
           ? _self.echServerKeys
           : echServerKeys // ignore: cast_nullable_to_non_nullable
@@ -16357,10 +16538,6 @@ class _$TLSConfigCopyWithImpl<$Res> implements $TLSConfigCopyWith<$Res> {
           ? _self.echConfigList
           : echConfigList // ignore: cast_nullable_to_non_nullable
               as String?,
-      echForceQuery: freezed == echForceQuery
-          ? _self.echForceQuery
-          : echForceQuery // ignore: cast_nullable_to_non_nullable
-              as ECHForceQuery?,
       echSocketSettings: freezed == echSocketSettings
           ? _self.echSocketSettings
           : echSocketSettings // ignore: cast_nullable_to_non_nullable
@@ -16492,10 +16669,8 @@ extension TLSConfigPatterns on TLSConfig {
             String? masterKeyLog,
             String? pinnedPeerCertSha256,
             String? verifyPeerCertByName,
-            List<String>? verifyPeerCertInNames,
             String? echServerKeys,
             String? echConfigList,
-            ECHForceQuery? echForceQuery,
             @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings)?
         $default, {
     required TResult orElse(),
@@ -16519,10 +16694,8 @@ extension TLSConfigPatterns on TLSConfig {
             _that.masterKeyLog,
             _that.pinnedPeerCertSha256,
             _that.verifyPeerCertByName,
-            _that.verifyPeerCertInNames,
             _that.echServerKeys,
             _that.echConfigList,
-            _that.echForceQuery,
             _that.echSocketSettings);
       case _:
         return orElse();
@@ -16560,10 +16733,8 @@ extension TLSConfigPatterns on TLSConfig {
             String? masterKeyLog,
             String? pinnedPeerCertSha256,
             String? verifyPeerCertByName,
-            List<String>? verifyPeerCertInNames,
             String? echServerKeys,
             String? echConfigList,
-            ECHForceQuery? echForceQuery,
             @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings)
         $default,
   ) {
@@ -16586,10 +16757,8 @@ extension TLSConfigPatterns on TLSConfig {
             _that.masterKeyLog,
             _that.pinnedPeerCertSha256,
             _that.verifyPeerCertByName,
-            _that.verifyPeerCertInNames,
             _that.echServerKeys,
             _that.echConfigList,
-            _that.echForceQuery,
             _that.echSocketSettings);
       case _:
         throw StateError('Unexpected subclass');
@@ -16626,10 +16795,8 @@ extension TLSConfigPatterns on TLSConfig {
             String? masterKeyLog,
             String? pinnedPeerCertSha256,
             String? verifyPeerCertByName,
-            List<String>? verifyPeerCertInNames,
             String? echServerKeys,
             String? echConfigList,
-            ECHForceQuery? echForceQuery,
             @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings)?
         $default,
   ) {
@@ -16652,10 +16819,8 @@ extension TLSConfigPatterns on TLSConfig {
             _that.masterKeyLog,
             _that.pinnedPeerCertSha256,
             _that.verifyPeerCertByName,
-            _that.verifyPeerCertInNames,
             _that.echServerKeys,
             _that.echConfigList,
-            _that.echForceQuery,
             _that.echSocketSettings);
       case _:
         return null;
@@ -16682,13 +16847,10 @@ class _TLSConfig extends TLSConfig {
       this.masterKeyLog,
       this.pinnedPeerCertSha256,
       this.verifyPeerCertByName,
-      final List<String>? verifyPeerCertInNames,
       this.echServerKeys,
       this.echConfigList,
-      this.echForceQuery,
       @JsonKey(name: 'echSockopt') this.echSocketSettings})
       : _certs = certs,
-        _verifyPeerCertInNames = verifyPeerCertInNames,
         super._();
 
   @override
@@ -16732,23 +16894,10 @@ class _TLSConfig extends TLSConfig {
   final String? pinnedPeerCertSha256;
   @override
   final String? verifyPeerCertByName;
-  final List<String>? _verifyPeerCertInNames;
-  @override
-  List<String>? get verifyPeerCertInNames {
-    final value = _verifyPeerCertInNames;
-    if (value == null) return null;
-    if (_verifyPeerCertInNames is EqualUnmodifiableListView)
-      return _verifyPeerCertInNames;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   @override
   final String? echServerKeys;
   @override
   final String? echConfigList;
-  @override
-  final ECHForceQuery? echForceQuery;
   @override
   @JsonKey(name: 'echSockopt')
   final SocketConfig? echSocketSettings;
@@ -16795,46 +16944,39 @@ class _TLSConfig extends TLSConfig {
                 other.pinnedPeerCertSha256 == pinnedPeerCertSha256) &&
             (identical(other.verifyPeerCertByName, verifyPeerCertByName) ||
                 other.verifyPeerCertByName == verifyPeerCertByName) &&
-            const DeepCollectionEquality()
-                .equals(other._verifyPeerCertInNames, _verifyPeerCertInNames) &&
             (identical(other.echServerKeys, echServerKeys) ||
                 other.echServerKeys == echServerKeys) &&
             (identical(other.echConfigList, echConfigList) ||
                 other.echConfigList == echConfigList) &&
-            (identical(other.echForceQuery, echForceQuery) ||
-                other.echForceQuery == echForceQuery) &&
             (identical(other.echSocketSettings, echSocketSettings) ||
                 other.echSocketSettings == echSocketSettings));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        allowInsecure,
-        const DeepCollectionEquality().hash(_certs),
-        serverName,
-        alpn,
-        enableSessionResumption,
-        disableSystemRoot,
-        minVersion,
-        maxVersion,
-        cipherSuites,
-        fingerprint,
-        rejectUnknownSNI,
-        curvePreferences,
-        masterKeyLog,
-        pinnedPeerCertSha256,
-        verifyPeerCertByName,
-        const DeepCollectionEquality().hash(_verifyPeerCertInNames),
-        echServerKeys,
-        echConfigList,
-        echForceQuery,
-        echSocketSettings
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      allowInsecure,
+      const DeepCollectionEquality().hash(_certs),
+      serverName,
+      alpn,
+      enableSessionResumption,
+      disableSystemRoot,
+      minVersion,
+      maxVersion,
+      cipherSuites,
+      fingerprint,
+      rejectUnknownSNI,
+      curvePreferences,
+      masterKeyLog,
+      pinnedPeerCertSha256,
+      verifyPeerCertByName,
+      echServerKeys,
+      echConfigList,
+      echSocketSettings);
 
   @override
   String toString() {
-    return 'TLSConfig(allowInsecure: $allowInsecure, certs: $certs, serverName: $serverName, alpn: $alpn, enableSessionResumption: $enableSessionResumption, disableSystemRoot: $disableSystemRoot, minVersion: $minVersion, maxVersion: $maxVersion, cipherSuites: $cipherSuites, fingerprint: $fingerprint, rejectUnknownSNI: $rejectUnknownSNI, curvePreferences: $curvePreferences, masterKeyLog: $masterKeyLog, pinnedPeerCertSha256: $pinnedPeerCertSha256, verifyPeerCertByName: $verifyPeerCertByName, verifyPeerCertInNames: $verifyPeerCertInNames, echServerKeys: $echServerKeys, echConfigList: $echConfigList, echForceQuery: $echForceQuery, echSocketSettings: $echSocketSettings)';
+    return 'TLSConfig(allowInsecure: $allowInsecure, certs: $certs, serverName: $serverName, alpn: $alpn, enableSessionResumption: $enableSessionResumption, disableSystemRoot: $disableSystemRoot, minVersion: $minVersion, maxVersion: $maxVersion, cipherSuites: $cipherSuites, fingerprint: $fingerprint, rejectUnknownSNI: $rejectUnknownSNI, curvePreferences: $curvePreferences, masterKeyLog: $masterKeyLog, pinnedPeerCertSha256: $pinnedPeerCertSha256, verifyPeerCertByName: $verifyPeerCertByName, echServerKeys: $echServerKeys, echConfigList: $echConfigList, echSocketSettings: $echSocketSettings)';
   }
 }
 
@@ -16862,10 +17004,8 @@ abstract mixin class _$TLSConfigCopyWith<$Res>
       String? masterKeyLog,
       String? pinnedPeerCertSha256,
       String? verifyPeerCertByName,
-      List<String>? verifyPeerCertInNames,
       String? echServerKeys,
       String? echConfigList,
-      ECHForceQuery? echForceQuery,
       @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings});
 
   @override
@@ -16899,10 +17039,8 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
     Object? masterKeyLog = freezed,
     Object? pinnedPeerCertSha256 = freezed,
     Object? verifyPeerCertByName = freezed,
-    Object? verifyPeerCertInNames = freezed,
     Object? echServerKeys = freezed,
     Object? echConfigList = freezed,
-    Object? echForceQuery = freezed,
     Object? echSocketSettings = freezed,
   }) {
     return _then(_TLSConfig(
@@ -16966,10 +17104,6 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
           ? _self.verifyPeerCertByName
           : verifyPeerCertByName // ignore: cast_nullable_to_non_nullable
               as String?,
-      verifyPeerCertInNames: freezed == verifyPeerCertInNames
-          ? _self._verifyPeerCertInNames
-          : verifyPeerCertInNames // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       echServerKeys: freezed == echServerKeys
           ? _self.echServerKeys
           : echServerKeys // ignore: cast_nullable_to_non_nullable
@@ -16978,10 +17112,6 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
           ? _self.echConfigList
           : echConfigList // ignore: cast_nullable_to_non_nullable
               as String?,
-      echForceQuery: freezed == echForceQuery
-          ? _self.echForceQuery
-          : echForceQuery // ignore: cast_nullable_to_non_nullable
-              as ECHForceQuery?,
       echSocketSettings: freezed == echSocketSettings
           ? _self.echSocketSettings
           : echSocketSettings // ignore: cast_nullable_to_non_nullable
@@ -18212,6 +18342,339 @@ class __$WebSocketConfigCopyWithImpl<$Res>
           ? _self.heartbeatPeriod
           : heartbeatPeriod // ignore: cast_nullable_to_non_nullable
               as int?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$XMC {
+  String? get hostname;
+  List<String>? get usernames;
+  String? get password;
+
+  /// Create a copy of XMC
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XMCCopyWith<XMC> get copyWith =>
+      _$XMCCopyWithImpl<XMC>(this as XMC, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XMC &&
+            (identical(other.hostname, hostname) ||
+                other.hostname == hostname) &&
+            const DeepCollectionEquality().equals(other.usernames, usernames) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, hostname,
+      const DeepCollectionEquality().hash(usernames), password);
+
+  @override
+  String toString() {
+    return 'XMC(hostname: $hostname, usernames: $usernames, password: $password)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XMCCopyWith<$Res> {
+  factory $XMCCopyWith(XMC value, $Res Function(XMC) _then) = _$XMCCopyWithImpl;
+  @useResult
+  $Res call({String? hostname, List<String>? usernames, String? password});
+}
+
+/// @nodoc
+class _$XMCCopyWithImpl<$Res> implements $XMCCopyWith<$Res> {
+  _$XMCCopyWithImpl(this._self, this._then);
+
+  final XMC _self;
+  final $Res Function(XMC) _then;
+
+  /// Create a copy of XMC
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hostname = freezed,
+    Object? usernames = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_self.copyWith(
+      hostname: freezed == hostname
+          ? _self.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      usernames: freezed == usernames
+          ? _self.usernames
+          : usernames // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      password: freezed == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [XMC].
+extension XMCPatterns on XMC {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XMC value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XMC() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XMC value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMC():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XMC value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMC() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? hostname, List<String>? usernames, String? password)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XMC() when $default != null:
+        return $default(_that.hostname, _that.usernames, _that.password);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? hostname, List<String>? usernames, String? password)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMC():
+        return $default(_that.hostname, _that.usernames, _that.password);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? hostname, List<String>? usernames, String? password)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMC() when $default != null:
+        return $default(_that.hostname, _that.usernames, _that.password);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XMC extends XMC {
+  const _XMC({this.hostname, final List<String>? usernames, this.password})
+      : _usernames = usernames,
+        super._();
+
+  @override
+  final String? hostname;
+  final List<String>? _usernames;
+  @override
+  List<String>? get usernames {
+    final value = _usernames;
+    if (value == null) return null;
+    if (_usernames is EqualUnmodifiableListView) return _usernames;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? password;
+
+  /// Create a copy of XMC
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XMCCopyWith<_XMC> get copyWith =>
+      __$XMCCopyWithImpl<_XMC>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XMC &&
+            (identical(other.hostname, hostname) ||
+                other.hostname == hostname) &&
+            const DeepCollectionEquality()
+                .equals(other._usernames, _usernames) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, hostname,
+      const DeepCollectionEquality().hash(_usernames), password);
+
+  @override
+  String toString() {
+    return 'XMC(hostname: $hostname, usernames: $usernames, password: $password)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XMCCopyWith<$Res> implements $XMCCopyWith<$Res> {
+  factory _$XMCCopyWith(_XMC value, $Res Function(_XMC) _then) =
+      __$XMCCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? hostname, List<String>? usernames, String? password});
+}
+
+/// @nodoc
+class __$XMCCopyWithImpl<$Res> implements _$XMCCopyWith<$Res> {
+  __$XMCCopyWithImpl(this._self, this._then);
+
+  final _XMC _self;
+  final $Res Function(_XMC) _then;
+
+  /// Create a copy of XMC
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? hostname = freezed,
+    Object? usernames = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_XMC(
+      hostname: freezed == hostname
+          ? _self.hostname
+          : hostname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      usernames: freezed == usernames
+          ? _self._usernames
+          : usernames // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      password: freezed == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }

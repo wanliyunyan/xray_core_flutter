@@ -36,6 +36,7 @@ FinalMaskSettings _parseFinalMaskSettings(
     'mkcp-legacy' => MkcpLegacy.fromJson(json),
     'salamander' => Salamander.fromJson(json),
     'sudoku' => Sudoku.fromJson(json),
+    'xmc' => XMC.fromJson(json),
     'xdns' => Xdns.fromJson(json),
     'xicmp' => Xicmp.fromJson(json),
     'realm' => Realm.fromJson(json),

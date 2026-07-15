@@ -23,7 +23,7 @@ When Xray updates `infra/conf`:
 Run the parity check:
 
 ```sh
-dart run tool/check_xray_conf_parity.dart /path/to/Xray-core/infra/conf
+dart run tool/check_xray_conf_parity.dart ../Xray-core/infra/conf
 ```
 
 Then verify:

@@ -9,8 +9,6 @@ abstract class ShadowsocksServerTarget with _$ShadowsocksServerTarget {
     String? email,
     @JsonKey(name: 'method') String? cipher,
     required String password,
-    bool? uot,
-    int? uotVersion,
   }) = _ShadowsocksServerTarget;
 
   factory ShadowsocksServerTarget.fromJson(Object? json) {
@@ -22,21 +20,17 @@ abstract class ShadowsocksServerTarget with _$ShadowsocksServerTarget {
       email: map['email'] as String?,
       cipher: map['method'] as String?,
       password: map['password'] as String,
-      uot: map['uot'] as bool?,
-      uotVersion: map['uotVersion'] as int?,
     );
   }
 
   const ShadowsocksServerTarget._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-    'address': address.toJson(),
-    'port': port,
-    'level': level,
-    'email': email,
-    'method': cipher,
-    'password': password,
-    'uot': uot,
-    'uotVersion': uotVersion,
-  });
+        'address': address.toJson(),
+        'port': port,
+        'level': level,
+        'email': email,
+        'method': cipher,
+        'password': password,
+      });
 }

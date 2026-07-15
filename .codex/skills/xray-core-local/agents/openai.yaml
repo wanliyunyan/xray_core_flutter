@@ -1,0 +1,4 @@
+interface:
+  display_name: "Xray Core Local"
+  short_description: "使用本项目同级的 Xray-core checkout"
+  default_prompt: "使用 $xray-core-local 对照 ../Xray-core 检查这个 Flutter 包。"

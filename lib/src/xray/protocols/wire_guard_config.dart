@@ -10,7 +10,6 @@ abstract class WireGuardConfig
     List<String>? address,
     List<WireGuardPeerConfig>? peers,
     @JsonKey(name: 'mtu') int? mtu,
-    @JsonKey(name: 'workers') int? numWorkers,
     List<int>? reserved,
     XrayTargetStrategy? domainStrategy,
   }) = _WireGuardConfig;
@@ -25,7 +24,6 @@ abstract class WireGuardConfig
           ? null
           : asJsonList(map['peers'], WireGuardPeerConfig.fromJson),
       mtu: map['mtu'] as int?,
-      numWorkers: map['workers'] as int?,
       reserved: (map['reserved'] as List?)?.cast<int>(),
       domainStrategy: map['domainStrategy'] == null
           ? null
@@ -37,13 +35,12 @@ abstract class WireGuardConfig
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'noKernelTun': noKernelTun,
-    'secretKey': secretKey,
-    'address': address,
-    'peers': peers?.map((item) => item.toJson()).toList(),
-    'mtu': mtu,
-    'workers': numWorkers,
-    'reserved': reserved,
-    'domainStrategy': domainStrategy?.toJson(),
-  });
+        'noKernelTun': noKernelTun,
+        'secretKey': secretKey,
+        'address': address,
+        'peers': peers?.map((item) => item.toJson()).toList(),
+        'mtu': mtu,
+        'reserved': reserved,
+        'domainStrategy': domainStrategy?.toJson(),
+      });
 }

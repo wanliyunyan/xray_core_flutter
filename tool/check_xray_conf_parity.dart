@@ -1,8 +1,7 @@
 import 'dart:io';
 
 void main(List<String> args) {
-  final goConfPath =
-      args.isEmpty ? '/Volumes/ext/xray/Xray-core/infra/conf' : args.first;
+  final goConfPath = args.isEmpty ? '../Xray-core/infra/conf' : args.first;
   final goConf = Directory(goConfPath);
   final dartRoot = Directory('lib/src/xray');
 

@@ -8,6 +8,8 @@ abstract class WireGuardPeerConfig with _$WireGuardPeerConfig {
     String? endpoint,
     int? keepAlive,
     List<String>? allowedIPs,
+    int? level,
+    String? email,
   }) = _WireGuardPeerConfig;
 
   factory WireGuardPeerConfig.fromJson(Object? json) {
@@ -18,16 +20,20 @@ abstract class WireGuardPeerConfig with _$WireGuardPeerConfig {
       endpoint: map['endpoint'] as String?,
       keepAlive: map['keepAlive'] as int?,
       allowedIPs: (map['allowedIPs'] as List?)?.cast<String>(),
+      level: map['level'] as int?,
+      email: map['email'] as String?,
     );
   }
 
   const WireGuardPeerConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-    'publicKey': publicKey,
-    'preSharedKey': preSharedKey,
-    'endpoint': endpoint,
-    'keepAlive': keepAlive,
-    'allowedIPs': allowedIPs,
-  });
+        'publicKey': publicKey,
+        'preSharedKey': preSharedKey,
+        'endpoint': endpoint,
+        'keepAlive': keepAlive,
+        'allowedIPs': allowedIPs,
+        'level': level,
+        'email': email,
+      });
 }

@@ -14,8 +14,10 @@ abstract class SplitHTTPConfig with _$SplitHTTPConfig {
     SplitHTTPPlacement? xPaddingPlacement,
     SplitHTTPPaddingMethod? xPaddingMethod,
     String? uplinkHTTPMethod,
-    SplitHTTPPlacement? sessionPlacement,
-    String? sessionKey,
+    SplitHTTPPlacement? sessionIDPlacement,
+    String? sessionIDKey,
+    String? sessionIDTable,
+    XrayInt32Range? sessionIDLength,
     SplitHTTPPlacement? seqPlacement,
     String? seqKey,
     SplitHTTPPlacement? uplinkDataPlacement,
@@ -53,10 +55,14 @@ abstract class SplitHTTPConfig with _$SplitHTTPConfig {
           ? null
           : SplitHTTPPaddingMethod.fromJson(map['xPaddingMethod']),
       uplinkHTTPMethod: map['uplinkHTTPMethod'] as String?,
-      sessionPlacement: map['sessionPlacement'] == null
+      sessionIDPlacement: map['sessionIDPlacement'] == null
           ? null
-          : SplitHTTPPlacement.fromJson(map['sessionPlacement']),
-      sessionKey: map['sessionKey'] as String?,
+          : SplitHTTPPlacement.fromJson(map['sessionIDPlacement']),
+      sessionIDKey: map['sessionIDKey'] as String?,
+      sessionIDTable: map['sessionIDTable'] as String?,
+      sessionIDLength: map['sessionIDLength'] == null
+          ? null
+          : XrayInt32Range.fromJson(map['sessionIDLength']),
       seqPlacement: map['seqPlacement'] == null
           ? null
           : SplitHTTPPlacement.fromJson(map['seqPlacement']),
@@ -104,8 +110,10 @@ abstract class SplitHTTPConfig with _$SplitHTTPConfig {
       'xPaddingPlacement': xPaddingPlacement?.toJson(),
       'xPaddingMethod': xPaddingMethod?.toJson(),
       'uplinkHTTPMethod': uplinkHTTPMethod,
-      'sessionPlacement': sessionPlacement?.toJson(),
-      'sessionKey': sessionKey,
+      'sessionIDPlacement': sessionIDPlacement?.toJson(),
+      'sessionIDKey': sessionIDKey,
+      'sessionIDTable': sessionIDTable,
+      'sessionIDLength': sessionIDLength?.toJson(),
       'seqPlacement': seqPlacement?.toJson(),
       'seqKey': seqKey,
       'uplinkDataPlacement': uplinkDataPlacement?.toJson(),

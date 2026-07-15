@@ -141,7 +141,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _wireguardEndpointController =
       TextEditingController(text: 'example.com:51820');
   final _wireguardMtuController = TextEditingController(text: '1420');
-  final _wireguardWorkersController = TextEditingController();
   final _wireguardReservedController = TextEditingController();
   final _wireguardPreSharedKeyController = TextEditingController();
   final _wireguardKeepAliveController = TextEditingController(text: '25');
@@ -182,7 +181,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _vmessDefaultLevelController = TextEditingController();
   final _shadowsocksCipherController =
       TextEditingController(text: 'aes-128-gcm');
-  final _shadowsocksUotVersionController = TextEditingController();
   final _httpHeadersController = TextEditingController();
   final _pathController = TextEditingController(text: '/ws');
   final _httpUpgradePathController = TextEditingController(text: '/upgrade');
@@ -298,7 +296,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _tlsMasterKeyLogController = TextEditingController();
   final _tlsPinnedPeerCertController = TextEditingController();
   final _tlsVerifyPeerCertByNameController = TextEditingController();
-  final _tlsVerifyPeerCertInNamesController = TextEditingController();
   final _tlsEchServerKeysController = TextEditingController();
   final _tlsEchConfigListController = TextEditingController();
   final _tlsEchSockoptController = TextEditingController(text: '{\n}');
@@ -436,7 +433,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _splitHttpXPaddingBytesController = TextEditingController();
   final _splitHttpXPaddingKeyController = TextEditingController();
   final _splitHttpXPaddingHeaderController = TextEditingController();
-  final _splitHttpSessionKeyController = TextEditingController();
+  final _splitHttpSessionIDKeyController = TextEditingController();
+  final _splitHttpSessionIDTableController = TextEditingController();
+  final _splitHttpSessionIDLengthController = TextEditingController();
   final _splitHttpSeqKeyController = TextEditingController();
   final _splitHttpUplinkDataKeyController = TextEditingController();
   final _splitHttpUplinkChunkSizeController = TextEditingController();
@@ -485,14 +484,13 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   DNSOutboundRuleAction _dnsOutboundRuleAction = DNSOutboundRuleAction.direct;
   SplitHTTPMode _splitHttpMode = SplitHTTPMode.auto;
   SplitHTTPPlacement _splitHttpXPaddingPlacement = SplitHTTPPlacement.auto;
-  SplitHTTPPlacement _splitHttpSessionPlacement = SplitHTTPPlacement.auto;
+  SplitHTTPPlacement _splitHttpSessionIDPlacement = SplitHTTPPlacement.auto;
   SplitHTTPPlacement _splitHttpSeqPlacement = SplitHTTPPlacement.auto;
   SplitHTTPPlacement _splitHttpUplinkDataPlacement = SplitHTTPPlacement.auto;
   SplitHTTPPaddingMethod _splitHttpXPaddingMethod =
       SplitHTTPPaddingMethod.repeatX;
   TProxyMode _sockoptTproxy = TProxyMode.off;
   AddressPortStrategy _sockoptAddressPortStrategy = AddressPortStrategy.none;
-  ECHForceQuery _tlsEchForceQuery = ECHForceQuery.none;
   XrayFallbackType _vlessFallbackType = XrayFallbackType.tcp;
   TLSCertificateUsage _tlsCertUsage = TLSCertificateUsage.encipherment;
   BalancingStrategyType _balancerStrategy = BalancingStrategyType.random;
@@ -501,7 +499,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _httpInboundTransparent = false;
   bool _shadowsocksTcp = true;
   bool _shadowsocksUdp = true;
-  bool _shadowsocksUot = false;
   bool _dokodemoFollowRedirect = false;
   bool _dokodemoEnablePortMap = false;
   bool _dokodemoTcp = true;
@@ -733,7 +730,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _wireguardAllowedIpsController.dispose();
     _wireguardEndpointController.dispose();
     _wireguardMtuController.dispose();
-    _wireguardWorkersController.dispose();
     _wireguardReservedController.dispose();
     _wireguardPreSharedKeyController.dispose();
     _wireguardKeepAliveController.dispose();
@@ -769,7 +765,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _vmessExperimentsController.dispose();
     _vmessDefaultLevelController.dispose();
     _shadowsocksCipherController.dispose();
-    _shadowsocksUotVersionController.dispose();
     _httpHeadersController.dispose();
     _pathController.dispose();
     _httpUpgradePathController.dispose();
@@ -875,7 +870,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _tlsMasterKeyLogController.dispose();
     _tlsPinnedPeerCertController.dispose();
     _tlsVerifyPeerCertByNameController.dispose();
-    _tlsVerifyPeerCertInNamesController.dispose();
     _tlsEchServerKeysController.dispose();
     _tlsEchConfigListController.dispose();
     _tlsEchSockoptController.dispose();
@@ -1000,7 +994,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _splitHttpXPaddingBytesController.dispose();
     _splitHttpXPaddingKeyController.dispose();
     _splitHttpXPaddingHeaderController.dispose();
-    _splitHttpSessionKeyController.dispose();
+    _splitHttpSessionIDKeyController.dispose();
+    _splitHttpSessionIDTableController.dispose();
+    _splitHttpSessionIDLengthController.dispose();
     _splitHttpSeqKeyController.dispose();
     _splitHttpUplinkDataKeyController.dispose();
     _splitHttpUplinkChunkSizeController.dispose();
@@ -1639,8 +1635,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       email: _emptyToNull(_userEmailController.text),
       cipher: _shadowsocksCipherController.text.trim(),
       password: _passwordController.text.trim(),
-      uot: _shadowsocksUot,
-      uotVersion: _nullableInt(_shadowsocksUotVersionController),
       servers: _enableOutboundTargets
           ? _listFromJson(
               _outboundTargetsJsonController,
@@ -1687,7 +1681,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       secretKey: _wireguardSecretController.text.trim(),
       address: _csv(_wireguardAddressController.text),
       mtu: _intValue(_wireguardMtuController, 1420),
-      numWorkers: _nullableInt(_wireguardWorkersController),
       reserved: _intCsv(_wireguardReservedController.text),
       domainStrategy: _targetStrategy,
       peers: _wireguardEnablePeersJson
@@ -2078,8 +2071,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       xPaddingPlacement: _splitHttpXPaddingPlacement,
       xPaddingMethod: _splitHttpXPaddingMethod,
       uplinkHTTPMethod: _emptyToNull(_splitHttpUplinkMethodController.text),
-      sessionPlacement: _splitHttpSessionPlacement,
-      sessionKey: _emptyToNull(_splitHttpSessionKeyController.text),
+      sessionIDPlacement: _splitHttpSessionIDPlacement,
+      sessionIDKey: _emptyToNull(_splitHttpSessionIDKeyController.text),
+      sessionIDTable: _emptyToNull(_splitHttpSessionIDTableController.text),
+      sessionIDLength: _rangeFromText(_splitHttpSessionIDLengthController.text),
       seqPlacement: _splitHttpSeqPlacement,
       seqKey: _emptyToNull(_splitHttpSeqKeyController.text),
       uplinkDataPlacement: _splitHttpUplinkDataPlacement,
@@ -2208,10 +2203,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       pinnedPeerCertSha256: _emptyToNull(_tlsPinnedPeerCertController.text),
       verifyPeerCertByName:
           _emptyToNull(_tlsVerifyPeerCertByNameController.text),
-      verifyPeerCertInNames: _csv(_tlsVerifyPeerCertInNamesController.text),
       echServerKeys: _emptyToNull(_tlsEchServerKeysController.text),
       echConfigList: _emptyToNull(_tlsEchConfigListController.text),
-      echForceQuery: _tlsEchForceQuery,
       echSocketSettings: _mapFromJson(_tlsEchSockoptController).isEmpty
           ? null
           : SocketConfig.fromJson(_mapFromJson(_tlsEchSockoptController)),
@@ -3425,14 +3418,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
           const SizedBox(height: 12),
           _TextInput(
-            controller: _wireguardWorkersController,
-            label: 'WireGuard workers',
-            icon: Icons.groups_rounded,
-            keyboardType: TextInputType.number,
-            onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
             controller: _wireguardReservedController,
             label: 'WireGuard reserved 逗号分隔',
             icon: Icons.format_list_numbered_rounded,
@@ -4161,22 +4146,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             icon: Icons.sync_alt_rounded,
             onChanged: (value) => setState(() => _shadowsocksUdp = value),
           ),
-          _CheckRow(
-            value: _shadowsocksUot,
-            title: 'Shadowsocks outbound uot',
-            icon: Icons.swap_calls_rounded,
-            onChanged: (value) => setState(() => _shadowsocksUot = value),
-          ),
-          if (_shadowsocksUot) ...[
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _shadowsocksUotVersionController,
-              label: 'Shadowsocks uotVersion',
-              icon: Icons.numbers_rounded,
-              keyboardType: TextInputType.number,
-              onChanged: _refresh,
-            ),
-          ],
         ],
         if (_protocol == ProxyProtocol.wireguard) ...[
           const SizedBox(height: 12),
@@ -4227,14 +4196,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             title: 'WireGuard noKernelTun',
             icon: Icons.tune_rounded,
             onChanged: (value) => setState(() => _wireguardNoKernelTun = value),
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _wireguardWorkersController,
-            label: 'WireGuard workers',
-            icon: Icons.groups_rounded,
-            keyboardType: TextInputType.number,
-            onChanged: _refresh,
           ),
           const SizedBox(height: 12),
           _TextInput(
@@ -4865,19 +4826,33 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
           const SizedBox(height: 12),
           _DropdownInput<SplitHTTPPlacement>(
-            value: _splitHttpSessionPlacement,
-            label: 'SplitHTTP/XHTTP sessionPlacement',
+            value: _splitHttpSessionIDPlacement,
+            label: 'SplitHTTP/XHTTP sessionIDPlacement',
             icon: Icons.place_rounded,
             values: SplitHTTPPlacement.values,
             labelOf: (value) => value.label,
             onChanged: (value) =>
-                setState(() => _splitHttpSessionPlacement = value),
+                setState(() => _splitHttpSessionIDPlacement = value),
           ),
           const SizedBox(height: 12),
           _TextInput(
-            controller: _splitHttpSessionKeyController,
-            label: 'SplitHTTP/XHTTP sessionKey',
+            controller: _splitHttpSessionIDKeyController,
+            label: 'SplitHTTP/XHTTP sessionIDKey',
             icon: Icons.key_rounded,
+            onChanged: _refresh,
+          ),
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _splitHttpSessionIDTableController,
+            label: 'SplitHTTP/XHTTP sessionIDTable',
+            icon: Icons.table_chart_rounded,
+            onChanged: _refresh,
+          ),
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _splitHttpSessionIDLengthController,
+            label: 'SplitHTTP/XHTTP sessionIDLength',
+            icon: Icons.straighten_rounded,
             onChanged: _refresh,
           ),
           const SizedBox(height: 12),
@@ -5744,13 +5719,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
           const SizedBox(height: 12),
           _TextInput(
-            controller: _tlsVerifyPeerCertInNamesController,
-            label: 'TLS verifyPeerCertInNames 逗号分隔',
-            icon: Icons.fact_check_rounded,
-            onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
             controller: _tlsEchServerKeysController,
             label: 'TLS echServerKeys',
             icon: Icons.vpn_key_rounded,
@@ -5762,15 +5730,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             label: 'TLS echConfigList',
             icon: Icons.list_alt_rounded,
             onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _DropdownInput<ECHForceQuery>(
-            value: _tlsEchForceQuery,
-            label: 'TLS echForceQuery',
-            icon: Icons.manage_search_rounded,
-            values: ECHForceQuery.values,
-            labelOf: (value) => value.label,
-            onChanged: (value) => setState(() => _tlsEchForceQuery = value),
           ),
           const SizedBox(height: 12),
           _TextInput(
@@ -8254,10 +8213,6 @@ extension on XrayNetwork {
 }
 
 extension on DNSOutboundRuleAction {
-  String get label => toJson();
-}
-
-extension on ECHForceQuery {
   String get label => toJson();
 }
 

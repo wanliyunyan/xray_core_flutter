@@ -4,6 +4,7 @@ part of 'config.dart';
 abstract class XrayConfig with _$XrayConfig {
   const factory XrayConfig({
     Map<String, dynamic>? transport,
+    Map<String, String>? env,
     LogConfig? log,
     RouterConfig? routing,
     DNSConfig? dns,
@@ -27,10 +28,10 @@ abstract class XrayConfig with _$XrayConfig {
       transport: map['transport'] == null
           ? null
           : asJsonMap(map['transport'], 'transport'),
+      env: (map['env'] as Map?)?.cast<String, String>(),
       log: map['log'] == null ? null : LogConfig.fromJson(map['log']),
-      routing: map['routing'] == null
-          ? null
-          : RouterConfig.fromJson(map['routing']),
+      routing:
+          map['routing'] == null ? null : RouterConfig.fromJson(map['routing']),
       dns: map['dns'] == null ? null : DNSConfig.fromJson(map['dns']),
       inbounds: map['inbounds'] == null
           ? null
@@ -38,9 +39,8 @@ abstract class XrayConfig with _$XrayConfig {
       outbounds: map['outbounds'] == null
           ? null
           : asJsonList(map['outbounds'], OutboundDetourConfig.fromJson),
-      policy: map['policy'] == null
-          ? null
-          : PolicyConfig.fromJson(map['policy']),
+      policy:
+          map['policy'] == null ? null : PolicyConfig.fromJson(map['policy']),
       api: map['api'] == null ? null : APIConfig.fromJson(map['api']),
       metrics: map['metrics'] == null
           ? null
@@ -70,21 +70,22 @@ abstract class XrayConfig with _$XrayConfig {
   const XrayConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-    'transport': transport,
-    'log': log?.toJson(),
-    'routing': routing?.toJson(),
-    'dns': dns?.toJson(),
-    'inbounds': inbounds?.map((item) => item.toJson()).toList(),
-    'outbounds': outbounds?.map((item) => item.toJson()).toList(),
-    'policy': policy?.toJson(),
-    'api': api?.toJson(),
-    'metrics': metrics?.toJson(),
-    'stats': stats?.toJson(),
-    'reverse': reverse?.toJson(),
-    'fakeDns': fakeDns?.toJson(),
-    'observatory': observatory?.toJson(),
-    'burstObservatory': burstObservatory?.toJson(),
-    'version': version?.toJson(),
-    'geodata': geodata?.toJson(),
-  });
+        'transport': transport,
+        'env': env,
+        'log': log?.toJson(),
+        'routing': routing?.toJson(),
+        'dns': dns?.toJson(),
+        'inbounds': inbounds?.map((item) => item.toJson()).toList(),
+        'outbounds': outbounds?.map((item) => item.toJson()).toList(),
+        'policy': policy?.toJson(),
+        'api': api?.toJson(),
+        'metrics': metrics?.toJson(),
+        'stats': stats?.toJson(),
+        'reverse': reverse?.toJson(),
+        'fakeDns': fakeDns?.toJson(),
+        'observatory': observatory?.toJson(),
+        'burstObservatory': burstObservatory?.toJson(),
+        'version': version?.toJson(),
+        'geodata': geodata?.toJson(),
+      });
 }

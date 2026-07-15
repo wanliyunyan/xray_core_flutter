@@ -5489,6 +5489,7 @@ class __$HysteriaUserConfigCopyWithImpl<$Res>
 /// @nodoc
 mixin _$LoopbackConfig {
   String? get inboundTag;
+  SniffingConfig? get sniffing;
 
   /// Create a copy of LoopbackConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -5504,15 +5505,17 @@ mixin _$LoopbackConfig {
         (other.runtimeType == runtimeType &&
             other is LoopbackConfig &&
             (identical(other.inboundTag, inboundTag) ||
-                other.inboundTag == inboundTag));
+                other.inboundTag == inboundTag) &&
+            (identical(other.sniffing, sniffing) ||
+                other.sniffing == sniffing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, inboundTag);
+  int get hashCode => Object.hash(runtimeType, inboundTag, sniffing);
 
   @override
   String toString() {
-    return 'LoopbackConfig(inboundTag: $inboundTag)';
+    return 'LoopbackConfig(inboundTag: $inboundTag, sniffing: $sniffing)';
   }
 }
 
@@ -5522,7 +5525,9 @@ abstract mixin class $LoopbackConfigCopyWith<$Res> {
           LoopbackConfig value, $Res Function(LoopbackConfig) _then) =
       _$LoopbackConfigCopyWithImpl;
   @useResult
-  $Res call({String? inboundTag});
+  $Res call({String? inboundTag, SniffingConfig? sniffing});
+
+  $SniffingConfigCopyWith<$Res>? get sniffing;
 }
 
 /// @nodoc
@@ -5539,13 +5544,32 @@ class _$LoopbackConfigCopyWithImpl<$Res>
   @override
   $Res call({
     Object? inboundTag = freezed,
+    Object? sniffing = freezed,
   }) {
     return _then(_self.copyWith(
       inboundTag: freezed == inboundTag
           ? _self.inboundTag
           : inboundTag // ignore: cast_nullable_to_non_nullable
               as String?,
+      sniffing: freezed == sniffing
+          ? _self.sniffing
+          : sniffing // ignore: cast_nullable_to_non_nullable
+              as SniffingConfig?,
     ));
+  }
+
+  /// Create a copy of LoopbackConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SniffingConfigCopyWith<$Res>? get sniffing {
+    if (_self.sniffing == null) {
+      return null;
+    }
+
+    return $SniffingConfigCopyWith<$Res>(_self.sniffing!, (value) {
+      return _then(_self.copyWith(sniffing: value));
+    });
   }
 }
 
@@ -5642,13 +5666,13 @@ extension LoopbackConfigPatterns on LoopbackConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? inboundTag)? $default, {
+    TResult Function(String? inboundTag, SniffingConfig? sniffing)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _LoopbackConfig() when $default != null:
-        return $default(_that.inboundTag);
+        return $default(_that.inboundTag, _that.sniffing);
       case _:
         return orElse();
     }
@@ -5669,12 +5693,12 @@ extension LoopbackConfigPatterns on LoopbackConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? inboundTag) $default,
+    TResult Function(String? inboundTag, SniffingConfig? sniffing) $default,
   ) {
     final _that = this;
     switch (_that) {
       case _LoopbackConfig():
-        return $default(_that.inboundTag);
+        return $default(_that.inboundTag, _that.sniffing);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -5694,12 +5718,12 @@ extension LoopbackConfigPatterns on LoopbackConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? inboundTag)? $default,
+    TResult? Function(String? inboundTag, SniffingConfig? sniffing)? $default,
   ) {
     final _that = this;
     switch (_that) {
       case _LoopbackConfig() when $default != null:
-        return $default(_that.inboundTag);
+        return $default(_that.inboundTag, _that.sniffing);
       case _:
         return null;
     }
@@ -5709,10 +5733,12 @@ extension LoopbackConfigPatterns on LoopbackConfig {
 /// @nodoc
 
 class _LoopbackConfig extends LoopbackConfig {
-  const _LoopbackConfig({this.inboundTag}) : super._();
+  const _LoopbackConfig({this.inboundTag, this.sniffing}) : super._();
 
   @override
   final String? inboundTag;
+  @override
+  final SniffingConfig? sniffing;
 
   /// Create a copy of LoopbackConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -5728,15 +5754,17 @@ class _LoopbackConfig extends LoopbackConfig {
         (other.runtimeType == runtimeType &&
             other is _LoopbackConfig &&
             (identical(other.inboundTag, inboundTag) ||
-                other.inboundTag == inboundTag));
+                other.inboundTag == inboundTag) &&
+            (identical(other.sniffing, sniffing) ||
+                other.sniffing == sniffing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, inboundTag);
+  int get hashCode => Object.hash(runtimeType, inboundTag, sniffing);
 
   @override
   String toString() {
-    return 'LoopbackConfig(inboundTag: $inboundTag)';
+    return 'LoopbackConfig(inboundTag: $inboundTag, sniffing: $sniffing)';
   }
 }
 
@@ -5748,7 +5776,10 @@ abstract mixin class _$LoopbackConfigCopyWith<$Res>
       __$LoopbackConfigCopyWithImpl;
   @override
   @useResult
-  $Res call({String? inboundTag});
+  $Res call({String? inboundTag, SniffingConfig? sniffing});
+
+  @override
+  $SniffingConfigCopyWith<$Res>? get sniffing;
 }
 
 /// @nodoc
@@ -5765,13 +5796,32 @@ class __$LoopbackConfigCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? inboundTag = freezed,
+    Object? sniffing = freezed,
   }) {
     return _then(_LoopbackConfig(
       inboundTag: freezed == inboundTag
           ? _self.inboundTag
           : inboundTag // ignore: cast_nullable_to_non_nullable
               as String?,
+      sniffing: freezed == sniffing
+          ? _self.sniffing
+          : sniffing // ignore: cast_nullable_to_non_nullable
+              as SniffingConfig?,
     ));
+  }
+
+  /// Create a copy of LoopbackConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SniffingConfigCopyWith<$Res>? get sniffing {
+    if (_self.sniffing == null) {
+      return null;
+    }
+
+    return $SniffingConfigCopyWith<$Res>(_self.sniffing!, (value) {
+      return _then(_self.copyWith(sniffing: value));
+    });
   }
 }
 
@@ -6151,8 +6201,6 @@ mixin _$ShadowsocksClientConfig {
   @JsonKey(name: 'method')
   String? get cipher;
   String? get password;
-  bool? get uot;
-  int? get uotVersion;
   List<ShadowsocksServerTarget>? get servers;
 
   /// Create a copy of ShadowsocksClientConfig
@@ -6175,28 +6223,16 @@ mixin _$ShadowsocksClientConfig {
             (identical(other.cipher, cipher) || other.cipher == cipher) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.uot, uot) || other.uot == uot) &&
-            (identical(other.uotVersion, uotVersion) ||
-                other.uotVersion == uotVersion) &&
             const DeepCollectionEquality().equals(other.servers, servers));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      address,
-      port,
-      level,
-      email,
-      cipher,
-      password,
-      uot,
-      uotVersion,
-      const DeepCollectionEquality().hash(servers));
+  int get hashCode => Object.hash(runtimeType, address, port, level, email,
+      cipher, password, const DeepCollectionEquality().hash(servers));
 
   @override
   String toString() {
-    return 'ShadowsocksClientConfig(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password, uot: $uot, uotVersion: $uotVersion, servers: $servers)';
+    return 'ShadowsocksClientConfig(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password, servers: $servers)';
   }
 }
 
@@ -6213,8 +6249,6 @@ abstract mixin class $ShadowsocksClientConfigCopyWith<$Res> {
       String? email,
       @JsonKey(name: 'method') String? cipher,
       String? password,
-      bool? uot,
-      int? uotVersion,
       List<ShadowsocksServerTarget>? servers});
 }
 
@@ -6237,8 +6271,6 @@ class _$ShadowsocksClientConfigCopyWithImpl<$Res>
     Object? email = freezed,
     Object? cipher = freezed,
     Object? password = freezed,
-    Object? uot = freezed,
-    Object? uotVersion = freezed,
     Object? servers = freezed,
   }) {
     return _then(_self.copyWith(
@@ -6266,14 +6298,6 @@ class _$ShadowsocksClientConfigCopyWithImpl<$Res>
           ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      uot: freezed == uot
-          ? _self.uot
-          : uot // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      uotVersion: freezed == uotVersion
-          ? _self.uotVersion
-          : uotVersion // ignore: cast_nullable_to_non_nullable
-              as int?,
       servers: freezed == servers
           ? _self.servers
           : servers // ignore: cast_nullable_to_non_nullable
@@ -6382,8 +6406,6 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
             String? email,
             @JsonKey(name: 'method') String? cipher,
             String? password,
-            bool? uot,
-            int? uotVersion,
             List<ShadowsocksServerTarget>? servers)?
         $default, {
     required TResult orElse(),
@@ -6391,16 +6413,8 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
     final _that = this;
     switch (_that) {
       case _ShadowsocksClientConfig() when $default != null:
-        return $default(
-            _that.address,
-            _that.port,
-            _that.level,
-            _that.email,
-            _that.cipher,
-            _that.password,
-            _that.uot,
-            _that.uotVersion,
-            _that.servers);
+        return $default(_that.address, _that.port, _that.level, _that.email,
+            _that.cipher, _that.password, _that.servers);
       case _:
         return orElse();
     }
@@ -6428,24 +6442,14 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
             String? email,
             @JsonKey(name: 'method') String? cipher,
             String? password,
-            bool? uot,
-            int? uotVersion,
             List<ShadowsocksServerTarget>? servers)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksClientConfig():
-        return $default(
-            _that.address,
-            _that.port,
-            _that.level,
-            _that.email,
-            _that.cipher,
-            _that.password,
-            _that.uot,
-            _that.uotVersion,
-            _that.servers);
+        return $default(_that.address, _that.port, _that.level, _that.email,
+            _that.cipher, _that.password, _that.servers);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -6472,24 +6476,14 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
             String? email,
             @JsonKey(name: 'method') String? cipher,
             String? password,
-            bool? uot,
-            int? uotVersion,
             List<ShadowsocksServerTarget>? servers)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksClientConfig() when $default != null:
-        return $default(
-            _that.address,
-            _that.port,
-            _that.level,
-            _that.email,
-            _that.cipher,
-            _that.password,
-            _that.uot,
-            _that.uotVersion,
-            _that.servers);
+        return $default(_that.address, _that.port, _that.level, _that.email,
+            _that.cipher, _that.password, _that.servers);
       case _:
         return null;
     }
@@ -6506,8 +6500,6 @@ class _ShadowsocksClientConfig extends ShadowsocksClientConfig {
       this.email,
       @JsonKey(name: 'method') this.cipher,
       this.password,
-      this.uot,
-      this.uotVersion,
       final List<ShadowsocksServerTarget>? servers})
       : _servers = servers,
         super._();
@@ -6525,10 +6517,6 @@ class _ShadowsocksClientConfig extends ShadowsocksClientConfig {
   final String? cipher;
   @override
   final String? password;
-  @override
-  final bool? uot;
-  @override
-  final int? uotVersion;
   final List<ShadowsocksServerTarget>? _servers;
   @override
   List<ShadowsocksServerTarget>? get servers {
@@ -6560,28 +6548,16 @@ class _ShadowsocksClientConfig extends ShadowsocksClientConfig {
             (identical(other.cipher, cipher) || other.cipher == cipher) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.uot, uot) || other.uot == uot) &&
-            (identical(other.uotVersion, uotVersion) ||
-                other.uotVersion == uotVersion) &&
             const DeepCollectionEquality().equals(other._servers, _servers));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      address,
-      port,
-      level,
-      email,
-      cipher,
-      password,
-      uot,
-      uotVersion,
-      const DeepCollectionEquality().hash(_servers));
+  int get hashCode => Object.hash(runtimeType, address, port, level, email,
+      cipher, password, const DeepCollectionEquality().hash(_servers));
 
   @override
   String toString() {
-    return 'ShadowsocksClientConfig(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password, uot: $uot, uotVersion: $uotVersion, servers: $servers)';
+    return 'ShadowsocksClientConfig(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password, servers: $servers)';
   }
 }
 
@@ -6600,8 +6576,6 @@ abstract mixin class _$ShadowsocksClientConfigCopyWith<$Res>
       String? email,
       @JsonKey(name: 'method') String? cipher,
       String? password,
-      bool? uot,
-      int? uotVersion,
       List<ShadowsocksServerTarget>? servers});
 }
 
@@ -6624,8 +6598,6 @@ class __$ShadowsocksClientConfigCopyWithImpl<$Res>
     Object? email = freezed,
     Object? cipher = freezed,
     Object? password = freezed,
-    Object? uot = freezed,
-    Object? uotVersion = freezed,
     Object? servers = freezed,
   }) {
     return _then(_ShadowsocksClientConfig(
@@ -6653,14 +6625,6 @@ class __$ShadowsocksClientConfigCopyWithImpl<$Res>
           ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      uot: freezed == uot
-          ? _self.uot
-          : uot // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      uotVersion: freezed == uotVersion
-          ? _self.uotVersion
-          : uotVersion // ignore: cast_nullable_to_non_nullable
-              as int?,
       servers: freezed == servers
           ? _self._servers
           : servers // ignore: cast_nullable_to_non_nullable
@@ -7147,8 +7111,6 @@ mixin _$ShadowsocksServerTarget {
   @JsonKey(name: 'method')
   String? get cipher;
   String get password;
-  bool? get uot;
-  int? get uotVersion;
 
   /// Create a copy of ShadowsocksServerTarget
   /// with the given fields replaced by the non-null parameter values.
@@ -7169,19 +7131,16 @@ mixin _$ShadowsocksServerTarget {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.cipher, cipher) || other.cipher == cipher) &&
             (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.uot, uot) || other.uot == uot) &&
-            (identical(other.uotVersion, uotVersion) ||
-                other.uotVersion == uotVersion));
+                other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      cipher, password, uot, uotVersion);
+  int get hashCode =>
+      Object.hash(runtimeType, address, port, level, email, cipher, password);
 
   @override
   String toString() {
-    return 'ShadowsocksServerTarget(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password, uot: $uot, uotVersion: $uotVersion)';
+    return 'ShadowsocksServerTarget(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password)';
   }
 }
 
@@ -7197,9 +7156,7 @@ abstract mixin class $ShadowsocksServerTargetCopyWith<$Res> {
       int? level,
       String? email,
       @JsonKey(name: 'method') String? cipher,
-      String password,
-      bool? uot,
-      int? uotVersion});
+      String password});
 }
 
 /// @nodoc
@@ -7221,8 +7178,6 @@ class _$ShadowsocksServerTargetCopyWithImpl<$Res>
     Object? email = freezed,
     Object? cipher = freezed,
     Object? password = null,
-    Object? uot = freezed,
-    Object? uotVersion = freezed,
   }) {
     return _then(_self.copyWith(
       address: null == address
@@ -7249,14 +7204,6 @@ class _$ShadowsocksServerTargetCopyWithImpl<$Res>
           ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      uot: freezed == uot
-          ? _self.uot
-          : uot // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      uotVersion: freezed == uotVersion
-          ? _self.uotVersion
-          : uotVersion // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -7354,15 +7301,8 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            XrayAddress address,
-            int port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'method') String? cipher,
-            String password,
-            bool? uot,
-            int? uotVersion)?
+    TResult Function(XrayAddress address, int port, int? level, String? email,
+            @JsonKey(name: 'method') String? cipher, String password)?
         $default, {
     required TResult orElse(),
   }) {
@@ -7370,7 +7310,7 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
     switch (_that) {
       case _ShadowsocksServerTarget() when $default != null:
         return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password, _that.uot, _that.uotVersion);
+            _that.cipher, _that.password);
       case _:
         return orElse();
     }
@@ -7391,22 +7331,15 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            XrayAddress address,
-            int port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'method') String? cipher,
-            String password,
-            bool? uot,
-            int? uotVersion)
+    TResult Function(XrayAddress address, int port, int? level, String? email,
+            @JsonKey(name: 'method') String? cipher, String password)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerTarget():
         return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password, _that.uot, _that.uotVersion);
+            _that.cipher, _that.password);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -7426,22 +7359,15 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            XrayAddress address,
-            int port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'method') String? cipher,
-            String password,
-            bool? uot,
-            int? uotVersion)?
+    TResult? Function(XrayAddress address, int port, int? level, String? email,
+            @JsonKey(name: 'method') String? cipher, String password)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerTarget() when $default != null:
         return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password, _that.uot, _that.uotVersion);
+            _that.cipher, _that.password);
       case _:
         return null;
     }
@@ -7457,9 +7383,7 @@ class _ShadowsocksServerTarget extends ShadowsocksServerTarget {
       this.level,
       this.email,
       @JsonKey(name: 'method') this.cipher,
-      required this.password,
-      this.uot,
-      this.uotVersion})
+      required this.password})
       : super._();
 
   @override
@@ -7475,10 +7399,6 @@ class _ShadowsocksServerTarget extends ShadowsocksServerTarget {
   final String? cipher;
   @override
   final String password;
-  @override
-  final bool? uot;
-  @override
-  final int? uotVersion;
 
   /// Create a copy of ShadowsocksServerTarget
   /// with the given fields replaced by the non-null parameter values.
@@ -7500,19 +7420,16 @@ class _ShadowsocksServerTarget extends ShadowsocksServerTarget {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.cipher, cipher) || other.cipher == cipher) &&
             (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.uot, uot) || other.uot == uot) &&
-            (identical(other.uotVersion, uotVersion) ||
-                other.uotVersion == uotVersion));
+                other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      cipher, password, uot, uotVersion);
+  int get hashCode =>
+      Object.hash(runtimeType, address, port, level, email, cipher, password);
 
   @override
   String toString() {
-    return 'ShadowsocksServerTarget(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password, uot: $uot, uotVersion: $uotVersion)';
+    return 'ShadowsocksServerTarget(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password)';
   }
 }
 
@@ -7530,9 +7447,7 @@ abstract mixin class _$ShadowsocksServerTargetCopyWith<$Res>
       int? level,
       String? email,
       @JsonKey(name: 'method') String? cipher,
-      String password,
-      bool? uot,
-      int? uotVersion});
+      String password});
 }
 
 /// @nodoc
@@ -7554,8 +7469,6 @@ class __$ShadowsocksServerTargetCopyWithImpl<$Res>
     Object? email = freezed,
     Object? cipher = freezed,
     Object? password = null,
-    Object? uot = freezed,
-    Object? uotVersion = freezed,
   }) {
     return _then(_ShadowsocksServerTarget(
       address: null == address
@@ -7582,14 +7495,6 @@ class __$ShadowsocksServerTargetCopyWithImpl<$Res>
           ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      uot: freezed == uot
-          ? _self.uot
-          : uot // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      uotVersion: freezed == uotVersion
-          ? _self.uotVersion
-          : uotVersion // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -16838,8 +16743,6 @@ mixin _$WireGuardConfig {
   List<WireGuardPeerConfig>? get peers;
   @JsonKey(name: 'mtu')
   int? get mtu;
-  @JsonKey(name: 'workers')
-  int? get numWorkers;
   List<int>? get reserved;
   XrayTargetStrategy? get domainStrategy;
 
@@ -16863,8 +16766,6 @@ mixin _$WireGuardConfig {
             const DeepCollectionEquality().equals(other.address, address) &&
             const DeepCollectionEquality().equals(other.peers, peers) &&
             (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            (identical(other.numWorkers, numWorkers) ||
-                other.numWorkers == numWorkers) &&
             const DeepCollectionEquality().equals(other.reserved, reserved) &&
             (identical(other.domainStrategy, domainStrategy) ||
                 other.domainStrategy == domainStrategy));
@@ -16878,13 +16779,12 @@ mixin _$WireGuardConfig {
       const DeepCollectionEquality().hash(address),
       const DeepCollectionEquality().hash(peers),
       mtu,
-      numWorkers,
       const DeepCollectionEquality().hash(reserved),
       domainStrategy);
 
   @override
   String toString() {
-    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, peers: $peers, mtu: $mtu, numWorkers: $numWorkers, reserved: $reserved, domainStrategy: $domainStrategy)';
+    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, peers: $peers, mtu: $mtu, reserved: $reserved, domainStrategy: $domainStrategy)';
   }
 }
 
@@ -16900,7 +16800,6 @@ abstract mixin class $WireGuardConfigCopyWith<$Res> {
       List<String>? address,
       List<WireGuardPeerConfig>? peers,
       @JsonKey(name: 'mtu') int? mtu,
-      @JsonKey(name: 'workers') int? numWorkers,
       List<int>? reserved,
       XrayTargetStrategy? domainStrategy});
 }
@@ -16923,7 +16822,6 @@ class _$WireGuardConfigCopyWithImpl<$Res>
     Object? address = freezed,
     Object? peers = freezed,
     Object? mtu = freezed,
-    Object? numWorkers = freezed,
     Object? reserved = freezed,
     Object? domainStrategy = freezed,
   }) {
@@ -16947,10 +16845,6 @@ class _$WireGuardConfigCopyWithImpl<$Res>
       mtu: freezed == mtu
           ? _self.mtu
           : mtu // ignore: cast_nullable_to_non_nullable
-              as int?,
-      numWorkers: freezed == numWorkers
-          ? _self.numWorkers
-          : numWorkers // ignore: cast_nullable_to_non_nullable
               as int?,
       reserved: freezed == reserved
           ? _self.reserved
@@ -17063,7 +16957,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
             List<String>? address,
             List<WireGuardPeerConfig>? peers,
             @JsonKey(name: 'mtu') int? mtu,
-            @JsonKey(name: 'workers') int? numWorkers,
             List<int>? reserved,
             XrayTargetStrategy? domainStrategy)?
         $default, {
@@ -17072,15 +16965,8 @@ extension WireGuardConfigPatterns on WireGuardConfig {
     final _that = this;
     switch (_that) {
       case _WireGuardConfig() when $default != null:
-        return $default(
-            _that.noKernelTun,
-            _that.secretKey,
-            _that.address,
-            _that.peers,
-            _that.mtu,
-            _that.numWorkers,
-            _that.reserved,
-            _that.domainStrategy);
+        return $default(_that.noKernelTun, _that.secretKey, _that.address,
+            _that.peers, _that.mtu, _that.reserved, _that.domainStrategy);
       case _:
         return orElse();
     }
@@ -17107,7 +16993,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
             List<String>? address,
             List<WireGuardPeerConfig>? peers,
             @JsonKey(name: 'mtu') int? mtu,
-            @JsonKey(name: 'workers') int? numWorkers,
             List<int>? reserved,
             XrayTargetStrategy? domainStrategy)
         $default,
@@ -17115,15 +17000,8 @@ extension WireGuardConfigPatterns on WireGuardConfig {
     final _that = this;
     switch (_that) {
       case _WireGuardConfig():
-        return $default(
-            _that.noKernelTun,
-            _that.secretKey,
-            _that.address,
-            _that.peers,
-            _that.mtu,
-            _that.numWorkers,
-            _that.reserved,
-            _that.domainStrategy);
+        return $default(_that.noKernelTun, _that.secretKey, _that.address,
+            _that.peers, _that.mtu, _that.reserved, _that.domainStrategy);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -17149,7 +17027,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
             List<String>? address,
             List<WireGuardPeerConfig>? peers,
             @JsonKey(name: 'mtu') int? mtu,
-            @JsonKey(name: 'workers') int? numWorkers,
             List<int>? reserved,
             XrayTargetStrategy? domainStrategy)?
         $default,
@@ -17157,15 +17034,8 @@ extension WireGuardConfigPatterns on WireGuardConfig {
     final _that = this;
     switch (_that) {
       case _WireGuardConfig() when $default != null:
-        return $default(
-            _that.noKernelTun,
-            _that.secretKey,
-            _that.address,
-            _that.peers,
-            _that.mtu,
-            _that.numWorkers,
-            _that.reserved,
-            _that.domainStrategy);
+        return $default(_that.noKernelTun, _that.secretKey, _that.address,
+            _that.peers, _that.mtu, _that.reserved, _that.domainStrategy);
       case _:
         return null;
     }
@@ -17181,7 +17051,6 @@ class _WireGuardConfig extends WireGuardConfig {
       final List<String>? address,
       final List<WireGuardPeerConfig>? peers,
       @JsonKey(name: 'mtu') this.mtu,
-      @JsonKey(name: 'workers') this.numWorkers,
       final List<int>? reserved,
       this.domainStrategy})
       : _address = address,
@@ -17216,9 +17085,6 @@ class _WireGuardConfig extends WireGuardConfig {
   @override
   @JsonKey(name: 'mtu')
   final int? mtu;
-  @override
-  @JsonKey(name: 'workers')
-  final int? numWorkers;
   final List<int>? _reserved;
   @override
   List<int>? get reserved {
@@ -17252,8 +17118,6 @@ class _WireGuardConfig extends WireGuardConfig {
             const DeepCollectionEquality().equals(other._address, _address) &&
             const DeepCollectionEquality().equals(other._peers, _peers) &&
             (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            (identical(other.numWorkers, numWorkers) ||
-                other.numWorkers == numWorkers) &&
             const DeepCollectionEquality().equals(other._reserved, _reserved) &&
             (identical(other.domainStrategy, domainStrategy) ||
                 other.domainStrategy == domainStrategy));
@@ -17267,13 +17131,12 @@ class _WireGuardConfig extends WireGuardConfig {
       const DeepCollectionEquality().hash(_address),
       const DeepCollectionEquality().hash(_peers),
       mtu,
-      numWorkers,
       const DeepCollectionEquality().hash(_reserved),
       domainStrategy);
 
   @override
   String toString() {
-    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, peers: $peers, mtu: $mtu, numWorkers: $numWorkers, reserved: $reserved, domainStrategy: $domainStrategy)';
+    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, peers: $peers, mtu: $mtu, reserved: $reserved, domainStrategy: $domainStrategy)';
   }
 }
 
@@ -17291,7 +17154,6 @@ abstract mixin class _$WireGuardConfigCopyWith<$Res>
       List<String>? address,
       List<WireGuardPeerConfig>? peers,
       @JsonKey(name: 'mtu') int? mtu,
-      @JsonKey(name: 'workers') int? numWorkers,
       List<int>? reserved,
       XrayTargetStrategy? domainStrategy});
 }
@@ -17314,7 +17176,6 @@ class __$WireGuardConfigCopyWithImpl<$Res>
     Object? address = freezed,
     Object? peers = freezed,
     Object? mtu = freezed,
-    Object? numWorkers = freezed,
     Object? reserved = freezed,
     Object? domainStrategy = freezed,
   }) {
@@ -17339,10 +17200,6 @@ class __$WireGuardConfigCopyWithImpl<$Res>
           ? _self.mtu
           : mtu // ignore: cast_nullable_to_non_nullable
               as int?,
-      numWorkers: freezed == numWorkers
-          ? _self.numWorkers
-          : numWorkers // ignore: cast_nullable_to_non_nullable
-              as int?,
       reserved: freezed == reserved
           ? _self._reserved
           : reserved // ignore: cast_nullable_to_non_nullable
@@ -17362,6 +17219,8 @@ mixin _$WireGuardPeerConfig {
   String? get endpoint;
   int? get keepAlive;
   List<String>? get allowedIPs;
+  int? get level;
+  String? get email;
 
   /// Create a copy of WireGuardPeerConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -17385,16 +17244,25 @@ mixin _$WireGuardPeerConfig {
             (identical(other.keepAlive, keepAlive) ||
                 other.keepAlive == keepAlive) &&
             const DeepCollectionEquality()
-                .equals(other.allowedIPs, allowedIPs));
+                .equals(other.allowedIPs, allowedIPs) &&
+            (identical(other.level, level) || other.level == level) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, publicKey, preSharedKey,
-      endpoint, keepAlive, const DeepCollectionEquality().hash(allowedIPs));
+  int get hashCode => Object.hash(
+      runtimeType,
+      publicKey,
+      preSharedKey,
+      endpoint,
+      keepAlive,
+      const DeepCollectionEquality().hash(allowedIPs),
+      level,
+      email);
 
   @override
   String toString() {
-    return 'WireGuardPeerConfig(publicKey: $publicKey, preSharedKey: $preSharedKey, endpoint: $endpoint, keepAlive: $keepAlive, allowedIPs: $allowedIPs)';
+    return 'WireGuardPeerConfig(publicKey: $publicKey, preSharedKey: $preSharedKey, endpoint: $endpoint, keepAlive: $keepAlive, allowedIPs: $allowedIPs, level: $level, email: $email)';
   }
 }
 
@@ -17409,7 +17277,9 @@ abstract mixin class $WireGuardPeerConfigCopyWith<$Res> {
       String? preSharedKey,
       String? endpoint,
       int? keepAlive,
-      List<String>? allowedIPs});
+      List<String>? allowedIPs,
+      int? level,
+      String? email});
 }
 
 /// @nodoc
@@ -17430,6 +17300,8 @@ class _$WireGuardPeerConfigCopyWithImpl<$Res>
     Object? endpoint = freezed,
     Object? keepAlive = freezed,
     Object? allowedIPs = freezed,
+    Object? level = freezed,
+    Object? email = freezed,
   }) {
     return _then(_self.copyWith(
       publicKey: freezed == publicKey
@@ -17452,6 +17324,14 @@ class _$WireGuardPeerConfigCopyWithImpl<$Res>
           ? _self.allowedIPs
           : allowedIPs // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      level: freezed == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -17549,8 +17429,14 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? publicKey, String? preSharedKey, String? endpoint,
-            int? keepAlive, List<String>? allowedIPs)?
+    TResult Function(
+            String? publicKey,
+            String? preSharedKey,
+            String? endpoint,
+            int? keepAlive,
+            List<String>? allowedIPs,
+            int? level,
+            String? email)?
         $default, {
     required TResult orElse(),
   }) {
@@ -17558,7 +17444,7 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
     switch (_that) {
       case _WireGuardPeerConfig() when $default != null:
         return $default(_that.publicKey, _that.preSharedKey, _that.endpoint,
-            _that.keepAlive, _that.allowedIPs);
+            _that.keepAlive, _that.allowedIPs, _that.level, _that.email);
       case _:
         return orElse();
     }
@@ -17580,14 +17466,14 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String? publicKey, String? preSharedKey, String? endpoint,
-            int? keepAlive, List<String>? allowedIPs)
+            int? keepAlive, List<String>? allowedIPs, int? level, String? email)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WireGuardPeerConfig():
         return $default(_that.publicKey, _that.preSharedKey, _that.endpoint,
-            _that.keepAlive, _that.allowedIPs);
+            _that.keepAlive, _that.allowedIPs, _that.level, _that.email);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -17607,15 +17493,21 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? publicKey, String? preSharedKey, String? endpoint,
-            int? keepAlive, List<String>? allowedIPs)?
+    TResult? Function(
+            String? publicKey,
+            String? preSharedKey,
+            String? endpoint,
+            int? keepAlive,
+            List<String>? allowedIPs,
+            int? level,
+            String? email)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WireGuardPeerConfig() when $default != null:
         return $default(_that.publicKey, _that.preSharedKey, _that.endpoint,
-            _that.keepAlive, _that.allowedIPs);
+            _that.keepAlive, _that.allowedIPs, _that.level, _that.email);
       case _:
         return null;
     }
@@ -17630,7 +17522,9 @@ class _WireGuardPeerConfig extends WireGuardPeerConfig {
       this.preSharedKey,
       this.endpoint,
       this.keepAlive,
-      final List<String>? allowedIPs})
+      final List<String>? allowedIPs,
+      this.level,
+      this.email})
       : _allowedIPs = allowedIPs,
         super._();
 
@@ -17651,6 +17545,11 @@ class _WireGuardPeerConfig extends WireGuardPeerConfig {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
+
+  @override
+  final int? level;
+  @override
+  final String? email;
 
   /// Create a copy of WireGuardPeerConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -17675,16 +17574,25 @@ class _WireGuardPeerConfig extends WireGuardPeerConfig {
             (identical(other.keepAlive, keepAlive) ||
                 other.keepAlive == keepAlive) &&
             const DeepCollectionEquality()
-                .equals(other._allowedIPs, _allowedIPs));
+                .equals(other._allowedIPs, _allowedIPs) &&
+            (identical(other.level, level) || other.level == level) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, publicKey, preSharedKey,
-      endpoint, keepAlive, const DeepCollectionEquality().hash(_allowedIPs));
+  int get hashCode => Object.hash(
+      runtimeType,
+      publicKey,
+      preSharedKey,
+      endpoint,
+      keepAlive,
+      const DeepCollectionEquality().hash(_allowedIPs),
+      level,
+      email);
 
   @override
   String toString() {
-    return 'WireGuardPeerConfig(publicKey: $publicKey, preSharedKey: $preSharedKey, endpoint: $endpoint, keepAlive: $keepAlive, allowedIPs: $allowedIPs)';
+    return 'WireGuardPeerConfig(publicKey: $publicKey, preSharedKey: $preSharedKey, endpoint: $endpoint, keepAlive: $keepAlive, allowedIPs: $allowedIPs, level: $level, email: $email)';
   }
 }
 
@@ -17701,7 +17609,9 @@ abstract mixin class _$WireGuardPeerConfigCopyWith<$Res>
       String? preSharedKey,
       String? endpoint,
       int? keepAlive,
-      List<String>? allowedIPs});
+      List<String>? allowedIPs,
+      int? level,
+      String? email});
 }
 
 /// @nodoc
@@ -17722,6 +17632,8 @@ class __$WireGuardPeerConfigCopyWithImpl<$Res>
     Object? endpoint = freezed,
     Object? keepAlive = freezed,
     Object? allowedIPs = freezed,
+    Object? level = freezed,
+    Object? email = freezed,
   }) {
     return _then(_WireGuardPeerConfig(
       publicKey: freezed == publicKey
@@ -17744,6 +17656,14 @@ class __$WireGuardPeerConfigCopyWithImpl<$Res>
           ? _self._allowedIPs
           : allowedIPs // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      level: freezed == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
