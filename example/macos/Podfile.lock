@@ -1,6 +1,6 @@
 PODS:
   - FlutterMacOS (1.0.0)
-  - xray_core_flutter (0.2.3):
+  - xray_core_flutter (0.3.1):
     - FlutterMacOS
 
 DEPENDENCIES:
@@ -14,8 +14,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/xray_core_flutter/macos
 
 SPEC CHECKSUMS:
-  FlutterMacOS: d0db08ddef1a9af05a5ec4b724367152bb0500b1
-  xray_core_flutter: 5e43dc91e96231b7e296fbb1d2e68b8681f3348d
+  FlutterMacOS: c232990155153907050900a2e175c7773903ba4e
+  xray_core_flutter: 9650785b43add9793230238732156715f21411cd
 
 PODFILE CHECKSUM: 54d867c82ac51cbd61b565781b9fada492027009
 

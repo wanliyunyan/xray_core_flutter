@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'xray_core_flutter'
   s.module_name      = 'XrayCoreSDK'
-  s.version          = '0.2.3'
+  s.version          = '0.3.1'
   s.summary          = 'Native FFI bridge for XrayCoreSDK.'
   s.description      = <<-DESC
 Native FFI bridge for the XrayCoreSDK package.
