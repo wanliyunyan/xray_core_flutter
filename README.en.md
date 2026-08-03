@@ -27,7 +27,7 @@ This project supports two integration paths:
 
 ## Xray Config Coverage and Parity
 
-The current Dart config models are aligned with Xray-core `infra/conf` v26.7.11:
+The current Dart config models are aligned with Xray-core `infra/conf` v26.7.28:
 
 - Covers the JSON fields parsed by Xray-core config structs and keeps exported JSON field names Xray-compatible.
 - Covers every loader-style creatable config entry, including inbounds, outbounds, blackhole responses, TCP headers, routing strategies, and TCP/UDP finalmask.

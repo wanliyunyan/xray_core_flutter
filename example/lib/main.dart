@@ -85,7 +85,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _listenController = TextEditingController(text: '127.0.0.1');
   final _inboundTagController = TextEditingController();
   final _inboundPortController = TextEditingController(text: '10808');
-  final _tunNameController = TextEditingController(text: 'utun9');
+  final _tunNameController = TextEditingController();
+  final _tunDescController = TextEditingController();
   final _tunMtuController = TextEditingController(text: '1500');
   final _tunGatewayController = TextEditingController(text: '198.18.0.1/15');
   final _tunDnsController = TextEditingController(text: '1.1.1.1');
@@ -685,6 +686,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _inboundTagController.dispose();
     _inboundPortController.dispose();
     _tunNameController.dispose();
+    _tunDescController.dispose();
     _tunMtuController.dispose();
     _tunGatewayController.dispose();
     _tunDnsController.dispose();
@@ -1418,7 +1420,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       InboundKind.tun => InboundDetourConfig.tun(
           tag: _defaultInboundTag('tun-in'),
           settings: TunConfig(
-            name: _tunNameController.text.trim(),
+            name: _emptyToNull(_tunNameController.text),
+            desc: _emptyToNull(_tunDescController.text),
             mtu: _intValue(_tunMtuController, 1500),
             gateway: _csv(_tunGatewayController.text),
             dns: _csv(_tunDnsController.text),
@@ -3329,6 +3332,13 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             controller: _tunNameController,
             label: 'TUN name',
             icon: Icons.vpn_lock_rounded,
+            onChanged: _refresh,
+          ),
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _tunDescController,
+            label: 'TUN desc',
+            icon: Icons.description_rounded,
             onChanged: _refresh,
           ),
           const SizedBox(height: 12),

@@ -11359,6 +11359,7 @@ class __$TrojanUserConfigCopyWithImpl<$Res>
 /// @nodoc
 mixin _$TunConfig {
   String? get name;
+  String? get desc;
   @JsonKey(name: 'mtu')
   int? get mtu;
   List<String>? get gateway;
@@ -11381,6 +11382,7 @@ mixin _$TunConfig {
         (other.runtimeType == runtimeType &&
             other is TunConfig &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.desc, desc) || other.desc == desc) &&
             (identical(other.mtu, mtu) || other.mtu == mtu) &&
             const DeepCollectionEquality().equals(other.gateway, gateway) &&
             const DeepCollectionEquality().equals(other.dns, dns) &&
@@ -11396,6 +11398,7 @@ mixin _$TunConfig {
   int get hashCode => Object.hash(
       runtimeType,
       name,
+      desc,
       mtu,
       const DeepCollectionEquality().hash(gateway),
       const DeepCollectionEquality().hash(dns),
@@ -11405,7 +11408,7 @@ mixin _$TunConfig {
 
   @override
   String toString() {
-    return 'TunConfig(name: $name, mtu: $mtu, gateway: $gateway, dns: $dns, userLevel: $userLevel, autoSystemRoutingTable: $autoSystemRoutingTable, autoOutboundsInterface: $autoOutboundsInterface)';
+    return 'TunConfig(name: $name, desc: $desc, mtu: $mtu, gateway: $gateway, dns: $dns, userLevel: $userLevel, autoSystemRoutingTable: $autoSystemRoutingTable, autoOutboundsInterface: $autoOutboundsInterface)';
   }
 }
 
@@ -11416,6 +11419,7 @@ abstract mixin class $TunConfigCopyWith<$Res> {
   @useResult
   $Res call(
       {String? name,
+      String? desc,
       @JsonKey(name: 'mtu') int? mtu,
       List<String>? gateway,
       @JsonKey(name: 'dns') List<String>? dns,
@@ -11437,6 +11441,7 @@ class _$TunConfigCopyWithImpl<$Res> implements $TunConfigCopyWith<$Res> {
   @override
   $Res call({
     Object? name = freezed,
+    Object? desc = freezed,
     Object? mtu = freezed,
     Object? gateway = freezed,
     Object? dns = freezed,
@@ -11448,6 +11453,10 @@ class _$TunConfigCopyWithImpl<$Res> implements $TunConfigCopyWith<$Res> {
       name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      desc: freezed == desc
+          ? _self.desc
+          : desc // ignore: cast_nullable_to_non_nullable
               as String?,
       mtu: freezed == mtu
           ? _self.mtu
@@ -11572,6 +11581,7 @@ extension TunConfigPatterns on TunConfig {
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
             String? name,
+            String? desc,
             @JsonKey(name: 'mtu') int? mtu,
             List<String>? gateway,
             @JsonKey(name: 'dns') List<String>? dns,
@@ -11586,6 +11596,7 @@ extension TunConfigPatterns on TunConfig {
       case _TunConfig() when $default != null:
         return $default(
             _that.name,
+            _that.desc,
             _that.mtu,
             _that.gateway,
             _that.dns,
@@ -11614,6 +11625,7 @@ extension TunConfigPatterns on TunConfig {
   TResult when<TResult extends Object?>(
     TResult Function(
             String? name,
+            String? desc,
             @JsonKey(name: 'mtu') int? mtu,
             List<String>? gateway,
             @JsonKey(name: 'dns') List<String>? dns,
@@ -11627,6 +11639,7 @@ extension TunConfigPatterns on TunConfig {
       case _TunConfig():
         return $default(
             _that.name,
+            _that.desc,
             _that.mtu,
             _that.gateway,
             _that.dns,
@@ -11654,6 +11667,7 @@ extension TunConfigPatterns on TunConfig {
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
             String? name,
+            String? desc,
             @JsonKey(name: 'mtu') int? mtu,
             List<String>? gateway,
             @JsonKey(name: 'dns') List<String>? dns,
@@ -11667,6 +11681,7 @@ extension TunConfigPatterns on TunConfig {
       case _TunConfig() when $default != null:
         return $default(
             _that.name,
+            _that.desc,
             _that.mtu,
             _that.gateway,
             _that.dns,
@@ -11684,6 +11699,7 @@ extension TunConfigPatterns on TunConfig {
 class _TunConfig extends TunConfig {
   const _TunConfig(
       {this.name,
+      this.desc,
       @JsonKey(name: 'mtu') this.mtu,
       final List<String>? gateway,
       @JsonKey(name: 'dns') final List<String>? dns,
@@ -11697,6 +11713,8 @@ class _TunConfig extends TunConfig {
 
   @override
   final String? name;
+  @override
+  final String? desc;
   @override
   @JsonKey(name: 'mtu')
   final int? mtu;
@@ -11751,6 +11769,7 @@ class _TunConfig extends TunConfig {
         (other.runtimeType == runtimeType &&
             other is _TunConfig &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.desc, desc) || other.desc == desc) &&
             (identical(other.mtu, mtu) || other.mtu == mtu) &&
             const DeepCollectionEquality().equals(other._gateway, _gateway) &&
             const DeepCollectionEquality().equals(other._dns, _dns) &&
@@ -11766,6 +11785,7 @@ class _TunConfig extends TunConfig {
   int get hashCode => Object.hash(
       runtimeType,
       name,
+      desc,
       mtu,
       const DeepCollectionEquality().hash(_gateway),
       const DeepCollectionEquality().hash(_dns),
@@ -11775,7 +11795,7 @@ class _TunConfig extends TunConfig {
 
   @override
   String toString() {
-    return 'TunConfig(name: $name, mtu: $mtu, gateway: $gateway, dns: $dns, userLevel: $userLevel, autoSystemRoutingTable: $autoSystemRoutingTable, autoOutboundsInterface: $autoOutboundsInterface)';
+    return 'TunConfig(name: $name, desc: $desc, mtu: $mtu, gateway: $gateway, dns: $dns, userLevel: $userLevel, autoSystemRoutingTable: $autoSystemRoutingTable, autoOutboundsInterface: $autoOutboundsInterface)';
   }
 }
 
@@ -11789,6 +11809,7 @@ abstract mixin class _$TunConfigCopyWith<$Res>
   @useResult
   $Res call(
       {String? name,
+      String? desc,
       @JsonKey(name: 'mtu') int? mtu,
       List<String>? gateway,
       @JsonKey(name: 'dns') List<String>? dns,
@@ -11810,6 +11831,7 @@ class __$TunConfigCopyWithImpl<$Res> implements _$TunConfigCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   $Res call({
     Object? name = freezed,
+    Object? desc = freezed,
     Object? mtu = freezed,
     Object? gateway = freezed,
     Object? dns = freezed,
@@ -11821,6 +11843,10 @@ class __$TunConfigCopyWithImpl<$Res> implements _$TunConfigCopyWith<$Res> {
       name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      desc: freezed == desc
+          ? _self.desc
+          : desc // ignore: cast_nullable_to_non_nullable
               as String?,
       mtu: freezed == mtu
           ? _self.mtu

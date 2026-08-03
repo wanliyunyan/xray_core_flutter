@@ -1598,6 +1598,60 @@ void main() {
     });
   });
 
+  test('imports Xray 26.7.28 XMC profiles and TUN description', () {
+    final xmc = XMC.fromJson({
+      'hostname': 'mc.example.com',
+      'profiles': [
+        {
+          'username': 'TestUser',
+          'uuid': '00112233-4455-6677-8899-aabbccddeeff',
+          'texturesValue': 'textures-value',
+          'texturesSignature': 'textures-signature',
+        },
+      ],
+      'password': 'test-password',
+    });
+    final tun = TunConfig.fromJson({
+      'name': 'utun10',
+      'desc': 'Wintun',
+    });
+
+    expect(xmc.profiles.single.username, 'TestUser');
+    expect(xmc.toJson(), {
+      'hostname': 'mc.example.com',
+      'profiles': [
+        {
+          'username': 'TestUser',
+          'uuid': '00112233-4455-6677-8899-aabbccddeeff',
+          'texturesValue': 'textures-value',
+          'texturesSignature': 'textures-signature',
+        },
+      ],
+      'password': 'test-password',
+    });
+    expect(tun.desc, 'Wintun');
+    expect(tun.toJson(), {'name': 'utun10', 'desc': 'Wintun'});
+  });
+
+  test('rejects XMC JSON with missing required fields', () {
+    expect(
+      () => XMC.fromJson({'password': 'test-password'}),
+      throwsA(isA<TypeError>()),
+    );
+    expect(
+      () => XMC.fromJson({'profiles': const []}),
+      throwsA(isA<TypeError>()),
+    );
+    expect(
+      () => XMCProfile.fromJson({
+        'username': 'TestUser',
+        'uuid': '00112233-4455-6677-8899-aabbccddeeff',
+        'texturesValue': 'textures-value',
+      }),
+      throwsA(isA<TypeError>()),
+    );
+  });
+
   test('imports finalmask kcp and hysteria transport settings', () {
     final stream = StreamConfig.fromJson({
       'network': 'hysteria',

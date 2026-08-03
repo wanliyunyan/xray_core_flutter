@@ -5,5 +5,5 @@ int32_t xray_core_sdk_abi_version(void) {
 }
 
 const char* xray_core_sdk_version(void) {
-  return "0.3.1";
+  return "0.4.0";
 }

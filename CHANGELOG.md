@@ -1,3 +1,8 @@
+## 0.4.0
+
+- Synced the typed Dart config models with Xray-core `infra/conf` v26.7.28.
+- Replaced XMC finalmask usernames with signed profile metadata and added the TUN device description field.
+
 ## 0.3.1
 
 - Synced the typed Dart config models with Xray-core `infra/conf` v26.7.11.

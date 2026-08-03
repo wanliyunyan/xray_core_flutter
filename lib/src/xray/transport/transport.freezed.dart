@@ -18349,8 +18349,8 @@ class __$WebSocketConfigCopyWithImpl<$Res>
 /// @nodoc
 mixin _$XMC {
   String? get hostname;
-  List<String>? get usernames;
-  String? get password;
+  List<XMCProfile> get profiles;
+  String get password;
 
   /// Create a copy of XMC
   /// with the given fields replaced by the non-null parameter values.
@@ -18366,18 +18366,18 @@ mixin _$XMC {
             other is XMC &&
             (identical(other.hostname, hostname) ||
                 other.hostname == hostname) &&
-            const DeepCollectionEquality().equals(other.usernames, usernames) &&
+            const DeepCollectionEquality().equals(other.profiles, profiles) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, hostname,
-      const DeepCollectionEquality().hash(usernames), password);
+      const DeepCollectionEquality().hash(profiles), password);
 
   @override
   String toString() {
-    return 'XMC(hostname: $hostname, usernames: $usernames, password: $password)';
+    return 'XMC(hostname: $hostname, profiles: $profiles, password: $password)';
   }
 }
 
@@ -18385,7 +18385,7 @@ mixin _$XMC {
 abstract mixin class $XMCCopyWith<$Res> {
   factory $XMCCopyWith(XMC value, $Res Function(XMC) _then) = _$XMCCopyWithImpl;
   @useResult
-  $Res call({String? hostname, List<String>? usernames, String? password});
+  $Res call({String? hostname, List<XMCProfile> profiles, String password});
 }
 
 /// @nodoc
@@ -18401,22 +18401,22 @@ class _$XMCCopyWithImpl<$Res> implements $XMCCopyWith<$Res> {
   @override
   $Res call({
     Object? hostname = freezed,
-    Object? usernames = freezed,
-    Object? password = freezed,
+    Object? profiles = null,
+    Object? password = null,
   }) {
     return _then(_self.copyWith(
       hostname: freezed == hostname
           ? _self.hostname
           : hostname // ignore: cast_nullable_to_non_nullable
               as String?,
-      usernames: freezed == usernames
-          ? _self.usernames
-          : usernames // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      password: freezed == password
+      profiles: null == profiles
+          ? _self.profiles
+          : profiles // ignore: cast_nullable_to_non_nullable
+              as List<XMCProfile>,
+      password: null == password
           ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -18515,14 +18515,14 @@ extension XMCPatterns on XMC {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? hostname, List<String>? usernames, String? password)?
+            String? hostname, List<XMCProfile> profiles, String password)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _XMC() when $default != null:
-        return $default(_that.hostname, _that.usernames, _that.password);
+        return $default(_that.hostname, _that.profiles, _that.password);
       case _:
         return orElse();
     }
@@ -18544,13 +18544,13 @@ extension XMCPatterns on XMC {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? hostname, List<String>? usernames, String? password)
+            String? hostname, List<XMCProfile> profiles, String password)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XMC():
-        return $default(_that.hostname, _that.usernames, _that.password);
+        return $default(_that.hostname, _that.profiles, _that.password);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -18571,13 +18571,13 @@ extension XMCPatterns on XMC {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? hostname, List<String>? usernames, String? password)?
+            String? hostname, List<XMCProfile> profiles, String password)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XMC() when $default != null:
-        return $default(_that.hostname, _that.usernames, _that.password);
+        return $default(_that.hostname, _that.profiles, _that.password);
       case _:
         return null;
     }
@@ -18587,24 +18587,25 @@ extension XMCPatterns on XMC {
 /// @nodoc
 
 class _XMC extends XMC {
-  const _XMC({this.hostname, final List<String>? usernames, this.password})
-      : _usernames = usernames,
+  const _XMC(
+      {this.hostname,
+      required final List<XMCProfile> profiles,
+      required this.password})
+      : _profiles = profiles,
         super._();
 
   @override
   final String? hostname;
-  final List<String>? _usernames;
+  final List<XMCProfile> _profiles;
   @override
-  List<String>? get usernames {
-    final value = _usernames;
-    if (value == null) return null;
-    if (_usernames is EqualUnmodifiableListView) return _usernames;
+  List<XMCProfile> get profiles {
+    if (_profiles is EqualUnmodifiableListView) return _profiles;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_profiles);
   }
 
   @override
-  final String? password;
+  final String password;
 
   /// Create a copy of XMC
   /// with the given fields replaced by the non-null parameter values.
@@ -18621,19 +18622,18 @@ class _XMC extends XMC {
             other is _XMC &&
             (identical(other.hostname, hostname) ||
                 other.hostname == hostname) &&
-            const DeepCollectionEquality()
-                .equals(other._usernames, _usernames) &&
+            const DeepCollectionEquality().equals(other._profiles, _profiles) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, hostname,
-      const DeepCollectionEquality().hash(_usernames), password);
+      const DeepCollectionEquality().hash(_profiles), password);
 
   @override
   String toString() {
-    return 'XMC(hostname: $hostname, usernames: $usernames, password: $password)';
+    return 'XMC(hostname: $hostname, profiles: $profiles, password: $password)';
   }
 }
 
@@ -18643,7 +18643,7 @@ abstract mixin class _$XMCCopyWith<$Res> implements $XMCCopyWith<$Res> {
       __$XMCCopyWithImpl;
   @override
   @useResult
-  $Res call({String? hostname, List<String>? usernames, String? password});
+  $Res call({String? hostname, List<XMCProfile> profiles, String password});
 }
 
 /// @nodoc
@@ -18659,22 +18659,381 @@ class __$XMCCopyWithImpl<$Res> implements _$XMCCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   $Res call({
     Object? hostname = freezed,
-    Object? usernames = freezed,
-    Object? password = freezed,
+    Object? profiles = null,
+    Object? password = null,
   }) {
     return _then(_XMC(
       hostname: freezed == hostname
           ? _self.hostname
           : hostname // ignore: cast_nullable_to_non_nullable
               as String?,
-      usernames: freezed == usernames
-          ? _self._usernames
-          : usernames // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      password: freezed == password
+      profiles: null == profiles
+          ? _self._profiles
+          : profiles // ignore: cast_nullable_to_non_nullable
+              as List<XMCProfile>,
+      password: null == password
           ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$XMCProfile {
+  String get username;
+  String get uuid;
+  String get texturesValue;
+  String get texturesSignature;
+
+  /// Create a copy of XMCProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XMCProfileCopyWith<XMCProfile> get copyWith =>
+      _$XMCProfileCopyWithImpl<XMCProfile>(this as XMCProfile, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XMCProfile &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.uuid, uuid) || other.uuid == uuid) &&
+            (identical(other.texturesValue, texturesValue) ||
+                other.texturesValue == texturesValue) &&
+            (identical(other.texturesSignature, texturesSignature) ||
+                other.texturesSignature == texturesSignature));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, username, uuid, texturesValue, texturesSignature);
+
+  @override
+  String toString() {
+    return 'XMCProfile(username: $username, uuid: $uuid, texturesValue: $texturesValue, texturesSignature: $texturesSignature)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XMCProfileCopyWith<$Res> {
+  factory $XMCProfileCopyWith(
+          XMCProfile value, $Res Function(XMCProfile) _then) =
+      _$XMCProfileCopyWithImpl;
+  @useResult
+  $Res call(
+      {String username,
+      String uuid,
+      String texturesValue,
+      String texturesSignature});
+}
+
+/// @nodoc
+class _$XMCProfileCopyWithImpl<$Res> implements $XMCProfileCopyWith<$Res> {
+  _$XMCProfileCopyWithImpl(this._self, this._then);
+
+  final XMCProfile _self;
+  final $Res Function(XMCProfile) _then;
+
+  /// Create a copy of XMCProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? username = null,
+    Object? uuid = null,
+    Object? texturesValue = null,
+    Object? texturesSignature = null,
+  }) {
+    return _then(_self.copyWith(
+      username: null == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      uuid: null == uuid
+          ? _self.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+      texturesValue: null == texturesValue
+          ? _self.texturesValue
+          : texturesValue // ignore: cast_nullable_to_non_nullable
+              as String,
+      texturesSignature: null == texturesSignature
+          ? _self.texturesSignature
+          : texturesSignature // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [XMCProfile].
+extension XMCProfilePatterns on XMCProfile {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XMCProfile value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XMCProfile() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XMCProfile value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMCProfile():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XMCProfile value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMCProfile() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String username, String uuid, String texturesValue,
+            String texturesSignature)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XMCProfile() when $default != null:
+        return $default(_that.username, _that.uuid, _that.texturesValue,
+            _that.texturesSignature);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String username, String uuid, String texturesValue,
+            String texturesSignature)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMCProfile():
+        return $default(_that.username, _that.uuid, _that.texturesValue,
+            _that.texturesSignature);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String username, String uuid, String texturesValue,
+            String texturesSignature)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XMCProfile() when $default != null:
+        return $default(_that.username, _that.uuid, _that.texturesValue,
+            _that.texturesSignature);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XMCProfile extends XMCProfile {
+  const _XMCProfile(
+      {required this.username,
+      required this.uuid,
+      required this.texturesValue,
+      required this.texturesSignature})
+      : super._();
+
+  @override
+  final String username;
+  @override
+  final String uuid;
+  @override
+  final String texturesValue;
+  @override
+  final String texturesSignature;
+
+  /// Create a copy of XMCProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XMCProfileCopyWith<_XMCProfile> get copyWith =>
+      __$XMCProfileCopyWithImpl<_XMCProfile>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XMCProfile &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.uuid, uuid) || other.uuid == uuid) &&
+            (identical(other.texturesValue, texturesValue) ||
+                other.texturesValue == texturesValue) &&
+            (identical(other.texturesSignature, texturesSignature) ||
+                other.texturesSignature == texturesSignature));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, username, uuid, texturesValue, texturesSignature);
+
+  @override
+  String toString() {
+    return 'XMCProfile(username: $username, uuid: $uuid, texturesValue: $texturesValue, texturesSignature: $texturesSignature)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XMCProfileCopyWith<$Res>
+    implements $XMCProfileCopyWith<$Res> {
+  factory _$XMCProfileCopyWith(
+          _XMCProfile value, $Res Function(_XMCProfile) _then) =
+      __$XMCProfileCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String username,
+      String uuid,
+      String texturesValue,
+      String texturesSignature});
+}
+
+/// @nodoc
+class __$XMCProfileCopyWithImpl<$Res> implements _$XMCProfileCopyWith<$Res> {
+  __$XMCProfileCopyWithImpl(this._self, this._then);
+
+  final _XMCProfile _self;
+  final $Res Function(_XMCProfile) _then;
+
+  /// Create a copy of XMCProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? username = null,
+    Object? uuid = null,
+    Object? texturesValue = null,
+    Object? texturesSignature = null,
+  }) {
+    return _then(_XMCProfile(
+      username: null == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      uuid: null == uuid
+          ? _self.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+      texturesValue: null == texturesValue
+          ? _self.texturesValue
+          : texturesValue // ignore: cast_nullable_to_non_nullable
+              as String,
+      texturesSignature: null == texturesSignature
+          ? _self.texturesSignature
+          : texturesSignature // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }

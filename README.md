@@ -27,7 +27,7 @@
 
 ## Xray 配置覆盖和对照
 
-当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.7.11：
+当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.7.28：
 
 - 覆盖 Xray-core 配置结构中可解析的 JSON 字段，导出的 JSON 字段名保持 Xray 兼容。
 - 覆盖所有 loader-style 可创建配置入口，包括入站、出站、blackhole response、TCP header、routing strategy、TCP/UDP finalmask。
