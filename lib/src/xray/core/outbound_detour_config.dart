@@ -258,6 +258,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     final map = asJsonMap(json, 'outbound');
     final protocol = map['protocol'] as String;
     final settingsJson = map['settings'];
+    final targetStrategyJson = map['targetStrategy'];
     return OutboundDetourConfig(
       protocol: protocol,
       sendThrough: map['sendThrough'] as String?,
@@ -272,9 +273,9 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
           ? null
           : ProxyConfig.fromJson(map['proxySettings']),
       mux: map['mux'] == null ? null : MuxConfig.fromJson(map['mux']),
-      targetStrategy: map['targetStrategy'] == null
+      targetStrategy: targetStrategyJson == null || targetStrategyJson == ''
           ? null
-          : XrayTargetStrategyJson.fromJson(map['targetStrategy']),
+          : XrayTargetStrategyJson.fromJson(targetStrategyJson),
     );
   }
 

@@ -4,9 +4,8 @@ Thank you for helping keep `xray_core_flutter` aligned with Xray.
 
 ## Scope
 
-This package only provides typed Dart/Flutter models for creating, validating,
-importing, and exporting Xray JSON configs. It does not bundle or call native
-Xray runtimes such as `LibXray.xcframework` or `libXray.aar`.
+The package focuses on typed Dart/Flutter models for creating, validating,
+importing, and exporting Xray JSON configs.
 
 ## Updating For Xray Changes
 
@@ -40,4 +39,5 @@ flutter test
 2. Bump `version` in `pubspec.yaml`.
 3. Run `flutter analyze`.
 4. Run `flutter test`.
-5. Run `dart pub publish --dry-run`.
+5. Run the Xray config parity check.
+6. Run `dart pub publish --dry-run`.

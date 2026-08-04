@@ -1,7 +1,11 @@
-## 0.4.0
+## 0.5.0
 
+- Focused the public package on Flutter/Dart config models, JSON conversion,
+  and validation.
 - Synced the typed Dart config models with Xray-core `infra/conf` v26.7.28.
 - Replaced XMC finalmask usernames with signed profile metadata and added the TUN device description field.
+- Added the canonical `package:xray_core_flutter/xray_core_flutter.dart`
+  library entrypoint.
 
 ## 0.3.1
 
@@ -16,27 +20,6 @@
 - Expanded Go parity checks to validate JSON tags, per-struct JSON shape, unexpected Dart keys, and config creator loader IDs.
 - Added broader realistic config round-trip and contract tests for Xray-compatible JSON output.
 - Updated the example into a visual Xray config builder app.
-
-## 0.2.3
-
-- Renamed native SDK artifacts and import/module surface to `XrayCoreSDK`.
-
-## 0.2.2
-
-- Fixed GitHub Release asset upload matching so iOS and macOS XCFramework archives are attached separately.
-
-## 0.2.1
-
-- Added native FFI plugin scaffolding for Android, iOS, macOS, Linux, and Windows.
-- Added a small C ABI surface for verifying native library loading.
-- Added a Dart native helper entrypoint at `package:xray_core_flutter/xray_native.dart`.
-- Added native SDK build commands and GitHub Actions packaging for Android, Apple, Linux, and Windows artifacts.
-
-## 0.1.1
-
-- Removed the default Flutter counter demo widget and test from the SDK package.
-- Kept a minimal module entrypoint for Android AAR and iOS framework builds.
-- Clarified SDK packaging notes for native platform artifacts.
 
 ## 0.1.0
 

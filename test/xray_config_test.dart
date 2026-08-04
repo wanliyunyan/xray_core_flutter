@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:xray_core_flutter/xray_config.dart';
+import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 import 'test_configs.dart';
 
@@ -19,6 +19,20 @@ void main() {
       'geosite:private',
     ]);
     expect(const XrayNetworkList.tcpAndUdp().toJson(), ['tcp', 'udp']);
+  });
+
+  test('treats an empty optional outbound target strategy as unset', () {
+    final outbound = OutboundDetourConfig.fromJson({
+      'protocol': 'freedom',
+      'settings': <String, Object?>{},
+      'targetStrategy': '',
+    });
+
+    expect(outbound.targetStrategy, isNull);
+    expect(outbound.toJson(), {
+      'protocol': 'freedom',
+      'settings': <String, Object?>{},
+    });
   });
 
   test('example config builds xray-compatible json', () {
