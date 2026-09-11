@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'apps.dart';
@@ -9,7 +9,7 @@ part of 'apps.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
+// GENERATED CODE - DO NOT MODIFY BY HAND
 T _$identity<T>(T value) => value;
 
 /// @nodoc
@@ -27,21 +27,34 @@ mixin _$APIConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as APIConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is APIConfig &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.listen, listen) || other.listen == listen) &&
-            const DeepCollectionEquality().equals(other.services, services));
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.listen, _this.listen) ||
+                other.listen == _this.listen) &&
+            const DeepCollectionEquality().equals(
+              other.services,
+              _this.services,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, tag, listen, const DeepCollectionEquality().hash(services));
+  int get hashCode {
+    final _this = this as APIConfig;
+    return Object.hash(
+      runtimeType,
+      _this.tag,
+      _this.listen,
+      const DeepCollectionEquality().hash(_this.services),
+    );
+  }
 
   @override
   String toString() {
-    return 'APIConfig(tag: $tag, listen: $listen, services: $services)';
+    final _this = this as APIConfig;
+    return 'APIConfig(tag: ${_this.tag}, listen: ${_this.listen}, services: ${_this.services})';
   }
 }
 
@@ -69,20 +82,22 @@ class _$APIConfigCopyWithImpl<$Res> implements $APIConfigCopyWith<$Res> {
     Object? listen = freezed,
     Object? services = freezed,
   }) {
-    return _then(_self.copyWith(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      listen: freezed == listen
-          ? _self.listen
-          : listen // ignore: cast_nullable_to_non_nullable
-              as String?,
-      services: freezed == services
-          ? _self.services
-          : services // ignore: cast_nullable_to_non_nullable
-              as List<ApiService>?,
-    ));
+    return _then(
+      APIConfig(
+        tag: null == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String,
+        listen: freezed == listen
+            ? _self.listen
+            : listen // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        services: freezed == services
+            ? _self.services
+            : services // ignore: cast_nullable_to_non_nullable
+                  as List<ApiService>?,
+      ),
+    );
   }
 }
 
@@ -180,7 +195,7 @@ extension APIConfigPatterns on APIConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String tag, String? listen, List<ApiService>? services)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -208,7 +223,7 @@ extension APIConfigPatterns on APIConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String tag, String? listen, List<ApiService>? services)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -234,7 +249,7 @@ extension APIConfigPatterns on APIConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(String tag, String? listen, List<ApiService>? services)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -249,10 +264,9 @@ extension APIConfigPatterns on APIConfig {
 /// @nodoc
 
 class _APIConfig extends APIConfig {
-  const _APIConfig(
-      {required this.tag, this.listen, final List<ApiService>? services})
-      : _services = services,
-        super._();
+  const _APIConfig({required this.tag, this.listen, List<ApiService>? services})
+    : _services = services,
+      super._();
 
   @override
   final String tag;
@@ -283,12 +297,18 @@ class _APIConfig extends APIConfig {
             other is _APIConfig &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.listen, listen) || other.listen == listen) &&
-            const DeepCollectionEquality().equals(other._services, _services));
+            const DeepCollectionEquality().equals(other.services, _services));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, tag, listen, const DeepCollectionEquality().hash(_services));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      tag,
+      listen,
+      const DeepCollectionEquality().hash(_services),
+    );
+  }
 
   @override
   String toString() {
@@ -300,8 +320,9 @@ class _APIConfig extends APIConfig {
 abstract mixin class _$APIConfigCopyWith<$Res>
     implements $APIConfigCopyWith<$Res> {
   factory _$APIConfigCopyWith(
-          _APIConfig value, $Res Function(_APIConfig) _then) =
-      __$APIConfigCopyWithImpl;
+    _APIConfig value,
+    $Res Function(_APIConfig) _then,
+  ) = __$APIConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String tag, String? listen, List<ApiService>? services});
@@ -323,20 +344,22 @@ class __$APIConfigCopyWithImpl<$Res> implements _$APIConfigCopyWith<$Res> {
     Object? listen = freezed,
     Object? services = freezed,
   }) {
-    return _then(_APIConfig(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      listen: freezed == listen
-          ? _self.listen
-          : listen // ignore: cast_nullable_to_non_nullable
-              as String?,
-      services: freezed == services
-          ? _self._services
-          : services // ignore: cast_nullable_to_non_nullable
-              as List<ApiService>?,
-    ));
+    return _then(
+      _APIConfig(
+        tag: null == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String,
+        listen: freezed == listen
+            ? _self.listen
+            : listen // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        services: freezed == services
+            ? _self._services
+            : services // ignore: cast_nullable_to_non_nullable
+                  as List<ApiService>?,
+      ),
+    );
   }
 }
 
@@ -354,43 +377,57 @@ mixin _$BalancingRule {
   @pragma('vm:prefer-inline')
   $BalancingRuleCopyWith<BalancingRule> get copyWith =>
       _$BalancingRuleCopyWithImpl<BalancingRule>(
-          this as BalancingRule, _$identity);
+        this as BalancingRule,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as BalancingRule;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is BalancingRule &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.selectors, selectors) ||
-                other.selectors == selectors) &&
-            (identical(other.strategy, strategy) ||
-                other.strategy == strategy) &&
-            (identical(other.fallbackTag, fallbackTag) ||
-                other.fallbackTag == fallbackTag));
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.selectors, _this.selectors) ||
+                other.selectors == _this.selectors) &&
+            (identical(other.strategy, _this.strategy) ||
+                other.strategy == _this.strategy) &&
+            (identical(other.fallbackTag, _this.fallbackTag) ||
+                other.fallbackTag == _this.fallbackTag));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, tag, selectors, strategy, fallbackTag);
+  int get hashCode {
+    final _this = this as BalancingRule;
+    return Object.hash(
+      runtimeType,
+      _this.tag,
+      _this.selectors,
+      _this.strategy,
+      _this.fallbackTag,
+    );
+  }
 
   @override
   String toString() {
-    return 'BalancingRule(tag: $tag, selectors: $selectors, strategy: $strategy, fallbackTag: $fallbackTag)';
+    final _this = this as BalancingRule;
+    return 'BalancingRule(tag: ${_this.tag}, selectors: ${_this.selectors}, strategy: ${_this.strategy}, fallbackTag: ${_this.fallbackTag})';
   }
 }
 
 /// @nodoc
 abstract mixin class $BalancingRuleCopyWith<$Res> {
   factory $BalancingRuleCopyWith(
-          BalancingRule value, $Res Function(BalancingRule) _then) =
-      _$BalancingRuleCopyWithImpl;
+    BalancingRule value,
+    $Res Function(BalancingRule) _then,
+  ) = _$BalancingRuleCopyWithImpl;
   @useResult
-  $Res call(
-      {String tag,
-      @JsonKey(name: 'selector') XrayStringList selectors,
-      StrategyConfig? strategy,
-      String? fallbackTag});
+  $Res call({
+    String tag,
+    @JsonKey(name: 'selector') XrayStringList selectors,
+    StrategyConfig? strategy,
+    String? fallbackTag,
+  });
 
   $StrategyConfigCopyWith<$Res>? get strategy;
 }
@@ -413,24 +450,26 @@ class _$BalancingRuleCopyWithImpl<$Res>
     Object? strategy = freezed,
     Object? fallbackTag = freezed,
   }) {
-    return _then(_self.copyWith(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      selectors: null == selectors
-          ? _self.selectors
-          : selectors // ignore: cast_nullable_to_non_nullable
-              as XrayStringList,
-      strategy: freezed == strategy
-          ? _self.strategy
-          : strategy // ignore: cast_nullable_to_non_nullable
-              as StrategyConfig?,
-      fallbackTag: freezed == fallbackTag
-          ? _self.fallbackTag
-          : fallbackTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      BalancingRule(
+        tag: null == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String,
+        selectors: null == selectors
+            ? _self.selectors
+            : selectors // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList,
+        strategy: freezed == strategy
+            ? _self.strategy
+            : strategy // ignore: cast_nullable_to_non_nullable
+                  as StrategyConfig?,
+        fallbackTag: freezed == fallbackTag
+            ? _self.fallbackTag
+            : fallbackTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
   /// Create a copy of BalancingRule
@@ -542,18 +581,23 @@ extension BalancingRulePatterns on BalancingRule {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String tag,
-            @JsonKey(name: 'selector') XrayStringList selectors,
-            StrategyConfig? strategy,
-            String? fallbackTag)?
-        $default, {
+      String tag,
+      @JsonKey(name: 'selector') XrayStringList selectors,
+      StrategyConfig? strategy,
+      String? fallbackTag,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _BalancingRule() when $default != null:
         return $default(
-            _that.tag, _that.selectors, _that.strategy, _that.fallbackTag);
+          _that.tag,
+          _that.selectors,
+          _that.strategy,
+          _that.fallbackTag,
+        );
       case _:
         return orElse();
     }
@@ -575,17 +619,22 @@ extension BalancingRulePatterns on BalancingRule {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String tag,
-            @JsonKey(name: 'selector') XrayStringList selectors,
-            StrategyConfig? strategy,
-            String? fallbackTag)
-        $default,
+      String tag,
+      @JsonKey(name: 'selector') XrayStringList selectors,
+      StrategyConfig? strategy,
+      String? fallbackTag,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _BalancingRule():
         return $default(
-            _that.tag, _that.selectors, _that.strategy, _that.fallbackTag);
+          _that.tag,
+          _that.selectors,
+          _that.strategy,
+          _that.fallbackTag,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -606,17 +655,22 @@ extension BalancingRulePatterns on BalancingRule {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String tag,
-            @JsonKey(name: 'selector') XrayStringList selectors,
-            StrategyConfig? strategy,
-            String? fallbackTag)?
-        $default,
+      String tag,
+      @JsonKey(name: 'selector') XrayStringList selectors,
+      StrategyConfig? strategy,
+      String? fallbackTag,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _BalancingRule() when $default != null:
         return $default(
-            _that.tag, _that.selectors, _that.strategy, _that.fallbackTag);
+          _that.tag,
+          _that.selectors,
+          _that.strategy,
+          _that.fallbackTag,
+        );
       case _:
         return null;
     }
@@ -626,12 +680,12 @@ extension BalancingRulePatterns on BalancingRule {
 /// @nodoc
 
 class _BalancingRule extends BalancingRule {
-  const _BalancingRule(
-      {required this.tag,
-      @JsonKey(name: 'selector') required this.selectors,
-      this.strategy,
-      this.fallbackTag})
-      : super._();
+  const _BalancingRule({
+    required this.tag,
+    @JsonKey(name: 'selector') required this.selectors,
+    this.strategy,
+    this.fallbackTag,
+  }) : super._();
 
   @override
   final String tag;
@@ -666,8 +720,9 @@ class _BalancingRule extends BalancingRule {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, tag, selectors, strategy, fallbackTag);
+  int get hashCode {
+    return Object.hash(runtimeType, tag, selectors, strategy, fallbackTag);
+  }
 
   @override
   String toString() {
@@ -679,15 +734,17 @@ class _BalancingRule extends BalancingRule {
 abstract mixin class _$BalancingRuleCopyWith<$Res>
     implements $BalancingRuleCopyWith<$Res> {
   factory _$BalancingRuleCopyWith(
-          _BalancingRule value, $Res Function(_BalancingRule) _then) =
-      __$BalancingRuleCopyWithImpl;
+    _BalancingRule value,
+    $Res Function(_BalancingRule) _then,
+  ) = __$BalancingRuleCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String tag,
-      @JsonKey(name: 'selector') XrayStringList selectors,
-      StrategyConfig? strategy,
-      String? fallbackTag});
+  $Res call({
+    String tag,
+    @JsonKey(name: 'selector') XrayStringList selectors,
+    StrategyConfig? strategy,
+    String? fallbackTag,
+  });
 
   @override
   $StrategyConfigCopyWith<$Res>? get strategy;
@@ -711,24 +768,26 @@ class __$BalancingRuleCopyWithImpl<$Res>
     Object? strategy = freezed,
     Object? fallbackTag = freezed,
   }) {
-    return _then(_BalancingRule(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      selectors: null == selectors
-          ? _self.selectors
-          : selectors // ignore: cast_nullable_to_non_nullable
-              as XrayStringList,
-      strategy: freezed == strategy
-          ? _self.strategy
-          : strategy // ignore: cast_nullable_to_non_nullable
-              as StrategyConfig?,
-      fallbackTag: freezed == fallbackTag
-          ? _self.fallbackTag
-          : fallbackTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _BalancingRule(
+        tag: null == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String,
+        selectors: null == selectors
+            ? _self.selectors
+            : selectors // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList,
+        strategy: freezed == strategy
+            ? _self.strategy
+            : strategy // ignore: cast_nullable_to_non_nullable
+                  as StrategyConfig?,
+        fallbackTag: freezed == fallbackTag
+            ? _self.fallbackTag
+            : fallbackTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
   /// Create a copy of BalancingRule
@@ -757,31 +816,40 @@ mixin _$BridgeConfig {
   @pragma('vm:prefer-inline')
   $BridgeConfigCopyWith<BridgeConfig> get copyWith =>
       _$BridgeConfigCopyWithImpl<BridgeConfig>(
-          this as BridgeConfig, _$identity);
+        this as BridgeConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as BridgeConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is BridgeConfig &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.domain, domain) || other.domain == domain));
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.domain, _this.domain) ||
+                other.domain == _this.domain));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tag, domain);
+  int get hashCode {
+    final _this = this as BridgeConfig;
+    return Object.hash(runtimeType, _this.tag, _this.domain);
+  }
 
   @override
   String toString() {
-    return 'BridgeConfig(tag: $tag, domain: $domain)';
+    final _this = this as BridgeConfig;
+    return 'BridgeConfig(tag: ${_this.tag}, domain: ${_this.domain})';
   }
 }
 
 /// @nodoc
 abstract mixin class $BridgeConfigCopyWith<$Res> {
   factory $BridgeConfigCopyWith(
-          BridgeConfig value, $Res Function(BridgeConfig) _then) =
-      _$BridgeConfigCopyWithImpl;
+    BridgeConfig value,
+    $Res Function(BridgeConfig) _then,
+  ) = _$BridgeConfigCopyWithImpl;
   @useResult
   $Res call({String? tag, String? domain});
 }
@@ -797,20 +865,19 @@ class _$BridgeConfigCopyWithImpl<$Res> implements $BridgeConfigCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? tag = freezed,
-    Object? domain = freezed,
-  }) {
-    return _then(_self.copyWith(
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? tag = freezed, Object? domain = freezed}) {
+    return _then(
+      BridgeConfig(
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -999,7 +1066,9 @@ class _BridgeConfig extends BridgeConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tag, domain);
+  int get hashCode {
+    return Object.hash(runtimeType, tag, domain);
+  }
 
   @override
   String toString() {
@@ -1011,8 +1080,9 @@ class _BridgeConfig extends BridgeConfig {
 abstract mixin class _$BridgeConfigCopyWith<$Res>
     implements $BridgeConfigCopyWith<$Res> {
   factory _$BridgeConfigCopyWith(
-          _BridgeConfig value, $Res Function(_BridgeConfig) _then) =
-      __$BridgeConfigCopyWithImpl;
+    _BridgeConfig value,
+    $Res Function(_BridgeConfig) _then,
+  ) = __$BridgeConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String? tag, String? domain});
@@ -1030,20 +1100,19 @@ class __$BridgeConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? tag = freezed,
-    Object? domain = freezed,
-  }) {
-    return _then(_BridgeConfig(
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? tag = freezed, Object? domain = freezed}) {
+    return _then(
+      _BridgeConfig(
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -1059,38 +1128,52 @@ mixin _$BurstObservatoryConfig {
   @pragma('vm:prefer-inline')
   $BurstObservatoryConfigCopyWith<BurstObservatoryConfig> get copyWith =>
       _$BurstObservatoryConfigCopyWithImpl<BurstObservatoryConfig>(
-          this as BurstObservatoryConfig, _$identity);
+        this as BurstObservatoryConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as BurstObservatoryConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is BurstObservatoryConfig &&
-            const DeepCollectionEquality()
-                .equals(other.subjectSelector, subjectSelector) &&
-            (identical(other.healthCheck, healthCheck) ||
-                other.healthCheck == healthCheck));
+            const DeepCollectionEquality().equals(
+              other.subjectSelector,
+              _this.subjectSelector,
+            ) &&
+            (identical(other.healthCheck, _this.healthCheck) ||
+                other.healthCheck == _this.healthCheck));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(subjectSelector), healthCheck);
+  int get hashCode {
+    final _this = this as BurstObservatoryConfig;
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_this.subjectSelector),
+      _this.healthCheck,
+    );
+  }
 
   @override
   String toString() {
-    return 'BurstObservatoryConfig(subjectSelector: $subjectSelector, healthCheck: $healthCheck)';
+    final _this = this as BurstObservatoryConfig;
+    return 'BurstObservatoryConfig(subjectSelector: ${_this.subjectSelector}, healthCheck: ${_this.healthCheck})';
   }
 }
 
 /// @nodoc
 abstract mixin class $BurstObservatoryConfigCopyWith<$Res> {
-  factory $BurstObservatoryConfigCopyWith(BurstObservatoryConfig value,
-          $Res Function(BurstObservatoryConfig) _then) =
-      _$BurstObservatoryConfigCopyWithImpl;
+  factory $BurstObservatoryConfigCopyWith(
+    BurstObservatoryConfig value,
+    $Res Function(BurstObservatoryConfig) _then,
+  ) = _$BurstObservatoryConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<String>? subjectSelector,
-      @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck});
+  $Res call({
+    List<String>? subjectSelector,
+    @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck,
+  });
 
   $HealthCheckSettingsCopyWith<$Res> get healthCheck;
 }
@@ -1107,20 +1190,19 @@ class _$BurstObservatoryConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? subjectSelector = freezed,
-    Object? healthCheck = null,
-  }) {
-    return _then(_self.copyWith(
-      subjectSelector: freezed == subjectSelector
-          ? _self.subjectSelector
-          : subjectSelector // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      healthCheck: null == healthCheck
-          ? _self.healthCheck
-          : healthCheck // ignore: cast_nullable_to_non_nullable
-              as HealthCheckSettings,
-    ));
+  $Res call({Object? subjectSelector = freezed, Object? healthCheck = null}) {
+    return _then(
+      BurstObservatoryConfig(
+        subjectSelector: freezed == subjectSelector
+            ? _self.subjectSelector
+            : subjectSelector // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        healthCheck: null == healthCheck
+            ? _self.healthCheck
+            : healthCheck // ignore: cast_nullable_to_non_nullable
+                  as HealthCheckSettings,
+      ),
+    );
   }
 
   /// Create a copy of BurstObservatoryConfig
@@ -1227,9 +1309,11 @@ extension BurstObservatoryConfigPatterns on BurstObservatoryConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<String>? subjectSelector,
-            @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck)?
-        $default, {
+    TResult Function(
+      List<String>? subjectSelector,
+      @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -1256,9 +1340,11 @@ extension BurstObservatoryConfigPatterns on BurstObservatoryConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String>? subjectSelector,
-            @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck)
-        $default,
+    TResult Function(
+      List<String>? subjectSelector,
+      @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -1283,9 +1369,11 @@ extension BurstObservatoryConfigPatterns on BurstObservatoryConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<String>? subjectSelector,
-            @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck)?
-        $default,
+    TResult? Function(
+      List<String>? subjectSelector,
+      @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -1300,11 +1388,11 @@ extension BurstObservatoryConfigPatterns on BurstObservatoryConfig {
 /// @nodoc
 
 class _BurstObservatoryConfig extends BurstObservatoryConfig {
-  const _BurstObservatoryConfig(
-      {final List<String>? subjectSelector,
-      @JsonKey(name: 'pingConfig') required this.healthCheck})
-      : _subjectSelector = subjectSelector,
-        super._();
+  const _BurstObservatoryConfig({
+    List<String>? subjectSelector,
+    @JsonKey(name: 'pingConfig') required this.healthCheck,
+  }) : _subjectSelector = subjectSelector,
+       super._();
 
   final List<String>? _subjectSelector;
   @override
@@ -1327,22 +1415,31 @@ class _BurstObservatoryConfig extends BurstObservatoryConfig {
   @pragma('vm:prefer-inline')
   _$BurstObservatoryConfigCopyWith<_BurstObservatoryConfig> get copyWith =>
       __$BurstObservatoryConfigCopyWithImpl<_BurstObservatoryConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _BurstObservatoryConfig &&
-            const DeepCollectionEquality()
-                .equals(other._subjectSelector, _subjectSelector) &&
+            const DeepCollectionEquality().equals(
+              other.subjectSelector,
+              _subjectSelector,
+            ) &&
             (identical(other.healthCheck, healthCheck) ||
                 other.healthCheck == healthCheck));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_subjectSelector), healthCheck);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_subjectSelector),
+      healthCheck,
+    );
+  }
 
   @override
   String toString() {
@@ -1353,14 +1450,16 @@ class _BurstObservatoryConfig extends BurstObservatoryConfig {
 /// @nodoc
 abstract mixin class _$BurstObservatoryConfigCopyWith<$Res>
     implements $BurstObservatoryConfigCopyWith<$Res> {
-  factory _$BurstObservatoryConfigCopyWith(_BurstObservatoryConfig value,
-          $Res Function(_BurstObservatoryConfig) _then) =
-      __$BurstObservatoryConfigCopyWithImpl;
+  factory _$BurstObservatoryConfigCopyWith(
+    _BurstObservatoryConfig value,
+    $Res Function(_BurstObservatoryConfig) _then,
+  ) = __$BurstObservatoryConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<String>? subjectSelector,
-      @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck});
+  $Res call({
+    List<String>? subjectSelector,
+    @JsonKey(name: 'pingConfig') HealthCheckSettings healthCheck,
+  });
 
   @override
   $HealthCheckSettingsCopyWith<$Res> get healthCheck;
@@ -1378,20 +1477,19 @@ class __$BurstObservatoryConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? subjectSelector = freezed,
-    Object? healthCheck = null,
-  }) {
-    return _then(_BurstObservatoryConfig(
-      subjectSelector: freezed == subjectSelector
-          ? _self._subjectSelector
-          : subjectSelector // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      healthCheck: null == healthCheck
-          ? _self.healthCheck
-          : healthCheck // ignore: cast_nullable_to_non_nullable
-              as HealthCheckSettings,
-    ));
+  $Res call({Object? subjectSelector = freezed, Object? healthCheck = null}) {
+    return _then(
+      _BurstObservatoryConfig(
+        subjectSelector: freezed == subjectSelector
+            ? _self._subjectSelector
+            : subjectSelector // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        healthCheck: null == healthCheck
+            ? _self.healthCheck
+            : healthCheck // ignore: cast_nullable_to_non_nullable
+                  as HealthCheckSettings,
+      ),
+    );
   }
 
   /// Create a copy of BurstObservatoryConfig
@@ -1429,51 +1527,64 @@ mixin _$DNSConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as DNSConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DNSConfig &&
-            const DeepCollectionEquality().equals(other.servers, servers) &&
-            (identical(other.hosts, hosts) || other.hosts == hosts) &&
-            (identical(other.clientIp, clientIp) ||
-                other.clientIp == clientIp) &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.queryStrategy, queryStrategy) ||
-                other.queryStrategy == queryStrategy) &&
-            (identical(other.disableCache, disableCache) ||
-                other.disableCache == disableCache) &&
-            (identical(other.serveStale, serveStale) ||
-                other.serveStale == serveStale) &&
-            (identical(other.serveExpiredTTL, serveExpiredTTL) ||
-                other.serveExpiredTTL == serveExpiredTTL) &&
-            (identical(other.disableFallback, disableFallback) ||
-                other.disableFallback == disableFallback) &&
-            (identical(other.disableFallbackIfMatch, disableFallbackIfMatch) ||
-                other.disableFallbackIfMatch == disableFallbackIfMatch) &&
-            (identical(other.enableParallelQuery, enableParallelQuery) ||
-                other.enableParallelQuery == enableParallelQuery) &&
-            (identical(other.useSystemHosts, useSystemHosts) ||
-                other.useSystemHosts == useSystemHosts));
+            const DeepCollectionEquality().equals(
+              other.servers,
+              _this.servers,
+            ) &&
+            (identical(other.hosts, _this.hosts) ||
+                other.hosts == _this.hosts) &&
+            (identical(other.clientIp, _this.clientIp) ||
+                other.clientIp == _this.clientIp) &&
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.queryStrategy, _this.queryStrategy) ||
+                other.queryStrategy == _this.queryStrategy) &&
+            (identical(other.disableCache, _this.disableCache) ||
+                other.disableCache == _this.disableCache) &&
+            (identical(other.serveStale, _this.serveStale) ||
+                other.serveStale == _this.serveStale) &&
+            (identical(other.serveExpiredTTL, _this.serveExpiredTTL) ||
+                other.serveExpiredTTL == _this.serveExpiredTTL) &&
+            (identical(other.disableFallback, _this.disableFallback) ||
+                other.disableFallback == _this.disableFallback) &&
+            (identical(
+                  other.disableFallbackIfMatch,
+                  _this.disableFallbackIfMatch,
+                ) ||
+                other.disableFallbackIfMatch == _this.disableFallbackIfMatch) &&
+            (identical(other.enableParallelQuery, _this.enableParallelQuery) ||
+                other.enableParallelQuery == _this.enableParallelQuery) &&
+            (identical(other.useSystemHosts, _this.useSystemHosts) ||
+                other.useSystemHosts == _this.useSystemHosts));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as DNSConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(servers),
-      hosts,
-      clientIp,
-      tag,
-      queryStrategy,
-      disableCache,
-      serveStale,
-      serveExpiredTTL,
-      disableFallback,
-      disableFallbackIfMatch,
-      enableParallelQuery,
-      useSystemHosts);
+      const DeepCollectionEquality().hash(_this.servers),
+      _this.hosts,
+      _this.clientIp,
+      _this.tag,
+      _this.queryStrategy,
+      _this.disableCache,
+      _this.serveStale,
+      _this.serveExpiredTTL,
+      _this.disableFallback,
+      _this.disableFallbackIfMatch,
+      _this.enableParallelQuery,
+      _this.useSystemHosts,
+    );
+  }
 
   @override
   String toString() {
-    return 'DNSConfig(servers: $servers, hosts: $hosts, clientIp: $clientIp, tag: $tag, queryStrategy: $queryStrategy, disableCache: $disableCache, serveStale: $serveStale, serveExpiredTTL: $serveExpiredTTL, disableFallback: $disableFallback, disableFallbackIfMatch: $disableFallbackIfMatch, enableParallelQuery: $enableParallelQuery, useSystemHosts: $useSystemHosts)';
+    final _this = this as DNSConfig;
+    return 'DNSConfig(servers: ${_this.servers}, hosts: ${_this.hosts}, clientIp: ${_this.clientIp}, tag: ${_this.tag}, queryStrategy: ${_this.queryStrategy}, disableCache: ${_this.disableCache}, serveStale: ${_this.serveStale}, serveExpiredTTL: ${_this.serveExpiredTTL}, disableFallback: ${_this.disableFallback}, disableFallbackIfMatch: ${_this.disableFallbackIfMatch}, enableParallelQuery: ${_this.enableParallelQuery}, useSystemHosts: ${_this.useSystemHosts})';
   }
 }
 
@@ -1482,19 +1593,20 @@ abstract mixin class $DNSConfigCopyWith<$Res> {
   factory $DNSConfigCopyWith(DNSConfig value, $Res Function(DNSConfig) _then) =
       _$DNSConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<NameServerConfig>? servers,
-      HostsWrapper? hosts,
-      XrayAddress? clientIp,
-      String? tag,
-      DnsQueryStrategy? queryStrategy,
-      bool? disableCache,
-      bool? serveStale,
-      int? serveExpiredTTL,
-      bool? disableFallback,
-      bool? disableFallbackIfMatch,
-      bool? enableParallelQuery,
-      bool? useSystemHosts});
+  $Res call({
+    List<NameServerConfig>? servers,
+    HostsWrapper? hosts,
+    XrayAddress? clientIp,
+    String? tag,
+    DnsQueryStrategy? queryStrategy,
+    bool? disableCache,
+    bool? serveStale,
+    int? serveExpiredTTL,
+    bool? disableFallback,
+    bool? disableFallbackIfMatch,
+    bool? enableParallelQuery,
+    bool? useSystemHosts,
+  });
 
   $HostsWrapperCopyWith<$Res>? get hosts;
 }
@@ -1524,56 +1636,58 @@ class _$DNSConfigCopyWithImpl<$Res> implements $DNSConfigCopyWith<$Res> {
     Object? enableParallelQuery = freezed,
     Object? useSystemHosts = freezed,
   }) {
-    return _then(_self.copyWith(
-      servers: freezed == servers
-          ? _self.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<NameServerConfig>?,
-      hosts: freezed == hosts
-          ? _self.hosts
-          : hosts // ignore: cast_nullable_to_non_nullable
-              as HostsWrapper?,
-      clientIp: freezed == clientIp
-          ? _self.clientIp
-          : clientIp // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      queryStrategy: freezed == queryStrategy
-          ? _self.queryStrategy
-          : queryStrategy // ignore: cast_nullable_to_non_nullable
-              as DnsQueryStrategy?,
-      disableCache: freezed == disableCache
-          ? _self.disableCache
-          : disableCache // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveStale: freezed == serveStale
-          ? _self.serveStale
-          : serveStale // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveExpiredTTL: freezed == serveExpiredTTL
-          ? _self.serveExpiredTTL
-          : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
-              as int?,
-      disableFallback: freezed == disableFallback
-          ? _self.disableFallback
-          : disableFallback // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      disableFallbackIfMatch: freezed == disableFallbackIfMatch
-          ? _self.disableFallbackIfMatch
-          : disableFallbackIfMatch // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      enableParallelQuery: freezed == enableParallelQuery
-          ? _self.enableParallelQuery
-          : enableParallelQuery // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      useSystemHosts: freezed == useSystemHosts
-          ? _self.useSystemHosts
-          : useSystemHosts // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      DNSConfig(
+        servers: freezed == servers
+            ? _self.servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<NameServerConfig>?,
+        hosts: freezed == hosts
+            ? _self.hosts
+            : hosts // ignore: cast_nullable_to_non_nullable
+                  as HostsWrapper?,
+        clientIp: freezed == clientIp
+            ? _self.clientIp
+            : clientIp // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        queryStrategy: freezed == queryStrategy
+            ? _self.queryStrategy
+            : queryStrategy // ignore: cast_nullable_to_non_nullable
+                  as DnsQueryStrategy?,
+        disableCache: freezed == disableCache
+            ? _self.disableCache
+            : disableCache // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveStale: freezed == serveStale
+            ? _self.serveStale
+            : serveStale // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveExpiredTTL: freezed == serveExpiredTTL
+            ? _self.serveExpiredTTL
+            : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        disableFallback: freezed == disableFallback
+            ? _self.disableFallback
+            : disableFallback // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableFallbackIfMatch: freezed == disableFallbackIfMatch
+            ? _self.disableFallbackIfMatch
+            : disableFallbackIfMatch // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        enableParallelQuery: freezed == enableParallelQuery
+            ? _self.enableParallelQuery
+            : enableParallelQuery // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        useSystemHosts: freezed == useSystemHosts
+            ? _self.useSystemHosts
+            : useSystemHosts // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 
   /// Create a copy of DNSConfig
@@ -1685,37 +1799,39 @@ extension DNSConfigPatterns on DNSConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            List<NameServerConfig>? servers,
-            HostsWrapper? hosts,
-            XrayAddress? clientIp,
-            String? tag,
-            DnsQueryStrategy? queryStrategy,
-            bool? disableCache,
-            bool? serveStale,
-            int? serveExpiredTTL,
-            bool? disableFallback,
-            bool? disableFallbackIfMatch,
-            bool? enableParallelQuery,
-            bool? useSystemHosts)?
-        $default, {
+      List<NameServerConfig>? servers,
+      HostsWrapper? hosts,
+      XrayAddress? clientIp,
+      String? tag,
+      DnsQueryStrategy? queryStrategy,
+      bool? disableCache,
+      bool? serveStale,
+      int? serveExpiredTTL,
+      bool? disableFallback,
+      bool? disableFallbackIfMatch,
+      bool? enableParallelQuery,
+      bool? useSystemHosts,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _DNSConfig() when $default != null:
         return $default(
-            _that.servers,
-            _that.hosts,
-            _that.clientIp,
-            _that.tag,
-            _that.queryStrategy,
-            _that.disableCache,
-            _that.serveStale,
-            _that.serveExpiredTTL,
-            _that.disableFallback,
-            _that.disableFallbackIfMatch,
-            _that.enableParallelQuery,
-            _that.useSystemHosts);
+          _that.servers,
+          _that.hosts,
+          _that.clientIp,
+          _that.tag,
+          _that.queryStrategy,
+          _that.disableCache,
+          _that.serveStale,
+          _that.serveExpiredTTL,
+          _that.disableFallback,
+          _that.disableFallbackIfMatch,
+          _that.enableParallelQuery,
+          _that.useSystemHosts,
+        );
       case _:
         return orElse();
     }
@@ -1737,36 +1853,38 @@ extension DNSConfigPatterns on DNSConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            List<NameServerConfig>? servers,
-            HostsWrapper? hosts,
-            XrayAddress? clientIp,
-            String? tag,
-            DnsQueryStrategy? queryStrategy,
-            bool? disableCache,
-            bool? serveStale,
-            int? serveExpiredTTL,
-            bool? disableFallback,
-            bool? disableFallbackIfMatch,
-            bool? enableParallelQuery,
-            bool? useSystemHosts)
-        $default,
+      List<NameServerConfig>? servers,
+      HostsWrapper? hosts,
+      XrayAddress? clientIp,
+      String? tag,
+      DnsQueryStrategy? queryStrategy,
+      bool? disableCache,
+      bool? serveStale,
+      int? serveExpiredTTL,
+      bool? disableFallback,
+      bool? disableFallbackIfMatch,
+      bool? enableParallelQuery,
+      bool? useSystemHosts,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _DNSConfig():
         return $default(
-            _that.servers,
-            _that.hosts,
-            _that.clientIp,
-            _that.tag,
-            _that.queryStrategy,
-            _that.disableCache,
-            _that.serveStale,
-            _that.serveExpiredTTL,
-            _that.disableFallback,
-            _that.disableFallbackIfMatch,
-            _that.enableParallelQuery,
-            _that.useSystemHosts);
+          _that.servers,
+          _that.hosts,
+          _that.clientIp,
+          _that.tag,
+          _that.queryStrategy,
+          _that.disableCache,
+          _that.serveStale,
+          _that.serveExpiredTTL,
+          _that.disableFallback,
+          _that.disableFallbackIfMatch,
+          _that.enableParallelQuery,
+          _that.useSystemHosts,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -1787,36 +1905,38 @@ extension DNSConfigPatterns on DNSConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            List<NameServerConfig>? servers,
-            HostsWrapper? hosts,
-            XrayAddress? clientIp,
-            String? tag,
-            DnsQueryStrategy? queryStrategy,
-            bool? disableCache,
-            bool? serveStale,
-            int? serveExpiredTTL,
-            bool? disableFallback,
-            bool? disableFallbackIfMatch,
-            bool? enableParallelQuery,
-            bool? useSystemHosts)?
-        $default,
+      List<NameServerConfig>? servers,
+      HostsWrapper? hosts,
+      XrayAddress? clientIp,
+      String? tag,
+      DnsQueryStrategy? queryStrategy,
+      bool? disableCache,
+      bool? serveStale,
+      int? serveExpiredTTL,
+      bool? disableFallback,
+      bool? disableFallbackIfMatch,
+      bool? enableParallelQuery,
+      bool? useSystemHosts,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _DNSConfig() when $default != null:
         return $default(
-            _that.servers,
-            _that.hosts,
-            _that.clientIp,
-            _that.tag,
-            _that.queryStrategy,
-            _that.disableCache,
-            _that.serveStale,
-            _that.serveExpiredTTL,
-            _that.disableFallback,
-            _that.disableFallbackIfMatch,
-            _that.enableParallelQuery,
-            _that.useSystemHosts);
+          _that.servers,
+          _that.hosts,
+          _that.clientIp,
+          _that.tag,
+          _that.queryStrategy,
+          _that.disableCache,
+          _that.serveStale,
+          _that.serveExpiredTTL,
+          _that.disableFallback,
+          _that.disableFallbackIfMatch,
+          _that.enableParallelQuery,
+          _that.useSystemHosts,
+        );
       case _:
         return null;
     }
@@ -1826,21 +1946,21 @@ extension DNSConfigPatterns on DNSConfig {
 /// @nodoc
 
 class _DNSConfig extends DNSConfig {
-  const _DNSConfig(
-      {final List<NameServerConfig>? servers,
-      this.hosts,
-      this.clientIp,
-      this.tag,
-      this.queryStrategy,
-      this.disableCache,
-      this.serveStale,
-      this.serveExpiredTTL,
-      this.disableFallback,
-      this.disableFallbackIfMatch,
-      this.enableParallelQuery,
-      this.useSystemHosts})
-      : _servers = servers,
-        super._();
+  const _DNSConfig({
+    List<NameServerConfig>? servers,
+    this.hosts,
+    this.clientIp,
+    this.tag,
+    this.queryStrategy,
+    this.disableCache,
+    this.serveStale,
+    this.serveExpiredTTL,
+    this.disableFallback,
+    this.disableFallbackIfMatch,
+    this.enableParallelQuery,
+    this.useSystemHosts,
+  }) : _servers = servers,
+       super._();
 
   final List<NameServerConfig>? _servers;
   @override
@@ -1888,7 +2008,7 @@ class _DNSConfig extends DNSConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _DNSConfig &&
-            const DeepCollectionEquality().equals(other._servers, _servers) &&
+            const DeepCollectionEquality().equals(other.servers, _servers) &&
             (identical(other.hosts, hosts) || other.hosts == hosts) &&
             (identical(other.clientIp, clientIp) ||
                 other.clientIp == clientIp) &&
@@ -1912,7 +2032,8 @@ class _DNSConfig extends DNSConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_servers),
       hosts,
@@ -1925,7 +2046,9 @@ class _DNSConfig extends DNSConfig {
       disableFallback,
       disableFallbackIfMatch,
       enableParallelQuery,
-      useSystemHosts);
+      useSystemHosts,
+    );
+  }
 
   @override
   String toString() {
@@ -1937,23 +2060,25 @@ class _DNSConfig extends DNSConfig {
 abstract mixin class _$DNSConfigCopyWith<$Res>
     implements $DNSConfigCopyWith<$Res> {
   factory _$DNSConfigCopyWith(
-          _DNSConfig value, $Res Function(_DNSConfig) _then) =
-      __$DNSConfigCopyWithImpl;
+    _DNSConfig value,
+    $Res Function(_DNSConfig) _then,
+  ) = __$DNSConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<NameServerConfig>? servers,
-      HostsWrapper? hosts,
-      XrayAddress? clientIp,
-      String? tag,
-      DnsQueryStrategy? queryStrategy,
-      bool? disableCache,
-      bool? serveStale,
-      int? serveExpiredTTL,
-      bool? disableFallback,
-      bool? disableFallbackIfMatch,
-      bool? enableParallelQuery,
-      bool? useSystemHosts});
+  $Res call({
+    List<NameServerConfig>? servers,
+    HostsWrapper? hosts,
+    XrayAddress? clientIp,
+    String? tag,
+    DnsQueryStrategy? queryStrategy,
+    bool? disableCache,
+    bool? serveStale,
+    int? serveExpiredTTL,
+    bool? disableFallback,
+    bool? disableFallbackIfMatch,
+    bool? enableParallelQuery,
+    bool? useSystemHosts,
+  });
 
   @override
   $HostsWrapperCopyWith<$Res>? get hosts;
@@ -1984,56 +2109,58 @@ class __$DNSConfigCopyWithImpl<$Res> implements _$DNSConfigCopyWith<$Res> {
     Object? enableParallelQuery = freezed,
     Object? useSystemHosts = freezed,
   }) {
-    return _then(_DNSConfig(
-      servers: freezed == servers
-          ? _self._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<NameServerConfig>?,
-      hosts: freezed == hosts
-          ? _self.hosts
-          : hosts // ignore: cast_nullable_to_non_nullable
-              as HostsWrapper?,
-      clientIp: freezed == clientIp
-          ? _self.clientIp
-          : clientIp // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      queryStrategy: freezed == queryStrategy
-          ? _self.queryStrategy
-          : queryStrategy // ignore: cast_nullable_to_non_nullable
-              as DnsQueryStrategy?,
-      disableCache: freezed == disableCache
-          ? _self.disableCache
-          : disableCache // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveStale: freezed == serveStale
-          ? _self.serveStale
-          : serveStale // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveExpiredTTL: freezed == serveExpiredTTL
-          ? _self.serveExpiredTTL
-          : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
-              as int?,
-      disableFallback: freezed == disableFallback
-          ? _self.disableFallback
-          : disableFallback // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      disableFallbackIfMatch: freezed == disableFallbackIfMatch
-          ? _self.disableFallbackIfMatch
-          : disableFallbackIfMatch // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      enableParallelQuery: freezed == enableParallelQuery
-          ? _self.enableParallelQuery
-          : enableParallelQuery // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      useSystemHosts: freezed == useSystemHosts
-          ? _self.useSystemHosts
-          : useSystemHosts // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _DNSConfig(
+        servers: freezed == servers
+            ? _self._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<NameServerConfig>?,
+        hosts: freezed == hosts
+            ? _self.hosts
+            : hosts // ignore: cast_nullable_to_non_nullable
+                  as HostsWrapper?,
+        clientIp: freezed == clientIp
+            ? _self.clientIp
+            : clientIp // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        queryStrategy: freezed == queryStrategy
+            ? _self.queryStrategy
+            : queryStrategy // ignore: cast_nullable_to_non_nullable
+                  as DnsQueryStrategy?,
+        disableCache: freezed == disableCache
+            ? _self.disableCache
+            : disableCache // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveStale: freezed == serveStale
+            ? _self.serveStale
+            : serveStale // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveExpiredTTL: freezed == serveExpiredTTL
+            ? _self.serveExpiredTTL
+            : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        disableFallback: freezed == disableFallback
+            ? _self.disableFallback
+            : disableFallback // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableFallbackIfMatch: freezed == disableFallbackIfMatch
+            ? _self.disableFallbackIfMatch
+            : disableFallbackIfMatch // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        enableParallelQuery: freezed == enableParallelQuery
+            ? _self.enableParallelQuery
+            : enableParallelQuery // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        useSystemHosts: freezed == useSystemHosts
+            ? _self.useSystemHosts
+            : useSystemHosts // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 
   /// Create a copy of DNSConfig
@@ -2063,31 +2190,41 @@ mixin _$FakeDNSPoolElementConfig {
   @pragma('vm:prefer-inline')
   $FakeDNSPoolElementConfigCopyWith<FakeDNSPoolElementConfig> get copyWith =>
       _$FakeDNSPoolElementConfigCopyWithImpl<FakeDNSPoolElementConfig>(
-          this as FakeDNSPoolElementConfig, _$identity);
+        this as FakeDNSPoolElementConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as FakeDNSPoolElementConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FakeDNSPoolElementConfig &&
-            (identical(other.ipPool, ipPool) || other.ipPool == ipPool) &&
-            (identical(other.lruSize, lruSize) || other.lruSize == lruSize));
+            (identical(other.ipPool, _this.ipPool) ||
+                other.ipPool == _this.ipPool) &&
+            (identical(other.lruSize, _this.lruSize) ||
+                other.lruSize == _this.lruSize));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, ipPool, lruSize);
+  int get hashCode {
+    final _this = this as FakeDNSPoolElementConfig;
+    return Object.hash(runtimeType, _this.ipPool, _this.lruSize);
+  }
 
   @override
   String toString() {
-    return 'FakeDNSPoolElementConfig(ipPool: $ipPool, lruSize: $lruSize)';
+    final _this = this as FakeDNSPoolElementConfig;
+    return 'FakeDNSPoolElementConfig(ipPool: ${_this.ipPool}, lruSize: ${_this.lruSize})';
   }
 }
 
 /// @nodoc
 abstract mixin class $FakeDNSPoolElementConfigCopyWith<$Res> {
-  factory $FakeDNSPoolElementConfigCopyWith(FakeDNSPoolElementConfig value,
-          $Res Function(FakeDNSPoolElementConfig) _then) =
-      _$FakeDNSPoolElementConfigCopyWithImpl;
+  factory $FakeDNSPoolElementConfigCopyWith(
+    FakeDNSPoolElementConfig value,
+    $Res Function(FakeDNSPoolElementConfig) _then,
+  ) = _$FakeDNSPoolElementConfigCopyWithImpl;
   @useResult
   $Res call({String ipPool, @JsonKey(name: 'poolSize') int? lruSize});
 }
@@ -2104,20 +2241,19 @@ class _$FakeDNSPoolElementConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? ipPool = null,
-    Object? lruSize = freezed,
-  }) {
-    return _then(_self.copyWith(
-      ipPool: null == ipPool
-          ? _self.ipPool
-          : ipPool // ignore: cast_nullable_to_non_nullable
-              as String,
-      lruSize: freezed == lruSize
-          ? _self.lruSize
-          : lruSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? ipPool = null, Object? lruSize = freezed}) {
+    return _then(
+      FakeDNSPoolElementConfig(
+        ipPool: null == ipPool
+            ? _self.ipPool
+            : ipPool // ignore: cast_nullable_to_non_nullable
+                  as String,
+        lruSize: freezed == lruSize
+            ? _self.lruSize
+            : lruSize // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -2215,7 +2351,7 @@ extension FakeDNSPoolElementConfigPatterns on FakeDNSPoolElementConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String ipPool, @JsonKey(name: 'poolSize') int? lruSize)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -2243,7 +2379,7 @@ extension FakeDNSPoolElementConfigPatterns on FakeDNSPoolElementConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String ipPool, @JsonKey(name: 'poolSize') int? lruSize)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -2269,7 +2405,7 @@ extension FakeDNSPoolElementConfigPatterns on FakeDNSPoolElementConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(String ipPool, @JsonKey(name: 'poolSize') int? lruSize)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -2284,9 +2420,10 @@ extension FakeDNSPoolElementConfigPatterns on FakeDNSPoolElementConfig {
 /// @nodoc
 
 class _FakeDNSPoolElementConfig extends FakeDNSPoolElementConfig {
-  const _FakeDNSPoolElementConfig(
-      {required this.ipPool, @JsonKey(name: 'poolSize') this.lruSize})
-      : super._();
+  const _FakeDNSPoolElementConfig({
+    required this.ipPool,
+    @JsonKey(name: 'poolSize') this.lruSize,
+  }) : super._();
 
   @override
   final String ipPool;
@@ -2301,7 +2438,9 @@ class _FakeDNSPoolElementConfig extends FakeDNSPoolElementConfig {
   @pragma('vm:prefer-inline')
   _$FakeDNSPoolElementConfigCopyWith<_FakeDNSPoolElementConfig> get copyWith =>
       __$FakeDNSPoolElementConfigCopyWithImpl<_FakeDNSPoolElementConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -2313,7 +2452,9 @@ class _FakeDNSPoolElementConfig extends FakeDNSPoolElementConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, ipPool, lruSize);
+  int get hashCode {
+    return Object.hash(runtimeType, ipPool, lruSize);
+  }
 
   @override
   String toString() {
@@ -2324,9 +2465,10 @@ class _FakeDNSPoolElementConfig extends FakeDNSPoolElementConfig {
 /// @nodoc
 abstract mixin class _$FakeDNSPoolElementConfigCopyWith<$Res>
     implements $FakeDNSPoolElementConfigCopyWith<$Res> {
-  factory _$FakeDNSPoolElementConfigCopyWith(_FakeDNSPoolElementConfig value,
-          $Res Function(_FakeDNSPoolElementConfig) _then) =
-      __$FakeDNSPoolElementConfigCopyWithImpl;
+  factory _$FakeDNSPoolElementConfigCopyWith(
+    _FakeDNSPoolElementConfig value,
+    $Res Function(_FakeDNSPoolElementConfig) _then,
+  ) = __$FakeDNSPoolElementConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String ipPool, @JsonKey(name: 'poolSize') int? lruSize});
@@ -2344,20 +2486,19 @@ class __$FakeDNSPoolElementConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? ipPool = null,
-    Object? lruSize = freezed,
-  }) {
-    return _then(_FakeDNSPoolElementConfig(
-      ipPool: null == ipPool
-          ? _self.ipPool
-          : ipPool // ignore: cast_nullable_to_non_nullable
-              as String,
-      lruSize: freezed == lruSize
-          ? _self.lruSize
-          : lruSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? ipPool = null, Object? lruSize = freezed}) {
+    return _then(
+      _FakeDNSPoolElementConfig(
+        ipPool: null == ipPool
+            ? _self.ipPool
+            : ipPool // ignore: cast_nullable_to_non_nullable
+                  as String,
+        lruSize: freezed == lruSize
+            ? _self.lruSize
+            : lruSize // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -2372,31 +2513,43 @@ mixin _$GeodataAssetConfig {
   @pragma('vm:prefer-inline')
   $GeodataAssetConfigCopyWith<GeodataAssetConfig> get copyWith =>
       _$GeodataAssetConfigCopyWithImpl<GeodataAssetConfig>(
-          this as GeodataAssetConfig, _$identity);
+        this as GeodataAssetConfig,
+        _$identity,
+      );
+
+  /// Serializes this GeodataAssetConfig to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
+    final _this = this as GeodataAssetConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GeodataAssetConfig &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.file, file) || other.file == file));
+            (identical(other.url, _this.url) || other.url == _this.url) &&
+            (identical(other.file, _this.file) || other.file == _this.file));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as GeodataAssetConfig;
+    return Object.hash(runtimeType, _this.url, _this.file);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url, file);
-
-  @override
   String toString() {
-    return 'GeodataAssetConfig(url: $url, file: $file)';
+    final _this = this as GeodataAssetConfig;
+    return 'GeodataAssetConfig(url: ${_this.url}, file: ${_this.file})';
   }
 }
 
 /// @nodoc
 abstract mixin class $GeodataAssetConfigCopyWith<$Res> {
   factory $GeodataAssetConfigCopyWith(
-          GeodataAssetConfig value, $Res Function(GeodataAssetConfig) _then) =
-      _$GeodataAssetConfigCopyWithImpl;
+    GeodataAssetConfig value,
+    $Res Function(GeodataAssetConfig) _then,
+  ) = _$GeodataAssetConfigCopyWithImpl;
   @useResult
   $Res call({String url, String file});
 }
@@ -2413,20 +2566,19 @@ class _$GeodataAssetConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? url = null,
-    Object? file = null,
-  }) {
-    return _then(_self.copyWith(
-      url: null == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      file: null == file
-          ? _self.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? url = null, Object? file = null}) {
+    return _then(
+      GeodataAssetConfig(
+        url: null == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String,
+        file: null == file
+            ? _self.file
+            : file // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -2589,9 +2741,11 @@ extension GeodataAssetConfigPatterns on GeodataAssetConfig {
 
 /// @nodoc
 
-class _GeodataAssetConfig extends GeodataAssetConfig {
-  const _GeodataAssetConfig({required this.url, required this.file})
-      : super._();
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _GeodataAssetConfig implements GeodataAssetConfig {
+  const _GeodataAssetConfig({required this.url, required this.file});
+  factory _GeodataAssetConfig.fromJson(Map<String, dynamic> json) =>
+      _$GeodataAssetConfigFromJson(json);
 
   @override
   final String url;
@@ -2607,6 +2761,11 @@ class _GeodataAssetConfig extends GeodataAssetConfig {
       __$GeodataAssetConfigCopyWithImpl<_GeodataAssetConfig>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$GeodataAssetConfigToJson(this);
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -2615,8 +2774,11 @@ class _GeodataAssetConfig extends GeodataAssetConfig {
             (identical(other.file, file) || other.file == file));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, url, file);
+  int get hashCode {
+    return Object.hash(runtimeType, url, file);
+  }
 
   @override
   String toString() {
@@ -2628,8 +2790,9 @@ class _GeodataAssetConfig extends GeodataAssetConfig {
 abstract mixin class _$GeodataAssetConfigCopyWith<$Res>
     implements $GeodataAssetConfigCopyWith<$Res> {
   factory _$GeodataAssetConfigCopyWith(
-          _GeodataAssetConfig value, $Res Function(_GeodataAssetConfig) _then) =
-      __$GeodataAssetConfigCopyWithImpl;
+    _GeodataAssetConfig value,
+    $Res Function(_GeodataAssetConfig) _then,
+  ) = __$GeodataAssetConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String url, String file});
@@ -2647,20 +2810,19 @@ class __$GeodataAssetConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? url = null,
-    Object? file = null,
-  }) {
-    return _then(_GeodataAssetConfig(
-      url: null == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      file: null == file
-          ? _self.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? url = null, Object? file = null}) {
+    return _then(
+      _GeodataAssetConfig(
+        url: null == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String,
+        file: null == file
+            ? _self.file
+            : file // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -2676,34 +2838,46 @@ mixin _$GeodataConfig {
   @pragma('vm:prefer-inline')
   $GeodataConfigCopyWith<GeodataConfig> get copyWith =>
       _$GeodataConfigCopyWithImpl<GeodataConfig>(
-          this as GeodataConfig, _$identity);
+        this as GeodataConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as GeodataConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GeodataConfig &&
-            (identical(other.cron, cron) || other.cron == cron) &&
-            (identical(other.outbound, outbound) ||
-                other.outbound == outbound) &&
-            const DeepCollectionEquality().equals(other.assets, assets));
+            (identical(other.cron, _this.cron) || other.cron == _this.cron) &&
+            (identical(other.outbound, _this.outbound) ||
+                other.outbound == _this.outbound) &&
+            const DeepCollectionEquality().equals(other.assets, _this.assets));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, cron, outbound, const DeepCollectionEquality().hash(assets));
+  int get hashCode {
+    final _this = this as GeodataConfig;
+    return Object.hash(
+      runtimeType,
+      _this.cron,
+      _this.outbound,
+      const DeepCollectionEquality().hash(_this.assets),
+    );
+  }
 
   @override
   String toString() {
-    return 'GeodataConfig(cron: $cron, outbound: $outbound, assets: $assets)';
+    final _this = this as GeodataConfig;
+    return 'GeodataConfig(cron: ${_this.cron}, outbound: ${_this.outbound}, assets: ${_this.assets})';
   }
 }
 
 /// @nodoc
 abstract mixin class $GeodataConfigCopyWith<$Res> {
   factory $GeodataConfigCopyWith(
-          GeodataConfig value, $Res Function(GeodataConfig) _then) =
-      _$GeodataConfigCopyWithImpl;
+    GeodataConfig value,
+    $Res Function(GeodataConfig) _then,
+  ) = _$GeodataConfigCopyWithImpl;
   @useResult
   $Res call({String? cron, String? outbound, List<GeodataAssetConfig>? assets});
 }
@@ -2725,20 +2899,22 @@ class _$GeodataConfigCopyWithImpl<$Res>
     Object? outbound = freezed,
     Object? assets = freezed,
   }) {
-    return _then(_self.copyWith(
-      cron: freezed == cron
-          ? _self.cron
-          : cron // ignore: cast_nullable_to_non_nullable
-              as String?,
-      outbound: freezed == outbound
-          ? _self.outbound
-          : outbound // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assets: freezed == assets
-          ? _self.assets
-          : assets // ignore: cast_nullable_to_non_nullable
-              as List<GeodataAssetConfig>?,
-    ));
+    return _then(
+      GeodataConfig(
+        cron: freezed == cron
+            ? _self.cron
+            : cron // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        outbound: freezed == outbound
+            ? _self.outbound
+            : outbound // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        assets: freezed == assets
+            ? _self.assets
+            : assets // ignore: cast_nullable_to_non_nullable
+                  as List<GeodataAssetConfig>?,
+      ),
+    );
   }
 }
 
@@ -2836,8 +3012,11 @@ extension GeodataConfigPatterns on GeodataConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? cron, String? outbound, List<GeodataAssetConfig>? assets)?
-        $default, {
+      String? cron,
+      String? outbound,
+      List<GeodataAssetConfig>? assets,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -2865,8 +3044,11 @@ extension GeodataConfigPatterns on GeodataConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? cron, String? outbound, List<GeodataAssetConfig>? assets)
-        $default,
+      String? cron,
+      String? outbound,
+      List<GeodataAssetConfig>? assets,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -2892,8 +3074,11 @@ extension GeodataConfigPatterns on GeodataConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? cron, String? outbound, List<GeodataAssetConfig>? assets)?
-        $default,
+      String? cron,
+      String? outbound,
+      List<GeodataAssetConfig>? assets,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -2908,10 +3093,12 @@ extension GeodataConfigPatterns on GeodataConfig {
 /// @nodoc
 
 class _GeodataConfig extends GeodataConfig {
-  const _GeodataConfig(
-      {this.cron, this.outbound, final List<GeodataAssetConfig>? assets})
-      : _assets = assets,
-        super._();
+  const _GeodataConfig({
+    this.cron,
+    this.outbound,
+    List<GeodataAssetConfig>? assets,
+  }) : _assets = assets,
+       super._();
 
   @override
   final String? cron;
@@ -2943,12 +3130,18 @@ class _GeodataConfig extends GeodataConfig {
             (identical(other.cron, cron) || other.cron == cron) &&
             (identical(other.outbound, outbound) ||
                 other.outbound == outbound) &&
-            const DeepCollectionEquality().equals(other._assets, _assets));
+            const DeepCollectionEquality().equals(other.assets, _assets));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, cron, outbound,
-      const DeepCollectionEquality().hash(_assets));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      cron,
+      outbound,
+      const DeepCollectionEquality().hash(_assets),
+    );
+  }
 
   @override
   String toString() {
@@ -2960,8 +3153,9 @@ class _GeodataConfig extends GeodataConfig {
 abstract mixin class _$GeodataConfigCopyWith<$Res>
     implements $GeodataConfigCopyWith<$Res> {
   factory _$GeodataConfigCopyWith(
-          _GeodataConfig value, $Res Function(_GeodataConfig) _then) =
-      __$GeodataConfigCopyWithImpl;
+    _GeodataConfig value,
+    $Res Function(_GeodataConfig) _then,
+  ) = __$GeodataConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String? cron, String? outbound, List<GeodataAssetConfig>? assets});
@@ -2984,20 +3178,22 @@ class __$GeodataConfigCopyWithImpl<$Res>
     Object? outbound = freezed,
     Object? assets = freezed,
   }) {
-    return _then(_GeodataConfig(
-      cron: freezed == cron
-          ? _self.cron
-          : cron // ignore: cast_nullable_to_non_nullable
-              as String?,
-      outbound: freezed == outbound
-          ? _self.outbound
-          : outbound // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assets: freezed == assets
-          ? _self._assets
-          : assets // ignore: cast_nullable_to_non_nullable
-              as List<GeodataAssetConfig>?,
-    ));
+    return _then(
+      _GeodataConfig(
+        cron: freezed == cron
+            ? _self.cron
+            : cron // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        outbound: freezed == outbound
+            ? _self.outbound
+            : outbound // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        assets: freezed == assets
+            ? _self._assets
+            : assets // ignore: cast_nullable_to_non_nullable
+                  as List<GeodataAssetConfig>?,
+      ),
+    );
   }
 }
 
@@ -3017,49 +3213,66 @@ mixin _$HealthCheckSettings {
   @pragma('vm:prefer-inline')
   $HealthCheckSettingsCopyWith<HealthCheckSettings> get copyWith =>
       _$HealthCheckSettingsCopyWithImpl<HealthCheckSettings>(
-          this as HealthCheckSettings, _$identity);
+        this as HealthCheckSettings,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HealthCheckSettings;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HealthCheckSettings &&
-            (identical(other.destination, destination) ||
-                other.destination == destination) &&
-            (identical(other.connectivity, connectivity) ||
-                other.connectivity == connectivity) &&
-            (identical(other.interval, interval) ||
-                other.interval == interval) &&
-            (identical(other.samplingCount, samplingCount) ||
-                other.samplingCount == samplingCount) &&
-            (identical(other.timeout, timeout) || other.timeout == timeout) &&
-            (identical(other.httpMethod, httpMethod) ||
-                other.httpMethod == httpMethod));
+            (identical(other.destination, _this.destination) ||
+                other.destination == _this.destination) &&
+            (identical(other.connectivity, _this.connectivity) ||
+                other.connectivity == _this.connectivity) &&
+            (identical(other.interval, _this.interval) ||
+                other.interval == _this.interval) &&
+            (identical(other.samplingCount, _this.samplingCount) ||
+                other.samplingCount == _this.samplingCount) &&
+            (identical(other.timeout, _this.timeout) ||
+                other.timeout == _this.timeout) &&
+            (identical(other.httpMethod, _this.httpMethod) ||
+                other.httpMethod == _this.httpMethod));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, destination, connectivity,
-      interval, samplingCount, timeout, httpMethod);
+  int get hashCode {
+    final _this = this as HealthCheckSettings;
+    return Object.hash(
+      runtimeType,
+      _this.destination,
+      _this.connectivity,
+      _this.interval,
+      _this.samplingCount,
+      _this.timeout,
+      _this.httpMethod,
+    );
+  }
 
   @override
   String toString() {
-    return 'HealthCheckSettings(destination: $destination, connectivity: $connectivity, interval: $interval, samplingCount: $samplingCount, timeout: $timeout, httpMethod: $httpMethod)';
+    final _this = this as HealthCheckSettings;
+    return 'HealthCheckSettings(destination: ${_this.destination}, connectivity: ${_this.connectivity}, interval: ${_this.interval}, samplingCount: ${_this.samplingCount}, timeout: ${_this.timeout}, httpMethod: ${_this.httpMethod})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HealthCheckSettingsCopyWith<$Res> {
   factory $HealthCheckSettingsCopyWith(
-          HealthCheckSettings value, $Res Function(HealthCheckSettings) _then) =
-      _$HealthCheckSettingsCopyWithImpl;
+    HealthCheckSettings value,
+    $Res Function(HealthCheckSettings) _then,
+  ) = _$HealthCheckSettingsCopyWithImpl;
   @useResult
-  $Res call(
-      {String? destination,
-      String? connectivity,
-      XrayDuration? interval,
-      @JsonKey(name: 'sampling') int? samplingCount,
-      XrayDuration? timeout,
-      String? httpMethod});
+  $Res call({
+    String? destination,
+    String? connectivity,
+    XrayDuration? interval,
+    @JsonKey(name: 'sampling') int? samplingCount,
+    XrayDuration? timeout,
+    String? httpMethod,
+  });
 }
 
 /// @nodoc
@@ -3082,32 +3295,34 @@ class _$HealthCheckSettingsCopyWithImpl<$Res>
     Object? timeout = freezed,
     Object? httpMethod = freezed,
   }) {
-    return _then(_self.copyWith(
-      destination: freezed == destination
-          ? _self.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as String?,
-      connectivity: freezed == connectivity
-          ? _self.connectivity
-          : connectivity // ignore: cast_nullable_to_non_nullable
-              as String?,
-      interval: freezed == interval
-          ? _self.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      samplingCount: freezed == samplingCount
-          ? _self.samplingCount
-          : samplingCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      timeout: freezed == timeout
-          ? _self.timeout
-          : timeout // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      httpMethod: freezed == httpMethod
-          ? _self.httpMethod
-          : httpMethod // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      HealthCheckSettings(
+        destination: freezed == destination
+            ? _self.destination
+            : destination // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        connectivity: freezed == connectivity
+            ? _self.connectivity
+            : connectivity // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        interval: freezed == interval
+            ? _self.interval
+            : interval // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        samplingCount: freezed == samplingCount
+            ? _self.samplingCount
+            : samplingCount // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        timeout: freezed == timeout
+            ? _self.timeout
+            : timeout // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        httpMethod: freezed == httpMethod
+            ? _self.httpMethod
+            : httpMethod // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3205,20 +3420,27 @@ extension HealthCheckSettingsPatterns on HealthCheckSettings {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? destination,
-            String? connectivity,
-            XrayDuration? interval,
-            @JsonKey(name: 'sampling') int? samplingCount,
-            XrayDuration? timeout,
-            String? httpMethod)?
-        $default, {
+      String? destination,
+      String? connectivity,
+      XrayDuration? interval,
+      @JsonKey(name: 'sampling') int? samplingCount,
+      XrayDuration? timeout,
+      String? httpMethod,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _HealthCheckSettings() when $default != null:
-        return $default(_that.destination, _that.connectivity, _that.interval,
-            _that.samplingCount, _that.timeout, _that.httpMethod);
+        return $default(
+          _that.destination,
+          _that.connectivity,
+          _that.interval,
+          _that.samplingCount,
+          _that.timeout,
+          _that.httpMethod,
+        );
       case _:
         return orElse();
     }
@@ -3240,19 +3462,26 @@ extension HealthCheckSettingsPatterns on HealthCheckSettings {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? destination,
-            String? connectivity,
-            XrayDuration? interval,
-            @JsonKey(name: 'sampling') int? samplingCount,
-            XrayDuration? timeout,
-            String? httpMethod)
-        $default,
+      String? destination,
+      String? connectivity,
+      XrayDuration? interval,
+      @JsonKey(name: 'sampling') int? samplingCount,
+      XrayDuration? timeout,
+      String? httpMethod,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HealthCheckSettings():
-        return $default(_that.destination, _that.connectivity, _that.interval,
-            _that.samplingCount, _that.timeout, _that.httpMethod);
+        return $default(
+          _that.destination,
+          _that.connectivity,
+          _that.interval,
+          _that.samplingCount,
+          _that.timeout,
+          _that.httpMethod,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -3273,19 +3502,26 @@ extension HealthCheckSettingsPatterns on HealthCheckSettings {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? destination,
-            String? connectivity,
-            XrayDuration? interval,
-            @JsonKey(name: 'sampling') int? samplingCount,
-            XrayDuration? timeout,
-            String? httpMethod)?
-        $default,
+      String? destination,
+      String? connectivity,
+      XrayDuration? interval,
+      @JsonKey(name: 'sampling') int? samplingCount,
+      XrayDuration? timeout,
+      String? httpMethod,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HealthCheckSettings() when $default != null:
-        return $default(_that.destination, _that.connectivity, _that.interval,
-            _that.samplingCount, _that.timeout, _that.httpMethod);
+        return $default(
+          _that.destination,
+          _that.connectivity,
+          _that.interval,
+          _that.samplingCount,
+          _that.timeout,
+          _that.httpMethod,
+        );
       case _:
         return null;
     }
@@ -3295,14 +3531,14 @@ extension HealthCheckSettingsPatterns on HealthCheckSettings {
 /// @nodoc
 
 class _HealthCheckSettings extends HealthCheckSettings {
-  const _HealthCheckSettings(
-      {this.destination,
-      this.connectivity,
-      this.interval,
-      @JsonKey(name: 'sampling') this.samplingCount,
-      this.timeout,
-      this.httpMethod})
-      : super._();
+  const _HealthCheckSettings({
+    this.destination,
+    this.connectivity,
+    this.interval,
+    @JsonKey(name: 'sampling') this.samplingCount,
+    this.timeout,
+    this.httpMethod,
+  }) : super._();
 
   @override
   final String? destination;
@@ -3325,7 +3561,9 @@ class _HealthCheckSettings extends HealthCheckSettings {
   @pragma('vm:prefer-inline')
   _$HealthCheckSettingsCopyWith<_HealthCheckSettings> get copyWith =>
       __$HealthCheckSettingsCopyWithImpl<_HealthCheckSettings>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -3346,8 +3584,17 @@ class _HealthCheckSettings extends HealthCheckSettings {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, destination, connectivity,
-      interval, samplingCount, timeout, httpMethod);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      destination,
+      connectivity,
+      interval,
+      samplingCount,
+      timeout,
+      httpMethod,
+    );
+  }
 
   @override
   String toString() {
@@ -3358,18 +3605,20 @@ class _HealthCheckSettings extends HealthCheckSettings {
 /// @nodoc
 abstract mixin class _$HealthCheckSettingsCopyWith<$Res>
     implements $HealthCheckSettingsCopyWith<$Res> {
-  factory _$HealthCheckSettingsCopyWith(_HealthCheckSettings value,
-          $Res Function(_HealthCheckSettings) _then) =
-      __$HealthCheckSettingsCopyWithImpl;
+  factory _$HealthCheckSettingsCopyWith(
+    _HealthCheckSettings value,
+    $Res Function(_HealthCheckSettings) _then,
+  ) = __$HealthCheckSettingsCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? destination,
-      String? connectivity,
-      XrayDuration? interval,
-      @JsonKey(name: 'sampling') int? samplingCount,
-      XrayDuration? timeout,
-      String? httpMethod});
+  $Res call({
+    String? destination,
+    String? connectivity,
+    XrayDuration? interval,
+    @JsonKey(name: 'sampling') int? samplingCount,
+    XrayDuration? timeout,
+    String? httpMethod,
+  });
 }
 
 /// @nodoc
@@ -3392,32 +3641,34 @@ class __$HealthCheckSettingsCopyWithImpl<$Res>
     Object? timeout = freezed,
     Object? httpMethod = freezed,
   }) {
-    return _then(_HealthCheckSettings(
-      destination: freezed == destination
-          ? _self.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as String?,
-      connectivity: freezed == connectivity
-          ? _self.connectivity
-          : connectivity // ignore: cast_nullable_to_non_nullable
-              as String?,
-      interval: freezed == interval
-          ? _self.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      samplingCount: freezed == samplingCount
-          ? _self.samplingCount
-          : samplingCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      timeout: freezed == timeout
-          ? _self.timeout
-          : timeout // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      httpMethod: freezed == httpMethod
-          ? _self.httpMethod
-          : httpMethod // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _HealthCheckSettings(
+        destination: freezed == destination
+            ? _self.destination
+            : destination // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        connectivity: freezed == connectivity
+            ? _self.connectivity
+            : connectivity // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        interval: freezed == interval
+            ? _self.interval
+            : interval // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        samplingCount: freezed == samplingCount
+            ? _self.samplingCount
+            : samplingCount // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        timeout: freezed == timeout
+            ? _self.timeout
+            : timeout // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        httpMethod: freezed == httpMethod
+            ? _self.httpMethod
+            : httpMethod // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3431,31 +3682,41 @@ mixin _$HostsWrapper {
   @pragma('vm:prefer-inline')
   $HostsWrapperCopyWith<HostsWrapper> get copyWith =>
       _$HostsWrapperCopyWithImpl<HostsWrapper>(
-          this as HostsWrapper, _$identity);
+        this as HostsWrapper,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HostsWrapper;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HostsWrapper &&
-            const DeepCollectionEquality().equals(other.hosts, hosts));
+            const DeepCollectionEquality().equals(other.hosts, _this.hosts));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(hosts));
+  int get hashCode {
+    final _this = this as HostsWrapper;
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_this.hosts),
+    );
+  }
 
   @override
   String toString() {
-    return 'HostsWrapper(hosts: $hosts)';
+    final _this = this as HostsWrapper;
+    return 'HostsWrapper(hosts: ${_this.hosts})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HostsWrapperCopyWith<$Res> {
   factory $HostsWrapperCopyWith(
-          HostsWrapper value, $Res Function(HostsWrapper) _then) =
-      _$HostsWrapperCopyWithImpl;
+    HostsWrapper value,
+    $Res Function(HostsWrapper) _then,
+  ) = _$HostsWrapperCopyWithImpl;
   @useResult
   $Res call({Map<String, HostAddress> hosts});
 }
@@ -3471,15 +3732,15 @@ class _$HostsWrapperCopyWithImpl<$Res> implements $HostsWrapperCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? hosts = null,
-  }) {
-    return _then(_self.copyWith(
-      hosts: null == hosts
-          ? _self.hosts
-          : hosts // ignore: cast_nullable_to_non_nullable
-              as Map<String, HostAddress>,
-    ));
+  $Res call({Object? hosts = null}) {
+    return _then(
+      HostsWrapper(
+        hosts: null == hosts
+            ? _self.hosts
+            : hosts // ignore: cast_nullable_to_non_nullable
+                  as Map<String, HostAddress>,
+      ),
+    );
   }
 }
 
@@ -3643,9 +3904,9 @@ extension HostsWrapperPatterns on HostsWrapper {
 /// @nodoc
 
 class _HostsWrapper extends HostsWrapper {
-  const _HostsWrapper({required final Map<String, HostAddress> hosts})
-      : _hosts = hosts,
-        super._();
+  const _HostsWrapper({required Map<String, HostAddress> hosts})
+    : _hosts = hosts,
+      super._();
 
   final Map<String, HostAddress> _hosts;
   @override
@@ -3668,12 +3929,16 @@ class _HostsWrapper extends HostsWrapper {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _HostsWrapper &&
-            const DeepCollectionEquality().equals(other._hosts, _hosts));
+            const DeepCollectionEquality().equals(other.hosts, _hosts));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_hosts));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_hosts),
+    );
+  }
 
   @override
   String toString() {
@@ -3685,8 +3950,9 @@ class _HostsWrapper extends HostsWrapper {
 abstract mixin class _$HostsWrapperCopyWith<$Res>
     implements $HostsWrapperCopyWith<$Res> {
   factory _$HostsWrapperCopyWith(
-          _HostsWrapper value, $Res Function(_HostsWrapper) _then) =
-      __$HostsWrapperCopyWithImpl;
+    _HostsWrapper value,
+    $Res Function(_HostsWrapper) _then,
+  ) = __$HostsWrapperCopyWithImpl;
   @override
   @useResult
   $Res call({Map<String, HostAddress> hosts});
@@ -3704,15 +3970,15 @@ class __$HostsWrapperCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? hosts = null,
-  }) {
-    return _then(_HostsWrapper(
-      hosts: null == hosts
-          ? _self._hosts
-          : hosts // ignore: cast_nullable_to_non_nullable
-              as Map<String, HostAddress>,
-    ));
+  $Res call({Object? hosts = null}) {
+    return _then(
+      _HostsWrapper(
+        hosts: null == hosts
+            ? _self._hosts
+            : hosts // ignore: cast_nullable_to_non_nullable
+                  as Map<String, HostAddress>,
+      ),
+    );
   }
 }
 
@@ -3727,31 +3993,44 @@ mixin _$MetricsConfig {
   @pragma('vm:prefer-inline')
   $MetricsConfigCopyWith<MetricsConfig> get copyWith =>
       _$MetricsConfigCopyWithImpl<MetricsConfig>(
-          this as MetricsConfig, _$identity);
+        this as MetricsConfig,
+        _$identity,
+      );
+
+  /// Serializes this MetricsConfig to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
+    final _this = this as MetricsConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MetricsConfig &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.listen, listen) || other.listen == listen));
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.listen, _this.listen) ||
+                other.listen == _this.listen));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as MetricsConfig;
+    return Object.hash(runtimeType, _this.tag, _this.listen);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tag, listen);
-
-  @override
   String toString() {
-    return 'MetricsConfig(tag: $tag, listen: $listen)';
+    final _this = this as MetricsConfig;
+    return 'MetricsConfig(tag: ${_this.tag}, listen: ${_this.listen})';
   }
 }
 
 /// @nodoc
 abstract mixin class $MetricsConfigCopyWith<$Res> {
   factory $MetricsConfigCopyWith(
-          MetricsConfig value, $Res Function(MetricsConfig) _then) =
-      _$MetricsConfigCopyWithImpl;
+    MetricsConfig value,
+    $Res Function(MetricsConfig) _then,
+  ) = _$MetricsConfigCopyWithImpl;
   @useResult
   $Res call({String? tag, String? listen});
 }
@@ -3768,20 +4047,19 @@ class _$MetricsConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? tag = freezed,
-    Object? listen = freezed,
-  }) {
-    return _then(_self.copyWith(
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      listen: freezed == listen
-          ? _self.listen
-          : listen // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? tag = freezed, Object? listen = freezed}) {
+    return _then(
+      MetricsConfig(
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        listen: freezed == listen
+            ? _self.listen
+            : listen // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3944,8 +4222,11 @@ extension MetricsConfigPatterns on MetricsConfig {
 
 /// @nodoc
 
-class _MetricsConfig extends MetricsConfig {
-  const _MetricsConfig({this.tag, this.listen}) : super._();
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _MetricsConfig implements MetricsConfig {
+  const _MetricsConfig({this.tag, this.listen});
+  factory _MetricsConfig.fromJson(Map<String, dynamic> json) =>
+      _$MetricsConfigFromJson(json);
 
   @override
   final String? tag;
@@ -3961,6 +4242,11 @@ class _MetricsConfig extends MetricsConfig {
       __$MetricsConfigCopyWithImpl<_MetricsConfig>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$MetricsConfigToJson(this);
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -3969,8 +4255,11 @@ class _MetricsConfig extends MetricsConfig {
             (identical(other.listen, listen) || other.listen == listen));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, tag, listen);
+  int get hashCode {
+    return Object.hash(runtimeType, tag, listen);
+  }
 
   @override
   String toString() {
@@ -3982,8 +4271,9 @@ class _MetricsConfig extends MetricsConfig {
 abstract mixin class _$MetricsConfigCopyWith<$Res>
     implements $MetricsConfigCopyWith<$Res> {
   factory _$MetricsConfigCopyWith(
-          _MetricsConfig value, $Res Function(_MetricsConfig) _then) =
-      __$MetricsConfigCopyWithImpl;
+    _MetricsConfig value,
+    $Res Function(_MetricsConfig) _then,
+  ) = __$MetricsConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String? tag, String? listen});
@@ -4001,20 +4291,19 @@ class __$MetricsConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? tag = freezed,
-    Object? listen = freezed,
-  }) {
-    return _then(_MetricsConfig(
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      listen: freezed == listen
-          ? _self.listen
-          : listen // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? tag = freezed, Object? listen = freezed}) {
+    return _then(
+      _MetricsConfig(
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        listen: freezed == listen
+            ? _self.listen
+            : listen // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -4043,92 +4332,104 @@ mixin _$NameServerConfig {
   @pragma('vm:prefer-inline')
   $NameServerConfigCopyWith<NameServerConfig> get copyWith =>
       _$NameServerConfigCopyWithImpl<NameServerConfig>(
-          this as NameServerConfig, _$identity);
+        this as NameServerConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as NameServerConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NameServerConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.clientIp, clientIp) ||
-                other.clientIp == clientIp) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.skipFallback, skipFallback) ||
-                other.skipFallback == skipFallback) &&
-            (identical(other.domains, domains) || other.domains == domains) &&
-            (identical(other.expectedIPs, expectedIPs) ||
-                other.expectedIPs == expectedIPs) &&
-            (identical(other.expectIPs, expectIPs) ||
-                other.expectIPs == expectIPs) &&
-            (identical(other.queryStrategy, queryStrategy) ||
-                other.queryStrategy == queryStrategy) &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.timeoutMs, timeoutMs) ||
-                other.timeoutMs == timeoutMs) &&
-            (identical(other.disableCache, disableCache) ||
-                other.disableCache == disableCache) &&
-            (identical(other.serveStale, serveStale) ||
-                other.serveStale == serveStale) &&
-            (identical(other.serveExpiredTTL, serveExpiredTTL) ||
-                other.serveExpiredTTL == serveExpiredTTL) &&
-            (identical(other.finalQuery, finalQuery) ||
-                other.finalQuery == finalQuery) &&
-            (identical(other.unexpectedIPs, unexpectedIPs) ||
-                other.unexpectedIPs == unexpectedIPs) &&
-            (identical(other.simplified, simplified) ||
-                other.simplified == simplified));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.clientIp, _this.clientIp) ||
+                other.clientIp == _this.clientIp) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.skipFallback, _this.skipFallback) ||
+                other.skipFallback == _this.skipFallback) &&
+            (identical(other.domains, _this.domains) ||
+                other.domains == _this.domains) &&
+            (identical(other.expectedIPs, _this.expectedIPs) ||
+                other.expectedIPs == _this.expectedIPs) &&
+            (identical(other.expectIPs, _this.expectIPs) ||
+                other.expectIPs == _this.expectIPs) &&
+            (identical(other.queryStrategy, _this.queryStrategy) ||
+                other.queryStrategy == _this.queryStrategy) &&
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.timeoutMs, _this.timeoutMs) ||
+                other.timeoutMs == _this.timeoutMs) &&
+            (identical(other.disableCache, _this.disableCache) ||
+                other.disableCache == _this.disableCache) &&
+            (identical(other.serveStale, _this.serveStale) ||
+                other.serveStale == _this.serveStale) &&
+            (identical(other.serveExpiredTTL, _this.serveExpiredTTL) ||
+                other.serveExpiredTTL == _this.serveExpiredTTL) &&
+            (identical(other.finalQuery, _this.finalQuery) ||
+                other.finalQuery == _this.finalQuery) &&
+            (identical(other.unexpectedIPs, _this.unexpectedIPs) ||
+                other.unexpectedIPs == _this.unexpectedIPs) &&
+            (identical(other.simplified, _this.simplified) ||
+                other.simplified == _this.simplified));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as NameServerConfig;
+    return Object.hash(
       runtimeType,
-      address,
-      clientIp,
-      port,
-      skipFallback,
-      domains,
-      expectedIPs,
-      expectIPs,
-      queryStrategy,
-      tag,
-      timeoutMs,
-      disableCache,
-      serveStale,
-      serveExpiredTTL,
-      finalQuery,
-      unexpectedIPs,
-      simplified);
+      _this.address,
+      _this.clientIp,
+      _this.port,
+      _this.skipFallback,
+      _this.domains,
+      _this.expectedIPs,
+      _this.expectIPs,
+      _this.queryStrategy,
+      _this.tag,
+      _this.timeoutMs,
+      _this.disableCache,
+      _this.serveStale,
+      _this.serveExpiredTTL,
+      _this.finalQuery,
+      _this.unexpectedIPs,
+      _this.simplified,
+    );
+  }
 
   @override
   String toString() {
-    return 'NameServerConfig(address: $address, clientIp: $clientIp, port: $port, skipFallback: $skipFallback, domains: $domains, expectedIPs: $expectedIPs, expectIPs: $expectIPs, queryStrategy: $queryStrategy, tag: $tag, timeoutMs: $timeoutMs, disableCache: $disableCache, serveStale: $serveStale, serveExpiredTTL: $serveExpiredTTL, finalQuery: $finalQuery, unexpectedIPs: $unexpectedIPs, simplified: $simplified)';
+    final _this = this as NameServerConfig;
+    return 'NameServerConfig(address: ${_this.address}, clientIp: ${_this.clientIp}, port: ${_this.port}, skipFallback: ${_this.skipFallback}, domains: ${_this.domains}, expectedIPs: ${_this.expectedIPs}, expectIPs: ${_this.expectIPs}, queryStrategy: ${_this.queryStrategy}, tag: ${_this.tag}, timeoutMs: ${_this.timeoutMs}, disableCache: ${_this.disableCache}, serveStale: ${_this.serveStale}, serveExpiredTTL: ${_this.serveExpiredTTL}, finalQuery: ${_this.finalQuery}, unexpectedIPs: ${_this.unexpectedIPs}, simplified: ${_this.simplified})';
   }
 }
 
 /// @nodoc
 abstract mixin class $NameServerConfigCopyWith<$Res> {
   factory $NameServerConfigCopyWith(
-          NameServerConfig value, $Res Function(NameServerConfig) _then) =
-      _$NameServerConfigCopyWithImpl;
+    NameServerConfig value,
+    $Res Function(NameServerConfig) _then,
+  ) = _$NameServerConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress address,
-      XrayAddress? clientIp,
-      int? port,
-      bool? skipFallback,
-      XrayStringList? domains,
-      XrayStringList? expectedIPs,
-      XrayStringList? expectIPs,
-      DnsQueryStrategy? queryStrategy,
-      String? tag,
-      int? timeoutMs,
-      bool? disableCache,
-      bool? serveStale,
-      int? serveExpiredTTL,
-      bool? finalQuery,
-      XrayStringList? unexpectedIPs,
-      bool? simplified});
+  $Res call({
+    XrayAddress address,
+    XrayAddress? clientIp,
+    int? port,
+    bool? skipFallback,
+    XrayStringList? domains,
+    XrayStringList? expectedIPs,
+    XrayStringList? expectIPs,
+    DnsQueryStrategy? queryStrategy,
+    String? tag,
+    int? timeoutMs,
+    bool? disableCache,
+    bool? serveStale,
+    int? serveExpiredTTL,
+    bool? finalQuery,
+    XrayStringList? unexpectedIPs,
+    bool? simplified,
+  });
 }
 
 /// @nodoc
@@ -4161,72 +4462,74 @@ class _$NameServerConfigCopyWithImpl<$Res>
     Object? unexpectedIPs = freezed,
     Object? simplified = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      clientIp: freezed == clientIp
-          ? _self.clientIp
-          : clientIp // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      skipFallback: freezed == skipFallback
-          ? _self.skipFallback
-          : skipFallback // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      domains: freezed == domains
-          ? _self.domains
-          : domains // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      expectedIPs: freezed == expectedIPs
-          ? _self.expectedIPs
-          : expectedIPs // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      expectIPs: freezed == expectIPs
-          ? _self.expectIPs
-          : expectIPs // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      queryStrategy: freezed == queryStrategy
-          ? _self.queryStrategy
-          : queryStrategy // ignore: cast_nullable_to_non_nullable
-              as DnsQueryStrategy?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timeoutMs: freezed == timeoutMs
-          ? _self.timeoutMs
-          : timeoutMs // ignore: cast_nullable_to_non_nullable
-              as int?,
-      disableCache: freezed == disableCache
-          ? _self.disableCache
-          : disableCache // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveStale: freezed == serveStale
-          ? _self.serveStale
-          : serveStale // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveExpiredTTL: freezed == serveExpiredTTL
-          ? _self.serveExpiredTTL
-          : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
-              as int?,
-      finalQuery: freezed == finalQuery
-          ? _self.finalQuery
-          : finalQuery // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      unexpectedIPs: freezed == unexpectedIPs
-          ? _self.unexpectedIPs
-          : unexpectedIPs // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      simplified: freezed == simplified
-          ? _self.simplified
-          : simplified // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      NameServerConfig(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        clientIp: freezed == clientIp
+            ? _self.clientIp
+            : clientIp // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        skipFallback: freezed == skipFallback
+            ? _self.skipFallback
+            : skipFallback // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        domains: freezed == domains
+            ? _self.domains
+            : domains // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        expectedIPs: freezed == expectedIPs
+            ? _self.expectedIPs
+            : expectedIPs // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        expectIPs: freezed == expectIPs
+            ? _self.expectIPs
+            : expectIPs // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        queryStrategy: freezed == queryStrategy
+            ? _self.queryStrategy
+            : queryStrategy // ignore: cast_nullable_to_non_nullable
+                  as DnsQueryStrategy?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        timeoutMs: freezed == timeoutMs
+            ? _self.timeoutMs
+            : timeoutMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        disableCache: freezed == disableCache
+            ? _self.disableCache
+            : disableCache // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveStale: freezed == serveStale
+            ? _self.serveStale
+            : serveStale // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveExpiredTTL: freezed == serveExpiredTTL
+            ? _self.serveExpiredTTL
+            : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        finalQuery: freezed == finalQuery
+            ? _self.finalQuery
+            : finalQuery // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        unexpectedIPs: freezed == unexpectedIPs
+            ? _self.unexpectedIPs
+            : unexpectedIPs // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        simplified: freezed == simplified
+            ? _self.simplified
+            : simplified // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -4324,45 +4627,47 @@ extension NameServerConfigPatterns on NameServerConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayAddress address,
-            XrayAddress? clientIp,
-            int? port,
-            bool? skipFallback,
-            XrayStringList? domains,
-            XrayStringList? expectedIPs,
-            XrayStringList? expectIPs,
-            DnsQueryStrategy? queryStrategy,
-            String? tag,
-            int? timeoutMs,
-            bool? disableCache,
-            bool? serveStale,
-            int? serveExpiredTTL,
-            bool? finalQuery,
-            XrayStringList? unexpectedIPs,
-            bool? simplified)?
-        $default, {
+      XrayAddress address,
+      XrayAddress? clientIp,
+      int? port,
+      bool? skipFallback,
+      XrayStringList? domains,
+      XrayStringList? expectedIPs,
+      XrayStringList? expectIPs,
+      DnsQueryStrategy? queryStrategy,
+      String? tag,
+      int? timeoutMs,
+      bool? disableCache,
+      bool? serveStale,
+      int? serveExpiredTTL,
+      bool? finalQuery,
+      XrayStringList? unexpectedIPs,
+      bool? simplified,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _NameServerConfig() when $default != null:
         return $default(
-            _that.address,
-            _that.clientIp,
-            _that.port,
-            _that.skipFallback,
-            _that.domains,
-            _that.expectedIPs,
-            _that.expectIPs,
-            _that.queryStrategy,
-            _that.tag,
-            _that.timeoutMs,
-            _that.disableCache,
-            _that.serveStale,
-            _that.serveExpiredTTL,
-            _that.finalQuery,
-            _that.unexpectedIPs,
-            _that.simplified);
+          _that.address,
+          _that.clientIp,
+          _that.port,
+          _that.skipFallback,
+          _that.domains,
+          _that.expectedIPs,
+          _that.expectIPs,
+          _that.queryStrategy,
+          _that.tag,
+          _that.timeoutMs,
+          _that.disableCache,
+          _that.serveStale,
+          _that.serveExpiredTTL,
+          _that.finalQuery,
+          _that.unexpectedIPs,
+          _that.simplified,
+        );
       case _:
         return orElse();
     }
@@ -4384,44 +4689,46 @@ extension NameServerConfigPatterns on NameServerConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayAddress address,
-            XrayAddress? clientIp,
-            int? port,
-            bool? skipFallback,
-            XrayStringList? domains,
-            XrayStringList? expectedIPs,
-            XrayStringList? expectIPs,
-            DnsQueryStrategy? queryStrategy,
-            String? tag,
-            int? timeoutMs,
-            bool? disableCache,
-            bool? serveStale,
-            int? serveExpiredTTL,
-            bool? finalQuery,
-            XrayStringList? unexpectedIPs,
-            bool? simplified)
-        $default,
+      XrayAddress address,
+      XrayAddress? clientIp,
+      int? port,
+      bool? skipFallback,
+      XrayStringList? domains,
+      XrayStringList? expectedIPs,
+      XrayStringList? expectIPs,
+      DnsQueryStrategy? queryStrategy,
+      String? tag,
+      int? timeoutMs,
+      bool? disableCache,
+      bool? serveStale,
+      int? serveExpiredTTL,
+      bool? finalQuery,
+      XrayStringList? unexpectedIPs,
+      bool? simplified,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _NameServerConfig():
         return $default(
-            _that.address,
-            _that.clientIp,
-            _that.port,
-            _that.skipFallback,
-            _that.domains,
-            _that.expectedIPs,
-            _that.expectIPs,
-            _that.queryStrategy,
-            _that.tag,
-            _that.timeoutMs,
-            _that.disableCache,
-            _that.serveStale,
-            _that.serveExpiredTTL,
-            _that.finalQuery,
-            _that.unexpectedIPs,
-            _that.simplified);
+          _that.address,
+          _that.clientIp,
+          _that.port,
+          _that.skipFallback,
+          _that.domains,
+          _that.expectedIPs,
+          _that.expectIPs,
+          _that.queryStrategy,
+          _that.tag,
+          _that.timeoutMs,
+          _that.disableCache,
+          _that.serveStale,
+          _that.serveExpiredTTL,
+          _that.finalQuery,
+          _that.unexpectedIPs,
+          _that.simplified,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -4442,44 +4749,46 @@ extension NameServerConfigPatterns on NameServerConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress address,
-            XrayAddress? clientIp,
-            int? port,
-            bool? skipFallback,
-            XrayStringList? domains,
-            XrayStringList? expectedIPs,
-            XrayStringList? expectIPs,
-            DnsQueryStrategy? queryStrategy,
-            String? tag,
-            int? timeoutMs,
-            bool? disableCache,
-            bool? serveStale,
-            int? serveExpiredTTL,
-            bool? finalQuery,
-            XrayStringList? unexpectedIPs,
-            bool? simplified)?
-        $default,
+      XrayAddress address,
+      XrayAddress? clientIp,
+      int? port,
+      bool? skipFallback,
+      XrayStringList? domains,
+      XrayStringList? expectedIPs,
+      XrayStringList? expectIPs,
+      DnsQueryStrategy? queryStrategy,
+      String? tag,
+      int? timeoutMs,
+      bool? disableCache,
+      bool? serveStale,
+      int? serveExpiredTTL,
+      bool? finalQuery,
+      XrayStringList? unexpectedIPs,
+      bool? simplified,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _NameServerConfig() when $default != null:
         return $default(
-            _that.address,
-            _that.clientIp,
-            _that.port,
-            _that.skipFallback,
-            _that.domains,
-            _that.expectedIPs,
-            _that.expectIPs,
-            _that.queryStrategy,
-            _that.tag,
-            _that.timeoutMs,
-            _that.disableCache,
-            _that.serveStale,
-            _that.serveExpiredTTL,
-            _that.finalQuery,
-            _that.unexpectedIPs,
-            _that.simplified);
+          _that.address,
+          _that.clientIp,
+          _that.port,
+          _that.skipFallback,
+          _that.domains,
+          _that.expectedIPs,
+          _that.expectIPs,
+          _that.queryStrategy,
+          _that.tag,
+          _that.timeoutMs,
+          _that.disableCache,
+          _that.serveStale,
+          _that.serveExpiredTTL,
+          _that.finalQuery,
+          _that.unexpectedIPs,
+          _that.simplified,
+        );
       case _:
         return null;
     }
@@ -4489,24 +4798,24 @@ extension NameServerConfigPatterns on NameServerConfig {
 /// @nodoc
 
 class _NameServerConfig extends NameServerConfig {
-  const _NameServerConfig(
-      {required this.address,
-      this.clientIp,
-      this.port,
-      this.skipFallback,
-      this.domains,
-      this.expectedIPs,
-      this.expectIPs,
-      this.queryStrategy,
-      this.tag,
-      this.timeoutMs,
-      this.disableCache,
-      this.serveStale,
-      this.serveExpiredTTL,
-      this.finalQuery,
-      this.unexpectedIPs,
-      this.simplified})
-      : super._();
+  const _NameServerConfig({
+    required this.address,
+    this.clientIp,
+    this.port,
+    this.skipFallback,
+    this.domains,
+    this.expectedIPs,
+    this.expectIPs,
+    this.queryStrategy,
+    this.tag,
+    this.timeoutMs,
+    this.disableCache,
+    this.serveStale,
+    this.serveExpiredTTL,
+    this.finalQuery,
+    this.unexpectedIPs,
+    this.simplified,
+  }) : super._();
 
   @override
   final XrayAddress address;
@@ -4585,7 +4894,8 @@ class _NameServerConfig extends NameServerConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       address,
       clientIp,
@@ -4602,7 +4912,9 @@ class _NameServerConfig extends NameServerConfig {
       serveExpiredTTL,
       finalQuery,
       unexpectedIPs,
-      simplified);
+      simplified,
+    );
+  }
 
   @override
   String toString() {
@@ -4614,27 +4926,29 @@ class _NameServerConfig extends NameServerConfig {
 abstract mixin class _$NameServerConfigCopyWith<$Res>
     implements $NameServerConfigCopyWith<$Res> {
   factory _$NameServerConfigCopyWith(
-          _NameServerConfig value, $Res Function(_NameServerConfig) _then) =
-      __$NameServerConfigCopyWithImpl;
+    _NameServerConfig value,
+    $Res Function(_NameServerConfig) _then,
+  ) = __$NameServerConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress address,
-      XrayAddress? clientIp,
-      int? port,
-      bool? skipFallback,
-      XrayStringList? domains,
-      XrayStringList? expectedIPs,
-      XrayStringList? expectIPs,
-      DnsQueryStrategy? queryStrategy,
-      String? tag,
-      int? timeoutMs,
-      bool? disableCache,
-      bool? serveStale,
-      int? serveExpiredTTL,
-      bool? finalQuery,
-      XrayStringList? unexpectedIPs,
-      bool? simplified});
+  $Res call({
+    XrayAddress address,
+    XrayAddress? clientIp,
+    int? port,
+    bool? skipFallback,
+    XrayStringList? domains,
+    XrayStringList? expectedIPs,
+    XrayStringList? expectIPs,
+    DnsQueryStrategy? queryStrategy,
+    String? tag,
+    int? timeoutMs,
+    bool? disableCache,
+    bool? serveStale,
+    int? serveExpiredTTL,
+    bool? finalQuery,
+    XrayStringList? unexpectedIPs,
+    bool? simplified,
+  });
 }
 
 /// @nodoc
@@ -4667,72 +4981,74 @@ class __$NameServerConfigCopyWithImpl<$Res>
     Object? unexpectedIPs = freezed,
     Object? simplified = freezed,
   }) {
-    return _then(_NameServerConfig(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      clientIp: freezed == clientIp
-          ? _self.clientIp
-          : clientIp // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      skipFallback: freezed == skipFallback
-          ? _self.skipFallback
-          : skipFallback // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      domains: freezed == domains
-          ? _self.domains
-          : domains // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      expectedIPs: freezed == expectedIPs
-          ? _self.expectedIPs
-          : expectedIPs // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      expectIPs: freezed == expectIPs
-          ? _self.expectIPs
-          : expectIPs // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      queryStrategy: freezed == queryStrategy
-          ? _self.queryStrategy
-          : queryStrategy // ignore: cast_nullable_to_non_nullable
-              as DnsQueryStrategy?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timeoutMs: freezed == timeoutMs
-          ? _self.timeoutMs
-          : timeoutMs // ignore: cast_nullable_to_non_nullable
-              as int?,
-      disableCache: freezed == disableCache
-          ? _self.disableCache
-          : disableCache // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveStale: freezed == serveStale
-          ? _self.serveStale
-          : serveStale // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      serveExpiredTTL: freezed == serveExpiredTTL
-          ? _self.serveExpiredTTL
-          : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
-              as int?,
-      finalQuery: freezed == finalQuery
-          ? _self.finalQuery
-          : finalQuery // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      unexpectedIPs: freezed == unexpectedIPs
-          ? _self.unexpectedIPs
-          : unexpectedIPs // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      simplified: freezed == simplified
-          ? _self.simplified
-          : simplified // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _NameServerConfig(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        clientIp: freezed == clientIp
+            ? _self.clientIp
+            : clientIp // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        skipFallback: freezed == skipFallback
+            ? _self.skipFallback
+            : skipFallback // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        domains: freezed == domains
+            ? _self.domains
+            : domains // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        expectedIPs: freezed == expectedIPs
+            ? _self.expectedIPs
+            : expectedIPs // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        expectIPs: freezed == expectIPs
+            ? _self.expectIPs
+            : expectIPs // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        queryStrategy: freezed == queryStrategy
+            ? _self.queryStrategy
+            : queryStrategy // ignore: cast_nullable_to_non_nullable
+                  as DnsQueryStrategy?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        timeoutMs: freezed == timeoutMs
+            ? _self.timeoutMs
+            : timeoutMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        disableCache: freezed == disableCache
+            ? _self.disableCache
+            : disableCache // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveStale: freezed == serveStale
+            ? _self.serveStale
+            : serveStale // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        serveExpiredTTL: freezed == serveExpiredTTL
+            ? _self.serveExpiredTTL
+            : serveExpiredTTL // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        finalQuery: freezed == finalQuery
+            ? _self.finalQuery
+            : finalQuery // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        unexpectedIPs: freezed == unexpectedIPs
+            ? _self.unexpectedIPs
+            : unexpectedIPs // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        simplified: freezed == simplified
+            ? _self.simplified
+            : simplified // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -4749,48 +5065,60 @@ mixin _$ObservatoryConfig {
   @pragma('vm:prefer-inline')
   $ObservatoryConfigCopyWith<ObservatoryConfig> get copyWith =>
       _$ObservatoryConfigCopyWithImpl<ObservatoryConfig>(
-          this as ObservatoryConfig, _$identity);
+        this as ObservatoryConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as ObservatoryConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ObservatoryConfig &&
-            const DeepCollectionEquality()
-                .equals(other.subjectSelector, subjectSelector) &&
-            (identical(other.probeURL, probeURL) ||
-                other.probeURL == probeURL) &&
-            (identical(other.probeInterval, probeInterval) ||
-                other.probeInterval == probeInterval) &&
-            (identical(other.enableConcurrency, enableConcurrency) ||
-                other.enableConcurrency == enableConcurrency));
+            const DeepCollectionEquality().equals(
+              other.subjectSelector,
+              _this.subjectSelector,
+            ) &&
+            (identical(other.probeURL, _this.probeURL) ||
+                other.probeURL == _this.probeURL) &&
+            (identical(other.probeInterval, _this.probeInterval) ||
+                other.probeInterval == _this.probeInterval) &&
+            (identical(other.enableConcurrency, _this.enableConcurrency) ||
+                other.enableConcurrency == _this.enableConcurrency));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as ObservatoryConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(subjectSelector),
-      probeURL,
-      probeInterval,
-      enableConcurrency);
+      const DeepCollectionEquality().hash(_this.subjectSelector),
+      _this.probeURL,
+      _this.probeInterval,
+      _this.enableConcurrency,
+    );
+  }
 
   @override
   String toString() {
-    return 'ObservatoryConfig(subjectSelector: $subjectSelector, probeURL: $probeURL, probeInterval: $probeInterval, enableConcurrency: $enableConcurrency)';
+    final _this = this as ObservatoryConfig;
+    return 'ObservatoryConfig(subjectSelector: ${_this.subjectSelector}, probeURL: ${_this.probeURL}, probeInterval: ${_this.probeInterval}, enableConcurrency: ${_this.enableConcurrency})';
   }
 }
 
 /// @nodoc
 abstract mixin class $ObservatoryConfigCopyWith<$Res> {
   factory $ObservatoryConfigCopyWith(
-          ObservatoryConfig value, $Res Function(ObservatoryConfig) _then) =
-      _$ObservatoryConfigCopyWithImpl;
+    ObservatoryConfig value,
+    $Res Function(ObservatoryConfig) _then,
+  ) = _$ObservatoryConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<String>? subjectSelector,
-      String? probeURL,
-      XrayDuration? probeInterval,
-      bool? enableConcurrency});
+  $Res call({
+    List<String>? subjectSelector,
+    String? probeURL,
+    XrayDuration? probeInterval,
+    bool? enableConcurrency,
+  });
 }
 
 /// @nodoc
@@ -4811,24 +5139,26 @@ class _$ObservatoryConfigCopyWithImpl<$Res>
     Object? probeInterval = freezed,
     Object? enableConcurrency = freezed,
   }) {
-    return _then(_self.copyWith(
-      subjectSelector: freezed == subjectSelector
-          ? _self.subjectSelector
-          : subjectSelector // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      probeURL: freezed == probeURL
-          ? _self.probeURL
-          : probeURL // ignore: cast_nullable_to_non_nullable
-              as String?,
-      probeInterval: freezed == probeInterval
-          ? _self.probeInterval
-          : probeInterval // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      enableConcurrency: freezed == enableConcurrency
-          ? _self.enableConcurrency
-          : enableConcurrency // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      ObservatoryConfig(
+        subjectSelector: freezed == subjectSelector
+            ? _self.subjectSelector
+            : subjectSelector // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        probeURL: freezed == probeURL
+            ? _self.probeURL
+            : probeURL // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        probeInterval: freezed == probeInterval
+            ? _self.probeInterval
+            : probeInterval // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        enableConcurrency: freezed == enableConcurrency
+            ? _self.enableConcurrency
+            : enableConcurrency // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -4925,16 +5255,24 @@ extension ObservatoryConfigPatterns on ObservatoryConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<String>? subjectSelector, String? probeURL,
-            XrayDuration? probeInterval, bool? enableConcurrency)?
-        $default, {
+    TResult Function(
+      List<String>? subjectSelector,
+      String? probeURL,
+      XrayDuration? probeInterval,
+      bool? enableConcurrency,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _ObservatoryConfig() when $default != null:
-        return $default(_that.subjectSelector, _that.probeURL,
-            _that.probeInterval, _that.enableConcurrency);
+        return $default(
+          _that.subjectSelector,
+          _that.probeURL,
+          _that.probeInterval,
+          _that.enableConcurrency,
+        );
       case _:
         return orElse();
     }
@@ -4955,15 +5293,23 @@ extension ObservatoryConfigPatterns on ObservatoryConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String>? subjectSelector, String? probeURL,
-            XrayDuration? probeInterval, bool? enableConcurrency)
-        $default,
+    TResult Function(
+      List<String>? subjectSelector,
+      String? probeURL,
+      XrayDuration? probeInterval,
+      bool? enableConcurrency,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ObservatoryConfig():
-        return $default(_that.subjectSelector, _that.probeURL,
-            _that.probeInterval, _that.enableConcurrency);
+        return $default(
+          _that.subjectSelector,
+          _that.probeURL,
+          _that.probeInterval,
+          _that.enableConcurrency,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -4983,15 +5329,23 @@ extension ObservatoryConfigPatterns on ObservatoryConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<String>? subjectSelector, String? probeURL,
-            XrayDuration? probeInterval, bool? enableConcurrency)?
-        $default,
+    TResult? Function(
+      List<String>? subjectSelector,
+      String? probeURL,
+      XrayDuration? probeInterval,
+      bool? enableConcurrency,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ObservatoryConfig() when $default != null:
-        return $default(_that.subjectSelector, _that.probeURL,
-            _that.probeInterval, _that.enableConcurrency);
+        return $default(
+          _that.subjectSelector,
+          _that.probeURL,
+          _that.probeInterval,
+          _that.enableConcurrency,
+        );
       case _:
         return null;
     }
@@ -5001,13 +5355,13 @@ extension ObservatoryConfigPatterns on ObservatoryConfig {
 /// @nodoc
 
 class _ObservatoryConfig extends ObservatoryConfig {
-  const _ObservatoryConfig(
-      {final List<String>? subjectSelector,
-      this.probeURL,
-      this.probeInterval,
-      this.enableConcurrency})
-      : _subjectSelector = subjectSelector,
-        super._();
+  const _ObservatoryConfig({
+    List<String>? subjectSelector,
+    this.probeURL,
+    this.probeInterval,
+    this.enableConcurrency,
+  }) : _subjectSelector = subjectSelector,
+       super._();
 
   final List<String>? _subjectSelector;
   @override
@@ -5039,8 +5393,10 @@ class _ObservatoryConfig extends ObservatoryConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ObservatoryConfig &&
-            const DeepCollectionEquality()
-                .equals(other._subjectSelector, _subjectSelector) &&
+            const DeepCollectionEquality().equals(
+              other.subjectSelector,
+              _subjectSelector,
+            ) &&
             (identical(other.probeURL, probeURL) ||
                 other.probeURL == probeURL) &&
             (identical(other.probeInterval, probeInterval) ||
@@ -5050,12 +5406,15 @@ class _ObservatoryConfig extends ObservatoryConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_subjectSelector),
       probeURL,
       probeInterval,
-      enableConcurrency);
+      enableConcurrency,
+    );
+  }
 
   @override
   String toString() {
@@ -5067,15 +5426,17 @@ class _ObservatoryConfig extends ObservatoryConfig {
 abstract mixin class _$ObservatoryConfigCopyWith<$Res>
     implements $ObservatoryConfigCopyWith<$Res> {
   factory _$ObservatoryConfigCopyWith(
-          _ObservatoryConfig value, $Res Function(_ObservatoryConfig) _then) =
-      __$ObservatoryConfigCopyWithImpl;
+    _ObservatoryConfig value,
+    $Res Function(_ObservatoryConfig) _then,
+  ) = __$ObservatoryConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<String>? subjectSelector,
-      String? probeURL,
-      XrayDuration? probeInterval,
-      bool? enableConcurrency});
+  $Res call({
+    List<String>? subjectSelector,
+    String? probeURL,
+    XrayDuration? probeInterval,
+    bool? enableConcurrency,
+  });
 }
 
 /// @nodoc
@@ -5096,37 +5457,43 @@ class __$ObservatoryConfigCopyWithImpl<$Res>
     Object? probeInterval = freezed,
     Object? enableConcurrency = freezed,
   }) {
-    return _then(_ObservatoryConfig(
-      subjectSelector: freezed == subjectSelector
-          ? _self._subjectSelector
-          : subjectSelector // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      probeURL: freezed == probeURL
-          ? _self.probeURL
-          : probeURL // ignore: cast_nullable_to_non_nullable
-              as String?,
-      probeInterval: freezed == probeInterval
-          ? _self.probeInterval
-          : probeInterval // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      enableConcurrency: freezed == enableConcurrency
-          ? _self.enableConcurrency
-          : enableConcurrency // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _ObservatoryConfig(
+        subjectSelector: freezed == subjectSelector
+            ? _self._subjectSelector
+            : subjectSelector // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        probeURL: freezed == probeURL
+            ? _self.probeURL
+            : probeURL // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        probeInterval: freezed == probeInterval
+            ? _self.probeInterval
+            : probeInterval // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        enableConcurrency: freezed == enableConcurrency
+            ? _self.enableConcurrency
+            : enableConcurrency // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 mixin _$Policy {
+  @JsonKey(fromJson: nullableIntFromJson)
   int? get handshake;
-  @JsonKey(name: 'connIdle')
+  @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
   int? get connectionIdle;
+  @JsonKey(fromJson: nullableIntFromJson)
   int? get uplinkOnly;
+  @JsonKey(fromJson: nullableIntFromJson)
   int? get downlinkOnly;
   bool? get statsUserUplink;
   bool? get statsUserDownlink;
   bool? get statsUserOnline;
+  @JsonKey(fromJson: nullableIntFromJson)
   int? get bufferSize;
 
   /// Create a copy of Policy
@@ -5136,44 +5503,54 @@ mixin _$Policy {
   $PolicyCopyWith<Policy> get copyWith =>
       _$PolicyCopyWithImpl<Policy>(this as Policy, _$identity);
 
+  /// Serializes this Policy to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
+    final _this = this as Policy;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Policy &&
-            (identical(other.handshake, handshake) ||
-                other.handshake == handshake) &&
-            (identical(other.connectionIdle, connectionIdle) ||
-                other.connectionIdle == connectionIdle) &&
-            (identical(other.uplinkOnly, uplinkOnly) ||
-                other.uplinkOnly == uplinkOnly) &&
-            (identical(other.downlinkOnly, downlinkOnly) ||
-                other.downlinkOnly == downlinkOnly) &&
-            (identical(other.statsUserUplink, statsUserUplink) ||
-                other.statsUserUplink == statsUserUplink) &&
-            (identical(other.statsUserDownlink, statsUserDownlink) ||
-                other.statsUserDownlink == statsUserDownlink) &&
-            (identical(other.statsUserOnline, statsUserOnline) ||
-                other.statsUserOnline == statsUserOnline) &&
-            (identical(other.bufferSize, bufferSize) ||
-                other.bufferSize == bufferSize));
+            (identical(other.handshake, _this.handshake) ||
+                other.handshake == _this.handshake) &&
+            (identical(other.connectionIdle, _this.connectionIdle) ||
+                other.connectionIdle == _this.connectionIdle) &&
+            (identical(other.uplinkOnly, _this.uplinkOnly) ||
+                other.uplinkOnly == _this.uplinkOnly) &&
+            (identical(other.downlinkOnly, _this.downlinkOnly) ||
+                other.downlinkOnly == _this.downlinkOnly) &&
+            (identical(other.statsUserUplink, _this.statsUserUplink) ||
+                other.statsUserUplink == _this.statsUserUplink) &&
+            (identical(other.statsUserDownlink, _this.statsUserDownlink) ||
+                other.statsUserDownlink == _this.statsUserDownlink) &&
+            (identical(other.statsUserOnline, _this.statsUserOnline) ||
+                other.statsUserOnline == _this.statsUserOnline) &&
+            (identical(other.bufferSize, _this.bufferSize) ||
+                other.bufferSize == _this.bufferSize));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as Policy;
+    return Object.hash(
+      runtimeType,
+      _this.handshake,
+      _this.connectionIdle,
+      _this.uplinkOnly,
+      _this.downlinkOnly,
+      _this.statsUserUplink,
+      _this.statsUserDownlink,
+      _this.statsUserOnline,
+      _this.bufferSize,
+    );
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      handshake,
-      connectionIdle,
-      uplinkOnly,
-      downlinkOnly,
-      statsUserUplink,
-      statsUserDownlink,
-      statsUserOnline,
-      bufferSize);
-
-  @override
   String toString() {
-    return 'Policy(handshake: $handshake, connectionIdle: $connectionIdle, uplinkOnly: $uplinkOnly, downlinkOnly: $downlinkOnly, statsUserUplink: $statsUserUplink, statsUserDownlink: $statsUserDownlink, statsUserOnline: $statsUserOnline, bufferSize: $bufferSize)';
+    final _this = this as Policy;
+    return 'Policy(handshake: ${_this.handshake}, connectionIdle: ${_this.connectionIdle}, uplinkOnly: ${_this.uplinkOnly}, downlinkOnly: ${_this.downlinkOnly}, statsUserUplink: ${_this.statsUserUplink}, statsUserDownlink: ${_this.statsUserDownlink}, statsUserOnline: ${_this.statsUserOnline}, bufferSize: ${_this.bufferSize})';
   }
 }
 
@@ -5182,15 +5559,17 @@ abstract mixin class $PolicyCopyWith<$Res> {
   factory $PolicyCopyWith(Policy value, $Res Function(Policy) _then) =
       _$PolicyCopyWithImpl;
   @useResult
-  $Res call(
-      {int? handshake,
-      @JsonKey(name: 'connIdle') int? connectionIdle,
-      int? uplinkOnly,
-      int? downlinkOnly,
-      bool? statsUserUplink,
-      bool? statsUserDownlink,
-      bool? statsUserOnline,
-      int? bufferSize});
+  $Res call({
+    @JsonKey(fromJson: nullableIntFromJson) int? handshake,
+    @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
+    int? connectionIdle,
+    @JsonKey(fromJson: nullableIntFromJson) int? uplinkOnly,
+    @JsonKey(fromJson: nullableIntFromJson) int? downlinkOnly,
+    bool? statsUserUplink,
+    bool? statsUserDownlink,
+    bool? statsUserOnline,
+    @JsonKey(fromJson: nullableIntFromJson) int? bufferSize,
+  });
 }
 
 /// @nodoc
@@ -5214,40 +5593,42 @@ class _$PolicyCopyWithImpl<$Res> implements $PolicyCopyWith<$Res> {
     Object? statsUserOnline = freezed,
     Object? bufferSize = freezed,
   }) {
-    return _then(_self.copyWith(
-      handshake: freezed == handshake
-          ? _self.handshake
-          : handshake // ignore: cast_nullable_to_non_nullable
-              as int?,
-      connectionIdle: freezed == connectionIdle
-          ? _self.connectionIdle
-          : connectionIdle // ignore: cast_nullable_to_non_nullable
-              as int?,
-      uplinkOnly: freezed == uplinkOnly
-          ? _self.uplinkOnly
-          : uplinkOnly // ignore: cast_nullable_to_non_nullable
-              as int?,
-      downlinkOnly: freezed == downlinkOnly
-          ? _self.downlinkOnly
-          : downlinkOnly // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statsUserUplink: freezed == statsUserUplink
-          ? _self.statsUserUplink
-          : statsUserUplink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsUserDownlink: freezed == statsUserDownlink
-          ? _self.statsUserDownlink
-          : statsUserDownlink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsUserOnline: freezed == statsUserOnline
-          ? _self.statsUserOnline
-          : statsUserOnline // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      bufferSize: freezed == bufferSize
-          ? _self.bufferSize
-          : bufferSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      Policy(
+        handshake: freezed == handshake
+            ? _self.handshake
+            : handshake // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        connectionIdle: freezed == connectionIdle
+            ? _self.connectionIdle
+            : connectionIdle // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        uplinkOnly: freezed == uplinkOnly
+            ? _self.uplinkOnly
+            : uplinkOnly // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        downlinkOnly: freezed == downlinkOnly
+            ? _self.downlinkOnly
+            : downlinkOnly // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        statsUserUplink: freezed == statsUserUplink
+            ? _self.statsUserUplink
+            : statsUserUplink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsUserDownlink: freezed == statsUserDownlink
+            ? _self.statsUserDownlink
+            : statsUserDownlink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsUserOnline: freezed == statsUserOnline
+            ? _self.statsUserOnline
+            : statsUserOnline // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        bufferSize: freezed == bufferSize
+            ? _self.bufferSize
+            : bufferSize // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -5345,29 +5726,32 @@ extension PolicyPatterns on Policy {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            int? handshake,
-            @JsonKey(name: 'connIdle') int? connectionIdle,
-            int? uplinkOnly,
-            int? downlinkOnly,
-            bool? statsUserUplink,
-            bool? statsUserDownlink,
-            bool? statsUserOnline,
-            int? bufferSize)?
-        $default, {
+      @JsonKey(fromJson: nullableIntFromJson) int? handshake,
+      @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
+      int? connectionIdle,
+      @JsonKey(fromJson: nullableIntFromJson) int? uplinkOnly,
+      @JsonKey(fromJson: nullableIntFromJson) int? downlinkOnly,
+      bool? statsUserUplink,
+      bool? statsUserDownlink,
+      bool? statsUserOnline,
+      @JsonKey(fromJson: nullableIntFromJson) int? bufferSize,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _Policy() when $default != null:
         return $default(
-            _that.handshake,
-            _that.connectionIdle,
-            _that.uplinkOnly,
-            _that.downlinkOnly,
-            _that.statsUserUplink,
-            _that.statsUserDownlink,
-            _that.statsUserOnline,
-            _that.bufferSize);
+          _that.handshake,
+          _that.connectionIdle,
+          _that.uplinkOnly,
+          _that.downlinkOnly,
+          _that.statsUserUplink,
+          _that.statsUserDownlink,
+          _that.statsUserOnline,
+          _that.bufferSize,
+        );
       case _:
         return orElse();
     }
@@ -5389,28 +5773,31 @@ extension PolicyPatterns on Policy {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            int? handshake,
-            @JsonKey(name: 'connIdle') int? connectionIdle,
-            int? uplinkOnly,
-            int? downlinkOnly,
-            bool? statsUserUplink,
-            bool? statsUserDownlink,
-            bool? statsUserOnline,
-            int? bufferSize)
-        $default,
+      @JsonKey(fromJson: nullableIntFromJson) int? handshake,
+      @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
+      int? connectionIdle,
+      @JsonKey(fromJson: nullableIntFromJson) int? uplinkOnly,
+      @JsonKey(fromJson: nullableIntFromJson) int? downlinkOnly,
+      bool? statsUserUplink,
+      bool? statsUserDownlink,
+      bool? statsUserOnline,
+      @JsonKey(fromJson: nullableIntFromJson) int? bufferSize,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Policy():
         return $default(
-            _that.handshake,
-            _that.connectionIdle,
-            _that.uplinkOnly,
-            _that.downlinkOnly,
-            _that.statsUserUplink,
-            _that.statsUserDownlink,
-            _that.statsUserOnline,
-            _that.bufferSize);
+          _that.handshake,
+          _that.connectionIdle,
+          _that.uplinkOnly,
+          _that.downlinkOnly,
+          _that.statsUserUplink,
+          _that.statsUserDownlink,
+          _that.statsUserOnline,
+          _that.bufferSize,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -5431,28 +5818,31 @@ extension PolicyPatterns on Policy {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            int? handshake,
-            @JsonKey(name: 'connIdle') int? connectionIdle,
-            int? uplinkOnly,
-            int? downlinkOnly,
-            bool? statsUserUplink,
-            bool? statsUserDownlink,
-            bool? statsUserOnline,
-            int? bufferSize)?
-        $default,
+      @JsonKey(fromJson: nullableIntFromJson) int? handshake,
+      @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
+      int? connectionIdle,
+      @JsonKey(fromJson: nullableIntFromJson) int? uplinkOnly,
+      @JsonKey(fromJson: nullableIntFromJson) int? downlinkOnly,
+      bool? statsUserUplink,
+      bool? statsUserDownlink,
+      bool? statsUserOnline,
+      @JsonKey(fromJson: nullableIntFromJson) int? bufferSize,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Policy() when $default != null:
         return $default(
-            _that.handshake,
-            _that.connectionIdle,
-            _that.uplinkOnly,
-            _that.downlinkOnly,
-            _that.statsUserUplink,
-            _that.statsUserDownlink,
-            _that.statsUserOnline,
-            _that.bufferSize);
+          _that.handshake,
+          _that.connectionIdle,
+          _that.uplinkOnly,
+          _that.downlinkOnly,
+          _that.statsUserUplink,
+          _that.statsUserDownlink,
+          _that.statsUserOnline,
+          _that.bufferSize,
+        );
       case _:
         return null;
     }
@@ -5461,26 +5851,32 @@ extension PolicyPatterns on Policy {
 
 /// @nodoc
 
-class _Policy extends Policy {
-  const _Policy(
-      {this.handshake,
-      @JsonKey(name: 'connIdle') this.connectionIdle,
-      this.uplinkOnly,
-      this.downlinkOnly,
-      this.statsUserUplink,
-      this.statsUserDownlink,
-      this.statsUserOnline,
-      this.bufferSize})
-      : super._();
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _Policy implements Policy {
+  const _Policy({
+    @JsonKey(fromJson: nullableIntFromJson) this.handshake,
+    @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
+    this.connectionIdle,
+    @JsonKey(fromJson: nullableIntFromJson) this.uplinkOnly,
+    @JsonKey(fromJson: nullableIntFromJson) this.downlinkOnly,
+    this.statsUserUplink,
+    this.statsUserDownlink,
+    this.statsUserOnline,
+    @JsonKey(fromJson: nullableIntFromJson) this.bufferSize,
+  });
+  factory _Policy.fromJson(Map<String, dynamic> json) => _$PolicyFromJson(json);
 
   @override
+  @JsonKey(fromJson: nullableIntFromJson)
   final int? handshake;
   @override
-  @JsonKey(name: 'connIdle')
+  @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
   final int? connectionIdle;
   @override
+  @JsonKey(fromJson: nullableIntFromJson)
   final int? uplinkOnly;
   @override
+  @JsonKey(fromJson: nullableIntFromJson)
   final int? downlinkOnly;
   @override
   final bool? statsUserUplink;
@@ -5489,6 +5885,7 @@ class _Policy extends Policy {
   @override
   final bool? statsUserOnline;
   @override
+  @JsonKey(fromJson: nullableIntFromJson)
   final int? bufferSize;
 
   /// Create a copy of Policy
@@ -5498,6 +5895,11 @@ class _Policy extends Policy {
   @pragma('vm:prefer-inline')
   _$PolicyCopyWith<_Policy> get copyWith =>
       __$PolicyCopyWithImpl<_Policy>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PolicyToJson(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -5522,8 +5924,10 @@ class _Policy extends Policy {
                 other.bufferSize == bufferSize));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       handshake,
       connectionIdle,
@@ -5532,7 +5936,9 @@ class _Policy extends Policy {
       statsUserUplink,
       statsUserDownlink,
       statsUserOnline,
-      bufferSize);
+      bufferSize,
+    );
+  }
 
   @override
   String toString() {
@@ -5546,15 +5952,17 @@ abstract mixin class _$PolicyCopyWith<$Res> implements $PolicyCopyWith<$Res> {
       __$PolicyCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {int? handshake,
-      @JsonKey(name: 'connIdle') int? connectionIdle,
-      int? uplinkOnly,
-      int? downlinkOnly,
-      bool? statsUserUplink,
-      bool? statsUserDownlink,
-      bool? statsUserOnline,
-      int? bufferSize});
+  $Res call({
+    @JsonKey(fromJson: nullableIntFromJson) int? handshake,
+    @JsonKey(name: 'connIdle', fromJson: nullableIntFromJson)
+    int? connectionIdle,
+    @JsonKey(fromJson: nullableIntFromJson) int? uplinkOnly,
+    @JsonKey(fromJson: nullableIntFromJson) int? downlinkOnly,
+    bool? statsUserUplink,
+    bool? statsUserDownlink,
+    bool? statsUserOnline,
+    @JsonKey(fromJson: nullableIntFromJson) int? bufferSize,
+  });
 }
 
 /// @nodoc
@@ -5578,40 +5986,42 @@ class __$PolicyCopyWithImpl<$Res> implements _$PolicyCopyWith<$Res> {
     Object? statsUserOnline = freezed,
     Object? bufferSize = freezed,
   }) {
-    return _then(_Policy(
-      handshake: freezed == handshake
-          ? _self.handshake
-          : handshake // ignore: cast_nullable_to_non_nullable
-              as int?,
-      connectionIdle: freezed == connectionIdle
-          ? _self.connectionIdle
-          : connectionIdle // ignore: cast_nullable_to_non_nullable
-              as int?,
-      uplinkOnly: freezed == uplinkOnly
-          ? _self.uplinkOnly
-          : uplinkOnly // ignore: cast_nullable_to_non_nullable
-              as int?,
-      downlinkOnly: freezed == downlinkOnly
-          ? _self.downlinkOnly
-          : downlinkOnly // ignore: cast_nullable_to_non_nullable
-              as int?,
-      statsUserUplink: freezed == statsUserUplink
-          ? _self.statsUserUplink
-          : statsUserUplink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsUserDownlink: freezed == statsUserDownlink
-          ? _self.statsUserDownlink
-          : statsUserDownlink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsUserOnline: freezed == statsUserOnline
-          ? _self.statsUserOnline
-          : statsUserOnline // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      bufferSize: freezed == bufferSize
-          ? _self.bufferSize
-          : bufferSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _Policy(
+        handshake: freezed == handshake
+            ? _self.handshake
+            : handshake // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        connectionIdle: freezed == connectionIdle
+            ? _self.connectionIdle
+            : connectionIdle // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        uplinkOnly: freezed == uplinkOnly
+            ? _self.uplinkOnly
+            : uplinkOnly // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        downlinkOnly: freezed == downlinkOnly
+            ? _self.downlinkOnly
+            : downlinkOnly // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        statsUserUplink: freezed == statsUserUplink
+            ? _self.statsUserUplink
+            : statsUserUplink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsUserDownlink: freezed == statsUserDownlink
+            ? _self.statsUserDownlink
+            : statsUserDownlink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsUserOnline: freezed == statsUserOnline
+            ? _self.statsUserOnline
+            : statsUserOnline // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        bufferSize: freezed == bufferSize
+            ? _self.bufferSize
+            : bufferSize // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -5626,32 +6036,44 @@ mixin _$PolicyConfig {
   @pragma('vm:prefer-inline')
   $PolicyConfigCopyWith<PolicyConfig> get copyWith =>
       _$PolicyConfigCopyWithImpl<PolicyConfig>(
-          this as PolicyConfig, _$identity);
+        this as PolicyConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as PolicyConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is PolicyConfig &&
-            const DeepCollectionEquality().equals(other.levels, levels) &&
-            (identical(other.system, system) || other.system == system));
+            const DeepCollectionEquality().equals(other.levels, _this.levels) &&
+            (identical(other.system, _this.system) ||
+                other.system == _this.system));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(levels), system);
+  int get hashCode {
+    final _this = this as PolicyConfig;
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_this.levels),
+      _this.system,
+    );
+  }
 
   @override
   String toString() {
-    return 'PolicyConfig(levels: $levels, system: $system)';
+    final _this = this as PolicyConfig;
+    return 'PolicyConfig(levels: ${_this.levels}, system: ${_this.system})';
   }
 }
 
 /// @nodoc
 abstract mixin class $PolicyConfigCopyWith<$Res> {
   factory $PolicyConfigCopyWith(
-          PolicyConfig value, $Res Function(PolicyConfig) _then) =
-      _$PolicyConfigCopyWithImpl;
+    PolicyConfig value,
+    $Res Function(PolicyConfig) _then,
+  ) = _$PolicyConfigCopyWithImpl;
   @useResult
   $Res call({Map<int, Policy>? levels, SystemPolicy? system});
 
@@ -5669,20 +6091,19 @@ class _$PolicyConfigCopyWithImpl<$Res> implements $PolicyConfigCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? levels = freezed,
-    Object? system = freezed,
-  }) {
-    return _then(_self.copyWith(
-      levels: freezed == levels
-          ? _self.levels
-          : levels // ignore: cast_nullable_to_non_nullable
-              as Map<int, Policy>?,
-      system: freezed == system
-          ? _self.system
-          : system // ignore: cast_nullable_to_non_nullable
-              as SystemPolicy?,
-    ));
+  $Res call({Object? levels = freezed, Object? system = freezed}) {
+    return _then(
+      PolicyConfig(
+        levels: freezed == levels
+            ? _self.levels
+            : levels // ignore: cast_nullable_to_non_nullable
+                  as Map<int, Policy>?,
+        system: freezed == system
+            ? _self.system
+            : system // ignore: cast_nullable_to_non_nullable
+                  as SystemPolicy?,
+      ),
+    );
   }
 
   /// Create a copy of PolicyConfig
@@ -5794,7 +6215,7 @@ extension PolicyConfigPatterns on PolicyConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Map<int, Policy>? levels, SystemPolicy? system)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -5861,9 +6282,9 @@ extension PolicyConfigPatterns on PolicyConfig {
 /// @nodoc
 
 class _PolicyConfig extends PolicyConfig {
-  const _PolicyConfig({final Map<int, Policy>? levels, this.system})
-      : _levels = levels,
-        super._();
+  const _PolicyConfig({Map<int, Policy>? levels, this.system})
+    : _levels = levels,
+      super._();
 
   final Map<int, Policy>? _levels;
   @override
@@ -5891,13 +6312,18 @@ class _PolicyConfig extends PolicyConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PolicyConfig &&
-            const DeepCollectionEquality().equals(other._levels, _levels) &&
+            const DeepCollectionEquality().equals(other.levels, _levels) &&
             (identical(other.system, system) || other.system == system));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_levels), system);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_levels),
+      system,
+    );
+  }
 
   @override
   String toString() {
@@ -5909,8 +6335,9 @@ class _PolicyConfig extends PolicyConfig {
 abstract mixin class _$PolicyConfigCopyWith<$Res>
     implements $PolicyConfigCopyWith<$Res> {
   factory _$PolicyConfigCopyWith(
-          _PolicyConfig value, $Res Function(_PolicyConfig) _then) =
-      __$PolicyConfigCopyWithImpl;
+    _PolicyConfig value,
+    $Res Function(_PolicyConfig) _then,
+  ) = __$PolicyConfigCopyWithImpl;
   @override
   @useResult
   $Res call({Map<int, Policy>? levels, SystemPolicy? system});
@@ -5931,20 +6358,19 @@ class __$PolicyConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? levels = freezed,
-    Object? system = freezed,
-  }) {
-    return _then(_PolicyConfig(
-      levels: freezed == levels
-          ? _self._levels
-          : levels // ignore: cast_nullable_to_non_nullable
-              as Map<int, Policy>?,
-      system: freezed == system
-          ? _self.system
-          : system // ignore: cast_nullable_to_non_nullable
-              as SystemPolicy?,
-    ));
+  $Res call({Object? levels = freezed, Object? system = freezed}) {
+    return _then(
+      _PolicyConfig(
+        levels: freezed == levels
+            ? _self._levels
+            : levels // ignore: cast_nullable_to_non_nullable
+                  as Map<int, Policy>?,
+        system: freezed == system
+            ? _self.system
+            : system // ignore: cast_nullable_to_non_nullable
+                  as SystemPolicy?,
+      ),
+    );
   }
 
   /// Create a copy of PolicyConfig
@@ -5973,31 +6399,40 @@ mixin _$PortalConfig {
   @pragma('vm:prefer-inline')
   $PortalConfigCopyWith<PortalConfig> get copyWith =>
       _$PortalConfigCopyWithImpl<PortalConfig>(
-          this as PortalConfig, _$identity);
+        this as PortalConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as PortalConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is PortalConfig &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.domain, domain) || other.domain == domain));
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.domain, _this.domain) ||
+                other.domain == _this.domain));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tag, domain);
+  int get hashCode {
+    final _this = this as PortalConfig;
+    return Object.hash(runtimeType, _this.tag, _this.domain);
+  }
 
   @override
   String toString() {
-    return 'PortalConfig(tag: $tag, domain: $domain)';
+    final _this = this as PortalConfig;
+    return 'PortalConfig(tag: ${_this.tag}, domain: ${_this.domain})';
   }
 }
 
 /// @nodoc
 abstract mixin class $PortalConfigCopyWith<$Res> {
   factory $PortalConfigCopyWith(
-          PortalConfig value, $Res Function(PortalConfig) _then) =
-      _$PortalConfigCopyWithImpl;
+    PortalConfig value,
+    $Res Function(PortalConfig) _then,
+  ) = _$PortalConfigCopyWithImpl;
   @useResult
   $Res call({String? tag, String? domain});
 }
@@ -6013,20 +6448,19 @@ class _$PortalConfigCopyWithImpl<$Res> implements $PortalConfigCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? tag = freezed,
-    Object? domain = freezed,
-  }) {
-    return _then(_self.copyWith(
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? tag = freezed, Object? domain = freezed}) {
+    return _then(
+      PortalConfig(
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -6215,7 +6649,9 @@ class _PortalConfig extends PortalConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tag, domain);
+  int get hashCode {
+    return Object.hash(runtimeType, tag, domain);
+  }
 
   @override
   String toString() {
@@ -6227,8 +6663,9 @@ class _PortalConfig extends PortalConfig {
 abstract mixin class _$PortalConfigCopyWith<$Res>
     implements $PortalConfigCopyWith<$Res> {
   factory _$PortalConfigCopyWith(
-          _PortalConfig value, $Res Function(_PortalConfig) _then) =
-      __$PortalConfigCopyWithImpl;
+    _PortalConfig value,
+    $Res Function(_PortalConfig) _then,
+  ) = __$PortalConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String? tag, String? domain});
@@ -6246,20 +6683,19 @@ class __$PortalConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? tag = freezed,
-    Object? domain = freezed,
-  }) {
-    return _then(_PortalConfig(
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? tag = freezed, Object? domain = freezed}) {
+    return _then(
+      _PortalConfig(
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -6274,34 +6710,49 @@ mixin _$ReverseConfig {
   @pragma('vm:prefer-inline')
   $ReverseConfigCopyWith<ReverseConfig> get copyWith =>
       _$ReverseConfigCopyWithImpl<ReverseConfig>(
-          this as ReverseConfig, _$identity);
+        this as ReverseConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as ReverseConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ReverseConfig &&
-            const DeepCollectionEquality().equals(other.bridges, bridges) &&
-            const DeepCollectionEquality().equals(other.portals, portals));
+            const DeepCollectionEquality().equals(
+              other.bridges,
+              _this.bridges,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.portals,
+              _this.portals,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as ReverseConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(bridges),
-      const DeepCollectionEquality().hash(portals));
+      const DeepCollectionEquality().hash(_this.bridges),
+      const DeepCollectionEquality().hash(_this.portals),
+    );
+  }
 
   @override
   String toString() {
-    return 'ReverseConfig(bridges: $bridges, portals: $portals)';
+    final _this = this as ReverseConfig;
+    return 'ReverseConfig(bridges: ${_this.bridges}, portals: ${_this.portals})';
   }
 }
 
 /// @nodoc
 abstract mixin class $ReverseConfigCopyWith<$Res> {
   factory $ReverseConfigCopyWith(
-          ReverseConfig value, $Res Function(ReverseConfig) _then) =
-      _$ReverseConfigCopyWithImpl;
+    ReverseConfig value,
+    $Res Function(ReverseConfig) _then,
+  ) = _$ReverseConfigCopyWithImpl;
   @useResult
   $Res call({List<BridgeConfig>? bridges, List<PortalConfig>? portals});
 }
@@ -6318,20 +6769,19 @@ class _$ReverseConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? bridges = freezed,
-    Object? portals = freezed,
-  }) {
-    return _then(_self.copyWith(
-      bridges: freezed == bridges
-          ? _self.bridges
-          : bridges // ignore: cast_nullable_to_non_nullable
-              as List<BridgeConfig>?,
-      portals: freezed == portals
-          ? _self.portals
-          : portals // ignore: cast_nullable_to_non_nullable
-              as List<PortalConfig>?,
-    ));
+  $Res call({Object? bridges = freezed, Object? portals = freezed}) {
+    return _then(
+      ReverseConfig(
+        bridges: freezed == bridges
+            ? _self.bridges
+            : bridges // ignore: cast_nullable_to_non_nullable
+                  as List<BridgeConfig>?,
+        portals: freezed == portals
+            ? _self.portals
+            : portals // ignore: cast_nullable_to_non_nullable
+                  as List<PortalConfig>?,
+      ),
+    );
   }
 }
 
@@ -6429,7 +6879,7 @@ extension ReverseConfigPatterns on ReverseConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(List<BridgeConfig>? bridges, List<PortalConfig>? portals)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -6457,7 +6907,7 @@ extension ReverseConfigPatterns on ReverseConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(List<BridgeConfig>? bridges, List<PortalConfig>? portals)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -6483,7 +6933,7 @@ extension ReverseConfigPatterns on ReverseConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(List<BridgeConfig>? bridges, List<PortalConfig>? portals)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -6498,11 +6948,12 @@ extension ReverseConfigPatterns on ReverseConfig {
 /// @nodoc
 
 class _ReverseConfig extends ReverseConfig {
-  const _ReverseConfig(
-      {final List<BridgeConfig>? bridges, final List<PortalConfig>? portals})
-      : _bridges = bridges,
-        _portals = portals,
-        super._();
+  const _ReverseConfig({
+    List<BridgeConfig>? bridges,
+    List<PortalConfig>? portals,
+  }) : _bridges = bridges,
+       _portals = portals,
+       super._();
 
   final List<BridgeConfig>? _bridges;
   @override
@@ -6537,15 +6988,18 @@ class _ReverseConfig extends ReverseConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ReverseConfig &&
-            const DeepCollectionEquality().equals(other._bridges, _bridges) &&
-            const DeepCollectionEquality().equals(other._portals, _portals));
+            const DeepCollectionEquality().equals(other.bridges, _bridges) &&
+            const DeepCollectionEquality().equals(other.portals, _portals));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_bridges),
-      const DeepCollectionEquality().hash(_portals));
+      const DeepCollectionEquality().hash(_portals),
+    );
+  }
 
   @override
   String toString() {
@@ -6557,8 +7011,9 @@ class _ReverseConfig extends ReverseConfig {
 abstract mixin class _$ReverseConfigCopyWith<$Res>
     implements $ReverseConfigCopyWith<$Res> {
   factory _$ReverseConfigCopyWith(
-          _ReverseConfig value, $Res Function(_ReverseConfig) _then) =
-      __$ReverseConfigCopyWithImpl;
+    _ReverseConfig value,
+    $Res Function(_ReverseConfig) _then,
+  ) = __$ReverseConfigCopyWithImpl;
   @override
   @useResult
   $Res call({List<BridgeConfig>? bridges, List<PortalConfig>? portals});
@@ -6576,20 +7031,19 @@ class __$ReverseConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? bridges = freezed,
-    Object? portals = freezed,
-  }) {
-    return _then(_ReverseConfig(
-      bridges: freezed == bridges
-          ? _self._bridges
-          : bridges // ignore: cast_nullable_to_non_nullable
-              as List<BridgeConfig>?,
-      portals: freezed == portals
-          ? _self._portals
-          : portals // ignore: cast_nullable_to_non_nullable
-              as List<PortalConfig>?,
-    ));
+  $Res call({Object? bridges = freezed, Object? portals = freezed}) {
+    return _then(
+      _ReverseConfig(
+        bridges: freezed == bridges
+            ? _self._bridges
+            : bridges // ignore: cast_nullable_to_non_nullable
+                  as List<BridgeConfig>?,
+        portals: freezed == portals
+            ? _self._portals
+            : portals // ignore: cast_nullable_to_non_nullable
+                  as List<PortalConfig>?,
+      ),
+    );
   }
 }
 
@@ -6606,42 +7060,58 @@ mixin _$RouterConfig {
   @pragma('vm:prefer-inline')
   $RouterConfigCopyWith<RouterConfig> get copyWith =>
       _$RouterConfigCopyWithImpl<RouterConfig>(
-          this as RouterConfig, _$identity);
+        this as RouterConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as RouterConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is RouterConfig &&
-            const DeepCollectionEquality().equals(other.ruleList, ruleList) &&
-            (identical(other.domainStrategy, domainStrategy) ||
-                other.domainStrategy == domainStrategy) &&
-            const DeepCollectionEquality().equals(other.balancers, balancers));
+            const DeepCollectionEquality().equals(
+              other.ruleList,
+              _this.ruleList,
+            ) &&
+            (identical(other.domainStrategy, _this.domainStrategy) ||
+                other.domainStrategy == _this.domainStrategy) &&
+            const DeepCollectionEquality().equals(
+              other.balancers,
+              _this.balancers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as RouterConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(ruleList),
-      domainStrategy,
-      const DeepCollectionEquality().hash(balancers));
+      const DeepCollectionEquality().hash(_this.ruleList),
+      _this.domainStrategy,
+      const DeepCollectionEquality().hash(_this.balancers),
+    );
+  }
 
   @override
   String toString() {
-    return 'RouterConfig(ruleList: $ruleList, domainStrategy: $domainStrategy, balancers: $balancers)';
+    final _this = this as RouterConfig;
+    return 'RouterConfig(ruleList: ${_this.ruleList}, domainStrategy: ${_this.domainStrategy}, balancers: ${_this.balancers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $RouterConfigCopyWith<$Res> {
   factory $RouterConfigCopyWith(
-          RouterConfig value, $Res Function(RouterConfig) _then) =
-      _$RouterConfigCopyWithImpl;
+    RouterConfig value,
+    $Res Function(RouterConfig) _then,
+  ) = _$RouterConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'rules') List<RouterRule>? ruleList,
-      RouterDomainStrategy? domainStrategy,
-      List<BalancingRule>? balancers});
+  $Res call({
+    @JsonKey(name: 'rules') List<RouterRule>? ruleList,
+    RouterDomainStrategy? domainStrategy,
+    List<BalancingRule>? balancers,
+  });
 }
 
 /// @nodoc
@@ -6660,20 +7130,22 @@ class _$RouterConfigCopyWithImpl<$Res> implements $RouterConfigCopyWith<$Res> {
     Object? domainStrategy = freezed,
     Object? balancers = freezed,
   }) {
-    return _then(_self.copyWith(
-      ruleList: freezed == ruleList
-          ? _self.ruleList
-          : ruleList // ignore: cast_nullable_to_non_nullable
-              as List<RouterRule>?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as RouterDomainStrategy?,
-      balancers: freezed == balancers
-          ? _self.balancers
-          : balancers // ignore: cast_nullable_to_non_nullable
-              as List<BalancingRule>?,
-    ));
+    return _then(
+      RouterConfig(
+        ruleList: freezed == ruleList
+            ? _self.ruleList
+            : ruleList // ignore: cast_nullable_to_non_nullable
+                  as List<RouterRule>?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as RouterDomainStrategy?,
+        balancers: freezed == balancers
+            ? _self.balancers
+            : balancers // ignore: cast_nullable_to_non_nullable
+                  as List<BalancingRule>?,
+      ),
+    );
   }
 }
 
@@ -6771,10 +7243,11 @@ extension RouterConfigPatterns on RouterConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'rules') List<RouterRule>? ruleList,
-            RouterDomainStrategy? domainStrategy,
-            List<BalancingRule>? balancers)?
-        $default, {
+      @JsonKey(name: 'rules') List<RouterRule>? ruleList,
+      RouterDomainStrategy? domainStrategy,
+      List<BalancingRule>? balancers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -6802,10 +7275,11 @@ extension RouterConfigPatterns on RouterConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'rules') List<RouterRule>? ruleList,
-            RouterDomainStrategy? domainStrategy,
-            List<BalancingRule>? balancers)
-        $default,
+      @JsonKey(name: 'rules') List<RouterRule>? ruleList,
+      RouterDomainStrategy? domainStrategy,
+      List<BalancingRule>? balancers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -6831,10 +7305,11 @@ extension RouterConfigPatterns on RouterConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            @JsonKey(name: 'rules') List<RouterRule>? ruleList,
-            RouterDomainStrategy? domainStrategy,
-            List<BalancingRule>? balancers)?
-        $default,
+      @JsonKey(name: 'rules') List<RouterRule>? ruleList,
+      RouterDomainStrategy? domainStrategy,
+      List<BalancingRule>? balancers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -6849,13 +7324,13 @@ extension RouterConfigPatterns on RouterConfig {
 /// @nodoc
 
 class _RouterConfig extends RouterConfig {
-  const _RouterConfig(
-      {@JsonKey(name: 'rules') final List<RouterRule>? ruleList,
-      this.domainStrategy,
-      final List<BalancingRule>? balancers})
-      : _ruleList = ruleList,
-        _balancers = balancers,
-        super._();
+  const _RouterConfig({
+    @JsonKey(name: 'rules') List<RouterRule>? ruleList,
+    this.domainStrategy,
+    List<BalancingRule>? balancers,
+  }) : _ruleList = ruleList,
+       _balancers = balancers,
+       super._();
 
   final List<RouterRule>? _ruleList;
   @override
@@ -6893,19 +7368,21 @@ class _RouterConfig extends RouterConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _RouterConfig &&
-            const DeepCollectionEquality().equals(other._ruleList, _ruleList) &&
+            const DeepCollectionEquality().equals(other.ruleList, _ruleList) &&
             (identical(other.domainStrategy, domainStrategy) ||
                 other.domainStrategy == domainStrategy) &&
-            const DeepCollectionEquality()
-                .equals(other._balancers, _balancers));
+            const DeepCollectionEquality().equals(other.balancers, _balancers));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_ruleList),
       domainStrategy,
-      const DeepCollectionEquality().hash(_balancers));
+      const DeepCollectionEquality().hash(_balancers),
+    );
+  }
 
   @override
   String toString() {
@@ -6917,14 +7394,16 @@ class _RouterConfig extends RouterConfig {
 abstract mixin class _$RouterConfigCopyWith<$Res>
     implements $RouterConfigCopyWith<$Res> {
   factory _$RouterConfigCopyWith(
-          _RouterConfig value, $Res Function(_RouterConfig) _then) =
-      __$RouterConfigCopyWithImpl;
+    _RouterConfig value,
+    $Res Function(_RouterConfig) _then,
+  ) = __$RouterConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'rules') List<RouterRule>? ruleList,
-      RouterDomainStrategy? domainStrategy,
-      List<BalancingRule>? balancers});
+  $Res call({
+    @JsonKey(name: 'rules') List<RouterRule>? ruleList,
+    RouterDomainStrategy? domainStrategy,
+    List<BalancingRule>? balancers,
+  });
 }
 
 /// @nodoc
@@ -6944,20 +7423,22 @@ class __$RouterConfigCopyWithImpl<$Res>
     Object? domainStrategy = freezed,
     Object? balancers = freezed,
   }) {
-    return _then(_RouterConfig(
-      ruleList: freezed == ruleList
-          ? _self._ruleList
-          : ruleList // ignore: cast_nullable_to_non_nullable
-              as List<RouterRule>?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as RouterDomainStrategy?,
-      balancers: freezed == balancers
-          ? _self._balancers
-          : balancers // ignore: cast_nullable_to_non_nullable
-              as List<BalancingRule>?,
-    ));
+    return _then(
+      _RouterConfig(
+        ruleList: freezed == ruleList
+            ? _self._ruleList
+            : ruleList // ignore: cast_nullable_to_non_nullable
+                  as List<RouterRule>?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as RouterDomainStrategy?,
+        balancers: freezed == balancers
+            ? _self._balancers
+            : balancers // ignore: cast_nullable_to_non_nullable
+                  as List<BalancingRule>?,
+      ),
+    );
   }
 }
 
@@ -6984,6 +7465,7 @@ mixin _$RouterRule {
   XrayStringList? get localIP;
   XrayPortList? get localPort;
   XrayStringList? get process;
+  XrayStringList? get localOS;
   WebhookRuleConfig? get webhook;
 
   /// Create a copy of RouterRule
@@ -6995,98 +7477,119 @@ mixin _$RouterRule {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as RouterRule;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is RouterRule &&
-            (identical(other.ruleTag, ruleTag) || other.ruleTag == ruleTag) &&
-            (identical(other.outboundTag, outboundTag) ||
-                other.outboundTag == outboundTag) &&
-            (identical(other.balancerTag, balancerTag) ||
-                other.balancerTag == balancerTag) &&
-            (identical(other.domain, domain) || other.domain == domain) &&
-            (identical(other.domains, domains) || other.domains == domains) &&
-            (identical(other.ip, ip) || other.ip == ip) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.network, network) || other.network == network) &&
-            (identical(other.sourceIP, sourceIP) ||
-                other.sourceIP == sourceIP) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.sourcePort, sourcePort) ||
-                other.sourcePort == sourcePort) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.vlessRoute, vlessRoute) ||
-                other.vlessRoute == vlessRoute) &&
-            (identical(other.inboundTag, inboundTag) ||
-                other.inboundTag == inboundTag) &&
-            (identical(other.protocols, protocols) ||
-                other.protocols == protocols) &&
-            const DeepCollectionEquality()
-                .equals(other.attributes, attributes) &&
-            (identical(other.localIP, localIP) || other.localIP == localIP) &&
-            (identical(other.localPort, localPort) ||
-                other.localPort == localPort) &&
-            (identical(other.process, process) || other.process == process) &&
-            (identical(other.webhook, webhook) || other.webhook == webhook));
+            (identical(other.ruleTag, _this.ruleTag) ||
+                other.ruleTag == _this.ruleTag) &&
+            (identical(other.outboundTag, _this.outboundTag) ||
+                other.outboundTag == _this.outboundTag) &&
+            (identical(other.balancerTag, _this.balancerTag) ||
+                other.balancerTag == _this.balancerTag) &&
+            (identical(other.domain, _this.domain) ||
+                other.domain == _this.domain) &&
+            (identical(other.domains, _this.domains) ||
+                other.domains == _this.domains) &&
+            (identical(other.ip, _this.ip) || other.ip == _this.ip) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.network, _this.network) ||
+                other.network == _this.network) &&
+            (identical(other.sourceIP, _this.sourceIP) ||
+                other.sourceIP == _this.sourceIP) &&
+            (identical(other.source, _this.source) ||
+                other.source == _this.source) &&
+            (identical(other.sourcePort, _this.sourcePort) ||
+                other.sourcePort == _this.sourcePort) &&
+            (identical(other.user, _this.user) || other.user == _this.user) &&
+            (identical(other.vlessRoute, _this.vlessRoute) ||
+                other.vlessRoute == _this.vlessRoute) &&
+            (identical(other.inboundTag, _this.inboundTag) ||
+                other.inboundTag == _this.inboundTag) &&
+            (identical(other.protocols, _this.protocols) ||
+                other.protocols == _this.protocols) &&
+            const DeepCollectionEquality().equals(
+              other.attributes,
+              _this.attributes,
+            ) &&
+            (identical(other.localIP, _this.localIP) ||
+                other.localIP == _this.localIP) &&
+            (identical(other.localPort, _this.localPort) ||
+                other.localPort == _this.localPort) &&
+            (identical(other.process, _this.process) ||
+                other.process == _this.process) &&
+            (identical(other.localOS, _this.localOS) ||
+                other.localOS == _this.localOS) &&
+            (identical(other.webhook, _this.webhook) ||
+                other.webhook == _this.webhook));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        ruleTag,
-        outboundTag,
-        balancerTag,
-        domain,
-        domains,
-        ip,
-        port,
-        network,
-        sourceIP,
-        source,
-        sourcePort,
-        user,
-        vlessRoute,
-        inboundTag,
-        protocols,
-        const DeepCollectionEquality().hash(attributes),
-        localIP,
-        localPort,
-        process,
-        webhook
-      ]);
+  int get hashCode {
+    final _this = this as RouterRule;
+    return Object.hashAll([
+      runtimeType,
+      _this.ruleTag,
+      _this.outboundTag,
+      _this.balancerTag,
+      _this.domain,
+      _this.domains,
+      _this.ip,
+      _this.port,
+      _this.network,
+      _this.sourceIP,
+      _this.source,
+      _this.sourcePort,
+      _this.user,
+      _this.vlessRoute,
+      _this.inboundTag,
+      _this.protocols,
+      const DeepCollectionEquality().hash(_this.attributes),
+      _this.localIP,
+      _this.localPort,
+      _this.process,
+      _this.localOS,
+      _this.webhook,
+    ]);
+  }
 
   @override
   String toString() {
-    return 'RouterRule(ruleTag: $ruleTag, outboundTag: $outboundTag, balancerTag: $balancerTag, domain: $domain, domains: $domains, ip: $ip, port: $port, network: $network, sourceIP: $sourceIP, source: $source, sourcePort: $sourcePort, user: $user, vlessRoute: $vlessRoute, inboundTag: $inboundTag, protocols: $protocols, attributes: $attributes, localIP: $localIP, localPort: $localPort, process: $process, webhook: $webhook)';
+    final _this = this as RouterRule;
+    return 'RouterRule(ruleTag: ${_this.ruleTag}, outboundTag: ${_this.outboundTag}, balancerTag: ${_this.balancerTag}, domain: ${_this.domain}, domains: ${_this.domains}, ip: ${_this.ip}, port: ${_this.port}, network: ${_this.network}, sourceIP: ${_this.sourceIP}, source: ${_this.source}, sourcePort: ${_this.sourcePort}, user: ${_this.user}, vlessRoute: ${_this.vlessRoute}, inboundTag: ${_this.inboundTag}, protocols: ${_this.protocols}, attributes: ${_this.attributes}, localIP: ${_this.localIP}, localPort: ${_this.localPort}, process: ${_this.process}, localOS: ${_this.localOS}, webhook: ${_this.webhook})';
   }
 }
 
 /// @nodoc
 abstract mixin class $RouterRuleCopyWith<$Res> {
   factory $RouterRuleCopyWith(
-          RouterRule value, $Res Function(RouterRule) _then) =
-      _$RouterRuleCopyWithImpl;
+    RouterRule value,
+    $Res Function(RouterRule) _then,
+  ) = _$RouterRuleCopyWithImpl;
   @useResult
-  $Res call(
-      {String? ruleTag,
-      String? outboundTag,
-      String? balancerTag,
-      XrayStringList? domain,
-      XrayStringList? domains,
-      XrayStringList? ip,
-      XrayPortList? port,
-      XrayNetworkList? network,
-      XrayStringList? sourceIP,
-      XrayStringList? source,
-      XrayPortList? sourcePort,
-      XrayStringList? user,
-      XrayPortList? vlessRoute,
-      XrayStringList? inboundTag,
-      @JsonKey(name: 'protocol') XrayStringList? protocols,
-      @JsonKey(name: 'attrs') Map<String, String>? attributes,
-      XrayStringList? localIP,
-      XrayPortList? localPort,
-      XrayStringList? process,
-      WebhookRuleConfig? webhook});
+  $Res call({
+    String? ruleTag,
+    String? outboundTag,
+    String? balancerTag,
+    XrayStringList? domain,
+    XrayStringList? domains,
+    XrayStringList? ip,
+    XrayPortList? port,
+    XrayNetworkList? network,
+    XrayStringList? sourceIP,
+    XrayStringList? source,
+    XrayPortList? sourcePort,
+    XrayStringList? user,
+    XrayPortList? vlessRoute,
+    XrayStringList? inboundTag,
+    @JsonKey(name: 'protocol') XrayStringList? protocols,
+    @JsonKey(name: 'attrs') Map<String, String>? attributes,
+    XrayStringList? localIP,
+    XrayPortList? localPort,
+    XrayStringList? process,
+    XrayStringList? localOS,
+    WebhookRuleConfig? webhook,
+  });
 
   $WebhookRuleConfigCopyWith<$Res>? get webhook;
 }
@@ -7122,90 +7625,97 @@ class _$RouterRuleCopyWithImpl<$Res> implements $RouterRuleCopyWith<$Res> {
     Object? localIP = freezed,
     Object? localPort = freezed,
     Object? process = freezed,
+    Object? localOS = freezed,
     Object? webhook = freezed,
   }) {
-    return _then(_self.copyWith(
-      ruleTag: freezed == ruleTag
-          ? _self.ruleTag
-          : ruleTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      outboundTag: freezed == outboundTag
-          ? _self.outboundTag
-          : outboundTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      balancerTag: freezed == balancerTag
-          ? _self.balancerTag
-          : balancerTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      domains: freezed == domains
-          ? _self.domains
-          : domains // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      ip: freezed == ip
-          ? _self.ip
-          : ip // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      sourceIP: freezed == sourceIP
-          ? _self.sourceIP
-          : sourceIP // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      source: freezed == source
-          ? _self.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      sourcePort: freezed == sourcePort
-          ? _self.sourcePort
-          : sourcePort // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      user: freezed == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      vlessRoute: freezed == vlessRoute
-          ? _self.vlessRoute
-          : vlessRoute // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      inboundTag: freezed == inboundTag
-          ? _self.inboundTag
-          : inboundTag // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      protocols: freezed == protocols
-          ? _self.protocols
-          : protocols // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      attributes: freezed == attributes
-          ? _self.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      localIP: freezed == localIP
-          ? _self.localIP
-          : localIP // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      localPort: freezed == localPort
-          ? _self.localPort
-          : localPort // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      process: freezed == process
-          ? _self.process
-          : process // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      webhook: freezed == webhook
-          ? _self.webhook
-          : webhook // ignore: cast_nullable_to_non_nullable
-              as WebhookRuleConfig?,
-    ));
+    return _then(
+      RouterRule(
+        ruleTag: freezed == ruleTag
+            ? _self.ruleTag
+            : ruleTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        outboundTag: freezed == outboundTag
+            ? _self.outboundTag
+            : outboundTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        balancerTag: freezed == balancerTag
+            ? _self.balancerTag
+            : balancerTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        domains: freezed == domains
+            ? _self.domains
+            : domains // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        ip: freezed == ip
+            ? _self.ip
+            : ip // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        sourceIP: freezed == sourceIP
+            ? _self.sourceIP
+            : sourceIP // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        source: freezed == source
+            ? _self.source
+            : source // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        sourcePort: freezed == sourcePort
+            ? _self.sourcePort
+            : sourcePort // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        user: freezed == user
+            ? _self.user
+            : user // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        vlessRoute: freezed == vlessRoute
+            ? _self.vlessRoute
+            : vlessRoute // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        inboundTag: freezed == inboundTag
+            ? _self.inboundTag
+            : inboundTag // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        protocols: freezed == protocols
+            ? _self.protocols
+            : protocols // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        attributes: freezed == attributes
+            ? _self.attributes
+            : attributes // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        localIP: freezed == localIP
+            ? _self.localIP
+            : localIP // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        localPort: freezed == localPort
+            ? _self.localPort
+            : localPort // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        process: freezed == process
+            ? _self.process
+            : process // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        localOS: freezed == localOS
+            ? _self.localOS
+            : localOS // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        webhook: freezed == webhook
+            ? _self.webhook
+            : webhook // ignore: cast_nullable_to_non_nullable
+                  as WebhookRuleConfig?,
+      ),
+    );
   }
 
   /// Create a copy of RouterRule
@@ -7317,53 +7827,57 @@ extension RouterRulePatterns on RouterRule {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? ruleTag,
-            String? outboundTag,
-            String? balancerTag,
-            XrayStringList? domain,
-            XrayStringList? domains,
-            XrayStringList? ip,
-            XrayPortList? port,
-            XrayNetworkList? network,
-            XrayStringList? sourceIP,
-            XrayStringList? source,
-            XrayPortList? sourcePort,
-            XrayStringList? user,
-            XrayPortList? vlessRoute,
-            XrayStringList? inboundTag,
-            @JsonKey(name: 'protocol') XrayStringList? protocols,
-            @JsonKey(name: 'attrs') Map<String, String>? attributes,
-            XrayStringList? localIP,
-            XrayPortList? localPort,
-            XrayStringList? process,
-            WebhookRuleConfig? webhook)?
-        $default, {
+      String? ruleTag,
+      String? outboundTag,
+      String? balancerTag,
+      XrayStringList? domain,
+      XrayStringList? domains,
+      XrayStringList? ip,
+      XrayPortList? port,
+      XrayNetworkList? network,
+      XrayStringList? sourceIP,
+      XrayStringList? source,
+      XrayPortList? sourcePort,
+      XrayStringList? user,
+      XrayPortList? vlessRoute,
+      XrayStringList? inboundTag,
+      @JsonKey(name: 'protocol') XrayStringList? protocols,
+      @JsonKey(name: 'attrs') Map<String, String>? attributes,
+      XrayStringList? localIP,
+      XrayPortList? localPort,
+      XrayStringList? process,
+      XrayStringList? localOS,
+      WebhookRuleConfig? webhook,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _RouterRule() when $default != null:
         return $default(
-            _that.ruleTag,
-            _that.outboundTag,
-            _that.balancerTag,
-            _that.domain,
-            _that.domains,
-            _that.ip,
-            _that.port,
-            _that.network,
-            _that.sourceIP,
-            _that.source,
-            _that.sourcePort,
-            _that.user,
-            _that.vlessRoute,
-            _that.inboundTag,
-            _that.protocols,
-            _that.attributes,
-            _that.localIP,
-            _that.localPort,
-            _that.process,
-            _that.webhook);
+          _that.ruleTag,
+          _that.outboundTag,
+          _that.balancerTag,
+          _that.domain,
+          _that.domains,
+          _that.ip,
+          _that.port,
+          _that.network,
+          _that.sourceIP,
+          _that.source,
+          _that.sourcePort,
+          _that.user,
+          _that.vlessRoute,
+          _that.inboundTag,
+          _that.protocols,
+          _that.attributes,
+          _that.localIP,
+          _that.localPort,
+          _that.process,
+          _that.localOS,
+          _that.webhook,
+        );
       case _:
         return orElse();
     }
@@ -7385,52 +7899,56 @@ extension RouterRulePatterns on RouterRule {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? ruleTag,
-            String? outboundTag,
-            String? balancerTag,
-            XrayStringList? domain,
-            XrayStringList? domains,
-            XrayStringList? ip,
-            XrayPortList? port,
-            XrayNetworkList? network,
-            XrayStringList? sourceIP,
-            XrayStringList? source,
-            XrayPortList? sourcePort,
-            XrayStringList? user,
-            XrayPortList? vlessRoute,
-            XrayStringList? inboundTag,
-            @JsonKey(name: 'protocol') XrayStringList? protocols,
-            @JsonKey(name: 'attrs') Map<String, String>? attributes,
-            XrayStringList? localIP,
-            XrayPortList? localPort,
-            XrayStringList? process,
-            WebhookRuleConfig? webhook)
-        $default,
+      String? ruleTag,
+      String? outboundTag,
+      String? balancerTag,
+      XrayStringList? domain,
+      XrayStringList? domains,
+      XrayStringList? ip,
+      XrayPortList? port,
+      XrayNetworkList? network,
+      XrayStringList? sourceIP,
+      XrayStringList? source,
+      XrayPortList? sourcePort,
+      XrayStringList? user,
+      XrayPortList? vlessRoute,
+      XrayStringList? inboundTag,
+      @JsonKey(name: 'protocol') XrayStringList? protocols,
+      @JsonKey(name: 'attrs') Map<String, String>? attributes,
+      XrayStringList? localIP,
+      XrayPortList? localPort,
+      XrayStringList? process,
+      XrayStringList? localOS,
+      WebhookRuleConfig? webhook,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _RouterRule():
         return $default(
-            _that.ruleTag,
-            _that.outboundTag,
-            _that.balancerTag,
-            _that.domain,
-            _that.domains,
-            _that.ip,
-            _that.port,
-            _that.network,
-            _that.sourceIP,
-            _that.source,
-            _that.sourcePort,
-            _that.user,
-            _that.vlessRoute,
-            _that.inboundTag,
-            _that.protocols,
-            _that.attributes,
-            _that.localIP,
-            _that.localPort,
-            _that.process,
-            _that.webhook);
+          _that.ruleTag,
+          _that.outboundTag,
+          _that.balancerTag,
+          _that.domain,
+          _that.domains,
+          _that.ip,
+          _that.port,
+          _that.network,
+          _that.sourceIP,
+          _that.source,
+          _that.sourcePort,
+          _that.user,
+          _that.vlessRoute,
+          _that.inboundTag,
+          _that.protocols,
+          _that.attributes,
+          _that.localIP,
+          _that.localPort,
+          _that.process,
+          _that.localOS,
+          _that.webhook,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -7451,52 +7969,56 @@ extension RouterRulePatterns on RouterRule {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? ruleTag,
-            String? outboundTag,
-            String? balancerTag,
-            XrayStringList? domain,
-            XrayStringList? domains,
-            XrayStringList? ip,
-            XrayPortList? port,
-            XrayNetworkList? network,
-            XrayStringList? sourceIP,
-            XrayStringList? source,
-            XrayPortList? sourcePort,
-            XrayStringList? user,
-            XrayPortList? vlessRoute,
-            XrayStringList? inboundTag,
-            @JsonKey(name: 'protocol') XrayStringList? protocols,
-            @JsonKey(name: 'attrs') Map<String, String>? attributes,
-            XrayStringList? localIP,
-            XrayPortList? localPort,
-            XrayStringList? process,
-            WebhookRuleConfig? webhook)?
-        $default,
+      String? ruleTag,
+      String? outboundTag,
+      String? balancerTag,
+      XrayStringList? domain,
+      XrayStringList? domains,
+      XrayStringList? ip,
+      XrayPortList? port,
+      XrayNetworkList? network,
+      XrayStringList? sourceIP,
+      XrayStringList? source,
+      XrayPortList? sourcePort,
+      XrayStringList? user,
+      XrayPortList? vlessRoute,
+      XrayStringList? inboundTag,
+      @JsonKey(name: 'protocol') XrayStringList? protocols,
+      @JsonKey(name: 'attrs') Map<String, String>? attributes,
+      XrayStringList? localIP,
+      XrayPortList? localPort,
+      XrayStringList? process,
+      XrayStringList? localOS,
+      WebhookRuleConfig? webhook,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _RouterRule() when $default != null:
         return $default(
-            _that.ruleTag,
-            _that.outboundTag,
-            _that.balancerTag,
-            _that.domain,
-            _that.domains,
-            _that.ip,
-            _that.port,
-            _that.network,
-            _that.sourceIP,
-            _that.source,
-            _that.sourcePort,
-            _that.user,
-            _that.vlessRoute,
-            _that.inboundTag,
-            _that.protocols,
-            _that.attributes,
-            _that.localIP,
-            _that.localPort,
-            _that.process,
-            _that.webhook);
+          _that.ruleTag,
+          _that.outboundTag,
+          _that.balancerTag,
+          _that.domain,
+          _that.domains,
+          _that.ip,
+          _that.port,
+          _that.network,
+          _that.sourceIP,
+          _that.source,
+          _that.sourcePort,
+          _that.user,
+          _that.vlessRoute,
+          _that.inboundTag,
+          _that.protocols,
+          _that.attributes,
+          _that.localIP,
+          _that.localPort,
+          _that.process,
+          _that.localOS,
+          _that.webhook,
+        );
       case _:
         return null;
     }
@@ -7506,29 +8028,30 @@ extension RouterRulePatterns on RouterRule {
 /// @nodoc
 
 class _RouterRule extends RouterRule {
-  const _RouterRule(
-      {this.ruleTag,
-      this.outboundTag,
-      this.balancerTag,
-      this.domain,
-      this.domains,
-      this.ip,
-      this.port,
-      this.network,
-      this.sourceIP,
-      this.source,
-      this.sourcePort,
-      this.user,
-      this.vlessRoute,
-      this.inboundTag,
-      @JsonKey(name: 'protocol') this.protocols,
-      @JsonKey(name: 'attrs') final Map<String, String>? attributes,
-      this.localIP,
-      this.localPort,
-      this.process,
-      this.webhook})
-      : _attributes = attributes,
-        super._();
+  const _RouterRule({
+    this.ruleTag,
+    this.outboundTag,
+    this.balancerTag,
+    this.domain,
+    this.domains,
+    this.ip,
+    this.port,
+    this.network,
+    this.sourceIP,
+    this.source,
+    this.sourcePort,
+    this.user,
+    this.vlessRoute,
+    this.inboundTag,
+    @JsonKey(name: 'protocol') this.protocols,
+    @JsonKey(name: 'attrs') Map<String, String>? attributes,
+    this.localIP,
+    this.localPort,
+    this.process,
+    this.localOS,
+    this.webhook,
+  }) : _attributes = attributes,
+       super._();
 
   @override
   final String? ruleTag;
@@ -7579,6 +8102,8 @@ class _RouterRule extends RouterRule {
   @override
   final XrayStringList? process;
   @override
+  final XrayStringList? localOS;
+  @override
   final WebhookRuleConfig? webhook;
 
   /// Create a copy of RouterRule
@@ -7616,43 +8141,49 @@ class _RouterRule extends RouterRule {
                 other.inboundTag == inboundTag) &&
             (identical(other.protocols, protocols) ||
                 other.protocols == protocols) &&
-            const DeepCollectionEquality()
-                .equals(other._attributes, _attributes) &&
+            const DeepCollectionEquality().equals(
+              other.attributes,
+              _attributes,
+            ) &&
             (identical(other.localIP, localIP) || other.localIP == localIP) &&
             (identical(other.localPort, localPort) ||
                 other.localPort == localPort) &&
             (identical(other.process, process) || other.process == process) &&
+            (identical(other.localOS, localOS) || other.localOS == localOS) &&
             (identical(other.webhook, webhook) || other.webhook == webhook));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        ruleTag,
-        outboundTag,
-        balancerTag,
-        domain,
-        domains,
-        ip,
-        port,
-        network,
-        sourceIP,
-        source,
-        sourcePort,
-        user,
-        vlessRoute,
-        inboundTag,
-        protocols,
-        const DeepCollectionEquality().hash(_attributes),
-        localIP,
-        localPort,
-        process,
-        webhook
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      ruleTag,
+      outboundTag,
+      balancerTag,
+      domain,
+      domains,
+      ip,
+      port,
+      network,
+      sourceIP,
+      source,
+      sourcePort,
+      user,
+      vlessRoute,
+      inboundTag,
+      protocols,
+      const DeepCollectionEquality().hash(_attributes),
+      localIP,
+      localPort,
+      process,
+      localOS,
+      webhook,
+    ]);
+  }
 
   @override
   String toString() {
-    return 'RouterRule(ruleTag: $ruleTag, outboundTag: $outboundTag, balancerTag: $balancerTag, domain: $domain, domains: $domains, ip: $ip, port: $port, network: $network, sourceIP: $sourceIP, source: $source, sourcePort: $sourcePort, user: $user, vlessRoute: $vlessRoute, inboundTag: $inboundTag, protocols: $protocols, attributes: $attributes, localIP: $localIP, localPort: $localPort, process: $process, webhook: $webhook)';
+    return 'RouterRule(ruleTag: $ruleTag, outboundTag: $outboundTag, balancerTag: $balancerTag, domain: $domain, domains: $domains, ip: $ip, port: $port, network: $network, sourceIP: $sourceIP, source: $source, sourcePort: $sourcePort, user: $user, vlessRoute: $vlessRoute, inboundTag: $inboundTag, protocols: $protocols, attributes: $attributes, localIP: $localIP, localPort: $localPort, process: $process, localOS: $localOS, webhook: $webhook)';
   }
 }
 
@@ -7660,31 +8191,34 @@ class _RouterRule extends RouterRule {
 abstract mixin class _$RouterRuleCopyWith<$Res>
     implements $RouterRuleCopyWith<$Res> {
   factory _$RouterRuleCopyWith(
-          _RouterRule value, $Res Function(_RouterRule) _then) =
-      __$RouterRuleCopyWithImpl;
+    _RouterRule value,
+    $Res Function(_RouterRule) _then,
+  ) = __$RouterRuleCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? ruleTag,
-      String? outboundTag,
-      String? balancerTag,
-      XrayStringList? domain,
-      XrayStringList? domains,
-      XrayStringList? ip,
-      XrayPortList? port,
-      XrayNetworkList? network,
-      XrayStringList? sourceIP,
-      XrayStringList? source,
-      XrayPortList? sourcePort,
-      XrayStringList? user,
-      XrayPortList? vlessRoute,
-      XrayStringList? inboundTag,
-      @JsonKey(name: 'protocol') XrayStringList? protocols,
-      @JsonKey(name: 'attrs') Map<String, String>? attributes,
-      XrayStringList? localIP,
-      XrayPortList? localPort,
-      XrayStringList? process,
-      WebhookRuleConfig? webhook});
+  $Res call({
+    String? ruleTag,
+    String? outboundTag,
+    String? balancerTag,
+    XrayStringList? domain,
+    XrayStringList? domains,
+    XrayStringList? ip,
+    XrayPortList? port,
+    XrayNetworkList? network,
+    XrayStringList? sourceIP,
+    XrayStringList? source,
+    XrayPortList? sourcePort,
+    XrayStringList? user,
+    XrayPortList? vlessRoute,
+    XrayStringList? inboundTag,
+    @JsonKey(name: 'protocol') XrayStringList? protocols,
+    @JsonKey(name: 'attrs') Map<String, String>? attributes,
+    XrayStringList? localIP,
+    XrayPortList? localPort,
+    XrayStringList? process,
+    XrayStringList? localOS,
+    WebhookRuleConfig? webhook,
+  });
 
   @override
   $WebhookRuleConfigCopyWith<$Res>? get webhook;
@@ -7721,90 +8255,97 @@ class __$RouterRuleCopyWithImpl<$Res> implements _$RouterRuleCopyWith<$Res> {
     Object? localIP = freezed,
     Object? localPort = freezed,
     Object? process = freezed,
+    Object? localOS = freezed,
     Object? webhook = freezed,
   }) {
-    return _then(_RouterRule(
-      ruleTag: freezed == ruleTag
-          ? _self.ruleTag
-          : ruleTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      outboundTag: freezed == outboundTag
-          ? _self.outboundTag
-          : outboundTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      balancerTag: freezed == balancerTag
-          ? _self.balancerTag
-          : balancerTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      domains: freezed == domains
-          ? _self.domains
-          : domains // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      ip: freezed == ip
-          ? _self.ip
-          : ip // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      sourceIP: freezed == sourceIP
-          ? _self.sourceIP
-          : sourceIP // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      source: freezed == source
-          ? _self.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      sourcePort: freezed == sourcePort
-          ? _self.sourcePort
-          : sourcePort // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      user: freezed == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      vlessRoute: freezed == vlessRoute
-          ? _self.vlessRoute
-          : vlessRoute // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      inboundTag: freezed == inboundTag
-          ? _self.inboundTag
-          : inboundTag // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      protocols: freezed == protocols
-          ? _self.protocols
-          : protocols // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      attributes: freezed == attributes
-          ? _self._attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      localIP: freezed == localIP
-          ? _self.localIP
-          : localIP // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      localPort: freezed == localPort
-          ? _self.localPort
-          : localPort // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      process: freezed == process
-          ? _self.process
-          : process // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      webhook: freezed == webhook
-          ? _self.webhook
-          : webhook // ignore: cast_nullable_to_non_nullable
-              as WebhookRuleConfig?,
-    ));
+    return _then(
+      _RouterRule(
+        ruleTag: freezed == ruleTag
+            ? _self.ruleTag
+            : ruleTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        outboundTag: freezed == outboundTag
+            ? _self.outboundTag
+            : outboundTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        balancerTag: freezed == balancerTag
+            ? _self.balancerTag
+            : balancerTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        domains: freezed == domains
+            ? _self.domains
+            : domains // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        ip: freezed == ip
+            ? _self.ip
+            : ip // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        sourceIP: freezed == sourceIP
+            ? _self.sourceIP
+            : sourceIP // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        source: freezed == source
+            ? _self.source
+            : source // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        sourcePort: freezed == sourcePort
+            ? _self.sourcePort
+            : sourcePort // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        user: freezed == user
+            ? _self.user
+            : user // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        vlessRoute: freezed == vlessRoute
+            ? _self.vlessRoute
+            : vlessRoute // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        inboundTag: freezed == inboundTag
+            ? _self.inboundTag
+            : inboundTag // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        protocols: freezed == protocols
+            ? _self.protocols
+            : protocols // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        attributes: freezed == attributes
+            ? _self._attributes
+            : attributes // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        localIP: freezed == localIP
+            ? _self.localIP
+            : localIP // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        localPort: freezed == localPort
+            ? _self.localPort
+            : localPort // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        process: freezed == process
+            ? _self.process
+            : process // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        localOS: freezed == localOS
+            ? _self.localOS
+            : localOS // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        webhook: freezed == webhook
+            ? _self.webhook
+            : webhook // ignore: cast_nullable_to_non_nullable
+                  as WebhookRuleConfig?,
+      ),
+    );
   }
 
   /// Create a copy of RouterRule
@@ -7963,9 +8504,7 @@ extension StatsConfigPatterns on StatsConfig {
   /// ```
 
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default,
-  ) {
+  TResult when<TResult extends Object?>(TResult Function() $default) {
     final _that = this;
     switch (_that) {
       case _StatsConfig():
@@ -7988,9 +8527,7 @@ extension StatsConfigPatterns on StatsConfig {
   /// ```
 
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default,
-  ) {
+  TResult? whenOrNull<TResult extends Object?>(TResult? Function()? $default) {
     final _that = this;
     switch (_that) {
       case _StatsConfig() when $default != null:
@@ -8032,32 +8569,40 @@ mixin _$StrategyConfig {
   @pragma('vm:prefer-inline')
   $StrategyConfigCopyWith<StrategyConfig> get copyWith =>
       _$StrategyConfigCopyWithImpl<StrategyConfig>(
-          this as StrategyConfig, _$identity);
+        this as StrategyConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as StrategyConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StrategyConfig &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.settings, settings) ||
-                other.settings == settings));
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.settings, _this.settings) ||
+                other.settings == _this.settings));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, settings);
+  int get hashCode {
+    final _this = this as StrategyConfig;
+    return Object.hash(runtimeType, _this.type, _this.settings);
+  }
 
   @override
   String toString() {
-    return 'StrategyConfig(type: $type, settings: $settings)';
+    final _this = this as StrategyConfig;
+    return 'StrategyConfig(type: ${_this.type}, settings: ${_this.settings})';
   }
 }
 
 /// @nodoc
 abstract mixin class $StrategyConfigCopyWith<$Res> {
   factory $StrategyConfigCopyWith(
-          StrategyConfig value, $Res Function(StrategyConfig) _then) =
-      _$StrategyConfigCopyWithImpl;
+    StrategyConfig value,
+    $Res Function(StrategyConfig) _then,
+  ) = _$StrategyConfigCopyWithImpl;
   @useResult
   $Res call({BalancingStrategyType? type, XrayStrategySettings? settings});
 }
@@ -8074,20 +8619,19 @@ class _$StrategyConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? type = freezed,
-    Object? settings = freezed,
-  }) {
-    return _then(_self.copyWith(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as BalancingStrategyType?,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as XrayStrategySettings?,
-    ));
+  $Res call({Object? type = freezed, Object? settings = freezed}) {
+    return _then(
+      StrategyConfig(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as BalancingStrategyType?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XrayStrategySettings?,
+      ),
+    );
   }
 }
 
@@ -8185,8 +8729,10 @@ extension StrategyConfigPatterns on StrategyConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            BalancingStrategyType? type, XrayStrategySettings? settings)?
-        $default, {
+      BalancingStrategyType? type,
+      XrayStrategySettings? settings,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -8214,8 +8760,10 @@ extension StrategyConfigPatterns on StrategyConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            BalancingStrategyType? type, XrayStrategySettings? settings)
-        $default,
+      BalancingStrategyType? type,
+      XrayStrategySettings? settings,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8241,8 +8789,10 @@ extension StrategyConfigPatterns on StrategyConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            BalancingStrategyType? type, XrayStrategySettings? settings)?
-        $default,
+      BalancingStrategyType? type,
+      XrayStrategySettings? settings,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8283,7 +8833,9 @@ class _StrategyConfig extends StrategyConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, settings);
+  int get hashCode {
+    return Object.hash(runtimeType, type, settings);
+  }
 
   @override
   String toString() {
@@ -8295,8 +8847,9 @@ class _StrategyConfig extends StrategyConfig {
 abstract mixin class _$StrategyConfigCopyWith<$Res>
     implements $StrategyConfigCopyWith<$Res> {
   factory _$StrategyConfigCopyWith(
-          _StrategyConfig value, $Res Function(_StrategyConfig) _then) =
-      __$StrategyConfigCopyWithImpl;
+    _StrategyConfig value,
+    $Res Function(_StrategyConfig) _then,
+  ) = __$StrategyConfigCopyWithImpl;
   @override
   @useResult
   $Res call({BalancingStrategyType? type, XrayStrategySettings? settings});
@@ -8314,20 +8867,19 @@ class __$StrategyConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? type = freezed,
-    Object? settings = freezed,
-  }) {
-    return _then(_StrategyConfig(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as BalancingStrategyType?,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as XrayStrategySettings?,
-    ));
+  $Res call({Object? type = freezed, Object? settings = freezed}) {
+    return _then(
+      _StrategyConfig(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as BalancingStrategyType?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XrayStrategySettings?,
+      ),
+    );
   }
 }
 
@@ -8345,49 +8897,63 @@ mixin _$StrategyLeastLoadConfig {
   @pragma('vm:prefer-inline')
   $StrategyLeastLoadConfigCopyWith<StrategyLeastLoadConfig> get copyWith =>
       _$StrategyLeastLoadConfigCopyWithImpl<StrategyLeastLoadConfig>(
-          this as StrategyLeastLoadConfig, _$identity);
+        this as StrategyLeastLoadConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as StrategyLeastLoadConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StrategyLeastLoadConfig &&
-            const DeepCollectionEquality().equals(other.costs, costs) &&
-            const DeepCollectionEquality().equals(other.baselines, baselines) &&
-            (identical(other.expected, expected) ||
-                other.expected == expected) &&
-            (identical(other.maxRTT, maxRTT) || other.maxRTT == maxRTT) &&
-            (identical(other.tolerance, tolerance) ||
-                other.tolerance == tolerance));
+            const DeepCollectionEquality().equals(other.costs, _this.costs) &&
+            const DeepCollectionEquality().equals(
+              other.baselines,
+              _this.baselines,
+            ) &&
+            (identical(other.expected, _this.expected) ||
+                other.expected == _this.expected) &&
+            (identical(other.maxRTT, _this.maxRTT) ||
+                other.maxRTT == _this.maxRTT) &&
+            (identical(other.tolerance, _this.tolerance) ||
+                other.tolerance == _this.tolerance));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as StrategyLeastLoadConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(costs),
-      const DeepCollectionEquality().hash(baselines),
-      expected,
-      maxRTT,
-      tolerance);
+      const DeepCollectionEquality().hash(_this.costs),
+      const DeepCollectionEquality().hash(_this.baselines),
+      _this.expected,
+      _this.maxRTT,
+      _this.tolerance,
+    );
+  }
 
   @override
   String toString() {
-    return 'StrategyLeastLoadConfig(costs: $costs, baselines: $baselines, expected: $expected, maxRTT: $maxRTT, tolerance: $tolerance)';
+    final _this = this as StrategyLeastLoadConfig;
+    return 'StrategyLeastLoadConfig(costs: ${_this.costs}, baselines: ${_this.baselines}, expected: ${_this.expected}, maxRTT: ${_this.maxRTT}, tolerance: ${_this.tolerance})';
   }
 }
 
 /// @nodoc
 abstract mixin class $StrategyLeastLoadConfigCopyWith<$Res> {
-  factory $StrategyLeastLoadConfigCopyWith(StrategyLeastLoadConfig value,
-          $Res Function(StrategyLeastLoadConfig) _then) =
-      _$StrategyLeastLoadConfigCopyWithImpl;
+  factory $StrategyLeastLoadConfigCopyWith(
+    StrategyLeastLoadConfig value,
+    $Res Function(StrategyLeastLoadConfig) _then,
+  ) = _$StrategyLeastLoadConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<StrategyWeight>? costs,
-      List<XrayDuration>? baselines,
-      int? expected,
-      XrayDuration? maxRTT,
-      double? tolerance});
+  $Res call({
+    List<StrategyWeight>? costs,
+    List<XrayDuration>? baselines,
+    int? expected,
+    XrayDuration? maxRTT,
+    double? tolerance,
+  });
 }
 
 /// @nodoc
@@ -8409,28 +8975,30 @@ class _$StrategyLeastLoadConfigCopyWithImpl<$Res>
     Object? maxRTT = freezed,
     Object? tolerance = freezed,
   }) {
-    return _then(_self.copyWith(
-      costs: freezed == costs
-          ? _self.costs
-          : costs // ignore: cast_nullable_to_non_nullable
-              as List<StrategyWeight>?,
-      baselines: freezed == baselines
-          ? _self.baselines
-          : baselines // ignore: cast_nullable_to_non_nullable
-              as List<XrayDuration>?,
-      expected: freezed == expected
-          ? _self.expected
-          : expected // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxRTT: freezed == maxRTT
-          ? _self.maxRTT
-          : maxRTT // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      tolerance: freezed == tolerance
-          ? _self.tolerance
-          : tolerance // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
+    return _then(
+      StrategyLeastLoadConfig(
+        costs: freezed == costs
+            ? _self.costs
+            : costs // ignore: cast_nullable_to_non_nullable
+                  as List<StrategyWeight>?,
+        baselines: freezed == baselines
+            ? _self.baselines
+            : baselines // ignore: cast_nullable_to_non_nullable
+                  as List<XrayDuration>?,
+        expected: freezed == expected
+            ? _self.expected
+            : expected // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxRTT: freezed == maxRTT
+            ? _self.maxRTT
+            : maxRTT // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        tolerance: freezed == tolerance
+            ? _self.tolerance
+            : tolerance // ignore: cast_nullable_to_non_nullable
+                  as double?,
+      ),
+    );
   }
 }
 
@@ -8527,16 +9095,26 @@ extension StrategyLeastLoadConfigPatterns on StrategyLeastLoadConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<StrategyWeight>? costs, List<XrayDuration>? baselines,
-            int? expected, XrayDuration? maxRTT, double? tolerance)?
-        $default, {
+    TResult Function(
+      List<StrategyWeight>? costs,
+      List<XrayDuration>? baselines,
+      int? expected,
+      XrayDuration? maxRTT,
+      double? tolerance,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _StrategyLeastLoadConfig() when $default != null:
-        return $default(_that.costs, _that.baselines, _that.expected,
-            _that.maxRTT, _that.tolerance);
+        return $default(
+          _that.costs,
+          _that.baselines,
+          _that.expected,
+          _that.maxRTT,
+          _that.tolerance,
+        );
       case _:
         return orElse();
     }
@@ -8557,15 +9135,25 @@ extension StrategyLeastLoadConfigPatterns on StrategyLeastLoadConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<StrategyWeight>? costs, List<XrayDuration>? baselines,
-            int? expected, XrayDuration? maxRTT, double? tolerance)
-        $default,
+    TResult Function(
+      List<StrategyWeight>? costs,
+      List<XrayDuration>? baselines,
+      int? expected,
+      XrayDuration? maxRTT,
+      double? tolerance,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _StrategyLeastLoadConfig():
-        return $default(_that.costs, _that.baselines, _that.expected,
-            _that.maxRTT, _that.tolerance);
+        return $default(
+          _that.costs,
+          _that.baselines,
+          _that.expected,
+          _that.maxRTT,
+          _that.tolerance,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -8586,18 +9174,24 @@ extension StrategyLeastLoadConfigPatterns on StrategyLeastLoadConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            List<StrategyWeight>? costs,
-            List<XrayDuration>? baselines,
-            int? expected,
-            XrayDuration? maxRTT,
-            double? tolerance)?
-        $default,
+      List<StrategyWeight>? costs,
+      List<XrayDuration>? baselines,
+      int? expected,
+      XrayDuration? maxRTT,
+      double? tolerance,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _StrategyLeastLoadConfig() when $default != null:
-        return $default(_that.costs, _that.baselines, _that.expected,
-            _that.maxRTT, _that.tolerance);
+        return $default(
+          _that.costs,
+          _that.baselines,
+          _that.expected,
+          _that.maxRTT,
+          _that.tolerance,
+        );
       case _:
         return null;
     }
@@ -8607,15 +9201,15 @@ extension StrategyLeastLoadConfigPatterns on StrategyLeastLoadConfig {
 /// @nodoc
 
 class _StrategyLeastLoadConfig extends StrategyLeastLoadConfig {
-  const _StrategyLeastLoadConfig(
-      {final List<StrategyWeight>? costs,
-      final List<XrayDuration>? baselines,
-      this.expected,
-      this.maxRTT,
-      this.tolerance})
-      : _costs = costs,
-        _baselines = baselines,
-        super._();
+  const _StrategyLeastLoadConfig({
+    List<StrategyWeight>? costs,
+    List<XrayDuration>? baselines,
+    this.expected,
+    this.maxRTT,
+    this.tolerance,
+  }) : _costs = costs,
+       _baselines = baselines,
+       super._();
 
   final List<StrategyWeight>? _costs;
   @override
@@ -8651,16 +9245,20 @@ class _StrategyLeastLoadConfig extends StrategyLeastLoadConfig {
   @pragma('vm:prefer-inline')
   _$StrategyLeastLoadConfigCopyWith<_StrategyLeastLoadConfig> get copyWith =>
       __$StrategyLeastLoadConfigCopyWithImpl<_StrategyLeastLoadConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _StrategyLeastLoadConfig &&
-            const DeepCollectionEquality().equals(other._costs, _costs) &&
-            const DeepCollectionEquality()
-                .equals(other._baselines, _baselines) &&
+            const DeepCollectionEquality().equals(other.costs, _costs) &&
+            const DeepCollectionEquality().equals(
+              other.baselines,
+              _baselines,
+            ) &&
             (identical(other.expected, expected) ||
                 other.expected == expected) &&
             (identical(other.maxRTT, maxRTT) || other.maxRTT == maxRTT) &&
@@ -8669,13 +9267,16 @@ class _StrategyLeastLoadConfig extends StrategyLeastLoadConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_costs),
       const DeepCollectionEquality().hash(_baselines),
       expected,
       maxRTT,
-      tolerance);
+      tolerance,
+    );
+  }
 
   @override
   String toString() {
@@ -8686,17 +9287,19 @@ class _StrategyLeastLoadConfig extends StrategyLeastLoadConfig {
 /// @nodoc
 abstract mixin class _$StrategyLeastLoadConfigCopyWith<$Res>
     implements $StrategyLeastLoadConfigCopyWith<$Res> {
-  factory _$StrategyLeastLoadConfigCopyWith(_StrategyLeastLoadConfig value,
-          $Res Function(_StrategyLeastLoadConfig) _then) =
-      __$StrategyLeastLoadConfigCopyWithImpl;
+  factory _$StrategyLeastLoadConfigCopyWith(
+    _StrategyLeastLoadConfig value,
+    $Res Function(_StrategyLeastLoadConfig) _then,
+  ) = __$StrategyLeastLoadConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<StrategyWeight>? costs,
-      List<XrayDuration>? baselines,
-      int? expected,
-      XrayDuration? maxRTT,
-      double? tolerance});
+  $Res call({
+    List<StrategyWeight>? costs,
+    List<XrayDuration>? baselines,
+    int? expected,
+    XrayDuration? maxRTT,
+    double? tolerance,
+  });
 }
 
 /// @nodoc
@@ -8718,28 +9321,30 @@ class __$StrategyLeastLoadConfigCopyWithImpl<$Res>
     Object? maxRTT = freezed,
     Object? tolerance = freezed,
   }) {
-    return _then(_StrategyLeastLoadConfig(
-      costs: freezed == costs
-          ? _self._costs
-          : costs // ignore: cast_nullable_to_non_nullable
-              as List<StrategyWeight>?,
-      baselines: freezed == baselines
-          ? _self._baselines
-          : baselines // ignore: cast_nullable_to_non_nullable
-              as List<XrayDuration>?,
-      expected: freezed == expected
-          ? _self.expected
-          : expected // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxRTT: freezed == maxRTT
-          ? _self.maxRTT
-          : maxRTT // ignore: cast_nullable_to_non_nullable
-              as XrayDuration?,
-      tolerance: freezed == tolerance
-          ? _self.tolerance
-          : tolerance // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
+    return _then(
+      _StrategyLeastLoadConfig(
+        costs: freezed == costs
+            ? _self._costs
+            : costs // ignore: cast_nullable_to_non_nullable
+                  as List<StrategyWeight>?,
+        baselines: freezed == baselines
+            ? _self._baselines
+            : baselines // ignore: cast_nullable_to_non_nullable
+                  as List<XrayDuration>?,
+        expected: freezed == expected
+            ? _self.expected
+            : expected // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxRTT: freezed == maxRTT
+            ? _self.maxRTT
+            : maxRTT // ignore: cast_nullable_to_non_nullable
+                  as XrayDuration?,
+        tolerance: freezed == tolerance
+            ? _self.tolerance
+            : tolerance // ignore: cast_nullable_to_non_nullable
+                  as double?,
+      ),
+    );
   }
 }
 
@@ -8755,32 +9360,43 @@ mixin _$StrategyWeight {
   @pragma('vm:prefer-inline')
   $StrategyWeightCopyWith<StrategyWeight> get copyWith =>
       _$StrategyWeightCopyWithImpl<StrategyWeight>(
-          this as StrategyWeight, _$identity);
+        this as StrategyWeight,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as StrategyWeight;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StrategyWeight &&
-            (identical(other.regexp, regexp) || other.regexp == regexp) &&
-            (identical(other.match, match) || other.match == match) &&
-            (identical(other.value, value) || other.value == value));
+            (identical(other.regexp, _this.regexp) ||
+                other.regexp == _this.regexp) &&
+            (identical(other.match, _this.match) ||
+                other.match == _this.match) &&
+            (identical(other.value, _this.value) ||
+                other.value == _this.value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, regexp, match, value);
+  int get hashCode {
+    final _this = this as StrategyWeight;
+    return Object.hash(runtimeType, _this.regexp, _this.match, _this.value);
+  }
 
   @override
   String toString() {
-    return 'StrategyWeight(regexp: $regexp, match: $match, value: $value)';
+    final _this = this as StrategyWeight;
+    return 'StrategyWeight(regexp: ${_this.regexp}, match: ${_this.match}, value: ${_this.value})';
   }
 }
 
 /// @nodoc
 abstract mixin class $StrategyWeightCopyWith<$Res> {
   factory $StrategyWeightCopyWith(
-          StrategyWeight value, $Res Function(StrategyWeight) _then) =
-      _$StrategyWeightCopyWithImpl;
+    StrategyWeight value,
+    $Res Function(StrategyWeight) _then,
+  ) = _$StrategyWeightCopyWithImpl;
   @useResult
   $Res call({bool? regexp, String? match, double? value});
 }
@@ -8802,20 +9418,22 @@ class _$StrategyWeightCopyWithImpl<$Res>
     Object? match = freezed,
     Object? value = freezed,
   }) {
-    return _then(_self.copyWith(
-      regexp: freezed == regexp
-          ? _self.regexp
-          : regexp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      match: freezed == match
-          ? _self.match
-          : match // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
+    return _then(
+      StrategyWeight(
+        regexp: freezed == regexp
+            ? _self.regexp
+            : regexp // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        match: freezed == match
+            ? _self.match
+            : match // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        value: freezed == value
+            ? _self.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as double?,
+      ),
+    );
   }
 }
 
@@ -9007,7 +9625,9 @@ class _StrategyWeight extends StrategyWeight {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, regexp, match, value);
+  int get hashCode {
+    return Object.hash(runtimeType, regexp, match, value);
+  }
 
   @override
   String toString() {
@@ -9019,8 +9639,9 @@ class _StrategyWeight extends StrategyWeight {
 abstract mixin class _$StrategyWeightCopyWith<$Res>
     implements $StrategyWeightCopyWith<$Res> {
   factory _$StrategyWeightCopyWith(
-          _StrategyWeight value, $Res Function(_StrategyWeight) _then) =
-      __$StrategyWeightCopyWithImpl;
+    _StrategyWeight value,
+    $Res Function(_StrategyWeight) _then,
+  ) = __$StrategyWeightCopyWithImpl;
   @override
   @useResult
   $Res call({bool? regexp, String? match, double? value});
@@ -9043,20 +9664,22 @@ class __$StrategyWeightCopyWithImpl<$Res>
     Object? match = freezed,
     Object? value = freezed,
   }) {
-    return _then(_StrategyWeight(
-      regexp: freezed == regexp
-          ? _self.regexp
-          : regexp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      match: freezed == match
-          ? _self.match
-          : match // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
+    return _then(
+      _StrategyWeight(
+        regexp: freezed == regexp
+            ? _self.regexp
+            : regexp // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        match: freezed == match
+            ? _self.match
+            : match // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        value: freezed == value
+            ? _self.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as double?,
+      ),
+    );
   }
 }
 
@@ -9073,44 +9696,68 @@ mixin _$SystemPolicy {
   @pragma('vm:prefer-inline')
   $SystemPolicyCopyWith<SystemPolicy> get copyWith =>
       _$SystemPolicyCopyWithImpl<SystemPolicy>(
-          this as SystemPolicy, _$identity);
+        this as SystemPolicy,
+        _$identity,
+      );
+
+  /// Serializes this SystemPolicy to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SystemPolicy;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SystemPolicy &&
-            (identical(other.statsInboundUplink, statsInboundUplink) ||
-                other.statsInboundUplink == statsInboundUplink) &&
-            (identical(other.statsInboundDownlink, statsInboundDownlink) ||
-                other.statsInboundDownlink == statsInboundDownlink) &&
-            (identical(other.statsOutboundUplink, statsOutboundUplink) ||
-                other.statsOutboundUplink == statsOutboundUplink) &&
-            (identical(other.statsOutboundDownlink, statsOutboundDownlink) ||
-                other.statsOutboundDownlink == statsOutboundDownlink));
+            (identical(other.statsInboundUplink, _this.statsInboundUplink) ||
+                other.statsInboundUplink == _this.statsInboundUplink) &&
+            (identical(
+                  other.statsInboundDownlink,
+                  _this.statsInboundDownlink,
+                ) ||
+                other.statsInboundDownlink == _this.statsInboundDownlink) &&
+            (identical(other.statsOutboundUplink, _this.statsOutboundUplink) ||
+                other.statsOutboundUplink == _this.statsOutboundUplink) &&
+            (identical(
+                  other.statsOutboundDownlink,
+                  _this.statsOutboundDownlink,
+                ) ||
+                other.statsOutboundDownlink == _this.statsOutboundDownlink));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as SystemPolicy;
+    return Object.hash(
+      runtimeType,
+      _this.statsInboundUplink,
+      _this.statsInboundDownlink,
+      _this.statsOutboundUplink,
+      _this.statsOutboundDownlink,
+    );
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statsInboundUplink,
-      statsInboundDownlink, statsOutboundUplink, statsOutboundDownlink);
-
-  @override
   String toString() {
-    return 'SystemPolicy(statsInboundUplink: $statsInboundUplink, statsInboundDownlink: $statsInboundDownlink, statsOutboundUplink: $statsOutboundUplink, statsOutboundDownlink: $statsOutboundDownlink)';
+    final _this = this as SystemPolicy;
+    return 'SystemPolicy(statsInboundUplink: ${_this.statsInboundUplink}, statsInboundDownlink: ${_this.statsInboundDownlink}, statsOutboundUplink: ${_this.statsOutboundUplink}, statsOutboundDownlink: ${_this.statsOutboundDownlink})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SystemPolicyCopyWith<$Res> {
   factory $SystemPolicyCopyWith(
-          SystemPolicy value, $Res Function(SystemPolicy) _then) =
-      _$SystemPolicyCopyWithImpl;
+    SystemPolicy value,
+    $Res Function(SystemPolicy) _then,
+  ) = _$SystemPolicyCopyWithImpl;
   @useResult
-  $Res call(
-      {bool? statsInboundUplink,
-      bool? statsInboundDownlink,
-      bool? statsOutboundUplink,
-      bool? statsOutboundDownlink});
+  $Res call({
+    bool? statsInboundUplink,
+    bool? statsInboundDownlink,
+    bool? statsOutboundUplink,
+    bool? statsOutboundDownlink,
+  });
 }
 
 /// @nodoc
@@ -9130,24 +9777,26 @@ class _$SystemPolicyCopyWithImpl<$Res> implements $SystemPolicyCopyWith<$Res> {
     Object? statsOutboundUplink = freezed,
     Object? statsOutboundDownlink = freezed,
   }) {
-    return _then(_self.copyWith(
-      statsInboundUplink: freezed == statsInboundUplink
-          ? _self.statsInboundUplink
-          : statsInboundUplink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsInboundDownlink: freezed == statsInboundDownlink
-          ? _self.statsInboundDownlink
-          : statsInboundDownlink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsOutboundUplink: freezed == statsOutboundUplink
-          ? _self.statsOutboundUplink
-          : statsOutboundUplink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsOutboundDownlink: freezed == statsOutboundDownlink
-          ? _self.statsOutboundDownlink
-          : statsOutboundDownlink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      SystemPolicy(
+        statsInboundUplink: freezed == statsInboundUplink
+            ? _self.statsInboundUplink
+            : statsInboundUplink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsInboundDownlink: freezed == statsInboundDownlink
+            ? _self.statsInboundDownlink
+            : statsInboundDownlink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsOutboundUplink: freezed == statsOutboundUplink
+            ? _self.statsOutboundUplink
+            : statsOutboundUplink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsOutboundDownlink: freezed == statsOutboundDownlink
+            ? _self.statsOutboundDownlink
+            : statsOutboundDownlink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -9244,16 +9893,24 @@ extension SystemPolicyPatterns on SystemPolicy {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(bool? statsInboundUplink, bool? statsInboundDownlink,
-            bool? statsOutboundUplink, bool? statsOutboundDownlink)?
-        $default, {
+    TResult Function(
+      bool? statsInboundUplink,
+      bool? statsInboundDownlink,
+      bool? statsOutboundUplink,
+      bool? statsOutboundDownlink,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _SystemPolicy() when $default != null:
-        return $default(_that.statsInboundUplink, _that.statsInboundDownlink,
-            _that.statsOutboundUplink, _that.statsOutboundDownlink);
+        return $default(
+          _that.statsInboundUplink,
+          _that.statsInboundDownlink,
+          _that.statsOutboundUplink,
+          _that.statsOutboundDownlink,
+        );
       case _:
         return orElse();
     }
@@ -9274,15 +9931,23 @@ extension SystemPolicyPatterns on SystemPolicy {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(bool? statsInboundUplink, bool? statsInboundDownlink,
-            bool? statsOutboundUplink, bool? statsOutboundDownlink)
-        $default,
+    TResult Function(
+      bool? statsInboundUplink,
+      bool? statsInboundDownlink,
+      bool? statsOutboundUplink,
+      bool? statsOutboundDownlink,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SystemPolicy():
-        return $default(_that.statsInboundUplink, _that.statsInboundDownlink,
-            _that.statsOutboundUplink, _that.statsOutboundDownlink);
+        return $default(
+          _that.statsInboundUplink,
+          _that.statsInboundDownlink,
+          _that.statsOutboundUplink,
+          _that.statsOutboundDownlink,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -9302,15 +9967,23 @@ extension SystemPolicyPatterns on SystemPolicy {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(bool? statsInboundUplink, bool? statsInboundDownlink,
-            bool? statsOutboundUplink, bool? statsOutboundDownlink)?
-        $default,
+    TResult? Function(
+      bool? statsInboundUplink,
+      bool? statsInboundDownlink,
+      bool? statsOutboundUplink,
+      bool? statsOutboundDownlink,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SystemPolicy() when $default != null:
-        return $default(_that.statsInboundUplink, _that.statsInboundDownlink,
-            _that.statsOutboundUplink, _that.statsOutboundDownlink);
+        return $default(
+          _that.statsInboundUplink,
+          _that.statsInboundDownlink,
+          _that.statsOutboundUplink,
+          _that.statsOutboundDownlink,
+        );
       case _:
         return null;
     }
@@ -9319,13 +9992,16 @@ extension SystemPolicyPatterns on SystemPolicy {
 
 /// @nodoc
 
-class _SystemPolicy extends SystemPolicy {
-  const _SystemPolicy(
-      {this.statsInboundUplink,
-      this.statsInboundDownlink,
-      this.statsOutboundUplink,
-      this.statsOutboundDownlink})
-      : super._();
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _SystemPolicy implements SystemPolicy {
+  const _SystemPolicy({
+    this.statsInboundUplink,
+    this.statsInboundDownlink,
+    this.statsOutboundUplink,
+    this.statsOutboundDownlink,
+  });
+  factory _SystemPolicy.fromJson(Map<String, dynamic> json) =>
+      _$SystemPolicyFromJson(json);
 
   @override
   final bool? statsInboundUplink;
@@ -9345,6 +10021,11 @@ class _SystemPolicy extends SystemPolicy {
       __$SystemPolicyCopyWithImpl<_SystemPolicy>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$SystemPolicyToJson(this);
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -9359,9 +10040,17 @@ class _SystemPolicy extends SystemPolicy {
                 other.statsOutboundDownlink == statsOutboundDownlink));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, statsInboundUplink,
-      statsInboundDownlink, statsOutboundUplink, statsOutboundDownlink);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      statsInboundUplink,
+      statsInboundDownlink,
+      statsOutboundUplink,
+      statsOutboundDownlink,
+    );
+  }
 
   @override
   String toString() {
@@ -9373,15 +10062,17 @@ class _SystemPolicy extends SystemPolicy {
 abstract mixin class _$SystemPolicyCopyWith<$Res>
     implements $SystemPolicyCopyWith<$Res> {
   factory _$SystemPolicyCopyWith(
-          _SystemPolicy value, $Res Function(_SystemPolicy) _then) =
-      __$SystemPolicyCopyWithImpl;
+    _SystemPolicy value,
+    $Res Function(_SystemPolicy) _then,
+  ) = __$SystemPolicyCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {bool? statsInboundUplink,
-      bool? statsInboundDownlink,
-      bool? statsOutboundUplink,
-      bool? statsOutboundDownlink});
+  $Res call({
+    bool? statsInboundUplink,
+    bool? statsInboundDownlink,
+    bool? statsOutboundUplink,
+    bool? statsOutboundDownlink,
+  });
 }
 
 /// @nodoc
@@ -9402,24 +10093,26 @@ class __$SystemPolicyCopyWithImpl<$Res>
     Object? statsOutboundUplink = freezed,
     Object? statsOutboundDownlink = freezed,
   }) {
-    return _then(_SystemPolicy(
-      statsInboundUplink: freezed == statsInboundUplink
-          ? _self.statsInboundUplink
-          : statsInboundUplink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsInboundDownlink: freezed == statsInboundDownlink
-          ? _self.statsInboundDownlink
-          : statsInboundDownlink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsOutboundUplink: freezed == statsOutboundUplink
-          ? _self.statsOutboundUplink
-          : statsOutboundUplink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      statsOutboundDownlink: freezed == statsOutboundDownlink
-          ? _self.statsOutboundDownlink
-          : statsOutboundDownlink // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _SystemPolicy(
+        statsInboundUplink: freezed == statsInboundUplink
+            ? _self.statsInboundUplink
+            : statsInboundUplink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsInboundDownlink: freezed == statsInboundDownlink
+            ? _self.statsInboundDownlink
+            : statsInboundDownlink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsOutboundUplink: freezed == statsOutboundUplink
+            ? _self.statsOutboundUplink
+            : statsOutboundUplink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        statsOutboundDownlink: freezed == statsOutboundDownlink
+            ? _self.statsOutboundDownlink
+            : statsOutboundDownlink // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -9436,37 +10129,50 @@ mixin _$VersionConfig {
   @pragma('vm:prefer-inline')
   $VersionConfigCopyWith<VersionConfig> get copyWith =>
       _$VersionConfigCopyWithImpl<VersionConfig>(
-          this as VersionConfig, _$identity);
+        this as VersionConfig,
+        _$identity,
+      );
+
+  /// Serializes this VersionConfig to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VersionConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VersionConfig &&
-            (identical(other.minVersion, minVersion) ||
-                other.minVersion == minVersion) &&
-            (identical(other.maxVersion, maxVersion) ||
-                other.maxVersion == maxVersion));
+            (identical(other.minVersion, _this.minVersion) ||
+                other.minVersion == _this.minVersion) &&
+            (identical(other.maxVersion, _this.maxVersion) ||
+                other.maxVersion == _this.maxVersion));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as VersionConfig;
+    return Object.hash(runtimeType, _this.minVersion, _this.maxVersion);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, minVersion, maxVersion);
-
-  @override
   String toString() {
-    return 'VersionConfig(minVersion: $minVersion, maxVersion: $maxVersion)';
+    final _this = this as VersionConfig;
+    return 'VersionConfig(minVersion: ${_this.minVersion}, maxVersion: ${_this.maxVersion})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VersionConfigCopyWith<$Res> {
   factory $VersionConfigCopyWith(
-          VersionConfig value, $Res Function(VersionConfig) _then) =
-      _$VersionConfigCopyWithImpl;
+    VersionConfig value,
+    $Res Function(VersionConfig) _then,
+  ) = _$VersionConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'min') String? minVersion,
-      @JsonKey(name: 'max') String? maxVersion});
+  $Res call({
+    @JsonKey(name: 'min') String? minVersion,
+    @JsonKey(name: 'max') String? maxVersion,
+  });
 }
 
 /// @nodoc
@@ -9481,20 +10187,19 @@ class _$VersionConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? minVersion = freezed,
-    Object? maxVersion = freezed,
-  }) {
-    return _then(_self.copyWith(
-      minVersion: freezed == minVersion
-          ? _self.minVersion
-          : minVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxVersion: freezed == maxVersion
-          ? _self.maxVersion
-          : maxVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? minVersion = freezed, Object? maxVersion = freezed}) {
+    return _then(
+      VersionConfig(
+        minVersion: freezed == minVersion
+            ? _self.minVersion
+            : minVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxVersion: freezed == maxVersion
+            ? _self.maxVersion
+            : maxVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -9591,9 +10296,11 @@ extension VersionConfigPatterns on VersionConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'min') String? minVersion,
-            @JsonKey(name: 'max') String? maxVersion)?
-        $default, {
+    TResult Function(
+      @JsonKey(name: 'min') String? minVersion,
+      @JsonKey(name: 'max') String? maxVersion,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -9620,9 +10327,11 @@ extension VersionConfigPatterns on VersionConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'min') String? minVersion,
-            @JsonKey(name: 'max') String? maxVersion)
-        $default,
+    TResult Function(
+      @JsonKey(name: 'min') String? minVersion,
+      @JsonKey(name: 'max') String? maxVersion,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -9647,9 +10356,11 @@ extension VersionConfigPatterns on VersionConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(@JsonKey(name: 'min') String? minVersion,
-            @JsonKey(name: 'max') String? maxVersion)?
-        $default,
+    TResult? Function(
+      @JsonKey(name: 'min') String? minVersion,
+      @JsonKey(name: 'max') String? maxVersion,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -9663,11 +10374,14 @@ extension VersionConfigPatterns on VersionConfig {
 
 /// @nodoc
 
-class _VersionConfig extends VersionConfig {
-  const _VersionConfig(
-      {@JsonKey(name: 'min') this.minVersion,
-      @JsonKey(name: 'max') this.maxVersion})
-      : super._();
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _VersionConfig implements VersionConfig {
+  const _VersionConfig({
+    @JsonKey(name: 'min') this.minVersion,
+    @JsonKey(name: 'max') this.maxVersion,
+  });
+  factory _VersionConfig.fromJson(Map<String, dynamic> json) =>
+      _$VersionConfigFromJson(json);
 
   @override
   @JsonKey(name: 'min')
@@ -9685,6 +10399,11 @@ class _VersionConfig extends VersionConfig {
       __$VersionConfigCopyWithImpl<_VersionConfig>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$VersionConfigToJson(this);
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -9695,8 +10414,11 @@ class _VersionConfig extends VersionConfig {
                 other.maxVersion == maxVersion));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, minVersion, maxVersion);
+  int get hashCode {
+    return Object.hash(runtimeType, minVersion, maxVersion);
+  }
 
   @override
   String toString() {
@@ -9708,13 +10430,15 @@ class _VersionConfig extends VersionConfig {
 abstract mixin class _$VersionConfigCopyWith<$Res>
     implements $VersionConfigCopyWith<$Res> {
   factory _$VersionConfigCopyWith(
-          _VersionConfig value, $Res Function(_VersionConfig) _then) =
-      __$VersionConfigCopyWithImpl;
+    _VersionConfig value,
+    $Res Function(_VersionConfig) _then,
+  ) = __$VersionConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'min') String? minVersion,
-      @JsonKey(name: 'max') String? maxVersion});
+  $Res call({
+    @JsonKey(name: 'min') String? minVersion,
+    @JsonKey(name: 'max') String? maxVersion,
+  });
 }
 
 /// @nodoc
@@ -9729,20 +10453,19 @@ class __$VersionConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? minVersion = freezed,
-    Object? maxVersion = freezed,
-  }) {
-    return _then(_VersionConfig(
-      minVersion: freezed == minVersion
-          ? _self.minVersion
-          : minVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxVersion: freezed == maxVersion
-          ? _self.maxVersion
-          : maxVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? minVersion = freezed, Object? maxVersion = freezed}) {
+    return _then(
+      _VersionConfig(
+        minVersion: freezed == minVersion
+            ? _self.minVersion
+            : minVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxVersion: freezed == maxVersion
+            ? _self.maxVersion
+            : maxVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -9758,34 +10481,49 @@ mixin _$WebhookRuleConfig {
   @pragma('vm:prefer-inline')
   $WebhookRuleConfigCopyWith<WebhookRuleConfig> get copyWith =>
       _$WebhookRuleConfigCopyWithImpl<WebhookRuleConfig>(
-          this as WebhookRuleConfig, _$identity);
+        this as WebhookRuleConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as WebhookRuleConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WebhookRuleConfig &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.deduplication, deduplication) ||
-                other.deduplication == deduplication) &&
-            const DeepCollectionEquality().equals(other.headers, headers));
+            (identical(other.url, _this.url) || other.url == _this.url) &&
+            (identical(other.deduplication, _this.deduplication) ||
+                other.deduplication == _this.deduplication) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url, deduplication,
-      const DeepCollectionEquality().hash(headers));
+  int get hashCode {
+    final _this = this as WebhookRuleConfig;
+    return Object.hash(
+      runtimeType,
+      _this.url,
+      _this.deduplication,
+      const DeepCollectionEquality().hash(_this.headers),
+    );
+  }
 
   @override
   String toString() {
-    return 'WebhookRuleConfig(url: $url, deduplication: $deduplication, headers: $headers)';
+    final _this = this as WebhookRuleConfig;
+    return 'WebhookRuleConfig(url: ${_this.url}, deduplication: ${_this.deduplication}, headers: ${_this.headers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $WebhookRuleConfigCopyWith<$Res> {
   factory $WebhookRuleConfigCopyWith(
-          WebhookRuleConfig value, $Res Function(WebhookRuleConfig) _then) =
-      _$WebhookRuleConfigCopyWithImpl;
+    WebhookRuleConfig value,
+    $Res Function(WebhookRuleConfig) _then,
+  ) = _$WebhookRuleConfigCopyWithImpl;
   @useResult
   $Res call({String url, int? deduplication, Map<String, String>? headers});
 }
@@ -9807,20 +10545,22 @@ class _$WebhookRuleConfigCopyWithImpl<$Res>
     Object? deduplication = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_self.copyWith(
-      url: null == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      deduplication: freezed == deduplication
-          ? _self.deduplication
-          : deduplication // ignore: cast_nullable_to_non_nullable
-              as int?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ));
+    return _then(
+      WebhookRuleConfig(
+        url: null == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String,
+        deduplication: freezed == deduplication
+            ? _self.deduplication
+            : deduplication // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
   }
 }
 
@@ -9918,8 +10658,11 @@ extension WebhookRuleConfigPatterns on WebhookRuleConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String url, int? deduplication, Map<String, String>? headers)?
-        $default, {
+      String url,
+      int? deduplication,
+      Map<String, String>? headers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -9947,8 +10690,11 @@ extension WebhookRuleConfigPatterns on WebhookRuleConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String url, int? deduplication, Map<String, String>? headers)
-        $default,
+      String url,
+      int? deduplication,
+      Map<String, String>? headers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -9974,8 +10720,11 @@ extension WebhookRuleConfigPatterns on WebhookRuleConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String url, int? deduplication, Map<String, String>? headers)?
-        $default,
+      String url,
+      int? deduplication,
+      Map<String, String>? headers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -9990,12 +10739,12 @@ extension WebhookRuleConfigPatterns on WebhookRuleConfig {
 /// @nodoc
 
 class _WebhookRuleConfig extends WebhookRuleConfig {
-  const _WebhookRuleConfig(
-      {required this.url,
-      this.deduplication,
-      final Map<String, String>? headers})
-      : _headers = headers,
-        super._();
+  const _WebhookRuleConfig({
+    required this.url,
+    this.deduplication,
+    Map<String, String>? headers,
+  }) : _headers = headers,
+       super._();
 
   @override
   final String url;
@@ -10027,12 +10776,18 @@ class _WebhookRuleConfig extends WebhookRuleConfig {
             (identical(other.url, url) || other.url == url) &&
             (identical(other.deduplication, deduplication) ||
                 other.deduplication == deduplication) &&
-            const DeepCollectionEquality().equals(other._headers, _headers));
+            const DeepCollectionEquality().equals(other.headers, _headers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url, deduplication,
-      const DeepCollectionEquality().hash(_headers));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      url,
+      deduplication,
+      const DeepCollectionEquality().hash(_headers),
+    );
+  }
 
   @override
   String toString() {
@@ -10044,8 +10799,9 @@ class _WebhookRuleConfig extends WebhookRuleConfig {
 abstract mixin class _$WebhookRuleConfigCopyWith<$Res>
     implements $WebhookRuleConfigCopyWith<$Res> {
   factory _$WebhookRuleConfigCopyWith(
-          _WebhookRuleConfig value, $Res Function(_WebhookRuleConfig) _then) =
-      __$WebhookRuleConfigCopyWithImpl;
+    _WebhookRuleConfig value,
+    $Res Function(_WebhookRuleConfig) _then,
+  ) = __$WebhookRuleConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String url, int? deduplication, Map<String, String>? headers});
@@ -10068,21 +10824,21 @@ class __$WebhookRuleConfigCopyWithImpl<$Res>
     Object? deduplication = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_WebhookRuleConfig(
-      url: null == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      deduplication: freezed == deduplication
-          ? _self.deduplication
-          : deduplication // ignore: cast_nullable_to_non_nullable
-              as int?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ));
+    return _then(
+      _WebhookRuleConfig(
+        url: null == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String,
+        deduplication: freezed == deduplication
+            ? _self.deduplication
+            : deduplication // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
   }
 }
-
-// dart format on

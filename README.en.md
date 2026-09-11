@@ -55,13 +55,36 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## Config Parity
 
-The Dart models currently track Xray-core `infra/conf` v26.7.28. The parity
+The Dart models currently track Xray-core `infra/conf` v26.9.9. The parity
 checker compares Go JSON tags, struct fields, unexpected Dart keys, and config
 creator loader IDs:
 
 ```sh
 dart run tool/check_xray_conf_parity.dart ../Xray-core/infra/conf
 ```
+
+`validate()` checks ports for IP listeners and transport security for public
+VLESS/Trojan targets, using Core v26.9.9's built-in private address rules. TUN
+and Unix socket listeners do not require ports. Core resolves `env:` addresses
+on the target device; this package defers their port and public-target checks.
+Raw protocol settings still follow `allowRawSettings`. Successful validation
+does not replace all Core build and runtime checks.
+
+Domain listeners other than `localhost` are rejected. VLESS inbound users'
+`reverse.tag` values can be referenced by `dialerProxy`, routing outbounds, and
+balancer fallbacks; `clients` takes precedence over `users`.
+Simplified VLESS outbounds' `settings.reverse.tag` values can be referenced by
+routing `inboundTag`. Reverse sniffing is supported only on outbounds; inbound
+users' reverse configs must omit `sniffing`.
+Root-level `reverse.bridges/portals` is retained on import but rejected by
+validation because Core removed legacy reverse. Migrate to VLESS Reverse Proxy.
+
+When upgrading, replace `ProxyConfig` with
+`StreamConfig(sockopt: SocketConfig(dialerProxy: 'upstream'))`.
+Legacy `proxySettings` JSON is retained as a raw map but rejected by validation.
+Move Hysteria congestion and bandwidth options to `FinalMask.quicParams`.
+Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
+`FinalMask.udp`, using `mode`, `remotePorts`, and `interval`.
 
 ## Development Checks
 

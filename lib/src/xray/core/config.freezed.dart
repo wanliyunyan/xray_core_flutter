@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'config.dart';
@@ -9,7 +9,7 @@ part of 'config.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
+// GENERATED CODE - DO NOT MODIFY BY HAND
 T _$identity<T>(T value) => value;
 
 /// @nodoc
@@ -28,50 +28,68 @@ mixin _$InboundDetourConfig {
   @pragma('vm:prefer-inline')
   $InboundDetourConfigCopyWith<InboundDetourConfig> get copyWith =>
       _$InboundDetourConfigCopyWithImpl<InboundDetourConfig>(
-          this as InboundDetourConfig, _$identity);
+        this as InboundDetourConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as InboundDetourConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is InboundDetourConfig &&
-            (identical(other.protocol, protocol) ||
-                other.protocol == protocol) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.listen, listen) || other.listen == listen) &&
-            (identical(other.settings, settings) ||
-                other.settings == settings) &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.streamSettings, streamSettings) ||
-                other.streamSettings == streamSettings) &&
-            (identical(other.sniffing, sniffing) ||
-                other.sniffing == sniffing));
+            (identical(other.protocol, _this.protocol) ||
+                other.protocol == _this.protocol) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.listen, _this.listen) ||
+                other.listen == _this.listen) &&
+            (identical(other.settings, _this.settings) ||
+                other.settings == _this.settings) &&
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.streamSettings, _this.streamSettings) ||
+                other.streamSettings == _this.streamSettings) &&
+            (identical(other.sniffing, _this.sniffing) ||
+                other.sniffing == _this.sniffing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, protocol, port, listen, settings,
-      tag, streamSettings, sniffing);
+  int get hashCode {
+    final _this = this as InboundDetourConfig;
+    return Object.hash(
+      runtimeType,
+      _this.protocol,
+      _this.port,
+      _this.listen,
+      _this.settings,
+      _this.tag,
+      _this.streamSettings,
+      _this.sniffing,
+    );
+  }
 
   @override
   String toString() {
-    return 'InboundDetourConfig(protocol: $protocol, port: $port, listen: $listen, settings: $settings, tag: $tag, streamSettings: $streamSettings, sniffing: $sniffing)';
+    final _this = this as InboundDetourConfig;
+    return 'InboundDetourConfig(protocol: ${_this.protocol}, port: ${_this.port}, listen: ${_this.listen}, settings: ${_this.settings}, tag: ${_this.tag}, streamSettings: ${_this.streamSettings}, sniffing: ${_this.sniffing})';
   }
 }
 
 /// @nodoc
 abstract mixin class $InboundDetourConfigCopyWith<$Res> {
   factory $InboundDetourConfigCopyWith(
-          InboundDetourConfig value, $Res Function(InboundDetourConfig) _then) =
-      _$InboundDetourConfigCopyWithImpl;
+    InboundDetourConfig value,
+    $Res Function(InboundDetourConfig) _then,
+  ) = _$InboundDetourConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String protocol,
-      XrayPortList? port,
-      XrayAddress? listen,
-      XrayInboundSettings? settings,
-      String? tag,
-      StreamConfig? streamSettings,
-      SniffingConfig? sniffing});
+  $Res call({
+    String protocol,
+    XrayPortList? port,
+    XrayAddress? listen,
+    XrayInboundSettings? settings,
+    String? tag,
+    StreamConfig? streamSettings,
+    SniffingConfig? sniffing,
+  });
 
   $StreamConfigCopyWith<$Res>? get streamSettings;
   $SniffingConfigCopyWith<$Res>? get sniffing;
@@ -98,36 +116,38 @@ class _$InboundDetourConfigCopyWithImpl<$Res>
     Object? streamSettings = freezed,
     Object? sniffing = freezed,
   }) {
-    return _then(_self.copyWith(
-      protocol: null == protocol
-          ? _self.protocol
-          : protocol // ignore: cast_nullable_to_non_nullable
-              as String,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      listen: freezed == listen
-          ? _self.listen
-          : listen // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as XrayInboundSettings?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      streamSettings: freezed == streamSettings
-          ? _self.streamSettings
-          : streamSettings // ignore: cast_nullable_to_non_nullable
-              as StreamConfig?,
-      sniffing: freezed == sniffing
-          ? _self.sniffing
-          : sniffing // ignore: cast_nullable_to_non_nullable
-              as SniffingConfig?,
-    ));
+    return _then(
+      InboundDetourConfig(
+        protocol: null == protocol
+            ? _self.protocol
+            : protocol // ignore: cast_nullable_to_non_nullable
+                  as String,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        listen: freezed == listen
+            ? _self.listen
+            : listen // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XrayInboundSettings?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        streamSettings: freezed == streamSettings
+            ? _self.streamSettings
+            : streamSettings // ignore: cast_nullable_to_non_nullable
+                  as StreamConfig?,
+        sniffing: freezed == sniffing
+            ? _self.sniffing
+            : sniffing // ignore: cast_nullable_to_non_nullable
+                  as SniffingConfig?,
+      ),
+    );
   }
 
   /// Create a copy of InboundDetourConfig
@@ -253,21 +273,29 @@ extension InboundDetourConfigPatterns on InboundDetourConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String protocol,
-            XrayPortList? port,
-            XrayAddress? listen,
-            XrayInboundSettings? settings,
-            String? tag,
-            StreamConfig? streamSettings,
-            SniffingConfig? sniffing)?
-        $default, {
+      String protocol,
+      XrayPortList? port,
+      XrayAddress? listen,
+      XrayInboundSettings? settings,
+      String? tag,
+      StreamConfig? streamSettings,
+      SniffingConfig? sniffing,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _InboundDetourConfig() when $default != null:
-        return $default(_that.protocol, _that.port, _that.listen,
-            _that.settings, _that.tag, _that.streamSettings, _that.sniffing);
+        return $default(
+          _that.protocol,
+          _that.port,
+          _that.listen,
+          _that.settings,
+          _that.tag,
+          _that.streamSettings,
+          _that.sniffing,
+        );
       case _:
         return orElse();
     }
@@ -289,20 +317,28 @@ extension InboundDetourConfigPatterns on InboundDetourConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String protocol,
-            XrayPortList? port,
-            XrayAddress? listen,
-            XrayInboundSettings? settings,
-            String? tag,
-            StreamConfig? streamSettings,
-            SniffingConfig? sniffing)
-        $default,
+      String protocol,
+      XrayPortList? port,
+      XrayAddress? listen,
+      XrayInboundSettings? settings,
+      String? tag,
+      StreamConfig? streamSettings,
+      SniffingConfig? sniffing,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _InboundDetourConfig():
-        return $default(_that.protocol, _that.port, _that.listen,
-            _that.settings, _that.tag, _that.streamSettings, _that.sniffing);
+        return $default(
+          _that.protocol,
+          _that.port,
+          _that.listen,
+          _that.settings,
+          _that.tag,
+          _that.streamSettings,
+          _that.sniffing,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -323,20 +359,28 @@ extension InboundDetourConfigPatterns on InboundDetourConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String protocol,
-            XrayPortList? port,
-            XrayAddress? listen,
-            XrayInboundSettings? settings,
-            String? tag,
-            StreamConfig? streamSettings,
-            SniffingConfig? sniffing)?
-        $default,
+      String protocol,
+      XrayPortList? port,
+      XrayAddress? listen,
+      XrayInboundSettings? settings,
+      String? tag,
+      StreamConfig? streamSettings,
+      SniffingConfig? sniffing,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _InboundDetourConfig() when $default != null:
-        return $default(_that.protocol, _that.port, _that.listen,
-            _that.settings, _that.tag, _that.streamSettings, _that.sniffing);
+        return $default(
+          _that.protocol,
+          _that.port,
+          _that.listen,
+          _that.settings,
+          _that.tag,
+          _that.streamSettings,
+          _that.sniffing,
+        );
       case _:
         return null;
     }
@@ -346,15 +390,15 @@ extension InboundDetourConfigPatterns on InboundDetourConfig {
 /// @nodoc
 
 class _InboundDetourConfig extends InboundDetourConfig {
-  const _InboundDetourConfig(
-      {required this.protocol,
-      this.port,
-      this.listen,
-      this.settings,
-      this.tag,
-      this.streamSettings,
-      this.sniffing})
-      : super._();
+  const _InboundDetourConfig({
+    required this.protocol,
+    this.port,
+    this.listen,
+    this.settings,
+    this.tag,
+    this.streamSettings,
+    this.sniffing,
+  }) : super._();
 
   @override
   final String protocol;
@@ -378,7 +422,9 @@ class _InboundDetourConfig extends InboundDetourConfig {
   @pragma('vm:prefer-inline')
   _$InboundDetourConfigCopyWith<_InboundDetourConfig> get copyWith =>
       __$InboundDetourConfigCopyWithImpl<_InboundDetourConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -399,8 +445,18 @@ class _InboundDetourConfig extends InboundDetourConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, protocol, port, listen, settings,
-      tag, streamSettings, sniffing);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      protocol,
+      port,
+      listen,
+      settings,
+      tag,
+      streamSettings,
+      sniffing,
+    );
+  }
 
   @override
   String toString() {
@@ -411,19 +467,21 @@ class _InboundDetourConfig extends InboundDetourConfig {
 /// @nodoc
 abstract mixin class _$InboundDetourConfigCopyWith<$Res>
     implements $InboundDetourConfigCopyWith<$Res> {
-  factory _$InboundDetourConfigCopyWith(_InboundDetourConfig value,
-          $Res Function(_InboundDetourConfig) _then) =
-      __$InboundDetourConfigCopyWithImpl;
+  factory _$InboundDetourConfigCopyWith(
+    _InboundDetourConfig value,
+    $Res Function(_InboundDetourConfig) _then,
+  ) = __$InboundDetourConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String protocol,
-      XrayPortList? port,
-      XrayAddress? listen,
-      XrayInboundSettings? settings,
-      String? tag,
-      StreamConfig? streamSettings,
-      SniffingConfig? sniffing});
+  $Res call({
+    String protocol,
+    XrayPortList? port,
+    XrayAddress? listen,
+    XrayInboundSettings? settings,
+    String? tag,
+    StreamConfig? streamSettings,
+    SniffingConfig? sniffing,
+  });
 
   @override
   $StreamConfigCopyWith<$Res>? get streamSettings;
@@ -452,36 +510,38 @@ class __$InboundDetourConfigCopyWithImpl<$Res>
     Object? streamSettings = freezed,
     Object? sniffing = freezed,
   }) {
-    return _then(_InboundDetourConfig(
-      protocol: null == protocol
-          ? _self.protocol
-          : protocol // ignore: cast_nullable_to_non_nullable
-              as String,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      listen: freezed == listen
-          ? _self.listen
-          : listen // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as XrayInboundSettings?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      streamSettings: freezed == streamSettings
-          ? _self.streamSettings
-          : streamSettings // ignore: cast_nullable_to_non_nullable
-              as StreamConfig?,
-      sniffing: freezed == sniffing
-          ? _self.sniffing
-          : sniffing // ignore: cast_nullable_to_non_nullable
-              as SniffingConfig?,
-    ));
+    return _then(
+      _InboundDetourConfig(
+        protocol: null == protocol
+            ? _self.protocol
+            : protocol // ignore: cast_nullable_to_non_nullable
+                  as String,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        listen: freezed == listen
+            ? _self.listen
+            : listen // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XrayInboundSettings?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        streamSettings: freezed == streamSettings
+            ? _self.streamSettings
+            : streamSettings // ignore: cast_nullable_to_non_nullable
+                  as StreamConfig?,
+        sniffing: freezed == sniffing
+            ? _self.sniffing
+            : sniffing // ignore: cast_nullable_to_non_nullable
+                  as SniffingConfig?,
+      ),
+    );
   }
 
   /// Create a copy of InboundDetourConfig
@@ -530,25 +590,39 @@ mixin _$LogConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as LogConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LogConfig &&
-            (identical(other.access, access) || other.access == access) &&
-            (identical(other.error, error) || other.error == error) &&
-            (identical(other.loglevel, loglevel) ||
-                other.loglevel == loglevel) &&
-            (identical(other.dnsLog, dnsLog) || other.dnsLog == dnsLog) &&
-            (identical(other.maskAddress, maskAddress) ||
-                other.maskAddress == maskAddress));
+            (identical(other.access, _this.access) ||
+                other.access == _this.access) &&
+            (identical(other.error, _this.error) ||
+                other.error == _this.error) &&
+            (identical(other.loglevel, _this.loglevel) ||
+                other.loglevel == _this.loglevel) &&
+            (identical(other.dnsLog, _this.dnsLog) ||
+                other.dnsLog == _this.dnsLog) &&
+            (identical(other.maskAddress, _this.maskAddress) ||
+                other.maskAddress == _this.maskAddress));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, access, error, loglevel, dnsLog, maskAddress);
+  int get hashCode {
+    final _this = this as LogConfig;
+    return Object.hash(
+      runtimeType,
+      _this.access,
+      _this.error,
+      _this.loglevel,
+      _this.dnsLog,
+      _this.maskAddress,
+    );
+  }
 
   @override
   String toString() {
-    return 'LogConfig(access: $access, error: $error, loglevel: $loglevel, dnsLog: $dnsLog, maskAddress: $maskAddress)';
+    final _this = this as LogConfig;
+    return 'LogConfig(access: ${_this.access}, error: ${_this.error}, loglevel: ${_this.loglevel}, dnsLog: ${_this.dnsLog}, maskAddress: ${_this.maskAddress})';
   }
 }
 
@@ -557,12 +631,13 @@ abstract mixin class $LogConfigCopyWith<$Res> {
   factory $LogConfigCopyWith(LogConfig value, $Res Function(LogConfig) _then) =
       _$LogConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? access,
-      String? error,
-      LogLevel? loglevel,
-      bool? dnsLog,
-      String? maskAddress});
+  $Res call({
+    String? access,
+    String? error,
+    LogLevel? loglevel,
+    bool? dnsLog,
+    String? maskAddress,
+  });
 }
 
 /// @nodoc
@@ -583,28 +658,30 @@ class _$LogConfigCopyWithImpl<$Res> implements $LogConfigCopyWith<$Res> {
     Object? dnsLog = freezed,
     Object? maskAddress = freezed,
   }) {
-    return _then(_self.copyWith(
-      access: freezed == access
-          ? _self.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as String?,
-      error: freezed == error
-          ? _self.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
-      loglevel: freezed == loglevel
-          ? _self.loglevel
-          : loglevel // ignore: cast_nullable_to_non_nullable
-              as LogLevel?,
-      dnsLog: freezed == dnsLog
-          ? _self.dnsLog
-          : dnsLog // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      maskAddress: freezed == maskAddress
-          ? _self.maskAddress
-          : maskAddress // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      LogConfig(
+        access: freezed == access
+            ? _self.access
+            : access // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        error: freezed == error
+            ? _self.error
+            : error // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        loglevel: freezed == loglevel
+            ? _self.loglevel
+            : loglevel // ignore: cast_nullable_to_non_nullable
+                  as LogLevel?,
+        dnsLog: freezed == dnsLog
+            ? _self.dnsLog
+            : dnsLog // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        maskAddress: freezed == maskAddress
+            ? _self.maskAddress
+            : maskAddress // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -701,16 +778,26 @@ extension LogConfigPatterns on LogConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? access, String? error, LogLevel? loglevel,
-            bool? dnsLog, String? maskAddress)?
-        $default, {
+    TResult Function(
+      String? access,
+      String? error,
+      LogLevel? loglevel,
+      bool? dnsLog,
+      String? maskAddress,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _LogConfig() when $default != null:
-        return $default(_that.access, _that.error, _that.loglevel, _that.dnsLog,
-            _that.maskAddress);
+        return $default(
+          _that.access,
+          _that.error,
+          _that.loglevel,
+          _that.dnsLog,
+          _that.maskAddress,
+        );
       case _:
         return orElse();
     }
@@ -731,15 +818,25 @@ extension LogConfigPatterns on LogConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? access, String? error, LogLevel? loglevel,
-            bool? dnsLog, String? maskAddress)
-        $default,
+    TResult Function(
+      String? access,
+      String? error,
+      LogLevel? loglevel,
+      bool? dnsLog,
+      String? maskAddress,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _LogConfig():
-        return $default(_that.access, _that.error, _that.loglevel, _that.dnsLog,
-            _that.maskAddress);
+        return $default(
+          _that.access,
+          _that.error,
+          _that.loglevel,
+          _that.dnsLog,
+          _that.maskAddress,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -759,15 +856,25 @@ extension LogConfigPatterns on LogConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? access, String? error, LogLevel? loglevel,
-            bool? dnsLog, String? maskAddress)?
-        $default,
+    TResult? Function(
+      String? access,
+      String? error,
+      LogLevel? loglevel,
+      bool? dnsLog,
+      String? maskAddress,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _LogConfig() when $default != null:
-        return $default(_that.access, _that.error, _that.loglevel, _that.dnsLog,
-            _that.maskAddress);
+        return $default(
+          _that.access,
+          _that.error,
+          _that.loglevel,
+          _that.dnsLog,
+          _that.maskAddress,
+        );
       case _:
         return null;
     }
@@ -777,9 +884,13 @@ extension LogConfigPatterns on LogConfig {
 /// @nodoc
 
 class _LogConfig extends LogConfig {
-  const _LogConfig(
-      {this.access, this.error, this.loglevel, this.dnsLog, this.maskAddress})
-      : super._();
+  const _LogConfig({
+    this.access,
+    this.error,
+    this.loglevel,
+    this.dnsLog,
+    this.maskAddress,
+  }) : super._();
 
   @override
   final String? access;
@@ -815,8 +926,16 @@ class _LogConfig extends LogConfig {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, access, error, loglevel, dnsLog, maskAddress);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      access,
+      error,
+      loglevel,
+      dnsLog,
+      maskAddress,
+    );
+  }
 
   @override
   String toString() {
@@ -828,16 +947,18 @@ class _LogConfig extends LogConfig {
 abstract mixin class _$LogConfigCopyWith<$Res>
     implements $LogConfigCopyWith<$Res> {
   factory _$LogConfigCopyWith(
-          _LogConfig value, $Res Function(_LogConfig) _then) =
-      __$LogConfigCopyWithImpl;
+    _LogConfig value,
+    $Res Function(_LogConfig) _then,
+  ) = __$LogConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? access,
-      String? error,
-      LogLevel? loglevel,
-      bool? dnsLog,
-      String? maskAddress});
+  $Res call({
+    String? access,
+    String? error,
+    LogLevel? loglevel,
+    bool? dnsLog,
+    String? maskAddress,
+  });
 }
 
 /// @nodoc
@@ -858,28 +979,30 @@ class __$LogConfigCopyWithImpl<$Res> implements _$LogConfigCopyWith<$Res> {
     Object? dnsLog = freezed,
     Object? maskAddress = freezed,
   }) {
-    return _then(_LogConfig(
-      access: freezed == access
-          ? _self.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as String?,
-      error: freezed == error
-          ? _self.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
-      loglevel: freezed == loglevel
-          ? _self.loglevel
-          : loglevel // ignore: cast_nullable_to_non_nullable
-              as LogLevel?,
-      dnsLog: freezed == dnsLog
-          ? _self.dnsLog
-          : dnsLog // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      maskAddress: freezed == maskAddress
-          ? _self.maskAddress
-          : maskAddress // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _LogConfig(
+        access: freezed == access
+            ? _self.access
+            : access // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        error: freezed == error
+            ? _self.error
+            : error // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        loglevel: freezed == loglevel
+            ? _self.loglevel
+            : loglevel // ignore: cast_nullable_to_non_nullable
+                  as LogLevel?,
+        dnsLog: freezed == dnsLog
+            ? _self.dnsLog
+            : dnsLog // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        maskAddress: freezed == maskAddress
+            ? _self.maskAddress
+            : maskAddress // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -899,25 +1022,36 @@ mixin _$MuxConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as MuxConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MuxConfig &&
-            (identical(other.enabled, enabled) || other.enabled == enabled) &&
-            (identical(other.concurrency, concurrency) ||
-                other.concurrency == concurrency) &&
-            (identical(other.xudpConcurrency, xudpConcurrency) ||
-                other.xudpConcurrency == xudpConcurrency) &&
-            (identical(other.xudpProxyUDP443, xudpProxyUDP443) ||
-                other.xudpProxyUDP443 == xudpProxyUDP443));
+            (identical(other.enabled, _this.enabled) ||
+                other.enabled == _this.enabled) &&
+            (identical(other.concurrency, _this.concurrency) ||
+                other.concurrency == _this.concurrency) &&
+            (identical(other.xudpConcurrency, _this.xudpConcurrency) ||
+                other.xudpConcurrency == _this.xudpConcurrency) &&
+            (identical(other.xudpProxyUDP443, _this.xudpProxyUDP443) ||
+                other.xudpProxyUDP443 == _this.xudpProxyUDP443));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, enabled, concurrency, xudpConcurrency, xudpProxyUDP443);
+  int get hashCode {
+    final _this = this as MuxConfig;
+    return Object.hash(
+      runtimeType,
+      _this.enabled,
+      _this.concurrency,
+      _this.xudpConcurrency,
+      _this.xudpProxyUDP443,
+    );
+  }
 
   @override
   String toString() {
-    return 'MuxConfig(enabled: $enabled, concurrency: $concurrency, xudpConcurrency: $xudpConcurrency, xudpProxyUDP443: $xudpProxyUDP443)';
+    final _this = this as MuxConfig;
+    return 'MuxConfig(enabled: ${_this.enabled}, concurrency: ${_this.concurrency}, xudpConcurrency: ${_this.xudpConcurrency}, xudpProxyUDP443: ${_this.xudpProxyUDP443})';
   }
 }
 
@@ -926,11 +1060,12 @@ abstract mixin class $MuxConfigCopyWith<$Res> {
   factory $MuxConfigCopyWith(MuxConfig value, $Res Function(MuxConfig) _then) =
       _$MuxConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {bool? enabled,
-      int? concurrency,
-      int? xudpConcurrency,
-      String? xudpProxyUDP443});
+  $Res call({
+    bool? enabled,
+    int? concurrency,
+    int? xudpConcurrency,
+    String? xudpProxyUDP443,
+  });
 }
 
 /// @nodoc
@@ -950,24 +1085,26 @@ class _$MuxConfigCopyWithImpl<$Res> implements $MuxConfigCopyWith<$Res> {
     Object? xudpConcurrency = freezed,
     Object? xudpProxyUDP443 = freezed,
   }) {
-    return _then(_self.copyWith(
-      enabled: freezed == enabled
-          ? _self.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      concurrency: freezed == concurrency
-          ? _self.concurrency
-          : concurrency // ignore: cast_nullable_to_non_nullable
-              as int?,
-      xudpConcurrency: freezed == xudpConcurrency
-          ? _self.xudpConcurrency
-          : xudpConcurrency // ignore: cast_nullable_to_non_nullable
-              as int?,
-      xudpProxyUDP443: freezed == xudpProxyUDP443
-          ? _self.xudpProxyUDP443
-          : xudpProxyUDP443 // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      MuxConfig(
+        enabled: freezed == enabled
+            ? _self.enabled
+            : enabled // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        concurrency: freezed == concurrency
+            ? _self.concurrency
+            : concurrency // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        xudpConcurrency: freezed == xudpConcurrency
+            ? _self.xudpConcurrency
+            : xudpConcurrency // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        xudpProxyUDP443: freezed == xudpProxyUDP443
+            ? _self.xudpProxyUDP443
+            : xudpProxyUDP443 // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -1064,16 +1201,24 @@ extension MuxConfigPatterns on MuxConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(bool? enabled, int? concurrency, int? xudpConcurrency,
-            String? xudpProxyUDP443)?
-        $default, {
+    TResult Function(
+      bool? enabled,
+      int? concurrency,
+      int? xudpConcurrency,
+      String? xudpProxyUDP443,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _MuxConfig() when $default != null:
-        return $default(_that.enabled, _that.concurrency, _that.xudpConcurrency,
-            _that.xudpProxyUDP443);
+        return $default(
+          _that.enabled,
+          _that.concurrency,
+          _that.xudpConcurrency,
+          _that.xudpProxyUDP443,
+        );
       case _:
         return orElse();
     }
@@ -1094,15 +1239,23 @@ extension MuxConfigPatterns on MuxConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(bool? enabled, int? concurrency, int? xudpConcurrency,
-            String? xudpProxyUDP443)
-        $default,
+    TResult Function(
+      bool? enabled,
+      int? concurrency,
+      int? xudpConcurrency,
+      String? xudpProxyUDP443,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _MuxConfig():
-        return $default(_that.enabled, _that.concurrency, _that.xudpConcurrency,
-            _that.xudpProxyUDP443);
+        return $default(
+          _that.enabled,
+          _that.concurrency,
+          _that.xudpConcurrency,
+          _that.xudpProxyUDP443,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -1122,15 +1275,23 @@ extension MuxConfigPatterns on MuxConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(bool? enabled, int? concurrency, int? xudpConcurrency,
-            String? xudpProxyUDP443)?
-        $default,
+    TResult? Function(
+      bool? enabled,
+      int? concurrency,
+      int? xudpConcurrency,
+      String? xudpProxyUDP443,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _MuxConfig() when $default != null:
-        return $default(_that.enabled, _that.concurrency, _that.xudpConcurrency,
-            _that.xudpProxyUDP443);
+        return $default(
+          _that.enabled,
+          _that.concurrency,
+          _that.xudpConcurrency,
+          _that.xudpProxyUDP443,
+        );
       case _:
         return null;
     }
@@ -1140,12 +1301,12 @@ extension MuxConfigPatterns on MuxConfig {
 /// @nodoc
 
 class _MuxConfig extends MuxConfig {
-  const _MuxConfig(
-      {this.enabled,
-      this.concurrency,
-      this.xudpConcurrency,
-      this.xudpProxyUDP443})
-      : super._();
+  const _MuxConfig({
+    this.enabled,
+    this.concurrency,
+    this.xudpConcurrency,
+    this.xudpProxyUDP443,
+  }) : super._();
 
   @override
   final bool? enabled;
@@ -1179,8 +1340,15 @@ class _MuxConfig extends MuxConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, enabled, concurrency, xudpConcurrency, xudpProxyUDP443);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      enabled,
+      concurrency,
+      xudpConcurrency,
+      xudpProxyUDP443,
+    );
+  }
 
   @override
   String toString() {
@@ -1192,15 +1360,17 @@ class _MuxConfig extends MuxConfig {
 abstract mixin class _$MuxConfigCopyWith<$Res>
     implements $MuxConfigCopyWith<$Res> {
   factory _$MuxConfigCopyWith(
-          _MuxConfig value, $Res Function(_MuxConfig) _then) =
-      __$MuxConfigCopyWithImpl;
+    _MuxConfig value,
+    $Res Function(_MuxConfig) _then,
+  ) = __$MuxConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {bool? enabled,
-      int? concurrency,
-      int? xudpConcurrency,
-      String? xudpProxyUDP443});
+  $Res call({
+    bool? enabled,
+    int? concurrency,
+    int? xudpConcurrency,
+    String? xudpProxyUDP443,
+  });
 }
 
 /// @nodoc
@@ -1220,24 +1390,26 @@ class __$MuxConfigCopyWithImpl<$Res> implements _$MuxConfigCopyWith<$Res> {
     Object? xudpConcurrency = freezed,
     Object? xudpProxyUDP443 = freezed,
   }) {
-    return _then(_MuxConfig(
-      enabled: freezed == enabled
-          ? _self.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      concurrency: freezed == concurrency
-          ? _self.concurrency
-          : concurrency // ignore: cast_nullable_to_non_nullable
-              as int?,
-      xudpConcurrency: freezed == xudpConcurrency
-          ? _self.xudpConcurrency
-          : xudpConcurrency // ignore: cast_nullable_to_non_nullable
-              as int?,
-      xudpProxyUDP443: freezed == xudpProxyUDP443
-          ? _self.xudpProxyUDP443
-          : xudpProxyUDP443 // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _MuxConfig(
+        enabled: freezed == enabled
+            ? _self.enabled
+            : enabled // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        concurrency: freezed == concurrency
+            ? _self.concurrency
+            : concurrency // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        xudpConcurrency: freezed == xudpConcurrency
+            ? _self.xudpConcurrency
+            : xudpConcurrency // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        xudpProxyUDP443: freezed == xudpProxyUDP443
+            ? _self.xudpProxyUDP443
+            : xudpProxyUDP443 // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -1248,7 +1420,10 @@ mixin _$OutboundDetourConfig {
   String? get tag;
   XrayOutboundSettings? get settings;
   StreamConfig? get streamSettings;
-  ProxyConfig? get proxySettings;
+
+  /// Legacy JSON retained for import. Validation rejects this removed field;
+  /// use streamSettings.sockopt.dialerProxy for proxy chaining.
+  Map<String, dynamic>? get proxySettings;
   MuxConfig? get mux;
   XrayTargetStrategy? get targetStrategy;
 
@@ -1258,57 +1433,76 @@ mixin _$OutboundDetourConfig {
   @pragma('vm:prefer-inline')
   $OutboundDetourConfigCopyWith<OutboundDetourConfig> get copyWith =>
       _$OutboundDetourConfigCopyWithImpl<OutboundDetourConfig>(
-          this as OutboundDetourConfig, _$identity);
+        this as OutboundDetourConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as OutboundDetourConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is OutboundDetourConfig &&
-            (identical(other.protocol, protocol) ||
-                other.protocol == protocol) &&
-            (identical(other.sendThrough, sendThrough) ||
-                other.sendThrough == sendThrough) &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.settings, settings) ||
-                other.settings == settings) &&
-            (identical(other.streamSettings, streamSettings) ||
-                other.streamSettings == streamSettings) &&
-            (identical(other.proxySettings, proxySettings) ||
-                other.proxySettings == proxySettings) &&
-            (identical(other.mux, mux) || other.mux == mux) &&
-            (identical(other.targetStrategy, targetStrategy) ||
-                other.targetStrategy == targetStrategy));
+            (identical(other.protocol, _this.protocol) ||
+                other.protocol == _this.protocol) &&
+            (identical(other.sendThrough, _this.sendThrough) ||
+                other.sendThrough == _this.sendThrough) &&
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.settings, _this.settings) ||
+                other.settings == _this.settings) &&
+            (identical(other.streamSettings, _this.streamSettings) ||
+                other.streamSettings == _this.streamSettings) &&
+            const DeepCollectionEquality().equals(
+              other.proxySettings,
+              _this.proxySettings,
+            ) &&
+            (identical(other.mux, _this.mux) || other.mux == _this.mux) &&
+            (identical(other.targetStrategy, _this.targetStrategy) ||
+                other.targetStrategy == _this.targetStrategy));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, protocol, sendThrough, tag,
-      settings, streamSettings, proxySettings, mux, targetStrategy);
+  int get hashCode {
+    final _this = this as OutboundDetourConfig;
+    return Object.hash(
+      runtimeType,
+      _this.protocol,
+      _this.sendThrough,
+      _this.tag,
+      _this.settings,
+      _this.streamSettings,
+      const DeepCollectionEquality().hash(_this.proxySettings),
+      _this.mux,
+      _this.targetStrategy,
+    );
+  }
 
   @override
   String toString() {
-    return 'OutboundDetourConfig(protocol: $protocol, sendThrough: $sendThrough, tag: $tag, settings: $settings, streamSettings: $streamSettings, proxySettings: $proxySettings, mux: $mux, targetStrategy: $targetStrategy)';
+    final _this = this as OutboundDetourConfig;
+    return 'OutboundDetourConfig(protocol: ${_this.protocol}, sendThrough: ${_this.sendThrough}, tag: ${_this.tag}, settings: ${_this.settings}, streamSettings: ${_this.streamSettings}, proxySettings: ${_this.proxySettings}, mux: ${_this.mux}, targetStrategy: ${_this.targetStrategy})';
   }
 }
 
 /// @nodoc
 abstract mixin class $OutboundDetourConfigCopyWith<$Res> {
-  factory $OutboundDetourConfigCopyWith(OutboundDetourConfig value,
-          $Res Function(OutboundDetourConfig) _then) =
-      _$OutboundDetourConfigCopyWithImpl;
+  factory $OutboundDetourConfigCopyWith(
+    OutboundDetourConfig value,
+    $Res Function(OutboundDetourConfig) _then,
+  ) = _$OutboundDetourConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String protocol,
-      String? sendThrough,
-      String? tag,
-      XrayOutboundSettings? settings,
-      StreamConfig? streamSettings,
-      ProxyConfig? proxySettings,
-      MuxConfig? mux,
-      XrayTargetStrategy? targetStrategy});
+  $Res call({
+    String protocol,
+    String? sendThrough,
+    String? tag,
+    XrayOutboundSettings? settings,
+    StreamConfig? streamSettings,
+    Map<String, dynamic>? proxySettings,
+    MuxConfig? mux,
+    XrayTargetStrategy? targetStrategy,
+  });
 
   $StreamConfigCopyWith<$Res>? get streamSettings;
-  $ProxyConfigCopyWith<$Res>? get proxySettings;
   $MuxConfigCopyWith<$Res>? get mux;
 }
 
@@ -1334,40 +1528,42 @@ class _$OutboundDetourConfigCopyWithImpl<$Res>
     Object? mux = freezed,
     Object? targetStrategy = freezed,
   }) {
-    return _then(_self.copyWith(
-      protocol: null == protocol
-          ? _self.protocol
-          : protocol // ignore: cast_nullable_to_non_nullable
-              as String,
-      sendThrough: freezed == sendThrough
-          ? _self.sendThrough
-          : sendThrough // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as XrayOutboundSettings?,
-      streamSettings: freezed == streamSettings
-          ? _self.streamSettings
-          : streamSettings // ignore: cast_nullable_to_non_nullable
-              as StreamConfig?,
-      proxySettings: freezed == proxySettings
-          ? _self.proxySettings
-          : proxySettings // ignore: cast_nullable_to_non_nullable
-              as ProxyConfig?,
-      mux: freezed == mux
-          ? _self.mux
-          : mux // ignore: cast_nullable_to_non_nullable
-              as MuxConfig?,
-      targetStrategy: freezed == targetStrategy
-          ? _self.targetStrategy
-          : targetStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-    ));
+    return _then(
+      OutboundDetourConfig(
+        protocol: null == protocol
+            ? _self.protocol
+            : protocol // ignore: cast_nullable_to_non_nullable
+                  as String,
+        sendThrough: freezed == sendThrough
+            ? _self.sendThrough
+            : sendThrough // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XrayOutboundSettings?,
+        streamSettings: freezed == streamSettings
+            ? _self.streamSettings
+            : streamSettings // ignore: cast_nullable_to_non_nullable
+                  as StreamConfig?,
+        proxySettings: freezed == proxySettings
+            ? _self.proxySettings
+            : proxySettings // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        mux: freezed == mux
+            ? _self.mux
+            : mux // ignore: cast_nullable_to_non_nullable
+                  as MuxConfig?,
+        targetStrategy: freezed == targetStrategy
+            ? _self.targetStrategy
+            : targetStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+      ),
+    );
   }
 
   /// Create a copy of OutboundDetourConfig
@@ -1381,20 +1577,6 @@ class _$OutboundDetourConfigCopyWithImpl<$Res>
 
     return $StreamConfigCopyWith<$Res>(_self.streamSettings!, (value) {
       return _then(_self.copyWith(streamSettings: value));
-    });
-  }
-
-  /// Create a copy of OutboundDetourConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ProxyConfigCopyWith<$Res>? get proxySettings {
-    if (_self.proxySettings == null) {
-      return null;
-    }
-
-    return $ProxyConfigCopyWith<$Res>(_self.proxySettings!, (value) {
-      return _then(_self.copyWith(proxySettings: value));
     });
   }
 
@@ -1507,29 +1689,31 @@ extension OutboundDetourConfigPatterns on OutboundDetourConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String protocol,
-            String? sendThrough,
-            String? tag,
-            XrayOutboundSettings? settings,
-            StreamConfig? streamSettings,
-            ProxyConfig? proxySettings,
-            MuxConfig? mux,
-            XrayTargetStrategy? targetStrategy)?
-        $default, {
+      String protocol,
+      String? sendThrough,
+      String? tag,
+      XrayOutboundSettings? settings,
+      StreamConfig? streamSettings,
+      Map<String, dynamic>? proxySettings,
+      MuxConfig? mux,
+      XrayTargetStrategy? targetStrategy,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _OutboundDetourConfig() when $default != null:
         return $default(
-            _that.protocol,
-            _that.sendThrough,
-            _that.tag,
-            _that.settings,
-            _that.streamSettings,
-            _that.proxySettings,
-            _that.mux,
-            _that.targetStrategy);
+          _that.protocol,
+          _that.sendThrough,
+          _that.tag,
+          _that.settings,
+          _that.streamSettings,
+          _that.proxySettings,
+          _that.mux,
+          _that.targetStrategy,
+        );
       case _:
         return orElse();
     }
@@ -1551,28 +1735,30 @@ extension OutboundDetourConfigPatterns on OutboundDetourConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String protocol,
-            String? sendThrough,
-            String? tag,
-            XrayOutboundSettings? settings,
-            StreamConfig? streamSettings,
-            ProxyConfig? proxySettings,
-            MuxConfig? mux,
-            XrayTargetStrategy? targetStrategy)
-        $default,
+      String protocol,
+      String? sendThrough,
+      String? tag,
+      XrayOutboundSettings? settings,
+      StreamConfig? streamSettings,
+      Map<String, dynamic>? proxySettings,
+      MuxConfig? mux,
+      XrayTargetStrategy? targetStrategy,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _OutboundDetourConfig():
         return $default(
-            _that.protocol,
-            _that.sendThrough,
-            _that.tag,
-            _that.settings,
-            _that.streamSettings,
-            _that.proxySettings,
-            _that.mux,
-            _that.targetStrategy);
+          _that.protocol,
+          _that.sendThrough,
+          _that.tag,
+          _that.settings,
+          _that.streamSettings,
+          _that.proxySettings,
+          _that.mux,
+          _that.targetStrategy,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -1593,28 +1779,30 @@ extension OutboundDetourConfigPatterns on OutboundDetourConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String protocol,
-            String? sendThrough,
-            String? tag,
-            XrayOutboundSettings? settings,
-            StreamConfig? streamSettings,
-            ProxyConfig? proxySettings,
-            MuxConfig? mux,
-            XrayTargetStrategy? targetStrategy)?
-        $default,
+      String protocol,
+      String? sendThrough,
+      String? tag,
+      XrayOutboundSettings? settings,
+      StreamConfig? streamSettings,
+      Map<String, dynamic>? proxySettings,
+      MuxConfig? mux,
+      XrayTargetStrategy? targetStrategy,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _OutboundDetourConfig() when $default != null:
         return $default(
-            _that.protocol,
-            _that.sendThrough,
-            _that.tag,
-            _that.settings,
-            _that.streamSettings,
-            _that.proxySettings,
-            _that.mux,
-            _that.targetStrategy);
+          _that.protocol,
+          _that.sendThrough,
+          _that.tag,
+          _that.settings,
+          _that.streamSettings,
+          _that.proxySettings,
+          _that.mux,
+          _that.targetStrategy,
+        );
       case _:
         return null;
     }
@@ -1624,16 +1812,17 @@ extension OutboundDetourConfigPatterns on OutboundDetourConfig {
 /// @nodoc
 
 class _OutboundDetourConfig extends OutboundDetourConfig {
-  const _OutboundDetourConfig(
-      {required this.protocol,
-      this.sendThrough,
-      this.tag,
-      this.settings,
-      this.streamSettings,
-      this.proxySettings,
-      this.mux,
-      this.targetStrategy})
-      : super._();
+  const _OutboundDetourConfig({
+    required this.protocol,
+    this.sendThrough,
+    this.tag,
+    this.settings,
+    this.streamSettings,
+    Map<String, dynamic>? proxySettings,
+    this.mux,
+    this.targetStrategy,
+  }) : _proxySettings = proxySettings,
+       super._();
 
   @override
   final String protocol;
@@ -1645,8 +1834,22 @@ class _OutboundDetourConfig extends OutboundDetourConfig {
   final XrayOutboundSettings? settings;
   @override
   final StreamConfig? streamSettings;
+
+  /// Legacy JSON retained for import. Validation rejects this removed field;
+  /// use streamSettings.sockopt.dialerProxy for proxy chaining.
+  final Map<String, dynamic>? _proxySettings;
+
+  /// Legacy JSON retained for import. Validation rejects this removed field;
+  /// use streamSettings.sockopt.dialerProxy for proxy chaining.
   @override
-  final ProxyConfig? proxySettings;
+  Map<String, dynamic>? get proxySettings {
+    final value = _proxySettings;
+    if (value == null) return null;
+    if (_proxySettings is EqualUnmodifiableMapView) return _proxySettings;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final MuxConfig? mux;
   @override
@@ -1659,7 +1862,9 @@ class _OutboundDetourConfig extends OutboundDetourConfig {
   @pragma('vm:prefer-inline')
   _$OutboundDetourConfigCopyWith<_OutboundDetourConfig> get copyWith =>
       __$OutboundDetourConfigCopyWithImpl<_OutboundDetourConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -1675,16 +1880,29 @@ class _OutboundDetourConfig extends OutboundDetourConfig {
                 other.settings == settings) &&
             (identical(other.streamSettings, streamSettings) ||
                 other.streamSettings == streamSettings) &&
-            (identical(other.proxySettings, proxySettings) ||
-                other.proxySettings == proxySettings) &&
+            const DeepCollectionEquality().equals(
+              other.proxySettings,
+              _proxySettings,
+            ) &&
             (identical(other.mux, mux) || other.mux == mux) &&
             (identical(other.targetStrategy, targetStrategy) ||
                 other.targetStrategy == targetStrategy));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, protocol, sendThrough, tag,
-      settings, streamSettings, proxySettings, mux, targetStrategy);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      protocol,
+      sendThrough,
+      tag,
+      settings,
+      streamSettings,
+      const DeepCollectionEquality().hash(_proxySettings),
+      mux,
+      targetStrategy,
+    );
+  }
 
   @override
   String toString() {
@@ -1695,25 +1913,25 @@ class _OutboundDetourConfig extends OutboundDetourConfig {
 /// @nodoc
 abstract mixin class _$OutboundDetourConfigCopyWith<$Res>
     implements $OutboundDetourConfigCopyWith<$Res> {
-  factory _$OutboundDetourConfigCopyWith(_OutboundDetourConfig value,
-          $Res Function(_OutboundDetourConfig) _then) =
-      __$OutboundDetourConfigCopyWithImpl;
+  factory _$OutboundDetourConfigCopyWith(
+    _OutboundDetourConfig value,
+    $Res Function(_OutboundDetourConfig) _then,
+  ) = __$OutboundDetourConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String protocol,
-      String? sendThrough,
-      String? tag,
-      XrayOutboundSettings? settings,
-      StreamConfig? streamSettings,
-      ProxyConfig? proxySettings,
-      MuxConfig? mux,
-      XrayTargetStrategy? targetStrategy});
+  $Res call({
+    String protocol,
+    String? sendThrough,
+    String? tag,
+    XrayOutboundSettings? settings,
+    StreamConfig? streamSettings,
+    Map<String, dynamic>? proxySettings,
+    MuxConfig? mux,
+    XrayTargetStrategy? targetStrategy,
+  });
 
   @override
   $StreamConfigCopyWith<$Res>? get streamSettings;
-  @override
-  $ProxyConfigCopyWith<$Res>? get proxySettings;
   @override
   $MuxConfigCopyWith<$Res>? get mux;
 }
@@ -1740,40 +1958,42 @@ class __$OutboundDetourConfigCopyWithImpl<$Res>
     Object? mux = freezed,
     Object? targetStrategy = freezed,
   }) {
-    return _then(_OutboundDetourConfig(
-      protocol: null == protocol
-          ? _self.protocol
-          : protocol // ignore: cast_nullable_to_non_nullable
-              as String,
-      sendThrough: freezed == sendThrough
-          ? _self.sendThrough
-          : sendThrough // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tag: freezed == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as XrayOutboundSettings?,
-      streamSettings: freezed == streamSettings
-          ? _self.streamSettings
-          : streamSettings // ignore: cast_nullable_to_non_nullable
-              as StreamConfig?,
-      proxySettings: freezed == proxySettings
-          ? _self.proxySettings
-          : proxySettings // ignore: cast_nullable_to_non_nullable
-              as ProxyConfig?,
-      mux: freezed == mux
-          ? _self.mux
-          : mux // ignore: cast_nullable_to_non_nullable
-              as MuxConfig?,
-      targetStrategy: freezed == targetStrategy
-          ? _self.targetStrategy
-          : targetStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-    ));
+    return _then(
+      _OutboundDetourConfig(
+        protocol: null == protocol
+            ? _self.protocol
+            : protocol // ignore: cast_nullable_to_non_nullable
+                  as String,
+        sendThrough: freezed == sendThrough
+            ? _self.sendThrough
+            : sendThrough // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tag: freezed == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XrayOutboundSettings?,
+        streamSettings: freezed == streamSettings
+            ? _self.streamSettings
+            : streamSettings // ignore: cast_nullable_to_non_nullable
+                  as StreamConfig?,
+        proxySettings: freezed == proxySettings
+            ? _self._proxySettings
+            : proxySettings // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        mux: freezed == mux
+            ? _self.mux
+            : mux // ignore: cast_nullable_to_non_nullable
+                  as MuxConfig?,
+        targetStrategy: freezed == targetStrategy
+            ? _self.targetStrategy
+            : targetStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+      ),
+    );
   }
 
   /// Create a copy of OutboundDetourConfig
@@ -1794,20 +2014,6 @@ class __$OutboundDetourConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ProxyConfigCopyWith<$Res>? get proxySettings {
-    if (_self.proxySettings == null) {
-      return null;
-    }
-
-    return $ProxyConfigCopyWith<$Res>(_self.proxySettings!, (value) {
-      return _then(_self.copyWith(proxySettings: value));
-    });
-  }
-
-  /// Create a copy of OutboundDetourConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $MuxConfigCopyWith<$Res>? get mux {
     if (_self.mux == null) {
       return null;
@@ -1816,307 +2022,6 @@ class __$OutboundDetourConfigCopyWithImpl<$Res>
     return $MuxConfigCopyWith<$Res>(_self.mux!, (value) {
       return _then(_self.copyWith(mux: value));
     });
-  }
-}
-
-/// @nodoc
-mixin _$ProxyConfig {
-  String get tag;
-  bool? get transportLayer;
-
-  /// Create a copy of ProxyConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ProxyConfigCopyWith<ProxyConfig> get copyWith =>
-      _$ProxyConfigCopyWithImpl<ProxyConfig>(this as ProxyConfig, _$identity);
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ProxyConfig &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.transportLayer, transportLayer) ||
-                other.transportLayer == transportLayer));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, tag, transportLayer);
-
-  @override
-  String toString() {
-    return 'ProxyConfig(tag: $tag, transportLayer: $transportLayer)';
-  }
-}
-
-/// @nodoc
-abstract mixin class $ProxyConfigCopyWith<$Res> {
-  factory $ProxyConfigCopyWith(
-          ProxyConfig value, $Res Function(ProxyConfig) _then) =
-      _$ProxyConfigCopyWithImpl;
-  @useResult
-  $Res call({String tag, bool? transportLayer});
-}
-
-/// @nodoc
-class _$ProxyConfigCopyWithImpl<$Res> implements $ProxyConfigCopyWith<$Res> {
-  _$ProxyConfigCopyWithImpl(this._self, this._then);
-
-  final ProxyConfig _self;
-  final $Res Function(ProxyConfig) _then;
-
-  /// Create a copy of ProxyConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? tag = null,
-    Object? transportLayer = freezed,
-  }) {
-    return _then(_self.copyWith(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      transportLayer: freezed == transportLayer
-          ? _self.transportLayer
-          : transportLayer // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// Adds pattern-matching-related methods to [ProxyConfig].
-extension ProxyConfigPatterns on ProxyConfig {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ProxyConfig value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _ProxyConfig() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ProxyConfig value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ProxyConfig():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ProxyConfig value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ProxyConfig() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
-
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String tag, bool? transportLayer)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _ProxyConfig() when $default != null:
-        return $default(_that.tag, _that.transportLayer);
-      case _:
-        return orElse();
-    }
-  }
-
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String tag, bool? transportLayer) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ProxyConfig():
-        return $default(_that.tag, _that.transportLayer);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
-
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
-
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String tag, bool? transportLayer)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _ProxyConfig() when $default != null:
-        return $default(_that.tag, _that.transportLayer);
-      case _:
-        return null;
-    }
-  }
-}
-
-/// @nodoc
-
-class _ProxyConfig extends ProxyConfig {
-  const _ProxyConfig({required this.tag, this.transportLayer}) : super._();
-
-  @override
-  final String tag;
-  @override
-  final bool? transportLayer;
-
-  /// Create a copy of ProxyConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ProxyConfigCopyWith<_ProxyConfig> get copyWith =>
-      __$ProxyConfigCopyWithImpl<_ProxyConfig>(this, _$identity);
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ProxyConfig &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.transportLayer, transportLayer) ||
-                other.transportLayer == transportLayer));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, tag, transportLayer);
-
-  @override
-  String toString() {
-    return 'ProxyConfig(tag: $tag, transportLayer: $transportLayer)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ProxyConfigCopyWith<$Res>
-    implements $ProxyConfigCopyWith<$Res> {
-  factory _$ProxyConfigCopyWith(
-          _ProxyConfig value, $Res Function(_ProxyConfig) _then) =
-      __$ProxyConfigCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String tag, bool? transportLayer});
-}
-
-/// @nodoc
-class __$ProxyConfigCopyWithImpl<$Res> implements _$ProxyConfigCopyWith<$Res> {
-  __$ProxyConfigCopyWithImpl(this._self, this._then);
-
-  final _ProxyConfig _self;
-  final $Res Function(_ProxyConfig) _then;
-
-  /// Create a copy of ProxyConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? tag = null,
-    Object? transportLayer = freezed,
-  }) {
-    return _then(_ProxyConfig(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      transportLayer: freezed == transportLayer
-          ? _self.transportLayer
-          : transportLayer // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
   }
 }
 
@@ -2150,81 +2055,106 @@ mixin _$XrayConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as XrayConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XrayConfig &&
-            const DeepCollectionEquality().equals(other.transport, transport) &&
-            const DeepCollectionEquality().equals(other.env, env) &&
-            (identical(other.log, log) || other.log == log) &&
-            (identical(other.routing, routing) || other.routing == routing) &&
-            (identical(other.dns, dns) || other.dns == dns) &&
-            const DeepCollectionEquality().equals(other.inbounds, inbounds) &&
-            const DeepCollectionEquality().equals(other.outbounds, outbounds) &&
-            (identical(other.policy, policy) || other.policy == policy) &&
-            (identical(other.api, api) || other.api == api) &&
-            (identical(other.metrics, metrics) || other.metrics == metrics) &&
-            (identical(other.stats, stats) || other.stats == stats) &&
-            (identical(other.reverse, reverse) || other.reverse == reverse) &&
-            (identical(other.fakeDns, fakeDns) || other.fakeDns == fakeDns) &&
-            (identical(other.observatory, observatory) ||
-                other.observatory == observatory) &&
-            (identical(other.burstObservatory, burstObservatory) ||
-                other.burstObservatory == burstObservatory) &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.geodata, geodata) || other.geodata == geodata));
+            const DeepCollectionEquality().equals(
+              other.transport,
+              _this.transport,
+            ) &&
+            const DeepCollectionEquality().equals(other.env, _this.env) &&
+            (identical(other.log, _this.log) || other.log == _this.log) &&
+            (identical(other.routing, _this.routing) ||
+                other.routing == _this.routing) &&
+            (identical(other.dns, _this.dns) || other.dns == _this.dns) &&
+            const DeepCollectionEquality().equals(
+              other.inbounds,
+              _this.inbounds,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.outbounds,
+              _this.outbounds,
+            ) &&
+            (identical(other.policy, _this.policy) ||
+                other.policy == _this.policy) &&
+            (identical(other.api, _this.api) || other.api == _this.api) &&
+            (identical(other.metrics, _this.metrics) ||
+                other.metrics == _this.metrics) &&
+            (identical(other.stats, _this.stats) ||
+                other.stats == _this.stats) &&
+            (identical(other.reverse, _this.reverse) ||
+                other.reverse == _this.reverse) &&
+            (identical(other.fakeDns, _this.fakeDns) ||
+                other.fakeDns == _this.fakeDns) &&
+            (identical(other.observatory, _this.observatory) ||
+                other.observatory == _this.observatory) &&
+            (identical(other.burstObservatory, _this.burstObservatory) ||
+                other.burstObservatory == _this.burstObservatory) &&
+            (identical(other.version, _this.version) ||
+                other.version == _this.version) &&
+            (identical(other.geodata, _this.geodata) ||
+                other.geodata == _this.geodata));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as XrayConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(transport),
-      const DeepCollectionEquality().hash(env),
-      log,
-      routing,
-      dns,
-      const DeepCollectionEquality().hash(inbounds),
-      const DeepCollectionEquality().hash(outbounds),
-      policy,
-      api,
-      metrics,
-      stats,
-      reverse,
-      fakeDns,
-      observatory,
-      burstObservatory,
-      version,
-      geodata);
+      const DeepCollectionEquality().hash(_this.transport),
+      const DeepCollectionEquality().hash(_this.env),
+      _this.log,
+      _this.routing,
+      _this.dns,
+      const DeepCollectionEquality().hash(_this.inbounds),
+      const DeepCollectionEquality().hash(_this.outbounds),
+      _this.policy,
+      _this.api,
+      _this.metrics,
+      _this.stats,
+      _this.reverse,
+      _this.fakeDns,
+      _this.observatory,
+      _this.burstObservatory,
+      _this.version,
+      _this.geodata,
+    );
+  }
 
   @override
   String toString() {
-    return 'XrayConfig(transport: $transport, env: $env, log: $log, routing: $routing, dns: $dns, inbounds: $inbounds, outbounds: $outbounds, policy: $policy, api: $api, metrics: $metrics, stats: $stats, reverse: $reverse, fakeDns: $fakeDns, observatory: $observatory, burstObservatory: $burstObservatory, version: $version, geodata: $geodata)';
+    final _this = this as XrayConfig;
+    return 'XrayConfig(transport: ${_this.transport}, env: ${_this.env}, log: ${_this.log}, routing: ${_this.routing}, dns: ${_this.dns}, inbounds: ${_this.inbounds}, outbounds: ${_this.outbounds}, policy: ${_this.policy}, api: ${_this.api}, metrics: ${_this.metrics}, stats: ${_this.stats}, reverse: ${_this.reverse}, fakeDns: ${_this.fakeDns}, observatory: ${_this.observatory}, burstObservatory: ${_this.burstObservatory}, version: ${_this.version}, geodata: ${_this.geodata})';
   }
 }
 
 /// @nodoc
 abstract mixin class $XrayConfigCopyWith<$Res> {
   factory $XrayConfigCopyWith(
-          XrayConfig value, $Res Function(XrayConfig) _then) =
-      _$XrayConfigCopyWithImpl;
+    XrayConfig value,
+    $Res Function(XrayConfig) _then,
+  ) = _$XrayConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {Map<String, dynamic>? transport,
-      Map<String, String>? env,
-      LogConfig? log,
-      RouterConfig? routing,
-      DNSConfig? dns,
-      List<InboundDetourConfig>? inbounds,
-      List<OutboundDetourConfig>? outbounds,
-      PolicyConfig? policy,
-      APIConfig? api,
-      MetricsConfig? metrics,
-      StatsConfig? stats,
-      ReverseConfig? reverse,
-      @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
-      ObservatoryConfig? observatory,
-      BurstObservatoryConfig? burstObservatory,
-      VersionConfig? version,
-      GeodataConfig? geodata});
+  $Res call({
+    Map<String, dynamic>? transport,
+    Map<String, String>? env,
+    LogConfig? log,
+    RouterConfig? routing,
+    DNSConfig? dns,
+    List<InboundDetourConfig>? inbounds,
+    List<OutboundDetourConfig>? outbounds,
+    PolicyConfig? policy,
+    APIConfig? api,
+    MetricsConfig? metrics,
+    StatsConfig? stats,
+    ReverseConfig? reverse,
+    @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
+    ObservatoryConfig? observatory,
+    BurstObservatoryConfig? burstObservatory,
+    VersionConfig? version,
+    GeodataConfig? geodata,
+  });
 
   $LogConfigCopyWith<$Res>? get log;
   $RouterConfigCopyWith<$Res>? get routing;
@@ -2270,76 +2200,78 @@ class _$XrayConfigCopyWithImpl<$Res> implements $XrayConfigCopyWith<$Res> {
     Object? version = freezed,
     Object? geodata = freezed,
   }) {
-    return _then(_self.copyWith(
-      transport: freezed == transport
-          ? _self.transport
-          : transport // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      env: freezed == env
-          ? _self.env
-          : env // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      log: freezed == log
-          ? _self.log
-          : log // ignore: cast_nullable_to_non_nullable
-              as LogConfig?,
-      routing: freezed == routing
-          ? _self.routing
-          : routing // ignore: cast_nullable_to_non_nullable
-              as RouterConfig?,
-      dns: freezed == dns
-          ? _self.dns
-          : dns // ignore: cast_nullable_to_non_nullable
-              as DNSConfig?,
-      inbounds: freezed == inbounds
-          ? _self.inbounds
-          : inbounds // ignore: cast_nullable_to_non_nullable
-              as List<InboundDetourConfig>?,
-      outbounds: freezed == outbounds
-          ? _self.outbounds
-          : outbounds // ignore: cast_nullable_to_non_nullable
-              as List<OutboundDetourConfig>?,
-      policy: freezed == policy
-          ? _self.policy
-          : policy // ignore: cast_nullable_to_non_nullable
-              as PolicyConfig?,
-      api: freezed == api
-          ? _self.api
-          : api // ignore: cast_nullable_to_non_nullable
-              as APIConfig?,
-      metrics: freezed == metrics
-          ? _self.metrics
-          : metrics // ignore: cast_nullable_to_non_nullable
-              as MetricsConfig?,
-      stats: freezed == stats
-          ? _self.stats
-          : stats // ignore: cast_nullable_to_non_nullable
-              as StatsConfig?,
-      reverse: freezed == reverse
-          ? _self.reverse
-          : reverse // ignore: cast_nullable_to_non_nullable
-              as ReverseConfig?,
-      fakeDns: freezed == fakeDns
-          ? _self.fakeDns
-          : fakeDns // ignore: cast_nullable_to_non_nullable
-              as FakeDNSConfig?,
-      observatory: freezed == observatory
-          ? _self.observatory
-          : observatory // ignore: cast_nullable_to_non_nullable
-              as ObservatoryConfig?,
-      burstObservatory: freezed == burstObservatory
-          ? _self.burstObservatory
-          : burstObservatory // ignore: cast_nullable_to_non_nullable
-              as BurstObservatoryConfig?,
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as VersionConfig?,
-      geodata: freezed == geodata
-          ? _self.geodata
-          : geodata // ignore: cast_nullable_to_non_nullable
-              as GeodataConfig?,
-    ));
+    return _then(
+      XrayConfig(
+        transport: freezed == transport
+            ? _self.transport
+            : transport // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        env: freezed == env
+            ? _self.env
+            : env // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        log: freezed == log
+            ? _self.log
+            : log // ignore: cast_nullable_to_non_nullable
+                  as LogConfig?,
+        routing: freezed == routing
+            ? _self.routing
+            : routing // ignore: cast_nullable_to_non_nullable
+                  as RouterConfig?,
+        dns: freezed == dns
+            ? _self.dns
+            : dns // ignore: cast_nullable_to_non_nullable
+                  as DNSConfig?,
+        inbounds: freezed == inbounds
+            ? _self.inbounds
+            : inbounds // ignore: cast_nullable_to_non_nullable
+                  as List<InboundDetourConfig>?,
+        outbounds: freezed == outbounds
+            ? _self.outbounds
+            : outbounds // ignore: cast_nullable_to_non_nullable
+                  as List<OutboundDetourConfig>?,
+        policy: freezed == policy
+            ? _self.policy
+            : policy // ignore: cast_nullable_to_non_nullable
+                  as PolicyConfig?,
+        api: freezed == api
+            ? _self.api
+            : api // ignore: cast_nullable_to_non_nullable
+                  as APIConfig?,
+        metrics: freezed == metrics
+            ? _self.metrics
+            : metrics // ignore: cast_nullable_to_non_nullable
+                  as MetricsConfig?,
+        stats: freezed == stats
+            ? _self.stats
+            : stats // ignore: cast_nullable_to_non_nullable
+                  as StatsConfig?,
+        reverse: freezed == reverse
+            ? _self.reverse
+            : reverse // ignore: cast_nullable_to_non_nullable
+                  as ReverseConfig?,
+        fakeDns: freezed == fakeDns
+            ? _self.fakeDns
+            : fakeDns // ignore: cast_nullable_to_non_nullable
+                  as FakeDNSConfig?,
+        observatory: freezed == observatory
+            ? _self.observatory
+            : observatory // ignore: cast_nullable_to_non_nullable
+                  as ObservatoryConfig?,
+        burstObservatory: freezed == burstObservatory
+            ? _self.burstObservatory
+            : burstObservatory // ignore: cast_nullable_to_non_nullable
+                  as BurstObservatoryConfig?,
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as VersionConfig?,
+        geodata: freezed == geodata
+            ? _self.geodata
+            : geodata // ignore: cast_nullable_to_non_nullable
+                  as GeodataConfig?,
+      ),
+    );
   }
 
   /// Create a copy of XrayConfig
@@ -2477,8 +2409,9 @@ class _$XrayConfigCopyWithImpl<$Res> implements $XrayConfigCopyWith<$Res> {
       return null;
     }
 
-    return $BurstObservatoryConfigCopyWith<$Res>(_self.burstObservatory!,
-        (value) {
+    return $BurstObservatoryConfigCopyWith<$Res>(_self.burstObservatory!, (
+      value,
+    ) {
       return _then(_self.copyWith(burstObservatory: value));
     });
   }
@@ -2606,47 +2539,49 @@ extension XrayConfigPatterns on XrayConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            Map<String, dynamic>? transport,
-            Map<String, String>? env,
-            LogConfig? log,
-            RouterConfig? routing,
-            DNSConfig? dns,
-            List<InboundDetourConfig>? inbounds,
-            List<OutboundDetourConfig>? outbounds,
-            PolicyConfig? policy,
-            APIConfig? api,
-            MetricsConfig? metrics,
-            StatsConfig? stats,
-            ReverseConfig? reverse,
-            @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
-            ObservatoryConfig? observatory,
-            BurstObservatoryConfig? burstObservatory,
-            VersionConfig? version,
-            GeodataConfig? geodata)?
-        $default, {
+      Map<String, dynamic>? transport,
+      Map<String, String>? env,
+      LogConfig? log,
+      RouterConfig? routing,
+      DNSConfig? dns,
+      List<InboundDetourConfig>? inbounds,
+      List<OutboundDetourConfig>? outbounds,
+      PolicyConfig? policy,
+      APIConfig? api,
+      MetricsConfig? metrics,
+      StatsConfig? stats,
+      ReverseConfig? reverse,
+      @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
+      ObservatoryConfig? observatory,
+      BurstObservatoryConfig? burstObservatory,
+      VersionConfig? version,
+      GeodataConfig? geodata,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _XrayConfig() when $default != null:
         return $default(
-            _that.transport,
-            _that.env,
-            _that.log,
-            _that.routing,
-            _that.dns,
-            _that.inbounds,
-            _that.outbounds,
-            _that.policy,
-            _that.api,
-            _that.metrics,
-            _that.stats,
-            _that.reverse,
-            _that.fakeDns,
-            _that.observatory,
-            _that.burstObservatory,
-            _that.version,
-            _that.geodata);
+          _that.transport,
+          _that.env,
+          _that.log,
+          _that.routing,
+          _that.dns,
+          _that.inbounds,
+          _that.outbounds,
+          _that.policy,
+          _that.api,
+          _that.metrics,
+          _that.stats,
+          _that.reverse,
+          _that.fakeDns,
+          _that.observatory,
+          _that.burstObservatory,
+          _that.version,
+          _that.geodata,
+        );
       case _:
         return orElse();
     }
@@ -2668,46 +2603,48 @@ extension XrayConfigPatterns on XrayConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            Map<String, dynamic>? transport,
-            Map<String, String>? env,
-            LogConfig? log,
-            RouterConfig? routing,
-            DNSConfig? dns,
-            List<InboundDetourConfig>? inbounds,
-            List<OutboundDetourConfig>? outbounds,
-            PolicyConfig? policy,
-            APIConfig? api,
-            MetricsConfig? metrics,
-            StatsConfig? stats,
-            ReverseConfig? reverse,
-            @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
-            ObservatoryConfig? observatory,
-            BurstObservatoryConfig? burstObservatory,
-            VersionConfig? version,
-            GeodataConfig? geodata)
-        $default,
+      Map<String, dynamic>? transport,
+      Map<String, String>? env,
+      LogConfig? log,
+      RouterConfig? routing,
+      DNSConfig? dns,
+      List<InboundDetourConfig>? inbounds,
+      List<OutboundDetourConfig>? outbounds,
+      PolicyConfig? policy,
+      APIConfig? api,
+      MetricsConfig? metrics,
+      StatsConfig? stats,
+      ReverseConfig? reverse,
+      @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
+      ObservatoryConfig? observatory,
+      BurstObservatoryConfig? burstObservatory,
+      VersionConfig? version,
+      GeodataConfig? geodata,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XrayConfig():
         return $default(
-            _that.transport,
-            _that.env,
-            _that.log,
-            _that.routing,
-            _that.dns,
-            _that.inbounds,
-            _that.outbounds,
-            _that.policy,
-            _that.api,
-            _that.metrics,
-            _that.stats,
-            _that.reverse,
-            _that.fakeDns,
-            _that.observatory,
-            _that.burstObservatory,
-            _that.version,
-            _that.geodata);
+          _that.transport,
+          _that.env,
+          _that.log,
+          _that.routing,
+          _that.dns,
+          _that.inbounds,
+          _that.outbounds,
+          _that.policy,
+          _that.api,
+          _that.metrics,
+          _that.stats,
+          _that.reverse,
+          _that.fakeDns,
+          _that.observatory,
+          _that.burstObservatory,
+          _that.version,
+          _that.geodata,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -2728,46 +2665,48 @@ extension XrayConfigPatterns on XrayConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            Map<String, dynamic>? transport,
-            Map<String, String>? env,
-            LogConfig? log,
-            RouterConfig? routing,
-            DNSConfig? dns,
-            List<InboundDetourConfig>? inbounds,
-            List<OutboundDetourConfig>? outbounds,
-            PolicyConfig? policy,
-            APIConfig? api,
-            MetricsConfig? metrics,
-            StatsConfig? stats,
-            ReverseConfig? reverse,
-            @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
-            ObservatoryConfig? observatory,
-            BurstObservatoryConfig? burstObservatory,
-            VersionConfig? version,
-            GeodataConfig? geodata)?
-        $default,
+      Map<String, dynamic>? transport,
+      Map<String, String>? env,
+      LogConfig? log,
+      RouterConfig? routing,
+      DNSConfig? dns,
+      List<InboundDetourConfig>? inbounds,
+      List<OutboundDetourConfig>? outbounds,
+      PolicyConfig? policy,
+      APIConfig? api,
+      MetricsConfig? metrics,
+      StatsConfig? stats,
+      ReverseConfig? reverse,
+      @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
+      ObservatoryConfig? observatory,
+      BurstObservatoryConfig? burstObservatory,
+      VersionConfig? version,
+      GeodataConfig? geodata,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XrayConfig() when $default != null:
         return $default(
-            _that.transport,
-            _that.env,
-            _that.log,
-            _that.routing,
-            _that.dns,
-            _that.inbounds,
-            _that.outbounds,
-            _that.policy,
-            _that.api,
-            _that.metrics,
-            _that.stats,
-            _that.reverse,
-            _that.fakeDns,
-            _that.observatory,
-            _that.burstObservatory,
-            _that.version,
-            _that.geodata);
+          _that.transport,
+          _that.env,
+          _that.log,
+          _that.routing,
+          _that.dns,
+          _that.inbounds,
+          _that.outbounds,
+          _that.policy,
+          _that.api,
+          _that.metrics,
+          _that.stats,
+          _that.reverse,
+          _that.fakeDns,
+          _that.observatory,
+          _that.burstObservatory,
+          _that.version,
+          _that.geodata,
+        );
       case _:
         return null;
     }
@@ -2777,29 +2716,29 @@ extension XrayConfigPatterns on XrayConfig {
 /// @nodoc
 
 class _XrayConfig extends XrayConfig {
-  const _XrayConfig(
-      {final Map<String, dynamic>? transport,
-      final Map<String, String>? env,
-      this.log,
-      this.routing,
-      this.dns,
-      final List<InboundDetourConfig>? inbounds,
-      final List<OutboundDetourConfig>? outbounds,
-      this.policy,
-      this.api,
-      this.metrics,
-      this.stats,
-      this.reverse,
-      @JsonKey(name: 'fakeDns') this.fakeDns,
-      this.observatory,
-      this.burstObservatory,
-      this.version,
-      this.geodata})
-      : _transport = transport,
-        _env = env,
-        _inbounds = inbounds,
-        _outbounds = outbounds,
-        super._();
+  const _XrayConfig({
+    Map<String, dynamic>? transport,
+    Map<String, String>? env,
+    this.log,
+    this.routing,
+    this.dns,
+    List<InboundDetourConfig>? inbounds,
+    List<OutboundDetourConfig>? outbounds,
+    this.policy,
+    this.api,
+    this.metrics,
+    this.stats,
+    this.reverse,
+    @JsonKey(name: 'fakeDns') this.fakeDns,
+    this.observatory,
+    this.burstObservatory,
+    this.version,
+    this.geodata,
+  }) : _transport = transport,
+       _env = env,
+       _inbounds = inbounds,
+       _outbounds = outbounds,
+       super._();
 
   final Map<String, dynamic>? _transport;
   @override
@@ -2882,15 +2821,19 @@ class _XrayConfig extends XrayConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _XrayConfig &&
-            const DeepCollectionEquality()
-                .equals(other._transport, _transport) &&
-            const DeepCollectionEquality().equals(other._env, _env) &&
+            const DeepCollectionEquality().equals(
+              other.transport,
+              _transport,
+            ) &&
+            const DeepCollectionEquality().equals(other.env, _env) &&
             (identical(other.log, log) || other.log == log) &&
             (identical(other.routing, routing) || other.routing == routing) &&
             (identical(other.dns, dns) || other.dns == dns) &&
-            const DeepCollectionEquality().equals(other._inbounds, _inbounds) &&
-            const DeepCollectionEquality()
-                .equals(other._outbounds, _outbounds) &&
+            const DeepCollectionEquality().equals(other.inbounds, _inbounds) &&
+            const DeepCollectionEquality().equals(
+              other.outbounds,
+              _outbounds,
+            ) &&
             (identical(other.policy, policy) || other.policy == policy) &&
             (identical(other.api, api) || other.api == api) &&
             (identical(other.metrics, metrics) || other.metrics == metrics) &&
@@ -2906,7 +2849,8 @@ class _XrayConfig extends XrayConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_transport),
       const DeepCollectionEquality().hash(_env),
@@ -2924,7 +2868,9 @@ class _XrayConfig extends XrayConfig {
       observatory,
       burstObservatory,
       version,
-      geodata);
+      geodata,
+    );
+  }
 
   @override
   String toString() {
@@ -2936,28 +2882,30 @@ class _XrayConfig extends XrayConfig {
 abstract mixin class _$XrayConfigCopyWith<$Res>
     implements $XrayConfigCopyWith<$Res> {
   factory _$XrayConfigCopyWith(
-          _XrayConfig value, $Res Function(_XrayConfig) _then) =
-      __$XrayConfigCopyWithImpl;
+    _XrayConfig value,
+    $Res Function(_XrayConfig) _then,
+  ) = __$XrayConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {Map<String, dynamic>? transport,
-      Map<String, String>? env,
-      LogConfig? log,
-      RouterConfig? routing,
-      DNSConfig? dns,
-      List<InboundDetourConfig>? inbounds,
-      List<OutboundDetourConfig>? outbounds,
-      PolicyConfig? policy,
-      APIConfig? api,
-      MetricsConfig? metrics,
-      StatsConfig? stats,
-      ReverseConfig? reverse,
-      @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
-      ObservatoryConfig? observatory,
-      BurstObservatoryConfig? burstObservatory,
-      VersionConfig? version,
-      GeodataConfig? geodata});
+  $Res call({
+    Map<String, dynamic>? transport,
+    Map<String, String>? env,
+    LogConfig? log,
+    RouterConfig? routing,
+    DNSConfig? dns,
+    List<InboundDetourConfig>? inbounds,
+    List<OutboundDetourConfig>? outbounds,
+    PolicyConfig? policy,
+    APIConfig? api,
+    MetricsConfig? metrics,
+    StatsConfig? stats,
+    ReverseConfig? reverse,
+    @JsonKey(name: 'fakeDns') FakeDNSConfig? fakeDns,
+    ObservatoryConfig? observatory,
+    BurstObservatoryConfig? burstObservatory,
+    VersionConfig? version,
+    GeodataConfig? geodata,
+  });
 
   @override
   $LogConfigCopyWith<$Res>? get log;
@@ -3015,76 +2963,78 @@ class __$XrayConfigCopyWithImpl<$Res> implements _$XrayConfigCopyWith<$Res> {
     Object? version = freezed,
     Object? geodata = freezed,
   }) {
-    return _then(_XrayConfig(
-      transport: freezed == transport
-          ? _self._transport
-          : transport // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      env: freezed == env
-          ? _self._env
-          : env // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      log: freezed == log
-          ? _self.log
-          : log // ignore: cast_nullable_to_non_nullable
-              as LogConfig?,
-      routing: freezed == routing
-          ? _self.routing
-          : routing // ignore: cast_nullable_to_non_nullable
-              as RouterConfig?,
-      dns: freezed == dns
-          ? _self.dns
-          : dns // ignore: cast_nullable_to_non_nullable
-              as DNSConfig?,
-      inbounds: freezed == inbounds
-          ? _self._inbounds
-          : inbounds // ignore: cast_nullable_to_non_nullable
-              as List<InboundDetourConfig>?,
-      outbounds: freezed == outbounds
-          ? _self._outbounds
-          : outbounds // ignore: cast_nullable_to_non_nullable
-              as List<OutboundDetourConfig>?,
-      policy: freezed == policy
-          ? _self.policy
-          : policy // ignore: cast_nullable_to_non_nullable
-              as PolicyConfig?,
-      api: freezed == api
-          ? _self.api
-          : api // ignore: cast_nullable_to_non_nullable
-              as APIConfig?,
-      metrics: freezed == metrics
-          ? _self.metrics
-          : metrics // ignore: cast_nullable_to_non_nullable
-              as MetricsConfig?,
-      stats: freezed == stats
-          ? _self.stats
-          : stats // ignore: cast_nullable_to_non_nullable
-              as StatsConfig?,
-      reverse: freezed == reverse
-          ? _self.reverse
-          : reverse // ignore: cast_nullable_to_non_nullable
-              as ReverseConfig?,
-      fakeDns: freezed == fakeDns
-          ? _self.fakeDns
-          : fakeDns // ignore: cast_nullable_to_non_nullable
-              as FakeDNSConfig?,
-      observatory: freezed == observatory
-          ? _self.observatory
-          : observatory // ignore: cast_nullable_to_non_nullable
-              as ObservatoryConfig?,
-      burstObservatory: freezed == burstObservatory
-          ? _self.burstObservatory
-          : burstObservatory // ignore: cast_nullable_to_non_nullable
-              as BurstObservatoryConfig?,
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as VersionConfig?,
-      geodata: freezed == geodata
-          ? _self.geodata
-          : geodata // ignore: cast_nullable_to_non_nullable
-              as GeodataConfig?,
-    ));
+    return _then(
+      _XrayConfig(
+        transport: freezed == transport
+            ? _self._transport
+            : transport // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        env: freezed == env
+            ? _self._env
+            : env // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        log: freezed == log
+            ? _self.log
+            : log // ignore: cast_nullable_to_non_nullable
+                  as LogConfig?,
+        routing: freezed == routing
+            ? _self.routing
+            : routing // ignore: cast_nullable_to_non_nullable
+                  as RouterConfig?,
+        dns: freezed == dns
+            ? _self.dns
+            : dns // ignore: cast_nullable_to_non_nullable
+                  as DNSConfig?,
+        inbounds: freezed == inbounds
+            ? _self._inbounds
+            : inbounds // ignore: cast_nullable_to_non_nullable
+                  as List<InboundDetourConfig>?,
+        outbounds: freezed == outbounds
+            ? _self._outbounds
+            : outbounds // ignore: cast_nullable_to_non_nullable
+                  as List<OutboundDetourConfig>?,
+        policy: freezed == policy
+            ? _self.policy
+            : policy // ignore: cast_nullable_to_non_nullable
+                  as PolicyConfig?,
+        api: freezed == api
+            ? _self.api
+            : api // ignore: cast_nullable_to_non_nullable
+                  as APIConfig?,
+        metrics: freezed == metrics
+            ? _self.metrics
+            : metrics // ignore: cast_nullable_to_non_nullable
+                  as MetricsConfig?,
+        stats: freezed == stats
+            ? _self.stats
+            : stats // ignore: cast_nullable_to_non_nullable
+                  as StatsConfig?,
+        reverse: freezed == reverse
+            ? _self.reverse
+            : reverse // ignore: cast_nullable_to_non_nullable
+                  as ReverseConfig?,
+        fakeDns: freezed == fakeDns
+            ? _self.fakeDns
+            : fakeDns // ignore: cast_nullable_to_non_nullable
+                  as FakeDNSConfig?,
+        observatory: freezed == observatory
+            ? _self.observatory
+            : observatory // ignore: cast_nullable_to_non_nullable
+                  as ObservatoryConfig?,
+        burstObservatory: freezed == burstObservatory
+            ? _self.burstObservatory
+            : burstObservatory // ignore: cast_nullable_to_non_nullable
+                  as BurstObservatoryConfig?,
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as VersionConfig?,
+        geodata: freezed == geodata
+            ? _self.geodata
+            : geodata // ignore: cast_nullable_to_non_nullable
+                  as GeodataConfig?,
+      ),
+    );
   }
 
   /// Create a copy of XrayConfig
@@ -3222,8 +3172,9 @@ class __$XrayConfigCopyWithImpl<$Res> implements _$XrayConfigCopyWith<$Res> {
       return null;
     }
 
-    return $BurstObservatoryConfigCopyWith<$Res>(_self.burstObservatory!,
-        (value) {
+    return $BurstObservatoryConfigCopyWith<$Res>(_self.burstObservatory!, (
+      value,
+    ) {
       return _then(_self.copyWith(burstObservatory: value));
     });
   }
@@ -3256,5 +3207,3 @@ class __$XrayConfigCopyWithImpl<$Res> implements _$XrayConfigCopyWith<$Res> {
     });
   }
 }
-
-// dart format on

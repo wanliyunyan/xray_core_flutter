@@ -150,7 +150,9 @@ void main() {
             id: '00000000-0000-0000-0000-000000000000',
             encryption: 'none',
           ),
-          proxySettings: const ProxyConfig(tag: 'missing-proxy'),
+          streamSettings: const StreamConfig(
+            sockopt: SocketConfig(dialerProxy: 'missing-proxy'),
+          ),
         ),
         OutboundDetourConfig.fromProtocol(
           protocol: XrayOutboundProtocol.vmess,
@@ -174,7 +176,7 @@ void main() {
     expect(
       issueText,
       contains(
-        'outbounds[0].proxySettings.tag: '
+        'outbounds[0].streamSettings.sockopt.dialerProxy: '
         'unknown outbound tag "missing-proxy"',
       ),
     );
@@ -678,7 +680,7 @@ void main() {
     });
   });
 
-  test('imports outbound proxy settings with required tag', () {
+  test('preserves removed outbound proxy settings for migration diagnostics', () {
     final config = XrayConfig.fromJson({
       'outbounds': [
         {
@@ -690,7 +692,7 @@ void main() {
       ],
     });
 
-    expect(config.outbounds?.single.proxySettings, isA<ProxyConfig>());
+    expect(config.outbounds?.single.proxySettings, isA<Map<String, dynamic>>());
     expect(config.toJson()['outbounds'], [
       {
         'protocol': 'freedom',
@@ -1677,9 +1679,6 @@ void main() {
       'hysteriaSettings': {
         'version': 2,
         'auth': 'token',
-        'up': '20mbps',
-        'down': '100mbps',
-        'udphop': {'ports': '20000-20010', 'interval': '5-10'},
       },
       'finalmask': {
         'tcp': [
@@ -1807,9 +1806,6 @@ void main() {
       'hysteriaSettings': {
         'version': 2,
         'auth': 'token',
-        'up': '20mbps',
-        'down': '100mbps',
-        'udphop': {'ports': '20000-20010', 'interval': '5-10'},
       },
     });
   });
@@ -1854,7 +1850,6 @@ void main() {
           'congestion': 'brutal',
           'brutalUp': '100mbps',
           'brutalDown': '500mbps',
-          'udpHop': {'ports': '20000-20010', 'interval': '5-10'},
           'maxIdleTimeout': 30,
         },
       },
@@ -1863,7 +1858,6 @@ void main() {
     expect(stream.tlsSettings?.certs?.single, isA<TLSCertConfig>());
     expect(stream.hysteriaSettings?.masquerade, isA<Masquerade>());
     expect(stream.finalmask?.udp?.single.settings, isA<Xdns>());
-    expect(stream.finalmask?.quicParams?.udpHop, isA<UdpHop>());
     expect(stream.toJson(), {
       'network': 'hysteria',
       'security': 'tls',
@@ -1881,7 +1875,6 @@ void main() {
           'congestion': 'brutal',
           'brutalUp': '100mbps',
           'brutalDown': '500mbps',
-          'udpHop': {'ports': '20000-20010', 'interval': '5-10'},
           'maxIdleTimeout': 30,
         },
       },

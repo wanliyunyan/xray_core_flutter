@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'common.dart';
@@ -9,7 +9,7 @@ part of 'common.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
+// GENERATED CODE - DO NOT MODIFY BY HAND
 T _$identity<T>(T value) => value;
 
 /// @nodoc
@@ -27,49 +27,66 @@ mixin _$SniffingConfig {
   @pragma('vm:prefer-inline')
   $SniffingConfigCopyWith<SniffingConfig> get copyWith =>
       _$SniffingConfigCopyWithImpl<SniffingConfig>(
-          this as SniffingConfig, _$identity);
+        this as SniffingConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SniffingConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SniffingConfig &&
-            (identical(other.enabled, enabled) || other.enabled == enabled) &&
-            (identical(other.destOverride, destOverride) ||
-                other.destOverride == destOverride) &&
-            (identical(other.domainsExcluded, domainsExcluded) ||
-                other.domainsExcluded == domainsExcluded) &&
-            (identical(other.ipsExcluded, ipsExcluded) ||
-                other.ipsExcluded == ipsExcluded) &&
-            (identical(other.metadataOnly, metadataOnly) ||
-                other.metadataOnly == metadataOnly) &&
-            (identical(other.routeOnly, routeOnly) ||
-                other.routeOnly == routeOnly));
+            (identical(other.enabled, _this.enabled) ||
+                other.enabled == _this.enabled) &&
+            (identical(other.destOverride, _this.destOverride) ||
+                other.destOverride == _this.destOverride) &&
+            (identical(other.domainsExcluded, _this.domainsExcluded) ||
+                other.domainsExcluded == _this.domainsExcluded) &&
+            (identical(other.ipsExcluded, _this.ipsExcluded) ||
+                other.ipsExcluded == _this.ipsExcluded) &&
+            (identical(other.metadataOnly, _this.metadataOnly) ||
+                other.metadataOnly == _this.metadataOnly) &&
+            (identical(other.routeOnly, _this.routeOnly) ||
+                other.routeOnly == _this.routeOnly));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, enabled, destOverride,
-      domainsExcluded, ipsExcluded, metadataOnly, routeOnly);
+  int get hashCode {
+    final _this = this as SniffingConfig;
+    return Object.hash(
+      runtimeType,
+      _this.enabled,
+      _this.destOverride,
+      _this.domainsExcluded,
+      _this.ipsExcluded,
+      _this.metadataOnly,
+      _this.routeOnly,
+    );
+  }
 
   @override
   String toString() {
-    return 'SniffingConfig(enabled: $enabled, destOverride: $destOverride, domainsExcluded: $domainsExcluded, ipsExcluded: $ipsExcluded, metadataOnly: $metadataOnly, routeOnly: $routeOnly)';
+    final _this = this as SniffingConfig;
+    return 'SniffingConfig(enabled: ${_this.enabled}, destOverride: ${_this.destOverride}, domainsExcluded: ${_this.domainsExcluded}, ipsExcluded: ${_this.ipsExcluded}, metadataOnly: ${_this.metadataOnly}, routeOnly: ${_this.routeOnly})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SniffingConfigCopyWith<$Res> {
   factory $SniffingConfigCopyWith(
-          SniffingConfig value, $Res Function(SniffingConfig) _then) =
-      _$SniffingConfigCopyWithImpl;
+    SniffingConfig value,
+    $Res Function(SniffingConfig) _then,
+  ) = _$SniffingConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {bool? enabled,
-      XrayStringList? destOverride,
-      XrayStringList? domainsExcluded,
-      XrayStringList? ipsExcluded,
-      bool? metadataOnly,
-      bool? routeOnly});
+  $Res call({
+    bool? enabled,
+    XrayStringList? destOverride,
+    XrayStringList? domainsExcluded,
+    XrayStringList? ipsExcluded,
+    bool? metadataOnly,
+    bool? routeOnly,
+  });
 }
 
 /// @nodoc
@@ -92,32 +109,34 @@ class _$SniffingConfigCopyWithImpl<$Res>
     Object? metadataOnly = freezed,
     Object? routeOnly = freezed,
   }) {
-    return _then(_self.copyWith(
-      enabled: freezed == enabled
-          ? _self.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      destOverride: freezed == destOverride
-          ? _self.destOverride
-          : destOverride // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      domainsExcluded: freezed == domainsExcluded
-          ? _self.domainsExcluded
-          : domainsExcluded // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      ipsExcluded: freezed == ipsExcluded
-          ? _self.ipsExcluded
-          : ipsExcluded // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      metadataOnly: freezed == metadataOnly
-          ? _self.metadataOnly
-          : metadataOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      routeOnly: freezed == routeOnly
-          ? _self.routeOnly
-          : routeOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      SniffingConfig(
+        enabled: freezed == enabled
+            ? _self.enabled
+            : enabled // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        destOverride: freezed == destOverride
+            ? _self.destOverride
+            : destOverride // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        domainsExcluded: freezed == domainsExcluded
+            ? _self.domainsExcluded
+            : domainsExcluded // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        ipsExcluded: freezed == ipsExcluded
+            ? _self.ipsExcluded
+            : ipsExcluded // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        metadataOnly: freezed == metadataOnly
+            ? _self.metadataOnly
+            : metadataOnly // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        routeOnly: freezed == routeOnly
+            ? _self.routeOnly
+            : routeOnly // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -215,25 +234,27 @@ extension SniffingConfigPatterns on SniffingConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            bool? enabled,
-            XrayStringList? destOverride,
-            XrayStringList? domainsExcluded,
-            XrayStringList? ipsExcluded,
-            bool? metadataOnly,
-            bool? routeOnly)?
-        $default, {
+      bool? enabled,
+      XrayStringList? destOverride,
+      XrayStringList? domainsExcluded,
+      XrayStringList? ipsExcluded,
+      bool? metadataOnly,
+      bool? routeOnly,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _SniffingConfig() when $default != null:
         return $default(
-            _that.enabled,
-            _that.destOverride,
-            _that.domainsExcluded,
-            _that.ipsExcluded,
-            _that.metadataOnly,
-            _that.routeOnly);
+          _that.enabled,
+          _that.destOverride,
+          _that.domainsExcluded,
+          _that.ipsExcluded,
+          _that.metadataOnly,
+          _that.routeOnly,
+        );
       case _:
         return orElse();
     }
@@ -255,24 +276,26 @@ extension SniffingConfigPatterns on SniffingConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            bool? enabled,
-            XrayStringList? destOverride,
-            XrayStringList? domainsExcluded,
-            XrayStringList? ipsExcluded,
-            bool? metadataOnly,
-            bool? routeOnly)
-        $default,
+      bool? enabled,
+      XrayStringList? destOverride,
+      XrayStringList? domainsExcluded,
+      XrayStringList? ipsExcluded,
+      bool? metadataOnly,
+      bool? routeOnly,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SniffingConfig():
         return $default(
-            _that.enabled,
-            _that.destOverride,
-            _that.domainsExcluded,
-            _that.ipsExcluded,
-            _that.metadataOnly,
-            _that.routeOnly);
+          _that.enabled,
+          _that.destOverride,
+          _that.domainsExcluded,
+          _that.ipsExcluded,
+          _that.metadataOnly,
+          _that.routeOnly,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -293,24 +316,26 @@ extension SniffingConfigPatterns on SniffingConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            bool? enabled,
-            XrayStringList? destOverride,
-            XrayStringList? domainsExcluded,
-            XrayStringList? ipsExcluded,
-            bool? metadataOnly,
-            bool? routeOnly)?
-        $default,
+      bool? enabled,
+      XrayStringList? destOverride,
+      XrayStringList? domainsExcluded,
+      XrayStringList? ipsExcluded,
+      bool? metadataOnly,
+      bool? routeOnly,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SniffingConfig() when $default != null:
         return $default(
-            _that.enabled,
-            _that.destOverride,
-            _that.domainsExcluded,
-            _that.ipsExcluded,
-            _that.metadataOnly,
-            _that.routeOnly);
+          _that.enabled,
+          _that.destOverride,
+          _that.domainsExcluded,
+          _that.ipsExcluded,
+          _that.metadataOnly,
+          _that.routeOnly,
+        );
       case _:
         return null;
     }
@@ -320,14 +345,14 @@ extension SniffingConfigPatterns on SniffingConfig {
 /// @nodoc
 
 class _SniffingConfig extends SniffingConfig {
-  const _SniffingConfig(
-      {this.enabled,
-      this.destOverride,
-      this.domainsExcluded,
-      this.ipsExcluded,
-      this.metadataOnly,
-      this.routeOnly})
-      : super._();
+  const _SniffingConfig({
+    this.enabled,
+    this.destOverride,
+    this.domainsExcluded,
+    this.ipsExcluded,
+    this.metadataOnly,
+    this.routeOnly,
+  }) : super._();
 
   @override
   final bool? enabled;
@@ -369,8 +394,17 @@ class _SniffingConfig extends SniffingConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, enabled, destOverride,
-      domainsExcluded, ipsExcluded, metadataOnly, routeOnly);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      enabled,
+      destOverride,
+      domainsExcluded,
+      ipsExcluded,
+      metadataOnly,
+      routeOnly,
+    );
+  }
 
   @override
   String toString() {
@@ -382,17 +416,19 @@ class _SniffingConfig extends SniffingConfig {
 abstract mixin class _$SniffingConfigCopyWith<$Res>
     implements $SniffingConfigCopyWith<$Res> {
   factory _$SniffingConfigCopyWith(
-          _SniffingConfig value, $Res Function(_SniffingConfig) _then) =
-      __$SniffingConfigCopyWithImpl;
+    _SniffingConfig value,
+    $Res Function(_SniffingConfig) _then,
+  ) = __$SniffingConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {bool? enabled,
-      XrayStringList? destOverride,
-      XrayStringList? domainsExcluded,
-      XrayStringList? ipsExcluded,
-      bool? metadataOnly,
-      bool? routeOnly});
+  $Res call({
+    bool? enabled,
+    XrayStringList? destOverride,
+    XrayStringList? domainsExcluded,
+    XrayStringList? ipsExcluded,
+    bool? metadataOnly,
+    bool? routeOnly,
+  });
 }
 
 /// @nodoc
@@ -415,32 +451,34 @@ class __$SniffingConfigCopyWithImpl<$Res>
     Object? metadataOnly = freezed,
     Object? routeOnly = freezed,
   }) {
-    return _then(_SniffingConfig(
-      enabled: freezed == enabled
-          ? _self.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      destOverride: freezed == destOverride
-          ? _self.destOverride
-          : destOverride // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      domainsExcluded: freezed == domainsExcluded
-          ? _self.domainsExcluded
-          : domainsExcluded // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      ipsExcluded: freezed == ipsExcluded
-          ? _self.ipsExcluded
-          : ipsExcluded // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      metadataOnly: freezed == metadataOnly
-          ? _self.metadataOnly
-          : metadataOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      routeOnly: freezed == routeOnly
-          ? _self.routeOnly
-          : routeOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _SniffingConfig(
+        enabled: freezed == enabled
+            ? _self.enabled
+            : enabled // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        destOverride: freezed == destOverride
+            ? _self.destOverride
+            : destOverride // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        domainsExcluded: freezed == domainsExcluded
+            ? _self.domainsExcluded
+            : domainsExcluded // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        ipsExcluded: freezed == ipsExcluded
+            ? _self.ipsExcluded
+            : ipsExcluded // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        metadataOnly: freezed == metadataOnly
+            ? _self.metadataOnly
+            : metadataOnly // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        routeOnly: freezed == routeOnly
+            ? _self.routeOnly
+            : routeOnly // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -455,31 +493,40 @@ mixin _$XrayInt32Range {
   @pragma('vm:prefer-inline')
   $XrayInt32RangeCopyWith<XrayInt32Range> get copyWith =>
       _$XrayInt32RangeCopyWithImpl<XrayInt32Range>(
-          this as XrayInt32Range, _$identity);
+        this as XrayInt32Range,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as XrayInt32Range;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XrayInt32Range &&
-            (identical(other.left, left) || other.left == left) &&
-            (identical(other.right, right) || other.right == right));
+            (identical(other.left, _this.left) || other.left == _this.left) &&
+            (identical(other.right, _this.right) ||
+                other.right == _this.right));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, left, right);
+  int get hashCode {
+    final _this = this as XrayInt32Range;
+    return Object.hash(runtimeType, _this.left, _this.right);
+  }
 
   @override
   String toString() {
-    return 'XrayInt32Range(left: $left, right: $right)';
+    final _this = this as XrayInt32Range;
+    return 'XrayInt32Range(left: ${_this.left}, right: ${_this.right})';
   }
 }
 
 /// @nodoc
 abstract mixin class $XrayInt32RangeCopyWith<$Res> {
   factory $XrayInt32RangeCopyWith(
-          XrayInt32Range value, $Res Function(XrayInt32Range) _then) =
-      _$XrayInt32RangeCopyWithImpl;
+    XrayInt32Range value,
+    $Res Function(XrayInt32Range) _then,
+  ) = _$XrayInt32RangeCopyWithImpl;
   @useResult
   $Res call({int left, int right});
 }
@@ -496,20 +543,19 @@ class _$XrayInt32RangeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? left = null,
-    Object? right = null,
-  }) {
-    return _then(_self.copyWith(
-      left: null == left
-          ? _self.left
-          : left // ignore: cast_nullable_to_non_nullable
-              as int,
-      right: null == right
-          ? _self.right
-          : right // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? left = null, Object? right = null}) {
+    return _then(
+      XrayInt32Range(
+        left: null == left
+            ? _self.left
+            : left // ignore: cast_nullable_to_non_nullable
+                  as int,
+        right: null == right
+            ? _self.right
+            : right // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
@@ -698,7 +744,9 @@ class _XrayInt32Range extends XrayInt32Range {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, left, right);
+  int get hashCode {
+    return Object.hash(runtimeType, left, right);
+  }
 
   @override
   String toString() {
@@ -710,8 +758,9 @@ class _XrayInt32Range extends XrayInt32Range {
 abstract mixin class _$XrayInt32RangeCopyWith<$Res>
     implements $XrayInt32RangeCopyWith<$Res> {
   factory _$XrayInt32RangeCopyWith(
-          _XrayInt32Range value, $Res Function(_XrayInt32Range) _then) =
-      __$XrayInt32RangeCopyWithImpl;
+    _XrayInt32Range value,
+    $Res Function(_XrayInt32Range) _then,
+  ) = __$XrayInt32RangeCopyWithImpl;
   @override
   @useResult
   $Res call({int left, int right});
@@ -729,20 +778,19 @@ class __$XrayInt32RangeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? left = null,
-    Object? right = null,
-  }) {
-    return _then(_XrayInt32Range(
-      left: null == left
-          ? _self.left
-          : left // ignore: cast_nullable_to_non_nullable
-              as int,
-      right: null == right
-          ? _self.right
-          : right // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? left = null, Object? right = null}) {
+    return _then(
+      _XrayInt32Range(
+        left: null == left
+            ? _self.left
+            : left // ignore: cast_nullable_to_non_nullable
+                  as int,
+        right: null == right
+            ? _self.right
+            : right // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
@@ -758,32 +806,40 @@ mixin _$XrayPortRange {
   @pragma('vm:prefer-inline')
   $XrayPortRangeCopyWith<XrayPortRange> get copyWith =>
       _$XrayPortRangeCopyWithImpl<XrayPortRange>(
-          this as XrayPortRange, _$identity);
+        this as XrayPortRange,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as XrayPortRange;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XrayPortRange &&
-            (identical(other.from, from) || other.from == from) &&
-            (identical(other.to, to) || other.to == to) &&
-            (identical(other.raw, raw) || other.raw == raw));
+            (identical(other.from, _this.from) || other.from == _this.from) &&
+            (identical(other.to, _this.to) || other.to == _this.to) &&
+            (identical(other.raw, _this.raw) || other.raw == _this.raw));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, from, to, raw);
+  int get hashCode {
+    final _this = this as XrayPortRange;
+    return Object.hash(runtimeType, _this.from, _this.to, _this.raw);
+  }
 
   @override
   String toString() {
-    return 'XrayPortRange(from: $from, to: $to, raw: $raw)';
+    final _this = this as XrayPortRange;
+    return 'XrayPortRange(from: ${_this.from}, to: ${_this.to}, raw: ${_this.raw})';
   }
 }
 
 /// @nodoc
 abstract mixin class $XrayPortRangeCopyWith<$Res> {
   factory $XrayPortRangeCopyWith(
-          XrayPortRange value, $Res Function(XrayPortRange) _then) =
-      _$XrayPortRangeCopyWithImpl;
+    XrayPortRange value,
+    $Res Function(XrayPortRange) _then,
+  ) = _$XrayPortRangeCopyWithImpl;
   @useResult
   $Res call({int from, int to, String? raw});
 }
@@ -800,25 +856,23 @@ class _$XrayPortRangeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? from = null,
-    Object? to = null,
-    Object? raw = freezed,
-  }) {
-    return _then(_self.copyWith(
-      from: null == from
-          ? _self.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int,
-      to: null == to
-          ? _self.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int,
-      raw: freezed == raw
-          ? _self.raw
-          : raw // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? from = null, Object? to = null, Object? raw = freezed}) {
+    return _then(
+      XrayPortRange(
+        from: null == from
+            ? _self.from
+            : from // ignore: cast_nullable_to_non_nullable
+                  as int,
+        to: null == to
+            ? _self.to
+            : to // ignore: cast_nullable_to_non_nullable
+                  as int,
+        raw: freezed == raw
+            ? _self.raw
+            : raw // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -983,7 +1037,7 @@ extension XrayPortRangePatterns on XrayPortRange {
 
 class _XrayPortRange extends XrayPortRange {
   const _XrayPortRange({required this.from, required this.to, this.raw})
-      : super._();
+    : super._();
 
   @override
   final int from;
@@ -1011,7 +1065,9 @@ class _XrayPortRange extends XrayPortRange {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, from, to, raw);
+  int get hashCode {
+    return Object.hash(runtimeType, from, to, raw);
+  }
 
   @override
   String toString() {
@@ -1023,8 +1079,9 @@ class _XrayPortRange extends XrayPortRange {
 abstract mixin class _$XrayPortRangeCopyWith<$Res>
     implements $XrayPortRangeCopyWith<$Res> {
   factory _$XrayPortRangeCopyWith(
-          _XrayPortRange value, $Res Function(_XrayPortRange) _then) =
-      __$XrayPortRangeCopyWithImpl;
+    _XrayPortRange value,
+    $Res Function(_XrayPortRange) _then,
+  ) = __$XrayPortRangeCopyWithImpl;
   @override
   @useResult
   $Res call({int from, int to, String? raw});
@@ -1042,25 +1099,23 @@ class __$XrayPortRangeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? from = null,
-    Object? to = null,
-    Object? raw = freezed,
-  }) {
-    return _then(_XrayPortRange(
-      from: null == from
-          ? _self.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int,
-      to: null == to
-          ? _self.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int,
-      raw: freezed == raw
-          ? _self.raw
-          : raw // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? from = null, Object? to = null, Object? raw = freezed}) {
+    return _then(
+      _XrayPortRange(
+        from: null == from
+            ? _self.from
+            : from // ignore: cast_nullable_to_non_nullable
+                  as int,
+        to: null == to
+            ? _self.to
+            : to // ignore: cast_nullable_to_non_nullable
+                  as int,
+        raw: freezed == raw
+            ? _self.raw
+            : raw // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -1078,19 +1133,26 @@ mixin _$XrayUser {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as XrayUser;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XrayUser &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.level, level) || other.level == level));
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, level);
+  int get hashCode {
+    final _this = this as XrayUser;
+    return Object.hash(runtimeType, _this.email, _this.level);
+  }
 
   @override
   String toString() {
-    return 'XrayUser(email: $email, level: $level)';
+    final _this = this as XrayUser;
+    return 'XrayUser(email: ${_this.email}, level: ${_this.level})';
   }
 }
 
@@ -1113,20 +1175,19 @@ class _$XrayUserCopyWithImpl<$Res> implements $XrayUserCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? email = freezed,
-    Object? level = freezed,
-  }) {
-    return _then(_self.copyWith(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? email = freezed, Object? level = freezed}) {
+    return _then(
+      XrayUser(
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -1315,7 +1376,9 @@ class _XrayUser extends XrayUser {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, level);
+  int get hashCode {
+    return Object.hash(runtimeType, email, level);
+  }
 
   @override
   String toString() {
@@ -1344,21 +1407,18 @@ class __$XrayUserCopyWithImpl<$Res> implements _$XrayUserCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? email = freezed,
-    Object? level = freezed,
-  }) {
-    return _then(_XrayUser(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? email = freezed, Object? level = freezed}) {
+    return _then(
+      _XrayUser(
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
-
-// dart format on

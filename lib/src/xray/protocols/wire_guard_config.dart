@@ -8,6 +8,7 @@ abstract class WireGuardConfig
     bool? noKernelTun,
     required String secretKey,
     List<String>? address,
+    List<String>? remoteDNS,
     List<WireGuardPeerConfig>? peers,
     @JsonKey(name: 'mtu') int? mtu,
     List<int>? reserved,
@@ -20,6 +21,7 @@ abstract class WireGuardConfig
       noKernelTun: map['noKernelTun'] as bool?,
       secretKey: map['secretKey'] as String,
       address: (map['address'] as List?)?.cast<String>(),
+      remoteDNS: (map['remoteDNS'] as List?)?.cast<String>(),
       peers: map['peers'] == null
           ? null
           : asJsonList(map['peers'], WireGuardPeerConfig.fromJson),
@@ -38,6 +40,7 @@ abstract class WireGuardConfig
         'noKernelTun': noKernelTun,
         'secretKey': secretKey,
         'address': address,
+        'remoteDNS': remoteDNS,
         'peers': peers?.map((item) => item.toJson()).toList(),
         'mtu': mtu,
         'reserved': reserved,

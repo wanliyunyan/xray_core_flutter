@@ -89,7 +89,6 @@ const allowedUntaggedConfigKeys = {
 const goStructClassAliases = {
   'Config': 'XrayConfig',
   'User': 'XrayUser',
-  'healthCheckSettings': 'HealthCheckSettings',
   'strategyLeastLoadConfig': 'StrategyLeastLoadConfig',
 };
 
@@ -117,6 +116,9 @@ Map<String, List<String>> collectGoJsonTags(Directory goConf) {
     }
   }
 
+  for (final tag in collectPortMappingTags(goConf)) {
+    tags.putIfAbsent(tag, () => []).add('realm/config.pb.go:PortMapping');
+  }
   return tags;
 }
 
@@ -145,11 +147,12 @@ List<String> collectJsonShapeIssues(Directory goConf, List<File> dartFiles) {
 
     final expected = entry.value;
     final missing = expected.difference(dartKeys).toList()..sort();
-    final extra = dartKeys
-        .difference(expected)
-        .difference(allowedClassExtraKeys[dartClass] ?? const {})
-        .toList()
-      ..sort();
+    final extra =
+        dartKeys
+            .difference(expected)
+            .difference(allowedClassExtraKeys[dartClass] ?? const {})
+            .toList()
+          ..sort();
     if (missing.isNotEmpty || extra.isNotEmpty) {
       issues.add(
         '$goStruct -> $dartClass missing=${missing.join(',')} '
@@ -191,21 +194,52 @@ Map<String, Set<String>> collectGoStructJsonTags(Directory goConf) {
     }
   }
 
+  structs['PortMapping'] = collectPortMappingTags(goConf);
   return structs;
+}
+
+/// PortMapping is referenced by infra/conf but declared in Realm's protobuf.
+/// Read only that struct: the same file also declares an unrelated Config.
+Set<String> collectPortMappingTags(Directory goConf) {
+  final file = File.fromUri(
+    goConf.absolute.uri.resolve(
+      '../../transport/internet/finalmask/realm/config.pb.go',
+    ),
+  );
+  final source = file.readAsStringSync();
+  final declaration = RegExp(
+    r'type\s+PortMapping\s+struct\s*\{',
+  ).firstMatch(source);
+  final body = declaration == null
+      ? null
+      : _bracedBody(source, declaration.end - 1);
+  if (body == null) {
+    throw StateError('PortMapping struct not found in ${file.path}');
+  }
+  final tags = RegExp(r'json:"([^",]+)')
+      .allMatches(body)
+      .map((match) => match.group(1)!)
+      .where((tag) => tag != '-')
+      .toSet();
+  if (tags.isEmpty) {
+    throw StateError('PortMapping JSON tags missing in ${file.path}');
+  }
+  return tags;
 }
 
 Set<String> collectDartJsonKeys(List<File> files) {
   final keys = <String>{};
   final mapAccessPattern = RegExp(r"map\['([^']+)'\]");
-  final outputKeyPattern = RegExp(r"'([^']+)'\s*:");
+  final outputKeyPattern = RegExp(r"[{,]\s*'([^'\r\n]+)'\s*:");
   final jsonKeyPattern = RegExp(r"@JsonKey\(name: '([^']+)'\)");
 
   for (final file in files) {
+    if (file.path.endsWith('.g.dart')) continue;
     final text = file.readAsStringSync();
     for (final pattern in [
       mapAccessPattern,
       outputKeyPattern,
-      jsonKeyPattern
+      jsonKeyPattern,
     ]) {
       for (final match in pattern.allMatches(text)) {
         final key = match.group(1);
@@ -216,6 +250,9 @@ Set<String> collectDartJsonKeys(List<File> files) {
     }
   }
 
+  for (final generatedKeys in collectGeneratedJsonKeys(files).values) {
+    keys.addAll(generatedKeys);
+  }
   return keys;
 }
 
@@ -227,7 +264,7 @@ Map<String, Set<String>> collectDartJsonKeysByClass(List<File> files) {
   );
   final patterns = [
     RegExp(r"map\['([^']+)'\]"),
-    RegExp(r"'([^']+)'\s*:"),
+    RegExp(r"[{,]\s*'([^'\r\n]+)'\s*:"),
     RegExp(r"@JsonKey\(name: '([^']+)'\)"),
   ];
 
@@ -254,6 +291,53 @@ Map<String, Set<String>> collectDartJsonKeysByClass(List<File> files) {
     }
   }
 
+  for (final entry in collectGeneratedJsonKeys(files).entries) {
+    result.putIfAbsent(entry.key, () => {}).addAll(entry.value);
+  }
+  return result;
+}
+
+/// Read JSON names (values, not Dart field names) from json_serializable's
+/// field maps. Only attach them to models still declaring a generated parser,
+/// so stale output cannot hide a deleted handwritten model.
+Map<String, Set<String>> collectGeneratedJsonKeys(List<File> files) {
+  final generatedModels = <String>{};
+  final factoryPattern = RegExp(
+    r'factory\s+(\w+)\.fromJson\([^)]*\)\s*=>\s*_\$\1FromJson\(',
+  );
+  for (final file in files.where(
+    (f) => !f.path.endsWith('.g.dart') && !f.path.endsWith('.freezed.dart'),
+  )) {
+    generatedModels.addAll(
+      factoryPattern
+          .allMatches(file.readAsStringSync())
+          .map((match) => match.group(1)!),
+    );
+  }
+  final result = <String, Set<String>>{};
+  final fieldMapPattern = RegExp(
+    r'const _\$(\w+)FieldMap\s*=\s*<String,\s*String>\s*\{',
+  );
+  for (final file in files.where((f) => f.path.endsWith('.g.dart'))) {
+    final source = file.readAsStringSync();
+    for (final match in fieldMapPattern.allMatches(source)) {
+      final name = match.group(1)!;
+      if (!generatedModels.contains(name)) continue;
+      final body = _bracedBody(source, match.end - 1);
+      if (body == null) {
+        throw StateError('Invalid generated field map for $name');
+      }
+      result[name] = RegExp(
+        r"'[^']+'\s*:\s*'([^']+)'",
+      ).allMatches(body).map((match) => match.group(1)!).toSet();
+    }
+  }
+  final missing = generatedModels.difference(result.keys.toSet());
+  if (missing.isNotEmpty) {
+    throw StateError(
+      'Missing generated JSON field maps for ${missing.join(', ')}; run build_runner with createFieldMap: true',
+    );
+  }
   return result;
 }
 
@@ -267,11 +351,6 @@ const creatorLoaderSpecs = [
     label: 'outbound',
     goLoader: 'outboundConfigLoader',
     dartFactory: 'XrayOutboundProtocol',
-  ),
-  CreatorLoaderSpec(
-    label: 'blackhole response',
-    goLoader: 'configLoader',
-    dartFactory: 'BlackholeResponse',
   ),
   CreatorLoaderSpec(
     label: 'tcp header',
@@ -305,9 +384,9 @@ class CreatorLoaderSpec {
     this.dartFunction,
     this.allowDartSuperset = false,
   }) : assert(
-          (dartFactory == null) != (dartFunction == null),
-          'Provide exactly one Dart ID source.',
-        );
+         (dartFactory == null) != (dartFunction == null),
+         'Provide exactly one Dart ID source.',
+       );
 
   final String label;
   final String goLoader;
@@ -317,7 +396,21 @@ class CreatorLoaderSpec {
 }
 
 List<String> collectLoaderIdIssues(Directory goConf, String dartText) {
+  // Since 26.9.9 blackhole uses a switch instead of a config creator loader.
+  final blackholeSource = File(
+    '${goConf.path}/blackhole.go',
+  ).readAsStringSync();
+  final responseTypes = RegExp(r'case\s+([^:]+):')
+      .allMatches(blackholeSource)
+      .expand((match) => RegExp(r'"([^"]+)"').allMatches(match.group(1)!))
+      .map((match) => match.group(1)!)
+      .toSet();
   return [
+    ...diffLoaderIds(
+      'blackhole response',
+      responseTypes,
+      collectDartFactorySwitchIds(dartText, 'BlackholeResponse'),
+    ),
     for (final spec in creatorLoaderSpecs)
       ...diffLoaderIds(
         spec.label,

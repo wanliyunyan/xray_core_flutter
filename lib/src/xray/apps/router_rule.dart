@@ -22,6 +22,7 @@ abstract class RouterRule with _$RouterRule {
     XrayStringList? localIP,
     XrayPortList? localPort,
     XrayStringList? process,
+    XrayStringList? localOS,
     WebhookRuleConfig? webhook,
   }) = _RouterRule;
 
@@ -44,6 +45,7 @@ abstract class RouterRule with _$RouterRule {
     XrayStringList? localIP,
     XrayPortList? localPort,
     XrayStringList? process,
+    XrayStringList? localOS,
     WebhookRuleConfig? webhook,
   }) => RouterRule(
     ruleTag: ruleTag,
@@ -64,6 +66,7 @@ abstract class RouterRule with _$RouterRule {
     localIP: localIP,
     localPort: localPort,
     process: process,
+    localOS: localOS,
     webhook: webhook,
   );
 
@@ -86,6 +89,7 @@ abstract class RouterRule with _$RouterRule {
     XrayStringList? localIP,
     XrayPortList? localPort,
     XrayStringList? process,
+    XrayStringList? localOS,
     WebhookRuleConfig? webhook,
   }) => RouterRule(
     ruleTag: ruleTag,
@@ -106,6 +110,7 @@ abstract class RouterRule with _$RouterRule {
     localIP: localIP,
     localPort: localPort,
     process: process,
+    localOS: localOS,
     webhook: webhook,
   );
 
@@ -152,6 +157,7 @@ abstract class RouterRule with _$RouterRule {
       localPort: map['localPort'] == null
           ? null
           : XrayPortList.fromJson(map['localPort']),
+      localOS: map['localOS'] == null ? null : XrayStringList.fromJson(map['localOS']),
       process: map['process'] == null
           ? null
           : XrayStringList.fromJson(map['process']),
@@ -183,6 +189,7 @@ abstract class RouterRule with _$RouterRule {
     'localIP': localIP?.toJson(),
     'localPort': localPort?.toJson(),
     'process': process?.toJson(),
+    'localOS': localOS?.toJson(),
     'webhook': webhook?.toJson(),
   });
 }

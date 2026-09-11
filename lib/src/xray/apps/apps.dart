@@ -6,6 +6,7 @@ import '../common/json.dart';
 part 'api_config.dart';
 part 'api_service.dart';
 part 'apps.freezed.dart';
+part 'apps.g.dart';
 part 'balancing_rule.dart';
 part 'balancing_strategy_type.dart';
 part 'bridge_config.dart';

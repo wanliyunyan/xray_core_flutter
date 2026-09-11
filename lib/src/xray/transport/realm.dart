@@ -6,12 +6,17 @@ abstract class Realm with _$Realm implements FinalMaskSettings {
     String? url,
     List<String>? stunServers,
     TLSConfig? tlsConfig,
+    /// Core recognizes dual, v4 and v6 (case-insensitive).
+    String? ipMode,
+    PortMapping? portMapping,
   }) = _Realm;
 
   factory Realm.fromJson(Object? json) {
     final map = asJsonMap(json, 'realm mask');
     return Realm(
       url: map['url'] as String?,
+      ipMode: map['ipMode'] as String?,
+      portMapping: map['portMapping'] == null ? null : PortMapping.fromJson(map['portMapping']),
       stunServers: (map['stunServers'] as List?)?.cast<String>(),
       tlsConfig: map['tlsConfig'] == null
           ? null
@@ -24,6 +29,8 @@ abstract class Realm with _$Realm implements FinalMaskSettings {
   @override
   Map<String, dynamic> toJson() => withoutNulls({
         'url': url,
+        'ipMode': ipMode,
+        'portMapping': portMapping?.toJson(),
         'stunServers': stunServers,
         'tlsConfig': tlsConfig?.toJson(),
       });

@@ -33,6 +33,24 @@ flutter analyze
 flutter test
 ```
 
+## JSON Code Generation
+
+Simple models use Freezed with `json_serializable`. Put
+`@JsonSerializable(includeIfNull: false, createFieldMap: true)` on their primary
+factory and delegate `fromJson(Object?)` through `asJsonMap` to the generated
+parser. Freezed forwards the annotation to its implementation class; keep the
+local `invalid_annotation_target` suppression on that constructor annotation.
+For nullable integer fields, use `@JsonKey(fromJson: nullableIntFromJson)` to
+preserve strict integer parsing instead of truncating fractional JSON numbers.
+
+Keep union-shaped Xray values and protocol dispatch in handwritten converters.
+Regenerate and commit both `.freezed.dart` and `.g.dart` files. The parity tool
+reads generated field maps using JSON names and rejects missing generated maps.
+Do not edit these generated files directly.
+
+The package requires Dart 3.9 or later, matching `json_annotation`'s minimum.
+Running the currently selected Freezed 4 generator requires Dart 3.13 or later.
+
 ## Release Checklist
 
 1. Update `CHANGELOG.md`.

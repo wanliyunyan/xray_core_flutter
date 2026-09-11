@@ -8,7 +8,9 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     XrayOutboundSettings? settings,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    /// Legacy JSON retained for import. Validation rejects this removed field;
+    /// use streamSettings.sockopt.dialerProxy for proxy chaining.
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) = _OutboundDetourConfig;
@@ -19,7 +21,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     XrayOutboundSettings? settings,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -39,7 +41,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -59,7 +61,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -79,7 +81,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -99,7 +101,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -119,7 +121,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -139,7 +141,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -159,7 +161,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? sendThrough,
     FreedomConfig? settings,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -199,7 +201,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -219,7 +221,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -239,7 +241,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     String? sendThrough,
     StreamConfig? streamSettings,
-    ProxyConfig? proxySettings,
+    Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
   }) =>
@@ -271,7 +273,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
           : StreamConfig.fromJson(map['streamSettings']),
       proxySettings: map['proxySettings'] == null
           ? null
-          : ProxyConfig.fromJson(map['proxySettings']),
+          : asJsonMap(map['proxySettings'], 'proxySettings'),
       mux: map['mux'] == null ? null : MuxConfig.fromJson(map['mux']),
       targetStrategy: targetStrategyJson == null || targetStrategyJson == ''
           ? null
@@ -287,7 +289,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
         'tag': tag,
         'settings': settings?.toJson(),
         'streamSettings': streamSettings?.toJson(),
-        'proxySettings': proxySettings?.toJson(),
+        'proxySettings': proxySettings,
         'mux': mux?.toJson(),
         'targetStrategy': targetStrategy?.toJson(),
       });

@@ -2,21 +2,14 @@ part of 'apps.dart';
 
 @freezed
 abstract class VersionConfig with _$VersionConfig {
+  // Freezed forwards this constructor annotation to the generated class.
+  // ignore: invalid_annotation_target
+  @JsonSerializable(includeIfNull: false, createFieldMap: true)
   const factory VersionConfig({
     @JsonKey(name: 'min') String? minVersion,
     @JsonKey(name: 'max') String? maxVersion,
   }) = _VersionConfig;
 
-  factory VersionConfig.fromJson(Object? json) {
-    final map = asJsonMap(json, 'version');
-    return VersionConfig(
-      minVersion: map['min'] as String?,
-      maxVersion: map['max'] as String?,
-    );
-  }
-
-  const VersionConfig._();
-
-  Map<String, dynamic> toJson() =>
-      withoutNulls({'min': minVersion, 'max': maxVersion});
+  factory VersionConfig.fromJson(Object? json) =>
+      _$VersionConfigFromJson(asJsonMap(json, 'version'));
 }

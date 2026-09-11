@@ -6,7 +6,8 @@ build/
 DerivedData/
 .generated/
 .codex/
-example/
+example/*
+!example/xray_core_flutter_example.dart
 AGENTS.md
 *.iml
 *.log

@@ -4,6 +4,7 @@ import '../common/common.dart';
 import '../common/json.dart';
 
 part 'transport.freezed.dart';
+part 'transport.g.dart';
 part 'address_port_strategy.dart';
 part 'aes128_gcm.dart';
 part 'authenticator.dart';
@@ -33,6 +34,7 @@ part 'no_op_connection_authenticator.dart';
 part 'noise_item.dart';
 part 'noise_mask.dart';
 part 'original.dart';
+part 'port_mapping.dart';
 part 'quic_params_config.dart';
 part 'raw_final_mask_settings.dart';
 part 'realm.dart';

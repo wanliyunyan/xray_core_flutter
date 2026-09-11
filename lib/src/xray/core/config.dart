@@ -11,7 +11,6 @@ part 'inbound_detour_config.dart';
 part 'log_config.dart';
 part 'mux_config.dart';
 part 'outbound_detour_config.dart';
-part 'proxy_config.dart';
 part 'xray_config.dart';
 part 'xray_inbound_protocol.dart';
 part 'xray_outbound_protocol.dart';

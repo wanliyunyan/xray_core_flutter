@@ -40,6 +40,7 @@ FinalMaskSettings _parseFinalMaskSettings(
     'xdns' => Xdns.fromJson(json),
     'xicmp' => Xicmp.fromJson(json),
     'realm' => Realm.fromJson(json),
+    'udphop' => UDPHop.fromJson(json),
     _ => RawFinalMaskSettings.fromJson(json, '$type settings'),
   };
 }

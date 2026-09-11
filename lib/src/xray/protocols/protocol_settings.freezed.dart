@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'protocol_settings.dart';
@@ -9,7 +9,7 @@ part of 'protocol_settings.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
+// GENERATED CODE - DO NOT MODIFY BY HAND
 T _$identity<T>(T value) => value;
 
 /// @nodoc
@@ -31,68 +31,82 @@ mixin _$DNSOutboundConfig {
   @pragma('vm:prefer-inline')
   $DNSOutboundConfigCopyWith<DNSOutboundConfig> get copyWith =>
       _$DNSOutboundConfigCopyWithImpl<DNSOutboundConfig>(
-          this as DNSOutboundConfig, _$identity);
+        this as DNSOutboundConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as DNSOutboundConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DNSOutboundConfig &&
-            (identical(other.rewriteNetwork, rewriteNetwork) ||
-                other.rewriteNetwork == rewriteNetwork) &&
-            (identical(other.rewriteAddress, rewriteAddress) ||
-                other.rewriteAddress == rewriteAddress) &&
-            (identical(other.rewritePort, rewritePort) ||
-                other.rewritePort == rewritePort) &&
-            (identical(other.network, network) || other.network == network) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.userLevel, userLevel) ||
-                other.userLevel == userLevel) &&
-            const DeepCollectionEquality().equals(other.rules, rules) &&
-            (identical(other.nonIPQuery, nonIPQuery) ||
-                other.nonIPQuery == nonIPQuery) &&
-            const DeepCollectionEquality()
-                .equals(other.blockTypes, blockTypes));
+            (identical(other.rewriteNetwork, _this.rewriteNetwork) ||
+                other.rewriteNetwork == _this.rewriteNetwork) &&
+            (identical(other.rewriteAddress, _this.rewriteAddress) ||
+                other.rewriteAddress == _this.rewriteAddress) &&
+            (identical(other.rewritePort, _this.rewritePort) ||
+                other.rewritePort == _this.rewritePort) &&
+            (identical(other.network, _this.network) ||
+                other.network == _this.network) &&
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.userLevel, _this.userLevel) ||
+                other.userLevel == _this.userLevel) &&
+            const DeepCollectionEquality().equals(other.rules, _this.rules) &&
+            (identical(other.nonIPQuery, _this.nonIPQuery) ||
+                other.nonIPQuery == _this.nonIPQuery) &&
+            const DeepCollectionEquality().equals(
+              other.blockTypes,
+              _this.blockTypes,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as DNSOutboundConfig;
+    return Object.hash(
       runtimeType,
-      rewriteNetwork,
-      rewriteAddress,
-      rewritePort,
-      network,
-      address,
-      port,
-      userLevel,
-      const DeepCollectionEquality().hash(rules),
-      nonIPQuery,
-      const DeepCollectionEquality().hash(blockTypes));
+      _this.rewriteNetwork,
+      _this.rewriteAddress,
+      _this.rewritePort,
+      _this.network,
+      _this.address,
+      _this.port,
+      _this.userLevel,
+      const DeepCollectionEquality().hash(_this.rules),
+      _this.nonIPQuery,
+      const DeepCollectionEquality().hash(_this.blockTypes),
+    );
+  }
 
   @override
   String toString() {
-    return 'DNSOutboundConfig(rewriteNetwork: $rewriteNetwork, rewriteAddress: $rewriteAddress, rewritePort: $rewritePort, network: $network, address: $address, port: $port, userLevel: $userLevel, rules: $rules, nonIPQuery: $nonIPQuery, blockTypes: $blockTypes)';
+    final _this = this as DNSOutboundConfig;
+    return 'DNSOutboundConfig(rewriteNetwork: ${_this.rewriteNetwork}, rewriteAddress: ${_this.rewriteAddress}, rewritePort: ${_this.rewritePort}, network: ${_this.network}, address: ${_this.address}, port: ${_this.port}, userLevel: ${_this.userLevel}, rules: ${_this.rules}, nonIPQuery: ${_this.nonIPQuery}, blockTypes: ${_this.blockTypes})';
   }
 }
 
 /// @nodoc
 abstract mixin class $DNSOutboundConfigCopyWith<$Res> {
   factory $DNSOutboundConfigCopyWith(
-          DNSOutboundConfig value, $Res Function(DNSOutboundConfig) _then) =
-      _$DNSOutboundConfigCopyWithImpl;
+    DNSOutboundConfig value,
+    $Res Function(DNSOutboundConfig) _then,
+  ) = _$DNSOutboundConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayNetwork? rewriteNetwork,
-      XrayAddress? rewriteAddress,
-      int? rewritePort,
-      XrayNetwork? network,
-      XrayAddress? address,
-      int? port,
-      int? userLevel,
-      List<DNSOutboundRuleConfig>? rules,
-      String? nonIPQuery,
-      List<int>? blockTypes});
+  $Res call({
+    XrayNetwork? rewriteNetwork,
+    XrayAddress? rewriteAddress,
+    int? rewritePort,
+    XrayNetwork? network,
+    XrayAddress? address,
+    int? port,
+    int? userLevel,
+    List<DNSOutboundRuleConfig>? rules,
+    String? nonIPQuery,
+    List<int>? blockTypes,
+  });
 }
 
 /// @nodoc
@@ -119,48 +133,50 @@ class _$DNSOutboundConfigCopyWithImpl<$Res>
     Object? nonIPQuery = freezed,
     Object? blockTypes = freezed,
   }) {
-    return _then(_self.copyWith(
-      rewriteNetwork: freezed == rewriteNetwork
-          ? _self.rewriteNetwork
-          : rewriteNetwork // ignore: cast_nullable_to_non_nullable
-              as XrayNetwork?,
-      rewriteAddress: freezed == rewriteAddress
-          ? _self.rewriteAddress
-          : rewriteAddress // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      rewritePort: freezed == rewritePort
-          ? _self.rewritePort
-          : rewritePort // ignore: cast_nullable_to_non_nullable
-              as int?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetwork?,
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      rules: freezed == rules
-          ? _self.rules
-          : rules // ignore: cast_nullable_to_non_nullable
-              as List<DNSOutboundRuleConfig>?,
-      nonIPQuery: freezed == nonIPQuery
-          ? _self.nonIPQuery
-          : nonIPQuery // ignore: cast_nullable_to_non_nullable
-              as String?,
-      blockTypes: freezed == blockTypes
-          ? _self.blockTypes
-          : blockTypes // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ));
+    return _then(
+      DNSOutboundConfig(
+        rewriteNetwork: freezed == rewriteNetwork
+            ? _self.rewriteNetwork
+            : rewriteNetwork // ignore: cast_nullable_to_non_nullable
+                  as XrayNetwork?,
+        rewriteAddress: freezed == rewriteAddress
+            ? _self.rewriteAddress
+            : rewriteAddress // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        rewritePort: freezed == rewritePort
+            ? _self.rewritePort
+            : rewritePort // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetwork?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        rules: freezed == rules
+            ? _self.rules
+            : rules // ignore: cast_nullable_to_non_nullable
+                  as List<DNSOutboundRuleConfig>?,
+        nonIPQuery: freezed == nonIPQuery
+            ? _self.nonIPQuery
+            : nonIPQuery // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        blockTypes: freezed == blockTypes
+            ? _self.blockTypes
+            : blockTypes // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+      ),
+    );
   }
 }
 
@@ -258,33 +274,35 @@ extension DNSOutboundConfigPatterns on DNSOutboundConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayNetwork? rewriteNetwork,
-            XrayAddress? rewriteAddress,
-            int? rewritePort,
-            XrayNetwork? network,
-            XrayAddress? address,
-            int? port,
-            int? userLevel,
-            List<DNSOutboundRuleConfig>? rules,
-            String? nonIPQuery,
-            List<int>? blockTypes)?
-        $default, {
+      XrayNetwork? rewriteNetwork,
+      XrayAddress? rewriteAddress,
+      int? rewritePort,
+      XrayNetwork? network,
+      XrayAddress? address,
+      int? port,
+      int? userLevel,
+      List<DNSOutboundRuleConfig>? rules,
+      String? nonIPQuery,
+      List<int>? blockTypes,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _DNSOutboundConfig() when $default != null:
         return $default(
-            _that.rewriteNetwork,
-            _that.rewriteAddress,
-            _that.rewritePort,
-            _that.network,
-            _that.address,
-            _that.port,
-            _that.userLevel,
-            _that.rules,
-            _that.nonIPQuery,
-            _that.blockTypes);
+          _that.rewriteNetwork,
+          _that.rewriteAddress,
+          _that.rewritePort,
+          _that.network,
+          _that.address,
+          _that.port,
+          _that.userLevel,
+          _that.rules,
+          _that.nonIPQuery,
+          _that.blockTypes,
+        );
       case _:
         return orElse();
     }
@@ -306,32 +324,34 @@ extension DNSOutboundConfigPatterns on DNSOutboundConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayNetwork? rewriteNetwork,
-            XrayAddress? rewriteAddress,
-            int? rewritePort,
-            XrayNetwork? network,
-            XrayAddress? address,
-            int? port,
-            int? userLevel,
-            List<DNSOutboundRuleConfig>? rules,
-            String? nonIPQuery,
-            List<int>? blockTypes)
-        $default,
+      XrayNetwork? rewriteNetwork,
+      XrayAddress? rewriteAddress,
+      int? rewritePort,
+      XrayNetwork? network,
+      XrayAddress? address,
+      int? port,
+      int? userLevel,
+      List<DNSOutboundRuleConfig>? rules,
+      String? nonIPQuery,
+      List<int>? blockTypes,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _DNSOutboundConfig():
         return $default(
-            _that.rewriteNetwork,
-            _that.rewriteAddress,
-            _that.rewritePort,
-            _that.network,
-            _that.address,
-            _that.port,
-            _that.userLevel,
-            _that.rules,
-            _that.nonIPQuery,
-            _that.blockTypes);
+          _that.rewriteNetwork,
+          _that.rewriteAddress,
+          _that.rewritePort,
+          _that.network,
+          _that.address,
+          _that.port,
+          _that.userLevel,
+          _that.rules,
+          _that.nonIPQuery,
+          _that.blockTypes,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -352,32 +372,34 @@ extension DNSOutboundConfigPatterns on DNSOutboundConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayNetwork? rewriteNetwork,
-            XrayAddress? rewriteAddress,
-            int? rewritePort,
-            XrayNetwork? network,
-            XrayAddress? address,
-            int? port,
-            int? userLevel,
-            List<DNSOutboundRuleConfig>? rules,
-            String? nonIPQuery,
-            List<int>? blockTypes)?
-        $default,
+      XrayNetwork? rewriteNetwork,
+      XrayAddress? rewriteAddress,
+      int? rewritePort,
+      XrayNetwork? network,
+      XrayAddress? address,
+      int? port,
+      int? userLevel,
+      List<DNSOutboundRuleConfig>? rules,
+      String? nonIPQuery,
+      List<int>? blockTypes,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _DNSOutboundConfig() when $default != null:
         return $default(
-            _that.rewriteNetwork,
-            _that.rewriteAddress,
-            _that.rewritePort,
-            _that.network,
-            _that.address,
-            _that.port,
-            _that.userLevel,
-            _that.rules,
-            _that.nonIPQuery,
-            _that.blockTypes);
+          _that.rewriteNetwork,
+          _that.rewriteAddress,
+          _that.rewritePort,
+          _that.network,
+          _that.address,
+          _that.port,
+          _that.userLevel,
+          _that.rules,
+          _that.nonIPQuery,
+          _that.blockTypes,
+        );
       case _:
         return null;
     }
@@ -387,20 +409,20 @@ extension DNSOutboundConfigPatterns on DNSOutboundConfig {
 /// @nodoc
 
 class _DNSOutboundConfig extends DNSOutboundConfig {
-  const _DNSOutboundConfig(
-      {this.rewriteNetwork,
-      this.rewriteAddress,
-      this.rewritePort,
-      this.network,
-      this.address,
-      this.port,
-      this.userLevel,
-      final List<DNSOutboundRuleConfig>? rules,
-      this.nonIPQuery,
-      final List<int>? blockTypes})
-      : _rules = rules,
-        _blockTypes = blockTypes,
-        super._();
+  const _DNSOutboundConfig({
+    this.rewriteNetwork,
+    this.rewriteAddress,
+    this.rewritePort,
+    this.network,
+    this.address,
+    this.port,
+    this.userLevel,
+    List<DNSOutboundRuleConfig>? rules,
+    this.nonIPQuery,
+    List<int>? blockTypes,
+  }) : _rules = rules,
+       _blockTypes = blockTypes,
+       super._();
 
   @override
   final XrayNetwork? rewriteNetwork;
@@ -462,15 +484,18 @@ class _DNSOutboundConfig extends DNSOutboundConfig {
             (identical(other.port, port) || other.port == port) &&
             (identical(other.userLevel, userLevel) ||
                 other.userLevel == userLevel) &&
-            const DeepCollectionEquality().equals(other._rules, _rules) &&
+            const DeepCollectionEquality().equals(other.rules, _rules) &&
             (identical(other.nonIPQuery, nonIPQuery) ||
                 other.nonIPQuery == nonIPQuery) &&
-            const DeepCollectionEquality()
-                .equals(other._blockTypes, _blockTypes));
+            const DeepCollectionEquality().equals(
+              other.blockTypes,
+              _blockTypes,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       rewriteNetwork,
       rewriteAddress,
@@ -481,7 +506,9 @@ class _DNSOutboundConfig extends DNSOutboundConfig {
       userLevel,
       const DeepCollectionEquality().hash(_rules),
       nonIPQuery,
-      const DeepCollectionEquality().hash(_blockTypes));
+      const DeepCollectionEquality().hash(_blockTypes),
+    );
+  }
 
   @override
   String toString() {
@@ -493,21 +520,23 @@ class _DNSOutboundConfig extends DNSOutboundConfig {
 abstract mixin class _$DNSOutboundConfigCopyWith<$Res>
     implements $DNSOutboundConfigCopyWith<$Res> {
   factory _$DNSOutboundConfigCopyWith(
-          _DNSOutboundConfig value, $Res Function(_DNSOutboundConfig) _then) =
-      __$DNSOutboundConfigCopyWithImpl;
+    _DNSOutboundConfig value,
+    $Res Function(_DNSOutboundConfig) _then,
+  ) = __$DNSOutboundConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayNetwork? rewriteNetwork,
-      XrayAddress? rewriteAddress,
-      int? rewritePort,
-      XrayNetwork? network,
-      XrayAddress? address,
-      int? port,
-      int? userLevel,
-      List<DNSOutboundRuleConfig>? rules,
-      String? nonIPQuery,
-      List<int>? blockTypes});
+  $Res call({
+    XrayNetwork? rewriteNetwork,
+    XrayAddress? rewriteAddress,
+    int? rewritePort,
+    XrayNetwork? network,
+    XrayAddress? address,
+    int? port,
+    int? userLevel,
+    List<DNSOutboundRuleConfig>? rules,
+    String? nonIPQuery,
+    List<int>? blockTypes,
+  });
 }
 
 /// @nodoc
@@ -534,48 +563,50 @@ class __$DNSOutboundConfigCopyWithImpl<$Res>
     Object? nonIPQuery = freezed,
     Object? blockTypes = freezed,
   }) {
-    return _then(_DNSOutboundConfig(
-      rewriteNetwork: freezed == rewriteNetwork
-          ? _self.rewriteNetwork
-          : rewriteNetwork // ignore: cast_nullable_to_non_nullable
-              as XrayNetwork?,
-      rewriteAddress: freezed == rewriteAddress
-          ? _self.rewriteAddress
-          : rewriteAddress // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      rewritePort: freezed == rewritePort
-          ? _self.rewritePort
-          : rewritePort // ignore: cast_nullable_to_non_nullable
-              as int?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetwork?,
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      rules: freezed == rules
-          ? _self._rules
-          : rules // ignore: cast_nullable_to_non_nullable
-              as List<DNSOutboundRuleConfig>?,
-      nonIPQuery: freezed == nonIPQuery
-          ? _self.nonIPQuery
-          : nonIPQuery // ignore: cast_nullable_to_non_nullable
-              as String?,
-      blockTypes: freezed == blockTypes
-          ? _self._blockTypes
-          : blockTypes // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ));
+    return _then(
+      _DNSOutboundConfig(
+        rewriteNetwork: freezed == rewriteNetwork
+            ? _self.rewriteNetwork
+            : rewriteNetwork // ignore: cast_nullable_to_non_nullable
+                  as XrayNetwork?,
+        rewriteAddress: freezed == rewriteAddress
+            ? _self.rewriteAddress
+            : rewriteAddress // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        rewritePort: freezed == rewritePort
+            ? _self.rewritePort
+            : rewritePort // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetwork?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        rules: freezed == rules
+            ? _self._rules
+            : rules // ignore: cast_nullable_to_non_nullable
+                  as List<DNSOutboundRuleConfig>?,
+        nonIPQuery: freezed == nonIPQuery
+            ? _self.nonIPQuery
+            : nonIPQuery // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        blockTypes: freezed == blockTypes
+            ? _self._blockTypes
+            : blockTypes // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+      ),
+    );
   }
 }
 
@@ -592,39 +623,58 @@ mixin _$DNSOutboundRuleConfig {
   @pragma('vm:prefer-inline')
   $DNSOutboundRuleConfigCopyWith<DNSOutboundRuleConfig> get copyWith =>
       _$DNSOutboundRuleConfigCopyWithImpl<DNSOutboundRuleConfig>(
-          this as DNSOutboundRuleConfig, _$identity);
+        this as DNSOutboundRuleConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as DNSOutboundRuleConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DNSOutboundRuleConfig &&
-            (identical(other.action, action) || other.action == action) &&
-            (identical(other.qType, qType) || other.qType == qType) &&
-            (identical(other.domain, domain) || other.domain == domain) &&
-            (identical(other.rCode, rCode) || other.rCode == rCode));
+            (identical(other.action, _this.action) ||
+                other.action == _this.action) &&
+            (identical(other.qType, _this.qType) ||
+                other.qType == _this.qType) &&
+            (identical(other.domain, _this.domain) ||
+                other.domain == _this.domain) &&
+            (identical(other.rCode, _this.rCode) ||
+                other.rCode == _this.rCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, action, qType, domain, rCode);
+  int get hashCode {
+    final _this = this as DNSOutboundRuleConfig;
+    return Object.hash(
+      runtimeType,
+      _this.action,
+      _this.qType,
+      _this.domain,
+      _this.rCode,
+    );
+  }
 
   @override
   String toString() {
-    return 'DNSOutboundRuleConfig(action: $action, qType: $qType, domain: $domain, rCode: $rCode)';
+    final _this = this as DNSOutboundRuleConfig;
+    return 'DNSOutboundRuleConfig(action: ${_this.action}, qType: ${_this.qType}, domain: ${_this.domain}, rCode: ${_this.rCode})';
   }
 }
 
 /// @nodoc
 abstract mixin class $DNSOutboundRuleConfigCopyWith<$Res> {
-  factory $DNSOutboundRuleConfigCopyWith(DNSOutboundRuleConfig value,
-          $Res Function(DNSOutboundRuleConfig) _then) =
-      _$DNSOutboundRuleConfigCopyWithImpl;
+  factory $DNSOutboundRuleConfigCopyWith(
+    DNSOutboundRuleConfig value,
+    $Res Function(DNSOutboundRuleConfig) _then,
+  ) = _$DNSOutboundRuleConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {DNSOutboundRuleAction action,
-      XrayPortList? qType,
-      XrayStringList? domain,
-      int? rCode});
+  $Res call({
+    DNSOutboundRuleAction action,
+    XrayPortList? qType,
+    XrayStringList? domain,
+    int? rCode,
+  });
 }
 
 /// @nodoc
@@ -645,24 +695,26 @@ class _$DNSOutboundRuleConfigCopyWithImpl<$Res>
     Object? domain = freezed,
     Object? rCode = freezed,
   }) {
-    return _then(_self.copyWith(
-      action: null == action
-          ? _self.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as DNSOutboundRuleAction,
-      qType: freezed == qType
-          ? _self.qType
-          : qType // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      rCode: freezed == rCode
-          ? _self.rCode
-          : rCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      DNSOutboundRuleConfig(
+        action: null == action
+            ? _self.action
+            : action // ignore: cast_nullable_to_non_nullable
+                  as DNSOutboundRuleAction,
+        qType: freezed == qType
+            ? _self.qType
+            : qType // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        rCode: freezed == rCode
+            ? _self.rCode
+            : rCode // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -759,9 +811,13 @@ extension DNSOutboundRuleConfigPatterns on DNSOutboundRuleConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(DNSOutboundRuleAction action, XrayPortList? qType,
-            XrayStringList? domain, int? rCode)?
-        $default, {
+    TResult Function(
+      DNSOutboundRuleAction action,
+      XrayPortList? qType,
+      XrayStringList? domain,
+      int? rCode,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -788,9 +844,13 @@ extension DNSOutboundRuleConfigPatterns on DNSOutboundRuleConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(DNSOutboundRuleAction action, XrayPortList? qType,
-            XrayStringList? domain, int? rCode)
-        $default,
+    TResult Function(
+      DNSOutboundRuleAction action,
+      XrayPortList? qType,
+      XrayStringList? domain,
+      int? rCode,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -815,9 +875,13 @@ extension DNSOutboundRuleConfigPatterns on DNSOutboundRuleConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(DNSOutboundRuleAction action, XrayPortList? qType,
-            XrayStringList? domain, int? rCode)?
-        $default,
+    TResult? Function(
+      DNSOutboundRuleAction action,
+      XrayPortList? qType,
+      XrayStringList? domain,
+      int? rCode,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -832,9 +896,12 @@ extension DNSOutboundRuleConfigPatterns on DNSOutboundRuleConfig {
 /// @nodoc
 
 class _DNSOutboundRuleConfig extends DNSOutboundRuleConfig {
-  const _DNSOutboundRuleConfig(
-      {required this.action, this.qType, this.domain, this.rCode})
-      : super._();
+  const _DNSOutboundRuleConfig({
+    required this.action,
+    this.qType,
+    this.domain,
+    this.rCode,
+  }) : super._();
 
   @override
   final DNSOutboundRuleAction action;
@@ -852,7 +919,9 @@ class _DNSOutboundRuleConfig extends DNSOutboundRuleConfig {
   @pragma('vm:prefer-inline')
   _$DNSOutboundRuleConfigCopyWith<_DNSOutboundRuleConfig> get copyWith =>
       __$DNSOutboundRuleConfigCopyWithImpl<_DNSOutboundRuleConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -866,7 +935,9 @@ class _DNSOutboundRuleConfig extends DNSOutboundRuleConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, action, qType, domain, rCode);
+  int get hashCode {
+    return Object.hash(runtimeType, action, qType, domain, rCode);
+  }
 
   @override
   String toString() {
@@ -877,16 +948,18 @@ class _DNSOutboundRuleConfig extends DNSOutboundRuleConfig {
 /// @nodoc
 abstract mixin class _$DNSOutboundRuleConfigCopyWith<$Res>
     implements $DNSOutboundRuleConfigCopyWith<$Res> {
-  factory _$DNSOutboundRuleConfigCopyWith(_DNSOutboundRuleConfig value,
-          $Res Function(_DNSOutboundRuleConfig) _then) =
-      __$DNSOutboundRuleConfigCopyWithImpl;
+  factory _$DNSOutboundRuleConfigCopyWith(
+    _DNSOutboundRuleConfig value,
+    $Res Function(_DNSOutboundRuleConfig) _then,
+  ) = __$DNSOutboundRuleConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {DNSOutboundRuleAction action,
-      XrayPortList? qType,
-      XrayStringList? domain,
-      int? rCode});
+  $Res call({
+    DNSOutboundRuleAction action,
+    XrayPortList? qType,
+    XrayStringList? domain,
+    int? rCode,
+  });
 }
 
 /// @nodoc
@@ -907,24 +980,26 @@ class __$DNSOutboundRuleConfigCopyWithImpl<$Res>
     Object? domain = freezed,
     Object? rCode = freezed,
   }) {
-    return _then(_DNSOutboundRuleConfig(
-      action: null == action
-          ? _self.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as DNSOutboundRuleAction,
-      qType: freezed == qType
-          ? _self.qType
-          : qType // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      rCode: freezed == rCode
-          ? _self.rCode
-          : rCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _DNSOutboundRuleConfig(
+        action: null == action
+            ? _self.action
+            : action // ignore: cast_nullable_to_non_nullable
+                  as DNSOutboundRuleAction,
+        qType: freezed == qType
+            ? _self.qType
+            : qType // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        rCode: freezed == rCode
+            ? _self.rCode
+            : rCode // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -947,64 +1022,79 @@ mixin _$DokodemoConfig {
   @pragma('vm:prefer-inline')
   $DokodemoConfigCopyWith<DokodemoConfig> get copyWith =>
       _$DokodemoConfigCopyWithImpl<DokodemoConfig>(
-          this as DokodemoConfig, _$identity);
+        this as DokodemoConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as DokodemoConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DokodemoConfig &&
-            (identical(other.allowedNetwork, allowedNetwork) ||
-                other.allowedNetwork == allowedNetwork) &&
-            (identical(other.rewriteAddress, rewriteAddress) ||
-                other.rewriteAddress == rewriteAddress) &&
-            (identical(other.rewritePort, rewritePort) ||
-                other.rewritePort == rewritePort) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other.portMap, portMap) &&
-            (identical(other.network, network) || other.network == network) &&
-            (identical(other.followRedirect, followRedirect) ||
-                other.followRedirect == followRedirect) &&
-            (identical(other.userLevel, userLevel) ||
-                other.userLevel == userLevel));
+            (identical(other.allowedNetwork, _this.allowedNetwork) ||
+                other.allowedNetwork == _this.allowedNetwork) &&
+            (identical(other.rewriteAddress, _this.rewriteAddress) ||
+                other.rewriteAddress == _this.rewriteAddress) &&
+            (identical(other.rewritePort, _this.rewritePort) ||
+                other.rewritePort == _this.rewritePort) &&
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            const DeepCollectionEquality().equals(
+              other.portMap,
+              _this.portMap,
+            ) &&
+            (identical(other.network, _this.network) ||
+                other.network == _this.network) &&
+            (identical(other.followRedirect, _this.followRedirect) ||
+                other.followRedirect == _this.followRedirect) &&
+            (identical(other.userLevel, _this.userLevel) ||
+                other.userLevel == _this.userLevel));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as DokodemoConfig;
+    return Object.hash(
       runtimeType,
-      allowedNetwork,
-      rewriteAddress,
-      rewritePort,
-      address,
-      port,
-      const DeepCollectionEquality().hash(portMap),
-      network,
-      followRedirect,
-      userLevel);
+      _this.allowedNetwork,
+      _this.rewriteAddress,
+      _this.rewritePort,
+      _this.address,
+      _this.port,
+      const DeepCollectionEquality().hash(_this.portMap),
+      _this.network,
+      _this.followRedirect,
+      _this.userLevel,
+    );
+  }
 
   @override
   String toString() {
-    return 'DokodemoConfig(allowedNetwork: $allowedNetwork, rewriteAddress: $rewriteAddress, rewritePort: $rewritePort, address: $address, port: $port, portMap: $portMap, network: $network, followRedirect: $followRedirect, userLevel: $userLevel)';
+    final _this = this as DokodemoConfig;
+    return 'DokodemoConfig(allowedNetwork: ${_this.allowedNetwork}, rewriteAddress: ${_this.rewriteAddress}, rewritePort: ${_this.rewritePort}, address: ${_this.address}, port: ${_this.port}, portMap: ${_this.portMap}, network: ${_this.network}, followRedirect: ${_this.followRedirect}, userLevel: ${_this.userLevel})';
   }
 }
 
 /// @nodoc
 abstract mixin class $DokodemoConfigCopyWith<$Res> {
   factory $DokodemoConfigCopyWith(
-          DokodemoConfig value, $Res Function(DokodemoConfig) _then) =
-      _$DokodemoConfigCopyWithImpl;
+    DokodemoConfig value,
+    $Res Function(DokodemoConfig) _then,
+  ) = _$DokodemoConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayNetworkList? allowedNetwork,
-      XrayAddress? rewriteAddress,
-      int? rewritePort,
-      XrayAddress? address,
-      int? port,
-      Map<String, String>? portMap,
-      @JsonKey(name: 'network') XrayNetworkList? network,
-      bool? followRedirect,
-      int? userLevel});
+  $Res call({
+    XrayNetworkList? allowedNetwork,
+    XrayAddress? rewriteAddress,
+    int? rewritePort,
+    XrayAddress? address,
+    int? port,
+    Map<String, String>? portMap,
+    @JsonKey(name: 'network') XrayNetworkList? network,
+    bool? followRedirect,
+    int? userLevel,
+  });
 }
 
 /// @nodoc
@@ -1030,44 +1120,46 @@ class _$DokodemoConfigCopyWithImpl<$Res>
     Object? followRedirect = freezed,
     Object? userLevel = freezed,
   }) {
-    return _then(_self.copyWith(
-      allowedNetwork: freezed == allowedNetwork
-          ? _self.allowedNetwork
-          : allowedNetwork // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      rewriteAddress: freezed == rewriteAddress
-          ? _self.rewriteAddress
-          : rewriteAddress // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      rewritePort: freezed == rewritePort
-          ? _self.rewritePort
-          : rewritePort // ignore: cast_nullable_to_non_nullable
-              as int?,
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      portMap: freezed == portMap
-          ? _self.portMap
-          : portMap // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      followRedirect: freezed == followRedirect
-          ? _self.followRedirect
-          : followRedirect // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      DokodemoConfig(
+        allowedNetwork: freezed == allowedNetwork
+            ? _self.allowedNetwork
+            : allowedNetwork // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        rewriteAddress: freezed == rewriteAddress
+            ? _self.rewriteAddress
+            : rewriteAddress // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        rewritePort: freezed == rewritePort
+            ? _self.rewritePort
+            : rewritePort // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        portMap: freezed == portMap
+            ? _self.portMap
+            : portMap // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        followRedirect: freezed == followRedirect
+            ? _self.followRedirect
+            : followRedirect // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -1165,31 +1257,33 @@ extension DokodemoConfigPatterns on DokodemoConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayNetworkList? allowedNetwork,
-            XrayAddress? rewriteAddress,
-            int? rewritePort,
-            XrayAddress? address,
-            int? port,
-            Map<String, String>? portMap,
-            @JsonKey(name: 'network') XrayNetworkList? network,
-            bool? followRedirect,
-            int? userLevel)?
-        $default, {
+      XrayNetworkList? allowedNetwork,
+      XrayAddress? rewriteAddress,
+      int? rewritePort,
+      XrayAddress? address,
+      int? port,
+      Map<String, String>? portMap,
+      @JsonKey(name: 'network') XrayNetworkList? network,
+      bool? followRedirect,
+      int? userLevel,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _DokodemoConfig() when $default != null:
         return $default(
-            _that.allowedNetwork,
-            _that.rewriteAddress,
-            _that.rewritePort,
-            _that.address,
-            _that.port,
-            _that.portMap,
-            _that.network,
-            _that.followRedirect,
-            _that.userLevel);
+          _that.allowedNetwork,
+          _that.rewriteAddress,
+          _that.rewritePort,
+          _that.address,
+          _that.port,
+          _that.portMap,
+          _that.network,
+          _that.followRedirect,
+          _that.userLevel,
+        );
       case _:
         return orElse();
     }
@@ -1211,30 +1305,32 @@ extension DokodemoConfigPatterns on DokodemoConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayNetworkList? allowedNetwork,
-            XrayAddress? rewriteAddress,
-            int? rewritePort,
-            XrayAddress? address,
-            int? port,
-            Map<String, String>? portMap,
-            @JsonKey(name: 'network') XrayNetworkList? network,
-            bool? followRedirect,
-            int? userLevel)
-        $default,
+      XrayNetworkList? allowedNetwork,
+      XrayAddress? rewriteAddress,
+      int? rewritePort,
+      XrayAddress? address,
+      int? port,
+      Map<String, String>? portMap,
+      @JsonKey(name: 'network') XrayNetworkList? network,
+      bool? followRedirect,
+      int? userLevel,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _DokodemoConfig():
         return $default(
-            _that.allowedNetwork,
-            _that.rewriteAddress,
-            _that.rewritePort,
-            _that.address,
-            _that.port,
-            _that.portMap,
-            _that.network,
-            _that.followRedirect,
-            _that.userLevel);
+          _that.allowedNetwork,
+          _that.rewriteAddress,
+          _that.rewritePort,
+          _that.address,
+          _that.port,
+          _that.portMap,
+          _that.network,
+          _that.followRedirect,
+          _that.userLevel,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -1255,30 +1351,32 @@ extension DokodemoConfigPatterns on DokodemoConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayNetworkList? allowedNetwork,
-            XrayAddress? rewriteAddress,
-            int? rewritePort,
-            XrayAddress? address,
-            int? port,
-            Map<String, String>? portMap,
-            @JsonKey(name: 'network') XrayNetworkList? network,
-            bool? followRedirect,
-            int? userLevel)?
-        $default,
+      XrayNetworkList? allowedNetwork,
+      XrayAddress? rewriteAddress,
+      int? rewritePort,
+      XrayAddress? address,
+      int? port,
+      Map<String, String>? portMap,
+      @JsonKey(name: 'network') XrayNetworkList? network,
+      bool? followRedirect,
+      int? userLevel,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _DokodemoConfig() when $default != null:
         return $default(
-            _that.allowedNetwork,
-            _that.rewriteAddress,
-            _that.rewritePort,
-            _that.address,
-            _that.port,
-            _that.portMap,
-            _that.network,
-            _that.followRedirect,
-            _that.userLevel);
+          _that.allowedNetwork,
+          _that.rewriteAddress,
+          _that.rewritePort,
+          _that.address,
+          _that.port,
+          _that.portMap,
+          _that.network,
+          _that.followRedirect,
+          _that.userLevel,
+        );
       case _:
         return null;
     }
@@ -1288,18 +1386,18 @@ extension DokodemoConfigPatterns on DokodemoConfig {
 /// @nodoc
 
 class _DokodemoConfig extends DokodemoConfig {
-  const _DokodemoConfig(
-      {this.allowedNetwork,
-      this.rewriteAddress,
-      this.rewritePort,
-      this.address,
-      this.port,
-      final Map<String, String>? portMap,
-      @JsonKey(name: 'network') this.network,
-      this.followRedirect,
-      this.userLevel})
-      : _portMap = portMap,
-        super._();
+  const _DokodemoConfig({
+    this.allowedNetwork,
+    this.rewriteAddress,
+    this.rewritePort,
+    this.address,
+    this.port,
+    Map<String, String>? portMap,
+    @JsonKey(name: 'network') this.network,
+    this.followRedirect,
+    this.userLevel,
+  }) : _portMap = portMap,
+       super._();
 
   @override
   final XrayNetworkList? allowedNetwork;
@@ -1350,7 +1448,7 @@ class _DokodemoConfig extends DokodemoConfig {
                 other.rewritePort == rewritePort) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other._portMap, _portMap) &&
+            const DeepCollectionEquality().equals(other.portMap, _portMap) &&
             (identical(other.network, network) || other.network == network) &&
             (identical(other.followRedirect, followRedirect) ||
                 other.followRedirect == followRedirect) &&
@@ -1359,7 +1457,8 @@ class _DokodemoConfig extends DokodemoConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       allowedNetwork,
       rewriteAddress,
@@ -1369,7 +1468,9 @@ class _DokodemoConfig extends DokodemoConfig {
       const DeepCollectionEquality().hash(_portMap),
       network,
       followRedirect,
-      userLevel);
+      userLevel,
+    );
+  }
 
   @override
   String toString() {
@@ -1381,20 +1482,22 @@ class _DokodemoConfig extends DokodemoConfig {
 abstract mixin class _$DokodemoConfigCopyWith<$Res>
     implements $DokodemoConfigCopyWith<$Res> {
   factory _$DokodemoConfigCopyWith(
-          _DokodemoConfig value, $Res Function(_DokodemoConfig) _then) =
-      __$DokodemoConfigCopyWithImpl;
+    _DokodemoConfig value,
+    $Res Function(_DokodemoConfig) _then,
+  ) = __$DokodemoConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayNetworkList? allowedNetwork,
-      XrayAddress? rewriteAddress,
-      int? rewritePort,
-      XrayAddress? address,
-      int? port,
-      Map<String, String>? portMap,
-      @JsonKey(name: 'network') XrayNetworkList? network,
-      bool? followRedirect,
-      int? userLevel});
+  $Res call({
+    XrayNetworkList? allowedNetwork,
+    XrayAddress? rewriteAddress,
+    int? rewritePort,
+    XrayAddress? address,
+    int? port,
+    Map<String, String>? portMap,
+    @JsonKey(name: 'network') XrayNetworkList? network,
+    bool? followRedirect,
+    int? userLevel,
+  });
 }
 
 /// @nodoc
@@ -1420,44 +1523,46 @@ class __$DokodemoConfigCopyWithImpl<$Res>
     Object? followRedirect = freezed,
     Object? userLevel = freezed,
   }) {
-    return _then(_DokodemoConfig(
-      allowedNetwork: freezed == allowedNetwork
-          ? _self.allowedNetwork
-          : allowedNetwork // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      rewriteAddress: freezed == rewriteAddress
-          ? _self.rewriteAddress
-          : rewriteAddress // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      rewritePort: freezed == rewritePort
-          ? _self.rewritePort
-          : rewritePort // ignore: cast_nullable_to_non_nullable
-              as int?,
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      portMap: freezed == portMap
-          ? _self._portMap
-          : portMap // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      followRedirect: freezed == followRedirect
-          ? _self.followRedirect
-          : followRedirect // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _DokodemoConfig(
+        allowedNetwork: freezed == allowedNetwork
+            ? _self.allowedNetwork
+            : allowedNetwork // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        rewriteAddress: freezed == rewriteAddress
+            ? _self.rewriteAddress
+            : rewriteAddress // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        rewritePort: freezed == rewritePort
+            ? _self.rewritePort
+            : rewritePort // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        portMap: freezed == portMap
+            ? _self._portMap
+            : portMap // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        followRedirect: freezed == followRedirect
+            ? _self.followRedirect
+            : followRedirect // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -1477,24 +1582,36 @@ mixin _$Fragment {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Fragment;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Fragment &&
-            (identical(other.packets, packets) || other.packets == packets) &&
-            (identical(other.length, length) || other.length == length) &&
-            (identical(other.interval, interval) ||
-                other.interval == interval) &&
-            (identical(other.maxSplit, maxSplit) ||
-                other.maxSplit == maxSplit));
+            (identical(other.packets, _this.packets) ||
+                other.packets == _this.packets) &&
+            (identical(other.length, _this.length) ||
+                other.length == _this.length) &&
+            (identical(other.interval, _this.interval) ||
+                other.interval == _this.interval) &&
+            (identical(other.maxSplit, _this.maxSplit) ||
+                other.maxSplit == _this.maxSplit));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, packets, length, interval, maxSplit);
+  int get hashCode {
+    final _this = this as Fragment;
+    return Object.hash(
+      runtimeType,
+      _this.packets,
+      _this.length,
+      _this.interval,
+      _this.maxSplit,
+    );
+  }
 
   @override
   String toString() {
-    return 'Fragment(packets: $packets, length: $length, interval: $interval, maxSplit: $maxSplit)';
+    final _this = this as Fragment;
+    return 'Fragment(packets: ${_this.packets}, length: ${_this.length}, interval: ${_this.interval}, maxSplit: ${_this.maxSplit})';
   }
 }
 
@@ -1503,11 +1620,12 @@ abstract mixin class $FragmentCopyWith<$Res> {
   factory $FragmentCopyWith(Fragment value, $Res Function(Fragment) _then) =
       _$FragmentCopyWithImpl;
   @useResult
-  $Res call(
-      {String? packets,
-      XrayInt32Range? length,
-      XrayInt32Range? interval,
-      XrayInt32Range? maxSplit});
+  $Res call({
+    String? packets,
+    XrayInt32Range? length,
+    XrayInt32Range? interval,
+    XrayInt32Range? maxSplit,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get length;
   $XrayInt32RangeCopyWith<$Res>? get interval;
@@ -1531,24 +1649,26 @@ class _$FragmentCopyWithImpl<$Res> implements $FragmentCopyWith<$Res> {
     Object? interval = freezed,
     Object? maxSplit = freezed,
   }) {
-    return _then(_self.copyWith(
-      packets: freezed == packets
-          ? _self.packets
-          : packets // ignore: cast_nullable_to_non_nullable
-              as String?,
-      length: freezed == length
-          ? _self.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      interval: freezed == interval
-          ? _self.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      maxSplit: freezed == maxSplit
-          ? _self.maxSplit
-          : maxSplit // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      Fragment(
+        packets: freezed == packets
+            ? _self.packets
+            : packets // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        length: freezed == length
+            ? _self.length
+            : length // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        interval: freezed == interval
+            ? _self.interval
+            : interval // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        maxSplit: freezed == maxSplit
+            ? _self.maxSplit
+            : maxSplit // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of Fragment
@@ -1687,16 +1807,24 @@ extension FragmentPatterns on Fragment {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? packets, XrayInt32Range? length,
-            XrayInt32Range? interval, XrayInt32Range? maxSplit)?
-        $default, {
+    TResult Function(
+      String? packets,
+      XrayInt32Range? length,
+      XrayInt32Range? interval,
+      XrayInt32Range? maxSplit,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _Fragment() when $default != null:
         return $default(
-            _that.packets, _that.length, _that.interval, _that.maxSplit);
+          _that.packets,
+          _that.length,
+          _that.interval,
+          _that.maxSplit,
+        );
       case _:
         return orElse();
     }
@@ -1717,15 +1845,23 @@ extension FragmentPatterns on Fragment {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? packets, XrayInt32Range? length,
-            XrayInt32Range? interval, XrayInt32Range? maxSplit)
-        $default,
+    TResult Function(
+      String? packets,
+      XrayInt32Range? length,
+      XrayInt32Range? interval,
+      XrayInt32Range? maxSplit,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Fragment():
         return $default(
-            _that.packets, _that.length, _that.interval, _that.maxSplit);
+          _that.packets,
+          _that.length,
+          _that.interval,
+          _that.maxSplit,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -1745,15 +1881,23 @@ extension FragmentPatterns on Fragment {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? packets, XrayInt32Range? length,
-            XrayInt32Range? interval, XrayInt32Range? maxSplit)?
-        $default,
+    TResult? Function(
+      String? packets,
+      XrayInt32Range? length,
+      XrayInt32Range? interval,
+      XrayInt32Range? maxSplit,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Fragment() when $default != null:
         return $default(
-            _that.packets, _that.length, _that.interval, _that.maxSplit);
+          _that.packets,
+          _that.length,
+          _that.interval,
+          _that.maxSplit,
+        );
       case _:
         return null;
     }
@@ -1764,7 +1908,7 @@ extension FragmentPatterns on Fragment {
 
 class _Fragment extends Fragment {
   const _Fragment({this.packets, this.length, this.interval, this.maxSplit})
-      : super._();
+    : super._();
 
   @override
   final String? packets;
@@ -1797,8 +1941,9 @@ class _Fragment extends Fragment {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, packets, length, interval, maxSplit);
+  int get hashCode {
+    return Object.hash(runtimeType, packets, length, interval, maxSplit);
+  }
 
   @override
   String toString() {
@@ -1813,11 +1958,12 @@ abstract mixin class _$FragmentCopyWith<$Res>
       __$FragmentCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? packets,
-      XrayInt32Range? length,
-      XrayInt32Range? interval,
-      XrayInt32Range? maxSplit});
+  $Res call({
+    String? packets,
+    XrayInt32Range? length,
+    XrayInt32Range? interval,
+    XrayInt32Range? maxSplit,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get length;
@@ -1844,24 +1990,26 @@ class __$FragmentCopyWithImpl<$Res> implements _$FragmentCopyWith<$Res> {
     Object? interval = freezed,
     Object? maxSplit = freezed,
   }) {
-    return _then(_Fragment(
-      packets: freezed == packets
-          ? _self.packets
-          : packets // ignore: cast_nullable_to_non_nullable
-              as String?,
-      length: freezed == length
-          ? _self.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      interval: freezed == interval
-          ? _self.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      maxSplit: freezed == maxSplit
-          ? _self.maxSplit
-          : maxSplit // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      _Fragment(
+        packets: freezed == packets
+            ? _self.packets
+            : packets // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        length: freezed == length
+            ? _self.length
+            : length // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        interval: freezed == interval
+            ? _self.interval
+            : interval // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        maxSplit: freezed == maxSplit
+            ? _self.maxSplit
+            : maxSplit // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of Fragment
@@ -1926,70 +2074,83 @@ mixin _$FreedomConfig {
   @pragma('vm:prefer-inline')
   $FreedomConfigCopyWith<FreedomConfig> get copyWith =>
       _$FreedomConfigCopyWithImpl<FreedomConfig>(
-          this as FreedomConfig, _$identity);
+        this as FreedomConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as FreedomConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FreedomConfig &&
-            (identical(other.targetStrategy, targetStrategy) ||
-                other.targetStrategy == targetStrategy) &&
-            (identical(other.domainStrategy, domainStrategy) ||
-                other.domainStrategy == domainStrategy) &&
-            (identical(other.redirect, redirect) ||
-                other.redirect == redirect) &&
-            (identical(other.userLevel, userLevel) ||
-                other.userLevel == userLevel) &&
-            (identical(other.fragment, fragment) ||
-                other.fragment == fragment) &&
-            (identical(other.noise, noise) || other.noise == noise) &&
-            const DeepCollectionEquality().equals(other.noises, noises) &&
-            (identical(other.proxyProtocol, proxyProtocol) ||
-                other.proxyProtocol == proxyProtocol) &&
-            (identical(other.ipsBlocked, ipsBlocked) ||
-                other.ipsBlocked == ipsBlocked) &&
-            const DeepCollectionEquality()
-                .equals(other.finalRules, finalRules));
+            (identical(other.targetStrategy, _this.targetStrategy) ||
+                other.targetStrategy == _this.targetStrategy) &&
+            (identical(other.domainStrategy, _this.domainStrategy) ||
+                other.domainStrategy == _this.domainStrategy) &&
+            (identical(other.redirect, _this.redirect) ||
+                other.redirect == _this.redirect) &&
+            (identical(other.userLevel, _this.userLevel) ||
+                other.userLevel == _this.userLevel) &&
+            (identical(other.fragment, _this.fragment) ||
+                other.fragment == _this.fragment) &&
+            (identical(other.noise, _this.noise) ||
+                other.noise == _this.noise) &&
+            const DeepCollectionEquality().equals(other.noises, _this.noises) &&
+            (identical(other.proxyProtocol, _this.proxyProtocol) ||
+                other.proxyProtocol == _this.proxyProtocol) &&
+            (identical(other.ipsBlocked, _this.ipsBlocked) ||
+                other.ipsBlocked == _this.ipsBlocked) &&
+            const DeepCollectionEquality().equals(
+              other.finalRules,
+              _this.finalRules,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as FreedomConfig;
+    return Object.hash(
       runtimeType,
-      targetStrategy,
-      domainStrategy,
-      redirect,
-      userLevel,
-      fragment,
-      noise,
-      const DeepCollectionEquality().hash(noises),
-      proxyProtocol,
-      ipsBlocked,
-      const DeepCollectionEquality().hash(finalRules));
+      _this.targetStrategy,
+      _this.domainStrategy,
+      _this.redirect,
+      _this.userLevel,
+      _this.fragment,
+      _this.noise,
+      const DeepCollectionEquality().hash(_this.noises),
+      _this.proxyProtocol,
+      _this.ipsBlocked,
+      const DeepCollectionEquality().hash(_this.finalRules),
+    );
+  }
 
   @override
   String toString() {
-    return 'FreedomConfig(targetStrategy: $targetStrategy, domainStrategy: $domainStrategy, redirect: $redirect, userLevel: $userLevel, fragment: $fragment, noise: $noise, noises: $noises, proxyProtocol: $proxyProtocol, ipsBlocked: $ipsBlocked, finalRules: $finalRules)';
+    final _this = this as FreedomConfig;
+    return 'FreedomConfig(targetStrategy: ${_this.targetStrategy}, domainStrategy: ${_this.domainStrategy}, redirect: ${_this.redirect}, userLevel: ${_this.userLevel}, fragment: ${_this.fragment}, noise: ${_this.noise}, noises: ${_this.noises}, proxyProtocol: ${_this.proxyProtocol}, ipsBlocked: ${_this.ipsBlocked}, finalRules: ${_this.finalRules})';
   }
 }
 
 /// @nodoc
 abstract mixin class $FreedomConfigCopyWith<$Res> {
   factory $FreedomConfigCopyWith(
-          FreedomConfig value, $Res Function(FreedomConfig) _then) =
-      _$FreedomConfigCopyWithImpl;
+    FreedomConfig value,
+    $Res Function(FreedomConfig) _then,
+  ) = _$FreedomConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayTargetStrategy? targetStrategy,
-      XrayTargetStrategy? domainStrategy,
-      String? redirect,
-      int? userLevel,
-      Fragment? fragment,
-      Noise? noise,
-      List<Noise>? noises,
-      int? proxyProtocol,
-      XrayStringList? ipsBlocked,
-      List<FreedomFinalRuleConfig>? finalRules});
+  $Res call({
+    XrayTargetStrategy? targetStrategy,
+    XrayTargetStrategy? domainStrategy,
+    String? redirect,
+    int? userLevel,
+    Fragment? fragment,
+    Noise? noise,
+    List<Noise>? noises,
+    int? proxyProtocol,
+    XrayStringList? ipsBlocked,
+    List<FreedomFinalRuleConfig>? finalRules,
+  });
 
   $FragmentCopyWith<$Res>? get fragment;
   $NoiseCopyWith<$Res>? get noise;
@@ -2019,48 +2180,50 @@ class _$FreedomConfigCopyWithImpl<$Res>
     Object? ipsBlocked = freezed,
     Object? finalRules = freezed,
   }) {
-    return _then(_self.copyWith(
-      targetStrategy: freezed == targetStrategy
-          ? _self.targetStrategy
-          : targetStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-      redirect: freezed == redirect
-          ? _self.redirect
-          : redirect // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      fragment: freezed == fragment
-          ? _self.fragment
-          : fragment // ignore: cast_nullable_to_non_nullable
-              as Fragment?,
-      noise: freezed == noise
-          ? _self.noise
-          : noise // ignore: cast_nullable_to_non_nullable
-              as Noise?,
-      noises: freezed == noises
-          ? _self.noises
-          : noises // ignore: cast_nullable_to_non_nullable
-              as List<Noise>?,
-      proxyProtocol: freezed == proxyProtocol
-          ? _self.proxyProtocol
-          : proxyProtocol // ignore: cast_nullable_to_non_nullable
-              as int?,
-      ipsBlocked: freezed == ipsBlocked
-          ? _self.ipsBlocked
-          : ipsBlocked // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      finalRules: freezed == finalRules
-          ? _self.finalRules
-          : finalRules // ignore: cast_nullable_to_non_nullable
-              as List<FreedomFinalRuleConfig>?,
-    ));
+    return _then(
+      FreedomConfig(
+        targetStrategy: freezed == targetStrategy
+            ? _self.targetStrategy
+            : targetStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+        redirect: freezed == redirect
+            ? _self.redirect
+            : redirect // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        fragment: freezed == fragment
+            ? _self.fragment
+            : fragment // ignore: cast_nullable_to_non_nullable
+                  as Fragment?,
+        noise: freezed == noise
+            ? _self.noise
+            : noise // ignore: cast_nullable_to_non_nullable
+                  as Noise?,
+        noises: freezed == noises
+            ? _self.noises
+            : noises // ignore: cast_nullable_to_non_nullable
+                  as List<Noise>?,
+        proxyProtocol: freezed == proxyProtocol
+            ? _self.proxyProtocol
+            : proxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        ipsBlocked: freezed == ipsBlocked
+            ? _self.ipsBlocked
+            : ipsBlocked // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        finalRules: freezed == finalRules
+            ? _self.finalRules
+            : finalRules // ignore: cast_nullable_to_non_nullable
+                  as List<FreedomFinalRuleConfig>?,
+      ),
+    );
   }
 
   /// Create a copy of FreedomConfig
@@ -2186,33 +2349,35 @@ extension FreedomConfigPatterns on FreedomConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayTargetStrategy? targetStrategy,
-            XrayTargetStrategy? domainStrategy,
-            String? redirect,
-            int? userLevel,
-            Fragment? fragment,
-            Noise? noise,
-            List<Noise>? noises,
-            int? proxyProtocol,
-            XrayStringList? ipsBlocked,
-            List<FreedomFinalRuleConfig>? finalRules)?
-        $default, {
+      XrayTargetStrategy? targetStrategy,
+      XrayTargetStrategy? domainStrategy,
+      String? redirect,
+      int? userLevel,
+      Fragment? fragment,
+      Noise? noise,
+      List<Noise>? noises,
+      int? proxyProtocol,
+      XrayStringList? ipsBlocked,
+      List<FreedomFinalRuleConfig>? finalRules,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _FreedomConfig() when $default != null:
         return $default(
-            _that.targetStrategy,
-            _that.domainStrategy,
-            _that.redirect,
-            _that.userLevel,
-            _that.fragment,
-            _that.noise,
-            _that.noises,
-            _that.proxyProtocol,
-            _that.ipsBlocked,
-            _that.finalRules);
+          _that.targetStrategy,
+          _that.domainStrategy,
+          _that.redirect,
+          _that.userLevel,
+          _that.fragment,
+          _that.noise,
+          _that.noises,
+          _that.proxyProtocol,
+          _that.ipsBlocked,
+          _that.finalRules,
+        );
       case _:
         return orElse();
     }
@@ -2234,32 +2399,34 @@ extension FreedomConfigPatterns on FreedomConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayTargetStrategy? targetStrategy,
-            XrayTargetStrategy? domainStrategy,
-            String? redirect,
-            int? userLevel,
-            Fragment? fragment,
-            Noise? noise,
-            List<Noise>? noises,
-            int? proxyProtocol,
-            XrayStringList? ipsBlocked,
-            List<FreedomFinalRuleConfig>? finalRules)
-        $default,
+      XrayTargetStrategy? targetStrategy,
+      XrayTargetStrategy? domainStrategy,
+      String? redirect,
+      int? userLevel,
+      Fragment? fragment,
+      Noise? noise,
+      List<Noise>? noises,
+      int? proxyProtocol,
+      XrayStringList? ipsBlocked,
+      List<FreedomFinalRuleConfig>? finalRules,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FreedomConfig():
         return $default(
-            _that.targetStrategy,
-            _that.domainStrategy,
-            _that.redirect,
-            _that.userLevel,
-            _that.fragment,
-            _that.noise,
-            _that.noises,
-            _that.proxyProtocol,
-            _that.ipsBlocked,
-            _that.finalRules);
+          _that.targetStrategy,
+          _that.domainStrategy,
+          _that.redirect,
+          _that.userLevel,
+          _that.fragment,
+          _that.noise,
+          _that.noises,
+          _that.proxyProtocol,
+          _that.ipsBlocked,
+          _that.finalRules,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -2280,32 +2447,34 @@ extension FreedomConfigPatterns on FreedomConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayTargetStrategy? targetStrategy,
-            XrayTargetStrategy? domainStrategy,
-            String? redirect,
-            int? userLevel,
-            Fragment? fragment,
-            Noise? noise,
-            List<Noise>? noises,
-            int? proxyProtocol,
-            XrayStringList? ipsBlocked,
-            List<FreedomFinalRuleConfig>? finalRules)?
-        $default,
+      XrayTargetStrategy? targetStrategy,
+      XrayTargetStrategy? domainStrategy,
+      String? redirect,
+      int? userLevel,
+      Fragment? fragment,
+      Noise? noise,
+      List<Noise>? noises,
+      int? proxyProtocol,
+      XrayStringList? ipsBlocked,
+      List<FreedomFinalRuleConfig>? finalRules,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FreedomConfig() when $default != null:
         return $default(
-            _that.targetStrategy,
-            _that.domainStrategy,
-            _that.redirect,
-            _that.userLevel,
-            _that.fragment,
-            _that.noise,
-            _that.noises,
-            _that.proxyProtocol,
-            _that.ipsBlocked,
-            _that.finalRules);
+          _that.targetStrategy,
+          _that.domainStrategy,
+          _that.redirect,
+          _that.userLevel,
+          _that.fragment,
+          _that.noise,
+          _that.noises,
+          _that.proxyProtocol,
+          _that.ipsBlocked,
+          _that.finalRules,
+        );
       case _:
         return null;
     }
@@ -2315,20 +2484,20 @@ extension FreedomConfigPatterns on FreedomConfig {
 /// @nodoc
 
 class _FreedomConfig extends FreedomConfig {
-  const _FreedomConfig(
-      {this.targetStrategy,
-      this.domainStrategy,
-      this.redirect,
-      this.userLevel,
-      this.fragment,
-      this.noise,
-      final List<Noise>? noises,
-      this.proxyProtocol,
-      this.ipsBlocked,
-      final List<FreedomFinalRuleConfig>? finalRules})
-      : _noises = noises,
-        _finalRules = finalRules,
-        super._();
+  const _FreedomConfig({
+    this.targetStrategy,
+    this.domainStrategy,
+    this.redirect,
+    this.userLevel,
+    this.fragment,
+    this.noise,
+    List<Noise>? noises,
+    this.proxyProtocol,
+    this.ipsBlocked,
+    List<FreedomFinalRuleConfig>? finalRules,
+  }) : _noises = noises,
+       _finalRules = finalRules,
+       super._();
 
   @override
   final XrayTargetStrategy? targetStrategy;
@@ -2390,17 +2559,20 @@ class _FreedomConfig extends FreedomConfig {
             (identical(other.fragment, fragment) ||
                 other.fragment == fragment) &&
             (identical(other.noise, noise) || other.noise == noise) &&
-            const DeepCollectionEquality().equals(other._noises, _noises) &&
+            const DeepCollectionEquality().equals(other.noises, _noises) &&
             (identical(other.proxyProtocol, proxyProtocol) ||
                 other.proxyProtocol == proxyProtocol) &&
             (identical(other.ipsBlocked, ipsBlocked) ||
                 other.ipsBlocked == ipsBlocked) &&
-            const DeepCollectionEquality()
-                .equals(other._finalRules, _finalRules));
+            const DeepCollectionEquality().equals(
+              other.finalRules,
+              _finalRules,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       targetStrategy,
       domainStrategy,
@@ -2411,7 +2583,9 @@ class _FreedomConfig extends FreedomConfig {
       const DeepCollectionEquality().hash(_noises),
       proxyProtocol,
       ipsBlocked,
-      const DeepCollectionEquality().hash(_finalRules));
+      const DeepCollectionEquality().hash(_finalRules),
+    );
+  }
 
   @override
   String toString() {
@@ -2423,21 +2597,23 @@ class _FreedomConfig extends FreedomConfig {
 abstract mixin class _$FreedomConfigCopyWith<$Res>
     implements $FreedomConfigCopyWith<$Res> {
   factory _$FreedomConfigCopyWith(
-          _FreedomConfig value, $Res Function(_FreedomConfig) _then) =
-      __$FreedomConfigCopyWithImpl;
+    _FreedomConfig value,
+    $Res Function(_FreedomConfig) _then,
+  ) = __$FreedomConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayTargetStrategy? targetStrategy,
-      XrayTargetStrategy? domainStrategy,
-      String? redirect,
-      int? userLevel,
-      Fragment? fragment,
-      Noise? noise,
-      List<Noise>? noises,
-      int? proxyProtocol,
-      XrayStringList? ipsBlocked,
-      List<FreedomFinalRuleConfig>? finalRules});
+  $Res call({
+    XrayTargetStrategy? targetStrategy,
+    XrayTargetStrategy? domainStrategy,
+    String? redirect,
+    int? userLevel,
+    Fragment? fragment,
+    Noise? noise,
+    List<Noise>? noises,
+    int? proxyProtocol,
+    XrayStringList? ipsBlocked,
+    List<FreedomFinalRuleConfig>? finalRules,
+  });
 
   @override
   $FragmentCopyWith<$Res>? get fragment;
@@ -2469,48 +2645,50 @@ class __$FreedomConfigCopyWithImpl<$Res>
     Object? ipsBlocked = freezed,
     Object? finalRules = freezed,
   }) {
-    return _then(_FreedomConfig(
-      targetStrategy: freezed == targetStrategy
-          ? _self.targetStrategy
-          : targetStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-      redirect: freezed == redirect
-          ? _self.redirect
-          : redirect // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      fragment: freezed == fragment
-          ? _self.fragment
-          : fragment // ignore: cast_nullable_to_non_nullable
-              as Fragment?,
-      noise: freezed == noise
-          ? _self.noise
-          : noise // ignore: cast_nullable_to_non_nullable
-              as Noise?,
-      noises: freezed == noises
-          ? _self._noises
-          : noises // ignore: cast_nullable_to_non_nullable
-              as List<Noise>?,
-      proxyProtocol: freezed == proxyProtocol
-          ? _self.proxyProtocol
-          : proxyProtocol // ignore: cast_nullable_to_non_nullable
-              as int?,
-      ipsBlocked: freezed == ipsBlocked
-          ? _self.ipsBlocked
-          : ipsBlocked // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      finalRules: freezed == finalRules
-          ? _self._finalRules
-          : finalRules // ignore: cast_nullable_to_non_nullable
-              as List<FreedomFinalRuleConfig>?,
-    ));
+    return _then(
+      _FreedomConfig(
+        targetStrategy: freezed == targetStrategy
+            ? _self.targetStrategy
+            : targetStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+        redirect: freezed == redirect
+            ? _self.redirect
+            : redirect // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        fragment: freezed == fragment
+            ? _self.fragment
+            : fragment // ignore: cast_nullable_to_non_nullable
+                  as Fragment?,
+        noise: freezed == noise
+            ? _self.noise
+            : noise // ignore: cast_nullable_to_non_nullable
+                  as Noise?,
+        noises: freezed == noises
+            ? _self._noises
+            : noises // ignore: cast_nullable_to_non_nullable
+                  as List<Noise>?,
+        proxyProtocol: freezed == proxyProtocol
+            ? _self.proxyProtocol
+            : proxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        ipsBlocked: freezed == ipsBlocked
+            ? _self.ipsBlocked
+            : ipsBlocked // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        finalRules: freezed == finalRules
+            ? _self._finalRules
+            : finalRules // ignore: cast_nullable_to_non_nullable
+                  as List<FreedomFinalRuleConfig>?,
+      ),
+    );
   }
 
   /// Create a copy of FreedomConfig
@@ -2556,43 +2734,60 @@ mixin _$FreedomFinalRuleConfig {
   @pragma('vm:prefer-inline')
   $FreedomFinalRuleConfigCopyWith<FreedomFinalRuleConfig> get copyWith =>
       _$FreedomFinalRuleConfigCopyWithImpl<FreedomFinalRuleConfig>(
-          this as FreedomFinalRuleConfig, _$identity);
+        this as FreedomFinalRuleConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as FreedomFinalRuleConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FreedomFinalRuleConfig &&
-            (identical(other.action, action) || other.action == action) &&
-            (identical(other.network, network) || other.network == network) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.ip, ip) || other.ip == ip) &&
-            (identical(other.blockDelay, blockDelay) ||
-                other.blockDelay == blockDelay));
+            (identical(other.action, _this.action) ||
+                other.action == _this.action) &&
+            (identical(other.network, _this.network) ||
+                other.network == _this.network) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.ip, _this.ip) || other.ip == _this.ip) &&
+            (identical(other.blockDelay, _this.blockDelay) ||
+                other.blockDelay == _this.blockDelay));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, action, network, port, ip, blockDelay);
+  int get hashCode {
+    final _this = this as FreedomFinalRuleConfig;
+    return Object.hash(
+      runtimeType,
+      _this.action,
+      _this.network,
+      _this.port,
+      _this.ip,
+      _this.blockDelay,
+    );
+  }
 
   @override
   String toString() {
-    return 'FreedomFinalRuleConfig(action: $action, network: $network, port: $port, ip: $ip, blockDelay: $blockDelay)';
+    final _this = this as FreedomFinalRuleConfig;
+    return 'FreedomFinalRuleConfig(action: ${_this.action}, network: ${_this.network}, port: ${_this.port}, ip: ${_this.ip}, blockDelay: ${_this.blockDelay})';
   }
 }
 
 /// @nodoc
 abstract mixin class $FreedomFinalRuleConfigCopyWith<$Res> {
-  factory $FreedomFinalRuleConfigCopyWith(FreedomFinalRuleConfig value,
-          $Res Function(FreedomFinalRuleConfig) _then) =
-      _$FreedomFinalRuleConfigCopyWithImpl;
+  factory $FreedomFinalRuleConfigCopyWith(
+    FreedomFinalRuleConfig value,
+    $Res Function(FreedomFinalRuleConfig) _then,
+  ) = _$FreedomFinalRuleConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? action,
-      XrayNetworkList? network,
-      XrayPortList? port,
-      XrayStringList? ip,
-      XrayInt32Range? blockDelay});
+  $Res call({
+    String? action,
+    XrayNetworkList? network,
+    XrayPortList? port,
+    XrayStringList? ip,
+    XrayInt32Range? blockDelay,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get blockDelay;
 }
@@ -2616,28 +2811,30 @@ class _$FreedomFinalRuleConfigCopyWithImpl<$Res>
     Object? ip = freezed,
     Object? blockDelay = freezed,
   }) {
-    return _then(_self.copyWith(
-      action: freezed == action
-          ? _self.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as String?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      ip: freezed == ip
-          ? _self.ip
-          : ip // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      blockDelay: freezed == blockDelay
-          ? _self.blockDelay
-          : blockDelay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      FreedomFinalRuleConfig(
+        action: freezed == action
+            ? _self.action
+            : action // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        ip: freezed == ip
+            ? _self.ip
+            : ip // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        blockDelay: freezed == blockDelay
+            ? _self.blockDelay
+            : blockDelay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of FreedomFinalRuleConfig
@@ -2748,16 +2945,26 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? action, XrayNetworkList? network,
-            XrayPortList? port, XrayStringList? ip, XrayInt32Range? blockDelay)?
-        $default, {
+    TResult Function(
+      String? action,
+      XrayNetworkList? network,
+      XrayPortList? port,
+      XrayStringList? ip,
+      XrayInt32Range? blockDelay,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _FreedomFinalRuleConfig() when $default != null:
-        return $default(_that.action, _that.network, _that.port, _that.ip,
-            _that.blockDelay);
+        return $default(
+          _that.action,
+          _that.network,
+          _that.port,
+          _that.ip,
+          _that.blockDelay,
+        );
       case _:
         return orElse();
     }
@@ -2778,15 +2985,25 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? action, XrayNetworkList? network,
-            XrayPortList? port, XrayStringList? ip, XrayInt32Range? blockDelay)
-        $default,
+    TResult Function(
+      String? action,
+      XrayNetworkList? network,
+      XrayPortList? port,
+      XrayStringList? ip,
+      XrayInt32Range? blockDelay,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FreedomFinalRuleConfig():
-        return $default(_that.action, _that.network, _that.port, _that.ip,
-            _that.blockDelay);
+        return $default(
+          _that.action,
+          _that.network,
+          _that.port,
+          _that.ip,
+          _that.blockDelay,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -2806,15 +3023,25 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? action, XrayNetworkList? network,
-            XrayPortList? port, XrayStringList? ip, XrayInt32Range? blockDelay)?
-        $default,
+    TResult? Function(
+      String? action,
+      XrayNetworkList? network,
+      XrayPortList? port,
+      XrayStringList? ip,
+      XrayInt32Range? blockDelay,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FreedomFinalRuleConfig() when $default != null:
-        return $default(_that.action, _that.network, _that.port, _that.ip,
-            _that.blockDelay);
+        return $default(
+          _that.action,
+          _that.network,
+          _that.port,
+          _that.ip,
+          _that.blockDelay,
+        );
       case _:
         return null;
     }
@@ -2824,9 +3051,13 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
 /// @nodoc
 
 class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
-  const _FreedomFinalRuleConfig(
-      {this.action, this.network, this.port, this.ip, this.blockDelay})
-      : super._();
+  const _FreedomFinalRuleConfig({
+    this.action,
+    this.network,
+    this.port,
+    this.ip,
+    this.blockDelay,
+  }) : super._();
 
   @override
   final String? action;
@@ -2846,7 +3077,9 @@ class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
   @pragma('vm:prefer-inline')
   _$FreedomFinalRuleConfigCopyWith<_FreedomFinalRuleConfig> get copyWith =>
       __$FreedomFinalRuleConfigCopyWithImpl<_FreedomFinalRuleConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -2862,8 +3095,9 @@ class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, action, network, port, ip, blockDelay);
+  int get hashCode {
+    return Object.hash(runtimeType, action, network, port, ip, blockDelay);
+  }
 
   @override
   String toString() {
@@ -2874,17 +3108,19 @@ class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
 /// @nodoc
 abstract mixin class _$FreedomFinalRuleConfigCopyWith<$Res>
     implements $FreedomFinalRuleConfigCopyWith<$Res> {
-  factory _$FreedomFinalRuleConfigCopyWith(_FreedomFinalRuleConfig value,
-          $Res Function(_FreedomFinalRuleConfig) _then) =
-      __$FreedomFinalRuleConfigCopyWithImpl;
+  factory _$FreedomFinalRuleConfigCopyWith(
+    _FreedomFinalRuleConfig value,
+    $Res Function(_FreedomFinalRuleConfig) _then,
+  ) = __$FreedomFinalRuleConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? action,
-      XrayNetworkList? network,
-      XrayPortList? port,
-      XrayStringList? ip,
-      XrayInt32Range? blockDelay});
+  $Res call({
+    String? action,
+    XrayNetworkList? network,
+    XrayPortList? port,
+    XrayStringList? ip,
+    XrayInt32Range? blockDelay,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get blockDelay;
@@ -2909,28 +3145,30 @@ class __$FreedomFinalRuleConfigCopyWithImpl<$Res>
     Object? ip = freezed,
     Object? blockDelay = freezed,
   }) {
-    return _then(_FreedomFinalRuleConfig(
-      action: freezed == action
-          ? _self.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as String?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      ip: freezed == ip
-          ? _self.ip
-          : ip // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      blockDelay: freezed == blockDelay
-          ? _self.blockDelay
-          : blockDelay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      _FreedomFinalRuleConfig(
+        action: freezed == action
+            ? _self.action
+            : action // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        ip: freezed == ip
+            ? _self.ip
+            : ip // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        blockDelay: freezed == blockDelay
+            ? _self.blockDelay
+            : blockDelay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of FreedomFinalRuleConfig
@@ -2964,33 +3202,40 @@ mixin _$HTTPAccount {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HTTPAccount;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HTTPAccount &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.username, _this.username) ||
+                other.username == _this.username) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, password);
+  int get hashCode {
+    final _this = this as HTTPAccount;
+    return Object.hash(runtimeType, _this.username, _this.password);
+  }
 
   @override
   String toString() {
-    return 'HTTPAccount(username: $username, password: $password)';
+    final _this = this as HTTPAccount;
+    return 'HTTPAccount(username: ${_this.username}, password: ${_this.password})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HTTPAccountCopyWith<$Res> {
   factory $HTTPAccountCopyWith(
-          HTTPAccount value, $Res Function(HTTPAccount) _then) =
-      _$HTTPAccountCopyWithImpl;
+    HTTPAccount value,
+    $Res Function(HTTPAccount) _then,
+  ) = _$HTTPAccountCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password});
+  $Res call({
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+  });
 }
 
 /// @nodoc
@@ -3004,20 +3249,19 @@ class _$HTTPAccountCopyWithImpl<$Res> implements $HTTPAccountCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? username = freezed,
-    Object? password = freezed,
-  }) {
-    return _then(_self.copyWith(
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? username = freezed, Object? password = freezed}) {
+    return _then(
+      HTTPAccount(
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3114,9 +3358,11 @@ extension HTTPAccountPatterns on HTTPAccount {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password)?
-        $default, {
+    TResult Function(
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -3143,9 +3389,11 @@ extension HTTPAccountPatterns on HTTPAccount {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password)
-        $default,
+    TResult Function(
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -3170,9 +3418,11 @@ extension HTTPAccountPatterns on HTTPAccount {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(@JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password)?
-        $default,
+    TResult? Function(
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -3187,10 +3437,10 @@ extension HTTPAccountPatterns on HTTPAccount {
 /// @nodoc
 
 class _HTTPAccount extends HTTPAccount {
-  const _HTTPAccount(
-      {@JsonKey(name: 'user') this.username,
-      @JsonKey(name: 'pass') this.password})
-      : super._();
+  const _HTTPAccount({
+    @JsonKey(name: 'user') this.username,
+    @JsonKey(name: 'pass') this.password,
+  }) : super._();
 
   @override
   @JsonKey(name: 'user')
@@ -3219,7 +3469,9 @@ class _HTTPAccount extends HTTPAccount {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, password);
+  int get hashCode {
+    return Object.hash(runtimeType, username, password);
+  }
 
   @override
   String toString() {
@@ -3231,13 +3483,15 @@ class _HTTPAccount extends HTTPAccount {
 abstract mixin class _$HTTPAccountCopyWith<$Res>
     implements $HTTPAccountCopyWith<$Res> {
   factory _$HTTPAccountCopyWith(
-          _HTTPAccount value, $Res Function(_HTTPAccount) _then) =
-      __$HTTPAccountCopyWithImpl;
+    _HTTPAccount value,
+    $Res Function(_HTTPAccount) _then,
+  ) = __$HTTPAccountCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password});
+  $Res call({
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+  });
 }
 
 /// @nodoc
@@ -3251,20 +3505,19 @@ class __$HTTPAccountCopyWithImpl<$Res> implements _$HTTPAccountCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? username = freezed,
-    Object? password = freezed,
-  }) {
-    return _then(_HTTPAccount(
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? username = freezed, Object? password = freezed}) {
+    return _then(
+      _HTTPAccount(
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3287,58 +3540,77 @@ mixin _$HTTPClientConfig {
   @pragma('vm:prefer-inline')
   $HTTPClientConfigCopyWith<HTTPClientConfig> get copyWith =>
       _$HTTPClientConfigCopyWithImpl<HTTPClientConfig>(
-          this as HTTPClientConfig, _$identity);
+        this as HTTPClientConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HTTPClientConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HTTPClientConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            const DeepCollectionEquality().equals(other.servers, servers) &&
-            const DeepCollectionEquality().equals(other.headers, headers));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.username, _this.username) ||
+                other.username == _this.username) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            const DeepCollectionEquality().equals(
+              other.servers,
+              _this.servers,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as HTTPClientConfig;
+    return Object.hash(
       runtimeType,
-      address,
-      port,
-      level,
-      email,
-      username,
-      password,
-      const DeepCollectionEquality().hash(servers),
-      const DeepCollectionEquality().hash(headers));
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.username,
+      _this.password,
+      const DeepCollectionEquality().hash(_this.servers),
+      const DeepCollectionEquality().hash(_this.headers),
+    );
+  }
 
   @override
   String toString() {
-    return 'HTTPClientConfig(address: $address, port: $port, level: $level, email: $email, username: $username, password: $password, servers: $servers, headers: $headers)';
+    final _this = this as HTTPClientConfig;
+    return 'HTTPClientConfig(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, username: ${_this.username}, password: ${_this.password}, servers: ${_this.servers}, headers: ${_this.headers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HTTPClientConfigCopyWith<$Res> {
   factory $HTTPClientConfigCopyWith(
-          HTTPClientConfig value, $Res Function(HTTPClientConfig) _then) =
-      _$HTTPClientConfigCopyWithImpl;
+    HTTPClientConfig value,
+    $Res Function(HTTPClientConfig) _then,
+  ) = _$HTTPClientConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password,
-      List<HTTPRemoteConfig>? servers,
-      Map<String, String>? headers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+    List<HTTPRemoteConfig>? servers,
+    Map<String, String>? headers,
+  });
 }
 
 /// @nodoc
@@ -3363,40 +3635,42 @@ class _$HTTPClientConfigCopyWithImpl<$Res>
     Object? servers = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<HTTPRemoteConfig>?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ));
+    return _then(
+      HTTPClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self.servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPRemoteConfig>?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
   }
 }
 
@@ -3494,22 +3768,31 @@ extension HTTPClientConfigPatterns on HTTPClientConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password,
-            List<HTTPRemoteConfig>? servers,
-            Map<String, String>? headers)?
-        $default, {
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+      List<HTTPRemoteConfig>? servers,
+      Map<String, String>? headers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _HTTPClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.username, _that.password, _that.servers, _that.headers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.username,
+          _that.password,
+          _that.servers,
+          _that.headers,
+        );
       case _:
         return orElse();
     }
@@ -3531,21 +3814,30 @@ extension HTTPClientConfigPatterns on HTTPClientConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password,
-            List<HTTPRemoteConfig>? servers,
-            Map<String, String>? headers)
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+      List<HTTPRemoteConfig>? servers,
+      Map<String, String>? headers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HTTPClientConfig():
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.username, _that.password, _that.servers, _that.headers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.username,
+          _that.password,
+          _that.servers,
+          _that.headers,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -3566,21 +3858,30 @@ extension HTTPClientConfigPatterns on HTTPClientConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password,
-            List<HTTPRemoteConfig>? servers,
-            Map<String, String>? headers)?
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+      List<HTTPRemoteConfig>? servers,
+      Map<String, String>? headers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HTTPClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.username, _that.password, _that.servers, _that.headers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.username,
+          _that.password,
+          _that.servers,
+          _that.headers,
+        );
       case _:
         return null;
     }
@@ -3590,18 +3891,18 @@ extension HTTPClientConfigPatterns on HTTPClientConfig {
 /// @nodoc
 
 class _HTTPClientConfig extends HTTPClientConfig {
-  const _HTTPClientConfig(
-      {this.address,
-      this.port,
-      this.level,
-      this.email,
-      @JsonKey(name: 'user') this.username,
-      @JsonKey(name: 'pass') this.password,
-      final List<HTTPRemoteConfig>? servers,
-      final Map<String, String>? headers})
-      : _servers = servers,
-        _headers = headers,
-        super._();
+  const _HTTPClientConfig({
+    this.address,
+    this.port,
+    this.level,
+    this.email,
+    @JsonKey(name: 'user') this.username,
+    @JsonKey(name: 'pass') this.password,
+    List<HTTPRemoteConfig>? servers,
+    Map<String, String>? headers,
+  }) : _servers = servers,
+       _headers = headers,
+       super._();
 
   @override
   final XrayAddress? address;
@@ -3658,12 +3959,13 @@ class _HTTPClientConfig extends HTTPClientConfig {
                 other.username == username) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            const DeepCollectionEquality().equals(other._servers, _servers) &&
-            const DeepCollectionEquality().equals(other._headers, _headers));
+            const DeepCollectionEquality().equals(other.servers, _servers) &&
+            const DeepCollectionEquality().equals(other.headers, _headers));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       address,
       port,
@@ -3672,7 +3974,9 @@ class _HTTPClientConfig extends HTTPClientConfig {
       username,
       password,
       const DeepCollectionEquality().hash(_servers),
-      const DeepCollectionEquality().hash(_headers));
+      const DeepCollectionEquality().hash(_headers),
+    );
+  }
 
   @override
   String toString() {
@@ -3684,19 +3988,21 @@ class _HTTPClientConfig extends HTTPClientConfig {
 abstract mixin class _$HTTPClientConfigCopyWith<$Res>
     implements $HTTPClientConfigCopyWith<$Res> {
   factory _$HTTPClientConfigCopyWith(
-          _HTTPClientConfig value, $Res Function(_HTTPClientConfig) _then) =
-      __$HTTPClientConfigCopyWithImpl;
+    _HTTPClientConfig value,
+    $Res Function(_HTTPClientConfig) _then,
+  ) = __$HTTPClientConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password,
-      List<HTTPRemoteConfig>? servers,
-      Map<String, String>? headers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+    List<HTTPRemoteConfig>? servers,
+    Map<String, String>? headers,
+  });
 }
 
 /// @nodoc
@@ -3721,40 +4027,42 @@ class __$HTTPClientConfigCopyWithImpl<$Res>
     Object? servers = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_HTTPClientConfig(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<HTTPRemoteConfig>?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ));
+    return _then(
+      _HTTPClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPRemoteConfig>?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
   }
 }
 
@@ -3770,33 +4078,46 @@ mixin _$HTTPRemoteConfig {
   @pragma('vm:prefer-inline')
   $HTTPRemoteConfigCopyWith<HTTPRemoteConfig> get copyWith =>
       _$HTTPRemoteConfigCopyWithImpl<HTTPRemoteConfig>(
-          this as HTTPRemoteConfig, _$identity);
+        this as HTTPRemoteConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HTTPRemoteConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HTTPRemoteConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other.users, users));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            const DeepCollectionEquality().equals(other.users, _this.users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(users));
+  int get hashCode {
+    final _this = this as HTTPRemoteConfig;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      const DeepCollectionEquality().hash(_this.users),
+    );
+  }
 
   @override
   String toString() {
-    return 'HTTPRemoteConfig(address: $address, port: $port, users: $users)';
+    final _this = this as HTTPRemoteConfig;
+    return 'HTTPRemoteConfig(address: ${_this.address}, port: ${_this.port}, users: ${_this.users})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HTTPRemoteConfigCopyWith<$Res> {
   factory $HTTPRemoteConfigCopyWith(
-          HTTPRemoteConfig value, $Res Function(HTTPRemoteConfig) _then) =
-      _$HTTPRemoteConfigCopyWithImpl;
+    HTTPRemoteConfig value,
+    $Res Function(HTTPRemoteConfig) _then,
+  ) = _$HTTPRemoteConfigCopyWithImpl;
   @useResult
   $Res call({XrayAddress address, int port, List<HTTPAccount>? users});
 }
@@ -3818,20 +4139,22 @@ class _$HTTPRemoteConfigCopyWithImpl<$Res>
     Object? port = null,
     Object? users = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<HTTPAccount>?,
-    ));
+    return _then(
+      HTTPRemoteConfig(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPAccount>?,
+      ),
+    );
   }
 }
 
@@ -3929,7 +4252,7 @@ extension HTTPRemoteConfigPatterns on HTTPRemoteConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<HTTPAccount>? users)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -3957,7 +4280,7 @@ extension HTTPRemoteConfigPatterns on HTTPRemoteConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<HTTPAccount>? users)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -3983,7 +4306,7 @@ extension HTTPRemoteConfigPatterns on HTTPRemoteConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(XrayAddress address, int port, List<HTTPAccount>? users)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -3998,12 +4321,12 @@ extension HTTPRemoteConfigPatterns on HTTPRemoteConfig {
 /// @nodoc
 
 class _HTTPRemoteConfig extends HTTPRemoteConfig {
-  const _HTTPRemoteConfig(
-      {required this.address,
-      required this.port,
-      final List<HTTPAccount>? users})
-      : _users = users,
-        super._();
+  const _HTTPRemoteConfig({
+    required this.address,
+    required this.port,
+    List<HTTPAccount>? users,
+  }) : _users = users,
+       super._();
 
   @override
   final XrayAddress address;
@@ -4034,12 +4357,18 @@ class _HTTPRemoteConfig extends HTTPRemoteConfig {
             other is _HTTPRemoteConfig &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            const DeepCollectionEquality().equals(other.users, _users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(_users));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      const DeepCollectionEquality().hash(_users),
+    );
+  }
 
   @override
   String toString() {
@@ -4051,8 +4380,9 @@ class _HTTPRemoteConfig extends HTTPRemoteConfig {
 abstract mixin class _$HTTPRemoteConfigCopyWith<$Res>
     implements $HTTPRemoteConfigCopyWith<$Res> {
   factory _$HTTPRemoteConfigCopyWith(
-          _HTTPRemoteConfig value, $Res Function(_HTTPRemoteConfig) _then) =
-      __$HTTPRemoteConfigCopyWithImpl;
+    _HTTPRemoteConfig value,
+    $Res Function(_HTTPRemoteConfig) _then,
+  ) = __$HTTPRemoteConfigCopyWithImpl;
   @override
   @useResult
   $Res call({XrayAddress address, int port, List<HTTPAccount>? users});
@@ -4075,20 +4405,22 @@ class __$HTTPRemoteConfigCopyWithImpl<$Res>
     Object? port = null,
     Object? users = freezed,
   }) {
-    return _then(_HTTPRemoteConfig(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<HTTPAccount>?,
-    ));
+    return _then(
+      _HTTPRemoteConfig(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPAccount>?,
+      ),
+    );
   }
 }
 
@@ -4106,46 +4438,59 @@ mixin _$HTTPServerConfig {
   @pragma('vm:prefer-inline')
   $HTTPServerConfigCopyWith<HTTPServerConfig> get copyWith =>
       _$HTTPServerConfigCopyWithImpl<HTTPServerConfig>(
-          this as HTTPServerConfig, _$identity);
+        this as HTTPServerConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HTTPServerConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HTTPServerConfig &&
-            const DeepCollectionEquality().equals(other.users, users) &&
-            const DeepCollectionEquality().equals(other.accounts, accounts) &&
-            (identical(other.transparent, transparent) ||
-                other.transparent == transparent) &&
-            (identical(other.userLevel, userLevel) ||
-                other.userLevel == userLevel));
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.accounts,
+              _this.accounts,
+            ) &&
+            (identical(other.transparent, _this.transparent) ||
+                other.transparent == _this.transparent) &&
+            (identical(other.userLevel, _this.userLevel) ||
+                other.userLevel == _this.userLevel));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as HTTPServerConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(users),
-      const DeepCollectionEquality().hash(accounts),
-      transparent,
-      userLevel);
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.accounts),
+      _this.transparent,
+      _this.userLevel,
+    );
+  }
 
   @override
   String toString() {
-    return 'HTTPServerConfig(users: $users, accounts: $accounts, transparent: $transparent, userLevel: $userLevel)';
+    final _this = this as HTTPServerConfig;
+    return 'HTTPServerConfig(users: ${_this.users}, accounts: ${_this.accounts}, transparent: ${_this.transparent}, userLevel: ${_this.userLevel})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HTTPServerConfigCopyWith<$Res> {
   factory $HTTPServerConfigCopyWith(
-          HTTPServerConfig value, $Res Function(HTTPServerConfig) _then) =
-      _$HTTPServerConfigCopyWithImpl;
+    HTTPServerConfig value,
+    $Res Function(HTTPServerConfig) _then,
+  ) = _$HTTPServerConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<HTTPAccount>? users,
-      List<HTTPAccount>? accounts,
-      @JsonKey(name: 'allowTransparent') bool? transparent,
-      int? userLevel});
+  $Res call({
+    List<HTTPAccount>? users,
+    List<HTTPAccount>? accounts,
+    @JsonKey(name: 'allowTransparent') bool? transparent,
+    int? userLevel,
+  });
 }
 
 /// @nodoc
@@ -4166,24 +4511,26 @@ class _$HTTPServerConfigCopyWithImpl<$Res>
     Object? transparent = freezed,
     Object? userLevel = freezed,
   }) {
-    return _then(_self.copyWith(
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<HTTPAccount>?,
-      accounts: freezed == accounts
-          ? _self.accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<HTTPAccount>?,
-      transparent: freezed == transparent
-          ? _self.transparent
-          : transparent // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      HTTPServerConfig(
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPAccount>?,
+        accounts: freezed == accounts
+            ? _self.accounts
+            : accounts // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPAccount>?,
+        transparent: freezed == transparent
+            ? _self.transparent
+            : transparent // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -4281,18 +4628,23 @@ extension HTTPServerConfigPatterns on HTTPServerConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            List<HTTPAccount>? users,
-            List<HTTPAccount>? accounts,
-            @JsonKey(name: 'allowTransparent') bool? transparent,
-            int? userLevel)?
-        $default, {
+      List<HTTPAccount>? users,
+      List<HTTPAccount>? accounts,
+      @JsonKey(name: 'allowTransparent') bool? transparent,
+      int? userLevel,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _HTTPServerConfig() when $default != null:
         return $default(
-            _that.users, _that.accounts, _that.transparent, _that.userLevel);
+          _that.users,
+          _that.accounts,
+          _that.transparent,
+          _that.userLevel,
+        );
       case _:
         return orElse();
     }
@@ -4314,17 +4666,22 @@ extension HTTPServerConfigPatterns on HTTPServerConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            List<HTTPAccount>? users,
-            List<HTTPAccount>? accounts,
-            @JsonKey(name: 'allowTransparent') bool? transparent,
-            int? userLevel)
-        $default,
+      List<HTTPAccount>? users,
+      List<HTTPAccount>? accounts,
+      @JsonKey(name: 'allowTransparent') bool? transparent,
+      int? userLevel,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HTTPServerConfig():
         return $default(
-            _that.users, _that.accounts, _that.transparent, _that.userLevel);
+          _that.users,
+          _that.accounts,
+          _that.transparent,
+          _that.userLevel,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -4345,17 +4702,22 @@ extension HTTPServerConfigPatterns on HTTPServerConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            List<HTTPAccount>? users,
-            List<HTTPAccount>? accounts,
-            @JsonKey(name: 'allowTransparent') bool? transparent,
-            int? userLevel)?
-        $default,
+      List<HTTPAccount>? users,
+      List<HTTPAccount>? accounts,
+      @JsonKey(name: 'allowTransparent') bool? transparent,
+      int? userLevel,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HTTPServerConfig() when $default != null:
         return $default(
-            _that.users, _that.accounts, _that.transparent, _that.userLevel);
+          _that.users,
+          _that.accounts,
+          _that.transparent,
+          _that.userLevel,
+        );
       case _:
         return null;
     }
@@ -4365,14 +4727,14 @@ extension HTTPServerConfigPatterns on HTTPServerConfig {
 /// @nodoc
 
 class _HTTPServerConfig extends HTTPServerConfig {
-  const _HTTPServerConfig(
-      {final List<HTTPAccount>? users,
-      final List<HTTPAccount>? accounts,
-      @JsonKey(name: 'allowTransparent') this.transparent,
-      this.userLevel})
-      : _users = users,
-        _accounts = accounts,
-        super._();
+  const _HTTPServerConfig({
+    List<HTTPAccount>? users,
+    List<HTTPAccount>? accounts,
+    @JsonKey(name: 'allowTransparent') this.transparent,
+    this.userLevel,
+  }) : _users = users,
+       _accounts = accounts,
+       super._();
 
   final List<HTTPAccount>? _users;
   @override
@@ -4413,8 +4775,8 @@ class _HTTPServerConfig extends HTTPServerConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _HTTPServerConfig &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
-            const DeepCollectionEquality().equals(other._accounts, _accounts) &&
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.accounts, _accounts) &&
             (identical(other.transparent, transparent) ||
                 other.transparent == transparent) &&
             (identical(other.userLevel, userLevel) ||
@@ -4422,12 +4784,15 @@ class _HTTPServerConfig extends HTTPServerConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_accounts),
       transparent,
-      userLevel);
+      userLevel,
+    );
+  }
 
   @override
   String toString() {
@@ -4439,15 +4804,17 @@ class _HTTPServerConfig extends HTTPServerConfig {
 abstract mixin class _$HTTPServerConfigCopyWith<$Res>
     implements $HTTPServerConfigCopyWith<$Res> {
   factory _$HTTPServerConfigCopyWith(
-          _HTTPServerConfig value, $Res Function(_HTTPServerConfig) _then) =
-      __$HTTPServerConfigCopyWithImpl;
+    _HTTPServerConfig value,
+    $Res Function(_HTTPServerConfig) _then,
+  ) = __$HTTPServerConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<HTTPAccount>? users,
-      List<HTTPAccount>? accounts,
-      @JsonKey(name: 'allowTransparent') bool? transparent,
-      int? userLevel});
+  $Res call({
+    List<HTTPAccount>? users,
+    List<HTTPAccount>? accounts,
+    @JsonKey(name: 'allowTransparent') bool? transparent,
+    int? userLevel,
+  });
 }
 
 /// @nodoc
@@ -4468,24 +4835,26 @@ class __$HTTPServerConfigCopyWithImpl<$Res>
     Object? transparent = freezed,
     Object? userLevel = freezed,
   }) {
-    return _then(_HTTPServerConfig(
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<HTTPAccount>?,
-      accounts: freezed == accounts
-          ? _self._accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<HTTPAccount>?,
-      transparent: freezed == transparent
-          ? _self.transparent
-          : transparent // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _HTTPServerConfig(
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPAccount>?,
+        accounts: freezed == accounts
+            ? _self._accounts
+            : accounts // ignore: cast_nullable_to_non_nullable
+                  as List<HTTPAccount>?,
+        transparent: freezed == transparent
+            ? _self.transparent
+            : transparent // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -4501,32 +4870,42 @@ mixin _$HysteriaClientConfig {
   @pragma('vm:prefer-inline')
   $HysteriaClientConfigCopyWith<HysteriaClientConfig> get copyWith =>
       _$HysteriaClientConfigCopyWithImpl<HysteriaClientConfig>(
-          this as HysteriaClientConfig, _$identity);
+        this as HysteriaClientConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HysteriaClientConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HysteriaClientConfig &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port));
+            (identical(other.version, _this.version) ||
+                other.version == _this.version) &&
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, address, port);
+  int get hashCode {
+    final _this = this as HysteriaClientConfig;
+    return Object.hash(runtimeType, _this.version, _this.address, _this.port);
+  }
 
   @override
   String toString() {
-    return 'HysteriaClientConfig(version: $version, address: $address, port: $port)';
+    final _this = this as HysteriaClientConfig;
+    return 'HysteriaClientConfig(version: ${_this.version}, address: ${_this.address}, port: ${_this.port})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HysteriaClientConfigCopyWith<$Res> {
-  factory $HysteriaClientConfigCopyWith(HysteriaClientConfig value,
-          $Res Function(HysteriaClientConfig) _then) =
-      _$HysteriaClientConfigCopyWithImpl;
+  factory $HysteriaClientConfigCopyWith(
+    HysteriaClientConfig value,
+    $Res Function(HysteriaClientConfig) _then,
+  ) = _$HysteriaClientConfigCopyWithImpl;
   @useResult
   $Res call({int version, XrayAddress address, int port});
 }
@@ -4548,20 +4927,22 @@ class _$HysteriaClientConfigCopyWithImpl<$Res>
     Object? address = null,
     Object? port = null,
   }) {
-    return _then(_self.copyWith(
-      version: null == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+    return _then(
+      HysteriaClientConfig(
+        version: null == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as int,
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
@@ -4725,9 +5106,11 @@ extension HysteriaClientConfigPatterns on HysteriaClientConfig {
 /// @nodoc
 
 class _HysteriaClientConfig extends HysteriaClientConfig {
-  const _HysteriaClientConfig(
-      {required this.version, required this.address, required this.port})
-      : super._();
+  const _HysteriaClientConfig({
+    required this.version,
+    required this.address,
+    required this.port,
+  }) : super._();
 
   @override
   final int version;
@@ -4743,7 +5126,9 @@ class _HysteriaClientConfig extends HysteriaClientConfig {
   @pragma('vm:prefer-inline')
   _$HysteriaClientConfigCopyWith<_HysteriaClientConfig> get copyWith =>
       __$HysteriaClientConfigCopyWithImpl<_HysteriaClientConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -4756,7 +5141,9 @@ class _HysteriaClientConfig extends HysteriaClientConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, address, port);
+  int get hashCode {
+    return Object.hash(runtimeType, version, address, port);
+  }
 
   @override
   String toString() {
@@ -4767,9 +5154,10 @@ class _HysteriaClientConfig extends HysteriaClientConfig {
 /// @nodoc
 abstract mixin class _$HysteriaClientConfigCopyWith<$Res>
     implements $HysteriaClientConfigCopyWith<$Res> {
-  factory _$HysteriaClientConfigCopyWith(_HysteriaClientConfig value,
-          $Res Function(_HysteriaClientConfig) _then) =
-      __$HysteriaClientConfigCopyWithImpl;
+  factory _$HysteriaClientConfigCopyWith(
+    _HysteriaClientConfig value,
+    $Res Function(_HysteriaClientConfig) _then,
+  ) = __$HysteriaClientConfigCopyWithImpl;
   @override
   @useResult
   $Res call({int version, XrayAddress address, int port});
@@ -4792,20 +5180,22 @@ class __$HysteriaClientConfigCopyWithImpl<$Res>
     Object? address = null,
     Object? port = null,
   }) {
-    return _then(_HysteriaClientConfig(
-      version: null == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+    return _then(
+      _HysteriaClientConfig(
+        version: null == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as int,
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
@@ -4821,41 +5211,55 @@ mixin _$HysteriaServerConfig {
   @pragma('vm:prefer-inline')
   $HysteriaServerConfigCopyWith<HysteriaServerConfig> get copyWith =>
       _$HysteriaServerConfigCopyWithImpl<HysteriaServerConfig>(
-          this as HysteriaServerConfig, _$identity);
+        this as HysteriaServerConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HysteriaServerConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HysteriaServerConfig &&
-            (identical(other.version, version) || other.version == version) &&
-            const DeepCollectionEquality().equals(other.users, users) &&
-            const DeepCollectionEquality().equals(other.clients, clients));
+            (identical(other.version, _this.version) ||
+                other.version == _this.version) &&
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.clients,
+              _this.clients,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as HysteriaServerConfig;
+    return Object.hash(
       runtimeType,
-      version,
-      const DeepCollectionEquality().hash(users),
-      const DeepCollectionEquality().hash(clients));
+      _this.version,
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.clients),
+    );
+  }
 
   @override
   String toString() {
-    return 'HysteriaServerConfig(version: $version, users: $users, clients: $clients)';
+    final _this = this as HysteriaServerConfig;
+    return 'HysteriaServerConfig(version: ${_this.version}, users: ${_this.users}, clients: ${_this.clients})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HysteriaServerConfigCopyWith<$Res> {
-  factory $HysteriaServerConfigCopyWith(HysteriaServerConfig value,
-          $Res Function(HysteriaServerConfig) _then) =
-      _$HysteriaServerConfigCopyWithImpl;
+  factory $HysteriaServerConfigCopyWith(
+    HysteriaServerConfig value,
+    $Res Function(HysteriaServerConfig) _then,
+  ) = _$HysteriaServerConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {int? version,
-      List<HysteriaUserConfig>? users,
-      List<HysteriaUserConfig>? clients});
+  $Res call({
+    int? version,
+    List<HysteriaUserConfig>? users,
+    List<HysteriaUserConfig>? clients,
+  });
 }
 
 /// @nodoc
@@ -4875,20 +5279,22 @@ class _$HysteriaServerConfigCopyWithImpl<$Res>
     Object? users = freezed,
     Object? clients = freezed,
   }) {
-    return _then(_self.copyWith(
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int?,
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<HysteriaUserConfig>?,
-      clients: freezed == clients
-          ? _self.clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<HysteriaUserConfig>?,
-    ));
+    return _then(
+      HysteriaServerConfig(
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<HysteriaUserConfig>?,
+        clients: freezed == clients
+            ? _self.clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<HysteriaUserConfig>?,
+      ),
+    );
   }
 }
 
@@ -4985,9 +5391,12 @@ extension HysteriaServerConfigPatterns on HysteriaServerConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int? version, List<HysteriaUserConfig>? users,
-            List<HysteriaUserConfig>? clients)?
-        $default, {
+    TResult Function(
+      int? version,
+      List<HysteriaUserConfig>? users,
+      List<HysteriaUserConfig>? clients,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -5014,9 +5423,12 @@ extension HysteriaServerConfigPatterns on HysteriaServerConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int? version, List<HysteriaUserConfig>? users,
-            List<HysteriaUserConfig>? clients)
-        $default,
+    TResult Function(
+      int? version,
+      List<HysteriaUserConfig>? users,
+      List<HysteriaUserConfig>? clients,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -5041,9 +5453,12 @@ extension HysteriaServerConfigPatterns on HysteriaServerConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int? version, List<HysteriaUserConfig>? users,
-            List<HysteriaUserConfig>? clients)?
-        $default,
+    TResult? Function(
+      int? version,
+      List<HysteriaUserConfig>? users,
+      List<HysteriaUserConfig>? clients,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -5058,13 +5473,13 @@ extension HysteriaServerConfigPatterns on HysteriaServerConfig {
 /// @nodoc
 
 class _HysteriaServerConfig extends HysteriaServerConfig {
-  const _HysteriaServerConfig(
-      {this.version,
-      final List<HysteriaUserConfig>? users,
-      final List<HysteriaUserConfig>? clients})
-      : _users = users,
-        _clients = clients,
-        super._();
+  const _HysteriaServerConfig({
+    this.version,
+    List<HysteriaUserConfig>? users,
+    List<HysteriaUserConfig>? clients,
+  }) : _users = users,
+       _clients = clients,
+       super._();
 
   @override
   final int? version;
@@ -5095,7 +5510,9 @@ class _HysteriaServerConfig extends HysteriaServerConfig {
   @pragma('vm:prefer-inline')
   _$HysteriaServerConfigCopyWith<_HysteriaServerConfig> get copyWith =>
       __$HysteriaServerConfigCopyWithImpl<_HysteriaServerConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -5103,16 +5520,19 @@ class _HysteriaServerConfig extends HysteriaServerConfig {
         (other.runtimeType == runtimeType &&
             other is _HysteriaServerConfig &&
             (identical(other.version, version) || other.version == version) &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
-            const DeepCollectionEquality().equals(other._clients, _clients));
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.clients, _clients));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       version,
       const DeepCollectionEquality().hash(_users),
-      const DeepCollectionEquality().hash(_clients));
+      const DeepCollectionEquality().hash(_clients),
+    );
+  }
 
   @override
   String toString() {
@@ -5123,15 +5543,17 @@ class _HysteriaServerConfig extends HysteriaServerConfig {
 /// @nodoc
 abstract mixin class _$HysteriaServerConfigCopyWith<$Res>
     implements $HysteriaServerConfigCopyWith<$Res> {
-  factory _$HysteriaServerConfigCopyWith(_HysteriaServerConfig value,
-          $Res Function(_HysteriaServerConfig) _then) =
-      __$HysteriaServerConfigCopyWithImpl;
+  factory _$HysteriaServerConfigCopyWith(
+    _HysteriaServerConfig value,
+    $Res Function(_HysteriaServerConfig) _then,
+  ) = __$HysteriaServerConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {int? version,
-      List<HysteriaUserConfig>? users,
-      List<HysteriaUserConfig>? clients});
+  $Res call({
+    int? version,
+    List<HysteriaUserConfig>? users,
+    List<HysteriaUserConfig>? clients,
+  });
 }
 
 /// @nodoc
@@ -5151,20 +5573,22 @@ class __$HysteriaServerConfigCopyWithImpl<$Res>
     Object? users = freezed,
     Object? clients = freezed,
   }) {
-    return _then(_HysteriaServerConfig(
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int?,
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<HysteriaUserConfig>?,
-      clients: freezed == clients
-          ? _self._clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<HysteriaUserConfig>?,
-    ));
+    return _then(
+      _HysteriaServerConfig(
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<HysteriaUserConfig>?,
+        clients: freezed == clients
+            ? _self._clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<HysteriaUserConfig>?,
+      ),
+    );
   }
 }
 
@@ -5180,32 +5604,42 @@ mixin _$HysteriaUserConfig {
   @pragma('vm:prefer-inline')
   $HysteriaUserConfigCopyWith<HysteriaUserConfig> get copyWith =>
       _$HysteriaUserConfigCopyWithImpl<HysteriaUserConfig>(
-          this as HysteriaUserConfig, _$identity);
+        this as HysteriaUserConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HysteriaUserConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HysteriaUserConfig &&
-            (identical(other.auth, auth) || other.auth == auth) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.auth, _this.auth) || other.auth == _this.auth) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, auth, level, email);
+  int get hashCode {
+    final _this = this as HysteriaUserConfig;
+    return Object.hash(runtimeType, _this.auth, _this.level, _this.email);
+  }
 
   @override
   String toString() {
-    return 'HysteriaUserConfig(auth: $auth, level: $level, email: $email)';
+    final _this = this as HysteriaUserConfig;
+    return 'HysteriaUserConfig(auth: ${_this.auth}, level: ${_this.level}, email: ${_this.email})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HysteriaUserConfigCopyWith<$Res> {
   factory $HysteriaUserConfigCopyWith(
-          HysteriaUserConfig value, $Res Function(HysteriaUserConfig) _then) =
-      _$HysteriaUserConfigCopyWithImpl;
+    HysteriaUserConfig value,
+    $Res Function(HysteriaUserConfig) _then,
+  ) = _$HysteriaUserConfigCopyWithImpl;
   @useResult
   $Res call({String auth, int? level, String? email});
 }
@@ -5227,20 +5661,22 @@ class _$HysteriaUserConfigCopyWithImpl<$Res>
     Object? level = freezed,
     Object? email = freezed,
   }) {
-    return _then(_self.copyWith(
-      auth: null == auth
-          ? _self.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as String,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      HysteriaUserConfig(
+        auth: null == auth
+            ? _self.auth
+            : auth // ignore: cast_nullable_to_non_nullable
+                  as String,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -5405,7 +5841,7 @@ extension HysteriaUserConfigPatterns on HysteriaUserConfig {
 
 class _HysteriaUserConfig extends HysteriaUserConfig {
   const _HysteriaUserConfig({required this.auth, this.level, this.email})
-      : super._();
+    : super._();
 
   @override
   final String auth;
@@ -5433,7 +5869,9 @@ class _HysteriaUserConfig extends HysteriaUserConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, auth, level, email);
+  int get hashCode {
+    return Object.hash(runtimeType, auth, level, email);
+  }
 
   @override
   String toString() {
@@ -5445,8 +5883,9 @@ class _HysteriaUserConfig extends HysteriaUserConfig {
 abstract mixin class _$HysteriaUserConfigCopyWith<$Res>
     implements $HysteriaUserConfigCopyWith<$Res> {
   factory _$HysteriaUserConfigCopyWith(
-          _HysteriaUserConfig value, $Res Function(_HysteriaUserConfig) _then) =
-      __$HysteriaUserConfigCopyWithImpl;
+    _HysteriaUserConfig value,
+    $Res Function(_HysteriaUserConfig) _then,
+  ) = __$HysteriaUserConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String auth, int? level, String? email});
@@ -5469,20 +5908,22 @@ class __$HysteriaUserConfigCopyWithImpl<$Res>
     Object? level = freezed,
     Object? email = freezed,
   }) {
-    return _then(_HysteriaUserConfig(
-      auth: null == auth
-          ? _self.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as String,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _HysteriaUserConfig(
+        auth: null == auth
+            ? _self.auth
+            : auth // ignore: cast_nullable_to_non_nullable
+                  as String,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -5497,33 +5938,41 @@ mixin _$LoopbackConfig {
   @pragma('vm:prefer-inline')
   $LoopbackConfigCopyWith<LoopbackConfig> get copyWith =>
       _$LoopbackConfigCopyWithImpl<LoopbackConfig>(
-          this as LoopbackConfig, _$identity);
+        this as LoopbackConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as LoopbackConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LoopbackConfig &&
-            (identical(other.inboundTag, inboundTag) ||
-                other.inboundTag == inboundTag) &&
-            (identical(other.sniffing, sniffing) ||
-                other.sniffing == sniffing));
+            (identical(other.inboundTag, _this.inboundTag) ||
+                other.inboundTag == _this.inboundTag) &&
+            (identical(other.sniffing, _this.sniffing) ||
+                other.sniffing == _this.sniffing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, inboundTag, sniffing);
+  int get hashCode {
+    final _this = this as LoopbackConfig;
+    return Object.hash(runtimeType, _this.inboundTag, _this.sniffing);
+  }
 
   @override
   String toString() {
-    return 'LoopbackConfig(inboundTag: $inboundTag, sniffing: $sniffing)';
+    final _this = this as LoopbackConfig;
+    return 'LoopbackConfig(inboundTag: ${_this.inboundTag}, sniffing: ${_this.sniffing})';
   }
 }
 
 /// @nodoc
 abstract mixin class $LoopbackConfigCopyWith<$Res> {
   factory $LoopbackConfigCopyWith(
-          LoopbackConfig value, $Res Function(LoopbackConfig) _then) =
-      _$LoopbackConfigCopyWithImpl;
+    LoopbackConfig value,
+    $Res Function(LoopbackConfig) _then,
+  ) = _$LoopbackConfigCopyWithImpl;
   @useResult
   $Res call({String? inboundTag, SniffingConfig? sniffing});
 
@@ -5542,20 +5991,19 @@ class _$LoopbackConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? inboundTag = freezed,
-    Object? sniffing = freezed,
-  }) {
-    return _then(_self.copyWith(
-      inboundTag: freezed == inboundTag
-          ? _self.inboundTag
-          : inboundTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sniffing: freezed == sniffing
-          ? _self.sniffing
-          : sniffing // ignore: cast_nullable_to_non_nullable
-              as SniffingConfig?,
-    ));
+  $Res call({Object? inboundTag = freezed, Object? sniffing = freezed}) {
+    return _then(
+      LoopbackConfig(
+        inboundTag: freezed == inboundTag
+            ? _self.inboundTag
+            : inboundTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sniffing: freezed == sniffing
+            ? _self.sniffing
+            : sniffing // ignore: cast_nullable_to_non_nullable
+                  as SniffingConfig?,
+      ),
+    );
   }
 
   /// Create a copy of LoopbackConfig
@@ -5760,7 +6208,9 @@ class _LoopbackConfig extends LoopbackConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, inboundTag, sniffing);
+  int get hashCode {
+    return Object.hash(runtimeType, inboundTag, sniffing);
+  }
 
   @override
   String toString() {
@@ -5772,8 +6222,9 @@ class _LoopbackConfig extends LoopbackConfig {
 abstract mixin class _$LoopbackConfigCopyWith<$Res>
     implements $LoopbackConfigCopyWith<$Res> {
   factory _$LoopbackConfigCopyWith(
-          _LoopbackConfig value, $Res Function(_LoopbackConfig) _then) =
-      __$LoopbackConfigCopyWithImpl;
+    _LoopbackConfig value,
+    $Res Function(_LoopbackConfig) _then,
+  ) = __$LoopbackConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String? inboundTag, SniffingConfig? sniffing});
@@ -5794,20 +6245,19 @@ class __$LoopbackConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? inboundTag = freezed,
-    Object? sniffing = freezed,
-  }) {
-    return _then(_LoopbackConfig(
-      inboundTag: freezed == inboundTag
-          ? _self.inboundTag
-          : inboundTag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sniffing: freezed == sniffing
-          ? _self.sniffing
-          : sniffing // ignore: cast_nullable_to_non_nullable
-              as SniffingConfig?,
-    ));
+  $Res call({Object? inboundTag = freezed, Object? sniffing = freezed}) {
+    return _then(
+      _LoopbackConfig(
+        inboundTag: freezed == inboundTag
+            ? _self.inboundTag
+            : inboundTag // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sniffing: freezed == sniffing
+            ? _self.sniffing
+            : sniffing // ignore: cast_nullable_to_non_nullable
+                  as SniffingConfig?,
+      ),
+    );
   }
 
   /// Create a copy of LoopbackConfig
@@ -5841,21 +6291,35 @@ mixin _$Noise {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Noise;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Noise &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.packet, packet) || other.packet == packet) &&
-            (identical(other.delay, delay) || other.delay == delay) &&
-            (identical(other.applyTo, applyTo) || other.applyTo == applyTo));
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.packet, _this.packet) ||
+                other.packet == _this.packet) &&
+            (identical(other.delay, _this.delay) ||
+                other.delay == _this.delay) &&
+            (identical(other.applyTo, _this.applyTo) ||
+                other.applyTo == _this.applyTo));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, packet, delay, applyTo);
+  int get hashCode {
+    final _this = this as Noise;
+    return Object.hash(
+      runtimeType,
+      _this.type,
+      _this.packet,
+      _this.delay,
+      _this.applyTo,
+    );
+  }
 
   @override
   String toString() {
-    return 'Noise(type: $type, packet: $packet, delay: $delay, applyTo: $applyTo)';
+    final _this = this as Noise;
+    return 'Noise(type: ${_this.type}, packet: ${_this.packet}, delay: ${_this.delay}, applyTo: ${_this.applyTo})';
   }
 }
 
@@ -5864,8 +6328,12 @@ abstract mixin class $NoiseCopyWith<$Res> {
   factory $NoiseCopyWith(Noise value, $Res Function(Noise) _then) =
       _$NoiseCopyWithImpl;
   @useResult
-  $Res call(
-      {String? type, String? packet, XrayInt32Range? delay, String? applyTo});
+  $Res call({
+    String? type,
+    String? packet,
+    XrayInt32Range? delay,
+    String? applyTo,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get delay;
 }
@@ -5887,24 +6355,26 @@ class _$NoiseCopyWithImpl<$Res> implements $NoiseCopyWith<$Res> {
     Object? delay = freezed,
     Object? applyTo = freezed,
   }) {
-    return _then(_self.copyWith(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packet: freezed == packet
-          ? _self.packet
-          : packet // ignore: cast_nullable_to_non_nullable
-              as String?,
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      applyTo: freezed == applyTo
-          ? _self.applyTo
-          : applyTo // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      Noise(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        packet: freezed == packet
+            ? _self.packet
+            : packet // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        applyTo: freezed == applyTo
+            ? _self.applyTo
+            : applyTo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
   /// Create a copy of Noise
@@ -6015,9 +6485,13 @@ extension NoisePatterns on Noise {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? type, String? packet, XrayInt32Range? delay,
-            String? applyTo)?
-        $default, {
+    TResult Function(
+      String? type,
+      String? packet,
+      XrayInt32Range? delay,
+      String? applyTo,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -6044,9 +6518,13 @@ extension NoisePatterns on Noise {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? type, String? packet, XrayInt32Range? delay,
-            String? applyTo)
-        $default,
+    TResult Function(
+      String? type,
+      String? packet,
+      XrayInt32Range? delay,
+      String? applyTo,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -6071,9 +6549,13 @@ extension NoisePatterns on Noise {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? type, String? packet, XrayInt32Range? delay,
-            String? applyTo)?
-        $default,
+    TResult? Function(
+      String? type,
+      String? packet,
+      XrayInt32Range? delay,
+      String? applyTo,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -6119,7 +6601,9 @@ class _Noise extends Noise {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, packet, delay, applyTo);
+  int get hashCode {
+    return Object.hash(runtimeType, type, packet, delay, applyTo);
+  }
 
   @override
   String toString() {
@@ -6133,8 +6617,12 @@ abstract mixin class _$NoiseCopyWith<$Res> implements $NoiseCopyWith<$Res> {
       __$NoiseCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? type, String? packet, XrayInt32Range? delay, String? applyTo});
+  $Res call({
+    String? type,
+    String? packet,
+    XrayInt32Range? delay,
+    String? applyTo,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get delay;
@@ -6157,24 +6645,26 @@ class __$NoiseCopyWithImpl<$Res> implements _$NoiseCopyWith<$Res> {
     Object? delay = freezed,
     Object? applyTo = freezed,
   }) {
-    return _then(_Noise(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packet: freezed == packet
-          ? _self.packet
-          : packet // ignore: cast_nullable_to_non_nullable
-              as String?,
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      applyTo: freezed == applyTo
-          ? _self.applyTo
-          : applyTo // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _Noise(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        packet: freezed == packet
+            ? _self.packet
+            : packet // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        applyTo: freezed == applyTo
+            ? _self.applyTo
+            : applyTo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
   /// Create a copy of Noise
@@ -6209,47 +6699,71 @@ mixin _$ShadowsocksClientConfig {
   @pragma('vm:prefer-inline')
   $ShadowsocksClientConfigCopyWith<ShadowsocksClientConfig> get copyWith =>
       _$ShadowsocksClientConfigCopyWithImpl<ShadowsocksClientConfig>(
-          this as ShadowsocksClientConfig, _$identity);
+        this as ShadowsocksClientConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as ShadowsocksClientConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ShadowsocksClientConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.cipher, cipher) || other.cipher == cipher) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            const DeepCollectionEquality().equals(other.servers, servers));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.cipher, _this.cipher) ||
+                other.cipher == _this.cipher) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            const DeepCollectionEquality().equals(
+              other.servers,
+              _this.servers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      cipher, password, const DeepCollectionEquality().hash(servers));
+  int get hashCode {
+    final _this = this as ShadowsocksClientConfig;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.cipher,
+      _this.password,
+      const DeepCollectionEquality().hash(_this.servers),
+    );
+  }
 
   @override
   String toString() {
-    return 'ShadowsocksClientConfig(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password, servers: $servers)';
+    final _this = this as ShadowsocksClientConfig;
+    return 'ShadowsocksClientConfig(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, cipher: ${_this.cipher}, password: ${_this.password}, servers: ${_this.servers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $ShadowsocksClientConfigCopyWith<$Res> {
-  factory $ShadowsocksClientConfigCopyWith(ShadowsocksClientConfig value,
-          $Res Function(ShadowsocksClientConfig) _then) =
-      _$ShadowsocksClientConfigCopyWithImpl;
+  factory $ShadowsocksClientConfigCopyWith(
+    ShadowsocksClientConfig value,
+    $Res Function(ShadowsocksClientConfig) _then,
+  ) = _$ShadowsocksClientConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'method') String? cipher,
-      String? password,
-      List<ShadowsocksServerTarget>? servers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'method') String? cipher,
+    String? password,
+    List<ShadowsocksServerTarget>? servers,
+  });
 }
 
 /// @nodoc
@@ -6273,36 +6787,38 @@ class _$ShadowsocksClientConfigCopyWithImpl<$Res>
     Object? password = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<ShadowsocksServerTarget>?,
-    ));
+    return _then(
+      ShadowsocksClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self.servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<ShadowsocksServerTarget>?,
+      ),
+    );
   }
 }
 
@@ -6400,21 +6916,29 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'method') String? cipher,
-            String? password,
-            List<ShadowsocksServerTarget>? servers)?
-        $default, {
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'method') String? cipher,
+      String? password,
+      List<ShadowsocksServerTarget>? servers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.cipher,
+          _that.password,
+          _that.servers,
+        );
       case _:
         return orElse();
     }
@@ -6436,20 +6960,28 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'method') String? cipher,
-            String? password,
-            List<ShadowsocksServerTarget>? servers)
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'method') String? cipher,
+      String? password,
+      List<ShadowsocksServerTarget>? servers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksClientConfig():
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.cipher,
+          _that.password,
+          _that.servers,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -6470,20 +7002,28 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'method') String? cipher,
-            String? password,
-            List<ShadowsocksServerTarget>? servers)?
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'method') String? cipher,
+      String? password,
+      List<ShadowsocksServerTarget>? servers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.cipher,
+          _that.password,
+          _that.servers,
+        );
       case _:
         return null;
     }
@@ -6493,16 +7033,16 @@ extension ShadowsocksClientConfigPatterns on ShadowsocksClientConfig {
 /// @nodoc
 
 class _ShadowsocksClientConfig extends ShadowsocksClientConfig {
-  const _ShadowsocksClientConfig(
-      {this.address,
-      this.port,
-      this.level,
-      this.email,
-      @JsonKey(name: 'method') this.cipher,
-      this.password,
-      final List<ShadowsocksServerTarget>? servers})
-      : _servers = servers,
-        super._();
+  const _ShadowsocksClientConfig({
+    this.address,
+    this.port,
+    this.level,
+    this.email,
+    @JsonKey(name: 'method') this.cipher,
+    this.password,
+    List<ShadowsocksServerTarget>? servers,
+  }) : _servers = servers,
+       super._();
 
   @override
   final XrayAddress? address;
@@ -6534,7 +7074,9 @@ class _ShadowsocksClientConfig extends ShadowsocksClientConfig {
   @pragma('vm:prefer-inline')
   _$ShadowsocksClientConfigCopyWith<_ShadowsocksClientConfig> get copyWith =>
       __$ShadowsocksClientConfigCopyWithImpl<_ShadowsocksClientConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -6548,12 +7090,22 @@ class _ShadowsocksClientConfig extends ShadowsocksClientConfig {
             (identical(other.cipher, cipher) || other.cipher == cipher) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            const DeepCollectionEquality().equals(other._servers, _servers));
+            const DeepCollectionEquality().equals(other.servers, _servers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      cipher, password, const DeepCollectionEquality().hash(_servers));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      level,
+      email,
+      cipher,
+      password,
+      const DeepCollectionEquality().hash(_servers),
+    );
+  }
 
   @override
   String toString() {
@@ -6564,19 +7116,21 @@ class _ShadowsocksClientConfig extends ShadowsocksClientConfig {
 /// @nodoc
 abstract mixin class _$ShadowsocksClientConfigCopyWith<$Res>
     implements $ShadowsocksClientConfigCopyWith<$Res> {
-  factory _$ShadowsocksClientConfigCopyWith(_ShadowsocksClientConfig value,
-          $Res Function(_ShadowsocksClientConfig) _then) =
-      __$ShadowsocksClientConfigCopyWithImpl;
+  factory _$ShadowsocksClientConfigCopyWith(
+    _ShadowsocksClientConfig value,
+    $Res Function(_ShadowsocksClientConfig) _then,
+  ) = __$ShadowsocksClientConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'method') String? cipher,
-      String? password,
-      List<ShadowsocksServerTarget>? servers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'method') String? cipher,
+    String? password,
+    List<ShadowsocksServerTarget>? servers,
+  });
 }
 
 /// @nodoc
@@ -6600,36 +7154,38 @@ class __$ShadowsocksClientConfigCopyWithImpl<$Res>
     Object? password = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_ShadowsocksClientConfig(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<ShadowsocksServerTarget>?,
-    ));
+    return _then(
+      _ShadowsocksClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<ShadowsocksServerTarget>?,
+      ),
+    );
   }
 }
 
@@ -6651,55 +7207,71 @@ mixin _$ShadowsocksServerConfig {
   @pragma('vm:prefer-inline')
   $ShadowsocksServerConfigCopyWith<ShadowsocksServerConfig> get copyWith =>
       _$ShadowsocksServerConfigCopyWithImpl<ShadowsocksServerConfig>(
-          this as ShadowsocksServerConfig, _$identity);
+        this as ShadowsocksServerConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as ShadowsocksServerConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ShadowsocksServerConfig &&
-            (identical(other.cipher, cipher) || other.cipher == cipher) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            const DeepCollectionEquality().equals(other.users, users) &&
-            const DeepCollectionEquality().equals(other.clients, clients) &&
-            (identical(other.networkList, networkList) ||
-                other.networkList == networkList));
+            (identical(other.cipher, _this.cipher) ||
+                other.cipher == _this.cipher) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.clients,
+              _this.clients,
+            ) &&
+            (identical(other.networkList, _this.networkList) ||
+                other.networkList == _this.networkList));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as ShadowsocksServerConfig;
+    return Object.hash(
       runtimeType,
-      cipher,
-      password,
-      level,
-      email,
-      const DeepCollectionEquality().hash(users),
-      const DeepCollectionEquality().hash(clients),
-      networkList);
+      _this.cipher,
+      _this.password,
+      _this.level,
+      _this.email,
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.clients),
+      _this.networkList,
+    );
+  }
 
   @override
   String toString() {
-    return 'ShadowsocksServerConfig(cipher: $cipher, password: $password, level: $level, email: $email, users: $users, clients: $clients, networkList: $networkList)';
+    final _this = this as ShadowsocksServerConfig;
+    return 'ShadowsocksServerConfig(cipher: ${_this.cipher}, password: ${_this.password}, level: ${_this.level}, email: ${_this.email}, users: ${_this.users}, clients: ${_this.clients}, networkList: ${_this.networkList})';
   }
 }
 
 /// @nodoc
 abstract mixin class $ShadowsocksServerConfigCopyWith<$Res> {
-  factory $ShadowsocksServerConfigCopyWith(ShadowsocksServerConfig value,
-          $Res Function(ShadowsocksServerConfig) _then) =
-      _$ShadowsocksServerConfigCopyWithImpl;
+  factory $ShadowsocksServerConfigCopyWith(
+    ShadowsocksServerConfig value,
+    $Res Function(ShadowsocksServerConfig) _then,
+  ) = _$ShadowsocksServerConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'method') String? cipher,
-      String? password,
-      int? level,
-      String? email,
-      List<ShadowsocksUserConfig>? users,
-      List<ShadowsocksUserConfig>? clients,
-      @JsonKey(name: 'network') XrayNetworkList? networkList});
+  $Res call({
+    @JsonKey(name: 'method') String? cipher,
+    String? password,
+    int? level,
+    String? email,
+    List<ShadowsocksUserConfig>? users,
+    List<ShadowsocksUserConfig>? clients,
+    @JsonKey(name: 'network') XrayNetworkList? networkList,
+  });
 }
 
 /// @nodoc
@@ -6723,36 +7295,38 @@ class _$ShadowsocksServerConfigCopyWithImpl<$Res>
     Object? clients = freezed,
     Object? networkList = freezed,
   }) {
-    return _then(_self.copyWith(
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<ShadowsocksUserConfig>?,
-      clients: freezed == clients
-          ? _self.clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<ShadowsocksUserConfig>?,
-      networkList: freezed == networkList
-          ? _self.networkList
-          : networkList // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-    ));
+    return _then(
+      ShadowsocksServerConfig(
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<ShadowsocksUserConfig>?,
+        clients: freezed == clients
+            ? _self.clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<ShadowsocksUserConfig>?,
+        networkList: freezed == networkList
+            ? _self.networkList
+            : networkList // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+      ),
+    );
   }
 }
 
@@ -6850,21 +7424,29 @@ extension ShadowsocksServerConfigPatterns on ShadowsocksServerConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'method') String? cipher,
-            String? password,
-            int? level,
-            String? email,
-            List<ShadowsocksUserConfig>? users,
-            List<ShadowsocksUserConfig>? clients,
-            @JsonKey(name: 'network') XrayNetworkList? networkList)?
-        $default, {
+      @JsonKey(name: 'method') String? cipher,
+      String? password,
+      int? level,
+      String? email,
+      List<ShadowsocksUserConfig>? users,
+      List<ShadowsocksUserConfig>? clients,
+      @JsonKey(name: 'network') XrayNetworkList? networkList,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerConfig() when $default != null:
-        return $default(_that.cipher, _that.password, _that.level, _that.email,
-            _that.users, _that.clients, _that.networkList);
+        return $default(
+          _that.cipher,
+          _that.password,
+          _that.level,
+          _that.email,
+          _that.users,
+          _that.clients,
+          _that.networkList,
+        );
       case _:
         return orElse();
     }
@@ -6886,20 +7468,28 @@ extension ShadowsocksServerConfigPatterns on ShadowsocksServerConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'method') String? cipher,
-            String? password,
-            int? level,
-            String? email,
-            List<ShadowsocksUserConfig>? users,
-            List<ShadowsocksUserConfig>? clients,
-            @JsonKey(name: 'network') XrayNetworkList? networkList)
-        $default,
+      @JsonKey(name: 'method') String? cipher,
+      String? password,
+      int? level,
+      String? email,
+      List<ShadowsocksUserConfig>? users,
+      List<ShadowsocksUserConfig>? clients,
+      @JsonKey(name: 'network') XrayNetworkList? networkList,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerConfig():
-        return $default(_that.cipher, _that.password, _that.level, _that.email,
-            _that.users, _that.clients, _that.networkList);
+        return $default(
+          _that.cipher,
+          _that.password,
+          _that.level,
+          _that.email,
+          _that.users,
+          _that.clients,
+          _that.networkList,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -6920,20 +7510,28 @@ extension ShadowsocksServerConfigPatterns on ShadowsocksServerConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            @JsonKey(name: 'method') String? cipher,
-            String? password,
-            int? level,
-            String? email,
-            List<ShadowsocksUserConfig>? users,
-            List<ShadowsocksUserConfig>? clients,
-            @JsonKey(name: 'network') XrayNetworkList? networkList)?
-        $default,
+      @JsonKey(name: 'method') String? cipher,
+      String? password,
+      int? level,
+      String? email,
+      List<ShadowsocksUserConfig>? users,
+      List<ShadowsocksUserConfig>? clients,
+      @JsonKey(name: 'network') XrayNetworkList? networkList,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerConfig() when $default != null:
-        return $default(_that.cipher, _that.password, _that.level, _that.email,
-            _that.users, _that.clients, _that.networkList);
+        return $default(
+          _that.cipher,
+          _that.password,
+          _that.level,
+          _that.email,
+          _that.users,
+          _that.clients,
+          _that.networkList,
+        );
       case _:
         return null;
     }
@@ -6943,17 +7541,17 @@ extension ShadowsocksServerConfigPatterns on ShadowsocksServerConfig {
 /// @nodoc
 
 class _ShadowsocksServerConfig extends ShadowsocksServerConfig {
-  const _ShadowsocksServerConfig(
-      {@JsonKey(name: 'method') this.cipher,
-      this.password,
-      this.level,
-      this.email,
-      final List<ShadowsocksUserConfig>? users,
-      final List<ShadowsocksUserConfig>? clients,
-      @JsonKey(name: 'network') this.networkList})
-      : _users = users,
-        _clients = clients,
-        super._();
+  const _ShadowsocksServerConfig({
+    @JsonKey(name: 'method') this.cipher,
+    this.password,
+    this.level,
+    this.email,
+    List<ShadowsocksUserConfig>? users,
+    List<ShadowsocksUserConfig>? clients,
+    @JsonKey(name: 'network') this.networkList,
+  }) : _users = users,
+       _clients = clients,
+       super._();
 
   @override
   @JsonKey(name: 'method')
@@ -6995,7 +7593,9 @@ class _ShadowsocksServerConfig extends ShadowsocksServerConfig {
   @pragma('vm:prefer-inline')
   _$ShadowsocksServerConfigCopyWith<_ShadowsocksServerConfig> get copyWith =>
       __$ShadowsocksServerConfigCopyWithImpl<_ShadowsocksServerConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -7007,14 +7607,15 @@ class _ShadowsocksServerConfig extends ShadowsocksServerConfig {
                 other.password == password) &&
             (identical(other.level, level) || other.level == level) &&
             (identical(other.email, email) || other.email == email) &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
-            const DeepCollectionEquality().equals(other._clients, _clients) &&
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.clients, _clients) &&
             (identical(other.networkList, networkList) ||
                 other.networkList == networkList));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       cipher,
       password,
@@ -7022,7 +7623,9 @@ class _ShadowsocksServerConfig extends ShadowsocksServerConfig {
       email,
       const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_clients),
-      networkList);
+      networkList,
+    );
+  }
 
   @override
   String toString() {
@@ -7033,19 +7636,21 @@ class _ShadowsocksServerConfig extends ShadowsocksServerConfig {
 /// @nodoc
 abstract mixin class _$ShadowsocksServerConfigCopyWith<$Res>
     implements $ShadowsocksServerConfigCopyWith<$Res> {
-  factory _$ShadowsocksServerConfigCopyWith(_ShadowsocksServerConfig value,
-          $Res Function(_ShadowsocksServerConfig) _then) =
-      __$ShadowsocksServerConfigCopyWithImpl;
+  factory _$ShadowsocksServerConfigCopyWith(
+    _ShadowsocksServerConfig value,
+    $Res Function(_ShadowsocksServerConfig) _then,
+  ) = __$ShadowsocksServerConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'method') String? cipher,
-      String? password,
-      int? level,
-      String? email,
-      List<ShadowsocksUserConfig>? users,
-      List<ShadowsocksUserConfig>? clients,
-      @JsonKey(name: 'network') XrayNetworkList? networkList});
+  $Res call({
+    @JsonKey(name: 'method') String? cipher,
+    String? password,
+    int? level,
+    String? email,
+    List<ShadowsocksUserConfig>? users,
+    List<ShadowsocksUserConfig>? clients,
+    @JsonKey(name: 'network') XrayNetworkList? networkList,
+  });
 }
 
 /// @nodoc
@@ -7069,36 +7674,38 @@ class __$ShadowsocksServerConfigCopyWithImpl<$Res>
     Object? clients = freezed,
     Object? networkList = freezed,
   }) {
-    return _then(_ShadowsocksServerConfig(
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<ShadowsocksUserConfig>?,
-      clients: freezed == clients
-          ? _self._clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<ShadowsocksUserConfig>?,
-      networkList: freezed == networkList
-          ? _self.networkList
-          : networkList // ignore: cast_nullable_to_non_nullable
-              as XrayNetworkList?,
-    ));
+    return _then(
+      _ShadowsocksServerConfig(
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<ShadowsocksUserConfig>?,
+        clients: freezed == clients
+            ? _self._clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<ShadowsocksUserConfig>?,
+        networkList: freezed == networkList
+            ? _self.networkList
+            : networkList // ignore: cast_nullable_to_non_nullable
+                  as XrayNetworkList?,
+      ),
+    );
   }
 }
 
@@ -7118,45 +7725,65 @@ mixin _$ShadowsocksServerTarget {
   @pragma('vm:prefer-inline')
   $ShadowsocksServerTargetCopyWith<ShadowsocksServerTarget> get copyWith =>
       _$ShadowsocksServerTargetCopyWithImpl<ShadowsocksServerTarget>(
-          this as ShadowsocksServerTarget, _$identity);
+        this as ShadowsocksServerTarget,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as ShadowsocksServerTarget;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ShadowsocksServerTarget &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.cipher, cipher) || other.cipher == cipher) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.cipher, _this.cipher) ||
+                other.cipher == _this.cipher) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, address, port, level, email, cipher, password);
+  int get hashCode {
+    final _this = this as ShadowsocksServerTarget;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.cipher,
+      _this.password,
+    );
+  }
 
   @override
   String toString() {
-    return 'ShadowsocksServerTarget(address: $address, port: $port, level: $level, email: $email, cipher: $cipher, password: $password)';
+    final _this = this as ShadowsocksServerTarget;
+    return 'ShadowsocksServerTarget(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, cipher: ${_this.cipher}, password: ${_this.password})';
   }
 }
 
 /// @nodoc
 abstract mixin class $ShadowsocksServerTargetCopyWith<$Res> {
-  factory $ShadowsocksServerTargetCopyWith(ShadowsocksServerTarget value,
-          $Res Function(ShadowsocksServerTarget) _then) =
-      _$ShadowsocksServerTargetCopyWithImpl;
+  factory $ShadowsocksServerTargetCopyWith(
+    ShadowsocksServerTarget value,
+    $Res Function(ShadowsocksServerTarget) _then,
+  ) = _$ShadowsocksServerTargetCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress address,
-      int port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'method') String? cipher,
-      String password});
+  $Res call({
+    XrayAddress address,
+    int port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'method') String? cipher,
+    String password,
+  });
 }
 
 /// @nodoc
@@ -7179,32 +7806,34 @@ class _$ShadowsocksServerTargetCopyWithImpl<$Res>
     Object? cipher = freezed,
     Object? password = null,
   }) {
-    return _then(_self.copyWith(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      ShadowsocksServerTarget(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -7301,16 +7930,28 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(XrayAddress address, int port, int? level, String? email,
-            @JsonKey(name: 'method') String? cipher, String password)?
-        $default, {
+    TResult Function(
+      XrayAddress address,
+      int port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'method') String? cipher,
+      String password,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerTarget() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.cipher,
+          _that.password,
+        );
       case _:
         return orElse();
     }
@@ -7331,15 +7972,27 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(XrayAddress address, int port, int? level, String? email,
-            @JsonKey(name: 'method') String? cipher, String password)
-        $default,
+    TResult Function(
+      XrayAddress address,
+      int port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'method') String? cipher,
+      String password,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerTarget():
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.cipher,
+          _that.password,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -7359,15 +8012,27 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(XrayAddress address, int port, int? level, String? email,
-            @JsonKey(name: 'method') String? cipher, String password)?
-        $default,
+    TResult? Function(
+      XrayAddress address,
+      int port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'method') String? cipher,
+      String password,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksServerTarget() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.cipher, _that.password);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.cipher,
+          _that.password,
+        );
       case _:
         return null;
     }
@@ -7377,14 +8042,14 @@ extension ShadowsocksServerTargetPatterns on ShadowsocksServerTarget {
 /// @nodoc
 
 class _ShadowsocksServerTarget extends ShadowsocksServerTarget {
-  const _ShadowsocksServerTarget(
-      {required this.address,
-      required this.port,
-      this.level,
-      this.email,
-      @JsonKey(name: 'method') this.cipher,
-      required this.password})
-      : super._();
+  const _ShadowsocksServerTarget({
+    required this.address,
+    required this.port,
+    this.level,
+    this.email,
+    @JsonKey(name: 'method') this.cipher,
+    required this.password,
+  }) : super._();
 
   @override
   final XrayAddress address;
@@ -7407,7 +8072,9 @@ class _ShadowsocksServerTarget extends ShadowsocksServerTarget {
   @pragma('vm:prefer-inline')
   _$ShadowsocksServerTargetCopyWith<_ShadowsocksServerTarget> get copyWith =>
       __$ShadowsocksServerTargetCopyWithImpl<_ShadowsocksServerTarget>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -7424,8 +8091,17 @@ class _ShadowsocksServerTarget extends ShadowsocksServerTarget {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, address, port, level, email, cipher, password);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      level,
+      email,
+      cipher,
+      password,
+    );
+  }
 
   @override
   String toString() {
@@ -7436,18 +8112,20 @@ class _ShadowsocksServerTarget extends ShadowsocksServerTarget {
 /// @nodoc
 abstract mixin class _$ShadowsocksServerTargetCopyWith<$Res>
     implements $ShadowsocksServerTargetCopyWith<$Res> {
-  factory _$ShadowsocksServerTargetCopyWith(_ShadowsocksServerTarget value,
-          $Res Function(_ShadowsocksServerTarget) _then) =
-      __$ShadowsocksServerTargetCopyWithImpl;
+  factory _$ShadowsocksServerTargetCopyWith(
+    _ShadowsocksServerTarget value,
+    $Res Function(_ShadowsocksServerTarget) _then,
+  ) = __$ShadowsocksServerTargetCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress address,
-      int port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'method') String? cipher,
-      String password});
+  $Res call({
+    XrayAddress address,
+    int port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'method') String? cipher,
+    String password,
+  });
 }
 
 /// @nodoc
@@ -7470,32 +8148,34 @@ class __$ShadowsocksServerTargetCopyWithImpl<$Res>
     Object? cipher = freezed,
     Object? password = null,
   }) {
-    return _then(_ShadowsocksServerTarget(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _ShadowsocksServerTarget(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -7515,45 +8195,65 @@ mixin _$ShadowsocksUserConfig {
   @pragma('vm:prefer-inline')
   $ShadowsocksUserConfigCopyWith<ShadowsocksUserConfig> get copyWith =>
       _$ShadowsocksUserConfigCopyWithImpl<ShadowsocksUserConfig>(
-          this as ShadowsocksUserConfig, _$identity);
+        this as ShadowsocksUserConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as ShadowsocksUserConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ShadowsocksUserConfig &&
-            (identical(other.cipher, cipher) || other.cipher == cipher) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port));
+            (identical(other.cipher, _this.cipher) ||
+                other.cipher == _this.cipher) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, cipher, password, level, email, address, port);
+  int get hashCode {
+    final _this = this as ShadowsocksUserConfig;
+    return Object.hash(
+      runtimeType,
+      _this.cipher,
+      _this.password,
+      _this.level,
+      _this.email,
+      _this.address,
+      _this.port,
+    );
+  }
 
   @override
   String toString() {
-    return 'ShadowsocksUserConfig(cipher: $cipher, password: $password, level: $level, email: $email, address: $address, port: $port)';
+    final _this = this as ShadowsocksUserConfig;
+    return 'ShadowsocksUserConfig(cipher: ${_this.cipher}, password: ${_this.password}, level: ${_this.level}, email: ${_this.email}, address: ${_this.address}, port: ${_this.port})';
   }
 }
 
 /// @nodoc
 abstract mixin class $ShadowsocksUserConfigCopyWith<$Res> {
-  factory $ShadowsocksUserConfigCopyWith(ShadowsocksUserConfig value,
-          $Res Function(ShadowsocksUserConfig) _then) =
-      _$ShadowsocksUserConfigCopyWithImpl;
+  factory $ShadowsocksUserConfigCopyWith(
+    ShadowsocksUserConfig value,
+    $Res Function(ShadowsocksUserConfig) _then,
+  ) = _$ShadowsocksUserConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'method') String? cipher,
-      String password,
-      int? level,
-      String? email,
-      XrayAddress? address,
-      int? port});
+  $Res call({
+    @JsonKey(name: 'method') String? cipher,
+    String password,
+    int? level,
+    String? email,
+    XrayAddress? address,
+    int? port,
+  });
 }
 
 /// @nodoc
@@ -7576,32 +8276,34 @@ class _$ShadowsocksUserConfigCopyWithImpl<$Res>
     Object? address = freezed,
     Object? port = freezed,
   }) {
-    return _then(_self.copyWith(
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      ShadowsocksUserConfig(
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -7698,16 +8400,28 @@ extension ShadowsocksUserConfigPatterns on ShadowsocksUserConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'method') String? cipher, String password,
-            int? level, String? email, XrayAddress? address, int? port)?
-        $default, {
+    TResult Function(
+      @JsonKey(name: 'method') String? cipher,
+      String password,
+      int? level,
+      String? email,
+      XrayAddress? address,
+      int? port,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksUserConfig() when $default != null:
-        return $default(_that.cipher, _that.password, _that.level, _that.email,
-            _that.address, _that.port);
+        return $default(
+          _that.cipher,
+          _that.password,
+          _that.level,
+          _that.email,
+          _that.address,
+          _that.port,
+        );
       case _:
         return orElse();
     }
@@ -7728,15 +8442,27 @@ extension ShadowsocksUserConfigPatterns on ShadowsocksUserConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'method') String? cipher, String password,
-            int? level, String? email, XrayAddress? address, int? port)
-        $default,
+    TResult Function(
+      @JsonKey(name: 'method') String? cipher,
+      String password,
+      int? level,
+      String? email,
+      XrayAddress? address,
+      int? port,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksUserConfig():
-        return $default(_that.cipher, _that.password, _that.level, _that.email,
-            _that.address, _that.port);
+        return $default(
+          _that.cipher,
+          _that.password,
+          _that.level,
+          _that.email,
+          _that.address,
+          _that.port,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -7756,15 +8482,27 @@ extension ShadowsocksUserConfigPatterns on ShadowsocksUserConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(@JsonKey(name: 'method') String? cipher, String password,
-            int? level, String? email, XrayAddress? address, int? port)?
-        $default,
+    TResult? Function(
+      @JsonKey(name: 'method') String? cipher,
+      String password,
+      int? level,
+      String? email,
+      XrayAddress? address,
+      int? port,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ShadowsocksUserConfig() when $default != null:
-        return $default(_that.cipher, _that.password, _that.level, _that.email,
-            _that.address, _that.port);
+        return $default(
+          _that.cipher,
+          _that.password,
+          _that.level,
+          _that.email,
+          _that.address,
+          _that.port,
+        );
       case _:
         return null;
     }
@@ -7774,14 +8512,14 @@ extension ShadowsocksUserConfigPatterns on ShadowsocksUserConfig {
 /// @nodoc
 
 class _ShadowsocksUserConfig extends ShadowsocksUserConfig {
-  const _ShadowsocksUserConfig(
-      {@JsonKey(name: 'method') this.cipher,
-      required this.password,
-      this.level,
-      this.email,
-      this.address,
-      this.port})
-      : super._();
+  const _ShadowsocksUserConfig({
+    @JsonKey(name: 'method') this.cipher,
+    required this.password,
+    this.level,
+    this.email,
+    this.address,
+    this.port,
+  }) : super._();
 
   @override
   @JsonKey(name: 'method')
@@ -7804,7 +8542,9 @@ class _ShadowsocksUserConfig extends ShadowsocksUserConfig {
   @pragma('vm:prefer-inline')
   _$ShadowsocksUserConfigCopyWith<_ShadowsocksUserConfig> get copyWith =>
       __$ShadowsocksUserConfigCopyWithImpl<_ShadowsocksUserConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -7821,8 +8561,17 @@ class _ShadowsocksUserConfig extends ShadowsocksUserConfig {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, cipher, password, level, email, address, port);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      cipher,
+      password,
+      level,
+      email,
+      address,
+      port,
+    );
+  }
 
   @override
   String toString() {
@@ -7833,18 +8582,20 @@ class _ShadowsocksUserConfig extends ShadowsocksUserConfig {
 /// @nodoc
 abstract mixin class _$ShadowsocksUserConfigCopyWith<$Res>
     implements $ShadowsocksUserConfigCopyWith<$Res> {
-  factory _$ShadowsocksUserConfigCopyWith(_ShadowsocksUserConfig value,
-          $Res Function(_ShadowsocksUserConfig) _then) =
-      __$ShadowsocksUserConfigCopyWithImpl;
+  factory _$ShadowsocksUserConfigCopyWith(
+    _ShadowsocksUserConfig value,
+    $Res Function(_ShadowsocksUserConfig) _then,
+  ) = __$ShadowsocksUserConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'method') String? cipher,
-      String password,
-      int? level,
-      String? email,
-      XrayAddress? address,
-      int? port});
+  $Res call({
+    @JsonKey(name: 'method') String? cipher,
+    String password,
+    int? level,
+    String? email,
+    XrayAddress? address,
+    int? port,
+  });
 }
 
 /// @nodoc
@@ -7867,32 +8618,34 @@ class __$ShadowsocksUserConfigCopyWithImpl<$Res>
     Object? address = freezed,
     Object? port = freezed,
   }) {
-    return _then(_ShadowsocksUserConfig(
-      cipher: freezed == cipher
-          ? _self.cipher
-          : cipher // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _ShadowsocksUserConfig(
+        cipher: freezed == cipher
+            ? _self.cipher
+            : cipher // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -7909,37 +8662,46 @@ mixin _$SocksAccount {
   @pragma('vm:prefer-inline')
   $SocksAccountCopyWith<SocksAccount> get copyWith =>
       _$SocksAccountCopyWithImpl<SocksAccount>(
-          this as SocksAccount, _$identity);
+        this as SocksAccount,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SocksAccount;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SocksAccount &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.username, _this.username) ||
+                other.username == _this.username) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, password);
+  int get hashCode {
+    final _this = this as SocksAccount;
+    return Object.hash(runtimeType, _this.username, _this.password);
+  }
 
   @override
   String toString() {
-    return 'SocksAccount(username: $username, password: $password)';
+    final _this = this as SocksAccount;
+    return 'SocksAccount(username: ${_this.username}, password: ${_this.password})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SocksAccountCopyWith<$Res> {
   factory $SocksAccountCopyWith(
-          SocksAccount value, $Res Function(SocksAccount) _then) =
-      _$SocksAccountCopyWithImpl;
+    SocksAccount value,
+    $Res Function(SocksAccount) _then,
+  ) = _$SocksAccountCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password});
+  $Res call({
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+  });
 }
 
 /// @nodoc
@@ -7953,20 +8715,19 @@ class _$SocksAccountCopyWithImpl<$Res> implements $SocksAccountCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? username = freezed,
-    Object? password = freezed,
-  }) {
-    return _then(_self.copyWith(
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? username = freezed, Object? password = freezed}) {
+    return _then(
+      SocksAccount(
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -8063,9 +8824,11 @@ extension SocksAccountPatterns on SocksAccount {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password)?
-        $default, {
+    TResult Function(
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -8092,9 +8855,11 @@ extension SocksAccountPatterns on SocksAccount {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password)
-        $default,
+    TResult Function(
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8119,9 +8884,11 @@ extension SocksAccountPatterns on SocksAccount {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(@JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password)?
-        $default,
+    TResult? Function(
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8136,10 +8903,10 @@ extension SocksAccountPatterns on SocksAccount {
 /// @nodoc
 
 class _SocksAccount extends SocksAccount {
-  const _SocksAccount(
-      {@JsonKey(name: 'user') this.username,
-      @JsonKey(name: 'pass') this.password})
-      : super._();
+  const _SocksAccount({
+    @JsonKey(name: 'user') this.username,
+    @JsonKey(name: 'pass') this.password,
+  }) : super._();
 
   @override
   @JsonKey(name: 'user')
@@ -8168,7 +8935,9 @@ class _SocksAccount extends SocksAccount {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, password);
+  int get hashCode {
+    return Object.hash(runtimeType, username, password);
+  }
 
   @override
   String toString() {
@@ -8180,13 +8949,15 @@ class _SocksAccount extends SocksAccount {
 abstract mixin class _$SocksAccountCopyWith<$Res>
     implements $SocksAccountCopyWith<$Res> {
   factory _$SocksAccountCopyWith(
-          _SocksAccount value, $Res Function(_SocksAccount) _then) =
-      __$SocksAccountCopyWithImpl;
+    _SocksAccount value,
+    $Res Function(_SocksAccount) _then,
+  ) = __$SocksAccountCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password});
+  $Res call({
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+  });
 }
 
 /// @nodoc
@@ -8201,20 +8972,19 @@ class __$SocksAccountCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? username = freezed,
-    Object? password = freezed,
-  }) {
-    return _then(_SocksAccount(
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? username = freezed, Object? password = freezed}) {
+    return _then(
+      _SocksAccount(
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -8236,48 +9006,71 @@ mixin _$SocksClientConfig {
   @pragma('vm:prefer-inline')
   $SocksClientConfigCopyWith<SocksClientConfig> get copyWith =>
       _$SocksClientConfigCopyWithImpl<SocksClientConfig>(
-          this as SocksClientConfig, _$identity);
+        this as SocksClientConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SocksClientConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SocksClientConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            const DeepCollectionEquality().equals(other.servers, servers));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.username, _this.username) ||
+                other.username == _this.username) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            const DeepCollectionEquality().equals(
+              other.servers,
+              _this.servers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      username, password, const DeepCollectionEquality().hash(servers));
+  int get hashCode {
+    final _this = this as SocksClientConfig;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.username,
+      _this.password,
+      const DeepCollectionEquality().hash(_this.servers),
+    );
+  }
 
   @override
   String toString() {
-    return 'SocksClientConfig(address: $address, port: $port, level: $level, email: $email, username: $username, password: $password, servers: $servers)';
+    final _this = this as SocksClientConfig;
+    return 'SocksClientConfig(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, username: ${_this.username}, password: ${_this.password}, servers: ${_this.servers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SocksClientConfigCopyWith<$Res> {
   factory $SocksClientConfigCopyWith(
-          SocksClientConfig value, $Res Function(SocksClientConfig) _then) =
-      _$SocksClientConfigCopyWithImpl;
+    SocksClientConfig value,
+    $Res Function(SocksClientConfig) _then,
+  ) = _$SocksClientConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password,
-      List<SocksRemoteConfig>? servers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+    List<SocksRemoteConfig>? servers,
+  });
 }
 
 /// @nodoc
@@ -8301,36 +9094,38 @@ class _$SocksClientConfigCopyWithImpl<$Res>
     Object? password = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<SocksRemoteConfig>?,
-    ));
+    return _then(
+      SocksClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self.servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<SocksRemoteConfig>?,
+      ),
+    );
   }
 }
 
@@ -8428,21 +9223,29 @@ extension SocksClientConfigPatterns on SocksClientConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password,
-            List<SocksRemoteConfig>? servers)?
-        $default, {
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+      List<SocksRemoteConfig>? servers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _SocksClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.username, _that.password, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.username,
+          _that.password,
+          _that.servers,
+        );
       case _:
         return orElse();
     }
@@ -8464,20 +9267,28 @@ extension SocksClientConfigPatterns on SocksClientConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password,
-            List<SocksRemoteConfig>? servers)
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+      List<SocksRemoteConfig>? servers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SocksClientConfig():
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.username, _that.password, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.username,
+          _that.password,
+          _that.servers,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -8498,20 +9309,28 @@ extension SocksClientConfigPatterns on SocksClientConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'user') String? username,
-            @JsonKey(name: 'pass') String? password,
-            List<SocksRemoteConfig>? servers)?
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'user') String? username,
+      @JsonKey(name: 'pass') String? password,
+      List<SocksRemoteConfig>? servers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SocksClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.username, _that.password, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.username,
+          _that.password,
+          _that.servers,
+        );
       case _:
         return null;
     }
@@ -8521,16 +9340,16 @@ extension SocksClientConfigPatterns on SocksClientConfig {
 /// @nodoc
 
 class _SocksClientConfig extends SocksClientConfig {
-  const _SocksClientConfig(
-      {this.address,
-      this.port,
-      this.level,
-      this.email,
-      @JsonKey(name: 'user') this.username,
-      @JsonKey(name: 'pass') this.password,
-      final List<SocksRemoteConfig>? servers})
-      : _servers = servers,
-        super._();
+  const _SocksClientConfig({
+    this.address,
+    this.port,
+    this.level,
+    this.email,
+    @JsonKey(name: 'user') this.username,
+    @JsonKey(name: 'pass') this.password,
+    List<SocksRemoteConfig>? servers,
+  }) : _servers = servers,
+       super._();
 
   @override
   final XrayAddress? address;
@@ -8577,12 +9396,22 @@ class _SocksClientConfig extends SocksClientConfig {
                 other.username == username) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            const DeepCollectionEquality().equals(other._servers, _servers));
+            const DeepCollectionEquality().equals(other.servers, _servers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      username, password, const DeepCollectionEquality().hash(_servers));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      level,
+      email,
+      username,
+      password,
+      const DeepCollectionEquality().hash(_servers),
+    );
+  }
 
   @override
   String toString() {
@@ -8594,18 +9423,20 @@ class _SocksClientConfig extends SocksClientConfig {
 abstract mixin class _$SocksClientConfigCopyWith<$Res>
     implements $SocksClientConfigCopyWith<$Res> {
   factory _$SocksClientConfigCopyWith(
-          _SocksClientConfig value, $Res Function(_SocksClientConfig) _then) =
-      __$SocksClientConfigCopyWithImpl;
+    _SocksClientConfig value,
+    $Res Function(_SocksClientConfig) _then,
+  ) = __$SocksClientConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'user') String? username,
-      @JsonKey(name: 'pass') String? password,
-      List<SocksRemoteConfig>? servers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'user') String? username,
+    @JsonKey(name: 'pass') String? password,
+    List<SocksRemoteConfig>? servers,
+  });
 }
 
 /// @nodoc
@@ -8629,36 +9460,38 @@ class __$SocksClientConfigCopyWithImpl<$Res>
     Object? password = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_SocksClientConfig(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<SocksRemoteConfig>?,
-    ));
+    return _then(
+      _SocksClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        username: freezed == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<SocksRemoteConfig>?,
+      ),
+    );
   }
 }
 
@@ -8674,33 +9507,46 @@ mixin _$SocksRemoteConfig {
   @pragma('vm:prefer-inline')
   $SocksRemoteConfigCopyWith<SocksRemoteConfig> get copyWith =>
       _$SocksRemoteConfigCopyWithImpl<SocksRemoteConfig>(
-          this as SocksRemoteConfig, _$identity);
+        this as SocksRemoteConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SocksRemoteConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SocksRemoteConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other.users, users));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            const DeepCollectionEquality().equals(other.users, _this.users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(users));
+  int get hashCode {
+    final _this = this as SocksRemoteConfig;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      const DeepCollectionEquality().hash(_this.users),
+    );
+  }
 
   @override
   String toString() {
-    return 'SocksRemoteConfig(address: $address, port: $port, users: $users)';
+    final _this = this as SocksRemoteConfig;
+    return 'SocksRemoteConfig(address: ${_this.address}, port: ${_this.port}, users: ${_this.users})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SocksRemoteConfigCopyWith<$Res> {
   factory $SocksRemoteConfigCopyWith(
-          SocksRemoteConfig value, $Res Function(SocksRemoteConfig) _then) =
-      _$SocksRemoteConfigCopyWithImpl;
+    SocksRemoteConfig value,
+    $Res Function(SocksRemoteConfig) _then,
+  ) = _$SocksRemoteConfigCopyWithImpl;
   @useResult
   $Res call({XrayAddress address, int port, List<SocksAccount>? users});
 }
@@ -8722,20 +9568,22 @@ class _$SocksRemoteConfigCopyWithImpl<$Res>
     Object? port = null,
     Object? users = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<SocksAccount>?,
-    ));
+    return _then(
+      SocksRemoteConfig(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<SocksAccount>?,
+      ),
+    );
   }
 }
 
@@ -8833,7 +9681,7 @@ extension SocksRemoteConfigPatterns on SocksRemoteConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<SocksAccount>? users)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -8861,7 +9709,7 @@ extension SocksRemoteConfigPatterns on SocksRemoteConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<SocksAccount>? users)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8887,7 +9735,7 @@ extension SocksRemoteConfigPatterns on SocksRemoteConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(XrayAddress address, int port, List<SocksAccount>? users)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8902,12 +9750,12 @@ extension SocksRemoteConfigPatterns on SocksRemoteConfig {
 /// @nodoc
 
 class _SocksRemoteConfig extends SocksRemoteConfig {
-  const _SocksRemoteConfig(
-      {required this.address,
-      required this.port,
-      final List<SocksAccount>? users})
-      : _users = users,
-        super._();
+  const _SocksRemoteConfig({
+    required this.address,
+    required this.port,
+    List<SocksAccount>? users,
+  }) : _users = users,
+       super._();
 
   @override
   final XrayAddress address;
@@ -8938,12 +9786,18 @@ class _SocksRemoteConfig extends SocksRemoteConfig {
             other is _SocksRemoteConfig &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            const DeepCollectionEquality().equals(other.users, _users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(_users));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      const DeepCollectionEquality().hash(_users),
+    );
+  }
 
   @override
   String toString() {
@@ -8955,8 +9809,9 @@ class _SocksRemoteConfig extends SocksRemoteConfig {
 abstract mixin class _$SocksRemoteConfigCopyWith<$Res>
     implements $SocksRemoteConfigCopyWith<$Res> {
   factory _$SocksRemoteConfigCopyWith(
-          _SocksRemoteConfig value, $Res Function(_SocksRemoteConfig) _then) =
-      __$SocksRemoteConfigCopyWithImpl;
+    _SocksRemoteConfig value,
+    $Res Function(_SocksRemoteConfig) _then,
+  ) = __$SocksRemoteConfigCopyWithImpl;
   @override
   @useResult
   $Res call({XrayAddress address, int port, List<SocksAccount>? users});
@@ -8979,20 +9834,22 @@ class __$SocksRemoteConfigCopyWithImpl<$Res>
     Object? port = null,
     Object? users = freezed,
   }) {
-    return _then(_SocksRemoteConfig(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<SocksAccount>?,
-    ));
+    return _then(
+      _SocksRemoteConfig(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<SocksAccount>?,
+      ),
+    );
   }
 }
 
@@ -9013,52 +9870,65 @@ mixin _$SocksServerConfig {
   @pragma('vm:prefer-inline')
   $SocksServerConfigCopyWith<SocksServerConfig> get copyWith =>
       _$SocksServerConfigCopyWithImpl<SocksServerConfig>(
-          this as SocksServerConfig, _$identity);
+        this as SocksServerConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SocksServerConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SocksServerConfig &&
-            (identical(other.authMethod, authMethod) ||
-                other.authMethod == authMethod) &&
-            const DeepCollectionEquality().equals(other.users, users) &&
-            const DeepCollectionEquality().equals(other.accounts, accounts) &&
-            (identical(other.udp, udp) || other.udp == udp) &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.userLevel, userLevel) ||
-                other.userLevel == userLevel));
+            (identical(other.authMethod, _this.authMethod) ||
+                other.authMethod == _this.authMethod) &&
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.accounts,
+              _this.accounts,
+            ) &&
+            (identical(other.udp, _this.udp) || other.udp == _this.udp) &&
+            (identical(other.host, _this.host) || other.host == _this.host) &&
+            (identical(other.userLevel, _this.userLevel) ||
+                other.userLevel == _this.userLevel));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as SocksServerConfig;
+    return Object.hash(
       runtimeType,
-      authMethod,
-      const DeepCollectionEquality().hash(users),
-      const DeepCollectionEquality().hash(accounts),
-      udp,
-      host,
-      userLevel);
+      _this.authMethod,
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.accounts),
+      _this.udp,
+      _this.host,
+      _this.userLevel,
+    );
+  }
 
   @override
   String toString() {
-    return 'SocksServerConfig(authMethod: $authMethod, users: $users, accounts: $accounts, udp: $udp, host: $host, userLevel: $userLevel)';
+    final _this = this as SocksServerConfig;
+    return 'SocksServerConfig(authMethod: ${_this.authMethod}, users: ${_this.users}, accounts: ${_this.accounts}, udp: ${_this.udp}, host: ${_this.host}, userLevel: ${_this.userLevel})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SocksServerConfigCopyWith<$Res> {
   factory $SocksServerConfigCopyWith(
-          SocksServerConfig value, $Res Function(SocksServerConfig) _then) =
-      _$SocksServerConfigCopyWithImpl;
+    SocksServerConfig value,
+    $Res Function(SocksServerConfig) _then,
+  ) = _$SocksServerConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'auth') SocksAuthMethod? authMethod,
-      List<SocksAccount>? users,
-      List<SocksAccount>? accounts,
-      bool? udp,
-      @JsonKey(name: 'ip') XrayAddress? host,
-      int? userLevel});
+  $Res call({
+    @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
+    List<SocksAccount>? users,
+    List<SocksAccount>? accounts,
+    bool? udp,
+    @JsonKey(name: 'ip') XrayAddress? host,
+    int? userLevel,
+  });
 }
 
 /// @nodoc
@@ -9081,32 +9951,34 @@ class _$SocksServerConfigCopyWithImpl<$Res>
     Object? host = freezed,
     Object? userLevel = freezed,
   }) {
-    return _then(_self.copyWith(
-      authMethod: freezed == authMethod
-          ? _self.authMethod
-          : authMethod // ignore: cast_nullable_to_non_nullable
-              as SocksAuthMethod?,
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<SocksAccount>?,
-      accounts: freezed == accounts
-          ? _self.accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<SocksAccount>?,
-      udp: freezed == udp
-          ? _self.udp
-          : udp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      SocksServerConfig(
+        authMethod: freezed == authMethod
+            ? _self.authMethod
+            : authMethod // ignore: cast_nullable_to_non_nullable
+                  as SocksAuthMethod?,
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<SocksAccount>?,
+        accounts: freezed == accounts
+            ? _self.accounts
+            : accounts // ignore: cast_nullable_to_non_nullable
+                  as List<SocksAccount>?,
+        udp: freezed == udp
+            ? _self.udp
+            : udp // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -9204,20 +10076,27 @@ extension SocksServerConfigPatterns on SocksServerConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
-            List<SocksAccount>? users,
-            List<SocksAccount>? accounts,
-            bool? udp,
-            @JsonKey(name: 'ip') XrayAddress? host,
-            int? userLevel)?
-        $default, {
+      @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
+      List<SocksAccount>? users,
+      List<SocksAccount>? accounts,
+      bool? udp,
+      @JsonKey(name: 'ip') XrayAddress? host,
+      int? userLevel,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _SocksServerConfig() when $default != null:
-        return $default(_that.authMethod, _that.users, _that.accounts,
-            _that.udp, _that.host, _that.userLevel);
+        return $default(
+          _that.authMethod,
+          _that.users,
+          _that.accounts,
+          _that.udp,
+          _that.host,
+          _that.userLevel,
+        );
       case _:
         return orElse();
     }
@@ -9239,19 +10118,26 @@ extension SocksServerConfigPatterns on SocksServerConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
-            List<SocksAccount>? users,
-            List<SocksAccount>? accounts,
-            bool? udp,
-            @JsonKey(name: 'ip') XrayAddress? host,
-            int? userLevel)
-        $default,
+      @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
+      List<SocksAccount>? users,
+      List<SocksAccount>? accounts,
+      bool? udp,
+      @JsonKey(name: 'ip') XrayAddress? host,
+      int? userLevel,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SocksServerConfig():
-        return $default(_that.authMethod, _that.users, _that.accounts,
-            _that.udp, _that.host, _that.userLevel);
+        return $default(
+          _that.authMethod,
+          _that.users,
+          _that.accounts,
+          _that.udp,
+          _that.host,
+          _that.userLevel,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -9272,19 +10158,26 @@ extension SocksServerConfigPatterns on SocksServerConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
-            List<SocksAccount>? users,
-            List<SocksAccount>? accounts,
-            bool? udp,
-            @JsonKey(name: 'ip') XrayAddress? host,
-            int? userLevel)?
-        $default,
+      @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
+      List<SocksAccount>? users,
+      List<SocksAccount>? accounts,
+      bool? udp,
+      @JsonKey(name: 'ip') XrayAddress? host,
+      int? userLevel,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SocksServerConfig() when $default != null:
-        return $default(_that.authMethod, _that.users, _that.accounts,
-            _that.udp, _that.host, _that.userLevel);
+        return $default(
+          _that.authMethod,
+          _that.users,
+          _that.accounts,
+          _that.udp,
+          _that.host,
+          _that.userLevel,
+        );
       case _:
         return null;
     }
@@ -9294,16 +10187,16 @@ extension SocksServerConfigPatterns on SocksServerConfig {
 /// @nodoc
 
 class _SocksServerConfig extends SocksServerConfig {
-  const _SocksServerConfig(
-      {@JsonKey(name: 'auth') this.authMethod,
-      final List<SocksAccount>? users,
-      final List<SocksAccount>? accounts,
-      this.udp,
-      @JsonKey(name: 'ip') this.host,
-      this.userLevel})
-      : _users = users,
-        _accounts = accounts,
-        super._();
+  const _SocksServerConfig({
+    @JsonKey(name: 'auth') this.authMethod,
+    List<SocksAccount>? users,
+    List<SocksAccount>? accounts,
+    this.udp,
+    @JsonKey(name: 'ip') this.host,
+    this.userLevel,
+  }) : _users = users,
+       _accounts = accounts,
+       super._();
 
   @override
   @JsonKey(name: 'auth')
@@ -9351,8 +10244,8 @@ class _SocksServerConfig extends SocksServerConfig {
             other is _SocksServerConfig &&
             (identical(other.authMethod, authMethod) ||
                 other.authMethod == authMethod) &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
-            const DeepCollectionEquality().equals(other._accounts, _accounts) &&
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.accounts, _accounts) &&
             (identical(other.udp, udp) || other.udp == udp) &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.userLevel, userLevel) ||
@@ -9360,14 +10253,17 @@ class _SocksServerConfig extends SocksServerConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       authMethod,
       const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_accounts),
       udp,
       host,
-      userLevel);
+      userLevel,
+    );
+  }
 
   @override
   String toString() {
@@ -9379,17 +10275,19 @@ class _SocksServerConfig extends SocksServerConfig {
 abstract mixin class _$SocksServerConfigCopyWith<$Res>
     implements $SocksServerConfigCopyWith<$Res> {
   factory _$SocksServerConfigCopyWith(
-          _SocksServerConfig value, $Res Function(_SocksServerConfig) _then) =
-      __$SocksServerConfigCopyWithImpl;
+    _SocksServerConfig value,
+    $Res Function(_SocksServerConfig) _then,
+  ) = __$SocksServerConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'auth') SocksAuthMethod? authMethod,
-      List<SocksAccount>? users,
-      List<SocksAccount>? accounts,
-      bool? udp,
-      @JsonKey(name: 'ip') XrayAddress? host,
-      int? userLevel});
+  $Res call({
+    @JsonKey(name: 'auth') SocksAuthMethod? authMethod,
+    List<SocksAccount>? users,
+    List<SocksAccount>? accounts,
+    bool? udp,
+    @JsonKey(name: 'ip') XrayAddress? host,
+    int? userLevel,
+  });
 }
 
 /// @nodoc
@@ -9412,32 +10310,34 @@ class __$SocksServerConfigCopyWithImpl<$Res>
     Object? host = freezed,
     Object? userLevel = freezed,
   }) {
-    return _then(_SocksServerConfig(
-      authMethod: freezed == authMethod
-          ? _self.authMethod
-          : authMethod // ignore: cast_nullable_to_non_nullable
-              as SocksAuthMethod?,
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<SocksAccount>?,
-      accounts: freezed == accounts
-          ? _self._accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<SocksAccount>?,
-      udp: freezed == udp
-          ? _self.udp
-          : udp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _SocksServerConfig(
+        authMethod: freezed == authMethod
+            ? _self.authMethod
+            : authMethod // ignore: cast_nullable_to_non_nullable
+                  as SocksAuthMethod?,
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<SocksAccount>?,
+        accounts: freezed == accounts
+            ? _self._accounts
+            : accounts // ignore: cast_nullable_to_non_nullable
+                  as List<SocksAccount>?,
+        udp: freezed == udp
+            ? _self.udp
+            : udp // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -9457,47 +10357,70 @@ mixin _$TrojanClientConfig {
   @pragma('vm:prefer-inline')
   $TrojanClientConfigCopyWith<TrojanClientConfig> get copyWith =>
       _$TrojanClientConfigCopyWithImpl<TrojanClientConfig>(
-          this as TrojanClientConfig, _$identity);
+        this as TrojanClientConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TrojanClientConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TrojanClientConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.flow, flow) || other.flow == flow) &&
-            const DeepCollectionEquality().equals(other.servers, servers));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.flow, _this.flow) || other.flow == _this.flow) &&
+            const DeepCollectionEquality().equals(
+              other.servers,
+              _this.servers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      password, flow, const DeepCollectionEquality().hash(servers));
+  int get hashCode {
+    final _this = this as TrojanClientConfig;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.password,
+      _this.flow,
+      const DeepCollectionEquality().hash(_this.servers),
+    );
+  }
 
   @override
   String toString() {
-    return 'TrojanClientConfig(address: $address, port: $port, level: $level, email: $email, password: $password, flow: $flow, servers: $servers)';
+    final _this = this as TrojanClientConfig;
+    return 'TrojanClientConfig(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, password: ${_this.password}, flow: ${_this.flow}, servers: ${_this.servers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $TrojanClientConfigCopyWith<$Res> {
   factory $TrojanClientConfigCopyWith(
-          TrojanClientConfig value, $Res Function(TrojanClientConfig) _then) =
-      _$TrojanClientConfigCopyWithImpl;
+    TrojanClientConfig value,
+    $Res Function(TrojanClientConfig) _then,
+  ) = _$TrojanClientConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      String? password,
-      String? flow,
-      List<TrojanServerTarget>? servers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    String? password,
+    String? flow,
+    List<TrojanServerTarget>? servers,
+  });
 }
 
 /// @nodoc
@@ -9521,36 +10444,38 @@ class _$TrojanClientConfigCopyWithImpl<$Res>
     Object? flow = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<TrojanServerTarget>?,
-    ));
+    return _then(
+      TrojanClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self.servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanServerTarget>?,
+      ),
+    );
   }
 }
 
@@ -9647,16 +10572,30 @@ extension TrojanClientConfigPatterns on TrojanClientConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(XrayAddress? address, int? port, int? level, String? email,
-            String? password, String? flow, List<TrojanServerTarget>? servers)?
-        $default, {
+    TResult Function(
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      String? password,
+      String? flow,
+      List<TrojanServerTarget>? servers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _TrojanClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.password, _that.flow, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.password,
+          _that.flow,
+          _that.servers,
+        );
       case _:
         return orElse();
     }
@@ -9677,15 +10616,29 @@ extension TrojanClientConfigPatterns on TrojanClientConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(XrayAddress? address, int? port, int? level, String? email,
-            String? password, String? flow, List<TrojanServerTarget>? servers)
-        $default,
+    TResult Function(
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      String? password,
+      String? flow,
+      List<TrojanServerTarget>? servers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TrojanClientConfig():
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.password, _that.flow, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.password,
+          _that.flow,
+          _that.servers,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -9706,20 +10659,28 @@ extension TrojanClientConfigPatterns on TrojanClientConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            String? password,
-            String? flow,
-            List<TrojanServerTarget>? servers)?
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      String? password,
+      String? flow,
+      List<TrojanServerTarget>? servers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TrojanClientConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.password, _that.flow, _that.servers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.password,
+          _that.flow,
+          _that.servers,
+        );
       case _:
         return null;
     }
@@ -9729,16 +10690,16 @@ extension TrojanClientConfigPatterns on TrojanClientConfig {
 /// @nodoc
 
 class _TrojanClientConfig extends TrojanClientConfig {
-  const _TrojanClientConfig(
-      {this.address,
-      this.port,
-      this.level,
-      this.email,
-      this.password,
-      this.flow,
-      final List<TrojanServerTarget>? servers})
-      : _servers = servers,
-        super._();
+  const _TrojanClientConfig({
+    this.address,
+    this.port,
+    this.level,
+    this.email,
+    this.password,
+    this.flow,
+    List<TrojanServerTarget>? servers,
+  }) : _servers = servers,
+       super._();
 
   @override
   final XrayAddress? address;
@@ -9782,12 +10743,22 @@ class _TrojanClientConfig extends TrojanClientConfig {
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.flow, flow) || other.flow == flow) &&
-            const DeepCollectionEquality().equals(other._servers, _servers));
+            const DeepCollectionEquality().equals(other.servers, _servers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email,
-      password, flow, const DeepCollectionEquality().hash(_servers));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      level,
+      email,
+      password,
+      flow,
+      const DeepCollectionEquality().hash(_servers),
+    );
+  }
 
   @override
   String toString() {
@@ -9799,18 +10770,20 @@ class _TrojanClientConfig extends TrojanClientConfig {
 abstract mixin class _$TrojanClientConfigCopyWith<$Res>
     implements $TrojanClientConfigCopyWith<$Res> {
   factory _$TrojanClientConfigCopyWith(
-          _TrojanClientConfig value, $Res Function(_TrojanClientConfig) _then) =
-      __$TrojanClientConfigCopyWithImpl;
+    _TrojanClientConfig value,
+    $Res Function(_TrojanClientConfig) _then,
+  ) = __$TrojanClientConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      String? password,
-      String? flow,
-      List<TrojanServerTarget>? servers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    String? password,
+    String? flow,
+    List<TrojanServerTarget>? servers,
+  });
 }
 
 /// @nodoc
@@ -9834,36 +10807,38 @@ class __$TrojanClientConfigCopyWithImpl<$Res>
     Object? flow = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_TrojanClientConfig(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _self._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<TrojanServerTarget>?,
-    ));
+    return _then(
+      _TrojanClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _self._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanServerTarget>?,
+      ),
+    );
   }
 }
 
@@ -9882,44 +10857,60 @@ mixin _$TrojanInboundFallback {
   @pragma('vm:prefer-inline')
   $TrojanInboundFallbackCopyWith<TrojanInboundFallback> get copyWith =>
       _$TrojanInboundFallbackCopyWithImpl<TrojanInboundFallback>(
-          this as TrojanInboundFallback, _$identity);
+        this as TrojanInboundFallback,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TrojanInboundFallback;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TrojanInboundFallback &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.alpn, alpn) || other.alpn == alpn) &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.dest, dest) &&
-            (identical(other.xver, xver) || other.xver == xver));
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.alpn, _this.alpn) || other.alpn == _this.alpn) &&
+            (identical(other.path, _this.path) || other.path == _this.path) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            const DeepCollectionEquality().equals(other.dest, _this.dest) &&
+            (identical(other.xver, _this.xver) || other.xver == _this.xver));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, alpn, path, type,
-      const DeepCollectionEquality().hash(dest), xver);
+  int get hashCode {
+    final _this = this as TrojanInboundFallback;
+    return Object.hash(
+      runtimeType,
+      _this.name,
+      _this.alpn,
+      _this.path,
+      _this.type,
+      const DeepCollectionEquality().hash(_this.dest),
+      _this.xver,
+    );
+  }
 
   @override
   String toString() {
-    return 'TrojanInboundFallback(name: $name, alpn: $alpn, path: $path, type: $type, dest: $dest, xver: $xver)';
+    final _this = this as TrojanInboundFallback;
+    return 'TrojanInboundFallback(name: ${_this.name}, alpn: ${_this.alpn}, path: ${_this.path}, type: ${_this.type}, dest: ${_this.dest}, xver: ${_this.xver})';
   }
 }
 
 /// @nodoc
 abstract mixin class $TrojanInboundFallbackCopyWith<$Res> {
-  factory $TrojanInboundFallbackCopyWith(TrojanInboundFallback value,
-          $Res Function(TrojanInboundFallback) _then) =
-      _$TrojanInboundFallbackCopyWithImpl;
+  factory $TrojanInboundFallbackCopyWith(
+    TrojanInboundFallback value,
+    $Res Function(TrojanInboundFallback) _then,
+  ) = _$TrojanInboundFallbackCopyWithImpl;
   @useResult
-  $Res call(
-      {String? name,
-      String? alpn,
-      String? path,
-      XrayFallbackType? type,
-      Object? dest,
-      int? xver});
+  $Res call({
+    String? name,
+    String? alpn,
+    String? path,
+    XrayFallbackType? type,
+    Object? dest,
+    int? xver,
+  });
 }
 
 /// @nodoc
@@ -9942,29 +10933,31 @@ class _$TrojanInboundFallbackCopyWithImpl<$Res>
     Object? dest = freezed,
     Object? xver = freezed,
   }) {
-    return _then(_self.copyWith(
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alpn: freezed == alpn
-          ? _self.alpn
-          : alpn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as XrayFallbackType?,
-      dest: freezed == dest ? _self.dest : dest,
-      xver: freezed == xver
-          ? _self.xver
-          : xver // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      TrojanInboundFallback(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        alpn: freezed == alpn
+            ? _self.alpn
+            : alpn // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as XrayFallbackType?,
+        dest: freezed == dest ? _self.dest : dest,
+        xver: freezed == xver
+            ? _self.xver
+            : xver // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -10061,16 +11054,28 @@ extension TrojanInboundFallbackPatterns on TrojanInboundFallback {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? name, String? alpn, String? path,
-            XrayFallbackType? type, Object? dest, int? xver)?
-        $default, {
+    TResult Function(
+      String? name,
+      String? alpn,
+      String? path,
+      XrayFallbackType? type,
+      Object? dest,
+      int? xver,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _TrojanInboundFallback() when $default != null:
-        return $default(_that.name, _that.alpn, _that.path, _that.type,
-            _that.dest, _that.xver);
+        return $default(
+          _that.name,
+          _that.alpn,
+          _that.path,
+          _that.type,
+          _that.dest,
+          _that.xver,
+        );
       case _:
         return orElse();
     }
@@ -10091,15 +11096,27 @@ extension TrojanInboundFallbackPatterns on TrojanInboundFallback {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? name, String? alpn, String? path,
-            XrayFallbackType? type, Object? dest, int? xver)
-        $default,
+    TResult Function(
+      String? name,
+      String? alpn,
+      String? path,
+      XrayFallbackType? type,
+      Object? dest,
+      int? xver,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TrojanInboundFallback():
-        return $default(_that.name, _that.alpn, _that.path, _that.type,
-            _that.dest, _that.xver);
+        return $default(
+          _that.name,
+          _that.alpn,
+          _that.path,
+          _that.type,
+          _that.dest,
+          _that.xver,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -10119,15 +11136,27 @@ extension TrojanInboundFallbackPatterns on TrojanInboundFallback {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? name, String? alpn, String? path,
-            XrayFallbackType? type, Object? dest, int? xver)?
-        $default,
+    TResult? Function(
+      String? name,
+      String? alpn,
+      String? path,
+      XrayFallbackType? type,
+      Object? dest,
+      int? xver,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TrojanInboundFallback() when $default != null:
-        return $default(_that.name, _that.alpn, _that.path, _that.type,
-            _that.dest, _that.xver);
+        return $default(
+          _that.name,
+          _that.alpn,
+          _that.path,
+          _that.type,
+          _that.dest,
+          _that.xver,
+        );
       case _:
         return null;
     }
@@ -10137,9 +11166,14 @@ extension TrojanInboundFallbackPatterns on TrojanInboundFallback {
 /// @nodoc
 
 class _TrojanInboundFallback extends TrojanInboundFallback {
-  const _TrojanInboundFallback(
-      {this.name, this.alpn, this.path, this.type, this.dest, this.xver})
-      : super._();
+  const _TrojanInboundFallback({
+    this.name,
+    this.alpn,
+    this.path,
+    this.type,
+    this.dest,
+    this.xver,
+  }) : super._();
 
   @override
   final String? name;
@@ -10161,7 +11195,9 @@ class _TrojanInboundFallback extends TrojanInboundFallback {
   @pragma('vm:prefer-inline')
   _$TrojanInboundFallbackCopyWith<_TrojanInboundFallback> get copyWith =>
       __$TrojanInboundFallbackCopyWithImpl<_TrojanInboundFallback>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -10177,8 +11213,17 @@ class _TrojanInboundFallback extends TrojanInboundFallback {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, alpn, path, type,
-      const DeepCollectionEquality().hash(dest), xver);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      name,
+      alpn,
+      path,
+      type,
+      const DeepCollectionEquality().hash(dest),
+      xver,
+    );
+  }
 
   @override
   String toString() {
@@ -10189,18 +11234,20 @@ class _TrojanInboundFallback extends TrojanInboundFallback {
 /// @nodoc
 abstract mixin class _$TrojanInboundFallbackCopyWith<$Res>
     implements $TrojanInboundFallbackCopyWith<$Res> {
-  factory _$TrojanInboundFallbackCopyWith(_TrojanInboundFallback value,
-          $Res Function(_TrojanInboundFallback) _then) =
-      __$TrojanInboundFallbackCopyWithImpl;
+  factory _$TrojanInboundFallbackCopyWith(
+    _TrojanInboundFallback value,
+    $Res Function(_TrojanInboundFallback) _then,
+  ) = __$TrojanInboundFallbackCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? alpn,
-      String? path,
-      XrayFallbackType? type,
-      Object? dest,
-      int? xver});
+  $Res call({
+    String? name,
+    String? alpn,
+    String? path,
+    XrayFallbackType? type,
+    Object? dest,
+    int? xver,
+  });
 }
 
 /// @nodoc
@@ -10223,29 +11270,31 @@ class __$TrojanInboundFallbackCopyWithImpl<$Res>
     Object? dest = freezed,
     Object? xver = freezed,
   }) {
-    return _then(_TrojanInboundFallback(
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alpn: freezed == alpn
-          ? _self.alpn
-          : alpn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as XrayFallbackType?,
-      dest: freezed == dest ? _self.dest : dest,
-      xver: freezed == xver
-          ? _self.xver
-          : xver // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _TrojanInboundFallback(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        alpn: freezed == alpn
+            ? _self.alpn
+            : alpn // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as XrayFallbackType?,
+        dest: freezed == dest ? _self.dest : dest,
+        xver: freezed == xver
+            ? _self.xver
+            : xver // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -10261,41 +11310,57 @@ mixin _$TrojanServerConfig {
   @pragma('vm:prefer-inline')
   $TrojanServerConfigCopyWith<TrojanServerConfig> get copyWith =>
       _$TrojanServerConfigCopyWithImpl<TrojanServerConfig>(
-          this as TrojanServerConfig, _$identity);
+        this as TrojanServerConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TrojanServerConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TrojanServerConfig &&
-            const DeepCollectionEquality().equals(other.users, users) &&
-            const DeepCollectionEquality().equals(other.clients, clients) &&
-            const DeepCollectionEquality().equals(other.fallbacks, fallbacks));
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.clients,
+              _this.clients,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.fallbacks,
+              _this.fallbacks,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as TrojanServerConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(users),
-      const DeepCollectionEquality().hash(clients),
-      const DeepCollectionEquality().hash(fallbacks));
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.clients),
+      const DeepCollectionEquality().hash(_this.fallbacks),
+    );
+  }
 
   @override
   String toString() {
-    return 'TrojanServerConfig(users: $users, clients: $clients, fallbacks: $fallbacks)';
+    final _this = this as TrojanServerConfig;
+    return 'TrojanServerConfig(users: ${_this.users}, clients: ${_this.clients}, fallbacks: ${_this.fallbacks})';
   }
 }
 
 /// @nodoc
 abstract mixin class $TrojanServerConfigCopyWith<$Res> {
   factory $TrojanServerConfigCopyWith(
-          TrojanServerConfig value, $Res Function(TrojanServerConfig) _then) =
-      _$TrojanServerConfigCopyWithImpl;
+    TrojanServerConfig value,
+    $Res Function(TrojanServerConfig) _then,
+  ) = _$TrojanServerConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<TrojanUserConfig>? users,
-      List<TrojanUserConfig>? clients,
-      List<TrojanInboundFallback>? fallbacks});
+  $Res call({
+    List<TrojanUserConfig>? users,
+    List<TrojanUserConfig>? clients,
+    List<TrojanInboundFallback>? fallbacks,
+  });
 }
 
 /// @nodoc
@@ -10315,20 +11380,22 @@ class _$TrojanServerConfigCopyWithImpl<$Res>
     Object? clients = freezed,
     Object? fallbacks = freezed,
   }) {
-    return _then(_self.copyWith(
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<TrojanUserConfig>?,
-      clients: freezed == clients
-          ? _self.clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<TrojanUserConfig>?,
-      fallbacks: freezed == fallbacks
-          ? _self.fallbacks
-          : fallbacks // ignore: cast_nullable_to_non_nullable
-              as List<TrojanInboundFallback>?,
-    ));
+    return _then(
+      TrojanServerConfig(
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanUserConfig>?,
+        clients: freezed == clients
+            ? _self.clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanUserConfig>?,
+        fallbacks: freezed == fallbacks
+            ? _self.fallbacks
+            : fallbacks // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanInboundFallback>?,
+      ),
+    );
   }
 }
 
@@ -10426,10 +11493,11 @@ extension TrojanServerConfigPatterns on TrojanServerConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            List<TrojanUserConfig>? users,
-            List<TrojanUserConfig>? clients,
-            List<TrojanInboundFallback>? fallbacks)?
-        $default, {
+      List<TrojanUserConfig>? users,
+      List<TrojanUserConfig>? clients,
+      List<TrojanInboundFallback>? fallbacks,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -10457,10 +11525,11 @@ extension TrojanServerConfigPatterns on TrojanServerConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            List<TrojanUserConfig>? users,
-            List<TrojanUserConfig>? clients,
-            List<TrojanInboundFallback>? fallbacks)
-        $default,
+      List<TrojanUserConfig>? users,
+      List<TrojanUserConfig>? clients,
+      List<TrojanInboundFallback>? fallbacks,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -10486,10 +11555,11 @@ extension TrojanServerConfigPatterns on TrojanServerConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            List<TrojanUserConfig>? users,
-            List<TrojanUserConfig>? clients,
-            List<TrojanInboundFallback>? fallbacks)?
-        $default,
+      List<TrojanUserConfig>? users,
+      List<TrojanUserConfig>? clients,
+      List<TrojanInboundFallback>? fallbacks,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -10504,14 +11574,14 @@ extension TrojanServerConfigPatterns on TrojanServerConfig {
 /// @nodoc
 
 class _TrojanServerConfig extends TrojanServerConfig {
-  const _TrojanServerConfig(
-      {final List<TrojanUserConfig>? users,
-      final List<TrojanUserConfig>? clients,
-      final List<TrojanInboundFallback>? fallbacks})
-      : _users = users,
-        _clients = clients,
-        _fallbacks = fallbacks,
-        super._();
+  const _TrojanServerConfig({
+    List<TrojanUserConfig>? users,
+    List<TrojanUserConfig>? clients,
+    List<TrojanInboundFallback>? fallbacks,
+  }) : _users = users,
+       _clients = clients,
+       _fallbacks = fallbacks,
+       super._();
 
   final List<TrojanUserConfig>? _users;
   @override
@@ -10556,18 +11626,20 @@ class _TrojanServerConfig extends TrojanServerConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TrojanServerConfig &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
-            const DeepCollectionEquality().equals(other._clients, _clients) &&
-            const DeepCollectionEquality()
-                .equals(other._fallbacks, _fallbacks));
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.clients, _clients) &&
+            const DeepCollectionEquality().equals(other.fallbacks, _fallbacks));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_clients),
-      const DeepCollectionEquality().hash(_fallbacks));
+      const DeepCollectionEquality().hash(_fallbacks),
+    );
+  }
 
   @override
   String toString() {
@@ -10579,14 +11651,16 @@ class _TrojanServerConfig extends TrojanServerConfig {
 abstract mixin class _$TrojanServerConfigCopyWith<$Res>
     implements $TrojanServerConfigCopyWith<$Res> {
   factory _$TrojanServerConfigCopyWith(
-          _TrojanServerConfig value, $Res Function(_TrojanServerConfig) _then) =
-      __$TrojanServerConfigCopyWithImpl;
+    _TrojanServerConfig value,
+    $Res Function(_TrojanServerConfig) _then,
+  ) = __$TrojanServerConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<TrojanUserConfig>? users,
-      List<TrojanUserConfig>? clients,
-      List<TrojanInboundFallback>? fallbacks});
+  $Res call({
+    List<TrojanUserConfig>? users,
+    List<TrojanUserConfig>? clients,
+    List<TrojanInboundFallback>? fallbacks,
+  });
 }
 
 /// @nodoc
@@ -10606,20 +11680,22 @@ class __$TrojanServerConfigCopyWithImpl<$Res>
     Object? clients = freezed,
     Object? fallbacks = freezed,
   }) {
-    return _then(_TrojanServerConfig(
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<TrojanUserConfig>?,
-      clients: freezed == clients
-          ? _self._clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<TrojanUserConfig>?,
-      fallbacks: freezed == fallbacks
-          ? _self._fallbacks
-          : fallbacks // ignore: cast_nullable_to_non_nullable
-              as List<TrojanInboundFallback>?,
-    ));
+    return _then(
+      _TrojanServerConfig(
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanUserConfig>?,
+        clients: freezed == clients
+            ? _self._clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanUserConfig>?,
+        fallbacks: freezed == fallbacks
+            ? _self._fallbacks
+            : fallbacks // ignore: cast_nullable_to_non_nullable
+                  as List<TrojanInboundFallback>?,
+      ),
+    );
   }
 }
 
@@ -10638,45 +11714,64 @@ mixin _$TrojanServerTarget {
   @pragma('vm:prefer-inline')
   $TrojanServerTargetCopyWith<TrojanServerTarget> get copyWith =>
       _$TrojanServerTargetCopyWithImpl<TrojanServerTarget>(
-          this as TrojanServerTarget, _$identity);
+        this as TrojanServerTarget,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TrojanServerTarget;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TrojanServerTarget &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.flow, flow) || other.flow == flow));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.flow, _this.flow) || other.flow == _this.flow));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, address, port, level, email, password, flow);
+  int get hashCode {
+    final _this = this as TrojanServerTarget;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.password,
+      _this.flow,
+    );
+  }
 
   @override
   String toString() {
-    return 'TrojanServerTarget(address: $address, port: $port, level: $level, email: $email, password: $password, flow: $flow)';
+    final _this = this as TrojanServerTarget;
+    return 'TrojanServerTarget(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, password: ${_this.password}, flow: ${_this.flow})';
   }
 }
 
 /// @nodoc
 abstract mixin class $TrojanServerTargetCopyWith<$Res> {
   factory $TrojanServerTargetCopyWith(
-          TrojanServerTarget value, $Res Function(TrojanServerTarget) _then) =
-      _$TrojanServerTargetCopyWithImpl;
+    TrojanServerTarget value,
+    $Res Function(TrojanServerTarget) _then,
+  ) = _$TrojanServerTargetCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress address,
-      int port,
-      int? level,
-      String? email,
-      String password,
-      String? flow});
+  $Res call({
+    XrayAddress address,
+    int port,
+    int? level,
+    String? email,
+    String password,
+    String? flow,
+  });
 }
 
 /// @nodoc
@@ -10699,32 +11794,34 @@ class _$TrojanServerTargetCopyWithImpl<$Res>
     Object? password = null,
     Object? flow = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      TrojanServerTarget(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -10821,16 +11918,28 @@ extension TrojanServerTargetPatterns on TrojanServerTarget {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(XrayAddress address, int port, int? level, String? email,
-            String password, String? flow)?
-        $default, {
+    TResult Function(
+      XrayAddress address,
+      int port,
+      int? level,
+      String? email,
+      String password,
+      String? flow,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _TrojanServerTarget() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.password, _that.flow);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.password,
+          _that.flow,
+        );
       case _:
         return orElse();
     }
@@ -10851,15 +11960,27 @@ extension TrojanServerTargetPatterns on TrojanServerTarget {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(XrayAddress address, int port, int? level, String? email,
-            String password, String? flow)
-        $default,
+    TResult Function(
+      XrayAddress address,
+      int port,
+      int? level,
+      String? email,
+      String password,
+      String? flow,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TrojanServerTarget():
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.password, _that.flow);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.password,
+          _that.flow,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -10879,15 +12000,27 @@ extension TrojanServerTargetPatterns on TrojanServerTarget {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(XrayAddress address, int port, int? level, String? email,
-            String password, String? flow)?
-        $default,
+    TResult? Function(
+      XrayAddress address,
+      int port,
+      int? level,
+      String? email,
+      String password,
+      String? flow,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TrojanServerTarget() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.password, _that.flow);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.password,
+          _that.flow,
+        );
       case _:
         return null;
     }
@@ -10897,14 +12030,14 @@ extension TrojanServerTargetPatterns on TrojanServerTarget {
 /// @nodoc
 
 class _TrojanServerTarget extends TrojanServerTarget {
-  const _TrojanServerTarget(
-      {required this.address,
-      required this.port,
-      this.level,
-      this.email,
-      required this.password,
-      this.flow})
-      : super._();
+  const _TrojanServerTarget({
+    required this.address,
+    required this.port,
+    this.level,
+    this.email,
+    required this.password,
+    this.flow,
+  }) : super._();
 
   @override
   final XrayAddress address;
@@ -10942,8 +12075,17 @@ class _TrojanServerTarget extends TrojanServerTarget {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, address, port, level, email, password, flow);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      level,
+      email,
+      password,
+      flow,
+    );
+  }
 
   @override
   String toString() {
@@ -10955,17 +12097,19 @@ class _TrojanServerTarget extends TrojanServerTarget {
 abstract mixin class _$TrojanServerTargetCopyWith<$Res>
     implements $TrojanServerTargetCopyWith<$Res> {
   factory _$TrojanServerTargetCopyWith(
-          _TrojanServerTarget value, $Res Function(_TrojanServerTarget) _then) =
-      __$TrojanServerTargetCopyWithImpl;
+    _TrojanServerTarget value,
+    $Res Function(_TrojanServerTarget) _then,
+  ) = __$TrojanServerTargetCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress address,
-      int port,
-      int? level,
-      String? email,
-      String password,
-      String? flow});
+  $Res call({
+    XrayAddress address,
+    int port,
+    int? level,
+    String? email,
+    String password,
+    String? flow,
+  });
 }
 
 /// @nodoc
@@ -10988,32 +12132,34 @@ class __$TrojanServerTargetCopyWithImpl<$Res>
     Object? password = null,
     Object? flow = freezed,
   }) {
-    return _then(_TrojanServerTarget(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _TrojanServerTarget(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -11030,34 +12176,50 @@ mixin _$TrojanUserConfig {
   @pragma('vm:prefer-inline')
   $TrojanUserConfigCopyWith<TrojanUserConfig> get copyWith =>
       _$TrojanUserConfigCopyWithImpl<TrojanUserConfig>(
-          this as TrojanUserConfig, _$identity);
+        this as TrojanUserConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TrojanUserConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TrojanUserConfig &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.flow, flow) || other.flow == flow));
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.flow, _this.flow) || other.flow == _this.flow));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, password, level, email, flow);
+  int get hashCode {
+    final _this = this as TrojanUserConfig;
+    return Object.hash(
+      runtimeType,
+      _this.password,
+      _this.level,
+      _this.email,
+      _this.flow,
+    );
+  }
 
   @override
   String toString() {
-    return 'TrojanUserConfig(password: $password, level: $level, email: $email, flow: $flow)';
+    final _this = this as TrojanUserConfig;
+    return 'TrojanUserConfig(password: ${_this.password}, level: ${_this.level}, email: ${_this.email}, flow: ${_this.flow})';
   }
 }
 
 /// @nodoc
 abstract mixin class $TrojanUserConfigCopyWith<$Res> {
   factory $TrojanUserConfigCopyWith(
-          TrojanUserConfig value, $Res Function(TrojanUserConfig) _then) =
-      _$TrojanUserConfigCopyWithImpl;
+    TrojanUserConfig value,
+    $Res Function(TrojanUserConfig) _then,
+  ) = _$TrojanUserConfigCopyWithImpl;
   @useResult
   $Res call({String password, int? level, String? email, String? flow});
 }
@@ -11080,24 +12242,26 @@ class _$TrojanUserConfigCopyWithImpl<$Res>
     Object? email = freezed,
     Object? flow = freezed,
   }) {
-    return _then(_self.copyWith(
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      TrojanUserConfig(
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -11195,7 +12359,7 @@ extension TrojanUserConfigPatterns on TrojanUserConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String password, int? level, String? email, String? flow)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -11223,7 +12387,7 @@ extension TrojanUserConfigPatterns on TrojanUserConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String password, int? level, String? email, String? flow)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -11249,7 +12413,7 @@ extension TrojanUserConfigPatterns on TrojanUserConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(String password, int? level, String? email, String? flow)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -11264,9 +12428,12 @@ extension TrojanUserConfigPatterns on TrojanUserConfig {
 /// @nodoc
 
 class _TrojanUserConfig extends TrojanUserConfig {
-  const _TrojanUserConfig(
-      {required this.password, this.level, this.email, this.flow})
-      : super._();
+  const _TrojanUserConfig({
+    required this.password,
+    this.level,
+    this.email,
+    this.flow,
+  }) : super._();
 
   @override
   final String password;
@@ -11298,7 +12465,9 @@ class _TrojanUserConfig extends TrojanUserConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, password, level, email, flow);
+  int get hashCode {
+    return Object.hash(runtimeType, password, level, email, flow);
+  }
 
   @override
   String toString() {
@@ -11310,8 +12479,9 @@ class _TrojanUserConfig extends TrojanUserConfig {
 abstract mixin class _$TrojanUserConfigCopyWith<$Res>
     implements $TrojanUserConfigCopyWith<$Res> {
   factory _$TrojanUserConfigCopyWith(
-          _TrojanUserConfig value, $Res Function(_TrojanUserConfig) _then) =
-      __$TrojanUserConfigCopyWithImpl;
+    _TrojanUserConfig value,
+    $Res Function(_TrojanUserConfig) _then,
+  ) = __$TrojanUserConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String password, int? level, String? email, String? flow});
@@ -11335,24 +12505,26 @@ class __$TrojanUserConfigCopyWithImpl<$Res>
     Object? email = freezed,
     Object? flow = freezed,
   }) {
-    return _then(_TrojanUserConfig(
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _TrojanUserConfig(
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -11378,37 +12550,51 @@ mixin _$TunConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TunConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TunConfig &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.desc, desc) || other.desc == desc) &&
-            (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            const DeepCollectionEquality().equals(other.gateway, gateway) &&
-            const DeepCollectionEquality().equals(other.dns, dns) &&
-            (identical(other.userLevel, userLevel) ||
-                other.userLevel == userLevel) &&
-            const DeepCollectionEquality()
-                .equals(other.autoSystemRoutingTable, autoSystemRoutingTable) &&
-            (identical(other.autoOutboundsInterface, autoOutboundsInterface) ||
-                other.autoOutboundsInterface == autoOutboundsInterface));
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.desc, _this.desc) || other.desc == _this.desc) &&
+            (identical(other.mtu, _this.mtu) || other.mtu == _this.mtu) &&
+            const DeepCollectionEquality().equals(
+              other.gateway,
+              _this.gateway,
+            ) &&
+            const DeepCollectionEquality().equals(other.dns, _this.dns) &&
+            (identical(other.userLevel, _this.userLevel) ||
+                other.userLevel == _this.userLevel) &&
+            const DeepCollectionEquality().equals(
+              other.autoSystemRoutingTable,
+              _this.autoSystemRoutingTable,
+            ) &&
+            (identical(
+                  other.autoOutboundsInterface,
+                  _this.autoOutboundsInterface,
+                ) ||
+                other.autoOutboundsInterface == _this.autoOutboundsInterface));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as TunConfig;
+    return Object.hash(
       runtimeType,
-      name,
-      desc,
-      mtu,
-      const DeepCollectionEquality().hash(gateway),
-      const DeepCollectionEquality().hash(dns),
-      userLevel,
-      const DeepCollectionEquality().hash(autoSystemRoutingTable),
-      autoOutboundsInterface);
+      _this.name,
+      _this.desc,
+      _this.mtu,
+      const DeepCollectionEquality().hash(_this.gateway),
+      const DeepCollectionEquality().hash(_this.dns),
+      _this.userLevel,
+      const DeepCollectionEquality().hash(_this.autoSystemRoutingTable),
+      _this.autoOutboundsInterface,
+    );
+  }
 
   @override
   String toString() {
-    return 'TunConfig(name: $name, desc: $desc, mtu: $mtu, gateway: $gateway, dns: $dns, userLevel: $userLevel, autoSystemRoutingTable: $autoSystemRoutingTable, autoOutboundsInterface: $autoOutboundsInterface)';
+    final _this = this as TunConfig;
+    return 'TunConfig(name: ${_this.name}, desc: ${_this.desc}, mtu: ${_this.mtu}, gateway: ${_this.gateway}, dns: ${_this.dns}, userLevel: ${_this.userLevel}, autoSystemRoutingTable: ${_this.autoSystemRoutingTable}, autoOutboundsInterface: ${_this.autoOutboundsInterface})';
   }
 }
 
@@ -11417,15 +12603,16 @@ abstract mixin class $TunConfigCopyWith<$Res> {
   factory $TunConfigCopyWith(TunConfig value, $Res Function(TunConfig) _then) =
       _$TunConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? name,
-      String? desc,
-      @JsonKey(name: 'mtu') int? mtu,
-      List<String>? gateway,
-      @JsonKey(name: 'dns') List<String>? dns,
-      int? userLevel,
-      List<String>? autoSystemRoutingTable,
-      String? autoOutboundsInterface});
+  $Res call({
+    String? name,
+    String? desc,
+    @JsonKey(name: 'mtu') int? mtu,
+    List<String>? gateway,
+    @JsonKey(name: 'dns') List<String>? dns,
+    int? userLevel,
+    List<String>? autoSystemRoutingTable,
+    String? autoOutboundsInterface,
+  });
 }
 
 /// @nodoc
@@ -11449,40 +12636,42 @@ class _$TunConfigCopyWithImpl<$Res> implements $TunConfigCopyWith<$Res> {
     Object? autoSystemRoutingTable = freezed,
     Object? autoOutboundsInterface = freezed,
   }) {
-    return _then(_self.copyWith(
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      desc: freezed == desc
-          ? _self.desc
-          : desc // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mtu: freezed == mtu
-          ? _self.mtu
-          : mtu // ignore: cast_nullable_to_non_nullable
-              as int?,
-      gateway: freezed == gateway
-          ? _self.gateway
-          : gateway // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      dns: freezed == dns
-          ? _self.dns
-          : dns // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      autoSystemRoutingTable: freezed == autoSystemRoutingTable
-          ? _self.autoSystemRoutingTable
-          : autoSystemRoutingTable // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      autoOutboundsInterface: freezed == autoOutboundsInterface
-          ? _self.autoOutboundsInterface
-          : autoOutboundsInterface // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      TunConfig(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        desc: freezed == desc
+            ? _self.desc
+            : desc // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        gateway: freezed == gateway
+            ? _self.gateway
+            : gateway // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        dns: freezed == dns
+            ? _self.dns
+            : dns // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        autoSystemRoutingTable: freezed == autoSystemRoutingTable
+            ? _self.autoSystemRoutingTable
+            : autoSystemRoutingTable // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        autoOutboundsInterface: freezed == autoOutboundsInterface
+            ? _self.autoOutboundsInterface
+            : autoOutboundsInterface // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -11580,29 +12769,31 @@ extension TunConfigPatterns on TunConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? name,
-            String? desc,
-            @JsonKey(name: 'mtu') int? mtu,
-            List<String>? gateway,
-            @JsonKey(name: 'dns') List<String>? dns,
-            int? userLevel,
-            List<String>? autoSystemRoutingTable,
-            String? autoOutboundsInterface)?
-        $default, {
+      String? name,
+      String? desc,
+      @JsonKey(name: 'mtu') int? mtu,
+      List<String>? gateway,
+      @JsonKey(name: 'dns') List<String>? dns,
+      int? userLevel,
+      List<String>? autoSystemRoutingTable,
+      String? autoOutboundsInterface,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _TunConfig() when $default != null:
         return $default(
-            _that.name,
-            _that.desc,
-            _that.mtu,
-            _that.gateway,
-            _that.dns,
-            _that.userLevel,
-            _that.autoSystemRoutingTable,
-            _that.autoOutboundsInterface);
+          _that.name,
+          _that.desc,
+          _that.mtu,
+          _that.gateway,
+          _that.dns,
+          _that.userLevel,
+          _that.autoSystemRoutingTable,
+          _that.autoOutboundsInterface,
+        );
       case _:
         return orElse();
     }
@@ -11624,28 +12815,30 @@ extension TunConfigPatterns on TunConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? name,
-            String? desc,
-            @JsonKey(name: 'mtu') int? mtu,
-            List<String>? gateway,
-            @JsonKey(name: 'dns') List<String>? dns,
-            int? userLevel,
-            List<String>? autoSystemRoutingTable,
-            String? autoOutboundsInterface)
-        $default,
+      String? name,
+      String? desc,
+      @JsonKey(name: 'mtu') int? mtu,
+      List<String>? gateway,
+      @JsonKey(name: 'dns') List<String>? dns,
+      int? userLevel,
+      List<String>? autoSystemRoutingTable,
+      String? autoOutboundsInterface,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TunConfig():
         return $default(
-            _that.name,
-            _that.desc,
-            _that.mtu,
-            _that.gateway,
-            _that.dns,
-            _that.userLevel,
-            _that.autoSystemRoutingTable,
-            _that.autoOutboundsInterface);
+          _that.name,
+          _that.desc,
+          _that.mtu,
+          _that.gateway,
+          _that.dns,
+          _that.userLevel,
+          _that.autoSystemRoutingTable,
+          _that.autoOutboundsInterface,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -11666,28 +12859,30 @@ extension TunConfigPatterns on TunConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? name,
-            String? desc,
-            @JsonKey(name: 'mtu') int? mtu,
-            List<String>? gateway,
-            @JsonKey(name: 'dns') List<String>? dns,
-            int? userLevel,
-            List<String>? autoSystemRoutingTable,
-            String? autoOutboundsInterface)?
-        $default,
+      String? name,
+      String? desc,
+      @JsonKey(name: 'mtu') int? mtu,
+      List<String>? gateway,
+      @JsonKey(name: 'dns') List<String>? dns,
+      int? userLevel,
+      List<String>? autoSystemRoutingTable,
+      String? autoOutboundsInterface,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TunConfig() when $default != null:
         return $default(
-            _that.name,
-            _that.desc,
-            _that.mtu,
-            _that.gateway,
-            _that.dns,
-            _that.userLevel,
-            _that.autoSystemRoutingTable,
-            _that.autoOutboundsInterface);
+          _that.name,
+          _that.desc,
+          _that.mtu,
+          _that.gateway,
+          _that.dns,
+          _that.userLevel,
+          _that.autoSystemRoutingTable,
+          _that.autoOutboundsInterface,
+        );
       case _:
         return null;
     }
@@ -11697,19 +12892,19 @@ extension TunConfigPatterns on TunConfig {
 /// @nodoc
 
 class _TunConfig extends TunConfig {
-  const _TunConfig(
-      {this.name,
-      this.desc,
-      @JsonKey(name: 'mtu') this.mtu,
-      final List<String>? gateway,
-      @JsonKey(name: 'dns') final List<String>? dns,
-      this.userLevel,
-      final List<String>? autoSystemRoutingTable,
-      this.autoOutboundsInterface})
-      : _gateway = gateway,
-        _dns = dns,
-        _autoSystemRoutingTable = autoSystemRoutingTable,
-        super._();
+  const _TunConfig({
+    this.name,
+    this.desc,
+    @JsonKey(name: 'mtu') this.mtu,
+    List<String>? gateway,
+    @JsonKey(name: 'dns') List<String>? dns,
+    this.userLevel,
+    List<String>? autoSystemRoutingTable,
+    this.autoOutboundsInterface,
+  }) : _gateway = gateway,
+       _dns = dns,
+       _autoSystemRoutingTable = autoSystemRoutingTable,
+       super._();
 
   @override
   final String? name;
@@ -11771,18 +12966,21 @@ class _TunConfig extends TunConfig {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.desc, desc) || other.desc == desc) &&
             (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            const DeepCollectionEquality().equals(other._gateway, _gateway) &&
-            const DeepCollectionEquality().equals(other._dns, _dns) &&
+            const DeepCollectionEquality().equals(other.gateway, _gateway) &&
+            const DeepCollectionEquality().equals(other.dns, _dns) &&
             (identical(other.userLevel, userLevel) ||
                 other.userLevel == userLevel) &&
             const DeepCollectionEquality().equals(
-                other._autoSystemRoutingTable, _autoSystemRoutingTable) &&
+              other.autoSystemRoutingTable,
+              _autoSystemRoutingTable,
+            ) &&
             (identical(other.autoOutboundsInterface, autoOutboundsInterface) ||
                 other.autoOutboundsInterface == autoOutboundsInterface));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       name,
       desc,
@@ -11791,7 +12989,9 @@ class _TunConfig extends TunConfig {
       const DeepCollectionEquality().hash(_dns),
       userLevel,
       const DeepCollectionEquality().hash(_autoSystemRoutingTable),
-      autoOutboundsInterface);
+      autoOutboundsInterface,
+    );
+  }
 
   @override
   String toString() {
@@ -11803,19 +13003,21 @@ class _TunConfig extends TunConfig {
 abstract mixin class _$TunConfigCopyWith<$Res>
     implements $TunConfigCopyWith<$Res> {
   factory _$TunConfigCopyWith(
-          _TunConfig value, $Res Function(_TunConfig) _then) =
-      __$TunConfigCopyWithImpl;
+    _TunConfig value,
+    $Res Function(_TunConfig) _then,
+  ) = __$TunConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? desc,
-      @JsonKey(name: 'mtu') int? mtu,
-      List<String>? gateway,
-      @JsonKey(name: 'dns') List<String>? dns,
-      int? userLevel,
-      List<String>? autoSystemRoutingTable,
-      String? autoOutboundsInterface});
+  $Res call({
+    String? name,
+    String? desc,
+    @JsonKey(name: 'mtu') int? mtu,
+    List<String>? gateway,
+    @JsonKey(name: 'dns') List<String>? dns,
+    int? userLevel,
+    List<String>? autoSystemRoutingTable,
+    String? autoOutboundsInterface,
+  });
 }
 
 /// @nodoc
@@ -11839,40 +13041,42 @@ class __$TunConfigCopyWithImpl<$Res> implements _$TunConfigCopyWith<$Res> {
     Object? autoSystemRoutingTable = freezed,
     Object? autoOutboundsInterface = freezed,
   }) {
-    return _then(_TunConfig(
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      desc: freezed == desc
-          ? _self.desc
-          : desc // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mtu: freezed == mtu
-          ? _self.mtu
-          : mtu // ignore: cast_nullable_to_non_nullable
-              as int?,
-      gateway: freezed == gateway
-          ? _self._gateway
-          : gateway // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      dns: freezed == dns
-          ? _self._dns
-          : dns // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      userLevel: freezed == userLevel
-          ? _self.userLevel
-          : userLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      autoSystemRoutingTable: freezed == autoSystemRoutingTable
-          ? _self._autoSystemRoutingTable
-          : autoSystemRoutingTable // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      autoOutboundsInterface: freezed == autoOutboundsInterface
-          ? _self.autoOutboundsInterface
-          : autoOutboundsInterface // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _TunConfig(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        desc: freezed == desc
+            ? _self.desc
+            : desc // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        gateway: freezed == gateway
+            ? _self._gateway
+            : gateway // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        dns: freezed == dns
+            ? _self._dns
+            : dns // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        userLevel: freezed == userLevel
+            ? _self.userLevel
+            : userLevel // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        autoSystemRoutingTable: freezed == autoSystemRoutingTable
+            ? _self._autoSystemRoutingTable
+            : autoSystemRoutingTable // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        autoOutboundsInterface: freezed == autoOutboundsInterface
+            ? _self.autoOutboundsInterface
+            : autoOutboundsInterface // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -11891,51 +13095,70 @@ mixin _$VLessInboundConfig {
   @pragma('vm:prefer-inline')
   $VLessInboundConfigCopyWith<VLessInboundConfig> get copyWith =>
       _$VLessInboundConfigCopyWithImpl<VLessInboundConfig>(
-          this as VLessInboundConfig, _$identity);
+        this as VLessInboundConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VLessInboundConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VLessInboundConfig &&
-            const DeepCollectionEquality().equals(other.users, users) &&
-            const DeepCollectionEquality().equals(other.clients, clients) &&
-            (identical(other.decryption, decryption) ||
-                other.decryption == decryption) &&
-            const DeepCollectionEquality().equals(other.fallbacks, fallbacks) &&
-            (identical(other.flow, flow) || other.flow == flow) &&
-            const DeepCollectionEquality().equals(other.testseed, testseed));
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.clients,
+              _this.clients,
+            ) &&
+            (identical(other.decryption, _this.decryption) ||
+                other.decryption == _this.decryption) &&
+            const DeepCollectionEquality().equals(
+              other.fallbacks,
+              _this.fallbacks,
+            ) &&
+            (identical(other.flow, _this.flow) || other.flow == _this.flow) &&
+            const DeepCollectionEquality().equals(
+              other.testseed,
+              _this.testseed,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as VLessInboundConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(users),
-      const DeepCollectionEquality().hash(clients),
-      decryption,
-      const DeepCollectionEquality().hash(fallbacks),
-      flow,
-      const DeepCollectionEquality().hash(testseed));
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.clients),
+      _this.decryption,
+      const DeepCollectionEquality().hash(_this.fallbacks),
+      _this.flow,
+      const DeepCollectionEquality().hash(_this.testseed),
+    );
+  }
 
   @override
   String toString() {
-    return 'VLessInboundConfig(users: $users, clients: $clients, decryption: $decryption, fallbacks: $fallbacks, flow: $flow, testseed: $testseed)';
+    final _this = this as VLessInboundConfig;
+    return 'VLessInboundConfig(users: ${_this.users}, clients: ${_this.clients}, decryption: ${_this.decryption}, fallbacks: ${_this.fallbacks}, flow: ${_this.flow}, testseed: ${_this.testseed})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VLessInboundConfigCopyWith<$Res> {
   factory $VLessInboundConfigCopyWith(
-          VLessInboundConfig value, $Res Function(VLessInboundConfig) _then) =
-      _$VLessInboundConfigCopyWithImpl;
+    VLessInboundConfig value,
+    $Res Function(VLessInboundConfig) _then,
+  ) = _$VLessInboundConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<VLessUser>? users,
-      List<VLessUser>? clients,
-      String decryption,
-      List<VLessInboundFallback>? fallbacks,
-      String? flow,
-      List<int>? testseed});
+  $Res call({
+    List<VLessUser>? users,
+    List<VLessUser>? clients,
+    String decryption,
+    List<VLessInboundFallback>? fallbacks,
+    String? flow,
+    List<int>? testseed,
+  });
 }
 
 /// @nodoc
@@ -11958,32 +13181,34 @@ class _$VLessInboundConfigCopyWithImpl<$Res>
     Object? flow = freezed,
     Object? testseed = freezed,
   }) {
-    return _then(_self.copyWith(
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VLessUser>?,
-      clients: freezed == clients
-          ? _self.clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<VLessUser>?,
-      decryption: null == decryption
-          ? _self.decryption
-          : decryption // ignore: cast_nullable_to_non_nullable
-              as String,
-      fallbacks: freezed == fallbacks
-          ? _self.fallbacks
-          : fallbacks // ignore: cast_nullable_to_non_nullable
-              as List<VLessInboundFallback>?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      testseed: freezed == testseed
-          ? _self.testseed
-          : testseed // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ));
+    return _then(
+      VLessInboundConfig(
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VLessUser>?,
+        clients: freezed == clients
+            ? _self.clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<VLessUser>?,
+        decryption: null == decryption
+            ? _self.decryption
+            : decryption // ignore: cast_nullable_to_non_nullable
+                  as String,
+        fallbacks: freezed == fallbacks
+            ? _self.fallbacks
+            : fallbacks // ignore: cast_nullable_to_non_nullable
+                  as List<VLessInboundFallback>?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        testseed: freezed == testseed
+            ? _self.testseed
+            : testseed // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+      ),
+    );
   }
 }
 
@@ -12081,20 +13306,27 @@ extension VLessInboundConfigPatterns on VLessInboundConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            List<VLessUser>? users,
-            List<VLessUser>? clients,
-            String decryption,
-            List<VLessInboundFallback>? fallbacks,
-            String? flow,
-            List<int>? testseed)?
-        $default, {
+      List<VLessUser>? users,
+      List<VLessUser>? clients,
+      String decryption,
+      List<VLessInboundFallback>? fallbacks,
+      String? flow,
+      List<int>? testseed,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _VLessInboundConfig() when $default != null:
-        return $default(_that.users, _that.clients, _that.decryption,
-            _that.fallbacks, _that.flow, _that.testseed);
+        return $default(
+          _that.users,
+          _that.clients,
+          _that.decryption,
+          _that.fallbacks,
+          _that.flow,
+          _that.testseed,
+        );
       case _:
         return orElse();
     }
@@ -12116,19 +13348,26 @@ extension VLessInboundConfigPatterns on VLessInboundConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            List<VLessUser>? users,
-            List<VLessUser>? clients,
-            String decryption,
-            List<VLessInboundFallback>? fallbacks,
-            String? flow,
-            List<int>? testseed)
-        $default,
+      List<VLessUser>? users,
+      List<VLessUser>? clients,
+      String decryption,
+      List<VLessInboundFallback>? fallbacks,
+      String? flow,
+      List<int>? testseed,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessInboundConfig():
-        return $default(_that.users, _that.clients, _that.decryption,
-            _that.fallbacks, _that.flow, _that.testseed);
+        return $default(
+          _that.users,
+          _that.clients,
+          _that.decryption,
+          _that.fallbacks,
+          _that.flow,
+          _that.testseed,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -12149,19 +13388,26 @@ extension VLessInboundConfigPatterns on VLessInboundConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            List<VLessUser>? users,
-            List<VLessUser>? clients,
-            String decryption,
-            List<VLessInboundFallback>? fallbacks,
-            String? flow,
-            List<int>? testseed)?
-        $default,
+      List<VLessUser>? users,
+      List<VLessUser>? clients,
+      String decryption,
+      List<VLessInboundFallback>? fallbacks,
+      String? flow,
+      List<int>? testseed,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessInboundConfig() when $default != null:
-        return $default(_that.users, _that.clients, _that.decryption,
-            _that.fallbacks, _that.flow, _that.testseed);
+        return $default(
+          _that.users,
+          _that.clients,
+          _that.decryption,
+          _that.fallbacks,
+          _that.flow,
+          _that.testseed,
+        );
       case _:
         return null;
     }
@@ -12171,18 +13417,18 @@ extension VLessInboundConfigPatterns on VLessInboundConfig {
 /// @nodoc
 
 class _VLessInboundConfig extends VLessInboundConfig {
-  const _VLessInboundConfig(
-      {final List<VLessUser>? users,
-      final List<VLessUser>? clients,
-      required this.decryption,
-      final List<VLessInboundFallback>? fallbacks,
-      this.flow,
-      final List<int>? testseed})
-      : _users = users,
-        _clients = clients,
-        _fallbacks = fallbacks,
-        _testseed = testseed,
-        super._();
+  const _VLessInboundConfig({
+    List<VLessUser>? users,
+    List<VLessUser>? clients,
+    required this.decryption,
+    List<VLessInboundFallback>? fallbacks,
+    this.flow,
+    List<int>? testseed,
+  }) : _users = users,
+       _clients = clients,
+       _fallbacks = fallbacks,
+       _testseed = testseed,
+       super._();
 
   final List<VLessUser>? _users;
   @override
@@ -12241,25 +13487,30 @@ class _VLessInboundConfig extends VLessInboundConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _VLessInboundConfig &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
-            const DeepCollectionEquality().equals(other._clients, _clients) &&
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.clients, _clients) &&
             (identical(other.decryption, decryption) ||
                 other.decryption == decryption) &&
-            const DeepCollectionEquality()
-                .equals(other._fallbacks, _fallbacks) &&
+            const DeepCollectionEquality().equals(
+              other.fallbacks,
+              _fallbacks,
+            ) &&
             (identical(other.flow, flow) || other.flow == flow) &&
-            const DeepCollectionEquality().equals(other._testseed, _testseed));
+            const DeepCollectionEquality().equals(other.testseed, _testseed));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_clients),
       decryption,
       const DeepCollectionEquality().hash(_fallbacks),
       flow,
-      const DeepCollectionEquality().hash(_testseed));
+      const DeepCollectionEquality().hash(_testseed),
+    );
+  }
 
   @override
   String toString() {
@@ -12271,17 +13522,19 @@ class _VLessInboundConfig extends VLessInboundConfig {
 abstract mixin class _$VLessInboundConfigCopyWith<$Res>
     implements $VLessInboundConfigCopyWith<$Res> {
   factory _$VLessInboundConfigCopyWith(
-          _VLessInboundConfig value, $Res Function(_VLessInboundConfig) _then) =
-      __$VLessInboundConfigCopyWithImpl;
+    _VLessInboundConfig value,
+    $Res Function(_VLessInboundConfig) _then,
+  ) = __$VLessInboundConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<VLessUser>? users,
-      List<VLessUser>? clients,
-      String decryption,
-      List<VLessInboundFallback>? fallbacks,
-      String? flow,
-      List<int>? testseed});
+  $Res call({
+    List<VLessUser>? users,
+    List<VLessUser>? clients,
+    String decryption,
+    List<VLessInboundFallback>? fallbacks,
+    String? flow,
+    List<int>? testseed,
+  });
 }
 
 /// @nodoc
@@ -12304,32 +13557,34 @@ class __$VLessInboundConfigCopyWithImpl<$Res>
     Object? flow = freezed,
     Object? testseed = freezed,
   }) {
-    return _then(_VLessInboundConfig(
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VLessUser>?,
-      clients: freezed == clients
-          ? _self._clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<VLessUser>?,
-      decryption: null == decryption
-          ? _self.decryption
-          : decryption // ignore: cast_nullable_to_non_nullable
-              as String,
-      fallbacks: freezed == fallbacks
-          ? _self._fallbacks
-          : fallbacks // ignore: cast_nullable_to_non_nullable
-              as List<VLessInboundFallback>?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      testseed: freezed == testseed
-          ? _self._testseed
-          : testseed // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ));
+    return _then(
+      _VLessInboundConfig(
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VLessUser>?,
+        clients: freezed == clients
+            ? _self._clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<VLessUser>?,
+        decryption: null == decryption
+            ? _self.decryption
+            : decryption // ignore: cast_nullable_to_non_nullable
+                  as String,
+        fallbacks: freezed == fallbacks
+            ? _self._fallbacks
+            : fallbacks // ignore: cast_nullable_to_non_nullable
+                  as List<VLessInboundFallback>?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        testseed: freezed == testseed
+            ? _self._testseed
+            : testseed // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+      ),
+    );
   }
 }
 
@@ -12348,44 +13603,60 @@ mixin _$VLessInboundFallback {
   @pragma('vm:prefer-inline')
   $VLessInboundFallbackCopyWith<VLessInboundFallback> get copyWith =>
       _$VLessInboundFallbackCopyWithImpl<VLessInboundFallback>(
-          this as VLessInboundFallback, _$identity);
+        this as VLessInboundFallback,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VLessInboundFallback;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VLessInboundFallback &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.alpn, alpn) || other.alpn == alpn) &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.dest, dest) &&
-            (identical(other.xver, xver) || other.xver == xver));
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.alpn, _this.alpn) || other.alpn == _this.alpn) &&
+            (identical(other.path, _this.path) || other.path == _this.path) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            const DeepCollectionEquality().equals(other.dest, _this.dest) &&
+            (identical(other.xver, _this.xver) || other.xver == _this.xver));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, alpn, path, type,
-      const DeepCollectionEquality().hash(dest), xver);
+  int get hashCode {
+    final _this = this as VLessInboundFallback;
+    return Object.hash(
+      runtimeType,
+      _this.name,
+      _this.alpn,
+      _this.path,
+      _this.type,
+      const DeepCollectionEquality().hash(_this.dest),
+      _this.xver,
+    );
+  }
 
   @override
   String toString() {
-    return 'VLessInboundFallback(name: $name, alpn: $alpn, path: $path, type: $type, dest: $dest, xver: $xver)';
+    final _this = this as VLessInboundFallback;
+    return 'VLessInboundFallback(name: ${_this.name}, alpn: ${_this.alpn}, path: ${_this.path}, type: ${_this.type}, dest: ${_this.dest}, xver: ${_this.xver})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VLessInboundFallbackCopyWith<$Res> {
-  factory $VLessInboundFallbackCopyWith(VLessInboundFallback value,
-          $Res Function(VLessInboundFallback) _then) =
-      _$VLessInboundFallbackCopyWithImpl;
+  factory $VLessInboundFallbackCopyWith(
+    VLessInboundFallback value,
+    $Res Function(VLessInboundFallback) _then,
+  ) = _$VLessInboundFallbackCopyWithImpl;
   @useResult
-  $Res call(
-      {String? name,
-      String? alpn,
-      String? path,
-      XrayFallbackType? type,
-      Object? dest,
-      int? xver});
+  $Res call({
+    String? name,
+    String? alpn,
+    String? path,
+    XrayFallbackType? type,
+    Object? dest,
+    int? xver,
+  });
 }
 
 /// @nodoc
@@ -12408,29 +13679,31 @@ class _$VLessInboundFallbackCopyWithImpl<$Res>
     Object? dest = freezed,
     Object? xver = freezed,
   }) {
-    return _then(_self.copyWith(
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alpn: freezed == alpn
-          ? _self.alpn
-          : alpn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as XrayFallbackType?,
-      dest: freezed == dest ? _self.dest : dest,
-      xver: freezed == xver
-          ? _self.xver
-          : xver // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      VLessInboundFallback(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        alpn: freezed == alpn
+            ? _self.alpn
+            : alpn // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as XrayFallbackType?,
+        dest: freezed == dest ? _self.dest : dest,
+        xver: freezed == xver
+            ? _self.xver
+            : xver // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -12527,16 +13800,28 @@ extension VLessInboundFallbackPatterns on VLessInboundFallback {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? name, String? alpn, String? path,
-            XrayFallbackType? type, Object? dest, int? xver)?
-        $default, {
+    TResult Function(
+      String? name,
+      String? alpn,
+      String? path,
+      XrayFallbackType? type,
+      Object? dest,
+      int? xver,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _VLessInboundFallback() when $default != null:
-        return $default(_that.name, _that.alpn, _that.path, _that.type,
-            _that.dest, _that.xver);
+        return $default(
+          _that.name,
+          _that.alpn,
+          _that.path,
+          _that.type,
+          _that.dest,
+          _that.xver,
+        );
       case _:
         return orElse();
     }
@@ -12557,15 +13842,27 @@ extension VLessInboundFallbackPatterns on VLessInboundFallback {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? name, String? alpn, String? path,
-            XrayFallbackType? type, Object? dest, int? xver)
-        $default,
+    TResult Function(
+      String? name,
+      String? alpn,
+      String? path,
+      XrayFallbackType? type,
+      Object? dest,
+      int? xver,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessInboundFallback():
-        return $default(_that.name, _that.alpn, _that.path, _that.type,
-            _that.dest, _that.xver);
+        return $default(
+          _that.name,
+          _that.alpn,
+          _that.path,
+          _that.type,
+          _that.dest,
+          _that.xver,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -12585,15 +13882,27 @@ extension VLessInboundFallbackPatterns on VLessInboundFallback {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? name, String? alpn, String? path,
-            XrayFallbackType? type, Object? dest, int? xver)?
-        $default,
+    TResult? Function(
+      String? name,
+      String? alpn,
+      String? path,
+      XrayFallbackType? type,
+      Object? dest,
+      int? xver,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessInboundFallback() when $default != null:
-        return $default(_that.name, _that.alpn, _that.path, _that.type,
-            _that.dest, _that.xver);
+        return $default(
+          _that.name,
+          _that.alpn,
+          _that.path,
+          _that.type,
+          _that.dest,
+          _that.xver,
+        );
       case _:
         return null;
     }
@@ -12603,9 +13912,14 @@ extension VLessInboundFallbackPatterns on VLessInboundFallback {
 /// @nodoc
 
 class _VLessInboundFallback extends VLessInboundFallback {
-  const _VLessInboundFallback(
-      {this.name, this.alpn, this.path, this.type, this.dest, this.xver})
-      : super._();
+  const _VLessInboundFallback({
+    this.name,
+    this.alpn,
+    this.path,
+    this.type,
+    this.dest,
+    this.xver,
+  }) : super._();
 
   @override
   final String? name;
@@ -12627,7 +13941,9 @@ class _VLessInboundFallback extends VLessInboundFallback {
   @pragma('vm:prefer-inline')
   _$VLessInboundFallbackCopyWith<_VLessInboundFallback> get copyWith =>
       __$VLessInboundFallbackCopyWithImpl<_VLessInboundFallback>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -12643,8 +13959,17 @@ class _VLessInboundFallback extends VLessInboundFallback {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, alpn, path, type,
-      const DeepCollectionEquality().hash(dest), xver);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      name,
+      alpn,
+      path,
+      type,
+      const DeepCollectionEquality().hash(dest),
+      xver,
+    );
+  }
 
   @override
   String toString() {
@@ -12655,18 +13980,20 @@ class _VLessInboundFallback extends VLessInboundFallback {
 /// @nodoc
 abstract mixin class _$VLessInboundFallbackCopyWith<$Res>
     implements $VLessInboundFallbackCopyWith<$Res> {
-  factory _$VLessInboundFallbackCopyWith(_VLessInboundFallback value,
-          $Res Function(_VLessInboundFallback) _then) =
-      __$VLessInboundFallbackCopyWithImpl;
+  factory _$VLessInboundFallbackCopyWith(
+    _VLessInboundFallback value,
+    $Res Function(_VLessInboundFallback) _then,
+  ) = __$VLessInboundFallbackCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? alpn,
-      String? path,
-      XrayFallbackType? type,
-      Object? dest,
-      int? xver});
+  $Res call({
+    String? name,
+    String? alpn,
+    String? path,
+    XrayFallbackType? type,
+    Object? dest,
+    int? xver,
+  });
 }
 
 /// @nodoc
@@ -12689,29 +14016,31 @@ class __$VLessInboundFallbackCopyWithImpl<$Res>
     Object? dest = freezed,
     Object? xver = freezed,
   }) {
-    return _then(_VLessInboundFallback(
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alpn: freezed == alpn
-          ? _self.alpn
-          : alpn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as XrayFallbackType?,
-      dest: freezed == dest ? _self.dest : dest,
-      xver: freezed == xver
-          ? _self.xver
-          : xver // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _VLessInboundFallback(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        alpn: freezed == alpn
+            ? _self.alpn
+            : alpn // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as XrayFallbackType?,
+        dest: freezed == dest ? _self.dest : dest,
+        xver: freezed == xver
+            ? _self.xver
+            : xver // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -12738,69 +14067,87 @@ mixin _$VLessOutboundConfig {
   @pragma('vm:prefer-inline')
   $VLessOutboundConfigCopyWith<VLessOutboundConfig> get copyWith =>
       _$VLessOutboundConfigCopyWithImpl<VLessOutboundConfig>(
-          this as VLessOutboundConfig, _$identity);
+        this as VLessOutboundConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VLessOutboundConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VLessOutboundConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.flow, flow) || other.flow == flow) &&
-            (identical(other.seed, seed) || other.seed == seed) &&
-            (identical(other.encryption, encryption) ||
-                other.encryption == encryption) &&
-            (identical(other.reverse, reverse) || other.reverse == reverse) &&
-            (identical(other.testpre, testpre) || other.testpre == testpre) &&
-            const DeepCollectionEquality().equals(other.testseed, testseed) &&
-            const DeepCollectionEquality().equals(other.vnext, vnext));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.flow, _this.flow) || other.flow == _this.flow) &&
+            (identical(other.seed, _this.seed) || other.seed == _this.seed) &&
+            (identical(other.encryption, _this.encryption) ||
+                other.encryption == _this.encryption) &&
+            (identical(other.reverse, _this.reverse) ||
+                other.reverse == _this.reverse) &&
+            (identical(other.testpre, _this.testpre) ||
+                other.testpre == _this.testpre) &&
+            const DeepCollectionEquality().equals(
+              other.testseed,
+              _this.testseed,
+            ) &&
+            const DeepCollectionEquality().equals(other.vnext, _this.vnext));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as VLessOutboundConfig;
+    return Object.hash(
       runtimeType,
-      address,
-      port,
-      level,
-      email,
-      id,
-      flow,
-      seed,
-      encryption,
-      reverse,
-      testpre,
-      const DeepCollectionEquality().hash(testseed),
-      const DeepCollectionEquality().hash(vnext));
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.id,
+      _this.flow,
+      _this.seed,
+      _this.encryption,
+      _this.reverse,
+      _this.testpre,
+      const DeepCollectionEquality().hash(_this.testseed),
+      const DeepCollectionEquality().hash(_this.vnext),
+    );
+  }
 
   @override
   String toString() {
-    return 'VLessOutboundConfig(address: $address, port: $port, level: $level, email: $email, id: $id, flow: $flow, seed: $seed, encryption: $encryption, reverse: $reverse, testpre: $testpre, testseed: $testseed, vnext: $vnext)';
+    final _this = this as VLessOutboundConfig;
+    return 'VLessOutboundConfig(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, id: ${_this.id}, flow: ${_this.flow}, seed: ${_this.seed}, encryption: ${_this.encryption}, reverse: ${_this.reverse}, testpre: ${_this.testpre}, testseed: ${_this.testseed}, vnext: ${_this.vnext})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VLessOutboundConfigCopyWith<$Res> {
   factory $VLessOutboundConfigCopyWith(
-          VLessOutboundConfig value, $Res Function(VLessOutboundConfig) _then) =
-      _$VLessOutboundConfigCopyWithImpl;
+    VLessOutboundConfig value,
+    $Res Function(VLessOutboundConfig) _then,
+  ) = _$VLessOutboundConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'id') String? id,
-      String? flow,
-      String? seed,
-      String? encryption,
-      VLessReverseConfig? reverse,
-      int? testpre,
-      List<int>? testseed,
-      @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'id') String? id,
+    String? flow,
+    String? seed,
+    String? encryption,
+    VLessReverseConfig? reverse,
+    int? testpre,
+    List<int>? testseed,
+    @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext,
+  });
 
   $VLessReverseConfigCopyWith<$Res>? get reverse;
 }
@@ -12831,56 +14178,58 @@ class _$VLessOutboundConfigCopyWithImpl<$Res>
     Object? testseed = freezed,
     Object? vnext = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      seed: freezed == seed
-          ? _self.seed
-          : seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-      encryption: freezed == encryption
-          ? _self.encryption
-          : encryption // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reverse: freezed == reverse
-          ? _self.reverse
-          : reverse // ignore: cast_nullable_to_non_nullable
-              as VLessReverseConfig?,
-      testpre: freezed == testpre
-          ? _self.testpre
-          : testpre // ignore: cast_nullable_to_non_nullable
-              as int?,
-      testseed: freezed == testseed
-          ? _self.testseed
-          : testseed // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      vnext: freezed == vnext
-          ? _self.vnext
-          : vnext // ignore: cast_nullable_to_non_nullable
-              as List<VLessOutboundVnext>?,
-    ));
+    return _then(
+      VLessOutboundConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        id: freezed == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        seed: freezed == seed
+            ? _self.seed
+            : seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        encryption: freezed == encryption
+            ? _self.encryption
+            : encryption // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reverse: freezed == reverse
+            ? _self.reverse
+            : reverse // ignore: cast_nullable_to_non_nullable
+                  as VLessReverseConfig?,
+        testpre: freezed == testpre
+            ? _self.testpre
+            : testpre // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        testseed: freezed == testseed
+            ? _self.testseed
+            : testseed // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+        vnext: freezed == vnext
+            ? _self.vnext
+            : vnext // ignore: cast_nullable_to_non_nullable
+                  as List<VLessOutboundVnext>?,
+      ),
+    );
   }
 
   /// Create a copy of VLessOutboundConfig
@@ -12992,37 +14341,39 @@ extension VLessOutboundConfigPatterns on VLessOutboundConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'id') String? id,
-            String? flow,
-            String? seed,
-            String? encryption,
-            VLessReverseConfig? reverse,
-            int? testpre,
-            List<int>? testseed,
-            @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext)?
-        $default, {
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'id') String? id,
+      String? flow,
+      String? seed,
+      String? encryption,
+      VLessReverseConfig? reverse,
+      int? testpre,
+      List<int>? testseed,
+      @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _VLessOutboundConfig() when $default != null:
         return $default(
-            _that.address,
-            _that.port,
-            _that.level,
-            _that.email,
-            _that.id,
-            _that.flow,
-            _that.seed,
-            _that.encryption,
-            _that.reverse,
-            _that.testpre,
-            _that.testseed,
-            _that.vnext);
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.id,
+          _that.flow,
+          _that.seed,
+          _that.encryption,
+          _that.reverse,
+          _that.testpre,
+          _that.testseed,
+          _that.vnext,
+        );
       case _:
         return orElse();
     }
@@ -13044,36 +14395,38 @@ extension VLessOutboundConfigPatterns on VLessOutboundConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'id') String? id,
-            String? flow,
-            String? seed,
-            String? encryption,
-            VLessReverseConfig? reverse,
-            int? testpre,
-            List<int>? testseed,
-            @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext)
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'id') String? id,
+      String? flow,
+      String? seed,
+      String? encryption,
+      VLessReverseConfig? reverse,
+      int? testpre,
+      List<int>? testseed,
+      @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessOutboundConfig():
         return $default(
-            _that.address,
-            _that.port,
-            _that.level,
-            _that.email,
-            _that.id,
-            _that.flow,
-            _that.seed,
-            _that.encryption,
-            _that.reverse,
-            _that.testpre,
-            _that.testseed,
-            _that.vnext);
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.id,
+          _that.flow,
+          _that.seed,
+          _that.encryption,
+          _that.reverse,
+          _that.testpre,
+          _that.testseed,
+          _that.vnext,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -13094,36 +14447,38 @@ extension VLessOutboundConfigPatterns on VLessOutboundConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            @JsonKey(name: 'id') String? id,
-            String? flow,
-            String? seed,
-            String? encryption,
-            VLessReverseConfig? reverse,
-            int? testpre,
-            List<int>? testseed,
-            @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext)?
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      @JsonKey(name: 'id') String? id,
+      String? flow,
+      String? seed,
+      String? encryption,
+      VLessReverseConfig? reverse,
+      int? testpre,
+      List<int>? testseed,
+      @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessOutboundConfig() when $default != null:
         return $default(
-            _that.address,
-            _that.port,
-            _that.level,
-            _that.email,
-            _that.id,
-            _that.flow,
-            _that.seed,
-            _that.encryption,
-            _that.reverse,
-            _that.testpre,
-            _that.testseed,
-            _that.vnext);
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.id,
+          _that.flow,
+          _that.seed,
+          _that.encryption,
+          _that.reverse,
+          _that.testpre,
+          _that.testseed,
+          _that.vnext,
+        );
       case _:
         return null;
     }
@@ -13133,22 +14488,22 @@ extension VLessOutboundConfigPatterns on VLessOutboundConfig {
 /// @nodoc
 
 class _VLessOutboundConfig extends VLessOutboundConfig {
-  const _VLessOutboundConfig(
-      {this.address,
-      this.port,
-      this.level,
-      this.email,
-      @JsonKey(name: 'id') this.id,
-      this.flow,
-      this.seed,
-      this.encryption,
-      this.reverse,
-      this.testpre,
-      final List<int>? testseed,
-      @JsonKey(name: 'vnext') final List<VLessOutboundVnext>? vnext})
-      : _testseed = testseed,
-        _vnext = vnext,
-        super._();
+  const _VLessOutboundConfig({
+    this.address,
+    this.port,
+    this.level,
+    this.email,
+    @JsonKey(name: 'id') this.id,
+    this.flow,
+    this.seed,
+    this.encryption,
+    this.reverse,
+    this.testpre,
+    List<int>? testseed,
+    @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext,
+  }) : _testseed = testseed,
+       _vnext = vnext,
+       super._();
 
   @override
   final XrayAddress? address;
@@ -13199,7 +14554,9 @@ class _VLessOutboundConfig extends VLessOutboundConfig {
   @pragma('vm:prefer-inline')
   _$VLessOutboundConfigCopyWith<_VLessOutboundConfig> get copyWith =>
       __$VLessOutboundConfigCopyWithImpl<_VLessOutboundConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -13217,12 +14574,13 @@ class _VLessOutboundConfig extends VLessOutboundConfig {
                 other.encryption == encryption) &&
             (identical(other.reverse, reverse) || other.reverse == reverse) &&
             (identical(other.testpre, testpre) || other.testpre == testpre) &&
-            const DeepCollectionEquality().equals(other._testseed, _testseed) &&
-            const DeepCollectionEquality().equals(other._vnext, _vnext));
+            const DeepCollectionEquality().equals(other.testseed, _testseed) &&
+            const DeepCollectionEquality().equals(other.vnext, _vnext));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       address,
       port,
@@ -13235,7 +14593,9 @@ class _VLessOutboundConfig extends VLessOutboundConfig {
       reverse,
       testpre,
       const DeepCollectionEquality().hash(_testseed),
-      const DeepCollectionEquality().hash(_vnext));
+      const DeepCollectionEquality().hash(_vnext),
+    );
+  }
 
   @override
   String toString() {
@@ -13246,24 +14606,26 @@ class _VLessOutboundConfig extends VLessOutboundConfig {
 /// @nodoc
 abstract mixin class _$VLessOutboundConfigCopyWith<$Res>
     implements $VLessOutboundConfigCopyWith<$Res> {
-  factory _$VLessOutboundConfigCopyWith(_VLessOutboundConfig value,
-          $Res Function(_VLessOutboundConfig) _then) =
-      __$VLessOutboundConfigCopyWithImpl;
+  factory _$VLessOutboundConfigCopyWith(
+    _VLessOutboundConfig value,
+    $Res Function(_VLessOutboundConfig) _then,
+  ) = __$VLessOutboundConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      @JsonKey(name: 'id') String? id,
-      String? flow,
-      String? seed,
-      String? encryption,
-      VLessReverseConfig? reverse,
-      int? testpre,
-      List<int>? testseed,
-      @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    @JsonKey(name: 'id') String? id,
+    String? flow,
+    String? seed,
+    String? encryption,
+    VLessReverseConfig? reverse,
+    int? testpre,
+    List<int>? testseed,
+    @JsonKey(name: 'vnext') List<VLessOutboundVnext>? vnext,
+  });
 
   @override
   $VLessReverseConfigCopyWith<$Res>? get reverse;
@@ -13295,56 +14657,58 @@ class __$VLessOutboundConfigCopyWithImpl<$Res>
     Object? testseed = freezed,
     Object? vnext = freezed,
   }) {
-    return _then(_VLessOutboundConfig(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      seed: freezed == seed
-          ? _self.seed
-          : seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-      encryption: freezed == encryption
-          ? _self.encryption
-          : encryption // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reverse: freezed == reverse
-          ? _self.reverse
-          : reverse // ignore: cast_nullable_to_non_nullable
-              as VLessReverseConfig?,
-      testpre: freezed == testpre
-          ? _self.testpre
-          : testpre // ignore: cast_nullable_to_non_nullable
-              as int?,
-      testseed: freezed == testseed
-          ? _self._testseed
-          : testseed // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      vnext: freezed == vnext
-          ? _self._vnext
-          : vnext // ignore: cast_nullable_to_non_nullable
-              as List<VLessOutboundVnext>?,
-    ));
+    return _then(
+      _VLessOutboundConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        id: freezed == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        seed: freezed == seed
+            ? _self.seed
+            : seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        encryption: freezed == encryption
+            ? _self.encryption
+            : encryption // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reverse: freezed == reverse
+            ? _self.reverse
+            : reverse // ignore: cast_nullable_to_non_nullable
+                  as VLessReverseConfig?,
+        testpre: freezed == testpre
+            ? _self.testpre
+            : testpre // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        testseed: freezed == testseed
+            ? _self._testseed
+            : testseed // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+        vnext: freezed == vnext
+            ? _self._vnext
+            : vnext // ignore: cast_nullable_to_non_nullable
+                  as List<VLessOutboundVnext>?,
+      ),
+    );
   }
 
   /// Create a copy of VLessOutboundConfig
@@ -13374,33 +14738,46 @@ mixin _$VLessOutboundVnext {
   @pragma('vm:prefer-inline')
   $VLessOutboundVnextCopyWith<VLessOutboundVnext> get copyWith =>
       _$VLessOutboundVnextCopyWithImpl<VLessOutboundVnext>(
-          this as VLessOutboundVnext, _$identity);
+        this as VLessOutboundVnext,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VLessOutboundVnext;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VLessOutboundVnext &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other.users, users));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            const DeepCollectionEquality().equals(other.users, _this.users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(users));
+  int get hashCode {
+    final _this = this as VLessOutboundVnext;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      const DeepCollectionEquality().hash(_this.users),
+    );
+  }
 
   @override
   String toString() {
-    return 'VLessOutboundVnext(address: $address, port: $port, users: $users)';
+    final _this = this as VLessOutboundVnext;
+    return 'VLessOutboundVnext(address: ${_this.address}, port: ${_this.port}, users: ${_this.users})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VLessOutboundVnextCopyWith<$Res> {
   factory $VLessOutboundVnextCopyWith(
-          VLessOutboundVnext value, $Res Function(VLessOutboundVnext) _then) =
-      _$VLessOutboundVnextCopyWithImpl;
+    VLessOutboundVnext value,
+    $Res Function(VLessOutboundVnext) _then,
+  ) = _$VLessOutboundVnextCopyWithImpl;
   @useResult
   $Res call({XrayAddress address, int port, List<VLessUser> users});
 }
@@ -13422,20 +14799,22 @@ class _$VLessOutboundVnextCopyWithImpl<$Res>
     Object? port = null,
     Object? users = null,
   }) {
-    return _then(_self.copyWith(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: null == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VLessUser>,
-    ));
+    return _then(
+      VLessOutboundVnext(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: null == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VLessUser>,
+      ),
+    );
   }
 }
 
@@ -13533,7 +14912,7 @@ extension VLessOutboundVnextPatterns on VLessOutboundVnext {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<VLessUser> users)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -13561,7 +14940,7 @@ extension VLessOutboundVnextPatterns on VLessOutboundVnext {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<VLessUser> users)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -13587,7 +14966,7 @@ extension VLessOutboundVnextPatterns on VLessOutboundVnext {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(XrayAddress address, int port, List<VLessUser> users)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -13602,12 +14981,12 @@ extension VLessOutboundVnextPatterns on VLessOutboundVnext {
 /// @nodoc
 
 class _VLessOutboundVnext extends VLessOutboundVnext {
-  const _VLessOutboundVnext(
-      {required this.address,
-      required this.port,
-      required final List<VLessUser> users})
-      : _users = users,
-        super._();
+  const _VLessOutboundVnext({
+    required this.address,
+    required this.port,
+    required List<VLessUser> users,
+  }) : _users = users,
+       super._();
 
   @override
   final XrayAddress address;
@@ -13636,12 +15015,18 @@ class _VLessOutboundVnext extends VLessOutboundVnext {
             other is _VLessOutboundVnext &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            const DeepCollectionEquality().equals(other.users, _users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(_users));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      const DeepCollectionEquality().hash(_users),
+    );
+  }
 
   @override
   String toString() {
@@ -13653,8 +15038,9 @@ class _VLessOutboundVnext extends VLessOutboundVnext {
 abstract mixin class _$VLessOutboundVnextCopyWith<$Res>
     implements $VLessOutboundVnextCopyWith<$Res> {
   factory _$VLessOutboundVnextCopyWith(
-          _VLessOutboundVnext value, $Res Function(_VLessOutboundVnext) _then) =
-      __$VLessOutboundVnextCopyWithImpl;
+    _VLessOutboundVnext value,
+    $Res Function(_VLessOutboundVnext) _then,
+  ) = __$VLessOutboundVnextCopyWithImpl;
   @override
   @useResult
   $Res call({XrayAddress address, int port, List<VLessUser> users});
@@ -13677,20 +15063,22 @@ class __$VLessOutboundVnextCopyWithImpl<$Res>
     Object? port = null,
     Object? users = null,
   }) {
-    return _then(_VLessOutboundVnext(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: null == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VLessUser>,
-    ));
+    return _then(
+      _VLessOutboundVnext(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: null == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VLessUser>,
+      ),
+    );
   }
 }
 
@@ -13705,32 +15093,40 @@ mixin _$VLessReverseConfig {
   @pragma('vm:prefer-inline')
   $VLessReverseConfigCopyWith<VLessReverseConfig> get copyWith =>
       _$VLessReverseConfigCopyWithImpl<VLessReverseConfig>(
-          this as VLessReverseConfig, _$identity);
+        this as VLessReverseConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VLessReverseConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VLessReverseConfig &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.sniffing, sniffing) ||
-                other.sniffing == sniffing));
+            (identical(other.tag, _this.tag) || other.tag == _this.tag) &&
+            (identical(other.sniffing, _this.sniffing) ||
+                other.sniffing == _this.sniffing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tag, sniffing);
+  int get hashCode {
+    final _this = this as VLessReverseConfig;
+    return Object.hash(runtimeType, _this.tag, _this.sniffing);
+  }
 
   @override
   String toString() {
-    return 'VLessReverseConfig(tag: $tag, sniffing: $sniffing)';
+    final _this = this as VLessReverseConfig;
+    return 'VLessReverseConfig(tag: ${_this.tag}, sniffing: ${_this.sniffing})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VLessReverseConfigCopyWith<$Res> {
   factory $VLessReverseConfigCopyWith(
-          VLessReverseConfig value, $Res Function(VLessReverseConfig) _then) =
-      _$VLessReverseConfigCopyWithImpl;
+    VLessReverseConfig value,
+    $Res Function(VLessReverseConfig) _then,
+  ) = _$VLessReverseConfigCopyWithImpl;
   @useResult
   $Res call({String tag, SniffingConfig? sniffing});
 
@@ -13749,20 +15145,19 @@ class _$VLessReverseConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? tag = null,
-    Object? sniffing = freezed,
-  }) {
-    return _then(_self.copyWith(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      sniffing: freezed == sniffing
-          ? _self.sniffing
-          : sniffing // ignore: cast_nullable_to_non_nullable
-              as SniffingConfig?,
-    ));
+  $Res call({Object? tag = null, Object? sniffing = freezed}) {
+    return _then(
+      VLessReverseConfig(
+        tag: null == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String,
+        sniffing: freezed == sniffing
+            ? _self.sniffing
+            : sniffing // ignore: cast_nullable_to_non_nullable
+                  as SniffingConfig?,
+      ),
+    );
   }
 
   /// Create a copy of VLessReverseConfig
@@ -13966,7 +15361,9 @@ class _VLessReverseConfig extends VLessReverseConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tag, sniffing);
+  int get hashCode {
+    return Object.hash(runtimeType, tag, sniffing);
+  }
 
   @override
   String toString() {
@@ -13978,8 +15375,9 @@ class _VLessReverseConfig extends VLessReverseConfig {
 abstract mixin class _$VLessReverseConfigCopyWith<$Res>
     implements $VLessReverseConfigCopyWith<$Res> {
   factory _$VLessReverseConfigCopyWith(
-          _VLessReverseConfig value, $Res Function(_VLessReverseConfig) _then) =
-      __$VLessReverseConfigCopyWithImpl;
+    _VLessReverseConfig value,
+    $Res Function(_VLessReverseConfig) _then,
+  ) = __$VLessReverseConfigCopyWithImpl;
   @override
   @useResult
   $Res call({String tag, SniffingConfig? sniffing});
@@ -14000,20 +15398,19 @@ class __$VLessReverseConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? tag = null,
-    Object? sniffing = freezed,
-  }) {
-    return _then(_VLessReverseConfig(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      sniffing: freezed == sniffing
-          ? _self.sniffing
-          : sniffing // ignore: cast_nullable_to_non_nullable
-              as SniffingConfig?,
-    ));
+  $Res call({Object? tag = null, Object? sniffing = freezed}) {
+    return _then(
+      _VLessReverseConfig(
+        tag: null == tag
+            ? _self.tag
+            : tag // ignore: cast_nullable_to_non_nullable
+                  as String,
+        sniffing: freezed == sniffing
+            ? _self.sniffing
+            : sniffing // ignore: cast_nullable_to_non_nullable
+                  as SniffingConfig?,
+      ),
+    );
   }
 
   /// Create a copy of VLessReverseConfig
@@ -14052,37 +15449,50 @@ mixin _$VLessUser {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VLessUser;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VLessUser &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.flow, flow) || other.flow == flow) &&
-            (identical(other.seed, seed) || other.seed == seed) &&
-            (identical(other.encryption, encryption) ||
-                other.encryption == encryption) &&
-            (identical(other.reverse, reverse) || other.reverse == reverse) &&
-            (identical(other.testpre, testpre) || other.testpre == testpre) &&
-            const DeepCollectionEquality().equals(other.testseed, testseed));
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.flow, _this.flow) || other.flow == _this.flow) &&
+            (identical(other.seed, _this.seed) || other.seed == _this.seed) &&
+            (identical(other.encryption, _this.encryption) ||
+                other.encryption == _this.encryption) &&
+            (identical(other.reverse, _this.reverse) ||
+                other.reverse == _this.reverse) &&
+            (identical(other.testpre, _this.testpre) ||
+                other.testpre == _this.testpre) &&
+            const DeepCollectionEquality().equals(
+              other.testseed,
+              _this.testseed,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as VLessUser;
+    return Object.hash(
       runtimeType,
-      email,
-      level,
-      id,
-      flow,
-      seed,
-      encryption,
-      reverse,
-      testpre,
-      const DeepCollectionEquality().hash(testseed));
+      _this.email,
+      _this.level,
+      _this.id,
+      _this.flow,
+      _this.seed,
+      _this.encryption,
+      _this.reverse,
+      _this.testpre,
+      const DeepCollectionEquality().hash(_this.testseed),
+    );
+  }
 
   @override
   String toString() {
-    return 'VLessUser(email: $email, level: $level, id: $id, flow: $flow, seed: $seed, encryption: $encryption, reverse: $reverse, testpre: $testpre, testseed: $testseed)';
+    final _this = this as VLessUser;
+    return 'VLessUser(email: ${_this.email}, level: ${_this.level}, id: ${_this.id}, flow: ${_this.flow}, seed: ${_this.seed}, encryption: ${_this.encryption}, reverse: ${_this.reverse}, testpre: ${_this.testpre}, testseed: ${_this.testseed})';
   }
 }
 
@@ -14091,16 +15501,17 @@ abstract mixin class $VLessUserCopyWith<$Res> {
   factory $VLessUserCopyWith(VLessUser value, $Res Function(VLessUser) _then) =
       _$VLessUserCopyWithImpl;
   @useResult
-  $Res call(
-      {String? email,
-      int? level,
-      String id,
-      String? flow,
-      String? seed,
-      String? encryption,
-      VLessReverseConfig? reverse,
-      int? testpre,
-      List<int>? testseed});
+  $Res call({
+    String? email,
+    int? level,
+    String id,
+    String? flow,
+    String? seed,
+    String? encryption,
+    VLessReverseConfig? reverse,
+    int? testpre,
+    List<int>? testseed,
+  });
 
   $VLessReverseConfigCopyWith<$Res>? get reverse;
 }
@@ -14127,44 +15538,46 @@ class _$VLessUserCopyWithImpl<$Res> implements $VLessUserCopyWith<$Res> {
     Object? testpre = freezed,
     Object? testseed = freezed,
   }) {
-    return _then(_self.copyWith(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      seed: freezed == seed
-          ? _self.seed
-          : seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-      encryption: freezed == encryption
-          ? _self.encryption
-          : encryption // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reverse: freezed == reverse
-          ? _self.reverse
-          : reverse // ignore: cast_nullable_to_non_nullable
-              as VLessReverseConfig?,
-      testpre: freezed == testpre
-          ? _self.testpre
-          : testpre // ignore: cast_nullable_to_non_nullable
-              as int?,
-      testseed: freezed == testseed
-          ? _self.testseed
-          : testseed // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ));
+    return _then(
+      VLessUser(
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        id: null == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        seed: freezed == seed
+            ? _self.seed
+            : seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        encryption: freezed == encryption
+            ? _self.encryption
+            : encryption // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reverse: freezed == reverse
+            ? _self.reverse
+            : reverse // ignore: cast_nullable_to_non_nullable
+                  as VLessReverseConfig?,
+        testpre: freezed == testpre
+            ? _self.testpre
+            : testpre // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        testseed: freezed == testseed
+            ? _self.testseed
+            : testseed // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+      ),
+    );
   }
 
   /// Create a copy of VLessUser
@@ -14276,31 +15689,33 @@ extension VLessUserPatterns on VLessUser {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? email,
-            int? level,
-            String id,
-            String? flow,
-            String? seed,
-            String? encryption,
-            VLessReverseConfig? reverse,
-            int? testpre,
-            List<int>? testseed)?
-        $default, {
+      String? email,
+      int? level,
+      String id,
+      String? flow,
+      String? seed,
+      String? encryption,
+      VLessReverseConfig? reverse,
+      int? testpre,
+      List<int>? testseed,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _VLessUser() when $default != null:
         return $default(
-            _that.email,
-            _that.level,
-            _that.id,
-            _that.flow,
-            _that.seed,
-            _that.encryption,
-            _that.reverse,
-            _that.testpre,
-            _that.testseed);
+          _that.email,
+          _that.level,
+          _that.id,
+          _that.flow,
+          _that.seed,
+          _that.encryption,
+          _that.reverse,
+          _that.testpre,
+          _that.testseed,
+        );
       case _:
         return orElse();
     }
@@ -14322,30 +15737,32 @@ extension VLessUserPatterns on VLessUser {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? email,
-            int? level,
-            String id,
-            String? flow,
-            String? seed,
-            String? encryption,
-            VLessReverseConfig? reverse,
-            int? testpre,
-            List<int>? testseed)
-        $default,
+      String? email,
+      int? level,
+      String id,
+      String? flow,
+      String? seed,
+      String? encryption,
+      VLessReverseConfig? reverse,
+      int? testpre,
+      List<int>? testseed,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessUser():
         return $default(
-            _that.email,
-            _that.level,
-            _that.id,
-            _that.flow,
-            _that.seed,
-            _that.encryption,
-            _that.reverse,
-            _that.testpre,
-            _that.testseed);
+          _that.email,
+          _that.level,
+          _that.id,
+          _that.flow,
+          _that.seed,
+          _that.encryption,
+          _that.reverse,
+          _that.testpre,
+          _that.testseed,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -14366,30 +15783,32 @@ extension VLessUserPatterns on VLessUser {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? email,
-            int? level,
-            String id,
-            String? flow,
-            String? seed,
-            String? encryption,
-            VLessReverseConfig? reverse,
-            int? testpre,
-            List<int>? testseed)?
-        $default,
+      String? email,
+      int? level,
+      String id,
+      String? flow,
+      String? seed,
+      String? encryption,
+      VLessReverseConfig? reverse,
+      int? testpre,
+      List<int>? testseed,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VLessUser() when $default != null:
         return $default(
-            _that.email,
-            _that.level,
-            _that.id,
-            _that.flow,
-            _that.seed,
-            _that.encryption,
-            _that.reverse,
-            _that.testpre,
-            _that.testseed);
+          _that.email,
+          _that.level,
+          _that.id,
+          _that.flow,
+          _that.seed,
+          _that.encryption,
+          _that.reverse,
+          _that.testpre,
+          _that.testseed,
+        );
       case _:
         return null;
     }
@@ -14399,18 +15818,18 @@ extension VLessUserPatterns on VLessUser {
 /// @nodoc
 
 class _VLessUser extends VLessUser {
-  const _VLessUser(
-      {this.email,
-      this.level,
-      required this.id,
-      this.flow,
-      this.seed,
-      this.encryption,
-      this.reverse,
-      this.testpre,
-      final List<int>? testseed})
-      : _testseed = testseed,
-        super._();
+  const _VLessUser({
+    this.email,
+    this.level,
+    required this.id,
+    this.flow,
+    this.seed,
+    this.encryption,
+    this.reverse,
+    this.testpre,
+    List<int>? testseed,
+  }) : _testseed = testseed,
+       super._();
 
   @override
   final String? email;
@@ -14460,11 +15879,12 @@ class _VLessUser extends VLessUser {
                 other.encryption == encryption) &&
             (identical(other.reverse, reverse) || other.reverse == reverse) &&
             (identical(other.testpre, testpre) || other.testpre == testpre) &&
-            const DeepCollectionEquality().equals(other._testseed, _testseed));
+            const DeepCollectionEquality().equals(other.testseed, _testseed));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       email,
       level,
@@ -14474,7 +15894,9 @@ class _VLessUser extends VLessUser {
       encryption,
       reverse,
       testpre,
-      const DeepCollectionEquality().hash(_testseed));
+      const DeepCollectionEquality().hash(_testseed),
+    );
+  }
 
   @override
   String toString() {
@@ -14486,20 +15908,22 @@ class _VLessUser extends VLessUser {
 abstract mixin class _$VLessUserCopyWith<$Res>
     implements $VLessUserCopyWith<$Res> {
   factory _$VLessUserCopyWith(
-          _VLessUser value, $Res Function(_VLessUser) _then) =
-      __$VLessUserCopyWithImpl;
+    _VLessUser value,
+    $Res Function(_VLessUser) _then,
+  ) = __$VLessUserCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? email,
-      int? level,
-      String id,
-      String? flow,
-      String? seed,
-      String? encryption,
-      VLessReverseConfig? reverse,
-      int? testpre,
-      List<int>? testseed});
+  $Res call({
+    String? email,
+    int? level,
+    String id,
+    String? flow,
+    String? seed,
+    String? encryption,
+    VLessReverseConfig? reverse,
+    int? testpre,
+    List<int>? testseed,
+  });
 
   @override
   $VLessReverseConfigCopyWith<$Res>? get reverse;
@@ -14527,44 +15951,46 @@ class __$VLessUserCopyWithImpl<$Res> implements _$VLessUserCopyWith<$Res> {
     Object? testpre = freezed,
     Object? testseed = freezed,
   }) {
-    return _then(_VLessUser(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      flow: freezed == flow
-          ? _self.flow
-          : flow // ignore: cast_nullable_to_non_nullable
-              as String?,
-      seed: freezed == seed
-          ? _self.seed
-          : seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-      encryption: freezed == encryption
-          ? _self.encryption
-          : encryption // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reverse: freezed == reverse
-          ? _self.reverse
-          : reverse // ignore: cast_nullable_to_non_nullable
-              as VLessReverseConfig?,
-      testpre: freezed == testpre
-          ? _self.testpre
-          : testpre // ignore: cast_nullable_to_non_nullable
-              as int?,
-      testseed: freezed == testseed
-          ? _self._testseed
-          : testseed // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ));
+    return _then(
+      _VLessUser(
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        id: null == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        flow: freezed == flow
+            ? _self.flow
+            : flow // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        seed: freezed == seed
+            ? _self.seed
+            : seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        encryption: freezed == encryption
+            ? _self.encryption
+            : encryption // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reverse: freezed == reverse
+            ? _self.reverse
+            : reverse // ignore: cast_nullable_to_non_nullable
+                  as VLessReverseConfig?,
+        testpre: freezed == testpre
+            ? _self.testpre
+            : testpre // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        testseed: freezed == testseed
+            ? _self._testseed
+            : testseed // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+      ),
+    );
   }
 
   /// Create a copy of VLessUser
@@ -14594,34 +16020,47 @@ mixin _$VMessAccount {
   @pragma('vm:prefer-inline')
   $VMessAccountCopyWith<VMessAccount> get copyWith =>
       _$VMessAccountCopyWithImpl<VMessAccount>(
-          this as VMessAccount, _$identity);
+        this as VMessAccount,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VMessAccount;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VMessAccount &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.security, security) ||
-                other.security == security) &&
-            (identical(other.experiments, experiments) ||
-                other.experiments == experiments));
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.security, _this.security) ||
+                other.security == _this.security) &&
+            (identical(other.experiments, _this.experiments) ||
+                other.experiments == _this.experiments));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, security, experiments);
+  int get hashCode {
+    final _this = this as VMessAccount;
+    return Object.hash(
+      runtimeType,
+      _this.id,
+      _this.security,
+      _this.experiments,
+    );
+  }
 
   @override
   String toString() {
-    return 'VMessAccount(id: $id, security: $security, experiments: $experiments)';
+    final _this = this as VMessAccount;
+    return 'VMessAccount(id: ${_this.id}, security: ${_this.security}, experiments: ${_this.experiments})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VMessAccountCopyWith<$Res> {
   factory $VMessAccountCopyWith(
-          VMessAccount value, $Res Function(VMessAccount) _then) =
-      _$VMessAccountCopyWithImpl;
+    VMessAccount value,
+    $Res Function(VMessAccount) _then,
+  ) = _$VMessAccountCopyWithImpl;
   @useResult
   $Res call({String id, VmessSecurity? security, String? experiments});
 }
@@ -14642,20 +16081,22 @@ class _$VMessAccountCopyWithImpl<$Res> implements $VMessAccountCopyWith<$Res> {
     Object? security = freezed,
     Object? experiments = freezed,
   }) {
-    return _then(_self.copyWith(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as VmessSecurity?,
-      experiments: freezed == experiments
-          ? _self.experiments
-          : experiments // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      VMessAccount(
+        id: null == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as VmessSecurity?,
+        experiments: freezed == experiments
+            ? _self.experiments
+            : experiments // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -14753,7 +16194,7 @@ extension VMessAccountPatterns on VMessAccount {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String id, VmessSecurity? security, String? experiments)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -14781,7 +16222,7 @@ extension VMessAccountPatterns on VMessAccount {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String id, VmessSecurity? security, String? experiments)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -14807,7 +16248,7 @@ extension VMessAccountPatterns on VMessAccount {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(String id, VmessSecurity? security, String? experiments)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -14823,7 +16264,7 @@ extension VMessAccountPatterns on VMessAccount {
 
 class _VMessAccount extends VMessAccount {
   const _VMessAccount({required this.id, this.security, this.experiments})
-      : super._();
+    : super._();
 
   @override
   final String id;
@@ -14853,7 +16294,9 @@ class _VMessAccount extends VMessAccount {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, security, experiments);
+  int get hashCode {
+    return Object.hash(runtimeType, id, security, experiments);
+  }
 
   @override
   String toString() {
@@ -14865,8 +16308,9 @@ class _VMessAccount extends VMessAccount {
 abstract mixin class _$VMessAccountCopyWith<$Res>
     implements $VMessAccountCopyWith<$Res> {
   factory _$VMessAccountCopyWith(
-          _VMessAccount value, $Res Function(_VMessAccount) _then) =
-      __$VMessAccountCopyWithImpl;
+    _VMessAccount value,
+    $Res Function(_VMessAccount) _then,
+  ) = __$VMessAccountCopyWithImpl;
   @override
   @useResult
   $Res call({String id, VmessSecurity? security, String? experiments});
@@ -14889,20 +16333,22 @@ class __$VMessAccountCopyWithImpl<$Res>
     Object? security = freezed,
     Object? experiments = freezed,
   }) {
-    return _then(_VMessAccount(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as VmessSecurity?,
-      experiments: freezed == experiments
-          ? _self.experiments
-          : experiments // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _VMessAccount(
+        id: null == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as VmessSecurity?,
+        experiments: freezed == experiments
+            ? _self.experiments
+            : experiments // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -14916,30 +16362,39 @@ mixin _$VMessDefaultConfig {
   @pragma('vm:prefer-inline')
   $VMessDefaultConfigCopyWith<VMessDefaultConfig> get copyWith =>
       _$VMessDefaultConfigCopyWithImpl<VMessDefaultConfig>(
-          this as VMessDefaultConfig, _$identity);
+        this as VMessDefaultConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VMessDefaultConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VMessDefaultConfig &&
-            (identical(other.level, level) || other.level == level));
+            (identical(other.level, _this.level) ||
+                other.level == _this.level));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, level);
+  int get hashCode {
+    final _this = this as VMessDefaultConfig;
+    return Object.hash(runtimeType, _this.level);
+  }
 
   @override
   String toString() {
-    return 'VMessDefaultConfig(level: $level)';
+    final _this = this as VMessDefaultConfig;
+    return 'VMessDefaultConfig(level: ${_this.level})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VMessDefaultConfigCopyWith<$Res> {
   factory $VMessDefaultConfigCopyWith(
-          VMessDefaultConfig value, $Res Function(VMessDefaultConfig) _then) =
-      _$VMessDefaultConfigCopyWithImpl;
+    VMessDefaultConfig value,
+    $Res Function(VMessDefaultConfig) _then,
+  ) = _$VMessDefaultConfigCopyWithImpl;
   @useResult
   $Res call({int? level});
 }
@@ -14956,15 +16411,15 @@ class _$VMessDefaultConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? level = freezed,
-  }) {
-    return _then(_self.copyWith(
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? level = freezed}) {
+    return _then(
+      VMessDefaultConfig(
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -15087,9 +16542,7 @@ extension VMessDefaultConfigPatterns on VMessDefaultConfig {
   /// ```
 
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(int? level) $default,
-  ) {
+  TResult when<TResult extends Object?>(TResult Function(int? level) $default) {
     final _that = this;
     switch (_that) {
       case _VMessDefaultConfig():
@@ -15150,7 +16603,9 @@ class _VMessDefaultConfig extends VMessDefaultConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, level);
+  int get hashCode {
+    return Object.hash(runtimeType, level);
+  }
 
   @override
   String toString() {
@@ -15162,8 +16617,9 @@ class _VMessDefaultConfig extends VMessDefaultConfig {
 abstract mixin class _$VMessDefaultConfigCopyWith<$Res>
     implements $VMessDefaultConfigCopyWith<$Res> {
   factory _$VMessDefaultConfigCopyWith(
-          _VMessDefaultConfig value, $Res Function(_VMessDefaultConfig) _then) =
-      __$VMessDefaultConfigCopyWithImpl;
+    _VMessDefaultConfig value,
+    $Res Function(_VMessDefaultConfig) _then,
+  ) = __$VMessDefaultConfigCopyWithImpl;
   @override
   @useResult
   $Res call({int? level});
@@ -15181,15 +16637,15 @@ class __$VMessDefaultConfigCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? level = freezed,
-  }) {
-    return _then(_VMessDefaultConfig(
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? level = freezed}) {
+    return _then(
+      _VMessDefaultConfig(
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -15206,42 +16662,55 @@ mixin _$VMessInboundConfig {
   @pragma('vm:prefer-inline')
   $VMessInboundConfigCopyWith<VMessInboundConfig> get copyWith =>
       _$VMessInboundConfigCopyWithImpl<VMessInboundConfig>(
-          this as VMessInboundConfig, _$identity);
+        this as VMessInboundConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VMessInboundConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VMessInboundConfig &&
-            const DeepCollectionEquality().equals(other.users, users) &&
-            const DeepCollectionEquality().equals(other.clients, clients) &&
-            (identical(other.defaults, defaults) ||
-                other.defaults == defaults));
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.clients,
+              _this.clients,
+            ) &&
+            (identical(other.defaults, _this.defaults) ||
+                other.defaults == _this.defaults));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as VMessInboundConfig;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(users),
-      const DeepCollectionEquality().hash(clients),
-      defaults);
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.clients),
+      _this.defaults,
+    );
+  }
 
   @override
   String toString() {
-    return 'VMessInboundConfig(users: $users, clients: $clients, defaults: $defaults)';
+    final _this = this as VMessInboundConfig;
+    return 'VMessInboundConfig(users: ${_this.users}, clients: ${_this.clients}, defaults: ${_this.defaults})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VMessInboundConfigCopyWith<$Res> {
   factory $VMessInboundConfigCopyWith(
-          VMessInboundConfig value, $Res Function(VMessInboundConfig) _then) =
-      _$VMessInboundConfigCopyWithImpl;
+    VMessInboundConfig value,
+    $Res Function(VMessInboundConfig) _then,
+  ) = _$VMessInboundConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {List<VMessUser>? users,
-      List<VMessUser>? clients,
-      @JsonKey(name: 'default') VMessDefaultConfig? defaults});
+  $Res call({
+    List<VMessUser>? users,
+    List<VMessUser>? clients,
+    @JsonKey(name: 'default') VMessDefaultConfig? defaults,
+  });
 
   $VMessDefaultConfigCopyWith<$Res>? get defaults;
 }
@@ -15263,20 +16732,22 @@ class _$VMessInboundConfigCopyWithImpl<$Res>
     Object? clients = freezed,
     Object? defaults = freezed,
   }) {
-    return _then(_self.copyWith(
-      users: freezed == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VMessUser>?,
-      clients: freezed == clients
-          ? _self.clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<VMessUser>?,
-      defaults: freezed == defaults
-          ? _self.defaults
-          : defaults // ignore: cast_nullable_to_non_nullable
-              as VMessDefaultConfig?,
-    ));
+    return _then(
+      VMessInboundConfig(
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VMessUser>?,
+        clients: freezed == clients
+            ? _self.clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<VMessUser>?,
+        defaults: freezed == defaults
+            ? _self.defaults
+            : defaults // ignore: cast_nullable_to_non_nullable
+                  as VMessDefaultConfig?,
+      ),
+    );
   }
 
   /// Create a copy of VMessInboundConfig
@@ -15387,9 +16858,12 @@ extension VMessInboundConfigPatterns on VMessInboundConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<VMessUser>? users, List<VMessUser>? clients,
-            @JsonKey(name: 'default') VMessDefaultConfig? defaults)?
-        $default, {
+    TResult Function(
+      List<VMessUser>? users,
+      List<VMessUser>? clients,
+      @JsonKey(name: 'default') VMessDefaultConfig? defaults,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -15416,9 +16890,12 @@ extension VMessInboundConfigPatterns on VMessInboundConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<VMessUser>? users, List<VMessUser>? clients,
-            @JsonKey(name: 'default') VMessDefaultConfig? defaults)
-        $default,
+    TResult Function(
+      List<VMessUser>? users,
+      List<VMessUser>? clients,
+      @JsonKey(name: 'default') VMessDefaultConfig? defaults,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -15443,9 +16920,12 @@ extension VMessInboundConfigPatterns on VMessInboundConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<VMessUser>? users, List<VMessUser>? clients,
-            @JsonKey(name: 'default') VMessDefaultConfig? defaults)?
-        $default,
+    TResult? Function(
+      List<VMessUser>? users,
+      List<VMessUser>? clients,
+      @JsonKey(name: 'default') VMessDefaultConfig? defaults,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -15460,13 +16940,13 @@ extension VMessInboundConfigPatterns on VMessInboundConfig {
 /// @nodoc
 
 class _VMessInboundConfig extends VMessInboundConfig {
-  const _VMessInboundConfig(
-      {final List<VMessUser>? users,
-      final List<VMessUser>? clients,
-      @JsonKey(name: 'default') this.defaults})
-      : _users = users,
-        _clients = clients,
-        super._();
+  const _VMessInboundConfig({
+    List<VMessUser>? users,
+    List<VMessUser>? clients,
+    @JsonKey(name: 'default') this.defaults,
+  }) : _users = users,
+       _clients = clients,
+       super._();
 
   final List<VMessUser>? _users;
   @override
@@ -15505,18 +16985,21 @@ class _VMessInboundConfig extends VMessInboundConfig {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _VMessInboundConfig &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
-            const DeepCollectionEquality().equals(other._clients, _clients) &&
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.clients, _clients) &&
             (identical(other.defaults, defaults) ||
                 other.defaults == defaults));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_clients),
-      defaults);
+      defaults,
+    );
+  }
 
   @override
   String toString() {
@@ -15528,14 +17011,16 @@ class _VMessInboundConfig extends VMessInboundConfig {
 abstract mixin class _$VMessInboundConfigCopyWith<$Res>
     implements $VMessInboundConfigCopyWith<$Res> {
   factory _$VMessInboundConfigCopyWith(
-          _VMessInboundConfig value, $Res Function(_VMessInboundConfig) _then) =
-      __$VMessInboundConfigCopyWithImpl;
+    _VMessInboundConfig value,
+    $Res Function(_VMessInboundConfig) _then,
+  ) = __$VMessInboundConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<VMessUser>? users,
-      List<VMessUser>? clients,
-      @JsonKey(name: 'default') VMessDefaultConfig? defaults});
+  $Res call({
+    List<VMessUser>? users,
+    List<VMessUser>? clients,
+    @JsonKey(name: 'default') VMessDefaultConfig? defaults,
+  });
 
   @override
   $VMessDefaultConfigCopyWith<$Res>? get defaults;
@@ -15558,20 +17043,22 @@ class __$VMessInboundConfigCopyWithImpl<$Res>
     Object? clients = freezed,
     Object? defaults = freezed,
   }) {
-    return _then(_VMessInboundConfig(
-      users: freezed == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VMessUser>?,
-      clients: freezed == clients
-          ? _self._clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<VMessUser>?,
-      defaults: freezed == defaults
-          ? _self.defaults
-          : defaults // ignore: cast_nullable_to_non_nullable
-              as VMessDefaultConfig?,
-    ));
+    return _then(
+      _VMessInboundConfig(
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VMessUser>?,
+        clients: freezed == clients
+            ? _self._clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<VMessUser>?,
+        defaults: freezed == defaults
+            ? _self.defaults
+            : defaults // ignore: cast_nullable_to_non_nullable
+                  as VMessDefaultConfig?,
+      ),
+    );
   }
 
   /// Create a copy of VMessInboundConfig
@@ -15607,50 +17094,74 @@ mixin _$VMessOutboundConfig {
   @pragma('vm:prefer-inline')
   $VMessOutboundConfigCopyWith<VMessOutboundConfig> get copyWith =>
       _$VMessOutboundConfigCopyWithImpl<VMessOutboundConfig>(
-          this as VMessOutboundConfig, _$identity);
+        this as VMessOutboundConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VMessOutboundConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VMessOutboundConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.security, security) ||
-                other.security == security) &&
-            (identical(other.experiments, experiments) ||
-                other.experiments == experiments) &&
-            const DeepCollectionEquality().equals(other.receivers, receivers));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.security, _this.security) ||
+                other.security == _this.security) &&
+            (identical(other.experiments, _this.experiments) ||
+                other.experiments == _this.experiments) &&
+            const DeepCollectionEquality().equals(
+              other.receivers,
+              _this.receivers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email, id,
-      security, experiments, const DeepCollectionEquality().hash(receivers));
+  int get hashCode {
+    final _this = this as VMessOutboundConfig;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      _this.level,
+      _this.email,
+      _this.id,
+      _this.security,
+      _this.experiments,
+      const DeepCollectionEquality().hash(_this.receivers),
+    );
+  }
 
   @override
   String toString() {
-    return 'VMessOutboundConfig(address: $address, port: $port, level: $level, email: $email, id: $id, security: $security, experiments: $experiments, receivers: $receivers)';
+    final _this = this as VMessOutboundConfig;
+    return 'VMessOutboundConfig(address: ${_this.address}, port: ${_this.port}, level: ${_this.level}, email: ${_this.email}, id: ${_this.id}, security: ${_this.security}, experiments: ${_this.experiments}, receivers: ${_this.receivers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VMessOutboundConfigCopyWith<$Res> {
   factory $VMessOutboundConfigCopyWith(
-          VMessOutboundConfig value, $Res Function(VMessOutboundConfig) _then) =
-      _$VMessOutboundConfigCopyWithImpl;
+    VMessOutboundConfig value,
+    $Res Function(VMessOutboundConfig) _then,
+  ) = _$VMessOutboundConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      String? id,
-      VmessSecurity? security,
-      String? experiments,
-      @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    String? id,
+    VmessSecurity? security,
+    String? experiments,
+    @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers,
+  });
 }
 
 /// @nodoc
@@ -15675,40 +17186,42 @@ class _$VMessOutboundConfigCopyWithImpl<$Res>
     Object? experiments = freezed,
     Object? receivers = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as VmessSecurity?,
-      experiments: freezed == experiments
-          ? _self.experiments
-          : experiments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receivers: freezed == receivers
-          ? _self.receivers
-          : receivers // ignore: cast_nullable_to_non_nullable
-              as List<VMessOutboundTarget>?,
-    ));
+    return _then(
+      VMessOutboundConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        id: freezed == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as VmessSecurity?,
+        experiments: freezed == experiments
+            ? _self.experiments
+            : experiments // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        receivers: freezed == receivers
+            ? _self.receivers
+            : receivers // ignore: cast_nullable_to_non_nullable
+                  as List<VMessOutboundTarget>?,
+      ),
+    );
   }
 }
 
@@ -15806,22 +17319,31 @@ extension VMessOutboundConfigPatterns on VMessOutboundConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            String? id,
-            VmessSecurity? security,
-            String? experiments,
-            @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers)?
-        $default, {
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      String? id,
+      VmessSecurity? security,
+      String? experiments,
+      @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _VMessOutboundConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.id, _that.security, _that.experiments, _that.receivers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.id,
+          _that.security,
+          _that.experiments,
+          _that.receivers,
+        );
       case _:
         return orElse();
     }
@@ -15843,21 +17365,30 @@ extension VMessOutboundConfigPatterns on VMessOutboundConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            String? id,
-            VmessSecurity? security,
-            String? experiments,
-            @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers)
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      String? id,
+      VmessSecurity? security,
+      String? experiments,
+      @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VMessOutboundConfig():
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.id, _that.security, _that.experiments, _that.receivers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.id,
+          _that.security,
+          _that.experiments,
+          _that.receivers,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -15878,21 +17409,30 @@ extension VMessOutboundConfigPatterns on VMessOutboundConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress? address,
-            int? port,
-            int? level,
-            String? email,
-            String? id,
-            VmessSecurity? security,
-            String? experiments,
-            @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers)?
-        $default,
+      XrayAddress? address,
+      int? port,
+      int? level,
+      String? email,
+      String? id,
+      VmessSecurity? security,
+      String? experiments,
+      @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VMessOutboundConfig() when $default != null:
-        return $default(_that.address, _that.port, _that.level, _that.email,
-            _that.id, _that.security, _that.experiments, _that.receivers);
+        return $default(
+          _that.address,
+          _that.port,
+          _that.level,
+          _that.email,
+          _that.id,
+          _that.security,
+          _that.experiments,
+          _that.receivers,
+        );
       case _:
         return null;
     }
@@ -15902,17 +17442,17 @@ extension VMessOutboundConfigPatterns on VMessOutboundConfig {
 /// @nodoc
 
 class _VMessOutboundConfig extends VMessOutboundConfig {
-  const _VMessOutboundConfig(
-      {this.address,
-      this.port,
-      this.level,
-      this.email,
-      this.id,
-      this.security,
-      this.experiments,
-      @JsonKey(name: 'vnext') final List<VMessOutboundTarget>? receivers})
-      : _receivers = receivers,
-        super._();
+  const _VMessOutboundConfig({
+    this.address,
+    this.port,
+    this.level,
+    this.email,
+    this.id,
+    this.security,
+    this.experiments,
+    @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers,
+  }) : _receivers = receivers,
+       super._();
 
   @override
   final XrayAddress? address;
@@ -15946,7 +17486,9 @@ class _VMessOutboundConfig extends VMessOutboundConfig {
   @pragma('vm:prefer-inline')
   _$VMessOutboundConfigCopyWith<_VMessOutboundConfig> get copyWith =>
       __$VMessOutboundConfigCopyWithImpl<_VMessOutboundConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -15962,13 +17504,23 @@ class _VMessOutboundConfig extends VMessOutboundConfig {
                 other.security == security) &&
             (identical(other.experiments, experiments) ||
                 other.experiments == experiments) &&
-            const DeepCollectionEquality()
-                .equals(other._receivers, _receivers));
+            const DeepCollectionEquality().equals(other.receivers, _receivers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address, port, level, email, id,
-      security, experiments, const DeepCollectionEquality().hash(_receivers));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      level,
+      email,
+      id,
+      security,
+      experiments,
+      const DeepCollectionEquality().hash(_receivers),
+    );
+  }
 
   @override
   String toString() {
@@ -15979,20 +17531,22 @@ class _VMessOutboundConfig extends VMessOutboundConfig {
 /// @nodoc
 abstract mixin class _$VMessOutboundConfigCopyWith<$Res>
     implements $VMessOutboundConfigCopyWith<$Res> {
-  factory _$VMessOutboundConfigCopyWith(_VMessOutboundConfig value,
-          $Res Function(_VMessOutboundConfig) _then) =
-      __$VMessOutboundConfigCopyWithImpl;
+  factory _$VMessOutboundConfigCopyWith(
+    _VMessOutboundConfig value,
+    $Res Function(_VMessOutboundConfig) _then,
+  ) = __$VMessOutboundConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      int? level,
-      String? email,
-      String? id,
-      VmessSecurity? security,
-      String? experiments,
-      @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    int? level,
+    String? email,
+    String? id,
+    VmessSecurity? security,
+    String? experiments,
+    @JsonKey(name: 'vnext') List<VMessOutboundTarget>? receivers,
+  });
 }
 
 /// @nodoc
@@ -16017,40 +17571,42 @@ class __$VMessOutboundConfigCopyWithImpl<$Res>
     Object? experiments = freezed,
     Object? receivers = freezed,
   }) {
-    return _then(_VMessOutboundConfig(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as VmessSecurity?,
-      experiments: freezed == experiments
-          ? _self.experiments
-          : experiments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receivers: freezed == receivers
-          ? _self._receivers
-          : receivers // ignore: cast_nullable_to_non_nullable
-              as List<VMessOutboundTarget>?,
-    ));
+    return _then(
+      _VMessOutboundConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        id: freezed == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as VmessSecurity?,
+        experiments: freezed == experiments
+            ? _self.experiments
+            : experiments // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        receivers: freezed == receivers
+            ? _self._receivers
+            : receivers // ignore: cast_nullable_to_non_nullable
+                  as List<VMessOutboundTarget>?,
+      ),
+    );
   }
 }
 
@@ -16066,33 +17622,46 @@ mixin _$VMessOutboundTarget {
   @pragma('vm:prefer-inline')
   $VMessOutboundTargetCopyWith<VMessOutboundTarget> get copyWith =>
       _$VMessOutboundTargetCopyWithImpl<VMessOutboundTarget>(
-          this as VMessOutboundTarget, _$identity);
+        this as VMessOutboundTarget,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VMessOutboundTarget;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VMessOutboundTarget &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other.users, users));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            const DeepCollectionEquality().equals(other.users, _this.users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(users));
+  int get hashCode {
+    final _this = this as VMessOutboundTarget;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      const DeepCollectionEquality().hash(_this.users),
+    );
+  }
 
   @override
   String toString() {
-    return 'VMessOutboundTarget(address: $address, port: $port, users: $users)';
+    final _this = this as VMessOutboundTarget;
+    return 'VMessOutboundTarget(address: ${_this.address}, port: ${_this.port}, users: ${_this.users})';
   }
 }
 
 /// @nodoc
 abstract mixin class $VMessOutboundTargetCopyWith<$Res> {
   factory $VMessOutboundTargetCopyWith(
-          VMessOutboundTarget value, $Res Function(VMessOutboundTarget) _then) =
-      _$VMessOutboundTargetCopyWithImpl;
+    VMessOutboundTarget value,
+    $Res Function(VMessOutboundTarget) _then,
+  ) = _$VMessOutboundTargetCopyWithImpl;
   @useResult
   $Res call({XrayAddress address, int port, List<VMessUser> users});
 }
@@ -16114,20 +17683,22 @@ class _$VMessOutboundTargetCopyWithImpl<$Res>
     Object? port = null,
     Object? users = null,
   }) {
-    return _then(_self.copyWith(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: null == users
-          ? _self.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VMessUser>,
-    ));
+    return _then(
+      VMessOutboundTarget(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: null == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VMessUser>,
+      ),
+    );
   }
 }
 
@@ -16225,7 +17796,7 @@ extension VMessOutboundTargetPatterns on VMessOutboundTarget {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<VMessUser> users)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -16253,7 +17824,7 @@ extension VMessOutboundTargetPatterns on VMessOutboundTarget {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(XrayAddress address, int port, List<VMessUser> users)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -16279,7 +17850,7 @@ extension VMessOutboundTargetPatterns on VMessOutboundTarget {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(XrayAddress address, int port, List<VMessUser> users)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -16294,12 +17865,12 @@ extension VMessOutboundTargetPatterns on VMessOutboundTarget {
 /// @nodoc
 
 class _VMessOutboundTarget extends VMessOutboundTarget {
-  const _VMessOutboundTarget(
-      {required this.address,
-      required this.port,
-      required final List<VMessUser> users})
-      : _users = users,
-        super._();
+  const _VMessOutboundTarget({
+    required this.address,
+    required this.port,
+    required List<VMessUser> users,
+  }) : _users = users,
+       super._();
 
   @override
   final XrayAddress address;
@@ -16320,7 +17891,9 @@ class _VMessOutboundTarget extends VMessOutboundTarget {
   @pragma('vm:prefer-inline')
   _$VMessOutboundTargetCopyWith<_VMessOutboundTarget> get copyWith =>
       __$VMessOutboundTargetCopyWithImpl<_VMessOutboundTarget>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -16329,12 +17902,18 @@ class _VMessOutboundTarget extends VMessOutboundTarget {
             other is _VMessOutboundTarget &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.port, port) || other.port == port) &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            const DeepCollectionEquality().equals(other.users, _users));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, address, port, const DeepCollectionEquality().hash(_users));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      const DeepCollectionEquality().hash(_users),
+    );
+  }
 
   @override
   String toString() {
@@ -16345,9 +17924,10 @@ class _VMessOutboundTarget extends VMessOutboundTarget {
 /// @nodoc
 abstract mixin class _$VMessOutboundTargetCopyWith<$Res>
     implements $VMessOutboundTargetCopyWith<$Res> {
-  factory _$VMessOutboundTargetCopyWith(_VMessOutboundTarget value,
-          $Res Function(_VMessOutboundTarget) _then) =
-      __$VMessOutboundTargetCopyWithImpl;
+  factory _$VMessOutboundTargetCopyWith(
+    _VMessOutboundTarget value,
+    $Res Function(_VMessOutboundTarget) _then,
+  ) = __$VMessOutboundTargetCopyWithImpl;
   @override
   @useResult
   $Res call({XrayAddress address, int port, List<VMessUser> users});
@@ -16370,20 +17950,22 @@ class __$VMessOutboundTargetCopyWithImpl<$Res>
     Object? port = null,
     Object? users = null,
   }) {
-    return _then(_VMessOutboundTarget(
-      address: null == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress,
-      port: null == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      users: null == users
-          ? _self._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<VMessUser>,
-    ));
+    return _then(
+      _VMessOutboundTarget(
+        address: null == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress,
+        port: null == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int,
+        users: null == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<VMessUser>,
+      ),
+    );
   }
 }
 
@@ -16404,25 +17986,38 @@ mixin _$VMessUser {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as VMessUser;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is VMessUser &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.security, security) ||
-                other.security == security) &&
-            (identical(other.experiments, experiments) ||
-                other.experiments == experiments));
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.security, _this.security) ||
+                other.security == _this.security) &&
+            (identical(other.experiments, _this.experiments) ||
+                other.experiments == _this.experiments));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, email, level, id, security, experiments);
+  int get hashCode {
+    final _this = this as VMessUser;
+    return Object.hash(
+      runtimeType,
+      _this.email,
+      _this.level,
+      _this.id,
+      _this.security,
+      _this.experiments,
+    );
+  }
 
   @override
   String toString() {
-    return 'VMessUser(email: $email, level: $level, id: $id, security: $security, experiments: $experiments)';
+    final _this = this as VMessUser;
+    return 'VMessUser(email: ${_this.email}, level: ${_this.level}, id: ${_this.id}, security: ${_this.security}, experiments: ${_this.experiments})';
   }
 }
 
@@ -16431,12 +18026,13 @@ abstract mixin class $VMessUserCopyWith<$Res> {
   factory $VMessUserCopyWith(VMessUser value, $Res Function(VMessUser) _then) =
       _$VMessUserCopyWithImpl;
   @useResult
-  $Res call(
-      {String? email,
-      int? level,
-      String id,
-      VmessSecurity? security,
-      String? experiments});
+  $Res call({
+    String? email,
+    int? level,
+    String id,
+    VmessSecurity? security,
+    String? experiments,
+  });
 }
 
 /// @nodoc
@@ -16457,28 +18053,30 @@ class _$VMessUserCopyWithImpl<$Res> implements $VMessUserCopyWith<$Res> {
     Object? security = freezed,
     Object? experiments = freezed,
   }) {
-    return _then(_self.copyWith(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as VmessSecurity?,
-      experiments: freezed == experiments
-          ? _self.experiments
-          : experiments // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      VMessUser(
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        id: null == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as VmessSecurity?,
+        experiments: freezed == experiments
+            ? _self.experiments
+            : experiments // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -16575,16 +18173,26 @@ extension VMessUserPatterns on VMessUser {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? email, int? level, String id,
-            VmessSecurity? security, String? experiments)?
-        $default, {
+    TResult Function(
+      String? email,
+      int? level,
+      String id,
+      VmessSecurity? security,
+      String? experiments,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _VMessUser() when $default != null:
-        return $default(_that.email, _that.level, _that.id, _that.security,
-            _that.experiments);
+        return $default(
+          _that.email,
+          _that.level,
+          _that.id,
+          _that.security,
+          _that.experiments,
+        );
       case _:
         return orElse();
     }
@@ -16605,15 +18213,25 @@ extension VMessUserPatterns on VMessUser {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? email, int? level, String id,
-            VmessSecurity? security, String? experiments)
-        $default,
+    TResult Function(
+      String? email,
+      int? level,
+      String id,
+      VmessSecurity? security,
+      String? experiments,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VMessUser():
-        return $default(_that.email, _that.level, _that.id, _that.security,
-            _that.experiments);
+        return $default(
+          _that.email,
+          _that.level,
+          _that.id,
+          _that.security,
+          _that.experiments,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -16633,15 +18251,25 @@ extension VMessUserPatterns on VMessUser {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? email, int? level, String id,
-            VmessSecurity? security, String? experiments)?
-        $default,
+    TResult? Function(
+      String? email,
+      int? level,
+      String id,
+      VmessSecurity? security,
+      String? experiments,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _VMessUser() when $default != null:
-        return $default(_that.email, _that.level, _that.id, _that.security,
-            _that.experiments);
+        return $default(
+          _that.email,
+          _that.level,
+          _that.id,
+          _that.security,
+          _that.experiments,
+        );
       case _:
         return null;
     }
@@ -16651,13 +18279,13 @@ extension VMessUserPatterns on VMessUser {
 /// @nodoc
 
 class _VMessUser extends VMessUser {
-  const _VMessUser(
-      {this.email,
-      this.level,
-      required this.id,
-      this.security,
-      this.experiments})
-      : super._();
+  const _VMessUser({
+    this.email,
+    this.level,
+    required this.id,
+    this.security,
+    this.experiments,
+  }) : super._();
 
   @override
   final String? email;
@@ -16693,8 +18321,9 @@ class _VMessUser extends VMessUser {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, email, level, id, security, experiments);
+  int get hashCode {
+    return Object.hash(runtimeType, email, level, id, security, experiments);
+  }
 
   @override
   String toString() {
@@ -16706,16 +18335,18 @@ class _VMessUser extends VMessUser {
 abstract mixin class _$VMessUserCopyWith<$Res>
     implements $VMessUserCopyWith<$Res> {
   factory _$VMessUserCopyWith(
-          _VMessUser value, $Res Function(_VMessUser) _then) =
-      __$VMessUserCopyWithImpl;
+    _VMessUser value,
+    $Res Function(_VMessUser) _then,
+  ) = __$VMessUserCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? email,
-      int? level,
-      String id,
-      VmessSecurity? security,
-      String? experiments});
+  $Res call({
+    String? email,
+    int? level,
+    String id,
+    VmessSecurity? security,
+    String? experiments,
+  });
 }
 
 /// @nodoc
@@ -16736,28 +18367,30 @@ class __$VMessUserCopyWithImpl<$Res> implements _$VMessUserCopyWith<$Res> {
     Object? security = freezed,
     Object? experiments = freezed,
   }) {
-    return _then(_VMessUser(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as VmessSecurity?,
-      experiments: freezed == experiments
-          ? _self.experiments
-          : experiments // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _VMessUser(
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        id: null == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as VmessSecurity?,
+        experiments: freezed == experiments
+            ? _self.experiments
+            : experiments // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -16766,6 +18399,7 @@ mixin _$WireGuardConfig {
   bool? get noKernelTun;
   String get secretKey;
   List<String>? get address;
+  List<String>? get remoteDNS;
   List<WireGuardPeerConfig>? get peers;
   @JsonKey(name: 'mtu')
   int? get mtu;
@@ -16778,56 +18412,78 @@ mixin _$WireGuardConfig {
   @pragma('vm:prefer-inline')
   $WireGuardConfigCopyWith<WireGuardConfig> get copyWith =>
       _$WireGuardConfigCopyWithImpl<WireGuardConfig>(
-          this as WireGuardConfig, _$identity);
+        this as WireGuardConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as WireGuardConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WireGuardConfig &&
-            (identical(other.noKernelTun, noKernelTun) ||
-                other.noKernelTun == noKernelTun) &&
-            (identical(other.secretKey, secretKey) ||
-                other.secretKey == secretKey) &&
-            const DeepCollectionEquality().equals(other.address, address) &&
-            const DeepCollectionEquality().equals(other.peers, peers) &&
-            (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            const DeepCollectionEquality().equals(other.reserved, reserved) &&
-            (identical(other.domainStrategy, domainStrategy) ||
-                other.domainStrategy == domainStrategy));
+            (identical(other.noKernelTun, _this.noKernelTun) ||
+                other.noKernelTun == _this.noKernelTun) &&
+            (identical(other.secretKey, _this.secretKey) ||
+                other.secretKey == _this.secretKey) &&
+            const DeepCollectionEquality().equals(
+              other.address,
+              _this.address,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.remoteDNS,
+              _this.remoteDNS,
+            ) &&
+            const DeepCollectionEquality().equals(other.peers, _this.peers) &&
+            (identical(other.mtu, _this.mtu) || other.mtu == _this.mtu) &&
+            const DeepCollectionEquality().equals(
+              other.reserved,
+              _this.reserved,
+            ) &&
+            (identical(other.domainStrategy, _this.domainStrategy) ||
+                other.domainStrategy == _this.domainStrategy));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as WireGuardConfig;
+    return Object.hash(
       runtimeType,
-      noKernelTun,
-      secretKey,
-      const DeepCollectionEquality().hash(address),
-      const DeepCollectionEquality().hash(peers),
-      mtu,
-      const DeepCollectionEquality().hash(reserved),
-      domainStrategy);
+      _this.noKernelTun,
+      _this.secretKey,
+      const DeepCollectionEquality().hash(_this.address),
+      const DeepCollectionEquality().hash(_this.remoteDNS),
+      const DeepCollectionEquality().hash(_this.peers),
+      _this.mtu,
+      const DeepCollectionEquality().hash(_this.reserved),
+      _this.domainStrategy,
+    );
+  }
 
   @override
   String toString() {
-    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, peers: $peers, mtu: $mtu, reserved: $reserved, domainStrategy: $domainStrategy)';
+    final _this = this as WireGuardConfig;
+    return 'WireGuardConfig(noKernelTun: ${_this.noKernelTun}, secretKey: ${_this.secretKey}, address: ${_this.address}, remoteDNS: ${_this.remoteDNS}, peers: ${_this.peers}, mtu: ${_this.mtu}, reserved: ${_this.reserved}, domainStrategy: ${_this.domainStrategy})';
   }
 }
 
 /// @nodoc
 abstract mixin class $WireGuardConfigCopyWith<$Res> {
   factory $WireGuardConfigCopyWith(
-          WireGuardConfig value, $Res Function(WireGuardConfig) _then) =
-      _$WireGuardConfigCopyWithImpl;
+    WireGuardConfig value,
+    $Res Function(WireGuardConfig) _then,
+  ) = _$WireGuardConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {bool? noKernelTun,
-      String secretKey,
-      List<String>? address,
-      List<WireGuardPeerConfig>? peers,
-      @JsonKey(name: 'mtu') int? mtu,
-      List<int>? reserved,
-      XrayTargetStrategy? domainStrategy});
+  $Res call({
+    bool? noKernelTun,
+    String secretKey,
+    List<String>? address,
+    List<String>? remoteDNS,
+    List<WireGuardPeerConfig>? peers,
+    @JsonKey(name: 'mtu') int? mtu,
+    List<int>? reserved,
+    XrayTargetStrategy? domainStrategy,
+  });
 }
 
 /// @nodoc
@@ -16846,41 +18502,48 @@ class _$WireGuardConfigCopyWithImpl<$Res>
     Object? noKernelTun = freezed,
     Object? secretKey = null,
     Object? address = freezed,
+    Object? remoteDNS = freezed,
     Object? peers = freezed,
     Object? mtu = freezed,
     Object? reserved = freezed,
     Object? domainStrategy = freezed,
   }) {
-    return _then(_self.copyWith(
-      noKernelTun: freezed == noKernelTun
-          ? _self.noKernelTun
-          : noKernelTun // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      secretKey: null == secretKey
-          ? _self.secretKey
-          : secretKey // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      peers: freezed == peers
-          ? _self.peers
-          : peers // ignore: cast_nullable_to_non_nullable
-              as List<WireGuardPeerConfig>?,
-      mtu: freezed == mtu
-          ? _self.mtu
-          : mtu // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reserved: freezed == reserved
-          ? _self.reserved
-          : reserved // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-    ));
+    return _then(
+      WireGuardConfig(
+        noKernelTun: freezed == noKernelTun
+            ? _self.noKernelTun
+            : noKernelTun // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        secretKey: null == secretKey
+            ? _self.secretKey
+            : secretKey // ignore: cast_nullable_to_non_nullable
+                  as String,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        remoteDNS: freezed == remoteDNS
+            ? _self.remoteDNS
+            : remoteDNS // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        peers: freezed == peers
+            ? _self.peers
+            : peers // ignore: cast_nullable_to_non_nullable
+                  as List<WireGuardPeerConfig>?,
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        reserved: freezed == reserved
+            ? _self.reserved
+            : reserved // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+      ),
+    );
   }
 }
 
@@ -16978,21 +18641,31 @@ extension WireGuardConfigPatterns on WireGuardConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            bool? noKernelTun,
-            String secretKey,
-            List<String>? address,
-            List<WireGuardPeerConfig>? peers,
-            @JsonKey(name: 'mtu') int? mtu,
-            List<int>? reserved,
-            XrayTargetStrategy? domainStrategy)?
-        $default, {
+      bool? noKernelTun,
+      String secretKey,
+      List<String>? address,
+      List<String>? remoteDNS,
+      List<WireGuardPeerConfig>? peers,
+      @JsonKey(name: 'mtu') int? mtu,
+      List<int>? reserved,
+      XrayTargetStrategy? domainStrategy,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _WireGuardConfig() when $default != null:
-        return $default(_that.noKernelTun, _that.secretKey, _that.address,
-            _that.peers, _that.mtu, _that.reserved, _that.domainStrategy);
+        return $default(
+          _that.noKernelTun,
+          _that.secretKey,
+          _that.address,
+          _that.remoteDNS,
+          _that.peers,
+          _that.mtu,
+          _that.reserved,
+          _that.domainStrategy,
+        );
       case _:
         return orElse();
     }
@@ -17014,20 +18687,30 @@ extension WireGuardConfigPatterns on WireGuardConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            bool? noKernelTun,
-            String secretKey,
-            List<String>? address,
-            List<WireGuardPeerConfig>? peers,
-            @JsonKey(name: 'mtu') int? mtu,
-            List<int>? reserved,
-            XrayTargetStrategy? domainStrategy)
-        $default,
+      bool? noKernelTun,
+      String secretKey,
+      List<String>? address,
+      List<String>? remoteDNS,
+      List<WireGuardPeerConfig>? peers,
+      @JsonKey(name: 'mtu') int? mtu,
+      List<int>? reserved,
+      XrayTargetStrategy? domainStrategy,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WireGuardConfig():
-        return $default(_that.noKernelTun, _that.secretKey, _that.address,
-            _that.peers, _that.mtu, _that.reserved, _that.domainStrategy);
+        return $default(
+          _that.noKernelTun,
+          _that.secretKey,
+          _that.address,
+          _that.remoteDNS,
+          _that.peers,
+          _that.mtu,
+          _that.reserved,
+          _that.domainStrategy,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -17048,20 +18731,30 @@ extension WireGuardConfigPatterns on WireGuardConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            bool? noKernelTun,
-            String secretKey,
-            List<String>? address,
-            List<WireGuardPeerConfig>? peers,
-            @JsonKey(name: 'mtu') int? mtu,
-            List<int>? reserved,
-            XrayTargetStrategy? domainStrategy)?
-        $default,
+      bool? noKernelTun,
+      String secretKey,
+      List<String>? address,
+      List<String>? remoteDNS,
+      List<WireGuardPeerConfig>? peers,
+      @JsonKey(name: 'mtu') int? mtu,
+      List<int>? reserved,
+      XrayTargetStrategy? domainStrategy,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WireGuardConfig() when $default != null:
-        return $default(_that.noKernelTun, _that.secretKey, _that.address,
-            _that.peers, _that.mtu, _that.reserved, _that.domainStrategy);
+        return $default(
+          _that.noKernelTun,
+          _that.secretKey,
+          _that.address,
+          _that.remoteDNS,
+          _that.peers,
+          _that.mtu,
+          _that.reserved,
+          _that.domainStrategy,
+        );
       case _:
         return null;
     }
@@ -17071,18 +18764,20 @@ extension WireGuardConfigPatterns on WireGuardConfig {
 /// @nodoc
 
 class _WireGuardConfig extends WireGuardConfig {
-  const _WireGuardConfig(
-      {this.noKernelTun,
-      required this.secretKey,
-      final List<String>? address,
-      final List<WireGuardPeerConfig>? peers,
-      @JsonKey(name: 'mtu') this.mtu,
-      final List<int>? reserved,
-      this.domainStrategy})
-      : _address = address,
-        _peers = peers,
-        _reserved = reserved,
-        super._();
+  const _WireGuardConfig({
+    this.noKernelTun,
+    required this.secretKey,
+    List<String>? address,
+    List<String>? remoteDNS,
+    List<WireGuardPeerConfig>? peers,
+    @JsonKey(name: 'mtu') this.mtu,
+    List<int>? reserved,
+    this.domainStrategy,
+  }) : _address = address,
+       _remoteDNS = remoteDNS,
+       _peers = peers,
+       _reserved = reserved,
+       super._();
 
   @override
   final bool? noKernelTun;
@@ -17094,6 +18789,16 @@ class _WireGuardConfig extends WireGuardConfig {
     final value = _address;
     if (value == null) return null;
     if (_address is EqualUnmodifiableListView) return _address;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _remoteDNS;
+  @override
+  List<String>? get remoteDNS {
+    final value = _remoteDNS;
+    if (value == null) return null;
+    if (_remoteDNS is EqualUnmodifiableListView) return _remoteDNS;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -17141,28 +18846,36 @@ class _WireGuardConfig extends WireGuardConfig {
                 other.noKernelTun == noKernelTun) &&
             (identical(other.secretKey, secretKey) ||
                 other.secretKey == secretKey) &&
-            const DeepCollectionEquality().equals(other._address, _address) &&
-            const DeepCollectionEquality().equals(other._peers, _peers) &&
+            const DeepCollectionEquality().equals(other.address, _address) &&
+            const DeepCollectionEquality().equals(
+              other.remoteDNS,
+              _remoteDNS,
+            ) &&
+            const DeepCollectionEquality().equals(other.peers, _peers) &&
             (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            const DeepCollectionEquality().equals(other._reserved, _reserved) &&
+            const DeepCollectionEquality().equals(other.reserved, _reserved) &&
             (identical(other.domainStrategy, domainStrategy) ||
                 other.domainStrategy == domainStrategy));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       noKernelTun,
       secretKey,
       const DeepCollectionEquality().hash(_address),
+      const DeepCollectionEquality().hash(_remoteDNS),
       const DeepCollectionEquality().hash(_peers),
       mtu,
       const DeepCollectionEquality().hash(_reserved),
-      domainStrategy);
+      domainStrategy,
+    );
+  }
 
   @override
   String toString() {
-    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, peers: $peers, mtu: $mtu, reserved: $reserved, domainStrategy: $domainStrategy)';
+    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, remoteDNS: $remoteDNS, peers: $peers, mtu: $mtu, reserved: $reserved, domainStrategy: $domainStrategy)';
   }
 }
 
@@ -17170,18 +18883,21 @@ class _WireGuardConfig extends WireGuardConfig {
 abstract mixin class _$WireGuardConfigCopyWith<$Res>
     implements $WireGuardConfigCopyWith<$Res> {
   factory _$WireGuardConfigCopyWith(
-          _WireGuardConfig value, $Res Function(_WireGuardConfig) _then) =
-      __$WireGuardConfigCopyWithImpl;
+    _WireGuardConfig value,
+    $Res Function(_WireGuardConfig) _then,
+  ) = __$WireGuardConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {bool? noKernelTun,
-      String secretKey,
-      List<String>? address,
-      List<WireGuardPeerConfig>? peers,
-      @JsonKey(name: 'mtu') int? mtu,
-      List<int>? reserved,
-      XrayTargetStrategy? domainStrategy});
+  $Res call({
+    bool? noKernelTun,
+    String secretKey,
+    List<String>? address,
+    List<String>? remoteDNS,
+    List<WireGuardPeerConfig>? peers,
+    @JsonKey(name: 'mtu') int? mtu,
+    List<int>? reserved,
+    XrayTargetStrategy? domainStrategy,
+  });
 }
 
 /// @nodoc
@@ -17200,41 +18916,48 @@ class __$WireGuardConfigCopyWithImpl<$Res>
     Object? noKernelTun = freezed,
     Object? secretKey = null,
     Object? address = freezed,
+    Object? remoteDNS = freezed,
     Object? peers = freezed,
     Object? mtu = freezed,
     Object? reserved = freezed,
     Object? domainStrategy = freezed,
   }) {
-    return _then(_WireGuardConfig(
-      noKernelTun: freezed == noKernelTun
-          ? _self.noKernelTun
-          : noKernelTun // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      secretKey: null == secretKey
-          ? _self.secretKey
-          : secretKey // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: freezed == address
-          ? _self._address
-          : address // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      peers: freezed == peers
-          ? _self._peers
-          : peers // ignore: cast_nullable_to_non_nullable
-              as List<WireGuardPeerConfig>?,
-      mtu: freezed == mtu
-          ? _self.mtu
-          : mtu // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reserved: freezed == reserved
-          ? _self._reserved
-          : reserved // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-    ));
+    return _then(
+      _WireGuardConfig(
+        noKernelTun: freezed == noKernelTun
+            ? _self.noKernelTun
+            : noKernelTun // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        secretKey: null == secretKey
+            ? _self.secretKey
+            : secretKey // ignore: cast_nullable_to_non_nullable
+                  as String,
+        address: freezed == address
+            ? _self._address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        remoteDNS: freezed == remoteDNS
+            ? _self._remoteDNS
+            : remoteDNS // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        peers: freezed == peers
+            ? _self._peers
+            : peers // ignore: cast_nullable_to_non_nullable
+                  as List<WireGuardPeerConfig>?,
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        reserved: freezed == reserved
+            ? _self._reserved
+            : reserved // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+      ),
+    );
   }
 }
 
@@ -17254,58 +18977,72 @@ mixin _$WireGuardPeerConfig {
   @pragma('vm:prefer-inline')
   $WireGuardPeerConfigCopyWith<WireGuardPeerConfig> get copyWith =>
       _$WireGuardPeerConfigCopyWithImpl<WireGuardPeerConfig>(
-          this as WireGuardPeerConfig, _$identity);
+        this as WireGuardPeerConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as WireGuardPeerConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WireGuardPeerConfig &&
-            (identical(other.publicKey, publicKey) ||
-                other.publicKey == publicKey) &&
-            (identical(other.preSharedKey, preSharedKey) ||
-                other.preSharedKey == preSharedKey) &&
-            (identical(other.endpoint, endpoint) ||
-                other.endpoint == endpoint) &&
-            (identical(other.keepAlive, keepAlive) ||
-                other.keepAlive == keepAlive) &&
-            const DeepCollectionEquality()
-                .equals(other.allowedIPs, allowedIPs) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.publicKey, _this.publicKey) ||
+                other.publicKey == _this.publicKey) &&
+            (identical(other.preSharedKey, _this.preSharedKey) ||
+                other.preSharedKey == _this.preSharedKey) &&
+            (identical(other.endpoint, _this.endpoint) ||
+                other.endpoint == _this.endpoint) &&
+            (identical(other.keepAlive, _this.keepAlive) ||
+                other.keepAlive == _this.keepAlive) &&
+            const DeepCollectionEquality().equals(
+              other.allowedIPs,
+              _this.allowedIPs,
+            ) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as WireGuardPeerConfig;
+    return Object.hash(
       runtimeType,
-      publicKey,
-      preSharedKey,
-      endpoint,
-      keepAlive,
-      const DeepCollectionEquality().hash(allowedIPs),
-      level,
-      email);
+      _this.publicKey,
+      _this.preSharedKey,
+      _this.endpoint,
+      _this.keepAlive,
+      const DeepCollectionEquality().hash(_this.allowedIPs),
+      _this.level,
+      _this.email,
+    );
+  }
 
   @override
   String toString() {
-    return 'WireGuardPeerConfig(publicKey: $publicKey, preSharedKey: $preSharedKey, endpoint: $endpoint, keepAlive: $keepAlive, allowedIPs: $allowedIPs, level: $level, email: $email)';
+    final _this = this as WireGuardPeerConfig;
+    return 'WireGuardPeerConfig(publicKey: ${_this.publicKey}, preSharedKey: ${_this.preSharedKey}, endpoint: ${_this.endpoint}, keepAlive: ${_this.keepAlive}, allowedIPs: ${_this.allowedIPs}, level: ${_this.level}, email: ${_this.email})';
   }
 }
 
 /// @nodoc
 abstract mixin class $WireGuardPeerConfigCopyWith<$Res> {
   factory $WireGuardPeerConfigCopyWith(
-          WireGuardPeerConfig value, $Res Function(WireGuardPeerConfig) _then) =
-      _$WireGuardPeerConfigCopyWithImpl;
+    WireGuardPeerConfig value,
+    $Res Function(WireGuardPeerConfig) _then,
+  ) = _$WireGuardPeerConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? publicKey,
-      String? preSharedKey,
-      String? endpoint,
-      int? keepAlive,
-      List<String>? allowedIPs,
-      int? level,
-      String? email});
+  $Res call({
+    String? publicKey,
+    String? preSharedKey,
+    String? endpoint,
+    int? keepAlive,
+    List<String>? allowedIPs,
+    int? level,
+    String? email,
+  });
 }
 
 /// @nodoc
@@ -17329,36 +19066,38 @@ class _$WireGuardPeerConfigCopyWithImpl<$Res>
     Object? level = freezed,
     Object? email = freezed,
   }) {
-    return _then(_self.copyWith(
-      publicKey: freezed == publicKey
-          ? _self.publicKey
-          : publicKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preSharedKey: freezed == preSharedKey
-          ? _self.preSharedKey
-          : preSharedKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      endpoint: freezed == endpoint
-          ? _self.endpoint
-          : endpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      keepAlive: freezed == keepAlive
-          ? _self.keepAlive
-          : keepAlive // ignore: cast_nullable_to_non_nullable
-              as int?,
-      allowedIPs: freezed == allowedIPs
-          ? _self.allowedIPs
-          : allowedIPs // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      WireGuardPeerConfig(
+        publicKey: freezed == publicKey
+            ? _self.publicKey
+            : publicKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        preSharedKey: freezed == preSharedKey
+            ? _self.preSharedKey
+            : preSharedKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        endpoint: freezed == endpoint
+            ? _self.endpoint
+            : endpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        keepAlive: freezed == keepAlive
+            ? _self.keepAlive
+            : keepAlive // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        allowedIPs: freezed == allowedIPs
+            ? _self.allowedIPs
+            : allowedIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -17456,21 +19195,29 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? publicKey,
-            String? preSharedKey,
-            String? endpoint,
-            int? keepAlive,
-            List<String>? allowedIPs,
-            int? level,
-            String? email)?
-        $default, {
+      String? publicKey,
+      String? preSharedKey,
+      String? endpoint,
+      int? keepAlive,
+      List<String>? allowedIPs,
+      int? level,
+      String? email,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _WireGuardPeerConfig() when $default != null:
-        return $default(_that.publicKey, _that.preSharedKey, _that.endpoint,
-            _that.keepAlive, _that.allowedIPs, _that.level, _that.email);
+        return $default(
+          _that.publicKey,
+          _that.preSharedKey,
+          _that.endpoint,
+          _that.keepAlive,
+          _that.allowedIPs,
+          _that.level,
+          _that.email,
+        );
       case _:
         return orElse();
     }
@@ -17491,15 +19238,29 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? publicKey, String? preSharedKey, String? endpoint,
-            int? keepAlive, List<String>? allowedIPs, int? level, String? email)
-        $default,
+    TResult Function(
+      String? publicKey,
+      String? preSharedKey,
+      String? endpoint,
+      int? keepAlive,
+      List<String>? allowedIPs,
+      int? level,
+      String? email,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WireGuardPeerConfig():
-        return $default(_that.publicKey, _that.preSharedKey, _that.endpoint,
-            _that.keepAlive, _that.allowedIPs, _that.level, _that.email);
+        return $default(
+          _that.publicKey,
+          _that.preSharedKey,
+          _that.endpoint,
+          _that.keepAlive,
+          _that.allowedIPs,
+          _that.level,
+          _that.email,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -17520,20 +19281,28 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? publicKey,
-            String? preSharedKey,
-            String? endpoint,
-            int? keepAlive,
-            List<String>? allowedIPs,
-            int? level,
-            String? email)?
-        $default,
+      String? publicKey,
+      String? preSharedKey,
+      String? endpoint,
+      int? keepAlive,
+      List<String>? allowedIPs,
+      int? level,
+      String? email,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WireGuardPeerConfig() when $default != null:
-        return $default(_that.publicKey, _that.preSharedKey, _that.endpoint,
-            _that.keepAlive, _that.allowedIPs, _that.level, _that.email);
+        return $default(
+          _that.publicKey,
+          _that.preSharedKey,
+          _that.endpoint,
+          _that.keepAlive,
+          _that.allowedIPs,
+          _that.level,
+          _that.email,
+        );
       case _:
         return null;
     }
@@ -17543,16 +19312,16 @@ extension WireGuardPeerConfigPatterns on WireGuardPeerConfig {
 /// @nodoc
 
 class _WireGuardPeerConfig extends WireGuardPeerConfig {
-  const _WireGuardPeerConfig(
-      {this.publicKey,
-      this.preSharedKey,
-      this.endpoint,
-      this.keepAlive,
-      final List<String>? allowedIPs,
-      this.level,
-      this.email})
-      : _allowedIPs = allowedIPs,
-        super._();
+  const _WireGuardPeerConfig({
+    this.publicKey,
+    this.preSharedKey,
+    this.endpoint,
+    this.keepAlive,
+    List<String>? allowedIPs,
+    this.level,
+    this.email,
+  }) : _allowedIPs = allowedIPs,
+       super._();
 
   @override
   final String? publicKey;
@@ -17584,7 +19353,9 @@ class _WireGuardPeerConfig extends WireGuardPeerConfig {
   @pragma('vm:prefer-inline')
   _$WireGuardPeerConfigCopyWith<_WireGuardPeerConfig> get copyWith =>
       __$WireGuardPeerConfigCopyWithImpl<_WireGuardPeerConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -17599,14 +19370,17 @@ class _WireGuardPeerConfig extends WireGuardPeerConfig {
                 other.endpoint == endpoint) &&
             (identical(other.keepAlive, keepAlive) ||
                 other.keepAlive == keepAlive) &&
-            const DeepCollectionEquality()
-                .equals(other._allowedIPs, _allowedIPs) &&
+            const DeepCollectionEquality().equals(
+              other.allowedIPs,
+              _allowedIPs,
+            ) &&
             (identical(other.level, level) || other.level == level) &&
             (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       publicKey,
       preSharedKey,
@@ -17614,7 +19388,9 @@ class _WireGuardPeerConfig extends WireGuardPeerConfig {
       keepAlive,
       const DeepCollectionEquality().hash(_allowedIPs),
       level,
-      email);
+      email,
+    );
+  }
 
   @override
   String toString() {
@@ -17625,19 +19401,21 @@ class _WireGuardPeerConfig extends WireGuardPeerConfig {
 /// @nodoc
 abstract mixin class _$WireGuardPeerConfigCopyWith<$Res>
     implements $WireGuardPeerConfigCopyWith<$Res> {
-  factory _$WireGuardPeerConfigCopyWith(_WireGuardPeerConfig value,
-          $Res Function(_WireGuardPeerConfig) _then) =
-      __$WireGuardPeerConfigCopyWithImpl;
+  factory _$WireGuardPeerConfigCopyWith(
+    _WireGuardPeerConfig value,
+    $Res Function(_WireGuardPeerConfig) _then,
+  ) = __$WireGuardPeerConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? publicKey,
-      String? preSharedKey,
-      String? endpoint,
-      int? keepAlive,
-      List<String>? allowedIPs,
-      int? level,
-      String? email});
+  $Res call({
+    String? publicKey,
+    String? preSharedKey,
+    String? endpoint,
+    int? keepAlive,
+    List<String>? allowedIPs,
+    int? level,
+    String? email,
+  });
 }
 
 /// @nodoc
@@ -17661,37 +19439,37 @@ class __$WireGuardPeerConfigCopyWithImpl<$Res>
     Object? level = freezed,
     Object? email = freezed,
   }) {
-    return _then(_WireGuardPeerConfig(
-      publicKey: freezed == publicKey
-          ? _self.publicKey
-          : publicKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preSharedKey: freezed == preSharedKey
-          ? _self.preSharedKey
-          : preSharedKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      endpoint: freezed == endpoint
-          ? _self.endpoint
-          : endpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      keepAlive: freezed == keepAlive
-          ? _self.keepAlive
-          : keepAlive // ignore: cast_nullable_to_non_nullable
-              as int?,
-      allowedIPs: freezed == allowedIPs
-          ? _self._allowedIPs
-          : allowedIPs // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _WireGuardPeerConfig(
+        publicKey: freezed == publicKey
+            ? _self.publicKey
+            : publicKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        preSharedKey: freezed == preSharedKey
+            ? _self.preSharedKey
+            : preSharedKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        endpoint: freezed == endpoint
+            ? _self.endpoint
+            : endpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        keepAlive: freezed == keepAlive
+            ? _self.keepAlive
+            : keepAlive // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        allowedIPs: freezed == allowedIPs
+            ? _self._allowedIPs
+            : allowedIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
-
-// dart format on

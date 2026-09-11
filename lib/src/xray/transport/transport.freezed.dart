@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transport.dart';
@@ -9,7 +9,7 @@ part of 'transport.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
+// GENERATED CODE - DO NOT MODIFY BY HAND
 T _$identity<T>(T value) => value;
 
 /// @nodoc
@@ -25,19 +25,24 @@ mixin _$Aes128Gcm {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Aes128Gcm;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Aes128Gcm &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.password, _this.password) ||
+                other.password == _this.password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, password);
+  int get hashCode {
+    final _this = this as Aes128Gcm;
+    return Object.hash(runtimeType, _this.password);
+  }
 
   @override
   String toString() {
-    return 'Aes128Gcm(password: $password)';
+    final _this = this as Aes128Gcm;
+    return 'Aes128Gcm(password: ${_this.password})';
   }
 }
 
@@ -60,15 +65,15 @@ class _$Aes128GcmCopyWithImpl<$Res> implements $Aes128GcmCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? password = freezed,
-  }) {
-    return _then(_self.copyWith(
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? password = freezed}) {
+    return _then(
+      Aes128Gcm(
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -255,7 +260,9 @@ class _Aes128Gcm extends Aes128Gcm {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, password);
+  int get hashCode {
+    return Object.hash(runtimeType, password);
+  }
 
   @override
   String toString() {
@@ -267,8 +274,9 @@ class _Aes128Gcm extends Aes128Gcm {
 abstract mixin class _$Aes128GcmCopyWith<$Res>
     implements $Aes128GcmCopyWith<$Res> {
   factory _$Aes128GcmCopyWith(
-          _Aes128Gcm value, $Res Function(_Aes128Gcm) _then) =
-      __$Aes128GcmCopyWithImpl;
+    _Aes128Gcm value,
+    $Res Function(_Aes128Gcm) _then,
+  ) = __$Aes128GcmCopyWithImpl;
   @override
   @useResult
   $Res call({String? password});
@@ -285,15 +293,15 @@ class __$Aes128GcmCopyWithImpl<$Res> implements _$Aes128GcmCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? password = freezed,
-  }) {
-    return _then(_Aes128Gcm(
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? password = freezed}) {
+    return _then(
+      _Aes128Gcm(
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -310,40 +318,59 @@ mixin _$AuthenticatorRequest {
   @pragma('vm:prefer-inline')
   $AuthenticatorRequestCopyWith<AuthenticatorRequest> get copyWith =>
       _$AuthenticatorRequestCopyWithImpl<AuthenticatorRequest>(
-          this as AuthenticatorRequest, _$identity);
+        this as AuthenticatorRequest,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as AuthenticatorRequest;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AuthenticatorRequest &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.method, method) || other.method == method) &&
-            (identical(other.path, path) || other.path == path) &&
-            const DeepCollectionEquality().equals(other.headers, headers));
+            (identical(other.version, _this.version) ||
+                other.version == _this.version) &&
+            (identical(other.method, _this.method) ||
+                other.method == _this.method) &&
+            (identical(other.path, _this.path) || other.path == _this.path) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, method, path,
-      const DeepCollectionEquality().hash(headers));
+  int get hashCode {
+    final _this = this as AuthenticatorRequest;
+    return Object.hash(
+      runtimeType,
+      _this.version,
+      _this.method,
+      _this.path,
+      const DeepCollectionEquality().hash(_this.headers),
+    );
+  }
 
   @override
   String toString() {
-    return 'AuthenticatorRequest(version: $version, method: $method, path: $path, headers: $headers)';
+    final _this = this as AuthenticatorRequest;
+    return 'AuthenticatorRequest(version: ${_this.version}, method: ${_this.method}, path: ${_this.path}, headers: ${_this.headers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $AuthenticatorRequestCopyWith<$Res> {
-  factory $AuthenticatorRequestCopyWith(AuthenticatorRequest value,
-          $Res Function(AuthenticatorRequest) _then) =
-      _$AuthenticatorRequestCopyWithImpl;
+  factory $AuthenticatorRequestCopyWith(
+    AuthenticatorRequest value,
+    $Res Function(AuthenticatorRequest) _then,
+  ) = _$AuthenticatorRequestCopyWithImpl;
   @useResult
-  $Res call(
-      {String? version,
-      String? method,
-      XrayStringList? path,
-      Map<String, XrayStringList>? headers});
+  $Res call({
+    String? version,
+    String? method,
+    XrayStringList? path,
+    Map<String, XrayStringList>? headers,
+  });
 }
 
 /// @nodoc
@@ -364,24 +391,26 @@ class _$AuthenticatorRequestCopyWithImpl<$Res>
     Object? path = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_self.copyWith(
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String?,
-      method: freezed == method
-          ? _self.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, XrayStringList>?,
-    ));
+    return _then(
+      AuthenticatorRequest(
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        method: freezed == method
+            ? _self.method
+            : method // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, XrayStringList>?,
+      ),
+    );
   }
 }
 
@@ -478,9 +507,13 @@ extension AuthenticatorRequestPatterns on AuthenticatorRequest {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? version, String? method, XrayStringList? path,
-            Map<String, XrayStringList>? headers)?
-        $default, {
+    TResult Function(
+      String? version,
+      String? method,
+      XrayStringList? path,
+      Map<String, XrayStringList>? headers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -507,9 +540,13 @@ extension AuthenticatorRequestPatterns on AuthenticatorRequest {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? version, String? method, XrayStringList? path,
-            Map<String, XrayStringList>? headers)
-        $default,
+    TResult Function(
+      String? version,
+      String? method,
+      XrayStringList? path,
+      Map<String, XrayStringList>? headers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -534,9 +571,13 @@ extension AuthenticatorRequestPatterns on AuthenticatorRequest {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? version, String? method, XrayStringList? path,
-            Map<String, XrayStringList>? headers)?
-        $default,
+    TResult? Function(
+      String? version,
+      String? method,
+      XrayStringList? path,
+      Map<String, XrayStringList>? headers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -551,13 +592,13 @@ extension AuthenticatorRequestPatterns on AuthenticatorRequest {
 /// @nodoc
 
 class _AuthenticatorRequest extends AuthenticatorRequest {
-  const _AuthenticatorRequest(
-      {this.version,
-      this.method,
-      this.path,
-      final Map<String, XrayStringList>? headers})
-      : _headers = headers,
-        super._();
+  const _AuthenticatorRequest({
+    this.version,
+    this.method,
+    this.path,
+    Map<String, XrayStringList>? headers,
+  }) : _headers = headers,
+       super._();
 
   @override
   final String? version;
@@ -582,7 +623,9 @@ class _AuthenticatorRequest extends AuthenticatorRequest {
   @pragma('vm:prefer-inline')
   _$AuthenticatorRequestCopyWith<_AuthenticatorRequest> get copyWith =>
       __$AuthenticatorRequestCopyWithImpl<_AuthenticatorRequest>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -592,12 +635,19 @@ class _AuthenticatorRequest extends AuthenticatorRequest {
             (identical(other.version, version) || other.version == version) &&
             (identical(other.method, method) || other.method == method) &&
             (identical(other.path, path) || other.path == path) &&
-            const DeepCollectionEquality().equals(other._headers, _headers));
+            const DeepCollectionEquality().equals(other.headers, _headers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, method, path,
-      const DeepCollectionEquality().hash(_headers));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      version,
+      method,
+      path,
+      const DeepCollectionEquality().hash(_headers),
+    );
+  }
 
   @override
   String toString() {
@@ -608,16 +658,18 @@ class _AuthenticatorRequest extends AuthenticatorRequest {
 /// @nodoc
 abstract mixin class _$AuthenticatorRequestCopyWith<$Res>
     implements $AuthenticatorRequestCopyWith<$Res> {
-  factory _$AuthenticatorRequestCopyWith(_AuthenticatorRequest value,
-          $Res Function(_AuthenticatorRequest) _then) =
-      __$AuthenticatorRequestCopyWithImpl;
+  factory _$AuthenticatorRequestCopyWith(
+    _AuthenticatorRequest value,
+    $Res Function(_AuthenticatorRequest) _then,
+  ) = __$AuthenticatorRequestCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? version,
-      String? method,
-      XrayStringList? path,
-      Map<String, XrayStringList>? headers});
+  $Res call({
+    String? version,
+    String? method,
+    XrayStringList? path,
+    Map<String, XrayStringList>? headers,
+  });
 }
 
 /// @nodoc
@@ -638,24 +690,26 @@ class __$AuthenticatorRequestCopyWithImpl<$Res>
     Object? path = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_AuthenticatorRequest(
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String?,
-      method: freezed == method
-          ? _self.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, XrayStringList>?,
-    ));
+    return _then(
+      _AuthenticatorRequest(
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        method: freezed == method
+            ? _self.method
+            : method // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, XrayStringList>?,
+      ),
+    );
   }
 }
 
@@ -672,40 +726,60 @@ mixin _$AuthenticatorResponse {
   @pragma('vm:prefer-inline')
   $AuthenticatorResponseCopyWith<AuthenticatorResponse> get copyWith =>
       _$AuthenticatorResponseCopyWithImpl<AuthenticatorResponse>(
-          this as AuthenticatorResponse, _$identity);
+        this as AuthenticatorResponse,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as AuthenticatorResponse;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AuthenticatorResponse &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.reason, reason) || other.reason == reason) &&
-            const DeepCollectionEquality().equals(other.headers, headers));
+            (identical(other.version, _this.version) ||
+                other.version == _this.version) &&
+            (identical(other.status, _this.status) ||
+                other.status == _this.status) &&
+            (identical(other.reason, _this.reason) ||
+                other.reason == _this.reason) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, status, reason,
-      const DeepCollectionEquality().hash(headers));
+  int get hashCode {
+    final _this = this as AuthenticatorResponse;
+    return Object.hash(
+      runtimeType,
+      _this.version,
+      _this.status,
+      _this.reason,
+      const DeepCollectionEquality().hash(_this.headers),
+    );
+  }
 
   @override
   String toString() {
-    return 'AuthenticatorResponse(version: $version, status: $status, reason: $reason, headers: $headers)';
+    final _this = this as AuthenticatorResponse;
+    return 'AuthenticatorResponse(version: ${_this.version}, status: ${_this.status}, reason: ${_this.reason}, headers: ${_this.headers})';
   }
 }
 
 /// @nodoc
 abstract mixin class $AuthenticatorResponseCopyWith<$Res> {
-  factory $AuthenticatorResponseCopyWith(AuthenticatorResponse value,
-          $Res Function(AuthenticatorResponse) _then) =
-      _$AuthenticatorResponseCopyWithImpl;
+  factory $AuthenticatorResponseCopyWith(
+    AuthenticatorResponse value,
+    $Res Function(AuthenticatorResponse) _then,
+  ) = _$AuthenticatorResponseCopyWithImpl;
   @useResult
-  $Res call(
-      {String? version,
-      String? status,
-      String? reason,
-      Map<String, XrayStringList>? headers});
+  $Res call({
+    String? version,
+    String? status,
+    String? reason,
+    Map<String, XrayStringList>? headers,
+  });
 }
 
 /// @nodoc
@@ -726,24 +800,26 @@ class _$AuthenticatorResponseCopyWithImpl<$Res>
     Object? reason = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_self.copyWith(
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reason: freezed == reason
-          ? _self.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, XrayStringList>?,
-    ));
+    return _then(
+      AuthenticatorResponse(
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        status: freezed == status
+            ? _self.status
+            : status // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reason: freezed == reason
+            ? _self.reason
+            : reason // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, XrayStringList>?,
+      ),
+    );
   }
 }
 
@@ -840,16 +916,24 @@ extension AuthenticatorResponsePatterns on AuthenticatorResponse {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? version, String? status, String? reason,
-            Map<String, XrayStringList>? headers)?
-        $default, {
+    TResult Function(
+      String? version,
+      String? status,
+      String? reason,
+      Map<String, XrayStringList>? headers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _AuthenticatorResponse() when $default != null:
         return $default(
-            _that.version, _that.status, _that.reason, _that.headers);
+          _that.version,
+          _that.status,
+          _that.reason,
+          _that.headers,
+        );
       case _:
         return orElse();
     }
@@ -870,15 +954,23 @@ extension AuthenticatorResponsePatterns on AuthenticatorResponse {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? version, String? status, String? reason,
-            Map<String, XrayStringList>? headers)
-        $default,
+    TResult Function(
+      String? version,
+      String? status,
+      String? reason,
+      Map<String, XrayStringList>? headers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AuthenticatorResponse():
         return $default(
-            _that.version, _that.status, _that.reason, _that.headers);
+          _that.version,
+          _that.status,
+          _that.reason,
+          _that.headers,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -898,15 +990,23 @@ extension AuthenticatorResponsePatterns on AuthenticatorResponse {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? version, String? status, String? reason,
-            Map<String, XrayStringList>? headers)?
-        $default,
+    TResult? Function(
+      String? version,
+      String? status,
+      String? reason,
+      Map<String, XrayStringList>? headers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AuthenticatorResponse() when $default != null:
         return $default(
-            _that.version, _that.status, _that.reason, _that.headers);
+          _that.version,
+          _that.status,
+          _that.reason,
+          _that.headers,
+        );
       case _:
         return null;
     }
@@ -916,13 +1016,13 @@ extension AuthenticatorResponsePatterns on AuthenticatorResponse {
 /// @nodoc
 
 class _AuthenticatorResponse extends AuthenticatorResponse {
-  const _AuthenticatorResponse(
-      {this.version,
-      this.status,
-      this.reason,
-      final Map<String, XrayStringList>? headers})
-      : _headers = headers,
-        super._();
+  const _AuthenticatorResponse({
+    this.version,
+    this.status,
+    this.reason,
+    Map<String, XrayStringList>? headers,
+  }) : _headers = headers,
+       super._();
 
   @override
   final String? version;
@@ -947,7 +1047,9 @@ class _AuthenticatorResponse extends AuthenticatorResponse {
   @pragma('vm:prefer-inline')
   _$AuthenticatorResponseCopyWith<_AuthenticatorResponse> get copyWith =>
       __$AuthenticatorResponseCopyWithImpl<_AuthenticatorResponse>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -957,12 +1059,19 @@ class _AuthenticatorResponse extends AuthenticatorResponse {
             (identical(other.version, version) || other.version == version) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.reason, reason) || other.reason == reason) &&
-            const DeepCollectionEquality().equals(other._headers, _headers));
+            const DeepCollectionEquality().equals(other.headers, _headers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, status, reason,
-      const DeepCollectionEquality().hash(_headers));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      version,
+      status,
+      reason,
+      const DeepCollectionEquality().hash(_headers),
+    );
+  }
 
   @override
   String toString() {
@@ -973,16 +1082,18 @@ class _AuthenticatorResponse extends AuthenticatorResponse {
 /// @nodoc
 abstract mixin class _$AuthenticatorResponseCopyWith<$Res>
     implements $AuthenticatorResponseCopyWith<$Res> {
-  factory _$AuthenticatorResponseCopyWith(_AuthenticatorResponse value,
-          $Res Function(_AuthenticatorResponse) _then) =
-      __$AuthenticatorResponseCopyWithImpl;
+  factory _$AuthenticatorResponseCopyWith(
+    _AuthenticatorResponse value,
+    $Res Function(_AuthenticatorResponse) _then,
+  ) = __$AuthenticatorResponseCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? version,
-      String? status,
-      String? reason,
-      Map<String, XrayStringList>? headers});
+  $Res call({
+    String? version,
+    String? status,
+    String? reason,
+    Map<String, XrayStringList>? headers,
+  });
 }
 
 /// @nodoc
@@ -1003,24 +1114,26 @@ class __$AuthenticatorResponseCopyWithImpl<$Res>
     Object? reason = freezed,
     Object? headers = freezed,
   }) {
-    return _then(_AuthenticatorResponse(
-      version: freezed == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reason: freezed == reason
-          ? _self.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, XrayStringList>?,
-    ));
+    return _then(
+      _AuthenticatorResponse(
+        version: freezed == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        status: freezed == status
+            ? _self.status
+            : status // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reason: freezed == reason
+            ? _self.reason
+            : reason // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, XrayStringList>?,
+      ),
+    );
   }
 }
 
@@ -1040,44 +1153,68 @@ mixin _$CustomSockoptConfig {
   @pragma('vm:prefer-inline')
   $CustomSockoptConfigCopyWith<CustomSockoptConfig> get copyWith =>
       _$CustomSockoptConfigCopyWithImpl<CustomSockoptConfig>(
-          this as CustomSockoptConfig, _$identity);
+        this as CustomSockoptConfig,
+        _$identity,
+      );
+
+  /// Serializes this CustomSockoptConfig to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
+    final _this = this as CustomSockoptConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CustomSockoptConfig &&
-            (identical(other.system, system) || other.system == system) &&
-            (identical(other.network, network) || other.network == network) &&
-            (identical(other.level, level) || other.level == level) &&
-            (identical(other.opt, opt) || other.opt == opt) &&
-            (identical(other.value, value) || other.value == value) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.system, _this.system) ||
+                other.system == _this.system) &&
+            (identical(other.network, _this.network) ||
+                other.network == _this.network) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.opt, _this.opt) || other.opt == _this.opt) &&
+            (identical(other.value, _this.value) ||
+                other.value == _this.value) &&
+            (identical(other.type, _this.type) || other.type == _this.type));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as CustomSockoptConfig;
+    return Object.hash(
+      runtimeType,
+      _this.system,
+      _this.network,
+      _this.level,
+      _this.opt,
+      _this.value,
+      _this.type,
+    );
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, system, network, level, opt, value, type);
-
-  @override
   String toString() {
-    return 'CustomSockoptConfig(system: $system, network: $network, level: $level, opt: $opt, value: $value, type: $type)';
+    final _this = this as CustomSockoptConfig;
+    return 'CustomSockoptConfig(system: ${_this.system}, network: ${_this.network}, level: ${_this.level}, opt: ${_this.opt}, value: ${_this.value}, type: ${_this.type})';
   }
 }
 
 /// @nodoc
 abstract mixin class $CustomSockoptConfigCopyWith<$Res> {
   factory $CustomSockoptConfigCopyWith(
-          CustomSockoptConfig value, $Res Function(CustomSockoptConfig) _then) =
-      _$CustomSockoptConfigCopyWithImpl;
+    CustomSockoptConfig value,
+    $Res Function(CustomSockoptConfig) _then,
+  ) = _$CustomSockoptConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'system') String? system,
-      String? network,
-      String? level,
-      String? opt,
-      String? value,
-      String? type});
+  $Res call({
+    @JsonKey(name: 'system') String? system,
+    String? network,
+    String? level,
+    String? opt,
+    String? value,
+    String? type,
+  });
 }
 
 /// @nodoc
@@ -1100,32 +1237,34 @@ class _$CustomSockoptConfigCopyWithImpl<$Res>
     Object? value = freezed,
     Object? type = freezed,
   }) {
-    return _then(_self.copyWith(
-      system: freezed == system
-          ? _self.system
-          : system // ignore: cast_nullable_to_non_nullable
-              as String?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as String?,
-      opt: freezed == opt
-          ? _self.opt
-          : opt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      CustomSockoptConfig(
+        system: freezed == system
+            ? _self.system
+            : system // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        opt: freezed == opt
+            ? _self.opt
+            : opt // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        value: freezed == value
+            ? _self.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -1222,16 +1361,28 @@ extension CustomSockoptConfigPatterns on CustomSockoptConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'system') String? system, String? network,
-            String? level, String? opt, String? value, String? type)?
-        $default, {
+    TResult Function(
+      @JsonKey(name: 'system') String? system,
+      String? network,
+      String? level,
+      String? opt,
+      String? value,
+      String? type,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _CustomSockoptConfig() when $default != null:
-        return $default(_that.system, _that.network, _that.level, _that.opt,
-            _that.value, _that.type);
+        return $default(
+          _that.system,
+          _that.network,
+          _that.level,
+          _that.opt,
+          _that.value,
+          _that.type,
+        );
       case _:
         return orElse();
     }
@@ -1252,15 +1403,27 @@ extension CustomSockoptConfigPatterns on CustomSockoptConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(@JsonKey(name: 'system') String? system, String? network,
-            String? level, String? opt, String? value, String? type)
-        $default,
+    TResult Function(
+      @JsonKey(name: 'system') String? system,
+      String? network,
+      String? level,
+      String? opt,
+      String? value,
+      String? type,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _CustomSockoptConfig():
-        return $default(_that.system, _that.network, _that.level, _that.opt,
-            _that.value, _that.type);
+        return $default(
+          _that.system,
+          _that.network,
+          _that.level,
+          _that.opt,
+          _that.value,
+          _that.type,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -1280,15 +1443,27 @@ extension CustomSockoptConfigPatterns on CustomSockoptConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(@JsonKey(name: 'system') String? system, String? network,
-            String? level, String? opt, String? value, String? type)?
-        $default,
+    TResult? Function(
+      @JsonKey(name: 'system') String? system,
+      String? network,
+      String? level,
+      String? opt,
+      String? value,
+      String? type,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _CustomSockoptConfig() when $default != null:
-        return $default(_that.system, _that.network, _that.level, _that.opt,
-            _that.value, _that.type);
+        return $default(
+          _that.system,
+          _that.network,
+          _that.level,
+          _that.opt,
+          _that.value,
+          _that.type,
+        );
       case _:
         return null;
     }
@@ -1297,15 +1472,18 @@ extension CustomSockoptConfigPatterns on CustomSockoptConfig {
 
 /// @nodoc
 
-class _CustomSockoptConfig extends CustomSockoptConfig {
-  const _CustomSockoptConfig(
-      {@JsonKey(name: 'system') this.system,
-      this.network,
-      this.level,
-      this.opt,
-      this.value,
-      this.type})
-      : super._();
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _CustomSockoptConfig implements CustomSockoptConfig {
+  const _CustomSockoptConfig({
+    @JsonKey(name: 'system') this.system,
+    this.network,
+    this.level,
+    this.opt,
+    this.value,
+    this.type,
+  });
+  factory _CustomSockoptConfig.fromJson(Map<String, dynamic> json) =>
+      _$CustomSockoptConfigFromJson(json);
 
   @override
   @JsonKey(name: 'system')
@@ -1328,7 +1506,14 @@ class _CustomSockoptConfig extends CustomSockoptConfig {
   @pragma('vm:prefer-inline')
   _$CustomSockoptConfigCopyWith<_CustomSockoptConfig> get copyWith =>
       __$CustomSockoptConfigCopyWithImpl<_CustomSockoptConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CustomSockoptConfigToJson(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -1343,9 +1528,11 @@ class _CustomSockoptConfig extends CustomSockoptConfig {
             (identical(other.type, type) || other.type == type));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, system, network, level, opt, value, type);
+  int get hashCode {
+    return Object.hash(runtimeType, system, network, level, opt, value, type);
+  }
 
   @override
   String toString() {
@@ -1356,18 +1543,20 @@ class _CustomSockoptConfig extends CustomSockoptConfig {
 /// @nodoc
 abstract mixin class _$CustomSockoptConfigCopyWith<$Res>
     implements $CustomSockoptConfigCopyWith<$Res> {
-  factory _$CustomSockoptConfigCopyWith(_CustomSockoptConfig value,
-          $Res Function(_CustomSockoptConfig) _then) =
-      __$CustomSockoptConfigCopyWithImpl;
+  factory _$CustomSockoptConfigCopyWith(
+    _CustomSockoptConfig value,
+    $Res Function(_CustomSockoptConfig) _then,
+  ) = __$CustomSockoptConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'system') String? system,
-      String? network,
-      String? level,
-      String? opt,
-      String? value,
-      String? type});
+  $Res call({
+    @JsonKey(name: 'system') String? system,
+    String? network,
+    String? level,
+    String? opt,
+    String? value,
+    String? type,
+  });
 }
 
 /// @nodoc
@@ -1390,32 +1579,34 @@ class __$CustomSockoptConfigCopyWithImpl<$Res>
     Object? value = freezed,
     Object? type = freezed,
   }) {
-    return _then(_CustomSockoptConfig(
-      system: freezed == system
-          ? _self.system
-          : system // ignore: cast_nullable_to_non_nullable
-              as String?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as String?,
-      level: freezed == level
-          ? _self.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as String?,
-      opt: freezed == opt
-          ? _self.opt
-          : opt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _CustomSockoptConfig(
+        system: freezed == system
+            ? _self.system
+            : system // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        opt: freezed == opt
+            ? _self.opt
+            : opt // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        value: freezed == value
+            ? _self.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -1430,32 +1621,43 @@ mixin _$CustomTransform {
   @pragma('vm:prefer-inline')
   $CustomTransformCopyWith<CustomTransform> get copyWith =>
       _$CustomTransformCopyWithImpl<CustomTransform>(
-          this as CustomTransform, _$identity);
+        this as CustomTransform,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as CustomTransform;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CustomTransform &&
-            (identical(other.op, op) || other.op == op) &&
-            const DeepCollectionEquality().equals(other.args, args));
+            (identical(other.op, _this.op) || other.op == _this.op) &&
+            const DeepCollectionEquality().equals(other.args, _this.args));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, op, const DeepCollectionEquality().hash(args));
+  int get hashCode {
+    final _this = this as CustomTransform;
+    return Object.hash(
+      runtimeType,
+      _this.op,
+      const DeepCollectionEquality().hash(_this.args),
+    );
+  }
 
   @override
   String toString() {
-    return 'CustomTransform(op: $op, args: $args)';
+    final _this = this as CustomTransform;
+    return 'CustomTransform(op: ${_this.op}, args: ${_this.args})';
   }
 }
 
 /// @nodoc
 abstract mixin class $CustomTransformCopyWith<$Res> {
   factory $CustomTransformCopyWith(
-          CustomTransform value, $Res Function(CustomTransform) _then) =
-      _$CustomTransformCopyWithImpl;
+    CustomTransform value,
+    $Res Function(CustomTransform) _then,
+  ) = _$CustomTransformCopyWithImpl;
   @useResult
   $Res call({String op, List<CustomTransformArg> args});
 }
@@ -1472,20 +1674,19 @@ class _$CustomTransformCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? op = null,
-    Object? args = null,
-  }) {
-    return _then(_self.copyWith(
-      op: null == op
-          ? _self.op
-          : op // ignore: cast_nullable_to_non_nullable
-              as String,
-      args: null == args
-          ? _self.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as List<CustomTransformArg>,
-    ));
+  $Res call({Object? op = null, Object? args = null}) {
+    return _then(
+      CustomTransform(
+        op: null == op
+            ? _self.op
+            : op // ignore: cast_nullable_to_non_nullable
+                  as String,
+        args: null == args
+            ? _self.args
+            : args // ignore: cast_nullable_to_non_nullable
+                  as List<CustomTransformArg>,
+      ),
+    );
   }
 }
 
@@ -1649,10 +1850,11 @@ extension CustomTransformPatterns on CustomTransform {
 /// @nodoc
 
 class _CustomTransform extends CustomTransform {
-  const _CustomTransform(
-      {required this.op, required final List<CustomTransformArg> args})
-      : _args = args,
-        super._();
+  const _CustomTransform({
+    required this.op,
+    required List<CustomTransformArg> args,
+  }) : _args = args,
+       super._();
 
   @override
   final String op;
@@ -1678,12 +1880,17 @@ class _CustomTransform extends CustomTransform {
         (other.runtimeType == runtimeType &&
             other is _CustomTransform &&
             (identical(other.op, op) || other.op == op) &&
-            const DeepCollectionEquality().equals(other._args, _args));
+            const DeepCollectionEquality().equals(other.args, _args));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, op, const DeepCollectionEquality().hash(_args));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      op,
+      const DeepCollectionEquality().hash(_args),
+    );
+  }
 
   @override
   String toString() {
@@ -1695,8 +1902,9 @@ class _CustomTransform extends CustomTransform {
 abstract mixin class _$CustomTransformCopyWith<$Res>
     implements $CustomTransformCopyWith<$Res> {
   factory _$CustomTransformCopyWith(
-          _CustomTransform value, $Res Function(_CustomTransform) _then) =
-      __$CustomTransformCopyWithImpl;
+    _CustomTransform value,
+    $Res Function(_CustomTransform) _then,
+  ) = __$CustomTransformCopyWithImpl;
   @override
   @useResult
   $Res call({String op, List<CustomTransformArg> args});
@@ -1714,20 +1922,19 @@ class __$CustomTransformCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? op = null,
-    Object? args = null,
-  }) {
-    return _then(_CustomTransform(
-      op: null == op
-          ? _self.op
-          : op // ignore: cast_nullable_to_non_nullable
-              as String,
-      args: null == args
-          ? _self._args
-          : args // ignore: cast_nullable_to_non_nullable
-              as List<CustomTransformArg>,
-    ));
+  $Res call({Object? op = null, Object? args = null}) {
+    return _then(
+      _CustomTransform(
+        op: null == op
+            ? _self.op
+            : op // ignore: cast_nullable_to_non_nullable
+                  as String,
+        args: null == args
+            ? _self._args
+            : args // ignore: cast_nullable_to_non_nullable
+                  as List<CustomTransformArg>,
+      ),
+    );
   }
 }
 
@@ -1746,52 +1953,63 @@ mixin _$CustomTransformArg {
   @pragma('vm:prefer-inline')
   $CustomTransformArgCopyWith<CustomTransformArg> get copyWith =>
       _$CustomTransformArgCopyWithImpl<CustomTransformArg>(
-          this as CustomTransformArg, _$identity);
+        this as CustomTransformArg,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as CustomTransformArg;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CustomTransformArg &&
-            (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.bytes, bytes) &&
-            (identical(other.u64, u64) || other.u64 == u64) &&
-            (identical(other.reuse, reuse) || other.reuse == reuse) &&
-            (identical(other.metadata, metadata) ||
-                other.metadata == metadata) &&
-            (identical(other.transform, transform) ||
-                other.transform == transform));
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            const DeepCollectionEquality().equals(other.bytes, _this.bytes) &&
+            (identical(other.u64, _this.u64) || other.u64 == _this.u64) &&
+            (identical(other.reuse, _this.reuse) ||
+                other.reuse == _this.reuse) &&
+            (identical(other.metadata, _this.metadata) ||
+                other.metadata == _this.metadata) &&
+            (identical(other.transform, _this.transform) ||
+                other.transform == _this.transform));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as CustomTransformArg;
+    return Object.hash(
       runtimeType,
-      type,
-      const DeepCollectionEquality().hash(bytes),
-      u64,
-      reuse,
-      metadata,
-      transform);
+      _this.type,
+      const DeepCollectionEquality().hash(_this.bytes),
+      _this.u64,
+      _this.reuse,
+      _this.metadata,
+      _this.transform,
+    );
+  }
 
   @override
   String toString() {
-    return 'CustomTransformArg(type: $type, bytes: $bytes, u64: $u64, reuse: $reuse, metadata: $metadata, transform: $transform)';
+    final _this = this as CustomTransformArg;
+    return 'CustomTransformArg(type: ${_this.type}, bytes: ${_this.bytes}, u64: ${_this.u64}, reuse: ${_this.reuse}, metadata: ${_this.metadata}, transform: ${_this.transform})';
   }
 }
 
 /// @nodoc
 abstract mixin class $CustomTransformArgCopyWith<$Res> {
   factory $CustomTransformArgCopyWith(
-          CustomTransformArg value, $Res Function(CustomTransformArg) _then) =
-      _$CustomTransformArgCopyWithImpl;
+    CustomTransformArg value,
+    $Res Function(CustomTransformArg) _then,
+  ) = _$CustomTransformArgCopyWithImpl;
   @useResult
-  $Res call(
-      {String? type,
-      Object? bytes,
-      int? u64,
-      String? reuse,
-      String? metadata,
-      CustomTransform? transform});
+  $Res call({
+    String? type,
+    Object? bytes,
+    int? u64,
+    String? reuse,
+    String? metadata,
+    CustomTransform? transform,
+  });
 
   $CustomTransformCopyWith<$Res>? get transform;
 }
@@ -1816,29 +2034,31 @@ class _$CustomTransformArgCopyWithImpl<$Res>
     Object? metadata = freezed,
     Object? transform = freezed,
   }) {
-    return _then(_self.copyWith(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      bytes: freezed == bytes ? _self.bytes : bytes,
-      u64: freezed == u64
-          ? _self.u64
-          : u64 // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reuse: freezed == reuse
-          ? _self.reuse
-          : reuse // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _self.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transform: freezed == transform
-          ? _self.transform
-          : transform // ignore: cast_nullable_to_non_nullable
-              as CustomTransform?,
-    ));
+    return _then(
+      CustomTransformArg(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        bytes: freezed == bytes ? _self.bytes : bytes,
+        u64: freezed == u64
+            ? _self.u64
+            : u64 // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        reuse: freezed == reuse
+            ? _self.reuse
+            : reuse // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        metadata: freezed == metadata
+            ? _self.metadata
+            : metadata // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        transform: freezed == transform
+            ? _self.transform
+            : transform // ignore: cast_nullable_to_non_nullable
+                  as CustomTransform?,
+      ),
+    );
   }
 
   /// Create a copy of CustomTransformArg
@@ -1949,16 +2169,28 @@ extension CustomTransformArgPatterns on CustomTransformArg {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? type, Object? bytes, int? u64, String? reuse,
-            String? metadata, CustomTransform? transform)?
-        $default, {
+    TResult Function(
+      String? type,
+      Object? bytes,
+      int? u64,
+      String? reuse,
+      String? metadata,
+      CustomTransform? transform,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _CustomTransformArg() when $default != null:
-        return $default(_that.type, _that.bytes, _that.u64, _that.reuse,
-            _that.metadata, _that.transform);
+        return $default(
+          _that.type,
+          _that.bytes,
+          _that.u64,
+          _that.reuse,
+          _that.metadata,
+          _that.transform,
+        );
       case _:
         return orElse();
     }
@@ -1979,15 +2211,27 @@ extension CustomTransformArgPatterns on CustomTransformArg {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? type, Object? bytes, int? u64, String? reuse,
-            String? metadata, CustomTransform? transform)
-        $default,
+    TResult Function(
+      String? type,
+      Object? bytes,
+      int? u64,
+      String? reuse,
+      String? metadata,
+      CustomTransform? transform,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _CustomTransformArg():
-        return $default(_that.type, _that.bytes, _that.u64, _that.reuse,
-            _that.metadata, _that.transform);
+        return $default(
+          _that.type,
+          _that.bytes,
+          _that.u64,
+          _that.reuse,
+          _that.metadata,
+          _that.transform,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -2007,15 +2251,27 @@ extension CustomTransformArgPatterns on CustomTransformArg {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? type, Object? bytes, int? u64, String? reuse,
-            String? metadata, CustomTransform? transform)?
-        $default,
+    TResult? Function(
+      String? type,
+      Object? bytes,
+      int? u64,
+      String? reuse,
+      String? metadata,
+      CustomTransform? transform,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _CustomTransformArg() when $default != null:
-        return $default(_that.type, _that.bytes, _that.u64, _that.reuse,
-            _that.metadata, _that.transform);
+        return $default(
+          _that.type,
+          _that.bytes,
+          _that.u64,
+          _that.reuse,
+          _that.metadata,
+          _that.transform,
+        );
       case _:
         return null;
     }
@@ -2025,14 +2281,14 @@ extension CustomTransformArgPatterns on CustomTransformArg {
 /// @nodoc
 
 class _CustomTransformArg extends CustomTransformArg {
-  const _CustomTransformArg(
-      {this.type,
-      this.bytes,
-      this.u64,
-      this.reuse,
-      this.metadata,
-      this.transform})
-      : super._();
+  const _CustomTransformArg({
+    this.type,
+    this.bytes,
+    this.u64,
+    this.reuse,
+    this.metadata,
+    this.transform,
+  }) : super._();
 
   @override
   final String? type;
@@ -2071,14 +2327,17 @@ class _CustomTransformArg extends CustomTransformArg {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       type,
       const DeepCollectionEquality().hash(bytes),
       u64,
       reuse,
       metadata,
-      transform);
+      transform,
+    );
+  }
 
   @override
   String toString() {
@@ -2090,17 +2349,19 @@ class _CustomTransformArg extends CustomTransformArg {
 abstract mixin class _$CustomTransformArgCopyWith<$Res>
     implements $CustomTransformArgCopyWith<$Res> {
   factory _$CustomTransformArgCopyWith(
-          _CustomTransformArg value, $Res Function(_CustomTransformArg) _then) =
-      __$CustomTransformArgCopyWithImpl;
+    _CustomTransformArg value,
+    $Res Function(_CustomTransformArg) _then,
+  ) = __$CustomTransformArgCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? type,
-      Object? bytes,
-      int? u64,
-      String? reuse,
-      String? metadata,
-      CustomTransform? transform});
+  $Res call({
+    String? type,
+    Object? bytes,
+    int? u64,
+    String? reuse,
+    String? metadata,
+    CustomTransform? transform,
+  });
 
   @override
   $CustomTransformCopyWith<$Res>? get transform;
@@ -2126,29 +2387,31 @@ class __$CustomTransformArgCopyWithImpl<$Res>
     Object? metadata = freezed,
     Object? transform = freezed,
   }) {
-    return _then(_CustomTransformArg(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      bytes: freezed == bytes ? _self.bytes : bytes,
-      u64: freezed == u64
-          ? _self.u64
-          : u64 // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reuse: freezed == reuse
-          ? _self.reuse
-          : reuse // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _self.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transform: freezed == transform
-          ? _self.transform
-          : transform // ignore: cast_nullable_to_non_nullable
-              as CustomTransform?,
-    ));
+    return _then(
+      _CustomTransformArg(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        bytes: freezed == bytes ? _self.bytes : bytes,
+        u64: freezed == u64
+            ? _self.u64
+            : u64 // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        reuse: freezed == reuse
+            ? _self.reuse
+            : reuse // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        metadata: freezed == metadata
+            ? _self.metadata
+            : metadata // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        transform: freezed == transform
+            ? _self.transform
+            : transform // ignore: cast_nullable_to_non_nullable
+                  as CustomTransform?,
+      ),
+    );
   }
 
   /// Create a copy of CustomTransformArg
@@ -2179,18 +2442,24 @@ mixin _$Dns {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Dns;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Dns &&
-            (identical(other.domain, domain) || other.domain == domain));
+            (identical(other.domain, _this.domain) ||
+                other.domain == _this.domain));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, domain);
+  int get hashCode {
+    final _this = this as Dns;
+    return Object.hash(runtimeType, _this.domain);
+  }
 
   @override
   String toString() {
-    return 'Dns(domain: $domain)';
+    final _this = this as Dns;
+    return 'Dns(domain: ${_this.domain})';
   }
 }
 
@@ -2212,15 +2481,15 @@ class _$DnsCopyWithImpl<$Res> implements $DnsCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? domain = freezed,
-  }) {
-    return _then(_self.copyWith(
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? domain = freezed}) {
+    return _then(
+      Dns(
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -2266,9 +2535,7 @@ extension DnsPatterns on Dns {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Dns value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_Dns value) $default) {
     final _that = this;
     switch (_that) {
       case _Dns():
@@ -2406,7 +2673,9 @@ class _Dns extends Dns {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, domain);
+  int get hashCode {
+    return Object.hash(runtimeType, domain);
+  }
 
   @override
   String toString() {
@@ -2434,15 +2703,15 @@ class __$DnsCopyWithImpl<$Res> implements _$DnsCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? domain = freezed,
-  }) {
-    return _then(_Dns(
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? domain = freezed}) {
+    return _then(
+      _Dns(
+        domain: freezed == domain
+            ? _self.domain
+            : domain // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -2461,25 +2730,31 @@ mixin _$FinalMask {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as FinalMask;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FinalMask &&
-            const DeepCollectionEquality().equals(other.tcp, tcp) &&
-            const DeepCollectionEquality().equals(other.udp, udp) &&
-            (identical(other.quicParams, quicParams) ||
-                other.quicParams == quicParams));
+            const DeepCollectionEquality().equals(other.tcp, _this.tcp) &&
+            const DeepCollectionEquality().equals(other.udp, _this.udp) &&
+            (identical(other.quicParams, _this.quicParams) ||
+                other.quicParams == _this.quicParams));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as FinalMask;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(tcp),
-      const DeepCollectionEquality().hash(udp),
-      quicParams);
+      const DeepCollectionEquality().hash(_this.tcp),
+      const DeepCollectionEquality().hash(_this.udp),
+      _this.quicParams,
+    );
+  }
 
   @override
   String toString() {
-    return 'FinalMask(tcp: $tcp, udp: $udp, quicParams: $quicParams)';
+    final _this = this as FinalMask;
+    return 'FinalMask(tcp: ${_this.tcp}, udp: ${_this.udp}, quicParams: ${_this.quicParams})';
   }
 }
 
@@ -2509,20 +2784,22 @@ class _$FinalMaskCopyWithImpl<$Res> implements $FinalMaskCopyWith<$Res> {
     Object? udp = freezed,
     Object? quicParams = freezed,
   }) {
-    return _then(_self.copyWith(
-      tcp: freezed == tcp
-          ? _self.tcp
-          : tcp // ignore: cast_nullable_to_non_nullable
-              as List<Mask>?,
-      udp: freezed == udp
-          ? _self.udp
-          : udp // ignore: cast_nullable_to_non_nullable
-              as List<Mask>?,
-      quicParams: freezed == quicParams
-          ? _self.quicParams
-          : quicParams // ignore: cast_nullable_to_non_nullable
-              as QuicParamsConfig?,
-    ));
+    return _then(
+      FinalMask(
+        tcp: freezed == tcp
+            ? _self.tcp
+            : tcp // ignore: cast_nullable_to_non_nullable
+                  as List<Mask>?,
+        udp: freezed == udp
+            ? _self.udp
+            : udp // ignore: cast_nullable_to_non_nullable
+                  as List<Mask>?,
+        quicParams: freezed == quicParams
+            ? _self.quicParams
+            : quicParams // ignore: cast_nullable_to_non_nullable
+                  as QuicParamsConfig?,
+      ),
+    );
   }
 
   /// Create a copy of FinalMask
@@ -2634,8 +2911,11 @@ extension FinalMaskPatterns on FinalMask {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            List<Mask>? tcp, List<Mask>? udp, QuicParamsConfig? quicParams)?
-        $default, {
+      List<Mask>? tcp,
+      List<Mask>? udp,
+      QuicParamsConfig? quicParams,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -2663,8 +2943,11 @@ extension FinalMaskPatterns on FinalMask {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            List<Mask>? tcp, List<Mask>? udp, QuicParamsConfig? quicParams)
-        $default,
+      List<Mask>? tcp,
+      List<Mask>? udp,
+      QuicParamsConfig? quicParams,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -2690,8 +2973,11 @@ extension FinalMaskPatterns on FinalMask {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            List<Mask>? tcp, List<Mask>? udp, QuicParamsConfig? quicParams)?
-        $default,
+      List<Mask>? tcp,
+      List<Mask>? udp,
+      QuicParamsConfig? quicParams,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -2706,11 +2992,10 @@ extension FinalMaskPatterns on FinalMask {
 /// @nodoc
 
 class _FinalMask extends FinalMask {
-  const _FinalMask(
-      {final List<Mask>? tcp, final List<Mask>? udp, this.quicParams})
-      : _tcp = tcp,
-        _udp = udp,
-        super._();
+  const _FinalMask({List<Mask>? tcp, List<Mask>? udp, this.quicParams})
+    : _tcp = tcp,
+      _udp = udp,
+      super._();
 
   final List<Mask>? _tcp;
   @override
@@ -2748,18 +3033,21 @@ class _FinalMask extends FinalMask {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _FinalMask &&
-            const DeepCollectionEquality().equals(other._tcp, _tcp) &&
-            const DeepCollectionEquality().equals(other._udp, _udp) &&
+            const DeepCollectionEquality().equals(other.tcp, _tcp) &&
+            const DeepCollectionEquality().equals(other.udp, _udp) &&
             (identical(other.quicParams, quicParams) ||
                 other.quicParams == quicParams));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_tcp),
       const DeepCollectionEquality().hash(_udp),
-      quicParams);
+      quicParams,
+    );
+  }
 
   @override
   String toString() {
@@ -2771,8 +3059,9 @@ class _FinalMask extends FinalMask {
 abstract mixin class _$FinalMaskCopyWith<$Res>
     implements $FinalMaskCopyWith<$Res> {
   factory _$FinalMaskCopyWith(
-          _FinalMask value, $Res Function(_FinalMask) _then) =
-      __$FinalMaskCopyWithImpl;
+    _FinalMask value,
+    $Res Function(_FinalMask) _then,
+  ) = __$FinalMaskCopyWithImpl;
   @override
   @useResult
   $Res call({List<Mask>? tcp, List<Mask>? udp, QuicParamsConfig? quicParams});
@@ -2797,20 +3086,22 @@ class __$FinalMaskCopyWithImpl<$Res> implements _$FinalMaskCopyWith<$Res> {
     Object? udp = freezed,
     Object? quicParams = freezed,
   }) {
-    return _then(_FinalMask(
-      tcp: freezed == tcp
-          ? _self._tcp
-          : tcp // ignore: cast_nullable_to_non_nullable
-              as List<Mask>?,
-      udp: freezed == udp
-          ? _self._udp
-          : udp // ignore: cast_nullable_to_non_nullable
-              as List<Mask>?,
-      quicParams: freezed == quicParams
-          ? _self.quicParams
-          : quicParams // ignore: cast_nullable_to_non_nullable
-              as QuicParamsConfig?,
-    ));
+    return _then(
+      _FinalMask(
+        tcp: freezed == tcp
+            ? _self._tcp
+            : tcp // ignore: cast_nullable_to_non_nullable
+                  as List<Mask>?,
+        udp: freezed == udp
+            ? _self._udp
+            : udp // ignore: cast_nullable_to_non_nullable
+                  as List<Mask>?,
+        quicParams: freezed == quicParams
+            ? _self.quicParams
+            : quicParams // ignore: cast_nullable_to_non_nullable
+                  as QuicParamsConfig?,
+      ),
+    );
   }
 
   /// Create a copy of FinalMask
@@ -2843,51 +3134,67 @@ mixin _$FragmentMask {
   @pragma('vm:prefer-inline')
   $FragmentMaskCopyWith<FragmentMask> get copyWith =>
       _$FragmentMaskCopyWithImpl<FragmentMask>(
-          this as FragmentMask, _$identity);
+        this as FragmentMask,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as FragmentMask;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FragmentMask &&
-            (identical(other.packets, packets) || other.packets == packets) &&
-            (identical(other.length, length) || other.length == length) &&
-            (identical(other.delay, delay) || other.delay == delay) &&
-            const DeepCollectionEquality().equals(other.lengths, lengths) &&
-            const DeepCollectionEquality().equals(other.delays, delays) &&
-            (identical(other.maxSplit, maxSplit) ||
-                other.maxSplit == maxSplit));
+            (identical(other.packets, _this.packets) ||
+                other.packets == _this.packets) &&
+            (identical(other.length, _this.length) ||
+                other.length == _this.length) &&
+            (identical(other.delay, _this.delay) ||
+                other.delay == _this.delay) &&
+            const DeepCollectionEquality().equals(
+              other.lengths,
+              _this.lengths,
+            ) &&
+            const DeepCollectionEquality().equals(other.delays, _this.delays) &&
+            (identical(other.maxSplit, _this.maxSplit) ||
+                other.maxSplit == _this.maxSplit));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as FragmentMask;
+    return Object.hash(
       runtimeType,
-      packets,
-      length,
-      delay,
-      const DeepCollectionEquality().hash(lengths),
-      const DeepCollectionEquality().hash(delays),
-      maxSplit);
+      _this.packets,
+      _this.length,
+      _this.delay,
+      const DeepCollectionEquality().hash(_this.lengths),
+      const DeepCollectionEquality().hash(_this.delays),
+      _this.maxSplit,
+    );
+  }
 
   @override
   String toString() {
-    return 'FragmentMask(packets: $packets, length: $length, delay: $delay, lengths: $lengths, delays: $delays, maxSplit: $maxSplit)';
+    final _this = this as FragmentMask;
+    return 'FragmentMask(packets: ${_this.packets}, length: ${_this.length}, delay: ${_this.delay}, lengths: ${_this.lengths}, delays: ${_this.delays}, maxSplit: ${_this.maxSplit})';
   }
 }
 
 /// @nodoc
 abstract mixin class $FragmentMaskCopyWith<$Res> {
   factory $FragmentMaskCopyWith(
-          FragmentMask value, $Res Function(FragmentMask) _then) =
-      _$FragmentMaskCopyWithImpl;
+    FragmentMask value,
+    $Res Function(FragmentMask) _then,
+  ) = _$FragmentMaskCopyWithImpl;
   @useResult
-  $Res call(
-      {String? packets,
-      XrayInt32Range? length,
-      XrayInt32Range? delay,
-      List<XrayInt32Range>? lengths,
-      List<XrayInt32Range>? delays,
-      XrayInt32Range? maxSplit});
+  $Res call({
+    String? packets,
+    XrayInt32Range? length,
+    XrayInt32Range? delay,
+    List<XrayInt32Range>? lengths,
+    List<XrayInt32Range>? delays,
+    XrayInt32Range? maxSplit,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get length;
   $XrayInt32RangeCopyWith<$Res>? get delay;
@@ -2913,32 +3220,34 @@ class _$FragmentMaskCopyWithImpl<$Res> implements $FragmentMaskCopyWith<$Res> {
     Object? delays = freezed,
     Object? maxSplit = freezed,
   }) {
-    return _then(_self.copyWith(
-      packets: freezed == packets
-          ? _self.packets
-          : packets // ignore: cast_nullable_to_non_nullable
-              as String?,
-      length: freezed == length
-          ? _self.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      lengths: freezed == lengths
-          ? _self.lengths
-          : lengths // ignore: cast_nullable_to_non_nullable
-              as List<XrayInt32Range>?,
-      delays: freezed == delays
-          ? _self.delays
-          : delays // ignore: cast_nullable_to_non_nullable
-              as List<XrayInt32Range>?,
-      maxSplit: freezed == maxSplit
-          ? _self.maxSplit
-          : maxSplit // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      FragmentMask(
+        packets: freezed == packets
+            ? _self.packets
+            : packets // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        length: freezed == length
+            ? _self.length
+            : length // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        lengths: freezed == lengths
+            ? _self.lengths
+            : lengths // ignore: cast_nullable_to_non_nullable
+                  as List<XrayInt32Range>?,
+        delays: freezed == delays
+            ? _self.delays
+            : delays // ignore: cast_nullable_to_non_nullable
+                  as List<XrayInt32Range>?,
+        maxSplit: freezed == maxSplit
+            ? _self.maxSplit
+            : maxSplit // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of FragmentMask
@@ -3078,20 +3387,27 @@ extension FragmentMaskPatterns on FragmentMask {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? packets,
-            XrayInt32Range? length,
-            XrayInt32Range? delay,
-            List<XrayInt32Range>? lengths,
-            List<XrayInt32Range>? delays,
-            XrayInt32Range? maxSplit)?
-        $default, {
+      String? packets,
+      XrayInt32Range? length,
+      XrayInt32Range? delay,
+      List<XrayInt32Range>? lengths,
+      List<XrayInt32Range>? delays,
+      XrayInt32Range? maxSplit,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _FragmentMask() when $default != null:
-        return $default(_that.packets, _that.length, _that.delay, _that.lengths,
-            _that.delays, _that.maxSplit);
+        return $default(
+          _that.packets,
+          _that.length,
+          _that.delay,
+          _that.lengths,
+          _that.delays,
+          _that.maxSplit,
+        );
       case _:
         return orElse();
     }
@@ -3113,19 +3429,26 @@ extension FragmentMaskPatterns on FragmentMask {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? packets,
-            XrayInt32Range? length,
-            XrayInt32Range? delay,
-            List<XrayInt32Range>? lengths,
-            List<XrayInt32Range>? delays,
-            XrayInt32Range? maxSplit)
-        $default,
+      String? packets,
+      XrayInt32Range? length,
+      XrayInt32Range? delay,
+      List<XrayInt32Range>? lengths,
+      List<XrayInt32Range>? delays,
+      XrayInt32Range? maxSplit,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FragmentMask():
-        return $default(_that.packets, _that.length, _that.delay, _that.lengths,
-            _that.delays, _that.maxSplit);
+        return $default(
+          _that.packets,
+          _that.length,
+          _that.delay,
+          _that.lengths,
+          _that.delays,
+          _that.maxSplit,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -3146,19 +3469,26 @@ extension FragmentMaskPatterns on FragmentMask {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? packets,
-            XrayInt32Range? length,
-            XrayInt32Range? delay,
-            List<XrayInt32Range>? lengths,
-            List<XrayInt32Range>? delays,
-            XrayInt32Range? maxSplit)?
-        $default,
+      String? packets,
+      XrayInt32Range? length,
+      XrayInt32Range? delay,
+      List<XrayInt32Range>? lengths,
+      List<XrayInt32Range>? delays,
+      XrayInt32Range? maxSplit,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _FragmentMask() when $default != null:
-        return $default(_that.packets, _that.length, _that.delay, _that.lengths,
-            _that.delays, _that.maxSplit);
+        return $default(
+          _that.packets,
+          _that.length,
+          _that.delay,
+          _that.lengths,
+          _that.delays,
+          _that.maxSplit,
+        );
       case _:
         return null;
     }
@@ -3168,16 +3498,16 @@ extension FragmentMaskPatterns on FragmentMask {
 /// @nodoc
 
 class _FragmentMask extends FragmentMask {
-  const _FragmentMask(
-      {this.packets,
-      this.length,
-      this.delay,
-      final List<XrayInt32Range>? lengths,
-      final List<XrayInt32Range>? delays,
-      this.maxSplit})
-      : _lengths = lengths,
-        _delays = delays,
-        super._();
+  const _FragmentMask({
+    this.packets,
+    this.length,
+    this.delay,
+    List<XrayInt32Range>? lengths,
+    List<XrayInt32Range>? delays,
+    this.maxSplit,
+  }) : _lengths = lengths,
+       _delays = delays,
+       super._();
 
   @override
   final String? packets;
@@ -3224,21 +3554,24 @@ class _FragmentMask extends FragmentMask {
             (identical(other.packets, packets) || other.packets == packets) &&
             (identical(other.length, length) || other.length == length) &&
             (identical(other.delay, delay) || other.delay == delay) &&
-            const DeepCollectionEquality().equals(other._lengths, _lengths) &&
-            const DeepCollectionEquality().equals(other._delays, _delays) &&
+            const DeepCollectionEquality().equals(other.lengths, _lengths) &&
+            const DeepCollectionEquality().equals(other.delays, _delays) &&
             (identical(other.maxSplit, maxSplit) ||
                 other.maxSplit == maxSplit));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       packets,
       length,
       delay,
       const DeepCollectionEquality().hash(_lengths),
       const DeepCollectionEquality().hash(_delays),
-      maxSplit);
+      maxSplit,
+    );
+  }
 
   @override
   String toString() {
@@ -3250,17 +3583,19 @@ class _FragmentMask extends FragmentMask {
 abstract mixin class _$FragmentMaskCopyWith<$Res>
     implements $FragmentMaskCopyWith<$Res> {
   factory _$FragmentMaskCopyWith(
-          _FragmentMask value, $Res Function(_FragmentMask) _then) =
-      __$FragmentMaskCopyWithImpl;
+    _FragmentMask value,
+    $Res Function(_FragmentMask) _then,
+  ) = __$FragmentMaskCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? packets,
-      XrayInt32Range? length,
-      XrayInt32Range? delay,
-      List<XrayInt32Range>? lengths,
-      List<XrayInt32Range>? delays,
-      XrayInt32Range? maxSplit});
+  $Res call({
+    String? packets,
+    XrayInt32Range? length,
+    XrayInt32Range? delay,
+    List<XrayInt32Range>? lengths,
+    List<XrayInt32Range>? delays,
+    XrayInt32Range? maxSplit,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get length;
@@ -3290,32 +3625,34 @@ class __$FragmentMaskCopyWithImpl<$Res>
     Object? delays = freezed,
     Object? maxSplit = freezed,
   }) {
-    return _then(_FragmentMask(
-      packets: freezed == packets
-          ? _self.packets
-          : packets // ignore: cast_nullable_to_non_nullable
-              as String?,
-      length: freezed == length
-          ? _self.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      lengths: freezed == lengths
-          ? _self._lengths
-          : lengths // ignore: cast_nullable_to_non_nullable
-              as List<XrayInt32Range>?,
-      delays: freezed == delays
-          ? _self._delays
-          : delays // ignore: cast_nullable_to_non_nullable
-              as List<XrayInt32Range>?,
-      maxSplit: freezed == maxSplit
-          ? _self.maxSplit
-          : maxSplit // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      _FragmentMask(
+        packets: freezed == packets
+            ? _self.packets
+            : packets // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        length: freezed == length
+            ? _self.length
+            : length // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        lengths: freezed == lengths
+            ? _self._lengths
+            : lengths // ignore: cast_nullable_to_non_nullable
+                  as List<XrayInt32Range>?,
+        delays: freezed == delays
+            ? _self._delays
+            : delays // ignore: cast_nullable_to_non_nullable
+                  as List<XrayInt32Range>?,
+        maxSplit: freezed == maxSplit
+            ? _self.maxSplit
+            : maxSplit // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of FragmentMask
@@ -3386,60 +3723,68 @@ mixin _$GRPCConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as GRPCConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GRPCConfig &&
-            (identical(other.authority, authority) ||
-                other.authority == authority) &&
-            (identical(other.serviceName, serviceName) ||
-                other.serviceName == serviceName) &&
-            (identical(other.multiMode, multiMode) ||
-                other.multiMode == multiMode) &&
-            (identical(other.idleTimeout, idleTimeout) ||
-                other.idleTimeout == idleTimeout) &&
-            (identical(other.healthCheckTimeout, healthCheckTimeout) ||
-                other.healthCheckTimeout == healthCheckTimeout) &&
-            (identical(other.permitWithoutStream, permitWithoutStream) ||
-                other.permitWithoutStream == permitWithoutStream) &&
-            (identical(other.initialWindowsSize, initialWindowsSize) ||
-                other.initialWindowsSize == initialWindowsSize) &&
-            (identical(other.userAgent, userAgent) ||
-                other.userAgent == userAgent));
+            (identical(other.authority, _this.authority) ||
+                other.authority == _this.authority) &&
+            (identical(other.serviceName, _this.serviceName) ||
+                other.serviceName == _this.serviceName) &&
+            (identical(other.multiMode, _this.multiMode) ||
+                other.multiMode == _this.multiMode) &&
+            (identical(other.idleTimeout, _this.idleTimeout) ||
+                other.idleTimeout == _this.idleTimeout) &&
+            (identical(other.healthCheckTimeout, _this.healthCheckTimeout) ||
+                other.healthCheckTimeout == _this.healthCheckTimeout) &&
+            (identical(other.permitWithoutStream, _this.permitWithoutStream) ||
+                other.permitWithoutStream == _this.permitWithoutStream) &&
+            (identical(other.initialWindowsSize, _this.initialWindowsSize) ||
+                other.initialWindowsSize == _this.initialWindowsSize) &&
+            (identical(other.userAgent, _this.userAgent) ||
+                other.userAgent == _this.userAgent));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as GRPCConfig;
+    return Object.hash(
       runtimeType,
-      authority,
-      serviceName,
-      multiMode,
-      idleTimeout,
-      healthCheckTimeout,
-      permitWithoutStream,
-      initialWindowsSize,
-      userAgent);
+      _this.authority,
+      _this.serviceName,
+      _this.multiMode,
+      _this.idleTimeout,
+      _this.healthCheckTimeout,
+      _this.permitWithoutStream,
+      _this.initialWindowsSize,
+      _this.userAgent,
+    );
+  }
 
   @override
   String toString() {
-    return 'GRPCConfig(authority: $authority, serviceName: $serviceName, multiMode: $multiMode, idleTimeout: $idleTimeout, healthCheckTimeout: $healthCheckTimeout, permitWithoutStream: $permitWithoutStream, initialWindowsSize: $initialWindowsSize, userAgent: $userAgent)';
+    final _this = this as GRPCConfig;
+    return 'GRPCConfig(authority: ${_this.authority}, serviceName: ${_this.serviceName}, multiMode: ${_this.multiMode}, idleTimeout: ${_this.idleTimeout}, healthCheckTimeout: ${_this.healthCheckTimeout}, permitWithoutStream: ${_this.permitWithoutStream}, initialWindowsSize: ${_this.initialWindowsSize}, userAgent: ${_this.userAgent})';
   }
 }
 
 /// @nodoc
 abstract mixin class $GRPCConfigCopyWith<$Res> {
   factory $GRPCConfigCopyWith(
-          GRPCConfig value, $Res Function(GRPCConfig) _then) =
-      _$GRPCConfigCopyWithImpl;
+    GRPCConfig value,
+    $Res Function(GRPCConfig) _then,
+  ) = _$GRPCConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? authority,
-      String? serviceName,
-      bool? multiMode,
-      @JsonKey(name: 'idle_timeout') int? idleTimeout,
-      @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
-      @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
-      @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
-      @JsonKey(name: 'user_agent') String? userAgent});
+  $Res call({
+    String? authority,
+    String? serviceName,
+    bool? multiMode,
+    @JsonKey(name: 'idle_timeout') int? idleTimeout,
+    @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
+    @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
+    @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
+    @JsonKey(name: 'user_agent') String? userAgent,
+  });
 }
 
 /// @nodoc
@@ -3463,40 +3808,42 @@ class _$GRPCConfigCopyWithImpl<$Res> implements $GRPCConfigCopyWith<$Res> {
     Object? initialWindowsSize = freezed,
     Object? userAgent = freezed,
   }) {
-    return _then(_self.copyWith(
-      authority: freezed == authority
-          ? _self.authority
-          : authority // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serviceName: freezed == serviceName
-          ? _self.serviceName
-          : serviceName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      multiMode: freezed == multiMode
-          ? _self.multiMode
-          : multiMode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      idleTimeout: freezed == idleTimeout
-          ? _self.idleTimeout
-          : idleTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      healthCheckTimeout: freezed == healthCheckTimeout
-          ? _self.healthCheckTimeout
-          : healthCheckTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      permitWithoutStream: freezed == permitWithoutStream
-          ? _self.permitWithoutStream
-          : permitWithoutStream // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      initialWindowsSize: freezed == initialWindowsSize
-          ? _self.initialWindowsSize
-          : initialWindowsSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userAgent: freezed == userAgent
-          ? _self.userAgent
-          : userAgent // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      GRPCConfig(
+        authority: freezed == authority
+            ? _self.authority
+            : authority // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        serviceName: freezed == serviceName
+            ? _self.serviceName
+            : serviceName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        multiMode: freezed == multiMode
+            ? _self.multiMode
+            : multiMode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        idleTimeout: freezed == idleTimeout
+            ? _self.idleTimeout
+            : idleTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        healthCheckTimeout: freezed == healthCheckTimeout
+            ? _self.healthCheckTimeout
+            : healthCheckTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        permitWithoutStream: freezed == permitWithoutStream
+            ? _self.permitWithoutStream
+            : permitWithoutStream // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        initialWindowsSize: freezed == initialWindowsSize
+            ? _self.initialWindowsSize
+            : initialWindowsSize // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        userAgent: freezed == userAgent
+            ? _self.userAgent
+            : userAgent // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3594,29 +3941,31 @@ extension GRPCConfigPatterns on GRPCConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? authority,
-            String? serviceName,
-            bool? multiMode,
-            @JsonKey(name: 'idle_timeout') int? idleTimeout,
-            @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
-            @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
-            @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
-            @JsonKey(name: 'user_agent') String? userAgent)?
-        $default, {
+      String? authority,
+      String? serviceName,
+      bool? multiMode,
+      @JsonKey(name: 'idle_timeout') int? idleTimeout,
+      @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
+      @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
+      @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
+      @JsonKey(name: 'user_agent') String? userAgent,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _GRPCConfig() when $default != null:
         return $default(
-            _that.authority,
-            _that.serviceName,
-            _that.multiMode,
-            _that.idleTimeout,
-            _that.healthCheckTimeout,
-            _that.permitWithoutStream,
-            _that.initialWindowsSize,
-            _that.userAgent);
+          _that.authority,
+          _that.serviceName,
+          _that.multiMode,
+          _that.idleTimeout,
+          _that.healthCheckTimeout,
+          _that.permitWithoutStream,
+          _that.initialWindowsSize,
+          _that.userAgent,
+        );
       case _:
         return orElse();
     }
@@ -3638,28 +3987,30 @@ extension GRPCConfigPatterns on GRPCConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? authority,
-            String? serviceName,
-            bool? multiMode,
-            @JsonKey(name: 'idle_timeout') int? idleTimeout,
-            @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
-            @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
-            @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
-            @JsonKey(name: 'user_agent') String? userAgent)
-        $default,
+      String? authority,
+      String? serviceName,
+      bool? multiMode,
+      @JsonKey(name: 'idle_timeout') int? idleTimeout,
+      @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
+      @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
+      @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
+      @JsonKey(name: 'user_agent') String? userAgent,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _GRPCConfig():
         return $default(
-            _that.authority,
-            _that.serviceName,
-            _that.multiMode,
-            _that.idleTimeout,
-            _that.healthCheckTimeout,
-            _that.permitWithoutStream,
-            _that.initialWindowsSize,
-            _that.userAgent);
+          _that.authority,
+          _that.serviceName,
+          _that.multiMode,
+          _that.idleTimeout,
+          _that.healthCheckTimeout,
+          _that.permitWithoutStream,
+          _that.initialWindowsSize,
+          _that.userAgent,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -3680,28 +4031,30 @@ extension GRPCConfigPatterns on GRPCConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? authority,
-            String? serviceName,
-            bool? multiMode,
-            @JsonKey(name: 'idle_timeout') int? idleTimeout,
-            @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
-            @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
-            @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
-            @JsonKey(name: 'user_agent') String? userAgent)?
-        $default,
+      String? authority,
+      String? serviceName,
+      bool? multiMode,
+      @JsonKey(name: 'idle_timeout') int? idleTimeout,
+      @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
+      @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
+      @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
+      @JsonKey(name: 'user_agent') String? userAgent,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _GRPCConfig() when $default != null:
         return $default(
-            _that.authority,
-            _that.serviceName,
-            _that.multiMode,
-            _that.idleTimeout,
-            _that.healthCheckTimeout,
-            _that.permitWithoutStream,
-            _that.initialWindowsSize,
-            _that.userAgent);
+          _that.authority,
+          _that.serviceName,
+          _that.multiMode,
+          _that.idleTimeout,
+          _that.healthCheckTimeout,
+          _that.permitWithoutStream,
+          _that.initialWindowsSize,
+          _that.userAgent,
+        );
       case _:
         return null;
     }
@@ -3711,16 +4064,16 @@ extension GRPCConfigPatterns on GRPCConfig {
 /// @nodoc
 
 class _GRPCConfig extends GRPCConfig {
-  const _GRPCConfig(
-      {this.authority,
-      this.serviceName,
-      this.multiMode,
-      @JsonKey(name: 'idle_timeout') this.idleTimeout,
-      @JsonKey(name: 'health_check_timeout') this.healthCheckTimeout,
-      @JsonKey(name: 'permit_without_stream') this.permitWithoutStream,
-      @JsonKey(name: 'initial_windows_size') this.initialWindowsSize,
-      @JsonKey(name: 'user_agent') this.userAgent})
-      : super._();
+  const _GRPCConfig({
+    this.authority,
+    this.serviceName,
+    this.multiMode,
+    @JsonKey(name: 'idle_timeout') this.idleTimeout,
+    @JsonKey(name: 'health_check_timeout') this.healthCheckTimeout,
+    @JsonKey(name: 'permit_without_stream') this.permitWithoutStream,
+    @JsonKey(name: 'initial_windows_size') this.initialWindowsSize,
+    @JsonKey(name: 'user_agent') this.userAgent,
+  }) : super._();
 
   @override
   final String? authority;
@@ -3776,7 +4129,8 @@ class _GRPCConfig extends GRPCConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       authority,
       serviceName,
@@ -3785,7 +4139,9 @@ class _GRPCConfig extends GRPCConfig {
       healthCheckTimeout,
       permitWithoutStream,
       initialWindowsSize,
-      userAgent);
+      userAgent,
+    );
+  }
 
   @override
   String toString() {
@@ -3797,19 +4153,21 @@ class _GRPCConfig extends GRPCConfig {
 abstract mixin class _$GRPCConfigCopyWith<$Res>
     implements $GRPCConfigCopyWith<$Res> {
   factory _$GRPCConfigCopyWith(
-          _GRPCConfig value, $Res Function(_GRPCConfig) _then) =
-      __$GRPCConfigCopyWithImpl;
+    _GRPCConfig value,
+    $Res Function(_GRPCConfig) _then,
+  ) = __$GRPCConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? authority,
-      String? serviceName,
-      bool? multiMode,
-      @JsonKey(name: 'idle_timeout') int? idleTimeout,
-      @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
-      @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
-      @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
-      @JsonKey(name: 'user_agent') String? userAgent});
+  $Res call({
+    String? authority,
+    String? serviceName,
+    bool? multiMode,
+    @JsonKey(name: 'idle_timeout') int? idleTimeout,
+    @JsonKey(name: 'health_check_timeout') int? healthCheckTimeout,
+    @JsonKey(name: 'permit_without_stream') bool? permitWithoutStream,
+    @JsonKey(name: 'initial_windows_size') int? initialWindowsSize,
+    @JsonKey(name: 'user_agent') String? userAgent,
+  });
 }
 
 /// @nodoc
@@ -3833,40 +4191,42 @@ class __$GRPCConfigCopyWithImpl<$Res> implements _$GRPCConfigCopyWith<$Res> {
     Object? initialWindowsSize = freezed,
     Object? userAgent = freezed,
   }) {
-    return _then(_GRPCConfig(
-      authority: freezed == authority
-          ? _self.authority
-          : authority // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serviceName: freezed == serviceName
-          ? _self.serviceName
-          : serviceName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      multiMode: freezed == multiMode
-          ? _self.multiMode
-          : multiMode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      idleTimeout: freezed == idleTimeout
-          ? _self.idleTimeout
-          : idleTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      healthCheckTimeout: freezed == healthCheckTimeout
-          ? _self.healthCheckTimeout
-          : healthCheckTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      permitWithoutStream: freezed == permitWithoutStream
-          ? _self.permitWithoutStream
-          : permitWithoutStream // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      initialWindowsSize: freezed == initialWindowsSize
-          ? _self.initialWindowsSize
-          : initialWindowsSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userAgent: freezed == userAgent
-          ? _self.userAgent
-          : userAgent // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _GRPCConfig(
+        authority: freezed == authority
+            ? _self.authority
+            : authority // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        serviceName: freezed == serviceName
+            ? _self.serviceName
+            : serviceName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        multiMode: freezed == multiMode
+            ? _self.multiMode
+            : multiMode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        idleTimeout: freezed == idleTimeout
+            ? _self.idleTimeout
+            : idleTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        healthCheckTimeout: freezed == healthCheckTimeout
+            ? _self.healthCheckTimeout
+            : healthCheckTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        permitWithoutStream: freezed == permitWithoutStream
+            ? _self.permitWithoutStream
+            : permitWithoutStream // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        initialWindowsSize: freezed == initialWindowsSize
+            ? _self.initialWindowsSize
+            : initialWindowsSize // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        userAgent: freezed == userAgent
+            ? _self.userAgent
+            : userAgent // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3883,44 +4243,58 @@ mixin _$HappyEyeballsConfig {
   @pragma('vm:prefer-inline')
   $HappyEyeballsConfigCopyWith<HappyEyeballsConfig> get copyWith =>
       _$HappyEyeballsConfigCopyWithImpl<HappyEyeballsConfig>(
-          this as HappyEyeballsConfig, _$identity);
+        this as HappyEyeballsConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HappyEyeballsConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HappyEyeballsConfig &&
-            (identical(other.prioritizeIPv6, prioritizeIPv6) ||
-                other.prioritizeIPv6 == prioritizeIPv6) &&
-            (identical(other.tryDelayMs, tryDelayMs) ||
-                other.tryDelayMs == tryDelayMs) &&
-            (identical(other.interleave, interleave) ||
-                other.interleave == interleave) &&
-            (identical(other.maxConcurrentTry, maxConcurrentTry) ||
-                other.maxConcurrentTry == maxConcurrentTry));
+            (identical(other.prioritizeIPv6, _this.prioritizeIPv6) ||
+                other.prioritizeIPv6 == _this.prioritizeIPv6) &&
+            (identical(other.tryDelayMs, _this.tryDelayMs) ||
+                other.tryDelayMs == _this.tryDelayMs) &&
+            (identical(other.interleave, _this.interleave) ||
+                other.interleave == _this.interleave) &&
+            (identical(other.maxConcurrentTry, _this.maxConcurrentTry) ||
+                other.maxConcurrentTry == _this.maxConcurrentTry));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, prioritizeIPv6, tryDelayMs, interleave, maxConcurrentTry);
+  int get hashCode {
+    final _this = this as HappyEyeballsConfig;
+    return Object.hash(
+      runtimeType,
+      _this.prioritizeIPv6,
+      _this.tryDelayMs,
+      _this.interleave,
+      _this.maxConcurrentTry,
+    );
+  }
 
   @override
   String toString() {
-    return 'HappyEyeballsConfig(prioritizeIPv6: $prioritizeIPv6, tryDelayMs: $tryDelayMs, interleave: $interleave, maxConcurrentTry: $maxConcurrentTry)';
+    final _this = this as HappyEyeballsConfig;
+    return 'HappyEyeballsConfig(prioritizeIPv6: ${_this.prioritizeIPv6}, tryDelayMs: ${_this.tryDelayMs}, interleave: ${_this.interleave}, maxConcurrentTry: ${_this.maxConcurrentTry})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HappyEyeballsConfigCopyWith<$Res> {
   factory $HappyEyeballsConfigCopyWith(
-          HappyEyeballsConfig value, $Res Function(HappyEyeballsConfig) _then) =
-      _$HappyEyeballsConfigCopyWithImpl;
+    HappyEyeballsConfig value,
+    $Res Function(HappyEyeballsConfig) _then,
+  ) = _$HappyEyeballsConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {bool? prioritizeIPv6,
-      int? tryDelayMs,
-      int? interleave,
-      int? maxConcurrentTry});
+  $Res call({
+    bool? prioritizeIPv6,
+    int? tryDelayMs,
+    int? interleave,
+    int? maxConcurrentTry,
+  });
 }
 
 /// @nodoc
@@ -3941,24 +4315,26 @@ class _$HappyEyeballsConfigCopyWithImpl<$Res>
     Object? interleave = freezed,
     Object? maxConcurrentTry = freezed,
   }) {
-    return _then(_self.copyWith(
-      prioritizeIPv6: freezed == prioritizeIPv6
-          ? _self.prioritizeIPv6
-          : prioritizeIPv6 // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      tryDelayMs: freezed == tryDelayMs
-          ? _self.tryDelayMs
-          : tryDelayMs // ignore: cast_nullable_to_non_nullable
-              as int?,
-      interleave: freezed == interleave
-          ? _self.interleave
-          : interleave // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxConcurrentTry: freezed == maxConcurrentTry
-          ? _self.maxConcurrentTry
-          : maxConcurrentTry // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      HappyEyeballsConfig(
+        prioritizeIPv6: freezed == prioritizeIPv6
+            ? _self.prioritizeIPv6
+            : prioritizeIPv6 // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        tryDelayMs: freezed == tryDelayMs
+            ? _self.tryDelayMs
+            : tryDelayMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        interleave: freezed == interleave
+            ? _self.interleave
+            : interleave // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxConcurrentTry: freezed == maxConcurrentTry
+            ? _self.maxConcurrentTry
+            : maxConcurrentTry // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -4055,16 +4431,24 @@ extension HappyEyeballsConfigPatterns on HappyEyeballsConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(bool? prioritizeIPv6, int? tryDelayMs, int? interleave,
-            int? maxConcurrentTry)?
-        $default, {
+    TResult Function(
+      bool? prioritizeIPv6,
+      int? tryDelayMs,
+      int? interleave,
+      int? maxConcurrentTry,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _HappyEyeballsConfig() when $default != null:
-        return $default(_that.prioritizeIPv6, _that.tryDelayMs,
-            _that.interleave, _that.maxConcurrentTry);
+        return $default(
+          _that.prioritizeIPv6,
+          _that.tryDelayMs,
+          _that.interleave,
+          _that.maxConcurrentTry,
+        );
       case _:
         return orElse();
     }
@@ -4085,15 +4469,23 @@ extension HappyEyeballsConfigPatterns on HappyEyeballsConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(bool? prioritizeIPv6, int? tryDelayMs, int? interleave,
-            int? maxConcurrentTry)
-        $default,
+    TResult Function(
+      bool? prioritizeIPv6,
+      int? tryDelayMs,
+      int? interleave,
+      int? maxConcurrentTry,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HappyEyeballsConfig():
-        return $default(_that.prioritizeIPv6, _that.tryDelayMs,
-            _that.interleave, _that.maxConcurrentTry);
+        return $default(
+          _that.prioritizeIPv6,
+          _that.tryDelayMs,
+          _that.interleave,
+          _that.maxConcurrentTry,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -4113,15 +4505,23 @@ extension HappyEyeballsConfigPatterns on HappyEyeballsConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(bool? prioritizeIPv6, int? tryDelayMs, int? interleave,
-            int? maxConcurrentTry)?
-        $default,
+    TResult? Function(
+      bool? prioritizeIPv6,
+      int? tryDelayMs,
+      int? interleave,
+      int? maxConcurrentTry,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HappyEyeballsConfig() when $default != null:
-        return $default(_that.prioritizeIPv6, _that.tryDelayMs,
-            _that.interleave, _that.maxConcurrentTry);
+        return $default(
+          _that.prioritizeIPv6,
+          _that.tryDelayMs,
+          _that.interleave,
+          _that.maxConcurrentTry,
+        );
       case _:
         return null;
     }
@@ -4131,12 +4531,12 @@ extension HappyEyeballsConfigPatterns on HappyEyeballsConfig {
 /// @nodoc
 
 class _HappyEyeballsConfig extends HappyEyeballsConfig {
-  const _HappyEyeballsConfig(
-      {this.prioritizeIPv6,
-      this.tryDelayMs,
-      this.interleave,
-      this.maxConcurrentTry})
-      : super._();
+  const _HappyEyeballsConfig({
+    this.prioritizeIPv6,
+    this.tryDelayMs,
+    this.interleave,
+    this.maxConcurrentTry,
+  }) : super._();
 
   @override
   final bool? prioritizeIPv6;
@@ -4154,7 +4554,9 @@ class _HappyEyeballsConfig extends HappyEyeballsConfig {
   @pragma('vm:prefer-inline')
   _$HappyEyeballsConfigCopyWith<_HappyEyeballsConfig> get copyWith =>
       __$HappyEyeballsConfigCopyWithImpl<_HappyEyeballsConfig>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -4172,8 +4574,15 @@ class _HappyEyeballsConfig extends HappyEyeballsConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, prioritizeIPv6, tryDelayMs, interleave, maxConcurrentTry);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      prioritizeIPv6,
+      tryDelayMs,
+      interleave,
+      maxConcurrentTry,
+    );
+  }
 
   @override
   String toString() {
@@ -4184,16 +4593,18 @@ class _HappyEyeballsConfig extends HappyEyeballsConfig {
 /// @nodoc
 abstract mixin class _$HappyEyeballsConfigCopyWith<$Res>
     implements $HappyEyeballsConfigCopyWith<$Res> {
-  factory _$HappyEyeballsConfigCopyWith(_HappyEyeballsConfig value,
-          $Res Function(_HappyEyeballsConfig) _then) =
-      __$HappyEyeballsConfigCopyWithImpl;
+  factory _$HappyEyeballsConfigCopyWith(
+    _HappyEyeballsConfig value,
+    $Res Function(_HappyEyeballsConfig) _then,
+  ) = __$HappyEyeballsConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {bool? prioritizeIPv6,
-      int? tryDelayMs,
-      int? interleave,
-      int? maxConcurrentTry});
+  $Res call({
+    bool? prioritizeIPv6,
+    int? tryDelayMs,
+    int? interleave,
+    int? maxConcurrentTry,
+  });
 }
 
 /// @nodoc
@@ -4214,24 +4625,26 @@ class __$HappyEyeballsConfigCopyWithImpl<$Res>
     Object? interleave = freezed,
     Object? maxConcurrentTry = freezed,
   }) {
-    return _then(_HappyEyeballsConfig(
-      prioritizeIPv6: freezed == prioritizeIPv6
-          ? _self.prioritizeIPv6
-          : prioritizeIPv6 // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      tryDelayMs: freezed == tryDelayMs
-          ? _self.tryDelayMs
-          : tryDelayMs // ignore: cast_nullable_to_non_nullable
-              as int?,
-      interleave: freezed == interleave
-          ? _self.interleave
-          : interleave // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxConcurrentTry: freezed == maxConcurrentTry
-          ? _self.maxConcurrentTry
-          : maxConcurrentTry // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _HappyEyeballsConfig(
+        prioritizeIPv6: freezed == prioritizeIPv6
+            ? _self.prioritizeIPv6
+            : prioritizeIPv6 // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        tryDelayMs: freezed == tryDelayMs
+            ? _self.tryDelayMs
+            : tryDelayMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        interleave: freezed == interleave
+            ? _self.interleave
+            : interleave // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxConcurrentTry: freezed == maxConcurrentTry
+            ? _self.maxConcurrentTry
+            : maxConcurrentTry // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -4247,41 +4660,57 @@ mixin _$HeaderCustomTCP {
   @pragma('vm:prefer-inline')
   $HeaderCustomTCPCopyWith<HeaderCustomTCP> get copyWith =>
       _$HeaderCustomTCPCopyWithImpl<HeaderCustomTCP>(
-          this as HeaderCustomTCP, _$identity);
+        this as HeaderCustomTCP,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HeaderCustomTCP;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HeaderCustomTCP &&
-            const DeepCollectionEquality().equals(other.clients, clients) &&
-            const DeepCollectionEquality().equals(other.servers, servers) &&
-            const DeepCollectionEquality().equals(other.errors, errors));
+            const DeepCollectionEquality().equals(
+              other.clients,
+              _this.clients,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.servers,
+              _this.servers,
+            ) &&
+            const DeepCollectionEquality().equals(other.errors, _this.errors));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as HeaderCustomTCP;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(clients),
-      const DeepCollectionEquality().hash(servers),
-      const DeepCollectionEquality().hash(errors));
+      const DeepCollectionEquality().hash(_this.clients),
+      const DeepCollectionEquality().hash(_this.servers),
+      const DeepCollectionEquality().hash(_this.errors),
+    );
+  }
 
   @override
   String toString() {
-    return 'HeaderCustomTCP(clients: $clients, servers: $servers, errors: $errors)';
+    final _this = this as HeaderCustomTCP;
+    return 'HeaderCustomTCP(clients: ${_this.clients}, servers: ${_this.servers}, errors: ${_this.errors})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HeaderCustomTCPCopyWith<$Res> {
   factory $HeaderCustomTCPCopyWith(
-          HeaderCustomTCP value, $Res Function(HeaderCustomTCP) _then) =
-      _$HeaderCustomTCPCopyWithImpl;
+    HeaderCustomTCP value,
+    $Res Function(HeaderCustomTCP) _then,
+  ) = _$HeaderCustomTCPCopyWithImpl;
   @useResult
-  $Res call(
-      {List<List<TCPItem>>? clients,
-      List<List<TCPItem>>? servers,
-      List<List<TCPItem>>? errors});
+  $Res call({
+    List<List<TCPItem>>? clients,
+    List<List<TCPItem>>? servers,
+    List<List<TCPItem>>? errors,
+  });
 }
 
 /// @nodoc
@@ -4301,20 +4730,22 @@ class _$HeaderCustomTCPCopyWithImpl<$Res>
     Object? servers = freezed,
     Object? errors = freezed,
   }) {
-    return _then(_self.copyWith(
-      clients: freezed == clients
-          ? _self.clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<List<TCPItem>>?,
-      servers: freezed == servers
-          ? _self.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<List<TCPItem>>?,
-      errors: freezed == errors
-          ? _self.errors
-          : errors // ignore: cast_nullable_to_non_nullable
-              as List<List<TCPItem>>?,
-    ));
+    return _then(
+      HeaderCustomTCP(
+        clients: freezed == clients
+            ? _self.clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<List<TCPItem>>?,
+        servers: freezed == servers
+            ? _self.servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<List<TCPItem>>?,
+        errors: freezed == errors
+            ? _self.errors
+            : errors // ignore: cast_nullable_to_non_nullable
+                  as List<List<TCPItem>>?,
+      ),
+    );
   }
 }
 
@@ -4411,9 +4842,12 @@ extension HeaderCustomTCPPatterns on HeaderCustomTCP {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<List<TCPItem>>? clients, List<List<TCPItem>>? servers,
-            List<List<TCPItem>>? errors)?
-        $default, {
+    TResult Function(
+      List<List<TCPItem>>? clients,
+      List<List<TCPItem>>? servers,
+      List<List<TCPItem>>? errors,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -4440,9 +4874,12 @@ extension HeaderCustomTCPPatterns on HeaderCustomTCP {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<List<TCPItem>>? clients, List<List<TCPItem>>? servers,
-            List<List<TCPItem>>? errors)
-        $default,
+    TResult Function(
+      List<List<TCPItem>>? clients,
+      List<List<TCPItem>>? servers,
+      List<List<TCPItem>>? errors,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -4467,9 +4904,12 @@ extension HeaderCustomTCPPatterns on HeaderCustomTCP {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<List<TCPItem>>? clients,
-            List<List<TCPItem>>? servers, List<List<TCPItem>>? errors)?
-        $default,
+    TResult? Function(
+      List<List<TCPItem>>? clients,
+      List<List<TCPItem>>? servers,
+      List<List<TCPItem>>? errors,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -4484,14 +4924,14 @@ extension HeaderCustomTCPPatterns on HeaderCustomTCP {
 /// @nodoc
 
 class _HeaderCustomTCP extends HeaderCustomTCP {
-  const _HeaderCustomTCP(
-      {final List<List<TCPItem>>? clients,
-      final List<List<TCPItem>>? servers,
-      final List<List<TCPItem>>? errors})
-      : _clients = clients,
-        _servers = servers,
-        _errors = errors,
-        super._();
+  const _HeaderCustomTCP({
+    List<List<TCPItem>>? clients,
+    List<List<TCPItem>>? servers,
+    List<List<TCPItem>>? errors,
+  }) : _clients = clients,
+       _servers = servers,
+       _errors = errors,
+       super._();
 
   final List<List<TCPItem>>? _clients;
   @override
@@ -4536,17 +4976,20 @@ class _HeaderCustomTCP extends HeaderCustomTCP {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _HeaderCustomTCP &&
-            const DeepCollectionEquality().equals(other._clients, _clients) &&
-            const DeepCollectionEquality().equals(other._servers, _servers) &&
-            const DeepCollectionEquality().equals(other._errors, _errors));
+            const DeepCollectionEquality().equals(other.clients, _clients) &&
+            const DeepCollectionEquality().equals(other.servers, _servers) &&
+            const DeepCollectionEquality().equals(other.errors, _errors));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_clients),
       const DeepCollectionEquality().hash(_servers),
-      const DeepCollectionEquality().hash(_errors));
+      const DeepCollectionEquality().hash(_errors),
+    );
+  }
 
   @override
   String toString() {
@@ -4558,14 +5001,16 @@ class _HeaderCustomTCP extends HeaderCustomTCP {
 abstract mixin class _$HeaderCustomTCPCopyWith<$Res>
     implements $HeaderCustomTCPCopyWith<$Res> {
   factory _$HeaderCustomTCPCopyWith(
-          _HeaderCustomTCP value, $Res Function(_HeaderCustomTCP) _then) =
-      __$HeaderCustomTCPCopyWithImpl;
+    _HeaderCustomTCP value,
+    $Res Function(_HeaderCustomTCP) _then,
+  ) = __$HeaderCustomTCPCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<List<TCPItem>>? clients,
-      List<List<TCPItem>>? servers,
-      List<List<TCPItem>>? errors});
+  $Res call({
+    List<List<TCPItem>>? clients,
+    List<List<TCPItem>>? servers,
+    List<List<TCPItem>>? errors,
+  });
 }
 
 /// @nodoc
@@ -4585,20 +5030,22 @@ class __$HeaderCustomTCPCopyWithImpl<$Res>
     Object? servers = freezed,
     Object? errors = freezed,
   }) {
-    return _then(_HeaderCustomTCP(
-      clients: freezed == clients
-          ? _self._clients
-          : clients // ignore: cast_nullable_to_non_nullable
-              as List<List<TCPItem>>?,
-      servers: freezed == servers
-          ? _self._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<List<TCPItem>>?,
-      errors: freezed == errors
-          ? _self._errors
-          : errors // ignore: cast_nullable_to_non_nullable
-              as List<List<TCPItem>>?,
-    ));
+    return _then(
+      _HeaderCustomTCP(
+        clients: freezed == clients
+            ? _self._clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<List<TCPItem>>?,
+        servers: freezed == servers
+            ? _self._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<List<TCPItem>>?,
+        errors: freezed == errors
+            ? _self._errors
+            : errors // ignore: cast_nullable_to_non_nullable
+                  as List<List<TCPItem>>?,
+      ),
+    );
   }
 }
 
@@ -4616,41 +5063,51 @@ mixin _$HeaderCustomUDP {
   @pragma('vm:prefer-inline')
   $HeaderCustomUDPCopyWith<HeaderCustomUDP> get copyWith =>
       _$HeaderCustomUDPCopyWithImpl<HeaderCustomUDP>(
-          this as HeaderCustomUDP, _$identity);
+        this as HeaderCustomUDP,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HeaderCustomUDP;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HeaderCustomUDP &&
-            (identical(other.mode, mode) || other.mode == mode) &&
-            const DeepCollectionEquality().equals(other.client, client) &&
-            const DeepCollectionEquality().equals(other.server, server));
+            (identical(other.mode, _this.mode) || other.mode == _this.mode) &&
+            const DeepCollectionEquality().equals(other.client, _this.client) &&
+            const DeepCollectionEquality().equals(other.server, _this.server));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as HeaderCustomUDP;
+    return Object.hash(
       runtimeType,
-      mode,
-      const DeepCollectionEquality().hash(client),
-      const DeepCollectionEquality().hash(server));
+      _this.mode,
+      const DeepCollectionEquality().hash(_this.client),
+      const DeepCollectionEquality().hash(_this.server),
+    );
+  }
 
   @override
   String toString() {
-    return 'HeaderCustomUDP(mode: $mode, client: $client, server: $server)';
+    final _this = this as HeaderCustomUDP;
+    return 'HeaderCustomUDP(mode: ${_this.mode}, client: ${_this.client}, server: ${_this.server})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HeaderCustomUDPCopyWith<$Res> {
   factory $HeaderCustomUDPCopyWith(
-          HeaderCustomUDP value, $Res Function(HeaderCustomUDP) _then) =
-      _$HeaderCustomUDPCopyWithImpl;
+    HeaderCustomUDP value,
+    $Res Function(HeaderCustomUDP) _then,
+  ) = _$HeaderCustomUDPCopyWithImpl;
   @useResult
-  $Res call(
-      {String? mode,
-      @JsonKey(name: 'client') List<UDPItem>? client,
-      @JsonKey(name: 'server') List<UDPItem>? server});
+  $Res call({
+    String? mode,
+    @JsonKey(name: 'client') List<UDPItem>? client,
+    @JsonKey(name: 'server') List<UDPItem>? server,
+  });
 }
 
 /// @nodoc
@@ -4670,20 +5127,22 @@ class _$HeaderCustomUDPCopyWithImpl<$Res>
     Object? client = freezed,
     Object? server = freezed,
   }) {
-    return _then(_self.copyWith(
-      mode: freezed == mode
-          ? _self.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      client: freezed == client
-          ? _self.client
-          : client // ignore: cast_nullable_to_non_nullable
-              as List<UDPItem>?,
-      server: freezed == server
-          ? _self.server
-          : server // ignore: cast_nullable_to_non_nullable
-              as List<UDPItem>?,
-    ));
+    return _then(
+      HeaderCustomUDP(
+        mode: freezed == mode
+            ? _self.mode
+            : mode // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        client: freezed == client
+            ? _self.client
+            : client // ignore: cast_nullable_to_non_nullable
+                  as List<UDPItem>?,
+        server: freezed == server
+            ? _self.server
+            : server // ignore: cast_nullable_to_non_nullable
+                  as List<UDPItem>?,
+      ),
+    );
   }
 }
 
@@ -4781,10 +5240,11 @@ extension HeaderCustomUDPPatterns on HeaderCustomUDP {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? mode,
-            @JsonKey(name: 'client') List<UDPItem>? client,
-            @JsonKey(name: 'server') List<UDPItem>? server)?
-        $default, {
+      String? mode,
+      @JsonKey(name: 'client') List<UDPItem>? client,
+      @JsonKey(name: 'server') List<UDPItem>? server,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -4812,10 +5272,11 @@ extension HeaderCustomUDPPatterns on HeaderCustomUDP {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? mode,
-            @JsonKey(name: 'client') List<UDPItem>? client,
-            @JsonKey(name: 'server') List<UDPItem>? server)
-        $default,
+      String? mode,
+      @JsonKey(name: 'client') List<UDPItem>? client,
+      @JsonKey(name: 'server') List<UDPItem>? server,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -4841,10 +5302,11 @@ extension HeaderCustomUDPPatterns on HeaderCustomUDP {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? mode,
-            @JsonKey(name: 'client') List<UDPItem>? client,
-            @JsonKey(name: 'server') List<UDPItem>? server)?
-        $default,
+      String? mode,
+      @JsonKey(name: 'client') List<UDPItem>? client,
+      @JsonKey(name: 'server') List<UDPItem>? server,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -4859,13 +5321,13 @@ extension HeaderCustomUDPPatterns on HeaderCustomUDP {
 /// @nodoc
 
 class _HeaderCustomUDP extends HeaderCustomUDP {
-  const _HeaderCustomUDP(
-      {this.mode,
-      @JsonKey(name: 'client') final List<UDPItem>? client,
-      @JsonKey(name: 'server') final List<UDPItem>? server})
-      : _client = client,
-        _server = server,
-        super._();
+  const _HeaderCustomUDP({
+    this.mode,
+    @JsonKey(name: 'client') List<UDPItem>? client,
+    @JsonKey(name: 'server') List<UDPItem>? server,
+  }) : _client = client,
+       _server = server,
+       super._();
 
   @override
   final String? mode;
@@ -4905,16 +5367,19 @@ class _HeaderCustomUDP extends HeaderCustomUDP {
         (other.runtimeType == runtimeType &&
             other is _HeaderCustomUDP &&
             (identical(other.mode, mode) || other.mode == mode) &&
-            const DeepCollectionEquality().equals(other._client, _client) &&
-            const DeepCollectionEquality().equals(other._server, _server));
+            const DeepCollectionEquality().equals(other.client, _client) &&
+            const DeepCollectionEquality().equals(other.server, _server));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       mode,
       const DeepCollectionEquality().hash(_client),
-      const DeepCollectionEquality().hash(_server));
+      const DeepCollectionEquality().hash(_server),
+    );
+  }
 
   @override
   String toString() {
@@ -4926,14 +5391,16 @@ class _HeaderCustomUDP extends HeaderCustomUDP {
 abstract mixin class _$HeaderCustomUDPCopyWith<$Res>
     implements $HeaderCustomUDPCopyWith<$Res> {
   factory _$HeaderCustomUDPCopyWith(
-          _HeaderCustomUDP value, $Res Function(_HeaderCustomUDP) _then) =
-      __$HeaderCustomUDPCopyWithImpl;
+    _HeaderCustomUDP value,
+    $Res Function(_HeaderCustomUDP) _then,
+  ) = __$HeaderCustomUDPCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? mode,
-      @JsonKey(name: 'client') List<UDPItem>? client,
-      @JsonKey(name: 'server') List<UDPItem>? server});
+  $Res call({
+    String? mode,
+    @JsonKey(name: 'client') List<UDPItem>? client,
+    @JsonKey(name: 'server') List<UDPItem>? server,
+  });
 }
 
 /// @nodoc
@@ -4953,20 +5420,22 @@ class __$HeaderCustomUDPCopyWithImpl<$Res>
     Object? client = freezed,
     Object? server = freezed,
   }) {
-    return _then(_HeaderCustomUDP(
-      mode: freezed == mode
-          ? _self.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      client: freezed == client
-          ? _self._client
-          : client // ignore: cast_nullable_to_non_nullable
-              as List<UDPItem>?,
-      server: freezed == server
-          ? _self._server
-          : server // ignore: cast_nullable_to_non_nullable
-              as List<UDPItem>?,
-    ));
+    return _then(
+      _HeaderCustomUDP(
+        mode: freezed == mode
+            ? _self.mode
+            : mode // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        client: freezed == client
+            ? _self._client
+            : client // ignore: cast_nullable_to_non_nullable
+                  as List<UDPItem>?,
+        server: freezed == server
+            ? _self._server
+            : server // ignore: cast_nullable_to_non_nullable
+                  as List<UDPItem>?,
+      ),
+    );
   }
 }
 
@@ -4983,41 +5452,58 @@ mixin _$HttpUpgradeConfig {
   @pragma('vm:prefer-inline')
   $HttpUpgradeConfigCopyWith<HttpUpgradeConfig> get copyWith =>
       _$HttpUpgradeConfigCopyWithImpl<HttpUpgradeConfig>(
-          this as HttpUpgradeConfig, _$identity);
+        this as HttpUpgradeConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HttpUpgradeConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HttpUpgradeConfig &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.path, path) || other.path == path) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            (identical(other.acceptProxyProtocol, acceptProxyProtocol) ||
-                other.acceptProxyProtocol == acceptProxyProtocol));
+            (identical(other.host, _this.host) || other.host == _this.host) &&
+            (identical(other.path, _this.path) || other.path == _this.path) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ) &&
+            (identical(other.acceptProxyProtocol, _this.acceptProxyProtocol) ||
+                other.acceptProxyProtocol == _this.acceptProxyProtocol));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, host, path,
-      const DeepCollectionEquality().hash(headers), acceptProxyProtocol);
+  int get hashCode {
+    final _this = this as HttpUpgradeConfig;
+    return Object.hash(
+      runtimeType,
+      _this.host,
+      _this.path,
+      const DeepCollectionEquality().hash(_this.headers),
+      _this.acceptProxyProtocol,
+    );
+  }
 
   @override
   String toString() {
-    return 'HttpUpgradeConfig(host: $host, path: $path, headers: $headers, acceptProxyProtocol: $acceptProxyProtocol)';
+    final _this = this as HttpUpgradeConfig;
+    return 'HttpUpgradeConfig(host: ${_this.host}, path: ${_this.path}, headers: ${_this.headers}, acceptProxyProtocol: ${_this.acceptProxyProtocol})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HttpUpgradeConfigCopyWith<$Res> {
   factory $HttpUpgradeConfigCopyWith(
-          HttpUpgradeConfig value, $Res Function(HttpUpgradeConfig) _then) =
-      _$HttpUpgradeConfigCopyWithImpl;
+    HttpUpgradeConfig value,
+    $Res Function(HttpUpgradeConfig) _then,
+  ) = _$HttpUpgradeConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? host,
-      String? path,
-      Map<String, String>? headers,
-      bool? acceptProxyProtocol});
+  $Res call({
+    String? host,
+    String? path,
+    Map<String, String>? headers,
+    bool? acceptProxyProtocol,
+  });
 }
 
 /// @nodoc
@@ -5038,24 +5524,26 @@ class _$HttpUpgradeConfigCopyWithImpl<$Res>
     Object? headers = freezed,
     Object? acceptProxyProtocol = freezed,
   }) {
-    return _then(_self.copyWith(
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      HttpUpgradeConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -5152,16 +5640,24 @@ extension HttpUpgradeConfigPatterns on HttpUpgradeConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? host, String? path, Map<String, String>? headers,
-            bool? acceptProxyProtocol)?
-        $default, {
+    TResult Function(
+      String? host,
+      String? path,
+      Map<String, String>? headers,
+      bool? acceptProxyProtocol,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _HttpUpgradeConfig() when $default != null:
         return $default(
-            _that.host, _that.path, _that.headers, _that.acceptProxyProtocol);
+          _that.host,
+          _that.path,
+          _that.headers,
+          _that.acceptProxyProtocol,
+        );
       case _:
         return orElse();
     }
@@ -5182,15 +5678,23 @@ extension HttpUpgradeConfigPatterns on HttpUpgradeConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? host, String? path, Map<String, String>? headers,
-            bool? acceptProxyProtocol)
-        $default,
+    TResult Function(
+      String? host,
+      String? path,
+      Map<String, String>? headers,
+      bool? acceptProxyProtocol,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HttpUpgradeConfig():
         return $default(
-            _that.host, _that.path, _that.headers, _that.acceptProxyProtocol);
+          _that.host,
+          _that.path,
+          _that.headers,
+          _that.acceptProxyProtocol,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -5210,15 +5714,23 @@ extension HttpUpgradeConfigPatterns on HttpUpgradeConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? host, String? path, Map<String, String>? headers,
-            bool? acceptProxyProtocol)?
-        $default,
+    TResult? Function(
+      String? host,
+      String? path,
+      Map<String, String>? headers,
+      bool? acceptProxyProtocol,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HttpUpgradeConfig() when $default != null:
         return $default(
-            _that.host, _that.path, _that.headers, _that.acceptProxyProtocol);
+          _that.host,
+          _that.path,
+          _that.headers,
+          _that.acceptProxyProtocol,
+        );
       case _:
         return null;
     }
@@ -5228,13 +5740,13 @@ extension HttpUpgradeConfigPatterns on HttpUpgradeConfig {
 /// @nodoc
 
 class _HttpUpgradeConfig extends HttpUpgradeConfig {
-  const _HttpUpgradeConfig(
-      {this.host,
-      this.path,
-      final Map<String, String>? headers,
-      this.acceptProxyProtocol})
-      : _headers = headers,
-        super._();
+  const _HttpUpgradeConfig({
+    this.host,
+    this.path,
+    Map<String, String>? headers,
+    this.acceptProxyProtocol,
+  }) : _headers = headers,
+       super._();
 
   @override
   final String? host;
@@ -5268,14 +5780,21 @@ class _HttpUpgradeConfig extends HttpUpgradeConfig {
             other is _HttpUpgradeConfig &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.path, path) || other.path == path) &&
-            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other.headers, _headers) &&
             (identical(other.acceptProxyProtocol, acceptProxyProtocol) ||
                 other.acceptProxyProtocol == acceptProxyProtocol));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, host, path,
-      const DeepCollectionEquality().hash(_headers), acceptProxyProtocol);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      host,
+      path,
+      const DeepCollectionEquality().hash(_headers),
+      acceptProxyProtocol,
+    );
+  }
 
   @override
   String toString() {
@@ -5287,15 +5806,17 @@ class _HttpUpgradeConfig extends HttpUpgradeConfig {
 abstract mixin class _$HttpUpgradeConfigCopyWith<$Res>
     implements $HttpUpgradeConfigCopyWith<$Res> {
   factory _$HttpUpgradeConfigCopyWith(
-          _HttpUpgradeConfig value, $Res Function(_HttpUpgradeConfig) _then) =
-      __$HttpUpgradeConfigCopyWithImpl;
+    _HttpUpgradeConfig value,
+    $Res Function(_HttpUpgradeConfig) _then,
+  ) = __$HttpUpgradeConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? host,
-      String? path,
-      Map<String, String>? headers,
-      bool? acceptProxyProtocol});
+  $Res call({
+    String? host,
+    String? path,
+    Map<String, String>? headers,
+    bool? acceptProxyProtocol,
+  });
 }
 
 /// @nodoc
@@ -5316,24 +5837,26 @@ class __$HttpUpgradeConfigCopyWithImpl<$Res>
     Object? headers = freezed,
     Object? acceptProxyProtocol = freezed,
   }) {
-    return _then(_HttpUpgradeConfig(
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _HttpUpgradeConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -5341,11 +5864,6 @@ class __$HttpUpgradeConfigCopyWithImpl<$Res>
 mixin _$HysteriaConfig {
   int get version;
   String? get auth;
-  String? get congestion;
-  Bandwidth? get up;
-  Bandwidth? get down;
-  @JsonKey(name: 'udphop')
-  UdpHop? get udpHop;
   int? get udpIdleTimeout;
   Masquerade? get masquerade;
 
@@ -5355,53 +5873,58 @@ mixin _$HysteriaConfig {
   @pragma('vm:prefer-inline')
   $HysteriaConfigCopyWith<HysteriaConfig> get copyWith =>
       _$HysteriaConfigCopyWithImpl<HysteriaConfig>(
-          this as HysteriaConfig, _$identity);
+        this as HysteriaConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as HysteriaConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HysteriaConfig &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.auth, auth) || other.auth == auth) &&
-            (identical(other.congestion, congestion) ||
-                other.congestion == congestion) &&
-            (identical(other.up, up) || other.up == up) &&
-            (identical(other.down, down) || other.down == down) &&
-            (identical(other.udpHop, udpHop) || other.udpHop == udpHop) &&
-            (identical(other.udpIdleTimeout, udpIdleTimeout) ||
-                other.udpIdleTimeout == udpIdleTimeout) &&
-            (identical(other.masquerade, masquerade) ||
-                other.masquerade == masquerade));
+            (identical(other.version, _this.version) ||
+                other.version == _this.version) &&
+            (identical(other.auth, _this.auth) || other.auth == _this.auth) &&
+            (identical(other.udpIdleTimeout, _this.udpIdleTimeout) ||
+                other.udpIdleTimeout == _this.udpIdleTimeout) &&
+            (identical(other.masquerade, _this.masquerade) ||
+                other.masquerade == _this.masquerade));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, auth, congestion, up,
-      down, udpHop, udpIdleTimeout, masquerade);
+  int get hashCode {
+    final _this = this as HysteriaConfig;
+    return Object.hash(
+      runtimeType,
+      _this.version,
+      _this.auth,
+      _this.udpIdleTimeout,
+      _this.masquerade,
+    );
+  }
 
   @override
   String toString() {
-    return 'HysteriaConfig(version: $version, auth: $auth, congestion: $congestion, up: $up, down: $down, udpHop: $udpHop, udpIdleTimeout: $udpIdleTimeout, masquerade: $masquerade)';
+    final _this = this as HysteriaConfig;
+    return 'HysteriaConfig(version: ${_this.version}, auth: ${_this.auth}, udpIdleTimeout: ${_this.udpIdleTimeout}, masquerade: ${_this.masquerade})';
   }
 }
 
 /// @nodoc
 abstract mixin class $HysteriaConfigCopyWith<$Res> {
   factory $HysteriaConfigCopyWith(
-          HysteriaConfig value, $Res Function(HysteriaConfig) _then) =
-      _$HysteriaConfigCopyWithImpl;
+    HysteriaConfig value,
+    $Res Function(HysteriaConfig) _then,
+  ) = _$HysteriaConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {int version,
-      String? auth,
-      String? congestion,
-      Bandwidth? up,
-      Bandwidth? down,
-      @JsonKey(name: 'udphop') UdpHop? udpHop,
-      int? udpIdleTimeout,
-      Masquerade? masquerade});
+  $Res call({
+    int version,
+    String? auth,
+    int? udpIdleTimeout,
+    Masquerade? masquerade,
+  });
 
-  $UdpHopCopyWith<$Res>? get udpHop;
   $MasqueradeCopyWith<$Res>? get masquerade;
 }
 
@@ -5420,61 +5943,29 @@ class _$HysteriaConfigCopyWithImpl<$Res>
   $Res call({
     Object? version = null,
     Object? auth = freezed,
-    Object? congestion = freezed,
-    Object? up = freezed,
-    Object? down = freezed,
-    Object? udpHop = freezed,
     Object? udpIdleTimeout = freezed,
     Object? masquerade = freezed,
   }) {
-    return _then(_self.copyWith(
-      version: null == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      auth: freezed == auth
-          ? _self.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as String?,
-      congestion: freezed == congestion
-          ? _self.congestion
-          : congestion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      up: freezed == up
-          ? _self.up
-          : up // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      down: freezed == down
-          ? _self.down
-          : down // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      udpHop: freezed == udpHop
-          ? _self.udpHop
-          : udpHop // ignore: cast_nullable_to_non_nullable
-              as UdpHop?,
-      udpIdleTimeout: freezed == udpIdleTimeout
-          ? _self.udpIdleTimeout
-          : udpIdleTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      masquerade: freezed == masquerade
-          ? _self.masquerade
-          : masquerade // ignore: cast_nullable_to_non_nullable
-              as Masquerade?,
-    ));
-  }
-
-  /// Create a copy of HysteriaConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UdpHopCopyWith<$Res>? get udpHop {
-    if (_self.udpHop == null) {
-      return null;
-    }
-
-    return $UdpHopCopyWith<$Res>(_self.udpHop!, (value) {
-      return _then(_self.copyWith(udpHop: value));
-    });
+    return _then(
+      HysteriaConfig(
+        version: null == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as int,
+        auth: freezed == auth
+            ? _self.auth
+            : auth // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        udpIdleTimeout: freezed == udpIdleTimeout
+            ? _self.udpIdleTimeout
+            : udpIdleTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        masquerade: freezed == masquerade
+            ? _self.masquerade
+            : masquerade // ignore: cast_nullable_to_non_nullable
+                  as Masquerade?,
+      ),
+    );
   }
 
   /// Create a copy of HysteriaConfig
@@ -5586,22 +6077,23 @@ extension HysteriaConfigPatterns on HysteriaConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            int version,
-            String? auth,
-            String? congestion,
-            Bandwidth? up,
-            Bandwidth? down,
-            @JsonKey(name: 'udphop') UdpHop? udpHop,
-            int? udpIdleTimeout,
-            Masquerade? masquerade)?
-        $default, {
+      int version,
+      String? auth,
+      int? udpIdleTimeout,
+      Masquerade? masquerade,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _HysteriaConfig() when $default != null:
-        return $default(_that.version, _that.auth, _that.congestion, _that.up,
-            _that.down, _that.udpHop, _that.udpIdleTimeout, _that.masquerade);
+        return $default(
+          _that.version,
+          _that.auth,
+          _that.udpIdleTimeout,
+          _that.masquerade,
+        );
       case _:
         return orElse();
     }
@@ -5623,21 +6115,22 @@ extension HysteriaConfigPatterns on HysteriaConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            int version,
-            String? auth,
-            String? congestion,
-            Bandwidth? up,
-            Bandwidth? down,
-            @JsonKey(name: 'udphop') UdpHop? udpHop,
-            int? udpIdleTimeout,
-            Masquerade? masquerade)
-        $default,
+      int version,
+      String? auth,
+      int? udpIdleTimeout,
+      Masquerade? masquerade,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HysteriaConfig():
-        return $default(_that.version, _that.auth, _that.congestion, _that.up,
-            _that.down, _that.udpHop, _that.udpIdleTimeout, _that.masquerade);
+        return $default(
+          _that.version,
+          _that.auth,
+          _that.udpIdleTimeout,
+          _that.masquerade,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -5658,21 +6151,22 @@ extension HysteriaConfigPatterns on HysteriaConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            int version,
-            String? auth,
-            String? congestion,
-            Bandwidth? up,
-            Bandwidth? down,
-            @JsonKey(name: 'udphop') UdpHop? udpHop,
-            int? udpIdleTimeout,
-            Masquerade? masquerade)?
-        $default,
+      int version,
+      String? auth,
+      int? udpIdleTimeout,
+      Masquerade? masquerade,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _HysteriaConfig() when $default != null:
-        return $default(_that.version, _that.auth, _that.congestion, _that.up,
-            _that.down, _that.udpHop, _that.udpIdleTimeout, _that.masquerade);
+        return $default(
+          _that.version,
+          _that.auth,
+          _that.udpIdleTimeout,
+          _that.masquerade,
+        );
       case _:
         return null;
     }
@@ -5682,30 +6176,17 @@ extension HysteriaConfigPatterns on HysteriaConfig {
 /// @nodoc
 
 class _HysteriaConfig extends HysteriaConfig {
-  const _HysteriaConfig(
-      {required this.version,
-      this.auth,
-      this.congestion,
-      this.up,
-      this.down,
-      @JsonKey(name: 'udphop') this.udpHop,
-      this.udpIdleTimeout,
-      this.masquerade})
-      : super._();
+  const _HysteriaConfig({
+    required this.version,
+    this.auth,
+    this.udpIdleTimeout,
+    this.masquerade,
+  }) : super._();
 
   @override
   final int version;
   @override
   final String? auth;
-  @override
-  final String? congestion;
-  @override
-  final Bandwidth? up;
-  @override
-  final Bandwidth? down;
-  @override
-  @JsonKey(name: 'udphop')
-  final UdpHop? udpHop;
   @override
   final int? udpIdleTimeout;
   @override
@@ -5726,11 +6207,6 @@ class _HysteriaConfig extends HysteriaConfig {
             other is _HysteriaConfig &&
             (identical(other.version, version) || other.version == version) &&
             (identical(other.auth, auth) || other.auth == auth) &&
-            (identical(other.congestion, congestion) ||
-                other.congestion == congestion) &&
-            (identical(other.up, up) || other.up == up) &&
-            (identical(other.down, down) || other.down == down) &&
-            (identical(other.udpHop, udpHop) || other.udpHop == udpHop) &&
             (identical(other.udpIdleTimeout, udpIdleTimeout) ||
                 other.udpIdleTimeout == udpIdleTimeout) &&
             (identical(other.masquerade, masquerade) ||
@@ -5738,12 +6214,13 @@ class _HysteriaConfig extends HysteriaConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, version, auth, congestion, up,
-      down, udpHop, udpIdleTimeout, masquerade);
+  int get hashCode {
+    return Object.hash(runtimeType, version, auth, udpIdleTimeout, masquerade);
+  }
 
   @override
   String toString() {
-    return 'HysteriaConfig(version: $version, auth: $auth, congestion: $congestion, up: $up, down: $down, udpHop: $udpHop, udpIdleTimeout: $udpIdleTimeout, masquerade: $masquerade)';
+    return 'HysteriaConfig(version: $version, auth: $auth, udpIdleTimeout: $udpIdleTimeout, masquerade: $masquerade)';
   }
 }
 
@@ -5751,22 +6228,18 @@ class _HysteriaConfig extends HysteriaConfig {
 abstract mixin class _$HysteriaConfigCopyWith<$Res>
     implements $HysteriaConfigCopyWith<$Res> {
   factory _$HysteriaConfigCopyWith(
-          _HysteriaConfig value, $Res Function(_HysteriaConfig) _then) =
-      __$HysteriaConfigCopyWithImpl;
+    _HysteriaConfig value,
+    $Res Function(_HysteriaConfig) _then,
+  ) = __$HysteriaConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {int version,
-      String? auth,
-      String? congestion,
-      Bandwidth? up,
-      Bandwidth? down,
-      @JsonKey(name: 'udphop') UdpHop? udpHop,
-      int? udpIdleTimeout,
-      Masquerade? masquerade});
+  $Res call({
+    int version,
+    String? auth,
+    int? udpIdleTimeout,
+    Masquerade? masquerade,
+  });
 
-  @override
-  $UdpHopCopyWith<$Res>? get udpHop;
   @override
   $MasqueradeCopyWith<$Res>? get masquerade;
 }
@@ -5786,61 +6259,29 @@ class __$HysteriaConfigCopyWithImpl<$Res>
   $Res call({
     Object? version = null,
     Object? auth = freezed,
-    Object? congestion = freezed,
-    Object? up = freezed,
-    Object? down = freezed,
-    Object? udpHop = freezed,
     Object? udpIdleTimeout = freezed,
     Object? masquerade = freezed,
   }) {
-    return _then(_HysteriaConfig(
-      version: null == version
-          ? _self.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      auth: freezed == auth
-          ? _self.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as String?,
-      congestion: freezed == congestion
-          ? _self.congestion
-          : congestion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      up: freezed == up
-          ? _self.up
-          : up // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      down: freezed == down
-          ? _self.down
-          : down // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      udpHop: freezed == udpHop
-          ? _self.udpHop
-          : udpHop // ignore: cast_nullable_to_non_nullable
-              as UdpHop?,
-      udpIdleTimeout: freezed == udpIdleTimeout
-          ? _self.udpIdleTimeout
-          : udpIdleTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      masquerade: freezed == masquerade
-          ? _self.masquerade
-          : masquerade // ignore: cast_nullable_to_non_nullable
-              as Masquerade?,
-    ));
-  }
-
-  /// Create a copy of HysteriaConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UdpHopCopyWith<$Res>? get udpHop {
-    if (_self.udpHop == null) {
-      return null;
-    }
-
-    return $UdpHopCopyWith<$Res>(_self.udpHop!, (value) {
-      return _then(_self.copyWith(udpHop: value));
-    });
+    return _then(
+      _HysteriaConfig(
+        version: null == version
+            ? _self.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as int,
+        auth: freezed == auth
+            ? _self.auth
+            : auth // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        udpIdleTimeout: freezed == udpIdleTimeout
+            ? _self.udpIdleTimeout
+            : udpIdleTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        masquerade: freezed == masquerade
+            ? _self.masquerade
+            : masquerade // ignore: cast_nullable_to_non_nullable
+                  as Masquerade?,
+      ),
+    );
   }
 
   /// Create a copy of HysteriaConfig
@@ -5880,36 +6321,44 @@ mixin _$KCPConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as KCPConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is KCPConfig &&
-            (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            (identical(other.tti, tti) || other.tti == tti) &&
-            (identical(other.upCap, upCap) || other.upCap == upCap) &&
-            (identical(other.downCap, downCap) || other.downCap == downCap) &&
-            (identical(other.cwndMultiplier, cwndMultiplier) ||
-                other.cwndMultiplier == cwndMultiplier) &&
-            (identical(other.maxSendingWindow, maxSendingWindow) ||
-                other.maxSendingWindow == maxSendingWindow) &&
-            const DeepCollectionEquality().equals(other.header, header) &&
-            (identical(other.seed, seed) || other.seed == seed));
+            (identical(other.mtu, _this.mtu) || other.mtu == _this.mtu) &&
+            (identical(other.tti, _this.tti) || other.tti == _this.tti) &&
+            (identical(other.upCap, _this.upCap) ||
+                other.upCap == _this.upCap) &&
+            (identical(other.downCap, _this.downCap) ||
+                other.downCap == _this.downCap) &&
+            (identical(other.cwndMultiplier, _this.cwndMultiplier) ||
+                other.cwndMultiplier == _this.cwndMultiplier) &&
+            (identical(other.maxSendingWindow, _this.maxSendingWindow) ||
+                other.maxSendingWindow == _this.maxSendingWindow) &&
+            const DeepCollectionEquality().equals(other.header, _this.header) &&
+            (identical(other.seed, _this.seed) || other.seed == _this.seed));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as KCPConfig;
+    return Object.hash(
       runtimeType,
-      mtu,
-      tti,
-      upCap,
-      downCap,
-      cwndMultiplier,
-      maxSendingWindow,
-      const DeepCollectionEquality().hash(header),
-      seed);
+      _this.mtu,
+      _this.tti,
+      _this.upCap,
+      _this.downCap,
+      _this.cwndMultiplier,
+      _this.maxSendingWindow,
+      const DeepCollectionEquality().hash(_this.header),
+      _this.seed,
+    );
+  }
 
   @override
   String toString() {
-    return 'KCPConfig(mtu: $mtu, tti: $tti, upCap: $upCap, downCap: $downCap, cwndMultiplier: $cwndMultiplier, maxSendingWindow: $maxSendingWindow, header: $header, seed: $seed)';
+    final _this = this as KCPConfig;
+    return 'KCPConfig(mtu: ${_this.mtu}, tti: ${_this.tti}, upCap: ${_this.upCap}, downCap: ${_this.downCap}, cwndMultiplier: ${_this.cwndMultiplier}, maxSendingWindow: ${_this.maxSendingWindow}, header: ${_this.header}, seed: ${_this.seed})';
   }
 }
 
@@ -5918,15 +6367,16 @@ abstract mixin class $KCPConfigCopyWith<$Res> {
   factory $KCPConfigCopyWith(KCPConfig value, $Res Function(KCPConfig) _then) =
       _$KCPConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {int? mtu,
-      int? tti,
-      @JsonKey(name: 'uplinkCapacity') int? upCap,
-      @JsonKey(name: 'downlinkCapacity') int? downCap,
-      int? cwndMultiplier,
-      int? maxSendingWindow,
-      Map<String, dynamic>? header,
-      String? seed});
+  $Res call({
+    int? mtu,
+    int? tti,
+    @JsonKey(name: 'uplinkCapacity') int? upCap,
+    @JsonKey(name: 'downlinkCapacity') int? downCap,
+    int? cwndMultiplier,
+    int? maxSendingWindow,
+    Map<String, dynamic>? header,
+    String? seed,
+  });
 }
 
 /// @nodoc
@@ -5950,40 +6400,42 @@ class _$KCPConfigCopyWithImpl<$Res> implements $KCPConfigCopyWith<$Res> {
     Object? header = freezed,
     Object? seed = freezed,
   }) {
-    return _then(_self.copyWith(
-      mtu: freezed == mtu
-          ? _self.mtu
-          : mtu // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tti: freezed == tti
-          ? _self.tti
-          : tti // ignore: cast_nullable_to_non_nullable
-              as int?,
-      upCap: freezed == upCap
-          ? _self.upCap
-          : upCap // ignore: cast_nullable_to_non_nullable
-              as int?,
-      downCap: freezed == downCap
-          ? _self.downCap
-          : downCap // ignore: cast_nullable_to_non_nullable
-              as int?,
-      cwndMultiplier: freezed == cwndMultiplier
-          ? _self.cwndMultiplier
-          : cwndMultiplier // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxSendingWindow: freezed == maxSendingWindow
-          ? _self.maxSendingWindow
-          : maxSendingWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      header: freezed == header
-          ? _self.header
-          : header // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      seed: freezed == seed
-          ? _self.seed
-          : seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      KCPConfig(
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tti: freezed == tti
+            ? _self.tti
+            : tti // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        upCap: freezed == upCap
+            ? _self.upCap
+            : upCap // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        downCap: freezed == downCap
+            ? _self.downCap
+            : downCap // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        cwndMultiplier: freezed == cwndMultiplier
+            ? _self.cwndMultiplier
+            : cwndMultiplier // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxSendingWindow: freezed == maxSendingWindow
+            ? _self.maxSendingWindow
+            : maxSendingWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        header: freezed == header
+            ? _self.header
+            : header // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        seed: freezed == seed
+            ? _self.seed
+            : seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -6081,29 +6533,31 @@ extension KCPConfigPatterns on KCPConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            int? mtu,
-            int? tti,
-            @JsonKey(name: 'uplinkCapacity') int? upCap,
-            @JsonKey(name: 'downlinkCapacity') int? downCap,
-            int? cwndMultiplier,
-            int? maxSendingWindow,
-            Map<String, dynamic>? header,
-            String? seed)?
-        $default, {
+      int? mtu,
+      int? tti,
+      @JsonKey(name: 'uplinkCapacity') int? upCap,
+      @JsonKey(name: 'downlinkCapacity') int? downCap,
+      int? cwndMultiplier,
+      int? maxSendingWindow,
+      Map<String, dynamic>? header,
+      String? seed,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _KCPConfig() when $default != null:
         return $default(
-            _that.mtu,
-            _that.tti,
-            _that.upCap,
-            _that.downCap,
-            _that.cwndMultiplier,
-            _that.maxSendingWindow,
-            _that.header,
-            _that.seed);
+          _that.mtu,
+          _that.tti,
+          _that.upCap,
+          _that.downCap,
+          _that.cwndMultiplier,
+          _that.maxSendingWindow,
+          _that.header,
+          _that.seed,
+        );
       case _:
         return orElse();
     }
@@ -6125,28 +6579,30 @@ extension KCPConfigPatterns on KCPConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            int? mtu,
-            int? tti,
-            @JsonKey(name: 'uplinkCapacity') int? upCap,
-            @JsonKey(name: 'downlinkCapacity') int? downCap,
-            int? cwndMultiplier,
-            int? maxSendingWindow,
-            Map<String, dynamic>? header,
-            String? seed)
-        $default,
+      int? mtu,
+      int? tti,
+      @JsonKey(name: 'uplinkCapacity') int? upCap,
+      @JsonKey(name: 'downlinkCapacity') int? downCap,
+      int? cwndMultiplier,
+      int? maxSendingWindow,
+      Map<String, dynamic>? header,
+      String? seed,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _KCPConfig():
         return $default(
-            _that.mtu,
-            _that.tti,
-            _that.upCap,
-            _that.downCap,
-            _that.cwndMultiplier,
-            _that.maxSendingWindow,
-            _that.header,
-            _that.seed);
+          _that.mtu,
+          _that.tti,
+          _that.upCap,
+          _that.downCap,
+          _that.cwndMultiplier,
+          _that.maxSendingWindow,
+          _that.header,
+          _that.seed,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -6167,28 +6623,30 @@ extension KCPConfigPatterns on KCPConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            int? mtu,
-            int? tti,
-            @JsonKey(name: 'uplinkCapacity') int? upCap,
-            @JsonKey(name: 'downlinkCapacity') int? downCap,
-            int? cwndMultiplier,
-            int? maxSendingWindow,
-            Map<String, dynamic>? header,
-            String? seed)?
-        $default,
+      int? mtu,
+      int? tti,
+      @JsonKey(name: 'uplinkCapacity') int? upCap,
+      @JsonKey(name: 'downlinkCapacity') int? downCap,
+      int? cwndMultiplier,
+      int? maxSendingWindow,
+      Map<String, dynamic>? header,
+      String? seed,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _KCPConfig() when $default != null:
         return $default(
-            _that.mtu,
-            _that.tti,
-            _that.upCap,
-            _that.downCap,
-            _that.cwndMultiplier,
-            _that.maxSendingWindow,
-            _that.header,
-            _that.seed);
+          _that.mtu,
+          _that.tti,
+          _that.upCap,
+          _that.downCap,
+          _that.cwndMultiplier,
+          _that.maxSendingWindow,
+          _that.header,
+          _that.seed,
+        );
       case _:
         return null;
     }
@@ -6198,17 +6656,17 @@ extension KCPConfigPatterns on KCPConfig {
 /// @nodoc
 
 class _KCPConfig extends KCPConfig {
-  const _KCPConfig(
-      {this.mtu,
-      this.tti,
-      @JsonKey(name: 'uplinkCapacity') this.upCap,
-      @JsonKey(name: 'downlinkCapacity') this.downCap,
-      this.cwndMultiplier,
-      this.maxSendingWindow,
-      final Map<String, dynamic>? header,
-      this.seed})
-      : _header = header,
-        super._();
+  const _KCPConfig({
+    this.mtu,
+    this.tti,
+    @JsonKey(name: 'uplinkCapacity') this.upCap,
+    @JsonKey(name: 'downlinkCapacity') this.downCap,
+    this.cwndMultiplier,
+    this.maxSendingWindow,
+    Map<String, dynamic>? header,
+    this.seed,
+  }) : _header = header,
+       super._();
 
   @override
   final int? mtu;
@@ -6258,12 +6716,13 @@ class _KCPConfig extends KCPConfig {
                 other.cwndMultiplier == cwndMultiplier) &&
             (identical(other.maxSendingWindow, maxSendingWindow) ||
                 other.maxSendingWindow == maxSendingWindow) &&
-            const DeepCollectionEquality().equals(other._header, _header) &&
+            const DeepCollectionEquality().equals(other.header, _header) &&
             (identical(other.seed, seed) || other.seed == seed));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       mtu,
       tti,
@@ -6272,7 +6731,9 @@ class _KCPConfig extends KCPConfig {
       cwndMultiplier,
       maxSendingWindow,
       const DeepCollectionEquality().hash(_header),
-      seed);
+      seed,
+    );
+  }
 
   @override
   String toString() {
@@ -6284,19 +6745,21 @@ class _KCPConfig extends KCPConfig {
 abstract mixin class _$KCPConfigCopyWith<$Res>
     implements $KCPConfigCopyWith<$Res> {
   factory _$KCPConfigCopyWith(
-          _KCPConfig value, $Res Function(_KCPConfig) _then) =
-      __$KCPConfigCopyWithImpl;
+    _KCPConfig value,
+    $Res Function(_KCPConfig) _then,
+  ) = __$KCPConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {int? mtu,
-      int? tti,
-      @JsonKey(name: 'uplinkCapacity') int? upCap,
-      @JsonKey(name: 'downlinkCapacity') int? downCap,
-      int? cwndMultiplier,
-      int? maxSendingWindow,
-      Map<String, dynamic>? header,
-      String? seed});
+  $Res call({
+    int? mtu,
+    int? tti,
+    @JsonKey(name: 'uplinkCapacity') int? upCap,
+    @JsonKey(name: 'downlinkCapacity') int? downCap,
+    int? cwndMultiplier,
+    int? maxSendingWindow,
+    Map<String, dynamic>? header,
+    String? seed,
+  });
 }
 
 /// @nodoc
@@ -6320,40 +6783,42 @@ class __$KCPConfigCopyWithImpl<$Res> implements _$KCPConfigCopyWith<$Res> {
     Object? header = freezed,
     Object? seed = freezed,
   }) {
-    return _then(_KCPConfig(
-      mtu: freezed == mtu
-          ? _self.mtu
-          : mtu // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tti: freezed == tti
-          ? _self.tti
-          : tti // ignore: cast_nullable_to_non_nullable
-              as int?,
-      upCap: freezed == upCap
-          ? _self.upCap
-          : upCap // ignore: cast_nullable_to_non_nullable
-              as int?,
-      downCap: freezed == downCap
-          ? _self.downCap
-          : downCap // ignore: cast_nullable_to_non_nullable
-              as int?,
-      cwndMultiplier: freezed == cwndMultiplier
-          ? _self.cwndMultiplier
-          : cwndMultiplier // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxSendingWindow: freezed == maxSendingWindow
-          ? _self.maxSendingWindow
-          : maxSendingWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      header: freezed == header
-          ? _self._header
-          : header // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      seed: freezed == seed
-          ? _self.seed
-          : seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _KCPConfig(
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tti: freezed == tti
+            ? _self.tti
+            : tti // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        upCap: freezed == upCap
+            ? _self.upCap
+            : upCap // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        downCap: freezed == downCap
+            ? _self.downCap
+            : downCap // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        cwndMultiplier: freezed == cwndMultiplier
+            ? _self.cwndMultiplier
+            : cwndMultiplier // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxSendingWindow: freezed == maxSendingWindow
+            ? _self.maxSendingWindow
+            : maxSendingWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        header: freezed == header
+            ? _self._header
+            : header // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        seed: freezed == seed
+            ? _self.seed
+            : seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -6369,36 +6834,48 @@ mixin _$LimitFallback {
   @pragma('vm:prefer-inline')
   $LimitFallbackCopyWith<LimitFallback> get copyWith =>
       _$LimitFallbackCopyWithImpl<LimitFallback>(
-          this as LimitFallback, _$identity);
+        this as LimitFallback,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as LimitFallback;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LimitFallback &&
-            (identical(other.afterBytes, afterBytes) ||
-                other.afterBytes == afterBytes) &&
-            (identical(other.bytesPerSec, bytesPerSec) ||
-                other.bytesPerSec == bytesPerSec) &&
-            (identical(other.burstBytesPerSec, burstBytesPerSec) ||
-                other.burstBytesPerSec == burstBytesPerSec));
+            (identical(other.afterBytes, _this.afterBytes) ||
+                other.afterBytes == _this.afterBytes) &&
+            (identical(other.bytesPerSec, _this.bytesPerSec) ||
+                other.bytesPerSec == _this.bytesPerSec) &&
+            (identical(other.burstBytesPerSec, _this.burstBytesPerSec) ||
+                other.burstBytesPerSec == _this.burstBytesPerSec));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, afterBytes, bytesPerSec, burstBytesPerSec);
+  int get hashCode {
+    final _this = this as LimitFallback;
+    return Object.hash(
+      runtimeType,
+      _this.afterBytes,
+      _this.bytesPerSec,
+      _this.burstBytesPerSec,
+    );
+  }
 
   @override
   String toString() {
-    return 'LimitFallback(afterBytes: $afterBytes, bytesPerSec: $bytesPerSec, burstBytesPerSec: $burstBytesPerSec)';
+    final _this = this as LimitFallback;
+    return 'LimitFallback(afterBytes: ${_this.afterBytes}, bytesPerSec: ${_this.bytesPerSec}, burstBytesPerSec: ${_this.burstBytesPerSec})';
   }
 }
 
 /// @nodoc
 abstract mixin class $LimitFallbackCopyWith<$Res> {
   factory $LimitFallbackCopyWith(
-          LimitFallback value, $Res Function(LimitFallback) _then) =
-      _$LimitFallbackCopyWithImpl;
+    LimitFallback value,
+    $Res Function(LimitFallback) _then,
+  ) = _$LimitFallbackCopyWithImpl;
   @useResult
   $Res call({int? afterBytes, int? bytesPerSec, int? burstBytesPerSec});
 }
@@ -6420,20 +6897,22 @@ class _$LimitFallbackCopyWithImpl<$Res>
     Object? bytesPerSec = freezed,
     Object? burstBytesPerSec = freezed,
   }) {
-    return _then(_self.copyWith(
-      afterBytes: freezed == afterBytes
-          ? _self.afterBytes
-          : afterBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
-      bytesPerSec: freezed == bytesPerSec
-          ? _self.bytesPerSec
-          : bytesPerSec // ignore: cast_nullable_to_non_nullable
-              as int?,
-      burstBytesPerSec: freezed == burstBytesPerSec
-          ? _self.burstBytesPerSec
-          : burstBytesPerSec // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      LimitFallback(
+        afterBytes: freezed == afterBytes
+            ? _self.afterBytes
+            : afterBytes // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        bytesPerSec: freezed == bytesPerSec
+            ? _self.bytesPerSec
+            : bytesPerSec // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        burstBytesPerSec: freezed == burstBytesPerSec
+            ? _self.burstBytesPerSec
+            : burstBytesPerSec // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -6531,14 +7010,17 @@ extension LimitFallbackPatterns on LimitFallback {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(int? afterBytes, int? bytesPerSec, int? burstBytesPerSec)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _LimitFallback() when $default != null:
         return $default(
-            _that.afterBytes, _that.bytesPerSec, _that.burstBytesPerSec);
+          _that.afterBytes,
+          _that.bytesPerSec,
+          _that.burstBytesPerSec,
+        );
       case _:
         return orElse();
     }
@@ -6560,13 +7042,16 @@ extension LimitFallbackPatterns on LimitFallback {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(int? afterBytes, int? bytesPerSec, int? burstBytesPerSec)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _LimitFallback():
         return $default(
-            _that.afterBytes, _that.bytesPerSec, _that.burstBytesPerSec);
+          _that.afterBytes,
+          _that.bytesPerSec,
+          _that.burstBytesPerSec,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -6587,13 +7072,16 @@ extension LimitFallbackPatterns on LimitFallback {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(int? afterBytes, int? bytesPerSec, int? burstBytesPerSec)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _LimitFallback() when $default != null:
         return $default(
-            _that.afterBytes, _that.bytesPerSec, _that.burstBytesPerSec);
+          _that.afterBytes,
+          _that.bytesPerSec,
+          _that.burstBytesPerSec,
+        );
       case _:
         return null;
     }
@@ -6603,9 +7091,11 @@ extension LimitFallbackPatterns on LimitFallback {
 /// @nodoc
 
 class _LimitFallback extends LimitFallback {
-  const _LimitFallback(
-      {this.afterBytes, this.bytesPerSec, this.burstBytesPerSec})
-      : super._();
+  const _LimitFallback({
+    this.afterBytes,
+    this.bytesPerSec,
+    this.burstBytesPerSec,
+  }) : super._();
 
   @override
   final int? afterBytes;
@@ -6636,8 +7126,9 @@ class _LimitFallback extends LimitFallback {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, afterBytes, bytesPerSec, burstBytesPerSec);
+  int get hashCode {
+    return Object.hash(runtimeType, afterBytes, bytesPerSec, burstBytesPerSec);
+  }
 
   @override
   String toString() {
@@ -6649,8 +7140,9 @@ class _LimitFallback extends LimitFallback {
 abstract mixin class _$LimitFallbackCopyWith<$Res>
     implements $LimitFallbackCopyWith<$Res> {
   factory _$LimitFallbackCopyWith(
-          _LimitFallback value, $Res Function(_LimitFallback) _then) =
-      __$LimitFallbackCopyWithImpl;
+    _LimitFallback value,
+    $Res Function(_LimitFallback) _then,
+  ) = __$LimitFallbackCopyWithImpl;
   @override
   @useResult
   $Res call({int? afterBytes, int? bytesPerSec, int? burstBytesPerSec});
@@ -6673,20 +7165,22 @@ class __$LimitFallbackCopyWithImpl<$Res>
     Object? bytesPerSec = freezed,
     Object? burstBytesPerSec = freezed,
   }) {
-    return _then(_LimitFallback(
-      afterBytes: freezed == afterBytes
-          ? _self.afterBytes
-          : afterBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
-      bytesPerSec: freezed == bytesPerSec
-          ? _self.bytesPerSec
-          : bytesPerSec // ignore: cast_nullable_to_non_nullable
-              as int?,
-      burstBytesPerSec: freezed == burstBytesPerSec
-          ? _self.burstBytesPerSec
-          : burstBytesPerSec // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _LimitFallback(
+        afterBytes: freezed == afterBytes
+            ? _self.afterBytes
+            : afterBytes // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        bytesPerSec: freezed == bytesPerSec
+            ? _self.bytesPerSec
+            : bytesPerSec // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        burstBytesPerSec: freezed == burstBytesPerSec
+            ? _self.burstBytesPerSec
+            : burstBytesPerSec // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -6704,20 +7198,25 @@ mixin _$Mask {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Mask;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Mask &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.settings, settings) ||
-                other.settings == settings));
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.settings, _this.settings) ||
+                other.settings == _this.settings));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, settings);
+  int get hashCode {
+    final _this = this as Mask;
+    return Object.hash(runtimeType, _this.type, _this.settings);
+  }
 
   @override
   String toString() {
-    return 'Mask(type: $type, settings: $settings)';
+    final _this = this as Mask;
+    return 'Mask(type: ${_this.type}, settings: ${_this.settings})';
   }
 }
 
@@ -6740,20 +7239,19 @@ class _$MaskCopyWithImpl<$Res> implements $MaskCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? type = null,
-    Object? settings = freezed,
-  }) {
-    return _then(_self.copyWith(
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as FinalMaskSettings?,
-    ));
+  $Res call({Object? type = null, Object? settings = freezed}) {
+    return _then(
+      Mask(
+        type: null == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as FinalMaskSettings?,
+      ),
+    );
   }
 }
 
@@ -6799,9 +7297,7 @@ extension MaskPatterns on Mask {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Mask value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_Mask value) $default) {
     final _that = this;
     switch (_that) {
       case _Mask():
@@ -6943,7 +7439,9 @@ class _Mask extends Mask {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, settings);
+  int get hashCode {
+    return Object.hash(runtimeType, type, settings);
+  }
 
   @override
   String toString() {
@@ -6971,20 +7469,19 @@ class __$MaskCopyWithImpl<$Res> implements _$MaskCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? type = null,
-    Object? settings = freezed,
-  }) {
-    return _then(_Mask(
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      settings: freezed == settings
-          ? _self.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as FinalMaskSettings?,
-    ));
+  $Res call({Object? type = null, Object? settings = freezed}) {
+    return _then(
+      _Mask(
+        type: null == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as FinalMaskSettings?,
+      ),
+    );
   }
 }
 
@@ -6994,9 +7491,11 @@ mixin _$Masquerade {
   String? get dir;
   String? get url;
   bool? get rewriteHost;
+  bool? get xForwarded;
   bool? get insecure;
   String? get content;
   Map<String, String>? get headers;
+  @JsonKey(fromJson: nullableIntFromJson)
   int? get statusCode;
 
   /// Create a copy of Masquerade
@@ -7006,57 +7505,77 @@ mixin _$Masquerade {
   $MasqueradeCopyWith<Masquerade> get copyWith =>
       _$MasqueradeCopyWithImpl<Masquerade>(this as Masquerade, _$identity);
 
+  /// Serializes this Masquerade to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
+    final _this = this as Masquerade;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Masquerade &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.dir, dir) || other.dir == dir) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.rewriteHost, rewriteHost) ||
-                other.rewriteHost == rewriteHost) &&
-            (identical(other.insecure, insecure) ||
-                other.insecure == insecure) &&
-            (identical(other.content, content) || other.content == content) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.dir, _this.dir) || other.dir == _this.dir) &&
+            (identical(other.url, _this.url) || other.url == _this.url) &&
+            (identical(other.rewriteHost, _this.rewriteHost) ||
+                other.rewriteHost == _this.rewriteHost) &&
+            (identical(other.xForwarded, _this.xForwarded) ||
+                other.xForwarded == _this.xForwarded) &&
+            (identical(other.insecure, _this.insecure) ||
+                other.insecure == _this.insecure) &&
+            (identical(other.content, _this.content) ||
+                other.content == _this.content) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ) &&
+            (identical(other.statusCode, _this.statusCode) ||
+                other.statusCode == _this.statusCode));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as Masquerade;
+    return Object.hash(
+      runtimeType,
+      _this.type,
+      _this.dir,
+      _this.url,
+      _this.rewriteHost,
+      _this.xForwarded,
+      _this.insecure,
+      _this.content,
+      const DeepCollectionEquality().hash(_this.headers),
+      _this.statusCode,
+    );
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      type,
-      dir,
-      url,
-      rewriteHost,
-      insecure,
-      content,
-      const DeepCollectionEquality().hash(headers),
-      statusCode);
-
-  @override
   String toString() {
-    return 'Masquerade(type: $type, dir: $dir, url: $url, rewriteHost: $rewriteHost, insecure: $insecure, content: $content, headers: $headers, statusCode: $statusCode)';
+    final _this = this as Masquerade;
+    return 'Masquerade(type: ${_this.type}, dir: ${_this.dir}, url: ${_this.url}, rewriteHost: ${_this.rewriteHost}, xForwarded: ${_this.xForwarded}, insecure: ${_this.insecure}, content: ${_this.content}, headers: ${_this.headers}, statusCode: ${_this.statusCode})';
   }
 }
 
 /// @nodoc
 abstract mixin class $MasqueradeCopyWith<$Res> {
   factory $MasqueradeCopyWith(
-          Masquerade value, $Res Function(Masquerade) _then) =
-      _$MasqueradeCopyWithImpl;
+    Masquerade value,
+    $Res Function(Masquerade) _then,
+  ) = _$MasqueradeCopyWithImpl;
   @useResult
-  $Res call(
-      {String? type,
-      String? dir,
-      String? url,
-      bool? rewriteHost,
-      bool? insecure,
-      String? content,
-      Map<String, String>? headers,
-      int? statusCode});
+  $Res call({
+    String? type,
+    String? dir,
+    String? url,
+    bool? rewriteHost,
+    bool? xForwarded,
+    bool? insecure,
+    String? content,
+    Map<String, String>? headers,
+    @JsonKey(fromJson: nullableIntFromJson) int? statusCode,
+  });
 }
 
 /// @nodoc
@@ -7075,45 +7594,52 @@ class _$MasqueradeCopyWithImpl<$Res> implements $MasqueradeCopyWith<$Res> {
     Object? dir = freezed,
     Object? url = freezed,
     Object? rewriteHost = freezed,
+    Object? xForwarded = freezed,
     Object? insecure = freezed,
     Object? content = freezed,
     Object? headers = freezed,
     Object? statusCode = freezed,
   }) {
-    return _then(_self.copyWith(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dir: freezed == dir
-          ? _self.dir
-          : dir // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rewriteHost: freezed == rewriteHost
-          ? _self.rewriteHost
-          : rewriteHost // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      insecure: freezed == insecure
-          ? _self.insecure
-          : insecure // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      content: freezed == content
-          ? _self.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      statusCode: freezed == statusCode
-          ? _self.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      Masquerade(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        dir: freezed == dir
+            ? _self.dir
+            : dir // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        url: freezed == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        rewriteHost: freezed == rewriteHost
+            ? _self.rewriteHost
+            : rewriteHost // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        xForwarded: freezed == xForwarded
+            ? _self.xForwarded
+            : xForwarded // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        insecure: freezed == insecure
+            ? _self.insecure
+            : insecure // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        content: freezed == content
+            ? _self.content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        statusCode: freezed == statusCode
+            ? _self.statusCode
+            : statusCode // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -7211,22 +7737,33 @@ extension MasqueradePatterns on Masquerade {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? type,
-            String? dir,
-            String? url,
-            bool? rewriteHost,
-            bool? insecure,
-            String? content,
-            Map<String, String>? headers,
-            int? statusCode)?
-        $default, {
+      String? type,
+      String? dir,
+      String? url,
+      bool? rewriteHost,
+      bool? xForwarded,
+      bool? insecure,
+      String? content,
+      Map<String, String>? headers,
+      @JsonKey(fromJson: nullableIntFromJson) int? statusCode,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _Masquerade() when $default != null:
-        return $default(_that.type, _that.dir, _that.url, _that.rewriteHost,
-            _that.insecure, _that.content, _that.headers, _that.statusCode);
+        return $default(
+          _that.type,
+          _that.dir,
+          _that.url,
+          _that.rewriteHost,
+          _that.xForwarded,
+          _that.insecure,
+          _that.content,
+          _that.headers,
+          _that.statusCode,
+        );
       case _:
         return orElse();
     }
@@ -7248,21 +7785,32 @@ extension MasqueradePatterns on Masquerade {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? type,
-            String? dir,
-            String? url,
-            bool? rewriteHost,
-            bool? insecure,
-            String? content,
-            Map<String, String>? headers,
-            int? statusCode)
-        $default,
+      String? type,
+      String? dir,
+      String? url,
+      bool? rewriteHost,
+      bool? xForwarded,
+      bool? insecure,
+      String? content,
+      Map<String, String>? headers,
+      @JsonKey(fromJson: nullableIntFromJson) int? statusCode,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Masquerade():
-        return $default(_that.type, _that.dir, _that.url, _that.rewriteHost,
-            _that.insecure, _that.content, _that.headers, _that.statusCode);
+        return $default(
+          _that.type,
+          _that.dir,
+          _that.url,
+          _that.rewriteHost,
+          _that.xForwarded,
+          _that.insecure,
+          _that.content,
+          _that.headers,
+          _that.statusCode,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -7283,21 +7831,32 @@ extension MasqueradePatterns on Masquerade {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? type,
-            String? dir,
-            String? url,
-            bool? rewriteHost,
-            bool? insecure,
-            String? content,
-            Map<String, String>? headers,
-            int? statusCode)?
-        $default,
+      String? type,
+      String? dir,
+      String? url,
+      bool? rewriteHost,
+      bool? xForwarded,
+      bool? insecure,
+      String? content,
+      Map<String, String>? headers,
+      @JsonKey(fromJson: nullableIntFromJson) int? statusCode,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Masquerade() when $default != null:
-        return $default(_that.type, _that.dir, _that.url, _that.rewriteHost,
-            _that.insecure, _that.content, _that.headers, _that.statusCode);
+        return $default(
+          _that.type,
+          _that.dir,
+          _that.url,
+          _that.rewriteHost,
+          _that.xForwarded,
+          _that.insecure,
+          _that.content,
+          _that.headers,
+          _that.statusCode,
+        );
       case _:
         return null;
     }
@@ -7306,18 +7865,21 @@ extension MasqueradePatterns on Masquerade {
 
 /// @nodoc
 
-class _Masquerade extends Masquerade {
-  const _Masquerade(
-      {this.type,
-      this.dir,
-      this.url,
-      this.rewriteHost,
-      this.insecure,
-      this.content,
-      final Map<String, String>? headers,
-      this.statusCode})
-      : _headers = headers,
-        super._();
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _Masquerade implements Masquerade {
+  const _Masquerade({
+    this.type,
+    this.dir,
+    this.url,
+    this.rewriteHost,
+    this.xForwarded,
+    this.insecure,
+    this.content,
+    Map<String, String>? headers,
+    @JsonKey(fromJson: nullableIntFromJson) this.statusCode,
+  }) : _headers = headers;
+  factory _Masquerade.fromJson(Map<String, dynamic> json) =>
+      _$MasqueradeFromJson(json);
 
   @override
   final String? type;
@@ -7327,6 +7889,8 @@ class _Masquerade extends Masquerade {
   final String? url;
   @override
   final bool? rewriteHost;
+  @override
+  final bool? xForwarded;
   @override
   final bool? insecure;
   @override
@@ -7342,6 +7906,7 @@ class _Masquerade extends Masquerade {
   }
 
   @override
+  @JsonKey(fromJson: nullableIntFromJson)
   final int? statusCode;
 
   /// Create a copy of Masquerade
@@ -7353,6 +7918,11 @@ class _Masquerade extends Masquerade {
       __$MasqueradeCopyWithImpl<_Masquerade>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$MasqueradeToJson(this);
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -7362,29 +7932,36 @@ class _Masquerade extends Masquerade {
             (identical(other.url, url) || other.url == url) &&
             (identical(other.rewriteHost, rewriteHost) ||
                 other.rewriteHost == rewriteHost) &&
+            (identical(other.xForwarded, xForwarded) ||
+                other.xForwarded == xForwarded) &&
             (identical(other.insecure, insecure) ||
                 other.insecure == insecure) &&
             (identical(other.content, content) || other.content == content) &&
-            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other.headers, _headers) &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       type,
       dir,
       url,
       rewriteHost,
+      xForwarded,
       insecure,
       content,
       const DeepCollectionEquality().hash(_headers),
-      statusCode);
+      statusCode,
+    );
+  }
 
   @override
   String toString() {
-    return 'Masquerade(type: $type, dir: $dir, url: $url, rewriteHost: $rewriteHost, insecure: $insecure, content: $content, headers: $headers, statusCode: $statusCode)';
+    return 'Masquerade(type: $type, dir: $dir, url: $url, rewriteHost: $rewriteHost, xForwarded: $xForwarded, insecure: $insecure, content: $content, headers: $headers, statusCode: $statusCode)';
   }
 }
 
@@ -7392,19 +7969,22 @@ class _Masquerade extends Masquerade {
 abstract mixin class _$MasqueradeCopyWith<$Res>
     implements $MasqueradeCopyWith<$Res> {
   factory _$MasqueradeCopyWith(
-          _Masquerade value, $Res Function(_Masquerade) _then) =
-      __$MasqueradeCopyWithImpl;
+    _Masquerade value,
+    $Res Function(_Masquerade) _then,
+  ) = __$MasqueradeCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? type,
-      String? dir,
-      String? url,
-      bool? rewriteHost,
-      bool? insecure,
-      String? content,
-      Map<String, String>? headers,
-      int? statusCode});
+  $Res call({
+    String? type,
+    String? dir,
+    String? url,
+    bool? rewriteHost,
+    bool? xForwarded,
+    bool? insecure,
+    String? content,
+    Map<String, String>? headers,
+    @JsonKey(fromJson: nullableIntFromJson) int? statusCode,
+  });
 }
 
 /// @nodoc
@@ -7423,45 +8003,52 @@ class __$MasqueradeCopyWithImpl<$Res> implements _$MasqueradeCopyWith<$Res> {
     Object? dir = freezed,
     Object? url = freezed,
     Object? rewriteHost = freezed,
+    Object? xForwarded = freezed,
     Object? insecure = freezed,
     Object? content = freezed,
     Object? headers = freezed,
     Object? statusCode = freezed,
   }) {
-    return _then(_Masquerade(
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dir: freezed == dir
-          ? _self.dir
-          : dir // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rewriteHost: freezed == rewriteHost
-          ? _self.rewriteHost
-          : rewriteHost // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      insecure: freezed == insecure
-          ? _self.insecure
-          : insecure // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      content: freezed == content
-          ? _self.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      statusCode: freezed == statusCode
-          ? _self.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _Masquerade(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        dir: freezed == dir
+            ? _self.dir
+            : dir // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        url: freezed == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        rewriteHost: freezed == rewriteHost
+            ? _self.rewriteHost
+            : rewriteHost // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        xForwarded: freezed == xForwarded
+            ? _self.xForwarded
+            : xForwarded // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        insecure: freezed == insecure
+            ? _self.insecure
+            : insecure // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        content: freezed == content
+            ? _self.content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        statusCode: freezed == statusCode
+            ? _self.statusCode
+            : statusCode // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -7479,27 +8066,35 @@ mixin _$MkcpLegacy {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as MkcpLegacy;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MkcpLegacy &&
-            (identical(other.header, header) || other.header == header) &&
-            (identical(other.value, value) || other.value == value));
+            (identical(other.header, _this.header) ||
+                other.header == _this.header) &&
+            (identical(other.value, _this.value) ||
+                other.value == _this.value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, header, value);
+  int get hashCode {
+    final _this = this as MkcpLegacy;
+    return Object.hash(runtimeType, _this.header, _this.value);
+  }
 
   @override
   String toString() {
-    return 'MkcpLegacy(header: $header, value: $value)';
+    final _this = this as MkcpLegacy;
+    return 'MkcpLegacy(header: ${_this.header}, value: ${_this.value})';
   }
 }
 
 /// @nodoc
 abstract mixin class $MkcpLegacyCopyWith<$Res> {
   factory $MkcpLegacyCopyWith(
-          MkcpLegacy value, $Res Function(MkcpLegacy) _then) =
-      _$MkcpLegacyCopyWithImpl;
+    MkcpLegacy value,
+    $Res Function(MkcpLegacy) _then,
+  ) = _$MkcpLegacyCopyWithImpl;
   @useResult
   $Res call({String? header, String? value});
 }
@@ -7515,20 +8110,19 @@ class _$MkcpLegacyCopyWithImpl<$Res> implements $MkcpLegacyCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? header = freezed,
-    Object? value = freezed,
-  }) {
-    return _then(_self.copyWith(
-      header: freezed == header
-          ? _self.header
-          : header // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? header = freezed, Object? value = freezed}) {
+    return _then(
+      MkcpLegacy(
+        header: freezed == header
+            ? _self.header
+            : header // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        value: freezed == value
+            ? _self.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -7717,7 +8311,9 @@ class _MkcpLegacy extends MkcpLegacy {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, header, value);
+  int get hashCode {
+    return Object.hash(runtimeType, header, value);
+  }
 
   @override
   String toString() {
@@ -7729,8 +8325,9 @@ class _MkcpLegacy extends MkcpLegacy {
 abstract mixin class _$MkcpLegacyCopyWith<$Res>
     implements $MkcpLegacyCopyWith<$Res> {
   factory _$MkcpLegacyCopyWith(
-          _MkcpLegacy value, $Res Function(_MkcpLegacy) _then) =
-      __$MkcpLegacyCopyWithImpl;
+    _MkcpLegacy value,
+    $Res Function(_MkcpLegacy) _then,
+  ) = __$MkcpLegacyCopyWithImpl;
   @override
   @useResult
   $Res call({String? header, String? value});
@@ -7747,20 +8344,19 @@ class __$MkcpLegacyCopyWithImpl<$Res> implements _$MkcpLegacyCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? header = freezed,
-    Object? value = freezed,
-  }) {
-    return _then(_MkcpLegacy(
-      header: freezed == header
-          ? _self.header
-          : header // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? header = freezed, Object? value = freezed}) {
+    return _then(
+      _MkcpLegacy(
+        header: freezed == header
+            ? _self.header
+            : header // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        value: freezed == value
+            ? _self.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -7781,24 +8377,36 @@ mixin _$NoiseItem {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as NoiseItem;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NoiseItem &&
-            (identical(other.rand, rand) || other.rand == rand) &&
-            (identical(other.randRange, randRange) ||
-                other.randRange == randRange) &&
-            (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.packet, packet) &&
-            (identical(other.delay, delay) || other.delay == delay));
+            (identical(other.rand, _this.rand) || other.rand == _this.rand) &&
+            (identical(other.randRange, _this.randRange) ||
+                other.randRange == _this.randRange) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            const DeepCollectionEquality().equals(other.packet, _this.packet) &&
+            (identical(other.delay, _this.delay) ||
+                other.delay == _this.delay));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rand, randRange, type,
-      const DeepCollectionEquality().hash(packet), delay);
+  int get hashCode {
+    final _this = this as NoiseItem;
+    return Object.hash(
+      runtimeType,
+      _this.rand,
+      _this.randRange,
+      _this.type,
+      const DeepCollectionEquality().hash(_this.packet),
+      _this.delay,
+    );
+  }
 
   @override
   String toString() {
-    return 'NoiseItem(rand: $rand, randRange: $randRange, type: $type, packet: $packet, delay: $delay)';
+    final _this = this as NoiseItem;
+    return 'NoiseItem(rand: ${_this.rand}, randRange: ${_this.randRange}, type: ${_this.type}, packet: ${_this.packet}, delay: ${_this.delay})';
   }
 }
 
@@ -7807,12 +8415,13 @@ abstract mixin class $NoiseItemCopyWith<$Res> {
   factory $NoiseItemCopyWith(NoiseItem value, $Res Function(NoiseItem) _then) =
       _$NoiseItemCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayInt32Range? rand,
-      XrayInt32Range? randRange,
-      String? type,
-      Object? packet,
-      XrayInt32Range? delay});
+  $Res call({
+    XrayInt32Range? rand,
+    XrayInt32Range? randRange,
+    String? type,
+    Object? packet,
+    XrayInt32Range? delay,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get rand;
   $XrayInt32RangeCopyWith<$Res>? get randRange;
@@ -7837,25 +8446,27 @@ class _$NoiseItemCopyWithImpl<$Res> implements $NoiseItemCopyWith<$Res> {
     Object? packet = freezed,
     Object? delay = freezed,
   }) {
-    return _then(_self.copyWith(
-      rand: freezed == rand
-          ? _self.rand
-          : rand // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      randRange: freezed == randRange
-          ? _self.randRange
-          : randRange // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packet: freezed == packet ? _self.packet : packet,
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      NoiseItem(
+        rand: freezed == rand
+            ? _self.rand
+            : rand // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        randRange: freezed == randRange
+            ? _self.randRange
+            : randRange // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        packet: freezed == packet ? _self.packet : packet,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of NoiseItem
@@ -7994,16 +8605,26 @@ extension NoiseItemPatterns on NoiseItem {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(XrayInt32Range? rand, XrayInt32Range? randRange,
-            String? type, Object? packet, XrayInt32Range? delay)?
-        $default, {
+    TResult Function(
+      XrayInt32Range? rand,
+      XrayInt32Range? randRange,
+      String? type,
+      Object? packet,
+      XrayInt32Range? delay,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _NoiseItem() when $default != null:
         return $default(
-            _that.rand, _that.randRange, _that.type, _that.packet, _that.delay);
+          _that.rand,
+          _that.randRange,
+          _that.type,
+          _that.packet,
+          _that.delay,
+        );
       case _:
         return orElse();
     }
@@ -8024,15 +8645,25 @@ extension NoiseItemPatterns on NoiseItem {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(XrayInt32Range? rand, XrayInt32Range? randRange,
-            String? type, Object? packet, XrayInt32Range? delay)
-        $default,
+    TResult Function(
+      XrayInt32Range? rand,
+      XrayInt32Range? randRange,
+      String? type,
+      Object? packet,
+      XrayInt32Range? delay,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _NoiseItem():
         return $default(
-            _that.rand, _that.randRange, _that.type, _that.packet, _that.delay);
+          _that.rand,
+          _that.randRange,
+          _that.type,
+          _that.packet,
+          _that.delay,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -8052,15 +8683,25 @@ extension NoiseItemPatterns on NoiseItem {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(XrayInt32Range? rand, XrayInt32Range? randRange,
-            String? type, Object? packet, XrayInt32Range? delay)?
-        $default,
+    TResult? Function(
+      XrayInt32Range? rand,
+      XrayInt32Range? randRange,
+      String? type,
+      Object? packet,
+      XrayInt32Range? delay,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _NoiseItem() when $default != null:
         return $default(
-            _that.rand, _that.randRange, _that.type, _that.packet, _that.delay);
+          _that.rand,
+          _that.randRange,
+          _that.type,
+          _that.packet,
+          _that.delay,
+        );
       case _:
         return null;
     }
@@ -8070,9 +8711,13 @@ extension NoiseItemPatterns on NoiseItem {
 /// @nodoc
 
 class _NoiseItem extends NoiseItem {
-  const _NoiseItem(
-      {this.rand, this.randRange, this.type, this.packet, this.delay})
-      : super._();
+  const _NoiseItem({
+    this.rand,
+    this.randRange,
+    this.type,
+    this.packet,
+    this.delay,
+  }) : super._();
 
   @override
   final XrayInt32Range? rand;
@@ -8107,8 +8752,16 @@ class _NoiseItem extends NoiseItem {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rand, randRange, type,
-      const DeepCollectionEquality().hash(packet), delay);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      rand,
+      randRange,
+      type,
+      const DeepCollectionEquality().hash(packet),
+      delay,
+    );
+  }
 
   @override
   String toString() {
@@ -8120,16 +8773,18 @@ class _NoiseItem extends NoiseItem {
 abstract mixin class _$NoiseItemCopyWith<$Res>
     implements $NoiseItemCopyWith<$Res> {
   factory _$NoiseItemCopyWith(
-          _NoiseItem value, $Res Function(_NoiseItem) _then) =
-      __$NoiseItemCopyWithImpl;
+    _NoiseItem value,
+    $Res Function(_NoiseItem) _then,
+  ) = __$NoiseItemCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayInt32Range? rand,
-      XrayInt32Range? randRange,
-      String? type,
-      Object? packet,
-      XrayInt32Range? delay});
+  $Res call({
+    XrayInt32Range? rand,
+    XrayInt32Range? randRange,
+    String? type,
+    Object? packet,
+    XrayInt32Range? delay,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get rand;
@@ -8157,25 +8812,27 @@ class __$NoiseItemCopyWithImpl<$Res> implements _$NoiseItemCopyWith<$Res> {
     Object? packet = freezed,
     Object? delay = freezed,
   }) {
-    return _then(_NoiseItem(
-      rand: freezed == rand
-          ? _self.rand
-          : rand // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      randRange: freezed == randRange
-          ? _self.randRange
-          : randRange // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packet: freezed == packet ? _self.packet : packet,
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      _NoiseItem(
+        rand: freezed == rand
+            ? _self.rand
+            : rand // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        randRange: freezed == randRange
+            ? _self.randRange
+            : randRange // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        packet: freezed == packet ? _self.packet : packet,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of NoiseItem
@@ -8236,21 +8893,32 @@ mixin _$NoiseMask {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as NoiseMask;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NoiseMask &&
-            (identical(other.reset, reset) || other.reset == reset) &&
-            const DeepCollectionEquality()
-                .equals(other.noiseItems, noiseItems));
+            (identical(other.reset, _this.reset) ||
+                other.reset == _this.reset) &&
+            const DeepCollectionEquality().equals(
+              other.noiseItems,
+              _this.noiseItems,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, reset, const DeepCollectionEquality().hash(noiseItems));
+  int get hashCode {
+    final _this = this as NoiseMask;
+    return Object.hash(
+      runtimeType,
+      _this.reset,
+      const DeepCollectionEquality().hash(_this.noiseItems),
+    );
+  }
 
   @override
   String toString() {
-    return 'NoiseMask(reset: $reset, noiseItems: $noiseItems)';
+    final _this = this as NoiseMask;
+    return 'NoiseMask(reset: ${_this.reset}, noiseItems: ${_this.noiseItems})';
   }
 }
 
@@ -8259,9 +8927,10 @@ abstract mixin class $NoiseMaskCopyWith<$Res> {
   factory $NoiseMaskCopyWith(NoiseMask value, $Res Function(NoiseMask) _then) =
       _$NoiseMaskCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayInt32Range? reset,
-      @JsonKey(name: 'noise') List<NoiseItem>? noiseItems});
+  $Res call({
+    XrayInt32Range? reset,
+    @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get reset;
 }
@@ -8277,20 +8946,19 @@ class _$NoiseMaskCopyWithImpl<$Res> implements $NoiseMaskCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? reset = freezed,
-    Object? noiseItems = freezed,
-  }) {
-    return _then(_self.copyWith(
-      reset: freezed == reset
-          ? _self.reset
-          : reset // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      noiseItems: freezed == noiseItems
-          ? _self.noiseItems
-          : noiseItems // ignore: cast_nullable_to_non_nullable
-              as List<NoiseItem>?,
-    ));
+  $Res call({Object? reset = freezed, Object? noiseItems = freezed}) {
+    return _then(
+      NoiseMask(
+        reset: freezed == reset
+            ? _self.reset
+            : reset // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        noiseItems: freezed == noiseItems
+            ? _self.noiseItems
+            : noiseItems // ignore: cast_nullable_to_non_nullable
+                  as List<NoiseItem>?,
+      ),
+    );
   }
 
   /// Create a copy of NoiseMask
@@ -8401,9 +9069,11 @@ extension NoiseMaskPatterns on NoiseMask {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(XrayInt32Range? reset,
-            @JsonKey(name: 'noise') List<NoiseItem>? noiseItems)?
-        $default, {
+    TResult Function(
+      XrayInt32Range? reset,
+      @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -8430,9 +9100,11 @@ extension NoiseMaskPatterns on NoiseMask {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(XrayInt32Range? reset,
-            @JsonKey(name: 'noise') List<NoiseItem>? noiseItems)
-        $default,
+    TResult Function(
+      XrayInt32Range? reset,
+      @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8457,9 +9129,11 @@ extension NoiseMaskPatterns on NoiseMask {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(XrayInt32Range? reset,
-            @JsonKey(name: 'noise') List<NoiseItem>? noiseItems)?
-        $default,
+    TResult? Function(
+      XrayInt32Range? reset,
+      @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -8474,10 +9148,11 @@ extension NoiseMaskPatterns on NoiseMask {
 /// @nodoc
 
 class _NoiseMask extends NoiseMask {
-  const _NoiseMask(
-      {this.reset, @JsonKey(name: 'noise') final List<NoiseItem>? noiseItems})
-      : _noiseItems = noiseItems,
-        super._();
+  const _NoiseMask({
+    this.reset,
+    @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+  }) : _noiseItems = noiseItems,
+       super._();
 
   @override
   final XrayInt32Range? reset;
@@ -8506,13 +9181,20 @@ class _NoiseMask extends NoiseMask {
         (other.runtimeType == runtimeType &&
             other is _NoiseMask &&
             (identical(other.reset, reset) || other.reset == reset) &&
-            const DeepCollectionEquality()
-                .equals(other._noiseItems, _noiseItems));
+            const DeepCollectionEquality().equals(
+              other.noiseItems,
+              _noiseItems,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, reset, const DeepCollectionEquality().hash(_noiseItems));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      reset,
+      const DeepCollectionEquality().hash(_noiseItems),
+    );
+  }
 
   @override
   String toString() {
@@ -8524,13 +9206,15 @@ class _NoiseMask extends NoiseMask {
 abstract mixin class _$NoiseMaskCopyWith<$Res>
     implements $NoiseMaskCopyWith<$Res> {
   factory _$NoiseMaskCopyWith(
-          _NoiseMask value, $Res Function(_NoiseMask) _then) =
-      __$NoiseMaskCopyWithImpl;
+    _NoiseMask value,
+    $Res Function(_NoiseMask) _then,
+  ) = __$NoiseMaskCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayInt32Range? reset,
-      @JsonKey(name: 'noise') List<NoiseItem>? noiseItems});
+  $Res call({
+    XrayInt32Range? reset,
+    @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get reset;
@@ -8547,20 +9231,19 @@ class __$NoiseMaskCopyWithImpl<$Res> implements _$NoiseMaskCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? reset = freezed,
-    Object? noiseItems = freezed,
-  }) {
-    return _then(_NoiseMask(
-      reset: freezed == reset
-          ? _self.reset
-          : reset // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      noiseItems: freezed == noiseItems
-          ? _self._noiseItems
-          : noiseItems // ignore: cast_nullable_to_non_nullable
-              as List<NoiseItem>?,
-    ));
+  $Res call({Object? reset = freezed, Object? noiseItems = freezed}) {
+    return _then(
+      _NoiseMask(
+        reset: freezed == reset
+            ? _self.reset
+            : reset // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        noiseItems: freezed == noiseItems
+            ? _self._noiseItems
+            : noiseItems // ignore: cast_nullable_to_non_nullable
+                  as List<NoiseItem>?,
+      ),
+    );
   }
 
   /// Create a copy of NoiseMask
@@ -8579,13 +9262,396 @@ class __$NoiseMaskCopyWithImpl<$Res> implements _$NoiseMaskCopyWith<$Res> {
 }
 
 /// @nodoc
+mixin _$PortMapping {
+  bool? get enabled;
+  @JsonKey(fromJson: nullableIntFromJson)
+  int? get timeout;
+  @JsonKey(fromJson: nullableIntFromJson)
+  int? get lifetime;
+
+  /// Create a copy of PortMapping
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PortMappingCopyWith<PortMapping> get copyWith =>
+      _$PortMappingCopyWithImpl<PortMapping>(this as PortMapping, _$identity);
+
+  /// Serializes this PortMapping to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as PortMapping;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PortMapping &&
+            (identical(other.enabled, _this.enabled) ||
+                other.enabled == _this.enabled) &&
+            (identical(other.timeout, _this.timeout) ||
+                other.timeout == _this.timeout) &&
+            (identical(other.lifetime, _this.lifetime) ||
+                other.lifetime == _this.lifetime));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as PortMapping;
+    return Object.hash(
+      runtimeType,
+      _this.enabled,
+      _this.timeout,
+      _this.lifetime,
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as PortMapping;
+    return 'PortMapping(enabled: ${_this.enabled}, timeout: ${_this.timeout}, lifetime: ${_this.lifetime})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $PortMappingCopyWith<$Res> {
+  factory $PortMappingCopyWith(
+    PortMapping value,
+    $Res Function(PortMapping) _then,
+  ) = _$PortMappingCopyWithImpl;
+  @useResult
+  $Res call({
+    bool? enabled,
+    @JsonKey(fromJson: nullableIntFromJson) int? timeout,
+    @JsonKey(fromJson: nullableIntFromJson) int? lifetime,
+  });
+}
+
+/// @nodoc
+class _$PortMappingCopyWithImpl<$Res> implements $PortMappingCopyWith<$Res> {
+  _$PortMappingCopyWithImpl(this._self, this._then);
+
+  final PortMapping _self;
+  final $Res Function(PortMapping) _then;
+
+  /// Create a copy of PortMapping
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? enabled = freezed,
+    Object? timeout = freezed,
+    Object? lifetime = freezed,
+  }) {
+    return _then(
+      PortMapping(
+        enabled: freezed == enabled
+            ? _self.enabled
+            : enabled // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        timeout: freezed == timeout
+            ? _self.timeout
+            : timeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        lifetime: freezed == lifetime
+            ? _self.lifetime
+            : lifetime // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [PortMapping].
+extension PortMappingPatterns on PortMapping {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PortMapping value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PortMapping() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PortMapping value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PortMapping():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PortMapping value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PortMapping() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      bool? enabled,
+      @JsonKey(fromJson: nullableIntFromJson) int? timeout,
+      @JsonKey(fromJson: nullableIntFromJson) int? lifetime,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PortMapping() when $default != null:
+        return $default(_that.enabled, _that.timeout, _that.lifetime);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      bool? enabled,
+      @JsonKey(fromJson: nullableIntFromJson) int? timeout,
+      @JsonKey(fromJson: nullableIntFromJson) int? lifetime,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PortMapping():
+        return $default(_that.enabled, _that.timeout, _that.lifetime);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      bool? enabled,
+      @JsonKey(fromJson: nullableIntFromJson) int? timeout,
+      @JsonKey(fromJson: nullableIntFromJson) int? lifetime,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PortMapping() when $default != null:
+        return $default(_that.enabled, _that.timeout, _that.lifetime);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false, createFieldMap: true)
+class _PortMapping implements PortMapping {
+  const _PortMapping({
+    this.enabled,
+    @JsonKey(fromJson: nullableIntFromJson) this.timeout,
+    @JsonKey(fromJson: nullableIntFromJson) this.lifetime,
+  });
+  factory _PortMapping.fromJson(Map<String, dynamic> json) =>
+      _$PortMappingFromJson(json);
+
+  @override
+  final bool? enabled;
+  @override
+  @JsonKey(fromJson: nullableIntFromJson)
+  final int? timeout;
+  @override
+  @JsonKey(fromJson: nullableIntFromJson)
+  final int? lifetime;
+
+  /// Create a copy of PortMapping
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PortMappingCopyWith<_PortMapping> get copyWith =>
+      __$PortMappingCopyWithImpl<_PortMapping>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PortMappingToJson(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PortMapping &&
+            (identical(other.enabled, enabled) || other.enabled == enabled) &&
+            (identical(other.timeout, timeout) || other.timeout == timeout) &&
+            (identical(other.lifetime, lifetime) ||
+                other.lifetime == lifetime));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, enabled, timeout, lifetime);
+  }
+
+  @override
+  String toString() {
+    return 'PortMapping(enabled: $enabled, timeout: $timeout, lifetime: $lifetime)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$PortMappingCopyWith<$Res>
+    implements $PortMappingCopyWith<$Res> {
+  factory _$PortMappingCopyWith(
+    _PortMapping value,
+    $Res Function(_PortMapping) _then,
+  ) = __$PortMappingCopyWithImpl;
+  @override
+  @useResult
+  $Res call({
+    bool? enabled,
+    @JsonKey(fromJson: nullableIntFromJson) int? timeout,
+    @JsonKey(fromJson: nullableIntFromJson) int? lifetime,
+  });
+}
+
+/// @nodoc
+class __$PortMappingCopyWithImpl<$Res> implements _$PortMappingCopyWith<$Res> {
+  __$PortMappingCopyWithImpl(this._self, this._then);
+
+  final _PortMapping _self;
+  final $Res Function(_PortMapping) _then;
+
+  /// Create a copy of PortMapping
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? enabled = freezed,
+    Object? timeout = freezed,
+    Object? lifetime = freezed,
+  }) {
+    return _then(
+      _PortMapping(
+        enabled: freezed == enabled
+            ? _self.enabled
+            : enabled // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        timeout: freezed == timeout
+            ? _self.timeout
+            : timeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        lifetime: freezed == lifetime
+            ? _self.lifetime
+            : lifetime // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
 mixin _$QuicParamsConfig {
   String? get congestion;
   bool? get debug;
   String? get bbrProfile;
   Bandwidth? get brutalUp;
   Bandwidth? get brutalDown;
-  UdpHop? get udpHop;
+  bool? get brutalDisableLossCompensation;
+  bool? get disableChromeParrot;
+  bool? get disableGSO;
+  bool? get disableStatelessReset;
   int? get initStreamReceiveWindow;
   int? get maxStreamReceiveWindow;
   int? get initConnectionReceiveWindow;
@@ -8601,94 +9667,136 @@ mixin _$QuicParamsConfig {
   @pragma('vm:prefer-inline')
   $QuicParamsConfigCopyWith<QuicParamsConfig> get copyWith =>
       _$QuicParamsConfigCopyWithImpl<QuicParamsConfig>(
-          this as QuicParamsConfig, _$identity);
+        this as QuicParamsConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as QuicParamsConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is QuicParamsConfig &&
-            (identical(other.congestion, congestion) ||
-                other.congestion == congestion) &&
-            (identical(other.debug, debug) || other.debug == debug) &&
-            (identical(other.bbrProfile, bbrProfile) ||
-                other.bbrProfile == bbrProfile) &&
-            (identical(other.brutalUp, brutalUp) ||
-                other.brutalUp == brutalUp) &&
-            (identical(other.brutalDown, brutalDown) ||
-                other.brutalDown == brutalDown) &&
-            (identical(other.udpHop, udpHop) || other.udpHop == udpHop) &&
+            (identical(other.congestion, _this.congestion) ||
+                other.congestion == _this.congestion) &&
+            (identical(other.debug, _this.debug) ||
+                other.debug == _this.debug) &&
+            (identical(other.bbrProfile, _this.bbrProfile) ||
+                other.bbrProfile == _this.bbrProfile) &&
+            (identical(other.brutalUp, _this.brutalUp) ||
+                other.brutalUp == _this.brutalUp) &&
+            (identical(other.brutalDown, _this.brutalDown) ||
+                other.brutalDown == _this.brutalDown) &&
             (identical(
-                    other.initStreamReceiveWindow, initStreamReceiveWindow) ||
-                other.initStreamReceiveWindow == initStreamReceiveWindow) &&
-            (identical(other.maxStreamReceiveWindow, maxStreamReceiveWindow) ||
-                other.maxStreamReceiveWindow == maxStreamReceiveWindow) &&
-            (identical(other.initConnectionReceiveWindow,
-                    initConnectionReceiveWindow) ||
+                  other.brutalDisableLossCompensation,
+                  _this.brutalDisableLossCompensation,
+                ) ||
+                other.brutalDisableLossCompensation ==
+                    _this.brutalDisableLossCompensation) &&
+            (identical(other.disableChromeParrot, _this.disableChromeParrot) ||
+                other.disableChromeParrot == _this.disableChromeParrot) &&
+            (identical(other.disableGSO, _this.disableGSO) ||
+                other.disableGSO == _this.disableGSO) &&
+            (identical(
+                  other.disableStatelessReset,
+                  _this.disableStatelessReset,
+                ) ||
+                other.disableStatelessReset == _this.disableStatelessReset) &&
+            (identical(
+                  other.initStreamReceiveWindow,
+                  _this.initStreamReceiveWindow,
+                ) ||
+                other.initStreamReceiveWindow ==
+                    _this.initStreamReceiveWindow) &&
+            (identical(
+                  other.maxStreamReceiveWindow,
+                  _this.maxStreamReceiveWindow,
+                ) ||
+                other.maxStreamReceiveWindow == _this.maxStreamReceiveWindow) &&
+            (identical(
+                  other.initConnectionReceiveWindow,
+                  _this.initConnectionReceiveWindow,
+                ) ||
                 other.initConnectionReceiveWindow ==
-                    initConnectionReceiveWindow) &&
-            (identical(other.maxConnectionReceiveWindow,
-                    maxConnectionReceiveWindow) ||
-                other.maxConnectionReceiveWindow ==
-                    maxConnectionReceiveWindow) &&
-            (identical(other.maxIdleTimeout, maxIdleTimeout) ||
-                other.maxIdleTimeout == maxIdleTimeout) &&
-            (identical(other.keepAlivePeriod, keepAlivePeriod) ||
-                other.keepAlivePeriod == keepAlivePeriod) &&
+                    _this.initConnectionReceiveWindow) &&
             (identical(
-                    other.disablePathMTUDiscovery, disablePathMTUDiscovery) ||
-                other.disablePathMTUDiscovery == disablePathMTUDiscovery) &&
-            (identical(other.maxIncomingStreams, maxIncomingStreams) ||
-                other.maxIncomingStreams == maxIncomingStreams));
+                  other.maxConnectionReceiveWindow,
+                  _this.maxConnectionReceiveWindow,
+                ) ||
+                other.maxConnectionReceiveWindow ==
+                    _this.maxConnectionReceiveWindow) &&
+            (identical(other.maxIdleTimeout, _this.maxIdleTimeout) ||
+                other.maxIdleTimeout == _this.maxIdleTimeout) &&
+            (identical(other.keepAlivePeriod, _this.keepAlivePeriod) ||
+                other.keepAlivePeriod == _this.keepAlivePeriod) &&
+            (identical(
+                  other.disablePathMTUDiscovery,
+                  _this.disablePathMTUDiscovery,
+                ) ||
+                other.disablePathMTUDiscovery ==
+                    _this.disablePathMTUDiscovery) &&
+            (identical(other.maxIncomingStreams, _this.maxIncomingStreams) ||
+                other.maxIncomingStreams == _this.maxIncomingStreams));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as QuicParamsConfig;
+    return Object.hash(
       runtimeType,
-      congestion,
-      debug,
-      bbrProfile,
-      brutalUp,
-      brutalDown,
-      udpHop,
-      initStreamReceiveWindow,
-      maxStreamReceiveWindow,
-      initConnectionReceiveWindow,
-      maxConnectionReceiveWindow,
-      maxIdleTimeout,
-      keepAlivePeriod,
-      disablePathMTUDiscovery,
-      maxIncomingStreams);
+      _this.congestion,
+      _this.debug,
+      _this.bbrProfile,
+      _this.brutalUp,
+      _this.brutalDown,
+      _this.brutalDisableLossCompensation,
+      _this.disableChromeParrot,
+      _this.disableGSO,
+      _this.disableStatelessReset,
+      _this.initStreamReceiveWindow,
+      _this.maxStreamReceiveWindow,
+      _this.initConnectionReceiveWindow,
+      _this.maxConnectionReceiveWindow,
+      _this.maxIdleTimeout,
+      _this.keepAlivePeriod,
+      _this.disablePathMTUDiscovery,
+      _this.maxIncomingStreams,
+    );
+  }
 
   @override
   String toString() {
-    return 'QuicParamsConfig(congestion: $congestion, debug: $debug, bbrProfile: $bbrProfile, brutalUp: $brutalUp, brutalDown: $brutalDown, udpHop: $udpHop, initStreamReceiveWindow: $initStreamReceiveWindow, maxStreamReceiveWindow: $maxStreamReceiveWindow, initConnectionReceiveWindow: $initConnectionReceiveWindow, maxConnectionReceiveWindow: $maxConnectionReceiveWindow, maxIdleTimeout: $maxIdleTimeout, keepAlivePeriod: $keepAlivePeriod, disablePathMTUDiscovery: $disablePathMTUDiscovery, maxIncomingStreams: $maxIncomingStreams)';
+    final _this = this as QuicParamsConfig;
+    return 'QuicParamsConfig(congestion: ${_this.congestion}, debug: ${_this.debug}, bbrProfile: ${_this.bbrProfile}, brutalUp: ${_this.brutalUp}, brutalDown: ${_this.brutalDown}, brutalDisableLossCompensation: ${_this.brutalDisableLossCompensation}, disableChromeParrot: ${_this.disableChromeParrot}, disableGSO: ${_this.disableGSO}, disableStatelessReset: ${_this.disableStatelessReset}, initStreamReceiveWindow: ${_this.initStreamReceiveWindow}, maxStreamReceiveWindow: ${_this.maxStreamReceiveWindow}, initConnectionReceiveWindow: ${_this.initConnectionReceiveWindow}, maxConnectionReceiveWindow: ${_this.maxConnectionReceiveWindow}, maxIdleTimeout: ${_this.maxIdleTimeout}, keepAlivePeriod: ${_this.keepAlivePeriod}, disablePathMTUDiscovery: ${_this.disablePathMTUDiscovery}, maxIncomingStreams: ${_this.maxIncomingStreams})';
   }
 }
 
 /// @nodoc
 abstract mixin class $QuicParamsConfigCopyWith<$Res> {
   factory $QuicParamsConfigCopyWith(
-          QuicParamsConfig value, $Res Function(QuicParamsConfig) _then) =
-      _$QuicParamsConfigCopyWithImpl;
+    QuicParamsConfig value,
+    $Res Function(QuicParamsConfig) _then,
+  ) = _$QuicParamsConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? congestion,
-      bool? debug,
-      String? bbrProfile,
-      Bandwidth? brutalUp,
-      Bandwidth? brutalDown,
-      UdpHop? udpHop,
-      int? initStreamReceiveWindow,
-      int? maxStreamReceiveWindow,
-      int? initConnectionReceiveWindow,
-      int? maxConnectionReceiveWindow,
-      int? maxIdleTimeout,
-      int? keepAlivePeriod,
-      bool? disablePathMTUDiscovery,
-      int? maxIncomingStreams});
-
-  $UdpHopCopyWith<$Res>? get udpHop;
+  $Res call({
+    String? congestion,
+    bool? debug,
+    String? bbrProfile,
+    Bandwidth? brutalUp,
+    Bandwidth? brutalDown,
+    bool? brutalDisableLossCompensation,
+    bool? disableChromeParrot,
+    bool? disableGSO,
+    bool? disableStatelessReset,
+    int? initStreamReceiveWindow,
+    int? maxStreamReceiveWindow,
+    int? initConnectionReceiveWindow,
+    int? maxConnectionReceiveWindow,
+    int? maxIdleTimeout,
+    int? keepAlivePeriod,
+    bool? disablePathMTUDiscovery,
+    int? maxIncomingStreams,
+  });
 }
 
 /// @nodoc
@@ -8709,7 +9817,10 @@ class _$QuicParamsConfigCopyWithImpl<$Res>
     Object? bbrProfile = freezed,
     Object? brutalUp = freezed,
     Object? brutalDown = freezed,
-    Object? udpHop = freezed,
+    Object? brutalDisableLossCompensation = freezed,
+    Object? disableChromeParrot = freezed,
+    Object? disableGSO = freezed,
+    Object? disableStatelessReset = freezed,
     Object? initStreamReceiveWindow = freezed,
     Object? maxStreamReceiveWindow = freezed,
     Object? initConnectionReceiveWindow = freezed,
@@ -8719,78 +9830,78 @@ class _$QuicParamsConfigCopyWithImpl<$Res>
     Object? disablePathMTUDiscovery = freezed,
     Object? maxIncomingStreams = freezed,
   }) {
-    return _then(_self.copyWith(
-      congestion: freezed == congestion
-          ? _self.congestion
-          : congestion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      debug: freezed == debug
-          ? _self.debug
-          : debug // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      bbrProfile: freezed == bbrProfile
-          ? _self.bbrProfile
-          : bbrProfile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brutalUp: freezed == brutalUp
-          ? _self.brutalUp
-          : brutalUp // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      brutalDown: freezed == brutalDown
-          ? _self.brutalDown
-          : brutalDown // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      udpHop: freezed == udpHop
-          ? _self.udpHop
-          : udpHop // ignore: cast_nullable_to_non_nullable
-              as UdpHop?,
-      initStreamReceiveWindow: freezed == initStreamReceiveWindow
-          ? _self.initStreamReceiveWindow
-          : initStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxStreamReceiveWindow: freezed == maxStreamReceiveWindow
-          ? _self.maxStreamReceiveWindow
-          : maxStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      initConnectionReceiveWindow: freezed == initConnectionReceiveWindow
-          ? _self.initConnectionReceiveWindow
-          : initConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxConnectionReceiveWindow: freezed == maxConnectionReceiveWindow
-          ? _self.maxConnectionReceiveWindow
-          : maxConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxIdleTimeout: freezed == maxIdleTimeout
-          ? _self.maxIdleTimeout
-          : maxIdleTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      keepAlivePeriod: freezed == keepAlivePeriod
-          ? _self.keepAlivePeriod
-          : keepAlivePeriod // ignore: cast_nullable_to_non_nullable
-              as int?,
-      disablePathMTUDiscovery: freezed == disablePathMTUDiscovery
-          ? _self.disablePathMTUDiscovery
-          : disablePathMTUDiscovery // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      maxIncomingStreams: freezed == maxIncomingStreams
-          ? _self.maxIncomingStreams
-          : maxIncomingStreams // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-
-  /// Create a copy of QuicParamsConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UdpHopCopyWith<$Res>? get udpHop {
-    if (_self.udpHop == null) {
-      return null;
-    }
-
-    return $UdpHopCopyWith<$Res>(_self.udpHop!, (value) {
-      return _then(_self.copyWith(udpHop: value));
-    });
+    return _then(
+      QuicParamsConfig(
+        congestion: freezed == congestion
+            ? _self.congestion
+            : congestion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        debug: freezed == debug
+            ? _self.debug
+            : debug // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        bbrProfile: freezed == bbrProfile
+            ? _self.bbrProfile
+            : bbrProfile // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        brutalUp: freezed == brutalUp
+            ? _self.brutalUp
+            : brutalUp // ignore: cast_nullable_to_non_nullable
+                  as Bandwidth?,
+        brutalDown: freezed == brutalDown
+            ? _self.brutalDown
+            : brutalDown // ignore: cast_nullable_to_non_nullable
+                  as Bandwidth?,
+        brutalDisableLossCompensation: freezed == brutalDisableLossCompensation
+            ? _self.brutalDisableLossCompensation
+            : brutalDisableLossCompensation // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableChromeParrot: freezed == disableChromeParrot
+            ? _self.disableChromeParrot
+            : disableChromeParrot // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableGSO: freezed == disableGSO
+            ? _self.disableGSO
+            : disableGSO // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableStatelessReset: freezed == disableStatelessReset
+            ? _self.disableStatelessReset
+            : disableStatelessReset // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        initStreamReceiveWindow: freezed == initStreamReceiveWindow
+            ? _self.initStreamReceiveWindow
+            : initStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxStreamReceiveWindow: freezed == maxStreamReceiveWindow
+            ? _self.maxStreamReceiveWindow
+            : maxStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        initConnectionReceiveWindow: freezed == initConnectionReceiveWindow
+            ? _self.initConnectionReceiveWindow
+            : initConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxConnectionReceiveWindow: freezed == maxConnectionReceiveWindow
+            ? _self.maxConnectionReceiveWindow
+            : maxConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxIdleTimeout: freezed == maxIdleTimeout
+            ? _self.maxIdleTimeout
+            : maxIdleTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        keepAlivePeriod: freezed == keepAlivePeriod
+            ? _self.keepAlivePeriod
+            : keepAlivePeriod // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        disablePathMTUDiscovery: freezed == disablePathMTUDiscovery
+            ? _self.disablePathMTUDiscovery
+            : disablePathMTUDiscovery // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        maxIncomingStreams: freezed == maxIncomingStreams
+            ? _self.maxIncomingStreams
+            : maxIncomingStreams // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -8888,41 +9999,49 @@ extension QuicParamsConfigPatterns on QuicParamsConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? congestion,
-            bool? debug,
-            String? bbrProfile,
-            Bandwidth? brutalUp,
-            Bandwidth? brutalDown,
-            UdpHop? udpHop,
-            int? initStreamReceiveWindow,
-            int? maxStreamReceiveWindow,
-            int? initConnectionReceiveWindow,
-            int? maxConnectionReceiveWindow,
-            int? maxIdleTimeout,
-            int? keepAlivePeriod,
-            bool? disablePathMTUDiscovery,
-            int? maxIncomingStreams)?
-        $default, {
+      String? congestion,
+      bool? debug,
+      String? bbrProfile,
+      Bandwidth? brutalUp,
+      Bandwidth? brutalDown,
+      bool? brutalDisableLossCompensation,
+      bool? disableChromeParrot,
+      bool? disableGSO,
+      bool? disableStatelessReset,
+      int? initStreamReceiveWindow,
+      int? maxStreamReceiveWindow,
+      int? initConnectionReceiveWindow,
+      int? maxConnectionReceiveWindow,
+      int? maxIdleTimeout,
+      int? keepAlivePeriod,
+      bool? disablePathMTUDiscovery,
+      int? maxIncomingStreams,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _QuicParamsConfig() when $default != null:
         return $default(
-            _that.congestion,
-            _that.debug,
-            _that.bbrProfile,
-            _that.brutalUp,
-            _that.brutalDown,
-            _that.udpHop,
-            _that.initStreamReceiveWindow,
-            _that.maxStreamReceiveWindow,
-            _that.initConnectionReceiveWindow,
-            _that.maxConnectionReceiveWindow,
-            _that.maxIdleTimeout,
-            _that.keepAlivePeriod,
-            _that.disablePathMTUDiscovery,
-            _that.maxIncomingStreams);
+          _that.congestion,
+          _that.debug,
+          _that.bbrProfile,
+          _that.brutalUp,
+          _that.brutalDown,
+          _that.brutalDisableLossCompensation,
+          _that.disableChromeParrot,
+          _that.disableGSO,
+          _that.disableStatelessReset,
+          _that.initStreamReceiveWindow,
+          _that.maxStreamReceiveWindow,
+          _that.initConnectionReceiveWindow,
+          _that.maxConnectionReceiveWindow,
+          _that.maxIdleTimeout,
+          _that.keepAlivePeriod,
+          _that.disablePathMTUDiscovery,
+          _that.maxIncomingStreams,
+        );
       case _:
         return orElse();
     }
@@ -8944,40 +10063,48 @@ extension QuicParamsConfigPatterns on QuicParamsConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? congestion,
-            bool? debug,
-            String? bbrProfile,
-            Bandwidth? brutalUp,
-            Bandwidth? brutalDown,
-            UdpHop? udpHop,
-            int? initStreamReceiveWindow,
-            int? maxStreamReceiveWindow,
-            int? initConnectionReceiveWindow,
-            int? maxConnectionReceiveWindow,
-            int? maxIdleTimeout,
-            int? keepAlivePeriod,
-            bool? disablePathMTUDiscovery,
-            int? maxIncomingStreams)
-        $default,
+      String? congestion,
+      bool? debug,
+      String? bbrProfile,
+      Bandwidth? brutalUp,
+      Bandwidth? brutalDown,
+      bool? brutalDisableLossCompensation,
+      bool? disableChromeParrot,
+      bool? disableGSO,
+      bool? disableStatelessReset,
+      int? initStreamReceiveWindow,
+      int? maxStreamReceiveWindow,
+      int? initConnectionReceiveWindow,
+      int? maxConnectionReceiveWindow,
+      int? maxIdleTimeout,
+      int? keepAlivePeriod,
+      bool? disablePathMTUDiscovery,
+      int? maxIncomingStreams,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _QuicParamsConfig():
         return $default(
-            _that.congestion,
-            _that.debug,
-            _that.bbrProfile,
-            _that.brutalUp,
-            _that.brutalDown,
-            _that.udpHop,
-            _that.initStreamReceiveWindow,
-            _that.maxStreamReceiveWindow,
-            _that.initConnectionReceiveWindow,
-            _that.maxConnectionReceiveWindow,
-            _that.maxIdleTimeout,
-            _that.keepAlivePeriod,
-            _that.disablePathMTUDiscovery,
-            _that.maxIncomingStreams);
+          _that.congestion,
+          _that.debug,
+          _that.bbrProfile,
+          _that.brutalUp,
+          _that.brutalDown,
+          _that.brutalDisableLossCompensation,
+          _that.disableChromeParrot,
+          _that.disableGSO,
+          _that.disableStatelessReset,
+          _that.initStreamReceiveWindow,
+          _that.maxStreamReceiveWindow,
+          _that.initConnectionReceiveWindow,
+          _that.maxConnectionReceiveWindow,
+          _that.maxIdleTimeout,
+          _that.keepAlivePeriod,
+          _that.disablePathMTUDiscovery,
+          _that.maxIncomingStreams,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -8998,40 +10125,48 @@ extension QuicParamsConfigPatterns on QuicParamsConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? congestion,
-            bool? debug,
-            String? bbrProfile,
-            Bandwidth? brutalUp,
-            Bandwidth? brutalDown,
-            UdpHop? udpHop,
-            int? initStreamReceiveWindow,
-            int? maxStreamReceiveWindow,
-            int? initConnectionReceiveWindow,
-            int? maxConnectionReceiveWindow,
-            int? maxIdleTimeout,
-            int? keepAlivePeriod,
-            bool? disablePathMTUDiscovery,
-            int? maxIncomingStreams)?
-        $default,
+      String? congestion,
+      bool? debug,
+      String? bbrProfile,
+      Bandwidth? brutalUp,
+      Bandwidth? brutalDown,
+      bool? brutalDisableLossCompensation,
+      bool? disableChromeParrot,
+      bool? disableGSO,
+      bool? disableStatelessReset,
+      int? initStreamReceiveWindow,
+      int? maxStreamReceiveWindow,
+      int? initConnectionReceiveWindow,
+      int? maxConnectionReceiveWindow,
+      int? maxIdleTimeout,
+      int? keepAlivePeriod,
+      bool? disablePathMTUDiscovery,
+      int? maxIncomingStreams,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _QuicParamsConfig() when $default != null:
         return $default(
-            _that.congestion,
-            _that.debug,
-            _that.bbrProfile,
-            _that.brutalUp,
-            _that.brutalDown,
-            _that.udpHop,
-            _that.initStreamReceiveWindow,
-            _that.maxStreamReceiveWindow,
-            _that.initConnectionReceiveWindow,
-            _that.maxConnectionReceiveWindow,
-            _that.maxIdleTimeout,
-            _that.keepAlivePeriod,
-            _that.disablePathMTUDiscovery,
-            _that.maxIncomingStreams);
+          _that.congestion,
+          _that.debug,
+          _that.bbrProfile,
+          _that.brutalUp,
+          _that.brutalDown,
+          _that.brutalDisableLossCompensation,
+          _that.disableChromeParrot,
+          _that.disableGSO,
+          _that.disableStatelessReset,
+          _that.initStreamReceiveWindow,
+          _that.maxStreamReceiveWindow,
+          _that.initConnectionReceiveWindow,
+          _that.maxConnectionReceiveWindow,
+          _that.maxIdleTimeout,
+          _that.keepAlivePeriod,
+          _that.disablePathMTUDiscovery,
+          _that.maxIncomingStreams,
+        );
       case _:
         return null;
     }
@@ -9041,22 +10176,25 @@ extension QuicParamsConfigPatterns on QuicParamsConfig {
 /// @nodoc
 
 class _QuicParamsConfig extends QuicParamsConfig {
-  const _QuicParamsConfig(
-      {this.congestion,
-      this.debug,
-      this.bbrProfile,
-      this.brutalUp,
-      this.brutalDown,
-      this.udpHop,
-      this.initStreamReceiveWindow,
-      this.maxStreamReceiveWindow,
-      this.initConnectionReceiveWindow,
-      this.maxConnectionReceiveWindow,
-      this.maxIdleTimeout,
-      this.keepAlivePeriod,
-      this.disablePathMTUDiscovery,
-      this.maxIncomingStreams})
-      : super._();
+  const _QuicParamsConfig({
+    this.congestion,
+    this.debug,
+    this.bbrProfile,
+    this.brutalUp,
+    this.brutalDown,
+    this.brutalDisableLossCompensation,
+    this.disableChromeParrot,
+    this.disableGSO,
+    this.disableStatelessReset,
+    this.initStreamReceiveWindow,
+    this.maxStreamReceiveWindow,
+    this.initConnectionReceiveWindow,
+    this.maxConnectionReceiveWindow,
+    this.maxIdleTimeout,
+    this.keepAlivePeriod,
+    this.disablePathMTUDiscovery,
+    this.maxIncomingStreams,
+  }) : super._();
 
   @override
   final String? congestion;
@@ -9069,7 +10207,13 @@ class _QuicParamsConfig extends QuicParamsConfig {
   @override
   final Bandwidth? brutalDown;
   @override
-  final UdpHop? udpHop;
+  final bool? brutalDisableLossCompensation;
+  @override
+  final bool? disableChromeParrot;
+  @override
+  final bool? disableGSO;
+  @override
+  final bool? disableStatelessReset;
   @override
   final int? initStreamReceiveWindow;
   @override
@@ -9109,18 +10253,35 @@ class _QuicParamsConfig extends QuicParamsConfig {
                 other.brutalUp == brutalUp) &&
             (identical(other.brutalDown, brutalDown) ||
                 other.brutalDown == brutalDown) &&
-            (identical(other.udpHop, udpHop) || other.udpHop == udpHop) &&
             (identical(
-                    other.initStreamReceiveWindow, initStreamReceiveWindow) ||
+                  other.brutalDisableLossCompensation,
+                  brutalDisableLossCompensation,
+                ) ||
+                other.brutalDisableLossCompensation ==
+                    brutalDisableLossCompensation) &&
+            (identical(other.disableChromeParrot, disableChromeParrot) ||
+                other.disableChromeParrot == disableChromeParrot) &&
+            (identical(other.disableGSO, disableGSO) ||
+                other.disableGSO == disableGSO) &&
+            (identical(other.disableStatelessReset, disableStatelessReset) ||
+                other.disableStatelessReset == disableStatelessReset) &&
+            (identical(
+                  other.initStreamReceiveWindow,
+                  initStreamReceiveWindow,
+                ) ||
                 other.initStreamReceiveWindow == initStreamReceiveWindow) &&
             (identical(other.maxStreamReceiveWindow, maxStreamReceiveWindow) ||
                 other.maxStreamReceiveWindow == maxStreamReceiveWindow) &&
-            (identical(other.initConnectionReceiveWindow,
-                    initConnectionReceiveWindow) ||
+            (identical(
+                  other.initConnectionReceiveWindow,
+                  initConnectionReceiveWindow,
+                ) ||
                 other.initConnectionReceiveWindow ==
                     initConnectionReceiveWindow) &&
-            (identical(other.maxConnectionReceiveWindow,
-                    maxConnectionReceiveWindow) ||
+            (identical(
+                  other.maxConnectionReceiveWindow,
+                  maxConnectionReceiveWindow,
+                ) ||
                 other.maxConnectionReceiveWindow ==
                     maxConnectionReceiveWindow) &&
             (identical(other.maxIdleTimeout, maxIdleTimeout) ||
@@ -9128,21 +10289,27 @@ class _QuicParamsConfig extends QuicParamsConfig {
             (identical(other.keepAlivePeriod, keepAlivePeriod) ||
                 other.keepAlivePeriod == keepAlivePeriod) &&
             (identical(
-                    other.disablePathMTUDiscovery, disablePathMTUDiscovery) ||
+                  other.disablePathMTUDiscovery,
+                  disablePathMTUDiscovery,
+                ) ||
                 other.disablePathMTUDiscovery == disablePathMTUDiscovery) &&
             (identical(other.maxIncomingStreams, maxIncomingStreams) ||
                 other.maxIncomingStreams == maxIncomingStreams));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       congestion,
       debug,
       bbrProfile,
       brutalUp,
       brutalDown,
-      udpHop,
+      brutalDisableLossCompensation,
+      disableChromeParrot,
+      disableGSO,
+      disableStatelessReset,
       initStreamReceiveWindow,
       maxStreamReceiveWindow,
       initConnectionReceiveWindow,
@@ -9150,11 +10317,13 @@ class _QuicParamsConfig extends QuicParamsConfig {
       maxIdleTimeout,
       keepAlivePeriod,
       disablePathMTUDiscovery,
-      maxIncomingStreams);
+      maxIncomingStreams,
+    );
+  }
 
   @override
   String toString() {
-    return 'QuicParamsConfig(congestion: $congestion, debug: $debug, bbrProfile: $bbrProfile, brutalUp: $brutalUp, brutalDown: $brutalDown, udpHop: $udpHop, initStreamReceiveWindow: $initStreamReceiveWindow, maxStreamReceiveWindow: $maxStreamReceiveWindow, initConnectionReceiveWindow: $initConnectionReceiveWindow, maxConnectionReceiveWindow: $maxConnectionReceiveWindow, maxIdleTimeout: $maxIdleTimeout, keepAlivePeriod: $keepAlivePeriod, disablePathMTUDiscovery: $disablePathMTUDiscovery, maxIncomingStreams: $maxIncomingStreams)';
+    return 'QuicParamsConfig(congestion: $congestion, debug: $debug, bbrProfile: $bbrProfile, brutalUp: $brutalUp, brutalDown: $brutalDown, brutalDisableLossCompensation: $brutalDisableLossCompensation, disableChromeParrot: $disableChromeParrot, disableGSO: $disableGSO, disableStatelessReset: $disableStatelessReset, initStreamReceiveWindow: $initStreamReceiveWindow, maxStreamReceiveWindow: $maxStreamReceiveWindow, initConnectionReceiveWindow: $initConnectionReceiveWindow, maxConnectionReceiveWindow: $maxConnectionReceiveWindow, maxIdleTimeout: $maxIdleTimeout, keepAlivePeriod: $keepAlivePeriod, disablePathMTUDiscovery: $disablePathMTUDiscovery, maxIncomingStreams: $maxIncomingStreams)';
   }
 }
 
@@ -9162,28 +10331,30 @@ class _QuicParamsConfig extends QuicParamsConfig {
 abstract mixin class _$QuicParamsConfigCopyWith<$Res>
     implements $QuicParamsConfigCopyWith<$Res> {
   factory _$QuicParamsConfigCopyWith(
-          _QuicParamsConfig value, $Res Function(_QuicParamsConfig) _then) =
-      __$QuicParamsConfigCopyWithImpl;
+    _QuicParamsConfig value,
+    $Res Function(_QuicParamsConfig) _then,
+  ) = __$QuicParamsConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? congestion,
-      bool? debug,
-      String? bbrProfile,
-      Bandwidth? brutalUp,
-      Bandwidth? brutalDown,
-      UdpHop? udpHop,
-      int? initStreamReceiveWindow,
-      int? maxStreamReceiveWindow,
-      int? initConnectionReceiveWindow,
-      int? maxConnectionReceiveWindow,
-      int? maxIdleTimeout,
-      int? keepAlivePeriod,
-      bool? disablePathMTUDiscovery,
-      int? maxIncomingStreams});
-
-  @override
-  $UdpHopCopyWith<$Res>? get udpHop;
+  $Res call({
+    String? congestion,
+    bool? debug,
+    String? bbrProfile,
+    Bandwidth? brutalUp,
+    Bandwidth? brutalDown,
+    bool? brutalDisableLossCompensation,
+    bool? disableChromeParrot,
+    bool? disableGSO,
+    bool? disableStatelessReset,
+    int? initStreamReceiveWindow,
+    int? maxStreamReceiveWindow,
+    int? initConnectionReceiveWindow,
+    int? maxConnectionReceiveWindow,
+    int? maxIdleTimeout,
+    int? keepAlivePeriod,
+    bool? disablePathMTUDiscovery,
+    int? maxIncomingStreams,
+  });
 }
 
 /// @nodoc
@@ -9204,7 +10375,10 @@ class __$QuicParamsConfigCopyWithImpl<$Res>
     Object? bbrProfile = freezed,
     Object? brutalUp = freezed,
     Object? brutalDown = freezed,
-    Object? udpHop = freezed,
+    Object? brutalDisableLossCompensation = freezed,
+    Object? disableChromeParrot = freezed,
+    Object? disableGSO = freezed,
+    Object? disableStatelessReset = freezed,
     Object? initStreamReceiveWindow = freezed,
     Object? maxStreamReceiveWindow = freezed,
     Object? initConnectionReceiveWindow = freezed,
@@ -9214,78 +10388,78 @@ class __$QuicParamsConfigCopyWithImpl<$Res>
     Object? disablePathMTUDiscovery = freezed,
     Object? maxIncomingStreams = freezed,
   }) {
-    return _then(_QuicParamsConfig(
-      congestion: freezed == congestion
-          ? _self.congestion
-          : congestion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      debug: freezed == debug
-          ? _self.debug
-          : debug // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      bbrProfile: freezed == bbrProfile
-          ? _self.bbrProfile
-          : bbrProfile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brutalUp: freezed == brutalUp
-          ? _self.brutalUp
-          : brutalUp // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      brutalDown: freezed == brutalDown
-          ? _self.brutalDown
-          : brutalDown // ignore: cast_nullable_to_non_nullable
-              as Bandwidth?,
-      udpHop: freezed == udpHop
-          ? _self.udpHop
-          : udpHop // ignore: cast_nullable_to_non_nullable
-              as UdpHop?,
-      initStreamReceiveWindow: freezed == initStreamReceiveWindow
-          ? _self.initStreamReceiveWindow
-          : initStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxStreamReceiveWindow: freezed == maxStreamReceiveWindow
-          ? _self.maxStreamReceiveWindow
-          : maxStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      initConnectionReceiveWindow: freezed == initConnectionReceiveWindow
-          ? _self.initConnectionReceiveWindow
-          : initConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxConnectionReceiveWindow: freezed == maxConnectionReceiveWindow
-          ? _self.maxConnectionReceiveWindow
-          : maxConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxIdleTimeout: freezed == maxIdleTimeout
-          ? _self.maxIdleTimeout
-          : maxIdleTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      keepAlivePeriod: freezed == keepAlivePeriod
-          ? _self.keepAlivePeriod
-          : keepAlivePeriod // ignore: cast_nullable_to_non_nullable
-              as int?,
-      disablePathMTUDiscovery: freezed == disablePathMTUDiscovery
-          ? _self.disablePathMTUDiscovery
-          : disablePathMTUDiscovery // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      maxIncomingStreams: freezed == maxIncomingStreams
-          ? _self.maxIncomingStreams
-          : maxIncomingStreams // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-
-  /// Create a copy of QuicParamsConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UdpHopCopyWith<$Res>? get udpHop {
-    if (_self.udpHop == null) {
-      return null;
-    }
-
-    return $UdpHopCopyWith<$Res>(_self.udpHop!, (value) {
-      return _then(_self.copyWith(udpHop: value));
-    });
+    return _then(
+      _QuicParamsConfig(
+        congestion: freezed == congestion
+            ? _self.congestion
+            : congestion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        debug: freezed == debug
+            ? _self.debug
+            : debug // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        bbrProfile: freezed == bbrProfile
+            ? _self.bbrProfile
+            : bbrProfile // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        brutalUp: freezed == brutalUp
+            ? _self.brutalUp
+            : brutalUp // ignore: cast_nullable_to_non_nullable
+                  as Bandwidth?,
+        brutalDown: freezed == brutalDown
+            ? _self.brutalDown
+            : brutalDown // ignore: cast_nullable_to_non_nullable
+                  as Bandwidth?,
+        brutalDisableLossCompensation: freezed == brutalDisableLossCompensation
+            ? _self.brutalDisableLossCompensation
+            : brutalDisableLossCompensation // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableChromeParrot: freezed == disableChromeParrot
+            ? _self.disableChromeParrot
+            : disableChromeParrot // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableGSO: freezed == disableGSO
+            ? _self.disableGSO
+            : disableGSO // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableStatelessReset: freezed == disableStatelessReset
+            ? _self.disableStatelessReset
+            : disableStatelessReset // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        initStreamReceiveWindow: freezed == initStreamReceiveWindow
+            ? _self.initStreamReceiveWindow
+            : initStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxStreamReceiveWindow: freezed == maxStreamReceiveWindow
+            ? _self.maxStreamReceiveWindow
+            : maxStreamReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        initConnectionReceiveWindow: freezed == initConnectionReceiveWindow
+            ? _self.initConnectionReceiveWindow
+            : initConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxConnectionReceiveWindow: freezed == maxConnectionReceiveWindow
+            ? _self.maxConnectionReceiveWindow
+            : maxConnectionReceiveWindow // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxIdleTimeout: freezed == maxIdleTimeout
+            ? _self.maxIdleTimeout
+            : maxIdleTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        keepAlivePeriod: freezed == keepAlivePeriod
+            ? _self.keepAlivePeriod
+            : keepAlivePeriod // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        disablePathMTUDiscovery: freezed == disablePathMTUDiscovery
+            ? _self.disablePathMTUDiscovery
+            : disablePathMTUDiscovery // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        maxIncomingStreams: freezed == maxIncomingStreams
+            ? _self.maxIncomingStreams
+            : maxIncomingStreams // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -9294,6 +10468,10 @@ mixin _$Realm {
   String? get url;
   List<String>? get stunServers;
   TLSConfig? get tlsConfig;
+
+  /// Core recognizes dual, v4 and v6 (case-insensitive).
+  String? get ipMode;
+  PortMapping? get portMapping;
 
   /// Create a copy of Realm
   /// with the given fields replaced by the non-null parameter values.
@@ -9304,23 +10482,40 @@ mixin _$Realm {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Realm;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Realm &&
-            (identical(other.url, url) || other.url == url) &&
-            const DeepCollectionEquality()
-                .equals(other.stunServers, stunServers) &&
-            (identical(other.tlsConfig, tlsConfig) ||
-                other.tlsConfig == tlsConfig));
+            (identical(other.url, _this.url) || other.url == _this.url) &&
+            const DeepCollectionEquality().equals(
+              other.stunServers,
+              _this.stunServers,
+            ) &&
+            (identical(other.tlsConfig, _this.tlsConfig) ||
+                other.tlsConfig == _this.tlsConfig) &&
+            (identical(other.ipMode, _this.ipMode) ||
+                other.ipMode == _this.ipMode) &&
+            (identical(other.portMapping, _this.portMapping) ||
+                other.portMapping == _this.portMapping));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url,
-      const DeepCollectionEquality().hash(stunServers), tlsConfig);
+  int get hashCode {
+    final _this = this as Realm;
+    return Object.hash(
+      runtimeType,
+      _this.url,
+      const DeepCollectionEquality().hash(_this.stunServers),
+      _this.tlsConfig,
+      _this.ipMode,
+      _this.portMapping,
+    );
+  }
 
   @override
   String toString() {
-    return 'Realm(url: $url, stunServers: $stunServers, tlsConfig: $tlsConfig)';
+    final _this = this as Realm;
+    return 'Realm(url: ${_this.url}, stunServers: ${_this.stunServers}, tlsConfig: ${_this.tlsConfig}, ipMode: ${_this.ipMode}, portMapping: ${_this.portMapping})';
   }
 }
 
@@ -9329,9 +10524,16 @@ abstract mixin class $RealmCopyWith<$Res> {
   factory $RealmCopyWith(Realm value, $Res Function(Realm) _then) =
       _$RealmCopyWithImpl;
   @useResult
-  $Res call({String? url, List<String>? stunServers, TLSConfig? tlsConfig});
+  $Res call({
+    String? url,
+    List<String>? stunServers,
+    TLSConfig? tlsConfig,
+    String? ipMode,
+    PortMapping? portMapping,
+  });
 
   $TLSConfigCopyWith<$Res>? get tlsConfig;
+  $PortMappingCopyWith<$Res>? get portMapping;
 }
 
 /// @nodoc
@@ -9349,21 +10551,33 @@ class _$RealmCopyWithImpl<$Res> implements $RealmCopyWith<$Res> {
     Object? url = freezed,
     Object? stunServers = freezed,
     Object? tlsConfig = freezed,
+    Object? ipMode = freezed,
+    Object? portMapping = freezed,
   }) {
-    return _then(_self.copyWith(
-      url: freezed == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      stunServers: freezed == stunServers
-          ? _self.stunServers
-          : stunServers // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      tlsConfig: freezed == tlsConfig
-          ? _self.tlsConfig
-          : tlsConfig // ignore: cast_nullable_to_non_nullable
-              as TLSConfig?,
-    ));
+    return _then(
+      Realm(
+        url: freezed == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        stunServers: freezed == stunServers
+            ? _self.stunServers
+            : stunServers // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        tlsConfig: freezed == tlsConfig
+            ? _self.tlsConfig
+            : tlsConfig // ignore: cast_nullable_to_non_nullable
+                  as TLSConfig?,
+        ipMode: freezed == ipMode
+            ? _self.ipMode
+            : ipMode // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        portMapping: freezed == portMapping
+            ? _self.portMapping
+            : portMapping // ignore: cast_nullable_to_non_nullable
+                  as PortMapping?,
+      ),
+    );
   }
 
   /// Create a copy of Realm
@@ -9377,6 +10591,20 @@ class _$RealmCopyWithImpl<$Res> implements $RealmCopyWith<$Res> {
 
     return $TLSConfigCopyWith<$Res>(_self.tlsConfig!, (value) {
       return _then(_self.copyWith(tlsConfig: value));
+    });
+  }
+
+  /// Create a copy of Realm
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PortMappingCopyWith<$Res>? get portMapping {
+    if (_self.portMapping == null) {
+      return null;
+    }
+
+    return $PortMappingCopyWith<$Res>(_self.portMapping!, (value) {
+      return _then(_self.copyWith(portMapping: value));
     });
   }
 }
@@ -9475,14 +10703,25 @@ extension RealmPatterns on Realm {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? url, List<String>? stunServers, TLSConfig? tlsConfig)?
-        $default, {
+      String? url,
+      List<String>? stunServers,
+      TLSConfig? tlsConfig,
+      String? ipMode,
+      PortMapping? portMapping,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _Realm() when $default != null:
-        return $default(_that.url, _that.stunServers, _that.tlsConfig);
+        return $default(
+          _that.url,
+          _that.stunServers,
+          _that.tlsConfig,
+          _that.ipMode,
+          _that.portMapping,
+        );
       case _:
         return orElse();
     }
@@ -9504,13 +10743,24 @@ extension RealmPatterns on Realm {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? url, List<String>? stunServers, TLSConfig? tlsConfig)
-        $default,
+      String? url,
+      List<String>? stunServers,
+      TLSConfig? tlsConfig,
+      String? ipMode,
+      PortMapping? portMapping,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Realm():
-        return $default(_that.url, _that.stunServers, _that.tlsConfig);
+        return $default(
+          _that.url,
+          _that.stunServers,
+          _that.tlsConfig,
+          _that.ipMode,
+          _that.portMapping,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -9531,13 +10781,24 @@ extension RealmPatterns on Realm {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? url, List<String>? stunServers, TLSConfig? tlsConfig)?
-        $default,
+      String? url,
+      List<String>? stunServers,
+      TLSConfig? tlsConfig,
+      String? ipMode,
+      PortMapping? portMapping,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Realm() when $default != null:
-        return $default(_that.url, _that.stunServers, _that.tlsConfig);
+        return $default(
+          _that.url,
+          _that.stunServers,
+          _that.tlsConfig,
+          _that.ipMode,
+          _that.portMapping,
+        );
       case _:
         return null;
     }
@@ -9547,9 +10808,14 @@ extension RealmPatterns on Realm {
 /// @nodoc
 
 class _Realm extends Realm {
-  const _Realm({this.url, final List<String>? stunServers, this.tlsConfig})
-      : _stunServers = stunServers,
-        super._();
+  const _Realm({
+    this.url,
+    List<String>? stunServers,
+    this.tlsConfig,
+    this.ipMode,
+    this.portMapping,
+  }) : _stunServers = stunServers,
+       super._();
 
   @override
   final String? url;
@@ -9566,6 +10832,12 @@ class _Realm extends Realm {
   @override
   final TLSConfig? tlsConfig;
 
+  /// Core recognizes dual, v4 and v6 (case-insensitive).
+  @override
+  final String? ipMode;
+  @override
+  final PortMapping? portMapping;
+
   /// Create a copy of Realm
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -9580,19 +10852,32 @@ class _Realm extends Realm {
         (other.runtimeType == runtimeType &&
             other is _Realm &&
             (identical(other.url, url) || other.url == url) &&
-            const DeepCollectionEquality()
-                .equals(other._stunServers, _stunServers) &&
+            const DeepCollectionEquality().equals(
+              other.stunServers,
+              _stunServers,
+            ) &&
             (identical(other.tlsConfig, tlsConfig) ||
-                other.tlsConfig == tlsConfig));
+                other.tlsConfig == tlsConfig) &&
+            (identical(other.ipMode, ipMode) || other.ipMode == ipMode) &&
+            (identical(other.portMapping, portMapping) ||
+                other.portMapping == portMapping));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url,
-      const DeepCollectionEquality().hash(_stunServers), tlsConfig);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      url,
+      const DeepCollectionEquality().hash(_stunServers),
+      tlsConfig,
+      ipMode,
+      portMapping,
+    );
+  }
 
   @override
   String toString() {
-    return 'Realm(url: $url, stunServers: $stunServers, tlsConfig: $tlsConfig)';
+    return 'Realm(url: $url, stunServers: $stunServers, tlsConfig: $tlsConfig, ipMode: $ipMode, portMapping: $portMapping)';
   }
 }
 
@@ -9602,10 +10887,18 @@ abstract mixin class _$RealmCopyWith<$Res> implements $RealmCopyWith<$Res> {
       __$RealmCopyWithImpl;
   @override
   @useResult
-  $Res call({String? url, List<String>? stunServers, TLSConfig? tlsConfig});
+  $Res call({
+    String? url,
+    List<String>? stunServers,
+    TLSConfig? tlsConfig,
+    String? ipMode,
+    PortMapping? portMapping,
+  });
 
   @override
   $TLSConfigCopyWith<$Res>? get tlsConfig;
+  @override
+  $PortMappingCopyWith<$Res>? get portMapping;
 }
 
 /// @nodoc
@@ -9623,21 +10916,33 @@ class __$RealmCopyWithImpl<$Res> implements _$RealmCopyWith<$Res> {
     Object? url = freezed,
     Object? stunServers = freezed,
     Object? tlsConfig = freezed,
+    Object? ipMode = freezed,
+    Object? portMapping = freezed,
   }) {
-    return _then(_Realm(
-      url: freezed == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      stunServers: freezed == stunServers
-          ? _self._stunServers
-          : stunServers // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      tlsConfig: freezed == tlsConfig
-          ? _self.tlsConfig
-          : tlsConfig // ignore: cast_nullable_to_non_nullable
-              as TLSConfig?,
-    ));
+    return _then(
+      _Realm(
+        url: freezed == url
+            ? _self.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        stunServers: freezed == stunServers
+            ? _self._stunServers
+            : stunServers // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        tlsConfig: freezed == tlsConfig
+            ? _self.tlsConfig
+            : tlsConfig // ignore: cast_nullable_to_non_nullable
+                  as TLSConfig?,
+        ipMode: freezed == ipMode
+            ? _self.ipMode
+            : ipMode // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        portMapping: freezed == portMapping
+            ? _self.portMapping
+            : portMapping // ignore: cast_nullable_to_non_nullable
+                  as PortMapping?,
+      ),
+    );
   }
 
   /// Create a copy of Realm
@@ -9651,6 +10956,20 @@ class __$RealmCopyWithImpl<$Res> implements _$RealmCopyWith<$Res> {
 
     return $TLSConfigCopyWith<$Res>(_self.tlsConfig!, (value) {
       return _then(_self.copyWith(tlsConfig: value));
+    });
+  }
+
+  /// Create a copy of Realm
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PortMappingCopyWith<$Res>? get portMapping {
+    if (_self.portMapping == null) {
+      return null;
+    }
+
+    return $PortMappingCopyWith<$Res>(_self.portMapping!, (value) {
+      return _then(_self.copyWith(portMapping: value));
     });
   }
 }
@@ -9686,113 +11005,132 @@ mixin _$REALITYConfig {
   @pragma('vm:prefer-inline')
   $REALITYConfigCopyWith<REALITYConfig> get copyWith =>
       _$REALITYConfigCopyWithImpl<REALITYConfig>(
-          this as REALITYConfig, _$identity);
+        this as REALITYConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as REALITYConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is REALITYConfig &&
-            (identical(other.masterKeyLog, masterKeyLog) ||
-                other.masterKeyLog == masterKeyLog) &&
-            (identical(other.show, show) || other.show == show) &&
-            const DeepCollectionEquality().equals(other.target, target) &&
-            const DeepCollectionEquality().equals(other.dest, dest) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.xver, xver) || other.xver == xver) &&
-            const DeepCollectionEquality()
-                .equals(other.serverNames, serverNames) &&
-            (identical(other.privateKey, privateKey) ||
-                other.privateKey == privateKey) &&
-            (identical(other.minClientVer, minClientVer) ||
-                other.minClientVer == minClientVer) &&
-            (identical(other.maxClientVer, maxClientVer) ||
-                other.maxClientVer == maxClientVer) &&
-            (identical(other.maxTimeDiff, maxTimeDiff) ||
-                other.maxTimeDiff == maxTimeDiff) &&
-            const DeepCollectionEquality().equals(other.shortIds, shortIds) &&
-            (identical(other.mldsa65Seed, mldsa65Seed) ||
-                other.mldsa65Seed == mldsa65Seed) &&
-            (identical(other.limitFallbackUpload, limitFallbackUpload) ||
-                other.limitFallbackUpload == limitFallbackUpload) &&
-            (identical(other.limitFallbackDownload, limitFallbackDownload) ||
-                other.limitFallbackDownload == limitFallbackDownload) &&
-            (identical(other.fingerprint, fingerprint) ||
-                other.fingerprint == fingerprint) &&
-            (identical(other.serverName, serverName) ||
-                other.serverName == serverName) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.publicKey, publicKey) ||
-                other.publicKey == publicKey) &&
-            (identical(other.shortId, shortId) || other.shortId == shortId) &&
-            (identical(other.mldsa65Verify, mldsa65Verify) ||
-                other.mldsa65Verify == mldsa65Verify) &&
-            (identical(other.spiderX, spiderX) || other.spiderX == spiderX));
+            (identical(other.masterKeyLog, _this.masterKeyLog) ||
+                other.masterKeyLog == _this.masterKeyLog) &&
+            (identical(other.show, _this.show) || other.show == _this.show) &&
+            const DeepCollectionEquality().equals(other.target, _this.target) &&
+            const DeepCollectionEquality().equals(other.dest, _this.dest) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.xver, _this.xver) || other.xver == _this.xver) &&
+            const DeepCollectionEquality().equals(
+              other.serverNames,
+              _this.serverNames,
+            ) &&
+            (identical(other.privateKey, _this.privateKey) ||
+                other.privateKey == _this.privateKey) &&
+            (identical(other.minClientVer, _this.minClientVer) ||
+                other.minClientVer == _this.minClientVer) &&
+            (identical(other.maxClientVer, _this.maxClientVer) ||
+                other.maxClientVer == _this.maxClientVer) &&
+            (identical(other.maxTimeDiff, _this.maxTimeDiff) ||
+                other.maxTimeDiff == _this.maxTimeDiff) &&
+            const DeepCollectionEquality().equals(
+              other.shortIds,
+              _this.shortIds,
+            ) &&
+            (identical(other.mldsa65Seed, _this.mldsa65Seed) ||
+                other.mldsa65Seed == _this.mldsa65Seed) &&
+            (identical(other.limitFallbackUpload, _this.limitFallbackUpload) ||
+                other.limitFallbackUpload == _this.limitFallbackUpload) &&
+            (identical(
+                  other.limitFallbackDownload,
+                  _this.limitFallbackDownload,
+                ) ||
+                other.limitFallbackDownload == _this.limitFallbackDownload) &&
+            (identical(other.fingerprint, _this.fingerprint) ||
+                other.fingerprint == _this.fingerprint) &&
+            (identical(other.serverName, _this.serverName) ||
+                other.serverName == _this.serverName) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.publicKey, _this.publicKey) ||
+                other.publicKey == _this.publicKey) &&
+            (identical(other.shortId, _this.shortId) ||
+                other.shortId == _this.shortId) &&
+            (identical(other.mldsa65Verify, _this.mldsa65Verify) ||
+                other.mldsa65Verify == _this.mldsa65Verify) &&
+            (identical(other.spiderX, _this.spiderX) ||
+                other.spiderX == _this.spiderX));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        masterKeyLog,
-        show,
-        const DeepCollectionEquality().hash(target),
-        const DeepCollectionEquality().hash(dest),
-        type,
-        xver,
-        const DeepCollectionEquality().hash(serverNames),
-        privateKey,
-        minClientVer,
-        maxClientVer,
-        maxTimeDiff,
-        const DeepCollectionEquality().hash(shortIds),
-        mldsa65Seed,
-        limitFallbackUpload,
-        limitFallbackDownload,
-        fingerprint,
-        serverName,
-        password,
-        publicKey,
-        shortId,
-        mldsa65Verify,
-        spiderX
-      ]);
+  int get hashCode {
+    final _this = this as REALITYConfig;
+    return Object.hashAll([
+      runtimeType,
+      _this.masterKeyLog,
+      _this.show,
+      const DeepCollectionEquality().hash(_this.target),
+      const DeepCollectionEquality().hash(_this.dest),
+      _this.type,
+      _this.xver,
+      const DeepCollectionEquality().hash(_this.serverNames),
+      _this.privateKey,
+      _this.minClientVer,
+      _this.maxClientVer,
+      _this.maxTimeDiff,
+      const DeepCollectionEquality().hash(_this.shortIds),
+      _this.mldsa65Seed,
+      _this.limitFallbackUpload,
+      _this.limitFallbackDownload,
+      _this.fingerprint,
+      _this.serverName,
+      _this.password,
+      _this.publicKey,
+      _this.shortId,
+      _this.mldsa65Verify,
+      _this.spiderX,
+    ]);
+  }
 
   @override
   String toString() {
-    return 'REALITYConfig(masterKeyLog: $masterKeyLog, show: $show, target: $target, dest: $dest, type: $type, xver: $xver, serverNames: $serverNames, privateKey: $privateKey, minClientVer: $minClientVer, maxClientVer: $maxClientVer, maxTimeDiff: $maxTimeDiff, shortIds: $shortIds, mldsa65Seed: $mldsa65Seed, limitFallbackUpload: $limitFallbackUpload, limitFallbackDownload: $limitFallbackDownload, fingerprint: $fingerprint, serverName: $serverName, password: $password, publicKey: $publicKey, shortId: $shortId, mldsa65Verify: $mldsa65Verify, spiderX: $spiderX)';
+    final _this = this as REALITYConfig;
+    return 'REALITYConfig(masterKeyLog: ${_this.masterKeyLog}, show: ${_this.show}, target: ${_this.target}, dest: ${_this.dest}, type: ${_this.type}, xver: ${_this.xver}, serverNames: ${_this.serverNames}, privateKey: ${_this.privateKey}, minClientVer: ${_this.minClientVer}, maxClientVer: ${_this.maxClientVer}, maxTimeDiff: ${_this.maxTimeDiff}, shortIds: ${_this.shortIds}, mldsa65Seed: ${_this.mldsa65Seed}, limitFallbackUpload: ${_this.limitFallbackUpload}, limitFallbackDownload: ${_this.limitFallbackDownload}, fingerprint: ${_this.fingerprint}, serverName: ${_this.serverName}, password: ${_this.password}, publicKey: ${_this.publicKey}, shortId: ${_this.shortId}, mldsa65Verify: ${_this.mldsa65Verify}, spiderX: ${_this.spiderX})';
   }
 }
 
 /// @nodoc
 abstract mixin class $REALITYConfigCopyWith<$Res> {
   factory $REALITYConfigCopyWith(
-          REALITYConfig value, $Res Function(REALITYConfig) _then) =
-      _$REALITYConfigCopyWithImpl;
+    REALITYConfig value,
+    $Res Function(REALITYConfig) _then,
+  ) = _$REALITYConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? masterKeyLog,
-      bool? show,
-      Object? target,
-      Object? dest,
-      String? type,
-      int? xver,
-      List<String>? serverNames,
-      String? privateKey,
-      String? minClientVer,
-      String? maxClientVer,
-      int? maxTimeDiff,
-      List<String>? shortIds,
-      String? mldsa65Seed,
-      LimitFallback? limitFallbackUpload,
-      LimitFallback? limitFallbackDownload,
-      String? fingerprint,
-      String? serverName,
-      String? password,
-      String? publicKey,
-      String? shortId,
-      String? mldsa65Verify,
-      String? spiderX});
+  $Res call({
+    String? masterKeyLog,
+    bool? show,
+    Object? target,
+    Object? dest,
+    String? type,
+    int? xver,
+    List<String>? serverNames,
+    String? privateKey,
+    String? minClientVer,
+    String? maxClientVer,
+    int? maxTimeDiff,
+    List<String>? shortIds,
+    String? mldsa65Seed,
+    LimitFallback? limitFallbackUpload,
+    LimitFallback? limitFallbackDownload,
+    String? fingerprint,
+    String? serverName,
+    String? password,
+    String? publicKey,
+    String? shortId,
+    String? mldsa65Verify,
+    String? spiderX,
+  });
 
   $LimitFallbackCopyWith<$Res>? get limitFallbackUpload;
   $LimitFallbackCopyWith<$Res>? get limitFallbackDownload;
@@ -9834,90 +11172,92 @@ class _$REALITYConfigCopyWithImpl<$Res>
     Object? mldsa65Verify = freezed,
     Object? spiderX = freezed,
   }) {
-    return _then(_self.copyWith(
-      masterKeyLog: freezed == masterKeyLog
-          ? _self.masterKeyLog
-          : masterKeyLog // ignore: cast_nullable_to_non_nullable
-              as String?,
-      show: freezed == show
-          ? _self.show
-          : show // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      target: freezed == target ? _self.target : target,
-      dest: freezed == dest ? _self.dest : dest,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      xver: freezed == xver
-          ? _self.xver
-          : xver // ignore: cast_nullable_to_non_nullable
-              as int?,
-      serverNames: freezed == serverNames
-          ? _self.serverNames
-          : serverNames // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      privateKey: freezed == privateKey
-          ? _self.privateKey
-          : privateKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      minClientVer: freezed == minClientVer
-          ? _self.minClientVer
-          : minClientVer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxClientVer: freezed == maxClientVer
-          ? _self.maxClientVer
-          : maxClientVer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxTimeDiff: freezed == maxTimeDiff
-          ? _self.maxTimeDiff
-          : maxTimeDiff // ignore: cast_nullable_to_non_nullable
-              as int?,
-      shortIds: freezed == shortIds
-          ? _self.shortIds
-          : shortIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mldsa65Seed: freezed == mldsa65Seed
-          ? _self.mldsa65Seed
-          : mldsa65Seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-      limitFallbackUpload: freezed == limitFallbackUpload
-          ? _self.limitFallbackUpload
-          : limitFallbackUpload // ignore: cast_nullable_to_non_nullable
-              as LimitFallback?,
-      limitFallbackDownload: freezed == limitFallbackDownload
-          ? _self.limitFallbackDownload
-          : limitFallbackDownload // ignore: cast_nullable_to_non_nullable
-              as LimitFallback?,
-      fingerprint: freezed == fingerprint
-          ? _self.fingerprint
-          : fingerprint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serverName: freezed == serverName
-          ? _self.serverName
-          : serverName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      publicKey: freezed == publicKey
-          ? _self.publicKey
-          : publicKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      shortId: freezed == shortId
-          ? _self.shortId
-          : shortId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mldsa65Verify: freezed == mldsa65Verify
-          ? _self.mldsa65Verify
-          : mldsa65Verify // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spiderX: freezed == spiderX
-          ? _self.spiderX
-          : spiderX // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      REALITYConfig(
+        masterKeyLog: freezed == masterKeyLog
+            ? _self.masterKeyLog
+            : masterKeyLog // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        show: freezed == show
+            ? _self.show
+            : show // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        target: freezed == target ? _self.target : target,
+        dest: freezed == dest ? _self.dest : dest,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        xver: freezed == xver
+            ? _self.xver
+            : xver // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        serverNames: freezed == serverNames
+            ? _self.serverNames
+            : serverNames // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        privateKey: freezed == privateKey
+            ? _self.privateKey
+            : privateKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        minClientVer: freezed == minClientVer
+            ? _self.minClientVer
+            : minClientVer // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxClientVer: freezed == maxClientVer
+            ? _self.maxClientVer
+            : maxClientVer // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxTimeDiff: freezed == maxTimeDiff
+            ? _self.maxTimeDiff
+            : maxTimeDiff // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        shortIds: freezed == shortIds
+            ? _self.shortIds
+            : shortIds // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        mldsa65Seed: freezed == mldsa65Seed
+            ? _self.mldsa65Seed
+            : mldsa65Seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        limitFallbackUpload: freezed == limitFallbackUpload
+            ? _self.limitFallbackUpload
+            : limitFallbackUpload // ignore: cast_nullable_to_non_nullable
+                  as LimitFallback?,
+        limitFallbackDownload: freezed == limitFallbackDownload
+            ? _self.limitFallbackDownload
+            : limitFallbackDownload // ignore: cast_nullable_to_non_nullable
+                  as LimitFallback?,
+        fingerprint: freezed == fingerprint
+            ? _self.fingerprint
+            : fingerprint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        serverName: freezed == serverName
+            ? _self.serverName
+            : serverName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        publicKey: freezed == publicKey
+            ? _self.publicKey
+            : publicKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        shortId: freezed == shortId
+            ? _self.shortId
+            : shortId // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        mldsa65Verify: freezed == mldsa65Verify
+            ? _self.mldsa65Verify
+            : mldsa65Verify // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        spiderX: freezed == spiderX
+            ? _self.spiderX
+            : spiderX // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
   /// Create a copy of REALITYConfig
@@ -10043,57 +11383,59 @@ extension REALITYConfigPatterns on REALITYConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? masterKeyLog,
-            bool? show,
-            Object? target,
-            Object? dest,
-            String? type,
-            int? xver,
-            List<String>? serverNames,
-            String? privateKey,
-            String? minClientVer,
-            String? maxClientVer,
-            int? maxTimeDiff,
-            List<String>? shortIds,
-            String? mldsa65Seed,
-            LimitFallback? limitFallbackUpload,
-            LimitFallback? limitFallbackDownload,
-            String? fingerprint,
-            String? serverName,
-            String? password,
-            String? publicKey,
-            String? shortId,
-            String? mldsa65Verify,
-            String? spiderX)?
-        $default, {
+      String? masterKeyLog,
+      bool? show,
+      Object? target,
+      Object? dest,
+      String? type,
+      int? xver,
+      List<String>? serverNames,
+      String? privateKey,
+      String? minClientVer,
+      String? maxClientVer,
+      int? maxTimeDiff,
+      List<String>? shortIds,
+      String? mldsa65Seed,
+      LimitFallback? limitFallbackUpload,
+      LimitFallback? limitFallbackDownload,
+      String? fingerprint,
+      String? serverName,
+      String? password,
+      String? publicKey,
+      String? shortId,
+      String? mldsa65Verify,
+      String? spiderX,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _REALITYConfig() when $default != null:
         return $default(
-            _that.masterKeyLog,
-            _that.show,
-            _that.target,
-            _that.dest,
-            _that.type,
-            _that.xver,
-            _that.serverNames,
-            _that.privateKey,
-            _that.minClientVer,
-            _that.maxClientVer,
-            _that.maxTimeDiff,
-            _that.shortIds,
-            _that.mldsa65Seed,
-            _that.limitFallbackUpload,
-            _that.limitFallbackDownload,
-            _that.fingerprint,
-            _that.serverName,
-            _that.password,
-            _that.publicKey,
-            _that.shortId,
-            _that.mldsa65Verify,
-            _that.spiderX);
+          _that.masterKeyLog,
+          _that.show,
+          _that.target,
+          _that.dest,
+          _that.type,
+          _that.xver,
+          _that.serverNames,
+          _that.privateKey,
+          _that.minClientVer,
+          _that.maxClientVer,
+          _that.maxTimeDiff,
+          _that.shortIds,
+          _that.mldsa65Seed,
+          _that.limitFallbackUpload,
+          _that.limitFallbackDownload,
+          _that.fingerprint,
+          _that.serverName,
+          _that.password,
+          _that.publicKey,
+          _that.shortId,
+          _that.mldsa65Verify,
+          _that.spiderX,
+        );
       case _:
         return orElse();
     }
@@ -10115,56 +11457,58 @@ extension REALITYConfigPatterns on REALITYConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? masterKeyLog,
-            bool? show,
-            Object? target,
-            Object? dest,
-            String? type,
-            int? xver,
-            List<String>? serverNames,
-            String? privateKey,
-            String? minClientVer,
-            String? maxClientVer,
-            int? maxTimeDiff,
-            List<String>? shortIds,
-            String? mldsa65Seed,
-            LimitFallback? limitFallbackUpload,
-            LimitFallback? limitFallbackDownload,
-            String? fingerprint,
-            String? serverName,
-            String? password,
-            String? publicKey,
-            String? shortId,
-            String? mldsa65Verify,
-            String? spiderX)
-        $default,
+      String? masterKeyLog,
+      bool? show,
+      Object? target,
+      Object? dest,
+      String? type,
+      int? xver,
+      List<String>? serverNames,
+      String? privateKey,
+      String? minClientVer,
+      String? maxClientVer,
+      int? maxTimeDiff,
+      List<String>? shortIds,
+      String? mldsa65Seed,
+      LimitFallback? limitFallbackUpload,
+      LimitFallback? limitFallbackDownload,
+      String? fingerprint,
+      String? serverName,
+      String? password,
+      String? publicKey,
+      String? shortId,
+      String? mldsa65Verify,
+      String? spiderX,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _REALITYConfig():
         return $default(
-            _that.masterKeyLog,
-            _that.show,
-            _that.target,
-            _that.dest,
-            _that.type,
-            _that.xver,
-            _that.serverNames,
-            _that.privateKey,
-            _that.minClientVer,
-            _that.maxClientVer,
-            _that.maxTimeDiff,
-            _that.shortIds,
-            _that.mldsa65Seed,
-            _that.limitFallbackUpload,
-            _that.limitFallbackDownload,
-            _that.fingerprint,
-            _that.serverName,
-            _that.password,
-            _that.publicKey,
-            _that.shortId,
-            _that.mldsa65Verify,
-            _that.spiderX);
+          _that.masterKeyLog,
+          _that.show,
+          _that.target,
+          _that.dest,
+          _that.type,
+          _that.xver,
+          _that.serverNames,
+          _that.privateKey,
+          _that.minClientVer,
+          _that.maxClientVer,
+          _that.maxTimeDiff,
+          _that.shortIds,
+          _that.mldsa65Seed,
+          _that.limitFallbackUpload,
+          _that.limitFallbackDownload,
+          _that.fingerprint,
+          _that.serverName,
+          _that.password,
+          _that.publicKey,
+          _that.shortId,
+          _that.mldsa65Verify,
+          _that.spiderX,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -10185,56 +11529,58 @@ extension REALITYConfigPatterns on REALITYConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? masterKeyLog,
-            bool? show,
-            Object? target,
-            Object? dest,
-            String? type,
-            int? xver,
-            List<String>? serverNames,
-            String? privateKey,
-            String? minClientVer,
-            String? maxClientVer,
-            int? maxTimeDiff,
-            List<String>? shortIds,
-            String? mldsa65Seed,
-            LimitFallback? limitFallbackUpload,
-            LimitFallback? limitFallbackDownload,
-            String? fingerprint,
-            String? serverName,
-            String? password,
-            String? publicKey,
-            String? shortId,
-            String? mldsa65Verify,
-            String? spiderX)?
-        $default,
+      String? masterKeyLog,
+      bool? show,
+      Object? target,
+      Object? dest,
+      String? type,
+      int? xver,
+      List<String>? serverNames,
+      String? privateKey,
+      String? minClientVer,
+      String? maxClientVer,
+      int? maxTimeDiff,
+      List<String>? shortIds,
+      String? mldsa65Seed,
+      LimitFallback? limitFallbackUpload,
+      LimitFallback? limitFallbackDownload,
+      String? fingerprint,
+      String? serverName,
+      String? password,
+      String? publicKey,
+      String? shortId,
+      String? mldsa65Verify,
+      String? spiderX,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _REALITYConfig() when $default != null:
         return $default(
-            _that.masterKeyLog,
-            _that.show,
-            _that.target,
-            _that.dest,
-            _that.type,
-            _that.xver,
-            _that.serverNames,
-            _that.privateKey,
-            _that.minClientVer,
-            _that.maxClientVer,
-            _that.maxTimeDiff,
-            _that.shortIds,
-            _that.mldsa65Seed,
-            _that.limitFallbackUpload,
-            _that.limitFallbackDownload,
-            _that.fingerprint,
-            _that.serverName,
-            _that.password,
-            _that.publicKey,
-            _that.shortId,
-            _that.mldsa65Verify,
-            _that.spiderX);
+          _that.masterKeyLog,
+          _that.show,
+          _that.target,
+          _that.dest,
+          _that.type,
+          _that.xver,
+          _that.serverNames,
+          _that.privateKey,
+          _that.minClientVer,
+          _that.maxClientVer,
+          _that.maxTimeDiff,
+          _that.shortIds,
+          _that.mldsa65Seed,
+          _that.limitFallbackUpload,
+          _that.limitFallbackDownload,
+          _that.fingerprint,
+          _that.serverName,
+          _that.password,
+          _that.publicKey,
+          _that.shortId,
+          _that.mldsa65Verify,
+          _that.spiderX,
+        );
       case _:
         return null;
     }
@@ -10244,32 +11590,32 @@ extension REALITYConfigPatterns on REALITYConfig {
 /// @nodoc
 
 class _REALITYConfig extends REALITYConfig {
-  const _REALITYConfig(
-      {this.masterKeyLog,
-      this.show,
-      this.target,
-      this.dest,
-      this.type,
-      this.xver,
-      final List<String>? serverNames,
-      this.privateKey,
-      this.minClientVer,
-      this.maxClientVer,
-      this.maxTimeDiff,
-      final List<String>? shortIds,
-      this.mldsa65Seed,
-      this.limitFallbackUpload,
-      this.limitFallbackDownload,
-      this.fingerprint,
-      this.serverName,
-      this.password,
-      this.publicKey,
-      this.shortId,
-      this.mldsa65Verify,
-      this.spiderX})
-      : _serverNames = serverNames,
-        _shortIds = shortIds,
-        super._();
+  const _REALITYConfig({
+    this.masterKeyLog,
+    this.show,
+    this.target,
+    this.dest,
+    this.type,
+    this.xver,
+    List<String>? serverNames,
+    this.privateKey,
+    this.minClientVer,
+    this.maxClientVer,
+    this.maxTimeDiff,
+    List<String>? shortIds,
+    this.mldsa65Seed,
+    this.limitFallbackUpload,
+    this.limitFallbackDownload,
+    this.fingerprint,
+    this.serverName,
+    this.password,
+    this.publicKey,
+    this.shortId,
+    this.mldsa65Verify,
+    this.spiderX,
+  }) : _serverNames = serverNames,
+       _shortIds = shortIds,
+       super._();
 
   @override
   final String? masterKeyLog;
@@ -10352,8 +11698,10 @@ class _REALITYConfig extends REALITYConfig {
             const DeepCollectionEquality().equals(other.dest, dest) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.xver, xver) || other.xver == xver) &&
-            const DeepCollectionEquality()
-                .equals(other._serverNames, _serverNames) &&
+            const DeepCollectionEquality().equals(
+              other.serverNames,
+              _serverNames,
+            ) &&
             (identical(other.privateKey, privateKey) ||
                 other.privateKey == privateKey) &&
             (identical(other.minClientVer, minClientVer) ||
@@ -10362,7 +11710,7 @@ class _REALITYConfig extends REALITYConfig {
                 other.maxClientVer == maxClientVer) &&
             (identical(other.maxTimeDiff, maxTimeDiff) ||
                 other.maxTimeDiff == maxTimeDiff) &&
-            const DeepCollectionEquality().equals(other._shortIds, _shortIds) &&
+            const DeepCollectionEquality().equals(other.shortIds, _shortIds) &&
             (identical(other.mldsa65Seed, mldsa65Seed) ||
                 other.mldsa65Seed == mldsa65Seed) &&
             (identical(other.limitFallbackUpload, limitFallbackUpload) ||
@@ -10384,31 +11732,33 @@ class _REALITYConfig extends REALITYConfig {
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        masterKeyLog,
-        show,
-        const DeepCollectionEquality().hash(target),
-        const DeepCollectionEquality().hash(dest),
-        type,
-        xver,
-        const DeepCollectionEquality().hash(_serverNames),
-        privateKey,
-        minClientVer,
-        maxClientVer,
-        maxTimeDiff,
-        const DeepCollectionEquality().hash(_shortIds),
-        mldsa65Seed,
-        limitFallbackUpload,
-        limitFallbackDownload,
-        fingerprint,
-        serverName,
-        password,
-        publicKey,
-        shortId,
-        mldsa65Verify,
-        spiderX
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      masterKeyLog,
+      show,
+      const DeepCollectionEquality().hash(target),
+      const DeepCollectionEquality().hash(dest),
+      type,
+      xver,
+      const DeepCollectionEquality().hash(_serverNames),
+      privateKey,
+      minClientVer,
+      maxClientVer,
+      maxTimeDiff,
+      const DeepCollectionEquality().hash(_shortIds),
+      mldsa65Seed,
+      limitFallbackUpload,
+      limitFallbackDownload,
+      fingerprint,
+      serverName,
+      password,
+      publicKey,
+      shortId,
+      mldsa65Verify,
+      spiderX,
+    ]);
+  }
 
   @override
   String toString() {
@@ -10420,33 +11770,35 @@ class _REALITYConfig extends REALITYConfig {
 abstract mixin class _$REALITYConfigCopyWith<$Res>
     implements $REALITYConfigCopyWith<$Res> {
   factory _$REALITYConfigCopyWith(
-          _REALITYConfig value, $Res Function(_REALITYConfig) _then) =
-      __$REALITYConfigCopyWithImpl;
+    _REALITYConfig value,
+    $Res Function(_REALITYConfig) _then,
+  ) = __$REALITYConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? masterKeyLog,
-      bool? show,
-      Object? target,
-      Object? dest,
-      String? type,
-      int? xver,
-      List<String>? serverNames,
-      String? privateKey,
-      String? minClientVer,
-      String? maxClientVer,
-      int? maxTimeDiff,
-      List<String>? shortIds,
-      String? mldsa65Seed,
-      LimitFallback? limitFallbackUpload,
-      LimitFallback? limitFallbackDownload,
-      String? fingerprint,
-      String? serverName,
-      String? password,
-      String? publicKey,
-      String? shortId,
-      String? mldsa65Verify,
-      String? spiderX});
+  $Res call({
+    String? masterKeyLog,
+    bool? show,
+    Object? target,
+    Object? dest,
+    String? type,
+    int? xver,
+    List<String>? serverNames,
+    String? privateKey,
+    String? minClientVer,
+    String? maxClientVer,
+    int? maxTimeDiff,
+    List<String>? shortIds,
+    String? mldsa65Seed,
+    LimitFallback? limitFallbackUpload,
+    LimitFallback? limitFallbackDownload,
+    String? fingerprint,
+    String? serverName,
+    String? password,
+    String? publicKey,
+    String? shortId,
+    String? mldsa65Verify,
+    String? spiderX,
+  });
 
   @override
   $LimitFallbackCopyWith<$Res>? get limitFallbackUpload;
@@ -10490,90 +11842,92 @@ class __$REALITYConfigCopyWithImpl<$Res>
     Object? mldsa65Verify = freezed,
     Object? spiderX = freezed,
   }) {
-    return _then(_REALITYConfig(
-      masterKeyLog: freezed == masterKeyLog
-          ? _self.masterKeyLog
-          : masterKeyLog // ignore: cast_nullable_to_non_nullable
-              as String?,
-      show: freezed == show
-          ? _self.show
-          : show // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      target: freezed == target ? _self.target : target,
-      dest: freezed == dest ? _self.dest : dest,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      xver: freezed == xver
-          ? _self.xver
-          : xver // ignore: cast_nullable_to_non_nullable
-              as int?,
-      serverNames: freezed == serverNames
-          ? _self._serverNames
-          : serverNames // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      privateKey: freezed == privateKey
-          ? _self.privateKey
-          : privateKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      minClientVer: freezed == minClientVer
-          ? _self.minClientVer
-          : minClientVer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxClientVer: freezed == maxClientVer
-          ? _self.maxClientVer
-          : maxClientVer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxTimeDiff: freezed == maxTimeDiff
-          ? _self.maxTimeDiff
-          : maxTimeDiff // ignore: cast_nullable_to_non_nullable
-              as int?,
-      shortIds: freezed == shortIds
-          ? _self._shortIds
-          : shortIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mldsa65Seed: freezed == mldsa65Seed
-          ? _self.mldsa65Seed
-          : mldsa65Seed // ignore: cast_nullable_to_non_nullable
-              as String?,
-      limitFallbackUpload: freezed == limitFallbackUpload
-          ? _self.limitFallbackUpload
-          : limitFallbackUpload // ignore: cast_nullable_to_non_nullable
-              as LimitFallback?,
-      limitFallbackDownload: freezed == limitFallbackDownload
-          ? _self.limitFallbackDownload
-          : limitFallbackDownload // ignore: cast_nullable_to_non_nullable
-              as LimitFallback?,
-      fingerprint: freezed == fingerprint
-          ? _self.fingerprint
-          : fingerprint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serverName: freezed == serverName
-          ? _self.serverName
-          : serverName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      publicKey: freezed == publicKey
-          ? _self.publicKey
-          : publicKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      shortId: freezed == shortId
-          ? _self.shortId
-          : shortId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mldsa65Verify: freezed == mldsa65Verify
-          ? _self.mldsa65Verify
-          : mldsa65Verify // ignore: cast_nullable_to_non_nullable
-              as String?,
-      spiderX: freezed == spiderX
-          ? _self.spiderX
-          : spiderX // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _REALITYConfig(
+        masterKeyLog: freezed == masterKeyLog
+            ? _self.masterKeyLog
+            : masterKeyLog // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        show: freezed == show
+            ? _self.show
+            : show // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        target: freezed == target ? _self.target : target,
+        dest: freezed == dest ? _self.dest : dest,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        xver: freezed == xver
+            ? _self.xver
+            : xver // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        serverNames: freezed == serverNames
+            ? _self._serverNames
+            : serverNames // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        privateKey: freezed == privateKey
+            ? _self.privateKey
+            : privateKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        minClientVer: freezed == minClientVer
+            ? _self.minClientVer
+            : minClientVer // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxClientVer: freezed == maxClientVer
+            ? _self.maxClientVer
+            : maxClientVer // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxTimeDiff: freezed == maxTimeDiff
+            ? _self.maxTimeDiff
+            : maxTimeDiff // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        shortIds: freezed == shortIds
+            ? _self._shortIds
+            : shortIds // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        mldsa65Seed: freezed == mldsa65Seed
+            ? _self.mldsa65Seed
+            : mldsa65Seed // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        limitFallbackUpload: freezed == limitFallbackUpload
+            ? _self.limitFallbackUpload
+            : limitFallbackUpload // ignore: cast_nullable_to_non_nullable
+                  as LimitFallback?,
+        limitFallbackDownload: freezed == limitFallbackDownload
+            ? _self.limitFallbackDownload
+            : limitFallbackDownload // ignore: cast_nullable_to_non_nullable
+                  as LimitFallback?,
+        fingerprint: freezed == fingerprint
+            ? _self.fingerprint
+            : fingerprint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        serverName: freezed == serverName
+            ? _self.serverName
+            : serverName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        publicKey: freezed == publicKey
+            ? _self.publicKey
+            : publicKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        shortId: freezed == shortId
+            ? _self.shortId
+            : shortId // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        mldsa65Verify: freezed == mldsa65Verify
+            ? _self.mldsa65Verify
+            : mldsa65Verify // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        spiderX: freezed == spiderX
+            ? _self.spiderX
+            : spiderX // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
   /// Create a copy of REALITYConfig
@@ -10619,29 +11973,35 @@ mixin _$Salamander {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Salamander;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Salamander &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.packetSize, packetSize) ||
-                other.packetSize == packetSize));
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.packetSize, _this.packetSize) ||
+                other.packetSize == _this.packetSize));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, password, packetSize);
+  int get hashCode {
+    final _this = this as Salamander;
+    return Object.hash(runtimeType, _this.password, _this.packetSize);
+  }
 
   @override
   String toString() {
-    return 'Salamander(password: $password, packetSize: $packetSize)';
+    final _this = this as Salamander;
+    return 'Salamander(password: ${_this.password}, packetSize: ${_this.packetSize})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SalamanderCopyWith<$Res> {
   factory $SalamanderCopyWith(
-          Salamander value, $Res Function(Salamander) _then) =
-      _$SalamanderCopyWithImpl;
+    Salamander value,
+    $Res Function(Salamander) _then,
+  ) = _$SalamanderCopyWithImpl;
   @useResult
   $Res call({String? password, XrayInt32Range? packetSize});
 
@@ -10659,20 +12019,19 @@ class _$SalamanderCopyWithImpl<$Res> implements $SalamanderCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? password = freezed,
-    Object? packetSize = freezed,
-  }) {
-    return _then(_self.copyWith(
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packetSize: freezed == packetSize
-          ? _self.packetSize
-          : packetSize // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+  $Res call({Object? password = freezed, Object? packetSize = freezed}) {
+    return _then(
+      Salamander(
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        packetSize: freezed == packetSize
+            ? _self.packetSize
+            : packetSize // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of Salamander
@@ -10877,7 +12236,9 @@ class _Salamander extends Salamander {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, password, packetSize);
+  int get hashCode {
+    return Object.hash(runtimeType, password, packetSize);
+  }
 
   @override
   String toString() {
@@ -10889,8 +12250,9 @@ class _Salamander extends Salamander {
 abstract mixin class _$SalamanderCopyWith<$Res>
     implements $SalamanderCopyWith<$Res> {
   factory _$SalamanderCopyWith(
-          _Salamander value, $Res Function(_Salamander) _then) =
-      __$SalamanderCopyWithImpl;
+    _Salamander value,
+    $Res Function(_Salamander) _then,
+  ) = __$SalamanderCopyWithImpl;
   @override
   @useResult
   $Res call({String? password, XrayInt32Range? packetSize});
@@ -10910,20 +12272,19 @@ class __$SalamanderCopyWithImpl<$Res> implements _$SalamanderCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? password = freezed,
-    Object? packetSize = freezed,
-  }) {
-    return _then(_Salamander(
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packetSize: freezed == packetSize
-          ? _self.packetSize
-          : packetSize // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+  $Res call({Object? password = freezed, Object? packetSize = freezed}) {
+    return _then(
+      _Salamander(
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        packetSize: freezed == packetSize
+            ? _self.packetSize
+            : packetSize // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
   /// Create a copy of Salamander
@@ -10971,110 +12332,130 @@ mixin _$SocketConfig {
   @pragma('vm:prefer-inline')
   $SocketConfigCopyWith<SocketConfig> get copyWith =>
       _$SocketConfigCopyWithImpl<SocketConfig>(
-          this as SocketConfig, _$identity);
+        this as SocketConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SocketConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SocketConfig &&
-            (identical(other.mark, mark) || other.mark == mark) &&
-            const DeepCollectionEquality()
-                .equals(other.tcpFastOpen, tcpFastOpen) &&
-            (identical(other.tproxy, tproxy) || other.tproxy == tproxy) &&
-            (identical(other.acceptProxyProtocol, acceptProxyProtocol) ||
-                other.acceptProxyProtocol == acceptProxyProtocol) &&
-            (identical(other.domainStrategy, domainStrategy) ||
-                other.domainStrategy == domainStrategy) &&
-            (identical(other.dialerProxy, dialerProxy) ||
-                other.dialerProxy == dialerProxy) &&
-            (identical(other.tcpKeepAliveInterval, tcpKeepAliveInterval) ||
-                other.tcpKeepAliveInterval == tcpKeepAliveInterval) &&
-            (identical(other.tcpKeepAliveIdle, tcpKeepAliveIdle) ||
-                other.tcpKeepAliveIdle == tcpKeepAliveIdle) &&
-            (identical(other.tcpCongestion, tcpCongestion) ||
-                other.tcpCongestion == tcpCongestion) &&
-            (identical(other.tcpWindowClamp, tcpWindowClamp) ||
-                other.tcpWindowClamp == tcpWindowClamp) &&
-            (identical(other.tcpMaxSeg, tcpMaxSeg) ||
-                other.tcpMaxSeg == tcpMaxSeg) &&
-            (identical(other.penetrate, penetrate) ||
-                other.penetrate == penetrate) &&
-            (identical(other.tcpUserTimeout, tcpUserTimeout) ||
-                other.tcpUserTimeout == tcpUserTimeout) &&
-            (identical(other.v6only, v6only) || other.v6only == v6only) &&
-            (identical(other.interfaceName, interfaceName) ||
-                other.interfaceName == interfaceName) &&
-            (identical(other.tcpMptcp, tcpMptcp) ||
-                other.tcpMptcp == tcpMptcp) &&
-            const DeepCollectionEquality()
-                .equals(other.customSockopt, customSockopt) &&
-            (identical(other.addressPortStrategy, addressPortStrategy) ||
-                other.addressPortStrategy == addressPortStrategy) &&
-            (identical(other.happyEyeballs, happyEyeballs) ||
-                other.happyEyeballs == happyEyeballs) &&
-            const DeepCollectionEquality()
-                .equals(other.trustedXForwardedFor, trustedXForwardedFor));
+            (identical(other.mark, _this.mark) || other.mark == _this.mark) &&
+            const DeepCollectionEquality().equals(
+              other.tcpFastOpen,
+              _this.tcpFastOpen,
+            ) &&
+            (identical(other.tproxy, _this.tproxy) ||
+                other.tproxy == _this.tproxy) &&
+            (identical(other.acceptProxyProtocol, _this.acceptProxyProtocol) ||
+                other.acceptProxyProtocol == _this.acceptProxyProtocol) &&
+            (identical(other.domainStrategy, _this.domainStrategy) ||
+                other.domainStrategy == _this.domainStrategy) &&
+            (identical(other.dialerProxy, _this.dialerProxy) ||
+                other.dialerProxy == _this.dialerProxy) &&
+            (identical(
+                  other.tcpKeepAliveInterval,
+                  _this.tcpKeepAliveInterval,
+                ) ||
+                other.tcpKeepAliveInterval == _this.tcpKeepAliveInterval) &&
+            (identical(other.tcpKeepAliveIdle, _this.tcpKeepAliveIdle) ||
+                other.tcpKeepAliveIdle == _this.tcpKeepAliveIdle) &&
+            (identical(other.tcpCongestion, _this.tcpCongestion) ||
+                other.tcpCongestion == _this.tcpCongestion) &&
+            (identical(other.tcpWindowClamp, _this.tcpWindowClamp) ||
+                other.tcpWindowClamp == _this.tcpWindowClamp) &&
+            (identical(other.tcpMaxSeg, _this.tcpMaxSeg) ||
+                other.tcpMaxSeg == _this.tcpMaxSeg) &&
+            (identical(other.penetrate, _this.penetrate) ||
+                other.penetrate == _this.penetrate) &&
+            (identical(other.tcpUserTimeout, _this.tcpUserTimeout) ||
+                other.tcpUserTimeout == _this.tcpUserTimeout) &&
+            (identical(other.v6only, _this.v6only) ||
+                other.v6only == _this.v6only) &&
+            (identical(other.interfaceName, _this.interfaceName) ||
+                other.interfaceName == _this.interfaceName) &&
+            (identical(other.tcpMptcp, _this.tcpMptcp) ||
+                other.tcpMptcp == _this.tcpMptcp) &&
+            const DeepCollectionEquality().equals(
+              other.customSockopt,
+              _this.customSockopt,
+            ) &&
+            (identical(other.addressPortStrategy, _this.addressPortStrategy) ||
+                other.addressPortStrategy == _this.addressPortStrategy) &&
+            (identical(other.happyEyeballs, _this.happyEyeballs) ||
+                other.happyEyeballs == _this.happyEyeballs) &&
+            const DeepCollectionEquality().equals(
+              other.trustedXForwardedFor,
+              _this.trustedXForwardedFor,
+            ));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        mark,
-        const DeepCollectionEquality().hash(tcpFastOpen),
-        tproxy,
-        acceptProxyProtocol,
-        domainStrategy,
-        dialerProxy,
-        tcpKeepAliveInterval,
-        tcpKeepAliveIdle,
-        tcpCongestion,
-        tcpWindowClamp,
-        tcpMaxSeg,
-        penetrate,
-        tcpUserTimeout,
-        v6only,
-        interfaceName,
-        tcpMptcp,
-        const DeepCollectionEquality().hash(customSockopt),
-        addressPortStrategy,
-        happyEyeballs,
-        const DeepCollectionEquality().hash(trustedXForwardedFor)
-      ]);
+  int get hashCode {
+    final _this = this as SocketConfig;
+    return Object.hashAll([
+      runtimeType,
+      _this.mark,
+      const DeepCollectionEquality().hash(_this.tcpFastOpen),
+      _this.tproxy,
+      _this.acceptProxyProtocol,
+      _this.domainStrategy,
+      _this.dialerProxy,
+      _this.tcpKeepAliveInterval,
+      _this.tcpKeepAliveIdle,
+      _this.tcpCongestion,
+      _this.tcpWindowClamp,
+      _this.tcpMaxSeg,
+      _this.penetrate,
+      _this.tcpUserTimeout,
+      _this.v6only,
+      _this.interfaceName,
+      _this.tcpMptcp,
+      const DeepCollectionEquality().hash(_this.customSockopt),
+      _this.addressPortStrategy,
+      _this.happyEyeballs,
+      const DeepCollectionEquality().hash(_this.trustedXForwardedFor),
+    ]);
+  }
 
   @override
   String toString() {
-    return 'SocketConfig(mark: $mark, tcpFastOpen: $tcpFastOpen, tproxy: $tproxy, acceptProxyProtocol: $acceptProxyProtocol, domainStrategy: $domainStrategy, dialerProxy: $dialerProxy, tcpKeepAliveInterval: $tcpKeepAliveInterval, tcpKeepAliveIdle: $tcpKeepAliveIdle, tcpCongestion: $tcpCongestion, tcpWindowClamp: $tcpWindowClamp, tcpMaxSeg: $tcpMaxSeg, penetrate: $penetrate, tcpUserTimeout: $tcpUserTimeout, v6only: $v6only, interfaceName: $interfaceName, tcpMptcp: $tcpMptcp, customSockopt: $customSockopt, addressPortStrategy: $addressPortStrategy, happyEyeballs: $happyEyeballs, trustedXForwardedFor: $trustedXForwardedFor)';
+    final _this = this as SocketConfig;
+    return 'SocketConfig(mark: ${_this.mark}, tcpFastOpen: ${_this.tcpFastOpen}, tproxy: ${_this.tproxy}, acceptProxyProtocol: ${_this.acceptProxyProtocol}, domainStrategy: ${_this.domainStrategy}, dialerProxy: ${_this.dialerProxy}, tcpKeepAliveInterval: ${_this.tcpKeepAliveInterval}, tcpKeepAliveIdle: ${_this.tcpKeepAliveIdle}, tcpCongestion: ${_this.tcpCongestion}, tcpWindowClamp: ${_this.tcpWindowClamp}, tcpMaxSeg: ${_this.tcpMaxSeg}, penetrate: ${_this.penetrate}, tcpUserTimeout: ${_this.tcpUserTimeout}, v6only: ${_this.v6only}, interfaceName: ${_this.interfaceName}, tcpMptcp: ${_this.tcpMptcp}, customSockopt: ${_this.customSockopt}, addressPortStrategy: ${_this.addressPortStrategy}, happyEyeballs: ${_this.happyEyeballs}, trustedXForwardedFor: ${_this.trustedXForwardedFor})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SocketConfigCopyWith<$Res> {
   factory $SocketConfigCopyWith(
-          SocketConfig value, $Res Function(SocketConfig) _then) =
-      _$SocketConfigCopyWithImpl;
+    SocketConfig value,
+    $Res Function(SocketConfig) _then,
+  ) = _$SocketConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {int? mark,
-      Object? tcpFastOpen,
-      TProxyMode? tproxy,
-      bool? acceptProxyProtocol,
-      XrayTargetStrategy? domainStrategy,
-      String? dialerProxy,
-      int? tcpKeepAliveInterval,
-      int? tcpKeepAliveIdle,
-      String? tcpCongestion,
-      int? tcpWindowClamp,
-      int? tcpMaxSeg,
-      bool? penetrate,
-      int? tcpUserTimeout,
-      bool? v6only,
-      @JsonKey(name: 'interface') String? interfaceName,
-      bool? tcpMptcp,
-      List<CustomSockoptConfig>? customSockopt,
-      AddressPortStrategy? addressPortStrategy,
-      HappyEyeballsConfig? happyEyeballs,
-      List<String>? trustedXForwardedFor});
+  $Res call({
+    int? mark,
+    Object? tcpFastOpen,
+    TProxyMode? tproxy,
+    bool? acceptProxyProtocol,
+    XrayTargetStrategy? domainStrategy,
+    String? dialerProxy,
+    int? tcpKeepAliveInterval,
+    int? tcpKeepAliveIdle,
+    String? tcpCongestion,
+    int? tcpWindowClamp,
+    int? tcpMaxSeg,
+    bool? penetrate,
+    int? tcpUserTimeout,
+    bool? v6only,
+    @JsonKey(name: 'interface') String? interfaceName,
+    bool? tcpMptcp,
+    List<CustomSockoptConfig>? customSockopt,
+    AddressPortStrategy? addressPortStrategy,
+    HappyEyeballsConfig? happyEyeballs,
+    List<String>? trustedXForwardedFor,
+  });
 
   $HappyEyeballsConfigCopyWith<$Res>? get happyEyeballs;
 }
@@ -11112,85 +12493,87 @@ class _$SocketConfigCopyWithImpl<$Res> implements $SocketConfigCopyWith<$Res> {
     Object? happyEyeballs = freezed,
     Object? trustedXForwardedFor = freezed,
   }) {
-    return _then(_self.copyWith(
-      mark: freezed == mark
-          ? _self.mark
-          : mark // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpFastOpen: freezed == tcpFastOpen ? _self.tcpFastOpen : tcpFastOpen,
-      tproxy: freezed == tproxy
-          ? _self.tproxy
-          : tproxy // ignore: cast_nullable_to_non_nullable
-              as TProxyMode?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-      dialerProxy: freezed == dialerProxy
-          ? _self.dialerProxy
-          : dialerProxy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tcpKeepAliveInterval: freezed == tcpKeepAliveInterval
-          ? _self.tcpKeepAliveInterval
-          : tcpKeepAliveInterval // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpKeepAliveIdle: freezed == tcpKeepAliveIdle
-          ? _self.tcpKeepAliveIdle
-          : tcpKeepAliveIdle // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpCongestion: freezed == tcpCongestion
-          ? _self.tcpCongestion
-          : tcpCongestion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tcpWindowClamp: freezed == tcpWindowClamp
-          ? _self.tcpWindowClamp
-          : tcpWindowClamp // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpMaxSeg: freezed == tcpMaxSeg
-          ? _self.tcpMaxSeg
-          : tcpMaxSeg // ignore: cast_nullable_to_non_nullable
-              as int?,
-      penetrate: freezed == penetrate
-          ? _self.penetrate
-          : penetrate // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      tcpUserTimeout: freezed == tcpUserTimeout
-          ? _self.tcpUserTimeout
-          : tcpUserTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      v6only: freezed == v6only
-          ? _self.v6only
-          : v6only // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interfaceName: freezed == interfaceName
-          ? _self.interfaceName
-          : interfaceName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tcpMptcp: freezed == tcpMptcp
-          ? _self.tcpMptcp
-          : tcpMptcp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      customSockopt: freezed == customSockopt
-          ? _self.customSockopt
-          : customSockopt // ignore: cast_nullable_to_non_nullable
-              as List<CustomSockoptConfig>?,
-      addressPortStrategy: freezed == addressPortStrategy
-          ? _self.addressPortStrategy
-          : addressPortStrategy // ignore: cast_nullable_to_non_nullable
-              as AddressPortStrategy?,
-      happyEyeballs: freezed == happyEyeballs
-          ? _self.happyEyeballs
-          : happyEyeballs // ignore: cast_nullable_to_non_nullable
-              as HappyEyeballsConfig?,
-      trustedXForwardedFor: freezed == trustedXForwardedFor
-          ? _self.trustedXForwardedFor
-          : trustedXForwardedFor // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+    return _then(
+      SocketConfig(
+        mark: freezed == mark
+            ? _self.mark
+            : mark // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpFastOpen: freezed == tcpFastOpen ? _self.tcpFastOpen : tcpFastOpen,
+        tproxy: freezed == tproxy
+            ? _self.tproxy
+            : tproxy // ignore: cast_nullable_to_non_nullable
+                  as TProxyMode?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+        dialerProxy: freezed == dialerProxy
+            ? _self.dialerProxy
+            : dialerProxy // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tcpKeepAliveInterval: freezed == tcpKeepAliveInterval
+            ? _self.tcpKeepAliveInterval
+            : tcpKeepAliveInterval // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpKeepAliveIdle: freezed == tcpKeepAliveIdle
+            ? _self.tcpKeepAliveIdle
+            : tcpKeepAliveIdle // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpCongestion: freezed == tcpCongestion
+            ? _self.tcpCongestion
+            : tcpCongestion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tcpWindowClamp: freezed == tcpWindowClamp
+            ? _self.tcpWindowClamp
+            : tcpWindowClamp // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpMaxSeg: freezed == tcpMaxSeg
+            ? _self.tcpMaxSeg
+            : tcpMaxSeg // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        penetrate: freezed == penetrate
+            ? _self.penetrate
+            : penetrate // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        tcpUserTimeout: freezed == tcpUserTimeout
+            ? _self.tcpUserTimeout
+            : tcpUserTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        v6only: freezed == v6only
+            ? _self.v6only
+            : v6only // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        interfaceName: freezed == interfaceName
+            ? _self.interfaceName
+            : interfaceName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tcpMptcp: freezed == tcpMptcp
+            ? _self.tcpMptcp
+            : tcpMptcp // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        customSockopt: freezed == customSockopt
+            ? _self.customSockopt
+            : customSockopt // ignore: cast_nullable_to_non_nullable
+                  as List<CustomSockoptConfig>?,
+        addressPortStrategy: freezed == addressPortStrategy
+            ? _self.addressPortStrategy
+            : addressPortStrategy // ignore: cast_nullable_to_non_nullable
+                  as AddressPortStrategy?,
+        happyEyeballs: freezed == happyEyeballs
+            ? _self.happyEyeballs
+            : happyEyeballs // ignore: cast_nullable_to_non_nullable
+                  as HappyEyeballsConfig?,
+        trustedXForwardedFor: freezed == trustedXForwardedFor
+            ? _self.trustedXForwardedFor
+            : trustedXForwardedFor // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
   }
 
   /// Create a copy of SocketConfig
@@ -11302,53 +12685,55 @@ extension SocketConfigPatterns on SocketConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            int? mark,
-            Object? tcpFastOpen,
-            TProxyMode? tproxy,
-            bool? acceptProxyProtocol,
-            XrayTargetStrategy? domainStrategy,
-            String? dialerProxy,
-            int? tcpKeepAliveInterval,
-            int? tcpKeepAliveIdle,
-            String? tcpCongestion,
-            int? tcpWindowClamp,
-            int? tcpMaxSeg,
-            bool? penetrate,
-            int? tcpUserTimeout,
-            bool? v6only,
-            @JsonKey(name: 'interface') String? interfaceName,
-            bool? tcpMptcp,
-            List<CustomSockoptConfig>? customSockopt,
-            AddressPortStrategy? addressPortStrategy,
-            HappyEyeballsConfig? happyEyeballs,
-            List<String>? trustedXForwardedFor)?
-        $default, {
+      int? mark,
+      Object? tcpFastOpen,
+      TProxyMode? tproxy,
+      bool? acceptProxyProtocol,
+      XrayTargetStrategy? domainStrategy,
+      String? dialerProxy,
+      int? tcpKeepAliveInterval,
+      int? tcpKeepAliveIdle,
+      String? tcpCongestion,
+      int? tcpWindowClamp,
+      int? tcpMaxSeg,
+      bool? penetrate,
+      int? tcpUserTimeout,
+      bool? v6only,
+      @JsonKey(name: 'interface') String? interfaceName,
+      bool? tcpMptcp,
+      List<CustomSockoptConfig>? customSockopt,
+      AddressPortStrategy? addressPortStrategy,
+      HappyEyeballsConfig? happyEyeballs,
+      List<String>? trustedXForwardedFor,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _SocketConfig() when $default != null:
         return $default(
-            _that.mark,
-            _that.tcpFastOpen,
-            _that.tproxy,
-            _that.acceptProxyProtocol,
-            _that.domainStrategy,
-            _that.dialerProxy,
-            _that.tcpKeepAliveInterval,
-            _that.tcpKeepAliveIdle,
-            _that.tcpCongestion,
-            _that.tcpWindowClamp,
-            _that.tcpMaxSeg,
-            _that.penetrate,
-            _that.tcpUserTimeout,
-            _that.v6only,
-            _that.interfaceName,
-            _that.tcpMptcp,
-            _that.customSockopt,
-            _that.addressPortStrategy,
-            _that.happyEyeballs,
-            _that.trustedXForwardedFor);
+          _that.mark,
+          _that.tcpFastOpen,
+          _that.tproxy,
+          _that.acceptProxyProtocol,
+          _that.domainStrategy,
+          _that.dialerProxy,
+          _that.tcpKeepAliveInterval,
+          _that.tcpKeepAliveIdle,
+          _that.tcpCongestion,
+          _that.tcpWindowClamp,
+          _that.tcpMaxSeg,
+          _that.penetrate,
+          _that.tcpUserTimeout,
+          _that.v6only,
+          _that.interfaceName,
+          _that.tcpMptcp,
+          _that.customSockopt,
+          _that.addressPortStrategy,
+          _that.happyEyeballs,
+          _that.trustedXForwardedFor,
+        );
       case _:
         return orElse();
     }
@@ -11370,52 +12755,54 @@ extension SocketConfigPatterns on SocketConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            int? mark,
-            Object? tcpFastOpen,
-            TProxyMode? tproxy,
-            bool? acceptProxyProtocol,
-            XrayTargetStrategy? domainStrategy,
-            String? dialerProxy,
-            int? tcpKeepAliveInterval,
-            int? tcpKeepAliveIdle,
-            String? tcpCongestion,
-            int? tcpWindowClamp,
-            int? tcpMaxSeg,
-            bool? penetrate,
-            int? tcpUserTimeout,
-            bool? v6only,
-            @JsonKey(name: 'interface') String? interfaceName,
-            bool? tcpMptcp,
-            List<CustomSockoptConfig>? customSockopt,
-            AddressPortStrategy? addressPortStrategy,
-            HappyEyeballsConfig? happyEyeballs,
-            List<String>? trustedXForwardedFor)
-        $default,
+      int? mark,
+      Object? tcpFastOpen,
+      TProxyMode? tproxy,
+      bool? acceptProxyProtocol,
+      XrayTargetStrategy? domainStrategy,
+      String? dialerProxy,
+      int? tcpKeepAliveInterval,
+      int? tcpKeepAliveIdle,
+      String? tcpCongestion,
+      int? tcpWindowClamp,
+      int? tcpMaxSeg,
+      bool? penetrate,
+      int? tcpUserTimeout,
+      bool? v6only,
+      @JsonKey(name: 'interface') String? interfaceName,
+      bool? tcpMptcp,
+      List<CustomSockoptConfig>? customSockopt,
+      AddressPortStrategy? addressPortStrategy,
+      HappyEyeballsConfig? happyEyeballs,
+      List<String>? trustedXForwardedFor,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SocketConfig():
         return $default(
-            _that.mark,
-            _that.tcpFastOpen,
-            _that.tproxy,
-            _that.acceptProxyProtocol,
-            _that.domainStrategy,
-            _that.dialerProxy,
-            _that.tcpKeepAliveInterval,
-            _that.tcpKeepAliveIdle,
-            _that.tcpCongestion,
-            _that.tcpWindowClamp,
-            _that.tcpMaxSeg,
-            _that.penetrate,
-            _that.tcpUserTimeout,
-            _that.v6only,
-            _that.interfaceName,
-            _that.tcpMptcp,
-            _that.customSockopt,
-            _that.addressPortStrategy,
-            _that.happyEyeballs,
-            _that.trustedXForwardedFor);
+          _that.mark,
+          _that.tcpFastOpen,
+          _that.tproxy,
+          _that.acceptProxyProtocol,
+          _that.domainStrategy,
+          _that.dialerProxy,
+          _that.tcpKeepAliveInterval,
+          _that.tcpKeepAliveIdle,
+          _that.tcpCongestion,
+          _that.tcpWindowClamp,
+          _that.tcpMaxSeg,
+          _that.penetrate,
+          _that.tcpUserTimeout,
+          _that.v6only,
+          _that.interfaceName,
+          _that.tcpMptcp,
+          _that.customSockopt,
+          _that.addressPortStrategy,
+          _that.happyEyeballs,
+          _that.trustedXForwardedFor,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -11436,52 +12823,54 @@ extension SocketConfigPatterns on SocketConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            int? mark,
-            Object? tcpFastOpen,
-            TProxyMode? tproxy,
-            bool? acceptProxyProtocol,
-            XrayTargetStrategy? domainStrategy,
-            String? dialerProxy,
-            int? tcpKeepAliveInterval,
-            int? tcpKeepAliveIdle,
-            String? tcpCongestion,
-            int? tcpWindowClamp,
-            int? tcpMaxSeg,
-            bool? penetrate,
-            int? tcpUserTimeout,
-            bool? v6only,
-            @JsonKey(name: 'interface') String? interfaceName,
-            bool? tcpMptcp,
-            List<CustomSockoptConfig>? customSockopt,
-            AddressPortStrategy? addressPortStrategy,
-            HappyEyeballsConfig? happyEyeballs,
-            List<String>? trustedXForwardedFor)?
-        $default,
+      int? mark,
+      Object? tcpFastOpen,
+      TProxyMode? tproxy,
+      bool? acceptProxyProtocol,
+      XrayTargetStrategy? domainStrategy,
+      String? dialerProxy,
+      int? tcpKeepAliveInterval,
+      int? tcpKeepAliveIdle,
+      String? tcpCongestion,
+      int? tcpWindowClamp,
+      int? tcpMaxSeg,
+      bool? penetrate,
+      int? tcpUserTimeout,
+      bool? v6only,
+      @JsonKey(name: 'interface') String? interfaceName,
+      bool? tcpMptcp,
+      List<CustomSockoptConfig>? customSockopt,
+      AddressPortStrategy? addressPortStrategy,
+      HappyEyeballsConfig? happyEyeballs,
+      List<String>? trustedXForwardedFor,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SocketConfig() when $default != null:
         return $default(
-            _that.mark,
-            _that.tcpFastOpen,
-            _that.tproxy,
-            _that.acceptProxyProtocol,
-            _that.domainStrategy,
-            _that.dialerProxy,
-            _that.tcpKeepAliveInterval,
-            _that.tcpKeepAliveIdle,
-            _that.tcpCongestion,
-            _that.tcpWindowClamp,
-            _that.tcpMaxSeg,
-            _that.penetrate,
-            _that.tcpUserTimeout,
-            _that.v6only,
-            _that.interfaceName,
-            _that.tcpMptcp,
-            _that.customSockopt,
-            _that.addressPortStrategy,
-            _that.happyEyeballs,
-            _that.trustedXForwardedFor);
+          _that.mark,
+          _that.tcpFastOpen,
+          _that.tproxy,
+          _that.acceptProxyProtocol,
+          _that.domainStrategy,
+          _that.dialerProxy,
+          _that.tcpKeepAliveInterval,
+          _that.tcpKeepAliveIdle,
+          _that.tcpCongestion,
+          _that.tcpWindowClamp,
+          _that.tcpMaxSeg,
+          _that.penetrate,
+          _that.tcpUserTimeout,
+          _that.v6only,
+          _that.interfaceName,
+          _that.tcpMptcp,
+          _that.customSockopt,
+          _that.addressPortStrategy,
+          _that.happyEyeballs,
+          _that.trustedXForwardedFor,
+        );
       case _:
         return null;
     }
@@ -11491,30 +12880,30 @@ extension SocketConfigPatterns on SocketConfig {
 /// @nodoc
 
 class _SocketConfig extends SocketConfig {
-  const _SocketConfig(
-      {this.mark,
-      this.tcpFastOpen,
-      this.tproxy,
-      this.acceptProxyProtocol,
-      this.domainStrategy,
-      this.dialerProxy,
-      this.tcpKeepAliveInterval,
-      this.tcpKeepAliveIdle,
-      this.tcpCongestion,
-      this.tcpWindowClamp,
-      this.tcpMaxSeg,
-      this.penetrate,
-      this.tcpUserTimeout,
-      this.v6only,
-      @JsonKey(name: 'interface') this.interfaceName,
-      this.tcpMptcp,
-      final List<CustomSockoptConfig>? customSockopt,
-      this.addressPortStrategy,
-      this.happyEyeballs,
-      final List<String>? trustedXForwardedFor})
-      : _customSockopt = customSockopt,
-        _trustedXForwardedFor = trustedXForwardedFor,
-        super._();
+  const _SocketConfig({
+    this.mark,
+    this.tcpFastOpen,
+    this.tproxy,
+    this.acceptProxyProtocol,
+    this.domainStrategy,
+    this.dialerProxy,
+    this.tcpKeepAliveInterval,
+    this.tcpKeepAliveIdle,
+    this.tcpCongestion,
+    this.tcpWindowClamp,
+    this.tcpMaxSeg,
+    this.penetrate,
+    this.tcpUserTimeout,
+    this.v6only,
+    @JsonKey(name: 'interface') this.interfaceName,
+    this.tcpMptcp,
+    List<CustomSockoptConfig>? customSockopt,
+    this.addressPortStrategy,
+    this.happyEyeballs,
+    List<String>? trustedXForwardedFor,
+  }) : _customSockopt = customSockopt,
+       _trustedXForwardedFor = trustedXForwardedFor,
+       super._();
 
   @override
   final int? mark;
@@ -11588,8 +12977,10 @@ class _SocketConfig extends SocketConfig {
         (other.runtimeType == runtimeType &&
             other is _SocketConfig &&
             (identical(other.mark, mark) || other.mark == mark) &&
-            const DeepCollectionEquality()
-                .equals(other.tcpFastOpen, tcpFastOpen) &&
+            const DeepCollectionEquality().equals(
+              other.tcpFastOpen,
+              tcpFastOpen,
+            ) &&
             (identical(other.tproxy, tproxy) || other.tproxy == tproxy) &&
             (identical(other.acceptProxyProtocol, acceptProxyProtocol) ||
                 other.acceptProxyProtocol == acceptProxyProtocol) &&
@@ -11616,40 +13007,46 @@ class _SocketConfig extends SocketConfig {
                 other.interfaceName == interfaceName) &&
             (identical(other.tcpMptcp, tcpMptcp) ||
                 other.tcpMptcp == tcpMptcp) &&
-            const DeepCollectionEquality()
-                .equals(other._customSockopt, _customSockopt) &&
+            const DeepCollectionEquality().equals(
+              other.customSockopt,
+              _customSockopt,
+            ) &&
             (identical(other.addressPortStrategy, addressPortStrategy) ||
                 other.addressPortStrategy == addressPortStrategy) &&
             (identical(other.happyEyeballs, happyEyeballs) ||
                 other.happyEyeballs == happyEyeballs) &&
-            const DeepCollectionEquality()
-                .equals(other._trustedXForwardedFor, _trustedXForwardedFor));
+            const DeepCollectionEquality().equals(
+              other.trustedXForwardedFor,
+              _trustedXForwardedFor,
+            ));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        mark,
-        const DeepCollectionEquality().hash(tcpFastOpen),
-        tproxy,
-        acceptProxyProtocol,
-        domainStrategy,
-        dialerProxy,
-        tcpKeepAliveInterval,
-        tcpKeepAliveIdle,
-        tcpCongestion,
-        tcpWindowClamp,
-        tcpMaxSeg,
-        penetrate,
-        tcpUserTimeout,
-        v6only,
-        interfaceName,
-        tcpMptcp,
-        const DeepCollectionEquality().hash(_customSockopt),
-        addressPortStrategy,
-        happyEyeballs,
-        const DeepCollectionEquality().hash(_trustedXForwardedFor)
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      mark,
+      const DeepCollectionEquality().hash(tcpFastOpen),
+      tproxy,
+      acceptProxyProtocol,
+      domainStrategy,
+      dialerProxy,
+      tcpKeepAliveInterval,
+      tcpKeepAliveIdle,
+      tcpCongestion,
+      tcpWindowClamp,
+      tcpMaxSeg,
+      penetrate,
+      tcpUserTimeout,
+      v6only,
+      interfaceName,
+      tcpMptcp,
+      const DeepCollectionEquality().hash(_customSockopt),
+      addressPortStrategy,
+      happyEyeballs,
+      const DeepCollectionEquality().hash(_trustedXForwardedFor),
+    ]);
+  }
 
   @override
   String toString() {
@@ -11661,31 +13058,33 @@ class _SocketConfig extends SocketConfig {
 abstract mixin class _$SocketConfigCopyWith<$Res>
     implements $SocketConfigCopyWith<$Res> {
   factory _$SocketConfigCopyWith(
-          _SocketConfig value, $Res Function(_SocketConfig) _then) =
-      __$SocketConfigCopyWithImpl;
+    _SocketConfig value,
+    $Res Function(_SocketConfig) _then,
+  ) = __$SocketConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {int? mark,
-      Object? tcpFastOpen,
-      TProxyMode? tproxy,
-      bool? acceptProxyProtocol,
-      XrayTargetStrategy? domainStrategy,
-      String? dialerProxy,
-      int? tcpKeepAliveInterval,
-      int? tcpKeepAliveIdle,
-      String? tcpCongestion,
-      int? tcpWindowClamp,
-      int? tcpMaxSeg,
-      bool? penetrate,
-      int? tcpUserTimeout,
-      bool? v6only,
-      @JsonKey(name: 'interface') String? interfaceName,
-      bool? tcpMptcp,
-      List<CustomSockoptConfig>? customSockopt,
-      AddressPortStrategy? addressPortStrategy,
-      HappyEyeballsConfig? happyEyeballs,
-      List<String>? trustedXForwardedFor});
+  $Res call({
+    int? mark,
+    Object? tcpFastOpen,
+    TProxyMode? tproxy,
+    bool? acceptProxyProtocol,
+    XrayTargetStrategy? domainStrategy,
+    String? dialerProxy,
+    int? tcpKeepAliveInterval,
+    int? tcpKeepAliveIdle,
+    String? tcpCongestion,
+    int? tcpWindowClamp,
+    int? tcpMaxSeg,
+    bool? penetrate,
+    int? tcpUserTimeout,
+    bool? v6only,
+    @JsonKey(name: 'interface') String? interfaceName,
+    bool? tcpMptcp,
+    List<CustomSockoptConfig>? customSockopt,
+    AddressPortStrategy? addressPortStrategy,
+    HappyEyeballsConfig? happyEyeballs,
+    List<String>? trustedXForwardedFor,
+  });
 
   @override
   $HappyEyeballsConfigCopyWith<$Res>? get happyEyeballs;
@@ -11725,85 +13124,87 @@ class __$SocketConfigCopyWithImpl<$Res>
     Object? happyEyeballs = freezed,
     Object? trustedXForwardedFor = freezed,
   }) {
-    return _then(_SocketConfig(
-      mark: freezed == mark
-          ? _self.mark
-          : mark // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpFastOpen: freezed == tcpFastOpen ? _self.tcpFastOpen : tcpFastOpen,
-      tproxy: freezed == tproxy
-          ? _self.tproxy
-          : tproxy // ignore: cast_nullable_to_non_nullable
-              as TProxyMode?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      domainStrategy: freezed == domainStrategy
-          ? _self.domainStrategy
-          : domainStrategy // ignore: cast_nullable_to_non_nullable
-              as XrayTargetStrategy?,
-      dialerProxy: freezed == dialerProxy
-          ? _self.dialerProxy
-          : dialerProxy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tcpKeepAliveInterval: freezed == tcpKeepAliveInterval
-          ? _self.tcpKeepAliveInterval
-          : tcpKeepAliveInterval // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpKeepAliveIdle: freezed == tcpKeepAliveIdle
-          ? _self.tcpKeepAliveIdle
-          : tcpKeepAliveIdle // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpCongestion: freezed == tcpCongestion
-          ? _self.tcpCongestion
-          : tcpCongestion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tcpWindowClamp: freezed == tcpWindowClamp
-          ? _self.tcpWindowClamp
-          : tcpWindowClamp // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tcpMaxSeg: freezed == tcpMaxSeg
-          ? _self.tcpMaxSeg
-          : tcpMaxSeg // ignore: cast_nullable_to_non_nullable
-              as int?,
-      penetrate: freezed == penetrate
-          ? _self.penetrate
-          : penetrate // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      tcpUserTimeout: freezed == tcpUserTimeout
-          ? _self.tcpUserTimeout
-          : tcpUserTimeout // ignore: cast_nullable_to_non_nullable
-              as int?,
-      v6only: freezed == v6only
-          ? _self.v6only
-          : v6only // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      interfaceName: freezed == interfaceName
-          ? _self.interfaceName
-          : interfaceName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tcpMptcp: freezed == tcpMptcp
-          ? _self.tcpMptcp
-          : tcpMptcp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      customSockopt: freezed == customSockopt
-          ? _self._customSockopt
-          : customSockopt // ignore: cast_nullable_to_non_nullable
-              as List<CustomSockoptConfig>?,
-      addressPortStrategy: freezed == addressPortStrategy
-          ? _self.addressPortStrategy
-          : addressPortStrategy // ignore: cast_nullable_to_non_nullable
-              as AddressPortStrategy?,
-      happyEyeballs: freezed == happyEyeballs
-          ? _self.happyEyeballs
-          : happyEyeballs // ignore: cast_nullable_to_non_nullable
-              as HappyEyeballsConfig?,
-      trustedXForwardedFor: freezed == trustedXForwardedFor
-          ? _self._trustedXForwardedFor
-          : trustedXForwardedFor // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+    return _then(
+      _SocketConfig(
+        mark: freezed == mark
+            ? _self.mark
+            : mark // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpFastOpen: freezed == tcpFastOpen ? _self.tcpFastOpen : tcpFastOpen,
+        tproxy: freezed == tproxy
+            ? _self.tproxy
+            : tproxy // ignore: cast_nullable_to_non_nullable
+                  as TProxyMode?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        domainStrategy: freezed == domainStrategy
+            ? _self.domainStrategy
+            : domainStrategy // ignore: cast_nullable_to_non_nullable
+                  as XrayTargetStrategy?,
+        dialerProxy: freezed == dialerProxy
+            ? _self.dialerProxy
+            : dialerProxy // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tcpKeepAliveInterval: freezed == tcpKeepAliveInterval
+            ? _self.tcpKeepAliveInterval
+            : tcpKeepAliveInterval // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpKeepAliveIdle: freezed == tcpKeepAliveIdle
+            ? _self.tcpKeepAliveIdle
+            : tcpKeepAliveIdle // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpCongestion: freezed == tcpCongestion
+            ? _self.tcpCongestion
+            : tcpCongestion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tcpWindowClamp: freezed == tcpWindowClamp
+            ? _self.tcpWindowClamp
+            : tcpWindowClamp // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tcpMaxSeg: freezed == tcpMaxSeg
+            ? _self.tcpMaxSeg
+            : tcpMaxSeg // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        penetrate: freezed == penetrate
+            ? _self.penetrate
+            : penetrate // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        tcpUserTimeout: freezed == tcpUserTimeout
+            ? _self.tcpUserTimeout
+            : tcpUserTimeout // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        v6only: freezed == v6only
+            ? _self.v6only
+            : v6only // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        interfaceName: freezed == interfaceName
+            ? _self.interfaceName
+            : interfaceName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tcpMptcp: freezed == tcpMptcp
+            ? _self.tcpMptcp
+            : tcpMptcp // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        customSockopt: freezed == customSockopt
+            ? _self._customSockopt
+            : customSockopt // ignore: cast_nullable_to_non_nullable
+                  as List<CustomSockoptConfig>?,
+        addressPortStrategy: freezed == addressPortStrategy
+            ? _self.addressPortStrategy
+            : addressPortStrategy // ignore: cast_nullable_to_non_nullable
+                  as AddressPortStrategy?,
+        happyEyeballs: freezed == happyEyeballs
+            ? _self.happyEyeballs
+            : happyEyeballs // ignore: cast_nullable_to_non_nullable
+                  as HappyEyeballsConfig?,
+        trustedXForwardedFor: freezed == trustedXForwardedFor
+            ? _self._trustedXForwardedFor
+            : trustedXForwardedFor // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
   }
 
   /// Create a copy of SocketConfig
@@ -11860,146 +13261,168 @@ mixin _$SplitHTTPConfig {
   @pragma('vm:prefer-inline')
   $SplitHTTPConfigCopyWith<SplitHTTPConfig> get copyWith =>
       _$SplitHTTPConfigCopyWithImpl<SplitHTTPConfig>(
-          this as SplitHTTPConfig, _$identity);
+        this as SplitHTTPConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as SplitHTTPConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SplitHTTPConfig &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.mode, mode) || other.mode == mode) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            (identical(other.xPaddingBytes, xPaddingBytes) ||
-                other.xPaddingBytes == xPaddingBytes) &&
-            (identical(other.xPaddingObfsMode, xPaddingObfsMode) ||
-                other.xPaddingObfsMode == xPaddingObfsMode) &&
-            (identical(other.xPaddingKey, xPaddingKey) ||
-                other.xPaddingKey == xPaddingKey) &&
-            (identical(other.xPaddingHeader, xPaddingHeader) ||
-                other.xPaddingHeader == xPaddingHeader) &&
-            (identical(other.xPaddingPlacement, xPaddingPlacement) ||
-                other.xPaddingPlacement == xPaddingPlacement) &&
-            (identical(other.xPaddingMethod, xPaddingMethod) ||
-                other.xPaddingMethod == xPaddingMethod) &&
-            (identical(other.uplinkHTTPMethod, uplinkHTTPMethod) ||
-                other.uplinkHTTPMethod == uplinkHTTPMethod) &&
-            (identical(other.sessionIDPlacement, sessionIDPlacement) ||
-                other.sessionIDPlacement == sessionIDPlacement) &&
-            (identical(other.sessionIDKey, sessionIDKey) ||
-                other.sessionIDKey == sessionIDKey) &&
-            (identical(other.sessionIDTable, sessionIDTable) ||
-                other.sessionIDTable == sessionIDTable) &&
-            (identical(other.sessionIDLength, sessionIDLength) ||
-                other.sessionIDLength == sessionIDLength) &&
-            (identical(other.seqPlacement, seqPlacement) ||
-                other.seqPlacement == seqPlacement) &&
-            (identical(other.seqKey, seqKey) || other.seqKey == seqKey) &&
-            (identical(other.uplinkDataPlacement, uplinkDataPlacement) ||
-                other.uplinkDataPlacement == uplinkDataPlacement) &&
-            (identical(other.uplinkDataKey, uplinkDataKey) ||
-                other.uplinkDataKey == uplinkDataKey) &&
-            (identical(other.uplinkChunkSize, uplinkChunkSize) ||
-                other.uplinkChunkSize == uplinkChunkSize) &&
-            (identical(other.noGRPCHeader, noGRPCHeader) ||
-                other.noGRPCHeader == noGRPCHeader) &&
-            (identical(other.noSSEHeader, noSSEHeader) ||
-                other.noSSEHeader == noSSEHeader) &&
-            (identical(other.scMaxEachPostBytes, scMaxEachPostBytes) ||
-                other.scMaxEachPostBytes == scMaxEachPostBytes) &&
-            (identical(other.scMinPostsIntervalMs, scMinPostsIntervalMs) ||
-                other.scMinPostsIntervalMs == scMinPostsIntervalMs) &&
-            (identical(other.scMaxBufferedPosts, scMaxBufferedPosts) ||
-                other.scMaxBufferedPosts == scMaxBufferedPosts) &&
-            (identical(other.scStreamUpServerSecs, scStreamUpServerSecs) ||
-                other.scStreamUpServerSecs == scStreamUpServerSecs) &&
-            (identical(other.serverMaxHeaderBytes, serverMaxHeaderBytes) ||
-                other.serverMaxHeaderBytes == serverMaxHeaderBytes) &&
-            (identical(other.xmux, xmux) || other.xmux == xmux) &&
-            (identical(other.downloadSettings, downloadSettings) ||
-                other.downloadSettings == downloadSettings) &&
-            const DeepCollectionEquality().equals(other.extra, extra));
+            (identical(other.host, _this.host) || other.host == _this.host) &&
+            (identical(other.path, _this.path) || other.path == _this.path) &&
+            (identical(other.mode, _this.mode) || other.mode == _this.mode) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ) &&
+            (identical(other.xPaddingBytes, _this.xPaddingBytes) ||
+                other.xPaddingBytes == _this.xPaddingBytes) &&
+            (identical(other.xPaddingObfsMode, _this.xPaddingObfsMode) ||
+                other.xPaddingObfsMode == _this.xPaddingObfsMode) &&
+            (identical(other.xPaddingKey, _this.xPaddingKey) ||
+                other.xPaddingKey == _this.xPaddingKey) &&
+            (identical(other.xPaddingHeader, _this.xPaddingHeader) ||
+                other.xPaddingHeader == _this.xPaddingHeader) &&
+            (identical(other.xPaddingPlacement, _this.xPaddingPlacement) ||
+                other.xPaddingPlacement == _this.xPaddingPlacement) &&
+            (identical(other.xPaddingMethod, _this.xPaddingMethod) ||
+                other.xPaddingMethod == _this.xPaddingMethod) &&
+            (identical(other.uplinkHTTPMethod, _this.uplinkHTTPMethod) ||
+                other.uplinkHTTPMethod == _this.uplinkHTTPMethod) &&
+            (identical(other.sessionIDPlacement, _this.sessionIDPlacement) ||
+                other.sessionIDPlacement == _this.sessionIDPlacement) &&
+            (identical(other.sessionIDKey, _this.sessionIDKey) ||
+                other.sessionIDKey == _this.sessionIDKey) &&
+            (identical(other.sessionIDTable, _this.sessionIDTable) ||
+                other.sessionIDTable == _this.sessionIDTable) &&
+            (identical(other.sessionIDLength, _this.sessionIDLength) ||
+                other.sessionIDLength == _this.sessionIDLength) &&
+            (identical(other.seqPlacement, _this.seqPlacement) ||
+                other.seqPlacement == _this.seqPlacement) &&
+            (identical(other.seqKey, _this.seqKey) ||
+                other.seqKey == _this.seqKey) &&
+            (identical(other.uplinkDataPlacement, _this.uplinkDataPlacement) ||
+                other.uplinkDataPlacement == _this.uplinkDataPlacement) &&
+            (identical(other.uplinkDataKey, _this.uplinkDataKey) ||
+                other.uplinkDataKey == _this.uplinkDataKey) &&
+            (identical(other.uplinkChunkSize, _this.uplinkChunkSize) ||
+                other.uplinkChunkSize == _this.uplinkChunkSize) &&
+            (identical(other.noGRPCHeader, _this.noGRPCHeader) ||
+                other.noGRPCHeader == _this.noGRPCHeader) &&
+            (identical(other.noSSEHeader, _this.noSSEHeader) ||
+                other.noSSEHeader == _this.noSSEHeader) &&
+            (identical(other.scMaxEachPostBytes, _this.scMaxEachPostBytes) ||
+                other.scMaxEachPostBytes == _this.scMaxEachPostBytes) &&
+            (identical(
+                  other.scMinPostsIntervalMs,
+                  _this.scMinPostsIntervalMs,
+                ) ||
+                other.scMinPostsIntervalMs == _this.scMinPostsIntervalMs) &&
+            (identical(other.scMaxBufferedPosts, _this.scMaxBufferedPosts) ||
+                other.scMaxBufferedPosts == _this.scMaxBufferedPosts) &&
+            (identical(
+                  other.scStreamUpServerSecs,
+                  _this.scStreamUpServerSecs,
+                ) ||
+                other.scStreamUpServerSecs == _this.scStreamUpServerSecs) &&
+            (identical(
+                  other.serverMaxHeaderBytes,
+                  _this.serverMaxHeaderBytes,
+                ) ||
+                other.serverMaxHeaderBytes == _this.serverMaxHeaderBytes) &&
+            (identical(other.xmux, _this.xmux) || other.xmux == _this.xmux) &&
+            (identical(other.downloadSettings, _this.downloadSettings) ||
+                other.downloadSettings == _this.downloadSettings) &&
+            const DeepCollectionEquality().equals(other.extra, _this.extra));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        host,
-        path,
-        mode,
-        const DeepCollectionEquality().hash(headers),
-        xPaddingBytes,
-        xPaddingObfsMode,
-        xPaddingKey,
-        xPaddingHeader,
-        xPaddingPlacement,
-        xPaddingMethod,
-        uplinkHTTPMethod,
-        sessionIDPlacement,
-        sessionIDKey,
-        sessionIDTable,
-        sessionIDLength,
-        seqPlacement,
-        seqKey,
-        uplinkDataPlacement,
-        uplinkDataKey,
-        uplinkChunkSize,
-        noGRPCHeader,
-        noSSEHeader,
-        scMaxEachPostBytes,
-        scMinPostsIntervalMs,
-        scMaxBufferedPosts,
-        scStreamUpServerSecs,
-        serverMaxHeaderBytes,
-        xmux,
-        downloadSettings,
-        const DeepCollectionEquality().hash(extra)
-      ]);
+  int get hashCode {
+    final _this = this as SplitHTTPConfig;
+    return Object.hashAll([
+      runtimeType,
+      _this.host,
+      _this.path,
+      _this.mode,
+      const DeepCollectionEquality().hash(_this.headers),
+      _this.xPaddingBytes,
+      _this.xPaddingObfsMode,
+      _this.xPaddingKey,
+      _this.xPaddingHeader,
+      _this.xPaddingPlacement,
+      _this.xPaddingMethod,
+      _this.uplinkHTTPMethod,
+      _this.sessionIDPlacement,
+      _this.sessionIDKey,
+      _this.sessionIDTable,
+      _this.sessionIDLength,
+      _this.seqPlacement,
+      _this.seqKey,
+      _this.uplinkDataPlacement,
+      _this.uplinkDataKey,
+      _this.uplinkChunkSize,
+      _this.noGRPCHeader,
+      _this.noSSEHeader,
+      _this.scMaxEachPostBytes,
+      _this.scMinPostsIntervalMs,
+      _this.scMaxBufferedPosts,
+      _this.scStreamUpServerSecs,
+      _this.serverMaxHeaderBytes,
+      _this.xmux,
+      _this.downloadSettings,
+      const DeepCollectionEquality().hash(_this.extra),
+    ]);
+  }
 
   @override
   String toString() {
-    return 'SplitHTTPConfig(host: $host, path: $path, mode: $mode, headers: $headers, xPaddingBytes: $xPaddingBytes, xPaddingObfsMode: $xPaddingObfsMode, xPaddingKey: $xPaddingKey, xPaddingHeader: $xPaddingHeader, xPaddingPlacement: $xPaddingPlacement, xPaddingMethod: $xPaddingMethod, uplinkHTTPMethod: $uplinkHTTPMethod, sessionIDPlacement: $sessionIDPlacement, sessionIDKey: $sessionIDKey, sessionIDTable: $sessionIDTable, sessionIDLength: $sessionIDLength, seqPlacement: $seqPlacement, seqKey: $seqKey, uplinkDataPlacement: $uplinkDataPlacement, uplinkDataKey: $uplinkDataKey, uplinkChunkSize: $uplinkChunkSize, noGRPCHeader: $noGRPCHeader, noSSEHeader: $noSSEHeader, scMaxEachPostBytes: $scMaxEachPostBytes, scMinPostsIntervalMs: $scMinPostsIntervalMs, scMaxBufferedPosts: $scMaxBufferedPosts, scStreamUpServerSecs: $scStreamUpServerSecs, serverMaxHeaderBytes: $serverMaxHeaderBytes, xmux: $xmux, downloadSettings: $downloadSettings, extra: $extra)';
+    final _this = this as SplitHTTPConfig;
+    return 'SplitHTTPConfig(host: ${_this.host}, path: ${_this.path}, mode: ${_this.mode}, headers: ${_this.headers}, xPaddingBytes: ${_this.xPaddingBytes}, xPaddingObfsMode: ${_this.xPaddingObfsMode}, xPaddingKey: ${_this.xPaddingKey}, xPaddingHeader: ${_this.xPaddingHeader}, xPaddingPlacement: ${_this.xPaddingPlacement}, xPaddingMethod: ${_this.xPaddingMethod}, uplinkHTTPMethod: ${_this.uplinkHTTPMethod}, sessionIDPlacement: ${_this.sessionIDPlacement}, sessionIDKey: ${_this.sessionIDKey}, sessionIDTable: ${_this.sessionIDTable}, sessionIDLength: ${_this.sessionIDLength}, seqPlacement: ${_this.seqPlacement}, seqKey: ${_this.seqKey}, uplinkDataPlacement: ${_this.uplinkDataPlacement}, uplinkDataKey: ${_this.uplinkDataKey}, uplinkChunkSize: ${_this.uplinkChunkSize}, noGRPCHeader: ${_this.noGRPCHeader}, noSSEHeader: ${_this.noSSEHeader}, scMaxEachPostBytes: ${_this.scMaxEachPostBytes}, scMinPostsIntervalMs: ${_this.scMinPostsIntervalMs}, scMaxBufferedPosts: ${_this.scMaxBufferedPosts}, scStreamUpServerSecs: ${_this.scStreamUpServerSecs}, serverMaxHeaderBytes: ${_this.serverMaxHeaderBytes}, xmux: ${_this.xmux}, downloadSettings: ${_this.downloadSettings}, extra: ${_this.extra})';
   }
 }
 
 /// @nodoc
 abstract mixin class $SplitHTTPConfigCopyWith<$Res> {
   factory $SplitHTTPConfigCopyWith(
-          SplitHTTPConfig value, $Res Function(SplitHTTPConfig) _then) =
-      _$SplitHTTPConfigCopyWithImpl;
+    SplitHTTPConfig value,
+    $Res Function(SplitHTTPConfig) _then,
+  ) = _$SplitHTTPConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? host,
-      String? path,
-      SplitHTTPMode? mode,
-      Map<String, String>? headers,
-      XrayInt32Range? xPaddingBytes,
-      bool? xPaddingObfsMode,
-      String? xPaddingKey,
-      String? xPaddingHeader,
-      SplitHTTPPlacement? xPaddingPlacement,
-      SplitHTTPPaddingMethod? xPaddingMethod,
-      String? uplinkHTTPMethod,
-      SplitHTTPPlacement? sessionIDPlacement,
-      String? sessionIDKey,
-      String? sessionIDTable,
-      XrayInt32Range? sessionIDLength,
-      SplitHTTPPlacement? seqPlacement,
-      String? seqKey,
-      SplitHTTPPlacement? uplinkDataPlacement,
-      String? uplinkDataKey,
-      XrayInt32Range? uplinkChunkSize,
-      bool? noGRPCHeader,
-      bool? noSSEHeader,
-      XrayInt32Range? scMaxEachPostBytes,
-      XrayInt32Range? scMinPostsIntervalMs,
-      int? scMaxBufferedPosts,
-      XrayInt32Range? scStreamUpServerSecs,
-      int? serverMaxHeaderBytes,
-      XmuxConfig? xmux,
-      StreamConfig? downloadSettings,
-      Map<String, dynamic>? extra});
+  $Res call({
+    String? host,
+    String? path,
+    SplitHTTPMode? mode,
+    Map<String, String>? headers,
+    XrayInt32Range? xPaddingBytes,
+    bool? xPaddingObfsMode,
+    String? xPaddingKey,
+    String? xPaddingHeader,
+    SplitHTTPPlacement? xPaddingPlacement,
+    SplitHTTPPaddingMethod? xPaddingMethod,
+    String? uplinkHTTPMethod,
+    SplitHTTPPlacement? sessionIDPlacement,
+    String? sessionIDKey,
+    String? sessionIDTable,
+    XrayInt32Range? sessionIDLength,
+    SplitHTTPPlacement? seqPlacement,
+    String? seqKey,
+    SplitHTTPPlacement? uplinkDataPlacement,
+    String? uplinkDataKey,
+    XrayInt32Range? uplinkChunkSize,
+    bool? noGRPCHeader,
+    bool? noSSEHeader,
+    XrayInt32Range? scMaxEachPostBytes,
+    XrayInt32Range? scMinPostsIntervalMs,
+    int? scMaxBufferedPosts,
+    XrayInt32Range? scStreamUpServerSecs,
+    int? serverMaxHeaderBytes,
+    XmuxConfig? xmux,
+    StreamConfig? downloadSettings,
+    Map<String, dynamic>? extra,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get xPaddingBytes;
   $XrayInt32RangeCopyWith<$Res>? get sessionIDLength;
@@ -12055,128 +13478,130 @@ class _$SplitHTTPConfigCopyWithImpl<$Res>
     Object? downloadSettings = freezed,
     Object? extra = freezed,
   }) {
-    return _then(_self.copyWith(
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mode: freezed == mode
-          ? _self.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPMode?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      xPaddingBytes: freezed == xPaddingBytes
-          ? _self.xPaddingBytes
-          : xPaddingBytes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      xPaddingObfsMode: freezed == xPaddingObfsMode
-          ? _self.xPaddingObfsMode
-          : xPaddingObfsMode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      xPaddingKey: freezed == xPaddingKey
-          ? _self.xPaddingKey
-          : xPaddingKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      xPaddingHeader: freezed == xPaddingHeader
-          ? _self.xPaddingHeader
-          : xPaddingHeader // ignore: cast_nullable_to_non_nullable
-              as String?,
-      xPaddingPlacement: freezed == xPaddingPlacement
-          ? _self.xPaddingPlacement
-          : xPaddingPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      xPaddingMethod: freezed == xPaddingMethod
-          ? _self.xPaddingMethod
-          : xPaddingMethod // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPaddingMethod?,
-      uplinkHTTPMethod: freezed == uplinkHTTPMethod
-          ? _self.uplinkHTTPMethod
-          : uplinkHTTPMethod // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sessionIDPlacement: freezed == sessionIDPlacement
-          ? _self.sessionIDPlacement
-          : sessionIDPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      sessionIDKey: freezed == sessionIDKey
-          ? _self.sessionIDKey
-          : sessionIDKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sessionIDTable: freezed == sessionIDTable
-          ? _self.sessionIDTable
-          : sessionIDTable // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sessionIDLength: freezed == sessionIDLength
-          ? _self.sessionIDLength
-          : sessionIDLength // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      seqPlacement: freezed == seqPlacement
-          ? _self.seqPlacement
-          : seqPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      seqKey: freezed == seqKey
-          ? _self.seqKey
-          : seqKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      uplinkDataPlacement: freezed == uplinkDataPlacement
-          ? _self.uplinkDataPlacement
-          : uplinkDataPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      uplinkDataKey: freezed == uplinkDataKey
-          ? _self.uplinkDataKey
-          : uplinkDataKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      uplinkChunkSize: freezed == uplinkChunkSize
-          ? _self.uplinkChunkSize
-          : uplinkChunkSize // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      noGRPCHeader: freezed == noGRPCHeader
-          ? _self.noGRPCHeader
-          : noGRPCHeader // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      noSSEHeader: freezed == noSSEHeader
-          ? _self.noSSEHeader
-          : noSSEHeader // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      scMaxEachPostBytes: freezed == scMaxEachPostBytes
-          ? _self.scMaxEachPostBytes
-          : scMaxEachPostBytes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      scMinPostsIntervalMs: freezed == scMinPostsIntervalMs
-          ? _self.scMinPostsIntervalMs
-          : scMinPostsIntervalMs // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      scMaxBufferedPosts: freezed == scMaxBufferedPosts
-          ? _self.scMaxBufferedPosts
-          : scMaxBufferedPosts // ignore: cast_nullable_to_non_nullable
-              as int?,
-      scStreamUpServerSecs: freezed == scStreamUpServerSecs
-          ? _self.scStreamUpServerSecs
-          : scStreamUpServerSecs // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      serverMaxHeaderBytes: freezed == serverMaxHeaderBytes
-          ? _self.serverMaxHeaderBytes
-          : serverMaxHeaderBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
-      xmux: freezed == xmux
-          ? _self.xmux
-          : xmux // ignore: cast_nullable_to_non_nullable
-              as XmuxConfig?,
-      downloadSettings: freezed == downloadSettings
-          ? _self.downloadSettings
-          : downloadSettings // ignore: cast_nullable_to_non_nullable
-              as StreamConfig?,
-      extra: freezed == extra
-          ? _self.extra
-          : extra // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    return _then(
+      SplitHTTPConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        mode: freezed == mode
+            ? _self.mode
+            : mode // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPMode?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        xPaddingBytes: freezed == xPaddingBytes
+            ? _self.xPaddingBytes
+            : xPaddingBytes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        xPaddingObfsMode: freezed == xPaddingObfsMode
+            ? _self.xPaddingObfsMode
+            : xPaddingObfsMode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        xPaddingKey: freezed == xPaddingKey
+            ? _self.xPaddingKey
+            : xPaddingKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        xPaddingHeader: freezed == xPaddingHeader
+            ? _self.xPaddingHeader
+            : xPaddingHeader // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        xPaddingPlacement: freezed == xPaddingPlacement
+            ? _self.xPaddingPlacement
+            : xPaddingPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        xPaddingMethod: freezed == xPaddingMethod
+            ? _self.xPaddingMethod
+            : xPaddingMethod // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPaddingMethod?,
+        uplinkHTTPMethod: freezed == uplinkHTTPMethod
+            ? _self.uplinkHTTPMethod
+            : uplinkHTTPMethod // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sessionIDPlacement: freezed == sessionIDPlacement
+            ? _self.sessionIDPlacement
+            : sessionIDPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        sessionIDKey: freezed == sessionIDKey
+            ? _self.sessionIDKey
+            : sessionIDKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sessionIDTable: freezed == sessionIDTable
+            ? _self.sessionIDTable
+            : sessionIDTable // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sessionIDLength: freezed == sessionIDLength
+            ? _self.sessionIDLength
+            : sessionIDLength // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        seqPlacement: freezed == seqPlacement
+            ? _self.seqPlacement
+            : seqPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        seqKey: freezed == seqKey
+            ? _self.seqKey
+            : seqKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        uplinkDataPlacement: freezed == uplinkDataPlacement
+            ? _self.uplinkDataPlacement
+            : uplinkDataPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        uplinkDataKey: freezed == uplinkDataKey
+            ? _self.uplinkDataKey
+            : uplinkDataKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        uplinkChunkSize: freezed == uplinkChunkSize
+            ? _self.uplinkChunkSize
+            : uplinkChunkSize // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        noGRPCHeader: freezed == noGRPCHeader
+            ? _self.noGRPCHeader
+            : noGRPCHeader // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        noSSEHeader: freezed == noSSEHeader
+            ? _self.noSSEHeader
+            : noSSEHeader // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        scMaxEachPostBytes: freezed == scMaxEachPostBytes
+            ? _self.scMaxEachPostBytes
+            : scMaxEachPostBytes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        scMinPostsIntervalMs: freezed == scMinPostsIntervalMs
+            ? _self.scMinPostsIntervalMs
+            : scMinPostsIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        scMaxBufferedPosts: freezed == scMaxBufferedPosts
+            ? _self.scMaxBufferedPosts
+            : scMaxBufferedPosts // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        scStreamUpServerSecs: freezed == scStreamUpServerSecs
+            ? _self.scStreamUpServerSecs
+            : scStreamUpServerSecs // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        serverMaxHeaderBytes: freezed == serverMaxHeaderBytes
+            ? _self.serverMaxHeaderBytes
+            : serverMaxHeaderBytes // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        xmux: freezed == xmux
+            ? _self.xmux
+            : xmux // ignore: cast_nullable_to_non_nullable
+                  as XmuxConfig?,
+        downloadSettings: freezed == downloadSettings
+            ? _self.downloadSettings
+            : downloadSettings // ignore: cast_nullable_to_non_nullable
+                  as StreamConfig?,
+        extra: freezed == extra
+            ? _self.extra
+            : extra // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+      ),
+    );
   }
 
   /// Create a copy of SplitHTTPConfig
@@ -12386,73 +13811,75 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? host,
-            String? path,
-            SplitHTTPMode? mode,
-            Map<String, String>? headers,
-            XrayInt32Range? xPaddingBytes,
-            bool? xPaddingObfsMode,
-            String? xPaddingKey,
-            String? xPaddingHeader,
-            SplitHTTPPlacement? xPaddingPlacement,
-            SplitHTTPPaddingMethod? xPaddingMethod,
-            String? uplinkHTTPMethod,
-            SplitHTTPPlacement? sessionIDPlacement,
-            String? sessionIDKey,
-            String? sessionIDTable,
-            XrayInt32Range? sessionIDLength,
-            SplitHTTPPlacement? seqPlacement,
-            String? seqKey,
-            SplitHTTPPlacement? uplinkDataPlacement,
-            String? uplinkDataKey,
-            XrayInt32Range? uplinkChunkSize,
-            bool? noGRPCHeader,
-            bool? noSSEHeader,
-            XrayInt32Range? scMaxEachPostBytes,
-            XrayInt32Range? scMinPostsIntervalMs,
-            int? scMaxBufferedPosts,
-            XrayInt32Range? scStreamUpServerSecs,
-            int? serverMaxHeaderBytes,
-            XmuxConfig? xmux,
-            StreamConfig? downloadSettings,
-            Map<String, dynamic>? extra)?
-        $default, {
+      String? host,
+      String? path,
+      SplitHTTPMode? mode,
+      Map<String, String>? headers,
+      XrayInt32Range? xPaddingBytes,
+      bool? xPaddingObfsMode,
+      String? xPaddingKey,
+      String? xPaddingHeader,
+      SplitHTTPPlacement? xPaddingPlacement,
+      SplitHTTPPaddingMethod? xPaddingMethod,
+      String? uplinkHTTPMethod,
+      SplitHTTPPlacement? sessionIDPlacement,
+      String? sessionIDKey,
+      String? sessionIDTable,
+      XrayInt32Range? sessionIDLength,
+      SplitHTTPPlacement? seqPlacement,
+      String? seqKey,
+      SplitHTTPPlacement? uplinkDataPlacement,
+      String? uplinkDataKey,
+      XrayInt32Range? uplinkChunkSize,
+      bool? noGRPCHeader,
+      bool? noSSEHeader,
+      XrayInt32Range? scMaxEachPostBytes,
+      XrayInt32Range? scMinPostsIntervalMs,
+      int? scMaxBufferedPosts,
+      XrayInt32Range? scStreamUpServerSecs,
+      int? serverMaxHeaderBytes,
+      XmuxConfig? xmux,
+      StreamConfig? downloadSettings,
+      Map<String, dynamic>? extra,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _SplitHTTPConfig() when $default != null:
         return $default(
-            _that.host,
-            _that.path,
-            _that.mode,
-            _that.headers,
-            _that.xPaddingBytes,
-            _that.xPaddingObfsMode,
-            _that.xPaddingKey,
-            _that.xPaddingHeader,
-            _that.xPaddingPlacement,
-            _that.xPaddingMethod,
-            _that.uplinkHTTPMethod,
-            _that.sessionIDPlacement,
-            _that.sessionIDKey,
-            _that.sessionIDTable,
-            _that.sessionIDLength,
-            _that.seqPlacement,
-            _that.seqKey,
-            _that.uplinkDataPlacement,
-            _that.uplinkDataKey,
-            _that.uplinkChunkSize,
-            _that.noGRPCHeader,
-            _that.noSSEHeader,
-            _that.scMaxEachPostBytes,
-            _that.scMinPostsIntervalMs,
-            _that.scMaxBufferedPosts,
-            _that.scStreamUpServerSecs,
-            _that.serverMaxHeaderBytes,
-            _that.xmux,
-            _that.downloadSettings,
-            _that.extra);
+          _that.host,
+          _that.path,
+          _that.mode,
+          _that.headers,
+          _that.xPaddingBytes,
+          _that.xPaddingObfsMode,
+          _that.xPaddingKey,
+          _that.xPaddingHeader,
+          _that.xPaddingPlacement,
+          _that.xPaddingMethod,
+          _that.uplinkHTTPMethod,
+          _that.sessionIDPlacement,
+          _that.sessionIDKey,
+          _that.sessionIDTable,
+          _that.sessionIDLength,
+          _that.seqPlacement,
+          _that.seqKey,
+          _that.uplinkDataPlacement,
+          _that.uplinkDataKey,
+          _that.uplinkChunkSize,
+          _that.noGRPCHeader,
+          _that.noSSEHeader,
+          _that.scMaxEachPostBytes,
+          _that.scMinPostsIntervalMs,
+          _that.scMaxBufferedPosts,
+          _that.scStreamUpServerSecs,
+          _that.serverMaxHeaderBytes,
+          _that.xmux,
+          _that.downloadSettings,
+          _that.extra,
+        );
       case _:
         return orElse();
     }
@@ -12474,72 +13901,74 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? host,
-            String? path,
-            SplitHTTPMode? mode,
-            Map<String, String>? headers,
-            XrayInt32Range? xPaddingBytes,
-            bool? xPaddingObfsMode,
-            String? xPaddingKey,
-            String? xPaddingHeader,
-            SplitHTTPPlacement? xPaddingPlacement,
-            SplitHTTPPaddingMethod? xPaddingMethod,
-            String? uplinkHTTPMethod,
-            SplitHTTPPlacement? sessionIDPlacement,
-            String? sessionIDKey,
-            String? sessionIDTable,
-            XrayInt32Range? sessionIDLength,
-            SplitHTTPPlacement? seqPlacement,
-            String? seqKey,
-            SplitHTTPPlacement? uplinkDataPlacement,
-            String? uplinkDataKey,
-            XrayInt32Range? uplinkChunkSize,
-            bool? noGRPCHeader,
-            bool? noSSEHeader,
-            XrayInt32Range? scMaxEachPostBytes,
-            XrayInt32Range? scMinPostsIntervalMs,
-            int? scMaxBufferedPosts,
-            XrayInt32Range? scStreamUpServerSecs,
-            int? serverMaxHeaderBytes,
-            XmuxConfig? xmux,
-            StreamConfig? downloadSettings,
-            Map<String, dynamic>? extra)
-        $default,
+      String? host,
+      String? path,
+      SplitHTTPMode? mode,
+      Map<String, String>? headers,
+      XrayInt32Range? xPaddingBytes,
+      bool? xPaddingObfsMode,
+      String? xPaddingKey,
+      String? xPaddingHeader,
+      SplitHTTPPlacement? xPaddingPlacement,
+      SplitHTTPPaddingMethod? xPaddingMethod,
+      String? uplinkHTTPMethod,
+      SplitHTTPPlacement? sessionIDPlacement,
+      String? sessionIDKey,
+      String? sessionIDTable,
+      XrayInt32Range? sessionIDLength,
+      SplitHTTPPlacement? seqPlacement,
+      String? seqKey,
+      SplitHTTPPlacement? uplinkDataPlacement,
+      String? uplinkDataKey,
+      XrayInt32Range? uplinkChunkSize,
+      bool? noGRPCHeader,
+      bool? noSSEHeader,
+      XrayInt32Range? scMaxEachPostBytes,
+      XrayInt32Range? scMinPostsIntervalMs,
+      int? scMaxBufferedPosts,
+      XrayInt32Range? scStreamUpServerSecs,
+      int? serverMaxHeaderBytes,
+      XmuxConfig? xmux,
+      StreamConfig? downloadSettings,
+      Map<String, dynamic>? extra,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SplitHTTPConfig():
         return $default(
-            _that.host,
-            _that.path,
-            _that.mode,
-            _that.headers,
-            _that.xPaddingBytes,
-            _that.xPaddingObfsMode,
-            _that.xPaddingKey,
-            _that.xPaddingHeader,
-            _that.xPaddingPlacement,
-            _that.xPaddingMethod,
-            _that.uplinkHTTPMethod,
-            _that.sessionIDPlacement,
-            _that.sessionIDKey,
-            _that.sessionIDTable,
-            _that.sessionIDLength,
-            _that.seqPlacement,
-            _that.seqKey,
-            _that.uplinkDataPlacement,
-            _that.uplinkDataKey,
-            _that.uplinkChunkSize,
-            _that.noGRPCHeader,
-            _that.noSSEHeader,
-            _that.scMaxEachPostBytes,
-            _that.scMinPostsIntervalMs,
-            _that.scMaxBufferedPosts,
-            _that.scStreamUpServerSecs,
-            _that.serverMaxHeaderBytes,
-            _that.xmux,
-            _that.downloadSettings,
-            _that.extra);
+          _that.host,
+          _that.path,
+          _that.mode,
+          _that.headers,
+          _that.xPaddingBytes,
+          _that.xPaddingObfsMode,
+          _that.xPaddingKey,
+          _that.xPaddingHeader,
+          _that.xPaddingPlacement,
+          _that.xPaddingMethod,
+          _that.uplinkHTTPMethod,
+          _that.sessionIDPlacement,
+          _that.sessionIDKey,
+          _that.sessionIDTable,
+          _that.sessionIDLength,
+          _that.seqPlacement,
+          _that.seqKey,
+          _that.uplinkDataPlacement,
+          _that.uplinkDataKey,
+          _that.uplinkChunkSize,
+          _that.noGRPCHeader,
+          _that.noSSEHeader,
+          _that.scMaxEachPostBytes,
+          _that.scMinPostsIntervalMs,
+          _that.scMaxBufferedPosts,
+          _that.scStreamUpServerSecs,
+          _that.serverMaxHeaderBytes,
+          _that.xmux,
+          _that.downloadSettings,
+          _that.extra,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -12560,72 +13989,74 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? host,
-            String? path,
-            SplitHTTPMode? mode,
-            Map<String, String>? headers,
-            XrayInt32Range? xPaddingBytes,
-            bool? xPaddingObfsMode,
-            String? xPaddingKey,
-            String? xPaddingHeader,
-            SplitHTTPPlacement? xPaddingPlacement,
-            SplitHTTPPaddingMethod? xPaddingMethod,
-            String? uplinkHTTPMethod,
-            SplitHTTPPlacement? sessionIDPlacement,
-            String? sessionIDKey,
-            String? sessionIDTable,
-            XrayInt32Range? sessionIDLength,
-            SplitHTTPPlacement? seqPlacement,
-            String? seqKey,
-            SplitHTTPPlacement? uplinkDataPlacement,
-            String? uplinkDataKey,
-            XrayInt32Range? uplinkChunkSize,
-            bool? noGRPCHeader,
-            bool? noSSEHeader,
-            XrayInt32Range? scMaxEachPostBytes,
-            XrayInt32Range? scMinPostsIntervalMs,
-            int? scMaxBufferedPosts,
-            XrayInt32Range? scStreamUpServerSecs,
-            int? serverMaxHeaderBytes,
-            XmuxConfig? xmux,
-            StreamConfig? downloadSettings,
-            Map<String, dynamic>? extra)?
-        $default,
+      String? host,
+      String? path,
+      SplitHTTPMode? mode,
+      Map<String, String>? headers,
+      XrayInt32Range? xPaddingBytes,
+      bool? xPaddingObfsMode,
+      String? xPaddingKey,
+      String? xPaddingHeader,
+      SplitHTTPPlacement? xPaddingPlacement,
+      SplitHTTPPaddingMethod? xPaddingMethod,
+      String? uplinkHTTPMethod,
+      SplitHTTPPlacement? sessionIDPlacement,
+      String? sessionIDKey,
+      String? sessionIDTable,
+      XrayInt32Range? sessionIDLength,
+      SplitHTTPPlacement? seqPlacement,
+      String? seqKey,
+      SplitHTTPPlacement? uplinkDataPlacement,
+      String? uplinkDataKey,
+      XrayInt32Range? uplinkChunkSize,
+      bool? noGRPCHeader,
+      bool? noSSEHeader,
+      XrayInt32Range? scMaxEachPostBytes,
+      XrayInt32Range? scMinPostsIntervalMs,
+      int? scMaxBufferedPosts,
+      XrayInt32Range? scStreamUpServerSecs,
+      int? serverMaxHeaderBytes,
+      XmuxConfig? xmux,
+      StreamConfig? downloadSettings,
+      Map<String, dynamic>? extra,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _SplitHTTPConfig() when $default != null:
         return $default(
-            _that.host,
-            _that.path,
-            _that.mode,
-            _that.headers,
-            _that.xPaddingBytes,
-            _that.xPaddingObfsMode,
-            _that.xPaddingKey,
-            _that.xPaddingHeader,
-            _that.xPaddingPlacement,
-            _that.xPaddingMethod,
-            _that.uplinkHTTPMethod,
-            _that.sessionIDPlacement,
-            _that.sessionIDKey,
-            _that.sessionIDTable,
-            _that.sessionIDLength,
-            _that.seqPlacement,
-            _that.seqKey,
-            _that.uplinkDataPlacement,
-            _that.uplinkDataKey,
-            _that.uplinkChunkSize,
-            _that.noGRPCHeader,
-            _that.noSSEHeader,
-            _that.scMaxEachPostBytes,
-            _that.scMinPostsIntervalMs,
-            _that.scMaxBufferedPosts,
-            _that.scStreamUpServerSecs,
-            _that.serverMaxHeaderBytes,
-            _that.xmux,
-            _that.downloadSettings,
-            _that.extra);
+          _that.host,
+          _that.path,
+          _that.mode,
+          _that.headers,
+          _that.xPaddingBytes,
+          _that.xPaddingObfsMode,
+          _that.xPaddingKey,
+          _that.xPaddingHeader,
+          _that.xPaddingPlacement,
+          _that.xPaddingMethod,
+          _that.uplinkHTTPMethod,
+          _that.sessionIDPlacement,
+          _that.sessionIDKey,
+          _that.sessionIDTable,
+          _that.sessionIDLength,
+          _that.seqPlacement,
+          _that.seqKey,
+          _that.uplinkDataPlacement,
+          _that.uplinkDataKey,
+          _that.uplinkChunkSize,
+          _that.noGRPCHeader,
+          _that.noSSEHeader,
+          _that.scMaxEachPostBytes,
+          _that.scMinPostsIntervalMs,
+          _that.scMaxBufferedPosts,
+          _that.scStreamUpServerSecs,
+          _that.serverMaxHeaderBytes,
+          _that.xmux,
+          _that.downloadSettings,
+          _that.extra,
+        );
       case _:
         return null;
     }
@@ -12635,40 +14066,40 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
 /// @nodoc
 
 class _SplitHTTPConfig extends SplitHTTPConfig {
-  const _SplitHTTPConfig(
-      {this.host,
-      this.path,
-      this.mode,
-      final Map<String, String>? headers,
-      this.xPaddingBytes,
-      this.xPaddingObfsMode,
-      this.xPaddingKey,
-      this.xPaddingHeader,
-      this.xPaddingPlacement,
-      this.xPaddingMethod,
-      this.uplinkHTTPMethod,
-      this.sessionIDPlacement,
-      this.sessionIDKey,
-      this.sessionIDTable,
-      this.sessionIDLength,
-      this.seqPlacement,
-      this.seqKey,
-      this.uplinkDataPlacement,
-      this.uplinkDataKey,
-      this.uplinkChunkSize,
-      this.noGRPCHeader,
-      this.noSSEHeader,
-      this.scMaxEachPostBytes,
-      this.scMinPostsIntervalMs,
-      this.scMaxBufferedPosts,
-      this.scStreamUpServerSecs,
-      this.serverMaxHeaderBytes,
-      this.xmux,
-      this.downloadSettings,
-      final Map<String, dynamic>? extra})
-      : _headers = headers,
-        _extra = extra,
-        super._();
+  const _SplitHTTPConfig({
+    this.host,
+    this.path,
+    this.mode,
+    Map<String, String>? headers,
+    this.xPaddingBytes,
+    this.xPaddingObfsMode,
+    this.xPaddingKey,
+    this.xPaddingHeader,
+    this.xPaddingPlacement,
+    this.xPaddingMethod,
+    this.uplinkHTTPMethod,
+    this.sessionIDPlacement,
+    this.sessionIDKey,
+    this.sessionIDTable,
+    this.sessionIDLength,
+    this.seqPlacement,
+    this.seqKey,
+    this.uplinkDataPlacement,
+    this.uplinkDataKey,
+    this.uplinkChunkSize,
+    this.noGRPCHeader,
+    this.noSSEHeader,
+    this.scMaxEachPostBytes,
+    this.scMinPostsIntervalMs,
+    this.scMaxBufferedPosts,
+    this.scStreamUpServerSecs,
+    this.serverMaxHeaderBytes,
+    this.xmux,
+    this.downloadSettings,
+    Map<String, dynamic>? extra,
+  }) : _headers = headers,
+       _extra = extra,
+       super._();
 
   @override
   final String? host;
@@ -12762,7 +14193,7 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
             (identical(other.host, host) || other.host == host) &&
             (identical(other.path, path) || other.path == path) &&
             (identical(other.mode, mode) || other.mode == mode) &&
-            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other.headers, _headers) &&
             (identical(other.xPaddingBytes, xPaddingBytes) ||
                 other.xPaddingBytes == xPaddingBytes) &&
             (identical(other.xPaddingObfsMode, xPaddingObfsMode) ||
@@ -12811,43 +14242,45 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
             (identical(other.xmux, xmux) || other.xmux == xmux) &&
             (identical(other.downloadSettings, downloadSettings) ||
                 other.downloadSettings == downloadSettings) &&
-            const DeepCollectionEquality().equals(other._extra, _extra));
+            const DeepCollectionEquality().equals(other.extra, _extra));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        host,
-        path,
-        mode,
-        const DeepCollectionEquality().hash(_headers),
-        xPaddingBytes,
-        xPaddingObfsMode,
-        xPaddingKey,
-        xPaddingHeader,
-        xPaddingPlacement,
-        xPaddingMethod,
-        uplinkHTTPMethod,
-        sessionIDPlacement,
-        sessionIDKey,
-        sessionIDTable,
-        sessionIDLength,
-        seqPlacement,
-        seqKey,
-        uplinkDataPlacement,
-        uplinkDataKey,
-        uplinkChunkSize,
-        noGRPCHeader,
-        noSSEHeader,
-        scMaxEachPostBytes,
-        scMinPostsIntervalMs,
-        scMaxBufferedPosts,
-        scStreamUpServerSecs,
-        serverMaxHeaderBytes,
-        xmux,
-        downloadSettings,
-        const DeepCollectionEquality().hash(_extra)
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      host,
+      path,
+      mode,
+      const DeepCollectionEquality().hash(_headers),
+      xPaddingBytes,
+      xPaddingObfsMode,
+      xPaddingKey,
+      xPaddingHeader,
+      xPaddingPlacement,
+      xPaddingMethod,
+      uplinkHTTPMethod,
+      sessionIDPlacement,
+      sessionIDKey,
+      sessionIDTable,
+      sessionIDLength,
+      seqPlacement,
+      seqKey,
+      uplinkDataPlacement,
+      uplinkDataKey,
+      uplinkChunkSize,
+      noGRPCHeader,
+      noSSEHeader,
+      scMaxEachPostBytes,
+      scMinPostsIntervalMs,
+      scMaxBufferedPosts,
+      scStreamUpServerSecs,
+      serverMaxHeaderBytes,
+      xmux,
+      downloadSettings,
+      const DeepCollectionEquality().hash(_extra),
+    ]);
+  }
 
   @override
   String toString() {
@@ -12859,41 +14292,43 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
 abstract mixin class _$SplitHTTPConfigCopyWith<$Res>
     implements $SplitHTTPConfigCopyWith<$Res> {
   factory _$SplitHTTPConfigCopyWith(
-          _SplitHTTPConfig value, $Res Function(_SplitHTTPConfig) _then) =
-      __$SplitHTTPConfigCopyWithImpl;
+    _SplitHTTPConfig value,
+    $Res Function(_SplitHTTPConfig) _then,
+  ) = __$SplitHTTPConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? host,
-      String? path,
-      SplitHTTPMode? mode,
-      Map<String, String>? headers,
-      XrayInt32Range? xPaddingBytes,
-      bool? xPaddingObfsMode,
-      String? xPaddingKey,
-      String? xPaddingHeader,
-      SplitHTTPPlacement? xPaddingPlacement,
-      SplitHTTPPaddingMethod? xPaddingMethod,
-      String? uplinkHTTPMethod,
-      SplitHTTPPlacement? sessionIDPlacement,
-      String? sessionIDKey,
-      String? sessionIDTable,
-      XrayInt32Range? sessionIDLength,
-      SplitHTTPPlacement? seqPlacement,
-      String? seqKey,
-      SplitHTTPPlacement? uplinkDataPlacement,
-      String? uplinkDataKey,
-      XrayInt32Range? uplinkChunkSize,
-      bool? noGRPCHeader,
-      bool? noSSEHeader,
-      XrayInt32Range? scMaxEachPostBytes,
-      XrayInt32Range? scMinPostsIntervalMs,
-      int? scMaxBufferedPosts,
-      XrayInt32Range? scStreamUpServerSecs,
-      int? serverMaxHeaderBytes,
-      XmuxConfig? xmux,
-      StreamConfig? downloadSettings,
-      Map<String, dynamic>? extra});
+  $Res call({
+    String? host,
+    String? path,
+    SplitHTTPMode? mode,
+    Map<String, String>? headers,
+    XrayInt32Range? xPaddingBytes,
+    bool? xPaddingObfsMode,
+    String? xPaddingKey,
+    String? xPaddingHeader,
+    SplitHTTPPlacement? xPaddingPlacement,
+    SplitHTTPPaddingMethod? xPaddingMethod,
+    String? uplinkHTTPMethod,
+    SplitHTTPPlacement? sessionIDPlacement,
+    String? sessionIDKey,
+    String? sessionIDTable,
+    XrayInt32Range? sessionIDLength,
+    SplitHTTPPlacement? seqPlacement,
+    String? seqKey,
+    SplitHTTPPlacement? uplinkDataPlacement,
+    String? uplinkDataKey,
+    XrayInt32Range? uplinkChunkSize,
+    bool? noGRPCHeader,
+    bool? noSSEHeader,
+    XrayInt32Range? scMaxEachPostBytes,
+    XrayInt32Range? scMinPostsIntervalMs,
+    int? scMaxBufferedPosts,
+    XrayInt32Range? scStreamUpServerSecs,
+    int? serverMaxHeaderBytes,
+    XmuxConfig? xmux,
+    StreamConfig? downloadSettings,
+    Map<String, dynamic>? extra,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get xPaddingBytes;
@@ -12957,128 +14392,130 @@ class __$SplitHTTPConfigCopyWithImpl<$Res>
     Object? downloadSettings = freezed,
     Object? extra = freezed,
   }) {
-    return _then(_SplitHTTPConfig(
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mode: freezed == mode
-          ? _self.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPMode?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      xPaddingBytes: freezed == xPaddingBytes
-          ? _self.xPaddingBytes
-          : xPaddingBytes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      xPaddingObfsMode: freezed == xPaddingObfsMode
-          ? _self.xPaddingObfsMode
-          : xPaddingObfsMode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      xPaddingKey: freezed == xPaddingKey
-          ? _self.xPaddingKey
-          : xPaddingKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      xPaddingHeader: freezed == xPaddingHeader
-          ? _self.xPaddingHeader
-          : xPaddingHeader // ignore: cast_nullable_to_non_nullable
-              as String?,
-      xPaddingPlacement: freezed == xPaddingPlacement
-          ? _self.xPaddingPlacement
-          : xPaddingPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      xPaddingMethod: freezed == xPaddingMethod
-          ? _self.xPaddingMethod
-          : xPaddingMethod // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPaddingMethod?,
-      uplinkHTTPMethod: freezed == uplinkHTTPMethod
-          ? _self.uplinkHTTPMethod
-          : uplinkHTTPMethod // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sessionIDPlacement: freezed == sessionIDPlacement
-          ? _self.sessionIDPlacement
-          : sessionIDPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      sessionIDKey: freezed == sessionIDKey
-          ? _self.sessionIDKey
-          : sessionIDKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sessionIDTable: freezed == sessionIDTable
-          ? _self.sessionIDTable
-          : sessionIDTable // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sessionIDLength: freezed == sessionIDLength
-          ? _self.sessionIDLength
-          : sessionIDLength // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      seqPlacement: freezed == seqPlacement
-          ? _self.seqPlacement
-          : seqPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      seqKey: freezed == seqKey
-          ? _self.seqKey
-          : seqKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      uplinkDataPlacement: freezed == uplinkDataPlacement
-          ? _self.uplinkDataPlacement
-          : uplinkDataPlacement // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPPlacement?,
-      uplinkDataKey: freezed == uplinkDataKey
-          ? _self.uplinkDataKey
-          : uplinkDataKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-      uplinkChunkSize: freezed == uplinkChunkSize
-          ? _self.uplinkChunkSize
-          : uplinkChunkSize // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      noGRPCHeader: freezed == noGRPCHeader
-          ? _self.noGRPCHeader
-          : noGRPCHeader // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      noSSEHeader: freezed == noSSEHeader
-          ? _self.noSSEHeader
-          : noSSEHeader // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      scMaxEachPostBytes: freezed == scMaxEachPostBytes
-          ? _self.scMaxEachPostBytes
-          : scMaxEachPostBytes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      scMinPostsIntervalMs: freezed == scMinPostsIntervalMs
-          ? _self.scMinPostsIntervalMs
-          : scMinPostsIntervalMs // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      scMaxBufferedPosts: freezed == scMaxBufferedPosts
-          ? _self.scMaxBufferedPosts
-          : scMaxBufferedPosts // ignore: cast_nullable_to_non_nullable
-              as int?,
-      scStreamUpServerSecs: freezed == scStreamUpServerSecs
-          ? _self.scStreamUpServerSecs
-          : scStreamUpServerSecs // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      serverMaxHeaderBytes: freezed == serverMaxHeaderBytes
-          ? _self.serverMaxHeaderBytes
-          : serverMaxHeaderBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
-      xmux: freezed == xmux
-          ? _self.xmux
-          : xmux // ignore: cast_nullable_to_non_nullable
-              as XmuxConfig?,
-      downloadSettings: freezed == downloadSettings
-          ? _self.downloadSettings
-          : downloadSettings // ignore: cast_nullable_to_non_nullable
-              as StreamConfig?,
-      extra: freezed == extra
-          ? _self._extra
-          : extra // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    return _then(
+      _SplitHTTPConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        mode: freezed == mode
+            ? _self.mode
+            : mode // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPMode?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        xPaddingBytes: freezed == xPaddingBytes
+            ? _self.xPaddingBytes
+            : xPaddingBytes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        xPaddingObfsMode: freezed == xPaddingObfsMode
+            ? _self.xPaddingObfsMode
+            : xPaddingObfsMode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        xPaddingKey: freezed == xPaddingKey
+            ? _self.xPaddingKey
+            : xPaddingKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        xPaddingHeader: freezed == xPaddingHeader
+            ? _self.xPaddingHeader
+            : xPaddingHeader // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        xPaddingPlacement: freezed == xPaddingPlacement
+            ? _self.xPaddingPlacement
+            : xPaddingPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        xPaddingMethod: freezed == xPaddingMethod
+            ? _self.xPaddingMethod
+            : xPaddingMethod // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPaddingMethod?,
+        uplinkHTTPMethod: freezed == uplinkHTTPMethod
+            ? _self.uplinkHTTPMethod
+            : uplinkHTTPMethod // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sessionIDPlacement: freezed == sessionIDPlacement
+            ? _self.sessionIDPlacement
+            : sessionIDPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        sessionIDKey: freezed == sessionIDKey
+            ? _self.sessionIDKey
+            : sessionIDKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sessionIDTable: freezed == sessionIDTable
+            ? _self.sessionIDTable
+            : sessionIDTable // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sessionIDLength: freezed == sessionIDLength
+            ? _self.sessionIDLength
+            : sessionIDLength // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        seqPlacement: freezed == seqPlacement
+            ? _self.seqPlacement
+            : seqPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        seqKey: freezed == seqKey
+            ? _self.seqKey
+            : seqKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        uplinkDataPlacement: freezed == uplinkDataPlacement
+            ? _self.uplinkDataPlacement
+            : uplinkDataPlacement // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPPlacement?,
+        uplinkDataKey: freezed == uplinkDataKey
+            ? _self.uplinkDataKey
+            : uplinkDataKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        uplinkChunkSize: freezed == uplinkChunkSize
+            ? _self.uplinkChunkSize
+            : uplinkChunkSize // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        noGRPCHeader: freezed == noGRPCHeader
+            ? _self.noGRPCHeader
+            : noGRPCHeader // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        noSSEHeader: freezed == noSSEHeader
+            ? _self.noSSEHeader
+            : noSSEHeader // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        scMaxEachPostBytes: freezed == scMaxEachPostBytes
+            ? _self.scMaxEachPostBytes
+            : scMaxEachPostBytes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        scMinPostsIntervalMs: freezed == scMinPostsIntervalMs
+            ? _self.scMinPostsIntervalMs
+            : scMinPostsIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        scMaxBufferedPosts: freezed == scMaxBufferedPosts
+            ? _self.scMaxBufferedPosts
+            : scMaxBufferedPosts // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        scStreamUpServerSecs: freezed == scStreamUpServerSecs
+            ? _self.scStreamUpServerSecs
+            : scStreamUpServerSecs // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        serverMaxHeaderBytes: freezed == serverMaxHeaderBytes
+            ? _self.serverMaxHeaderBytes
+            : serverMaxHeaderBytes // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        xmux: freezed == xmux
+            ? _self.xmux
+            : xmux // ignore: cast_nullable_to_non_nullable
+                  as XmuxConfig?,
+        downloadSettings: freezed == downloadSettings
+            ? _self.downloadSettings
+            : downloadSettings // ignore: cast_nullable_to_non_nullable
+                  as StreamConfig?,
+        extra: freezed == extra
+            ? _self._extra
+            : extra // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+      ),
+    );
   }
 
   /// Create a copy of SplitHTTPConfig
@@ -13221,99 +14658,113 @@ mixin _$StreamConfig {
   @pragma('vm:prefer-inline')
   $StreamConfigCopyWith<StreamConfig> get copyWith =>
       _$StreamConfigCopyWithImpl<StreamConfig>(
-          this as StreamConfig, _$identity);
+        this as StreamConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as StreamConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StreamConfig &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.method, method) || other.method == method) &&
-            (identical(other.network, network) || other.network == network) &&
-            (identical(other.security, security) ||
-                other.security == security) &&
-            (identical(other.finalmask, finalmask) ||
-                other.finalmask == finalmask) &&
-            (identical(other.rawSettings, rawSettings) ||
-                other.rawSettings == rawSettings) &&
-            (identical(other.tcpSettings, tcpSettings) ||
-                other.tcpSettings == tcpSettings) &&
-            (identical(other.xhttpSettings, xhttpSettings) ||
-                other.xhttpSettings == xhttpSettings) &&
-            (identical(other.kcpSettings, kcpSettings) ||
-                other.kcpSettings == kcpSettings) &&
-            (identical(other.wsSettings, wsSettings) ||
-                other.wsSettings == wsSettings) &&
-            (identical(other.httpupgradeSettings, httpupgradeSettings) ||
-                other.httpupgradeSettings == httpupgradeSettings) &&
-            (identical(other.splithttpSettings, splithttpSettings) ||
-                other.splithttpSettings == splithttpSettings) &&
-            (identical(other.grpcSettings, grpcSettings) ||
-                other.grpcSettings == grpcSettings) &&
-            (identical(other.hysteriaSettings, hysteriaSettings) ||
-                other.hysteriaSettings == hysteriaSettings) &&
-            (identical(other.tlsSettings, tlsSettings) ||
-                other.tlsSettings == tlsSettings) &&
-            (identical(other.realitySettings, realitySettings) ||
-                other.realitySettings == realitySettings) &&
-            (identical(other.sockopt, sockopt) || other.sockopt == sockopt));
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            (identical(other.method, _this.method) ||
+                other.method == _this.method) &&
+            (identical(other.network, _this.network) ||
+                other.network == _this.network) &&
+            (identical(other.security, _this.security) ||
+                other.security == _this.security) &&
+            (identical(other.finalmask, _this.finalmask) ||
+                other.finalmask == _this.finalmask) &&
+            (identical(other.rawSettings, _this.rawSettings) ||
+                other.rawSettings == _this.rawSettings) &&
+            (identical(other.tcpSettings, _this.tcpSettings) ||
+                other.tcpSettings == _this.tcpSettings) &&
+            (identical(other.xhttpSettings, _this.xhttpSettings) ||
+                other.xhttpSettings == _this.xhttpSettings) &&
+            (identical(other.kcpSettings, _this.kcpSettings) ||
+                other.kcpSettings == _this.kcpSettings) &&
+            (identical(other.wsSettings, _this.wsSettings) ||
+                other.wsSettings == _this.wsSettings) &&
+            (identical(other.httpupgradeSettings, _this.httpupgradeSettings) ||
+                other.httpupgradeSettings == _this.httpupgradeSettings) &&
+            (identical(other.splithttpSettings, _this.splithttpSettings) ||
+                other.splithttpSettings == _this.splithttpSettings) &&
+            (identical(other.grpcSettings, _this.grpcSettings) ||
+                other.grpcSettings == _this.grpcSettings) &&
+            (identical(other.hysteriaSettings, _this.hysteriaSettings) ||
+                other.hysteriaSettings == _this.hysteriaSettings) &&
+            (identical(other.tlsSettings, _this.tlsSettings) ||
+                other.tlsSettings == _this.tlsSettings) &&
+            (identical(other.realitySettings, _this.realitySettings) ||
+                other.realitySettings == _this.realitySettings) &&
+            (identical(other.sockopt, _this.sockopt) ||
+                other.sockopt == _this.sockopt));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as StreamConfig;
+    return Object.hash(
       runtimeType,
-      address,
-      port,
-      method,
-      network,
-      security,
-      finalmask,
-      rawSettings,
-      tcpSettings,
-      xhttpSettings,
-      kcpSettings,
-      wsSettings,
-      httpupgradeSettings,
-      splithttpSettings,
-      grpcSettings,
-      hysteriaSettings,
-      tlsSettings,
-      realitySettings,
-      sockopt);
+      _this.address,
+      _this.port,
+      _this.method,
+      _this.network,
+      _this.security,
+      _this.finalmask,
+      _this.rawSettings,
+      _this.tcpSettings,
+      _this.xhttpSettings,
+      _this.kcpSettings,
+      _this.wsSettings,
+      _this.httpupgradeSettings,
+      _this.splithttpSettings,
+      _this.grpcSettings,
+      _this.hysteriaSettings,
+      _this.tlsSettings,
+      _this.realitySettings,
+      _this.sockopt,
+    );
+  }
 
   @override
   String toString() {
-    return 'StreamConfig(address: $address, port: $port, method: $method, network: $network, security: $security, finalmask: $finalmask, rawSettings: $rawSettings, tcpSettings: $tcpSettings, xhttpSettings: $xhttpSettings, kcpSettings: $kcpSettings, wsSettings: $wsSettings, httpupgradeSettings: $httpupgradeSettings, splithttpSettings: $splithttpSettings, grpcSettings: $grpcSettings, hysteriaSettings: $hysteriaSettings, tlsSettings: $tlsSettings, realitySettings: $realitySettings, sockopt: $sockopt)';
+    final _this = this as StreamConfig;
+    return 'StreamConfig(address: ${_this.address}, port: ${_this.port}, method: ${_this.method}, network: ${_this.network}, security: ${_this.security}, finalmask: ${_this.finalmask}, rawSettings: ${_this.rawSettings}, tcpSettings: ${_this.tcpSettings}, xhttpSettings: ${_this.xhttpSettings}, kcpSettings: ${_this.kcpSettings}, wsSettings: ${_this.wsSettings}, httpupgradeSettings: ${_this.httpupgradeSettings}, splithttpSettings: ${_this.splithttpSettings}, grpcSettings: ${_this.grpcSettings}, hysteriaSettings: ${_this.hysteriaSettings}, tlsSettings: ${_this.tlsSettings}, realitySettings: ${_this.realitySettings}, sockopt: ${_this.sockopt})';
   }
 }
 
 /// @nodoc
 abstract mixin class $StreamConfigCopyWith<$Res> {
   factory $StreamConfigCopyWith(
-          StreamConfig value, $Res Function(StreamConfig) _then) =
-      _$StreamConfigCopyWithImpl;
+    StreamConfig value,
+    $Res Function(StreamConfig) _then,
+  ) = _$StreamConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      TransportProtocol? method,
-      TransportProtocol? network,
-      SecurityProtocol? security,
-      FinalMask? finalmask,
-      TCPConfig? rawSettings,
-      TCPConfig? tcpSettings,
-      SplitHTTPConfig? xhttpSettings,
-      KCPConfig? kcpSettings,
-      WebSocketConfig? wsSettings,
-      HttpUpgradeConfig? httpupgradeSettings,
-      SplitHTTPConfig? splithttpSettings,
-      GRPCConfig? grpcSettings,
-      HysteriaConfig? hysteriaSettings,
-      TLSConfig? tlsSettings,
-      REALITYConfig? realitySettings,
-      SocketConfig? sockopt});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    TransportProtocol? method,
+    TransportProtocol? network,
+    SecurityProtocol? security,
+    FinalMask? finalmask,
+    TCPConfig? rawSettings,
+    TCPConfig? tcpSettings,
+    SplitHTTPConfig? xhttpSettings,
+    KCPConfig? kcpSettings,
+    WebSocketConfig? wsSettings,
+    HttpUpgradeConfig? httpupgradeSettings,
+    SplitHTTPConfig? splithttpSettings,
+    GRPCConfig? grpcSettings,
+    HysteriaConfig? hysteriaSettings,
+    TLSConfig? tlsSettings,
+    REALITYConfig? realitySettings,
+    SocketConfig? sockopt,
+  });
 
   $FinalMaskCopyWith<$Res>? get finalmask;
   $TCPConfigCopyWith<$Res>? get rawSettings;
@@ -13361,80 +14812,82 @@ class _$StreamConfigCopyWithImpl<$Res> implements $StreamConfigCopyWith<$Res> {
     Object? realitySettings = freezed,
     Object? sockopt = freezed,
   }) {
-    return _then(_self.copyWith(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      method: freezed == method
-          ? _self.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as TransportProtocol?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as TransportProtocol?,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as SecurityProtocol?,
-      finalmask: freezed == finalmask
-          ? _self.finalmask
-          : finalmask // ignore: cast_nullable_to_non_nullable
-              as FinalMask?,
-      rawSettings: freezed == rawSettings
-          ? _self.rawSettings
-          : rawSettings // ignore: cast_nullable_to_non_nullable
-              as TCPConfig?,
-      tcpSettings: freezed == tcpSettings
-          ? _self.tcpSettings
-          : tcpSettings // ignore: cast_nullable_to_non_nullable
-              as TCPConfig?,
-      xhttpSettings: freezed == xhttpSettings
-          ? _self.xhttpSettings
-          : xhttpSettings // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPConfig?,
-      kcpSettings: freezed == kcpSettings
-          ? _self.kcpSettings
-          : kcpSettings // ignore: cast_nullable_to_non_nullable
-              as KCPConfig?,
-      wsSettings: freezed == wsSettings
-          ? _self.wsSettings
-          : wsSettings // ignore: cast_nullable_to_non_nullable
-              as WebSocketConfig?,
-      httpupgradeSettings: freezed == httpupgradeSettings
-          ? _self.httpupgradeSettings
-          : httpupgradeSettings // ignore: cast_nullable_to_non_nullable
-              as HttpUpgradeConfig?,
-      splithttpSettings: freezed == splithttpSettings
-          ? _self.splithttpSettings
-          : splithttpSettings // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPConfig?,
-      grpcSettings: freezed == grpcSettings
-          ? _self.grpcSettings
-          : grpcSettings // ignore: cast_nullable_to_non_nullable
-              as GRPCConfig?,
-      hysteriaSettings: freezed == hysteriaSettings
-          ? _self.hysteriaSettings
-          : hysteriaSettings // ignore: cast_nullable_to_non_nullable
-              as HysteriaConfig?,
-      tlsSettings: freezed == tlsSettings
-          ? _self.tlsSettings
-          : tlsSettings // ignore: cast_nullable_to_non_nullable
-              as TLSConfig?,
-      realitySettings: freezed == realitySettings
-          ? _self.realitySettings
-          : realitySettings // ignore: cast_nullable_to_non_nullable
-              as REALITYConfig?,
-      sockopt: freezed == sockopt
-          ? _self.sockopt
-          : sockopt // ignore: cast_nullable_to_non_nullable
-              as SocketConfig?,
-    ));
+    return _then(
+      StreamConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        method: freezed == method
+            ? _self.method
+            : method // ignore: cast_nullable_to_non_nullable
+                  as TransportProtocol?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as TransportProtocol?,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as SecurityProtocol?,
+        finalmask: freezed == finalmask
+            ? _self.finalmask
+            : finalmask // ignore: cast_nullable_to_non_nullable
+                  as FinalMask?,
+        rawSettings: freezed == rawSettings
+            ? _self.rawSettings
+            : rawSettings // ignore: cast_nullable_to_non_nullable
+                  as TCPConfig?,
+        tcpSettings: freezed == tcpSettings
+            ? _self.tcpSettings
+            : tcpSettings // ignore: cast_nullable_to_non_nullable
+                  as TCPConfig?,
+        xhttpSettings: freezed == xhttpSettings
+            ? _self.xhttpSettings
+            : xhttpSettings // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPConfig?,
+        kcpSettings: freezed == kcpSettings
+            ? _self.kcpSettings
+            : kcpSettings // ignore: cast_nullable_to_non_nullable
+                  as KCPConfig?,
+        wsSettings: freezed == wsSettings
+            ? _self.wsSettings
+            : wsSettings // ignore: cast_nullable_to_non_nullable
+                  as WebSocketConfig?,
+        httpupgradeSettings: freezed == httpupgradeSettings
+            ? _self.httpupgradeSettings
+            : httpupgradeSettings // ignore: cast_nullable_to_non_nullable
+                  as HttpUpgradeConfig?,
+        splithttpSettings: freezed == splithttpSettings
+            ? _self.splithttpSettings
+            : splithttpSettings // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPConfig?,
+        grpcSettings: freezed == grpcSettings
+            ? _self.grpcSettings
+            : grpcSettings // ignore: cast_nullable_to_non_nullable
+                  as GRPCConfig?,
+        hysteriaSettings: freezed == hysteriaSettings
+            ? _self.hysteriaSettings
+            : hysteriaSettings // ignore: cast_nullable_to_non_nullable
+                  as HysteriaConfig?,
+        tlsSettings: freezed == tlsSettings
+            ? _self.tlsSettings
+            : tlsSettings // ignore: cast_nullable_to_non_nullable
+                  as TLSConfig?,
+        realitySettings: freezed == realitySettings
+            ? _self.realitySettings
+            : realitySettings // ignore: cast_nullable_to_non_nullable
+                  as REALITYConfig?,
+        sockopt: freezed == sockopt
+            ? _self.sockopt
+            : sockopt // ignore: cast_nullable_to_non_nullable
+                  as SocketConfig?,
+      ),
+    );
   }
 
   /// Create a copy of StreamConfig
@@ -13530,8 +14983,9 @@ class _$StreamConfigCopyWithImpl<$Res> implements $StreamConfigCopyWith<$Res> {
       return null;
     }
 
-    return $HttpUpgradeConfigCopyWith<$Res>(_self.httpupgradeSettings!,
-        (value) {
+    return $HttpUpgradeConfigCopyWith<$Res>(_self.httpupgradeSettings!, (
+      value,
+    ) {
       return _then(_self.copyWith(httpupgradeSettings: value));
     });
   }
@@ -13715,49 +15169,51 @@ extension StreamConfigPatterns on StreamConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            TransportProtocol? method,
-            TransportProtocol? network,
-            SecurityProtocol? security,
-            FinalMask? finalmask,
-            TCPConfig? rawSettings,
-            TCPConfig? tcpSettings,
-            SplitHTTPConfig? xhttpSettings,
-            KCPConfig? kcpSettings,
-            WebSocketConfig? wsSettings,
-            HttpUpgradeConfig? httpupgradeSettings,
-            SplitHTTPConfig? splithttpSettings,
-            GRPCConfig? grpcSettings,
-            HysteriaConfig? hysteriaSettings,
-            TLSConfig? tlsSettings,
-            REALITYConfig? realitySettings,
-            SocketConfig? sockopt)?
-        $default, {
+      XrayAddress? address,
+      int? port,
+      TransportProtocol? method,
+      TransportProtocol? network,
+      SecurityProtocol? security,
+      FinalMask? finalmask,
+      TCPConfig? rawSettings,
+      TCPConfig? tcpSettings,
+      SplitHTTPConfig? xhttpSettings,
+      KCPConfig? kcpSettings,
+      WebSocketConfig? wsSettings,
+      HttpUpgradeConfig? httpupgradeSettings,
+      SplitHTTPConfig? splithttpSettings,
+      GRPCConfig? grpcSettings,
+      HysteriaConfig? hysteriaSettings,
+      TLSConfig? tlsSettings,
+      REALITYConfig? realitySettings,
+      SocketConfig? sockopt,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _StreamConfig() when $default != null:
         return $default(
-            _that.address,
-            _that.port,
-            _that.method,
-            _that.network,
-            _that.security,
-            _that.finalmask,
-            _that.rawSettings,
-            _that.tcpSettings,
-            _that.xhttpSettings,
-            _that.kcpSettings,
-            _that.wsSettings,
-            _that.httpupgradeSettings,
-            _that.splithttpSettings,
-            _that.grpcSettings,
-            _that.hysteriaSettings,
-            _that.tlsSettings,
-            _that.realitySettings,
-            _that.sockopt);
+          _that.address,
+          _that.port,
+          _that.method,
+          _that.network,
+          _that.security,
+          _that.finalmask,
+          _that.rawSettings,
+          _that.tcpSettings,
+          _that.xhttpSettings,
+          _that.kcpSettings,
+          _that.wsSettings,
+          _that.httpupgradeSettings,
+          _that.splithttpSettings,
+          _that.grpcSettings,
+          _that.hysteriaSettings,
+          _that.tlsSettings,
+          _that.realitySettings,
+          _that.sockopt,
+        );
       case _:
         return orElse();
     }
@@ -13779,48 +15235,50 @@ extension StreamConfigPatterns on StreamConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayAddress? address,
-            int? port,
-            TransportProtocol? method,
-            TransportProtocol? network,
-            SecurityProtocol? security,
-            FinalMask? finalmask,
-            TCPConfig? rawSettings,
-            TCPConfig? tcpSettings,
-            SplitHTTPConfig? xhttpSettings,
-            KCPConfig? kcpSettings,
-            WebSocketConfig? wsSettings,
-            HttpUpgradeConfig? httpupgradeSettings,
-            SplitHTTPConfig? splithttpSettings,
-            GRPCConfig? grpcSettings,
-            HysteriaConfig? hysteriaSettings,
-            TLSConfig? tlsSettings,
-            REALITYConfig? realitySettings,
-            SocketConfig? sockopt)
-        $default,
+      XrayAddress? address,
+      int? port,
+      TransportProtocol? method,
+      TransportProtocol? network,
+      SecurityProtocol? security,
+      FinalMask? finalmask,
+      TCPConfig? rawSettings,
+      TCPConfig? tcpSettings,
+      SplitHTTPConfig? xhttpSettings,
+      KCPConfig? kcpSettings,
+      WebSocketConfig? wsSettings,
+      HttpUpgradeConfig? httpupgradeSettings,
+      SplitHTTPConfig? splithttpSettings,
+      GRPCConfig? grpcSettings,
+      HysteriaConfig? hysteriaSettings,
+      TLSConfig? tlsSettings,
+      REALITYConfig? realitySettings,
+      SocketConfig? sockopt,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _StreamConfig():
         return $default(
-            _that.address,
-            _that.port,
-            _that.method,
-            _that.network,
-            _that.security,
-            _that.finalmask,
-            _that.rawSettings,
-            _that.tcpSettings,
-            _that.xhttpSettings,
-            _that.kcpSettings,
-            _that.wsSettings,
-            _that.httpupgradeSettings,
-            _that.splithttpSettings,
-            _that.grpcSettings,
-            _that.hysteriaSettings,
-            _that.tlsSettings,
-            _that.realitySettings,
-            _that.sockopt);
+          _that.address,
+          _that.port,
+          _that.method,
+          _that.network,
+          _that.security,
+          _that.finalmask,
+          _that.rawSettings,
+          _that.tcpSettings,
+          _that.xhttpSettings,
+          _that.kcpSettings,
+          _that.wsSettings,
+          _that.httpupgradeSettings,
+          _that.splithttpSettings,
+          _that.grpcSettings,
+          _that.hysteriaSettings,
+          _that.tlsSettings,
+          _that.realitySettings,
+          _that.sockopt,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -13841,48 +15299,50 @@ extension StreamConfigPatterns on StreamConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayAddress? address,
-            int? port,
-            TransportProtocol? method,
-            TransportProtocol? network,
-            SecurityProtocol? security,
-            FinalMask? finalmask,
-            TCPConfig? rawSettings,
-            TCPConfig? tcpSettings,
-            SplitHTTPConfig? xhttpSettings,
-            KCPConfig? kcpSettings,
-            WebSocketConfig? wsSettings,
-            HttpUpgradeConfig? httpupgradeSettings,
-            SplitHTTPConfig? splithttpSettings,
-            GRPCConfig? grpcSettings,
-            HysteriaConfig? hysteriaSettings,
-            TLSConfig? tlsSettings,
-            REALITYConfig? realitySettings,
-            SocketConfig? sockopt)?
-        $default,
+      XrayAddress? address,
+      int? port,
+      TransportProtocol? method,
+      TransportProtocol? network,
+      SecurityProtocol? security,
+      FinalMask? finalmask,
+      TCPConfig? rawSettings,
+      TCPConfig? tcpSettings,
+      SplitHTTPConfig? xhttpSettings,
+      KCPConfig? kcpSettings,
+      WebSocketConfig? wsSettings,
+      HttpUpgradeConfig? httpupgradeSettings,
+      SplitHTTPConfig? splithttpSettings,
+      GRPCConfig? grpcSettings,
+      HysteriaConfig? hysteriaSettings,
+      TLSConfig? tlsSettings,
+      REALITYConfig? realitySettings,
+      SocketConfig? sockopt,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _StreamConfig() when $default != null:
         return $default(
-            _that.address,
-            _that.port,
-            _that.method,
-            _that.network,
-            _that.security,
-            _that.finalmask,
-            _that.rawSettings,
-            _that.tcpSettings,
-            _that.xhttpSettings,
-            _that.kcpSettings,
-            _that.wsSettings,
-            _that.httpupgradeSettings,
-            _that.splithttpSettings,
-            _that.grpcSettings,
-            _that.hysteriaSettings,
-            _that.tlsSettings,
-            _that.realitySettings,
-            _that.sockopt);
+          _that.address,
+          _that.port,
+          _that.method,
+          _that.network,
+          _that.security,
+          _that.finalmask,
+          _that.rawSettings,
+          _that.tcpSettings,
+          _that.xhttpSettings,
+          _that.kcpSettings,
+          _that.wsSettings,
+          _that.httpupgradeSettings,
+          _that.splithttpSettings,
+          _that.grpcSettings,
+          _that.hysteriaSettings,
+          _that.tlsSettings,
+          _that.realitySettings,
+          _that.sockopt,
+        );
       case _:
         return null;
     }
@@ -13892,26 +15352,26 @@ extension StreamConfigPatterns on StreamConfig {
 /// @nodoc
 
 class _StreamConfig extends StreamConfig {
-  const _StreamConfig(
-      {this.address,
-      this.port,
-      this.method,
-      this.network,
-      this.security,
-      this.finalmask,
-      this.rawSettings,
-      this.tcpSettings,
-      this.xhttpSettings,
-      this.kcpSettings,
-      this.wsSettings,
-      this.httpupgradeSettings,
-      this.splithttpSettings,
-      this.grpcSettings,
-      this.hysteriaSettings,
-      this.tlsSettings,
-      this.realitySettings,
-      this.sockopt})
-      : super._();
+  const _StreamConfig({
+    this.address,
+    this.port,
+    this.method,
+    this.network,
+    this.security,
+    this.finalmask,
+    this.rawSettings,
+    this.tcpSettings,
+    this.xhttpSettings,
+    this.kcpSettings,
+    this.wsSettings,
+    this.httpupgradeSettings,
+    this.splithttpSettings,
+    this.grpcSettings,
+    this.hysteriaSettings,
+    this.tlsSettings,
+    this.realitySettings,
+    this.sockopt,
+  }) : super._();
 
   @override
   final XrayAddress? address;
@@ -13997,7 +15457,8 @@ class _StreamConfig extends StreamConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       address,
       port,
@@ -14016,7 +15477,9 @@ class _StreamConfig extends StreamConfig {
       hysteriaSettings,
       tlsSettings,
       realitySettings,
-      sockopt);
+      sockopt,
+    );
+  }
 
   @override
   String toString() {
@@ -14028,29 +15491,31 @@ class _StreamConfig extends StreamConfig {
 abstract mixin class _$StreamConfigCopyWith<$Res>
     implements $StreamConfigCopyWith<$Res> {
   factory _$StreamConfigCopyWith(
-          _StreamConfig value, $Res Function(_StreamConfig) _then) =
-      __$StreamConfigCopyWithImpl;
+    _StreamConfig value,
+    $Res Function(_StreamConfig) _then,
+  ) = __$StreamConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayAddress? address,
-      int? port,
-      TransportProtocol? method,
-      TransportProtocol? network,
-      SecurityProtocol? security,
-      FinalMask? finalmask,
-      TCPConfig? rawSettings,
-      TCPConfig? tcpSettings,
-      SplitHTTPConfig? xhttpSettings,
-      KCPConfig? kcpSettings,
-      WebSocketConfig? wsSettings,
-      HttpUpgradeConfig? httpupgradeSettings,
-      SplitHTTPConfig? splithttpSettings,
-      GRPCConfig? grpcSettings,
-      HysteriaConfig? hysteriaSettings,
-      TLSConfig? tlsSettings,
-      REALITYConfig? realitySettings,
-      SocketConfig? sockopt});
+  $Res call({
+    XrayAddress? address,
+    int? port,
+    TransportProtocol? method,
+    TransportProtocol? network,
+    SecurityProtocol? security,
+    FinalMask? finalmask,
+    TCPConfig? rawSettings,
+    TCPConfig? tcpSettings,
+    SplitHTTPConfig? xhttpSettings,
+    KCPConfig? kcpSettings,
+    WebSocketConfig? wsSettings,
+    HttpUpgradeConfig? httpupgradeSettings,
+    SplitHTTPConfig? splithttpSettings,
+    GRPCConfig? grpcSettings,
+    HysteriaConfig? hysteriaSettings,
+    TLSConfig? tlsSettings,
+    REALITYConfig? realitySettings,
+    SocketConfig? sockopt,
+  });
 
   @override
   $FinalMaskCopyWith<$Res>? get finalmask;
@@ -14112,80 +15577,82 @@ class __$StreamConfigCopyWithImpl<$Res>
     Object? realitySettings = freezed,
     Object? sockopt = freezed,
   }) {
-    return _then(_StreamConfig(
-      address: freezed == address
-          ? _self.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as XrayAddress?,
-      port: freezed == port
-          ? _self.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-      method: freezed == method
-          ? _self.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as TransportProtocol?,
-      network: freezed == network
-          ? _self.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as TransportProtocol?,
-      security: freezed == security
-          ? _self.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as SecurityProtocol?,
-      finalmask: freezed == finalmask
-          ? _self.finalmask
-          : finalmask // ignore: cast_nullable_to_non_nullable
-              as FinalMask?,
-      rawSettings: freezed == rawSettings
-          ? _self.rawSettings
-          : rawSettings // ignore: cast_nullable_to_non_nullable
-              as TCPConfig?,
-      tcpSettings: freezed == tcpSettings
-          ? _self.tcpSettings
-          : tcpSettings // ignore: cast_nullable_to_non_nullable
-              as TCPConfig?,
-      xhttpSettings: freezed == xhttpSettings
-          ? _self.xhttpSettings
-          : xhttpSettings // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPConfig?,
-      kcpSettings: freezed == kcpSettings
-          ? _self.kcpSettings
-          : kcpSettings // ignore: cast_nullable_to_non_nullable
-              as KCPConfig?,
-      wsSettings: freezed == wsSettings
-          ? _self.wsSettings
-          : wsSettings // ignore: cast_nullable_to_non_nullable
-              as WebSocketConfig?,
-      httpupgradeSettings: freezed == httpupgradeSettings
-          ? _self.httpupgradeSettings
-          : httpupgradeSettings // ignore: cast_nullable_to_non_nullable
-              as HttpUpgradeConfig?,
-      splithttpSettings: freezed == splithttpSettings
-          ? _self.splithttpSettings
-          : splithttpSettings // ignore: cast_nullable_to_non_nullable
-              as SplitHTTPConfig?,
-      grpcSettings: freezed == grpcSettings
-          ? _self.grpcSettings
-          : grpcSettings // ignore: cast_nullable_to_non_nullable
-              as GRPCConfig?,
-      hysteriaSettings: freezed == hysteriaSettings
-          ? _self.hysteriaSettings
-          : hysteriaSettings // ignore: cast_nullable_to_non_nullable
-              as HysteriaConfig?,
-      tlsSettings: freezed == tlsSettings
-          ? _self.tlsSettings
-          : tlsSettings // ignore: cast_nullable_to_non_nullable
-              as TLSConfig?,
-      realitySettings: freezed == realitySettings
-          ? _self.realitySettings
-          : realitySettings // ignore: cast_nullable_to_non_nullable
-              as REALITYConfig?,
-      sockopt: freezed == sockopt
-          ? _self.sockopt
-          : sockopt // ignore: cast_nullable_to_non_nullable
-              as SocketConfig?,
-    ));
+    return _then(
+      _StreamConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        method: freezed == method
+            ? _self.method
+            : method // ignore: cast_nullable_to_non_nullable
+                  as TransportProtocol?,
+        network: freezed == network
+            ? _self.network
+            : network // ignore: cast_nullable_to_non_nullable
+                  as TransportProtocol?,
+        security: freezed == security
+            ? _self.security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as SecurityProtocol?,
+        finalmask: freezed == finalmask
+            ? _self.finalmask
+            : finalmask // ignore: cast_nullable_to_non_nullable
+                  as FinalMask?,
+        rawSettings: freezed == rawSettings
+            ? _self.rawSettings
+            : rawSettings // ignore: cast_nullable_to_non_nullable
+                  as TCPConfig?,
+        tcpSettings: freezed == tcpSettings
+            ? _self.tcpSettings
+            : tcpSettings // ignore: cast_nullable_to_non_nullable
+                  as TCPConfig?,
+        xhttpSettings: freezed == xhttpSettings
+            ? _self.xhttpSettings
+            : xhttpSettings // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPConfig?,
+        kcpSettings: freezed == kcpSettings
+            ? _self.kcpSettings
+            : kcpSettings // ignore: cast_nullable_to_non_nullable
+                  as KCPConfig?,
+        wsSettings: freezed == wsSettings
+            ? _self.wsSettings
+            : wsSettings // ignore: cast_nullable_to_non_nullable
+                  as WebSocketConfig?,
+        httpupgradeSettings: freezed == httpupgradeSettings
+            ? _self.httpupgradeSettings
+            : httpupgradeSettings // ignore: cast_nullable_to_non_nullable
+                  as HttpUpgradeConfig?,
+        splithttpSettings: freezed == splithttpSettings
+            ? _self.splithttpSettings
+            : splithttpSettings // ignore: cast_nullable_to_non_nullable
+                  as SplitHTTPConfig?,
+        grpcSettings: freezed == grpcSettings
+            ? _self.grpcSettings
+            : grpcSettings // ignore: cast_nullable_to_non_nullable
+                  as GRPCConfig?,
+        hysteriaSettings: freezed == hysteriaSettings
+            ? _self.hysteriaSettings
+            : hysteriaSettings // ignore: cast_nullable_to_non_nullable
+                  as HysteriaConfig?,
+        tlsSettings: freezed == tlsSettings
+            ? _self.tlsSettings
+            : tlsSettings // ignore: cast_nullable_to_non_nullable
+                  as TLSConfig?,
+        realitySettings: freezed == realitySettings
+            ? _self.realitySettings
+            : realitySettings // ignore: cast_nullable_to_non_nullable
+                  as REALITYConfig?,
+        sockopt: freezed == sockopt
+            ? _self.sockopt
+            : sockopt // ignore: cast_nullable_to_non_nullable
+                  as SocketConfig?,
+      ),
+    );
   }
 
   /// Create a copy of StreamConfig
@@ -14281,8 +15748,9 @@ class __$StreamConfigCopyWithImpl<$Res>
       return null;
     }
 
-    return $HttpUpgradeConfigCopyWith<$Res>(_self.httpupgradeSettings!,
-        (value) {
+    return $HttpUpgradeConfigCopyWith<$Res>(_self.httpupgradeSettings!, (
+      value,
+    ) {
       return _then(_self.copyWith(httpupgradeSettings: value));
     });
   }
@@ -14399,47 +15867,58 @@ mixin _$Sudoku {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Sudoku;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Sudoku &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.ascii, ascii) || other.ascii == ascii) &&
-            (identical(other.customTable, customTable) ||
-                other.customTable == customTable) &&
-            (identical(other.legacyCustomTable, legacyCustomTable) ||
-                other.legacyCustomTable == legacyCustomTable) &&
-            const DeepCollectionEquality()
-                .equals(other.customTables, customTables) &&
-            const DeepCollectionEquality()
-                .equals(other.legacyCustomSets, legacyCustomSets) &&
-            (identical(other.paddingMin, paddingMin) ||
-                other.paddingMin == paddingMin) &&
-            (identical(other.legacyPaddingMin, legacyPaddingMin) ||
-                other.legacyPaddingMin == legacyPaddingMin) &&
-            (identical(other.paddingMax, paddingMax) ||
-                other.paddingMax == paddingMax) &&
-            (identical(other.legacyPaddingMax, legacyPaddingMax) ||
-                other.legacyPaddingMax == legacyPaddingMax));
+            (identical(other.password, _this.password) ||
+                other.password == _this.password) &&
+            (identical(other.ascii, _this.ascii) ||
+                other.ascii == _this.ascii) &&
+            (identical(other.customTable, _this.customTable) ||
+                other.customTable == _this.customTable) &&
+            (identical(other.legacyCustomTable, _this.legacyCustomTable) ||
+                other.legacyCustomTable == _this.legacyCustomTable) &&
+            const DeepCollectionEquality().equals(
+              other.customTables,
+              _this.customTables,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.legacyCustomSets,
+              _this.legacyCustomSets,
+            ) &&
+            (identical(other.paddingMin, _this.paddingMin) ||
+                other.paddingMin == _this.paddingMin) &&
+            (identical(other.legacyPaddingMin, _this.legacyPaddingMin) ||
+                other.legacyPaddingMin == _this.legacyPaddingMin) &&
+            (identical(other.paddingMax, _this.paddingMax) ||
+                other.paddingMax == _this.paddingMax) &&
+            (identical(other.legacyPaddingMax, _this.legacyPaddingMax) ||
+                other.legacyPaddingMax == _this.legacyPaddingMax));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as Sudoku;
+    return Object.hash(
       runtimeType,
-      password,
-      ascii,
-      customTable,
-      legacyCustomTable,
-      const DeepCollectionEquality().hash(customTables),
-      const DeepCollectionEquality().hash(legacyCustomSets),
-      paddingMin,
-      legacyPaddingMin,
-      paddingMax,
-      legacyPaddingMax);
+      _this.password,
+      _this.ascii,
+      _this.customTable,
+      _this.legacyCustomTable,
+      const DeepCollectionEquality().hash(_this.customTables),
+      const DeepCollectionEquality().hash(_this.legacyCustomSets),
+      _this.paddingMin,
+      _this.legacyPaddingMin,
+      _this.paddingMax,
+      _this.legacyPaddingMax,
+    );
+  }
 
   @override
   String toString() {
-    return 'Sudoku(password: $password, ascii: $ascii, customTable: $customTable, legacyCustomTable: $legacyCustomTable, customTables: $customTables, legacyCustomSets: $legacyCustomSets, paddingMin: $paddingMin, legacyPaddingMin: $legacyPaddingMin, paddingMax: $paddingMax, legacyPaddingMax: $legacyPaddingMax)';
+    final _this = this as Sudoku;
+    return 'Sudoku(password: ${_this.password}, ascii: ${_this.ascii}, customTable: ${_this.customTable}, legacyCustomTable: ${_this.legacyCustomTable}, customTables: ${_this.customTables}, legacyCustomSets: ${_this.legacyCustomSets}, paddingMin: ${_this.paddingMin}, legacyPaddingMin: ${_this.legacyPaddingMin}, paddingMax: ${_this.paddingMax}, legacyPaddingMax: ${_this.legacyPaddingMax})';
   }
 }
 
@@ -14448,17 +15927,18 @@ abstract mixin class $SudokuCopyWith<$Res> {
   factory $SudokuCopyWith(Sudoku value, $Res Function(Sudoku) _then) =
       _$SudokuCopyWithImpl;
   @useResult
-  $Res call(
-      {String? password,
-      @JsonKey(name: 'ascii') String? ascii,
-      String? customTable,
-      @JsonKey(name: 'custom_table') String? legacyCustomTable,
-      List<String>? customTables,
-      @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
-      int? paddingMin,
-      @JsonKey(name: 'padding_min') int? legacyPaddingMin,
-      int? paddingMax,
-      @JsonKey(name: 'padding_max') int? legacyPaddingMax});
+  $Res call({
+    String? password,
+    @JsonKey(name: 'ascii') String? ascii,
+    String? customTable,
+    @JsonKey(name: 'custom_table') String? legacyCustomTable,
+    List<String>? customTables,
+    @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
+    int? paddingMin,
+    @JsonKey(name: 'padding_min') int? legacyPaddingMin,
+    int? paddingMax,
+    @JsonKey(name: 'padding_max') int? legacyPaddingMax,
+  });
 }
 
 /// @nodoc
@@ -14484,48 +15964,50 @@ class _$SudokuCopyWithImpl<$Res> implements $SudokuCopyWith<$Res> {
     Object? paddingMax = freezed,
     Object? legacyPaddingMax = freezed,
   }) {
-    return _then(_self.copyWith(
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ascii: freezed == ascii
-          ? _self.ascii
-          : ascii // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customTable: freezed == customTable
-          ? _self.customTable
-          : customTable // ignore: cast_nullable_to_non_nullable
-              as String?,
-      legacyCustomTable: freezed == legacyCustomTable
-          ? _self.legacyCustomTable
-          : legacyCustomTable // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customTables: freezed == customTables
-          ? _self.customTables
-          : customTables // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      legacyCustomSets: freezed == legacyCustomSets
-          ? _self.legacyCustomSets
-          : legacyCustomSets // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      paddingMin: freezed == paddingMin
-          ? _self.paddingMin
-          : paddingMin // ignore: cast_nullable_to_non_nullable
-              as int?,
-      legacyPaddingMin: freezed == legacyPaddingMin
-          ? _self.legacyPaddingMin
-          : legacyPaddingMin // ignore: cast_nullable_to_non_nullable
-              as int?,
-      paddingMax: freezed == paddingMax
-          ? _self.paddingMax
-          : paddingMax // ignore: cast_nullable_to_non_nullable
-              as int?,
-      legacyPaddingMax: freezed == legacyPaddingMax
-          ? _self.legacyPaddingMax
-          : legacyPaddingMax // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      Sudoku(
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        ascii: freezed == ascii
+            ? _self.ascii
+            : ascii // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        customTable: freezed == customTable
+            ? _self.customTable
+            : customTable // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        legacyCustomTable: freezed == legacyCustomTable
+            ? _self.legacyCustomTable
+            : legacyCustomTable // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        customTables: freezed == customTables
+            ? _self.customTables
+            : customTables // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        legacyCustomSets: freezed == legacyCustomSets
+            ? _self.legacyCustomSets
+            : legacyCustomSets // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        paddingMin: freezed == paddingMin
+            ? _self.paddingMin
+            : paddingMin // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        legacyPaddingMin: freezed == legacyPaddingMin
+            ? _self.legacyPaddingMin
+            : legacyPaddingMin // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        paddingMax: freezed == paddingMax
+            ? _self.paddingMax
+            : paddingMax // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        legacyPaddingMax: freezed == legacyPaddingMax
+            ? _self.legacyPaddingMax
+            : legacyPaddingMax // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -14623,33 +16105,35 @@ extension SudokuPatterns on Sudoku {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? password,
-            @JsonKey(name: 'ascii') String? ascii,
-            String? customTable,
-            @JsonKey(name: 'custom_table') String? legacyCustomTable,
-            List<String>? customTables,
-            @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
-            int? paddingMin,
-            @JsonKey(name: 'padding_min') int? legacyPaddingMin,
-            int? paddingMax,
-            @JsonKey(name: 'padding_max') int? legacyPaddingMax)?
-        $default, {
+      String? password,
+      @JsonKey(name: 'ascii') String? ascii,
+      String? customTable,
+      @JsonKey(name: 'custom_table') String? legacyCustomTable,
+      List<String>? customTables,
+      @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
+      int? paddingMin,
+      @JsonKey(name: 'padding_min') int? legacyPaddingMin,
+      int? paddingMax,
+      @JsonKey(name: 'padding_max') int? legacyPaddingMax,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _Sudoku() when $default != null:
         return $default(
-            _that.password,
-            _that.ascii,
-            _that.customTable,
-            _that.legacyCustomTable,
-            _that.customTables,
-            _that.legacyCustomSets,
-            _that.paddingMin,
-            _that.legacyPaddingMin,
-            _that.paddingMax,
-            _that.legacyPaddingMax);
+          _that.password,
+          _that.ascii,
+          _that.customTable,
+          _that.legacyCustomTable,
+          _that.customTables,
+          _that.legacyCustomSets,
+          _that.paddingMin,
+          _that.legacyPaddingMin,
+          _that.paddingMax,
+          _that.legacyPaddingMax,
+        );
       case _:
         return orElse();
     }
@@ -14671,32 +16155,34 @@ extension SudokuPatterns on Sudoku {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? password,
-            @JsonKey(name: 'ascii') String? ascii,
-            String? customTable,
-            @JsonKey(name: 'custom_table') String? legacyCustomTable,
-            List<String>? customTables,
-            @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
-            int? paddingMin,
-            @JsonKey(name: 'padding_min') int? legacyPaddingMin,
-            int? paddingMax,
-            @JsonKey(name: 'padding_max') int? legacyPaddingMax)
-        $default,
+      String? password,
+      @JsonKey(name: 'ascii') String? ascii,
+      String? customTable,
+      @JsonKey(name: 'custom_table') String? legacyCustomTable,
+      List<String>? customTables,
+      @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
+      int? paddingMin,
+      @JsonKey(name: 'padding_min') int? legacyPaddingMin,
+      int? paddingMax,
+      @JsonKey(name: 'padding_max') int? legacyPaddingMax,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Sudoku():
         return $default(
-            _that.password,
-            _that.ascii,
-            _that.customTable,
-            _that.legacyCustomTable,
-            _that.customTables,
-            _that.legacyCustomSets,
-            _that.paddingMin,
-            _that.legacyPaddingMin,
-            _that.paddingMax,
-            _that.legacyPaddingMax);
+          _that.password,
+          _that.ascii,
+          _that.customTable,
+          _that.legacyCustomTable,
+          _that.customTables,
+          _that.legacyCustomSets,
+          _that.paddingMin,
+          _that.legacyPaddingMin,
+          _that.paddingMax,
+          _that.legacyPaddingMax,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -14717,32 +16203,34 @@ extension SudokuPatterns on Sudoku {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? password,
-            @JsonKey(name: 'ascii') String? ascii,
-            String? customTable,
-            @JsonKey(name: 'custom_table') String? legacyCustomTable,
-            List<String>? customTables,
-            @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
-            int? paddingMin,
-            @JsonKey(name: 'padding_min') int? legacyPaddingMin,
-            int? paddingMax,
-            @JsonKey(name: 'padding_max') int? legacyPaddingMax)?
-        $default,
+      String? password,
+      @JsonKey(name: 'ascii') String? ascii,
+      String? customTable,
+      @JsonKey(name: 'custom_table') String? legacyCustomTable,
+      List<String>? customTables,
+      @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
+      int? paddingMin,
+      @JsonKey(name: 'padding_min') int? legacyPaddingMin,
+      int? paddingMax,
+      @JsonKey(name: 'padding_max') int? legacyPaddingMax,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Sudoku() when $default != null:
         return $default(
-            _that.password,
-            _that.ascii,
-            _that.customTable,
-            _that.legacyCustomTable,
-            _that.customTables,
-            _that.legacyCustomSets,
-            _that.paddingMin,
-            _that.legacyPaddingMin,
-            _that.paddingMax,
-            _that.legacyPaddingMax);
+          _that.password,
+          _that.ascii,
+          _that.customTable,
+          _that.legacyCustomTable,
+          _that.customTables,
+          _that.legacyCustomSets,
+          _that.paddingMin,
+          _that.legacyPaddingMin,
+          _that.paddingMax,
+          _that.legacyPaddingMax,
+        );
       case _:
         return null;
     }
@@ -14752,20 +16240,20 @@ extension SudokuPatterns on Sudoku {
 /// @nodoc
 
 class _Sudoku extends Sudoku {
-  const _Sudoku(
-      {this.password,
-      @JsonKey(name: 'ascii') this.ascii,
-      this.customTable,
-      @JsonKey(name: 'custom_table') this.legacyCustomTable,
-      final List<String>? customTables,
-      @JsonKey(name: 'custom_tables') final List<String>? legacyCustomSets,
-      this.paddingMin,
-      @JsonKey(name: 'padding_min') this.legacyPaddingMin,
-      this.paddingMax,
-      @JsonKey(name: 'padding_max') this.legacyPaddingMax})
-      : _customTables = customTables,
-        _legacyCustomSets = legacyCustomSets,
-        super._();
+  const _Sudoku({
+    this.password,
+    @JsonKey(name: 'ascii') this.ascii,
+    this.customTable,
+    @JsonKey(name: 'custom_table') this.legacyCustomTable,
+    List<String>? customTables,
+    @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
+    this.paddingMin,
+    @JsonKey(name: 'padding_min') this.legacyPaddingMin,
+    this.paddingMax,
+    @JsonKey(name: 'padding_max') this.legacyPaddingMax,
+  }) : _customTables = customTables,
+       _legacyCustomSets = legacyCustomSets,
+       super._();
 
   @override
   final String? password;
@@ -14830,10 +16318,14 @@ class _Sudoku extends Sudoku {
                 other.customTable == customTable) &&
             (identical(other.legacyCustomTable, legacyCustomTable) ||
                 other.legacyCustomTable == legacyCustomTable) &&
-            const DeepCollectionEquality()
-                .equals(other._customTables, _customTables) &&
-            const DeepCollectionEquality()
-                .equals(other._legacyCustomSets, _legacyCustomSets) &&
+            const DeepCollectionEquality().equals(
+              other.customTables,
+              _customTables,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.legacyCustomSets,
+              _legacyCustomSets,
+            ) &&
             (identical(other.paddingMin, paddingMin) ||
                 other.paddingMin == paddingMin) &&
             (identical(other.legacyPaddingMin, legacyPaddingMin) ||
@@ -14845,7 +16337,8 @@ class _Sudoku extends Sudoku {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       password,
       ascii,
@@ -14856,7 +16349,9 @@ class _Sudoku extends Sudoku {
       paddingMin,
       legacyPaddingMin,
       paddingMax,
-      legacyPaddingMax);
+      legacyPaddingMax,
+    );
+  }
 
   @override
   String toString() {
@@ -14870,17 +16365,18 @@ abstract mixin class _$SudokuCopyWith<$Res> implements $SudokuCopyWith<$Res> {
       __$SudokuCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? password,
-      @JsonKey(name: 'ascii') String? ascii,
-      String? customTable,
-      @JsonKey(name: 'custom_table') String? legacyCustomTable,
-      List<String>? customTables,
-      @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
-      int? paddingMin,
-      @JsonKey(name: 'padding_min') int? legacyPaddingMin,
-      int? paddingMax,
-      @JsonKey(name: 'padding_max') int? legacyPaddingMax});
+  $Res call({
+    String? password,
+    @JsonKey(name: 'ascii') String? ascii,
+    String? customTable,
+    @JsonKey(name: 'custom_table') String? legacyCustomTable,
+    List<String>? customTables,
+    @JsonKey(name: 'custom_tables') List<String>? legacyCustomSets,
+    int? paddingMin,
+    @JsonKey(name: 'padding_min') int? legacyPaddingMin,
+    int? paddingMax,
+    @JsonKey(name: 'padding_max') int? legacyPaddingMax,
+  });
 }
 
 /// @nodoc
@@ -14906,48 +16402,50 @@ class __$SudokuCopyWithImpl<$Res> implements _$SudokuCopyWith<$Res> {
     Object? paddingMax = freezed,
     Object? legacyPaddingMax = freezed,
   }) {
-    return _then(_Sudoku(
-      password: freezed == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ascii: freezed == ascii
-          ? _self.ascii
-          : ascii // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customTable: freezed == customTable
-          ? _self.customTable
-          : customTable // ignore: cast_nullable_to_non_nullable
-              as String?,
-      legacyCustomTable: freezed == legacyCustomTable
-          ? _self.legacyCustomTable
-          : legacyCustomTable // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customTables: freezed == customTables
-          ? _self._customTables
-          : customTables // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      legacyCustomSets: freezed == legacyCustomSets
-          ? _self._legacyCustomSets
-          : legacyCustomSets // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      paddingMin: freezed == paddingMin
-          ? _self.paddingMin
-          : paddingMin // ignore: cast_nullable_to_non_nullable
-              as int?,
-      legacyPaddingMin: freezed == legacyPaddingMin
-          ? _self.legacyPaddingMin
-          : legacyPaddingMin // ignore: cast_nullable_to_non_nullable
-              as int?,
-      paddingMax: freezed == paddingMax
-          ? _self.paddingMax
-          : paddingMax // ignore: cast_nullable_to_non_nullable
-              as int?,
-      legacyPaddingMax: freezed == legacyPaddingMax
-          ? _self.legacyPaddingMax
-          : legacyPaddingMax // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _Sudoku(
+        password: freezed == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        ascii: freezed == ascii
+            ? _self.ascii
+            : ascii // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        customTable: freezed == customTable
+            ? _self.customTable
+            : customTable // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        legacyCustomTable: freezed == legacyCustomTable
+            ? _self.legacyCustomTable
+            : legacyCustomTable // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        customTables: freezed == customTables
+            ? _self._customTables
+            : customTables // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        legacyCustomSets: freezed == legacyCustomSets
+            ? _self._legacyCustomSets
+            : legacyCustomSets // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        paddingMin: freezed == paddingMin
+            ? _self.paddingMin
+            : paddingMin // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        legacyPaddingMin: freezed == legacyPaddingMin
+            ? _self.legacyPaddingMin
+            : legacyPaddingMin // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        paddingMax: freezed == paddingMax
+            ? _self.paddingMax
+            : paddingMax // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        legacyPaddingMax: freezed == legacyPaddingMax
+            ? _self.legacyPaddingMax
+            : legacyPaddingMax // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -14965,20 +16463,26 @@ mixin _$TCPConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TCPConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TCPConfig &&
-            (identical(other.header, header) || other.header == header) &&
-            (identical(other.acceptProxyProtocol, acceptProxyProtocol) ||
-                other.acceptProxyProtocol == acceptProxyProtocol));
+            (identical(other.header, _this.header) ||
+                other.header == _this.header) &&
+            (identical(other.acceptProxyProtocol, _this.acceptProxyProtocol) ||
+                other.acceptProxyProtocol == _this.acceptProxyProtocol));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, header, acceptProxyProtocol);
+  int get hashCode {
+    final _this = this as TCPConfig;
+    return Object.hash(runtimeType, _this.header, _this.acceptProxyProtocol);
+  }
 
   @override
   String toString() {
-    return 'TCPConfig(header: $header, acceptProxyProtocol: $acceptProxyProtocol)';
+    final _this = this as TCPConfig;
+    return 'TCPConfig(header: ${_this.header}, acceptProxyProtocol: ${_this.acceptProxyProtocol})';
   }
 }
 
@@ -15001,20 +16505,19 @@ class _$TCPConfigCopyWithImpl<$Res> implements $TCPConfigCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? header = freezed,
-    Object? acceptProxyProtocol = freezed,
-  }) {
-    return _then(_self.copyWith(
-      header: freezed == header
-          ? _self.header
-          : header // ignore: cast_nullable_to_non_nullable
-              as TCPHeaderConfig?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+  $Res call({Object? header = freezed, Object? acceptProxyProtocol = freezed}) {
+    return _then(
+      TCPConfig(
+        header: freezed == header
+            ? _self.header
+            : header // ignore: cast_nullable_to_non_nullable
+                  as TCPHeaderConfig?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -15112,7 +16615,7 @@ extension TCPConfigPatterns on TCPConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(TCPHeaderConfig? header, bool? acceptProxyProtocol)?
-        $default, {
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -15140,7 +16643,7 @@ extension TCPConfigPatterns on TCPConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(TCPHeaderConfig? header, bool? acceptProxyProtocol)
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -15166,7 +16669,7 @@ extension TCPConfigPatterns on TCPConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(TCPHeaderConfig? header, bool? acceptProxyProtocol)?
-        $default,
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -15207,7 +16710,9 @@ class _TCPConfig extends TCPConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, header, acceptProxyProtocol);
+  int get hashCode {
+    return Object.hash(runtimeType, header, acceptProxyProtocol);
+  }
 
   @override
   String toString() {
@@ -15219,8 +16724,9 @@ class _TCPConfig extends TCPConfig {
 abstract mixin class _$TCPConfigCopyWith<$Res>
     implements $TCPConfigCopyWith<$Res> {
   factory _$TCPConfigCopyWith(
-          _TCPConfig value, $Res Function(_TCPConfig) _then) =
-      __$TCPConfigCopyWithImpl;
+    _TCPConfig value,
+    $Res Function(_TCPConfig) _then,
+  ) = __$TCPConfigCopyWithImpl;
   @override
   @useResult
   $Res call({TCPHeaderConfig? header, bool? acceptProxyProtocol});
@@ -15237,20 +16743,19 @@ class __$TCPConfigCopyWithImpl<$Res> implements _$TCPConfigCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? header = freezed,
-    Object? acceptProxyProtocol = freezed,
-  }) {
-    return _then(_TCPConfig(
-      header: freezed == header
-          ? _self.header
-          : header // ignore: cast_nullable_to_non_nullable
-              as TCPHeaderConfig?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+  $Res call({Object? header = freezed, Object? acceptProxyProtocol = freezed}) {
+    return _then(
+      _TCPConfig(
+        header: freezed == header
+            ? _self.header
+            : header // ignore: cast_nullable_to_non_nullable
+                  as TCPHeaderConfig?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -15274,28 +16779,45 @@ mixin _$TCPItem {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TCPItem;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TCPItem &&
-            (identical(other.delay, delay) || other.delay == delay) &&
-            (identical(other.rand, rand) || other.rand == rand) &&
-            (identical(other.randRange, randRange) ||
-                other.randRange == randRange) &&
-            (identical(other.capture, capture) || other.capture == capture) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.reuse, reuse) || other.reuse == reuse) &&
-            (identical(other.transform, transform) ||
-                other.transform == transform) &&
-            const DeepCollectionEquality().equals(other.packet, packet));
+            (identical(other.delay, _this.delay) ||
+                other.delay == _this.delay) &&
+            (identical(other.rand, _this.rand) || other.rand == _this.rand) &&
+            (identical(other.randRange, _this.randRange) ||
+                other.randRange == _this.randRange) &&
+            (identical(other.capture, _this.capture) ||
+                other.capture == _this.capture) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.reuse, _this.reuse) ||
+                other.reuse == _this.reuse) &&
+            (identical(other.transform, _this.transform) ||
+                other.transform == _this.transform) &&
+            const DeepCollectionEquality().equals(other.packet, _this.packet));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, delay, rand, randRange, capture,
-      type, reuse, transform, const DeepCollectionEquality().hash(packet));
+  int get hashCode {
+    final _this = this as TCPItem;
+    return Object.hash(
+      runtimeType,
+      _this.delay,
+      _this.rand,
+      _this.randRange,
+      _this.capture,
+      _this.type,
+      _this.reuse,
+      _this.transform,
+      const DeepCollectionEquality().hash(_this.packet),
+    );
+  }
 
   @override
   String toString() {
-    return 'TCPItem(delay: $delay, rand: $rand, randRange: $randRange, capture: $capture, type: $type, reuse: $reuse, transform: $transform, packet: $packet)';
+    final _this = this as TCPItem;
+    return 'TCPItem(delay: ${_this.delay}, rand: ${_this.rand}, randRange: ${_this.randRange}, capture: ${_this.capture}, type: ${_this.type}, reuse: ${_this.reuse}, transform: ${_this.transform}, packet: ${_this.packet})';
   }
 }
 
@@ -15304,15 +16826,16 @@ abstract mixin class $TCPItemCopyWith<$Res> {
   factory $TCPItemCopyWith(TCPItem value, $Res Function(TCPItem) _then) =
       _$TCPItemCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayInt32Range? delay,
-      int? rand,
-      XrayInt32Range? randRange,
-      String? capture,
-      String? type,
-      String? reuse,
-      CustomTransform? transform,
-      Object? packet});
+  $Res call({
+    XrayInt32Range? delay,
+    int? rand,
+    XrayInt32Range? randRange,
+    String? capture,
+    String? type,
+    String? reuse,
+    CustomTransform? transform,
+    Object? packet,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get delay;
   $XrayInt32RangeCopyWith<$Res>? get randRange;
@@ -15340,37 +16863,39 @@ class _$TCPItemCopyWithImpl<$Res> implements $TCPItemCopyWith<$Res> {
     Object? transform = freezed,
     Object? packet = freezed,
   }) {
-    return _then(_self.copyWith(
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      rand: freezed == rand
-          ? _self.rand
-          : rand // ignore: cast_nullable_to_non_nullable
-              as int?,
-      randRange: freezed == randRange
-          ? _self.randRange
-          : randRange // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      capture: freezed == capture
-          ? _self.capture
-          : capture // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reuse: freezed == reuse
-          ? _self.reuse
-          : reuse // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transform: freezed == transform
-          ? _self.transform
-          : transform // ignore: cast_nullable_to_non_nullable
-              as CustomTransform?,
-      packet: freezed == packet ? _self.packet : packet,
-    ));
+    return _then(
+      TCPItem(
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        rand: freezed == rand
+            ? _self.rand
+            : rand // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        randRange: freezed == randRange
+            ? _self.randRange
+            : randRange // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        capture: freezed == capture
+            ? _self.capture
+            : capture // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reuse: freezed == reuse
+            ? _self.reuse
+            : reuse // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        transform: freezed == transform
+            ? _self.transform
+            : transform // ignore: cast_nullable_to_non_nullable
+                  as CustomTransform?,
+        packet: freezed == packet ? _self.packet : packet,
+      ),
+    );
   }
 
   /// Create a copy of TCPItem
@@ -15510,22 +17035,31 @@ extension TCPItemPatterns on TCPItem {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayInt32Range? delay,
-            int? rand,
-            XrayInt32Range? randRange,
-            String? capture,
-            String? type,
-            String? reuse,
-            CustomTransform? transform,
-            Object? packet)?
-        $default, {
+      XrayInt32Range? delay,
+      int? rand,
+      XrayInt32Range? randRange,
+      String? capture,
+      String? type,
+      String? reuse,
+      CustomTransform? transform,
+      Object? packet,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _TCPItem() when $default != null:
-        return $default(_that.delay, _that.rand, _that.randRange, _that.capture,
-            _that.type, _that.reuse, _that.transform, _that.packet);
+        return $default(
+          _that.delay,
+          _that.rand,
+          _that.randRange,
+          _that.capture,
+          _that.type,
+          _that.reuse,
+          _that.transform,
+          _that.packet,
+        );
       case _:
         return orElse();
     }
@@ -15547,21 +17081,30 @@ extension TCPItemPatterns on TCPItem {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayInt32Range? delay,
-            int? rand,
-            XrayInt32Range? randRange,
-            String? capture,
-            String? type,
-            String? reuse,
-            CustomTransform? transform,
-            Object? packet)
-        $default,
+      XrayInt32Range? delay,
+      int? rand,
+      XrayInt32Range? randRange,
+      String? capture,
+      String? type,
+      String? reuse,
+      CustomTransform? transform,
+      Object? packet,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TCPItem():
-        return $default(_that.delay, _that.rand, _that.randRange, _that.capture,
-            _that.type, _that.reuse, _that.transform, _that.packet);
+        return $default(
+          _that.delay,
+          _that.rand,
+          _that.randRange,
+          _that.capture,
+          _that.type,
+          _that.reuse,
+          _that.transform,
+          _that.packet,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -15582,21 +17125,30 @@ extension TCPItemPatterns on TCPItem {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayInt32Range? delay,
-            int? rand,
-            XrayInt32Range? randRange,
-            String? capture,
-            String? type,
-            String? reuse,
-            CustomTransform? transform,
-            Object? packet)?
-        $default,
+      XrayInt32Range? delay,
+      int? rand,
+      XrayInt32Range? randRange,
+      String? capture,
+      String? type,
+      String? reuse,
+      CustomTransform? transform,
+      Object? packet,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TCPItem() when $default != null:
-        return $default(_that.delay, _that.rand, _that.randRange, _that.capture,
-            _that.type, _that.reuse, _that.transform, _that.packet);
+        return $default(
+          _that.delay,
+          _that.rand,
+          _that.randRange,
+          _that.capture,
+          _that.type,
+          _that.reuse,
+          _that.transform,
+          _that.packet,
+        );
       case _:
         return null;
     }
@@ -15606,16 +17158,16 @@ extension TCPItemPatterns on TCPItem {
 /// @nodoc
 
 class _TCPItem extends TCPItem {
-  const _TCPItem(
-      {this.delay,
-      this.rand,
-      this.randRange,
-      this.capture,
-      this.type,
-      this.reuse,
-      this.transform,
-      this.packet})
-      : super._();
+  const _TCPItem({
+    this.delay,
+    this.rand,
+    this.randRange,
+    this.capture,
+    this.type,
+    this.reuse,
+    this.transform,
+    this.packet,
+  }) : super._();
 
   @override
   final XrayInt32Range? delay;
@@ -15660,8 +17212,19 @@ class _TCPItem extends TCPItem {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, delay, rand, randRange, capture,
-      type, reuse, transform, const DeepCollectionEquality().hash(packet));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      delay,
+      rand,
+      randRange,
+      capture,
+      type,
+      reuse,
+      transform,
+      const DeepCollectionEquality().hash(packet),
+    );
+  }
 
   @override
   String toString() {
@@ -15675,15 +17238,16 @@ abstract mixin class _$TCPItemCopyWith<$Res> implements $TCPItemCopyWith<$Res> {
       __$TCPItemCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayInt32Range? delay,
-      int? rand,
-      XrayInt32Range? randRange,
-      String? capture,
-      String? type,
-      String? reuse,
-      CustomTransform? transform,
-      Object? packet});
+  $Res call({
+    XrayInt32Range? delay,
+    int? rand,
+    XrayInt32Range? randRange,
+    String? capture,
+    String? type,
+    String? reuse,
+    CustomTransform? transform,
+    Object? packet,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get delay;
@@ -15714,37 +17278,39 @@ class __$TCPItemCopyWithImpl<$Res> implements _$TCPItemCopyWith<$Res> {
     Object? transform = freezed,
     Object? packet = freezed,
   }) {
-    return _then(_TCPItem(
-      delay: freezed == delay
-          ? _self.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      rand: freezed == rand
-          ? _self.rand
-          : rand // ignore: cast_nullable_to_non_nullable
-              as int?,
-      randRange: freezed == randRange
-          ? _self.randRange
-          : randRange // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      capture: freezed == capture
-          ? _self.capture
-          : capture // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reuse: freezed == reuse
-          ? _self.reuse
-          : reuse // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transform: freezed == transform
-          ? _self.transform
-          : transform // ignore: cast_nullable_to_non_nullable
-              as CustomTransform?,
-      packet: freezed == packet ? _self.packet : packet,
-    ));
+    return _then(
+      _TCPItem(
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        rand: freezed == rand
+            ? _self.rand
+            : rand // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        randRange: freezed == randRange
+            ? _self.randRange
+            : randRange // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        capture: freezed == capture
+            ? _self.capture
+            : capture // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reuse: freezed == reuse
+            ? _self.reuse
+            : reuse // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        transform: freezed == transform
+            ? _self.transform
+            : transform // ignore: cast_nullable_to_non_nullable
+                  as CustomTransform?,
+        packet: freezed == packet ? _self.packet : packet,
+      ),
+    );
   }
 
   /// Create a copy of TCPItem
@@ -15810,60 +17376,75 @@ mixin _$TLSCertConfig {
   @pragma('vm:prefer-inline')
   $TLSCertConfigCopyWith<TLSCertConfig> get copyWith =>
       _$TLSCertConfigCopyWithImpl<TLSCertConfig>(
-          this as TLSCertConfig, _$identity);
+        this as TLSCertConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TLSCertConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TLSCertConfig &&
-            (identical(other.certFile, certFile) ||
-                other.certFile == certFile) &&
-            const DeepCollectionEquality().equals(other.certStr, certStr) &&
-            (identical(other.keyFile, keyFile) || other.keyFile == keyFile) &&
-            const DeepCollectionEquality().equals(other.keyStr, keyStr) &&
-            (identical(other.usage, usage) || other.usage == usage) &&
-            (identical(other.ocspStapling, ocspStapling) ||
-                other.ocspStapling == ocspStapling) &&
-            (identical(other.oneTimeLoading, oneTimeLoading) ||
-                other.oneTimeLoading == oneTimeLoading) &&
-            (identical(other.buildChain, buildChain) ||
-                other.buildChain == buildChain));
+            (identical(other.certFile, _this.certFile) ||
+                other.certFile == _this.certFile) &&
+            const DeepCollectionEquality().equals(
+              other.certStr,
+              _this.certStr,
+            ) &&
+            (identical(other.keyFile, _this.keyFile) ||
+                other.keyFile == _this.keyFile) &&
+            const DeepCollectionEquality().equals(other.keyStr, _this.keyStr) &&
+            (identical(other.usage, _this.usage) ||
+                other.usage == _this.usage) &&
+            (identical(other.ocspStapling, _this.ocspStapling) ||
+                other.ocspStapling == _this.ocspStapling) &&
+            (identical(other.oneTimeLoading, _this.oneTimeLoading) ||
+                other.oneTimeLoading == _this.oneTimeLoading) &&
+            (identical(other.buildChain, _this.buildChain) ||
+                other.buildChain == _this.buildChain));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as TLSCertConfig;
+    return Object.hash(
       runtimeType,
-      certFile,
-      const DeepCollectionEquality().hash(certStr),
-      keyFile,
-      const DeepCollectionEquality().hash(keyStr),
-      usage,
-      ocspStapling,
-      oneTimeLoading,
-      buildChain);
+      _this.certFile,
+      const DeepCollectionEquality().hash(_this.certStr),
+      _this.keyFile,
+      const DeepCollectionEquality().hash(_this.keyStr),
+      _this.usage,
+      _this.ocspStapling,
+      _this.oneTimeLoading,
+      _this.buildChain,
+    );
+  }
 
   @override
   String toString() {
-    return 'TLSCertConfig(certFile: $certFile, certStr: $certStr, keyFile: $keyFile, keyStr: $keyStr, usage: $usage, ocspStapling: $ocspStapling, oneTimeLoading: $oneTimeLoading, buildChain: $buildChain)';
+    final _this = this as TLSCertConfig;
+    return 'TLSCertConfig(certFile: ${_this.certFile}, certStr: ${_this.certStr}, keyFile: ${_this.keyFile}, keyStr: ${_this.keyStr}, usage: ${_this.usage}, ocspStapling: ${_this.ocspStapling}, oneTimeLoading: ${_this.oneTimeLoading}, buildChain: ${_this.buildChain})';
   }
 }
 
 /// @nodoc
 abstract mixin class $TLSCertConfigCopyWith<$Res> {
   factory $TLSCertConfigCopyWith(
-          TLSCertConfig value, $Res Function(TLSCertConfig) _then) =
-      _$TLSCertConfigCopyWithImpl;
+    TLSCertConfig value,
+    $Res Function(TLSCertConfig) _then,
+  ) = _$TLSCertConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'certificateFile') String? certFile,
-      @JsonKey(name: 'certificate') List<String>? certStr,
-      String? keyFile,
-      @JsonKey(name: 'key') List<String>? keyStr,
-      TLSCertificateUsage? usage,
-      int? ocspStapling,
-      bool? oneTimeLoading,
-      bool? buildChain});
+  $Res call({
+    @JsonKey(name: 'certificateFile') String? certFile,
+    @JsonKey(name: 'certificate') List<String>? certStr,
+    String? keyFile,
+    @JsonKey(name: 'key') List<String>? keyStr,
+    TLSCertificateUsage? usage,
+    int? ocspStapling,
+    bool? oneTimeLoading,
+    bool? buildChain,
+  });
 }
 
 /// @nodoc
@@ -15888,40 +17469,42 @@ class _$TLSCertConfigCopyWithImpl<$Res>
     Object? oneTimeLoading = freezed,
     Object? buildChain = freezed,
   }) {
-    return _then(_self.copyWith(
-      certFile: freezed == certFile
-          ? _self.certFile
-          : certFile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      certStr: freezed == certStr
-          ? _self.certStr
-          : certStr // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      keyFile: freezed == keyFile
-          ? _self.keyFile
-          : keyFile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      keyStr: freezed == keyStr
-          ? _self.keyStr
-          : keyStr // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      usage: freezed == usage
-          ? _self.usage
-          : usage // ignore: cast_nullable_to_non_nullable
-              as TLSCertificateUsage?,
-      ocspStapling: freezed == ocspStapling
-          ? _self.ocspStapling
-          : ocspStapling // ignore: cast_nullable_to_non_nullable
-              as int?,
-      oneTimeLoading: freezed == oneTimeLoading
-          ? _self.oneTimeLoading
-          : oneTimeLoading // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      buildChain: freezed == buildChain
-          ? _self.buildChain
-          : buildChain // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      TLSCertConfig(
+        certFile: freezed == certFile
+            ? _self.certFile
+            : certFile // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        certStr: freezed == certStr
+            ? _self.certStr
+            : certStr // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        keyFile: freezed == keyFile
+            ? _self.keyFile
+            : keyFile // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        keyStr: freezed == keyStr
+            ? _self.keyStr
+            : keyStr // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        usage: freezed == usage
+            ? _self.usage
+            : usage // ignore: cast_nullable_to_non_nullable
+                  as TLSCertificateUsage?,
+        ocspStapling: freezed == ocspStapling
+            ? _self.ocspStapling
+            : ocspStapling // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        oneTimeLoading: freezed == oneTimeLoading
+            ? _self.oneTimeLoading
+            : oneTimeLoading // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        buildChain: freezed == buildChain
+            ? _self.buildChain
+            : buildChain // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -16019,29 +17602,31 @@ extension TLSCertConfigPatterns on TLSCertConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'certificateFile') String? certFile,
-            @JsonKey(name: 'certificate') List<String>? certStr,
-            String? keyFile,
-            @JsonKey(name: 'key') List<String>? keyStr,
-            TLSCertificateUsage? usage,
-            int? ocspStapling,
-            bool? oneTimeLoading,
-            bool? buildChain)?
-        $default, {
+      @JsonKey(name: 'certificateFile') String? certFile,
+      @JsonKey(name: 'certificate') List<String>? certStr,
+      String? keyFile,
+      @JsonKey(name: 'key') List<String>? keyStr,
+      TLSCertificateUsage? usage,
+      int? ocspStapling,
+      bool? oneTimeLoading,
+      bool? buildChain,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _TLSCertConfig() when $default != null:
         return $default(
-            _that.certFile,
-            _that.certStr,
-            _that.keyFile,
-            _that.keyStr,
-            _that.usage,
-            _that.ocspStapling,
-            _that.oneTimeLoading,
-            _that.buildChain);
+          _that.certFile,
+          _that.certStr,
+          _that.keyFile,
+          _that.keyStr,
+          _that.usage,
+          _that.ocspStapling,
+          _that.oneTimeLoading,
+          _that.buildChain,
+        );
       case _:
         return orElse();
     }
@@ -16063,28 +17648,30 @@ extension TLSCertConfigPatterns on TLSCertConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            @JsonKey(name: 'certificateFile') String? certFile,
-            @JsonKey(name: 'certificate') List<String>? certStr,
-            String? keyFile,
-            @JsonKey(name: 'key') List<String>? keyStr,
-            TLSCertificateUsage? usage,
-            int? ocspStapling,
-            bool? oneTimeLoading,
-            bool? buildChain)
-        $default,
+      @JsonKey(name: 'certificateFile') String? certFile,
+      @JsonKey(name: 'certificate') List<String>? certStr,
+      String? keyFile,
+      @JsonKey(name: 'key') List<String>? keyStr,
+      TLSCertificateUsage? usage,
+      int? ocspStapling,
+      bool? oneTimeLoading,
+      bool? buildChain,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TLSCertConfig():
         return $default(
-            _that.certFile,
-            _that.certStr,
-            _that.keyFile,
-            _that.keyStr,
-            _that.usage,
-            _that.ocspStapling,
-            _that.oneTimeLoading,
-            _that.buildChain);
+          _that.certFile,
+          _that.certStr,
+          _that.keyFile,
+          _that.keyStr,
+          _that.usage,
+          _that.ocspStapling,
+          _that.oneTimeLoading,
+          _that.buildChain,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -16105,28 +17692,30 @@ extension TLSCertConfigPatterns on TLSCertConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            @JsonKey(name: 'certificateFile') String? certFile,
-            @JsonKey(name: 'certificate') List<String>? certStr,
-            String? keyFile,
-            @JsonKey(name: 'key') List<String>? keyStr,
-            TLSCertificateUsage? usage,
-            int? ocspStapling,
-            bool? oneTimeLoading,
-            bool? buildChain)?
-        $default,
+      @JsonKey(name: 'certificateFile') String? certFile,
+      @JsonKey(name: 'certificate') List<String>? certStr,
+      String? keyFile,
+      @JsonKey(name: 'key') List<String>? keyStr,
+      TLSCertificateUsage? usage,
+      int? ocspStapling,
+      bool? oneTimeLoading,
+      bool? buildChain,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TLSCertConfig() when $default != null:
         return $default(
-            _that.certFile,
-            _that.certStr,
-            _that.keyFile,
-            _that.keyStr,
-            _that.usage,
-            _that.ocspStapling,
-            _that.oneTimeLoading,
-            _that.buildChain);
+          _that.certFile,
+          _that.certStr,
+          _that.keyFile,
+          _that.keyStr,
+          _that.usage,
+          _that.ocspStapling,
+          _that.oneTimeLoading,
+          _that.buildChain,
+        );
       case _:
         return null;
     }
@@ -16136,18 +17725,18 @@ extension TLSCertConfigPatterns on TLSCertConfig {
 /// @nodoc
 
 class _TLSCertConfig extends TLSCertConfig {
-  const _TLSCertConfig(
-      {@JsonKey(name: 'certificateFile') this.certFile,
-      @JsonKey(name: 'certificate') final List<String>? certStr,
-      this.keyFile,
-      @JsonKey(name: 'key') final List<String>? keyStr,
-      this.usage,
-      this.ocspStapling,
-      this.oneTimeLoading,
-      this.buildChain})
-      : _certStr = certStr,
-        _keyStr = keyStr,
-        super._();
+  const _TLSCertConfig({
+    @JsonKey(name: 'certificateFile') this.certFile,
+    @JsonKey(name: 'certificate') List<String>? certStr,
+    this.keyFile,
+    @JsonKey(name: 'key') List<String>? keyStr,
+    this.usage,
+    this.ocspStapling,
+    this.oneTimeLoading,
+    this.buildChain,
+  }) : _certStr = certStr,
+       _keyStr = keyStr,
+       super._();
 
   @override
   @JsonKey(name: 'certificateFile')
@@ -16200,9 +17789,9 @@ class _TLSCertConfig extends TLSCertConfig {
             other is _TLSCertConfig &&
             (identical(other.certFile, certFile) ||
                 other.certFile == certFile) &&
-            const DeepCollectionEquality().equals(other._certStr, _certStr) &&
+            const DeepCollectionEquality().equals(other.certStr, _certStr) &&
             (identical(other.keyFile, keyFile) || other.keyFile == keyFile) &&
-            const DeepCollectionEquality().equals(other._keyStr, _keyStr) &&
+            const DeepCollectionEquality().equals(other.keyStr, _keyStr) &&
             (identical(other.usage, usage) || other.usage == usage) &&
             (identical(other.ocspStapling, ocspStapling) ||
                 other.ocspStapling == ocspStapling) &&
@@ -16213,7 +17802,8 @@ class _TLSCertConfig extends TLSCertConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       certFile,
       const DeepCollectionEquality().hash(_certStr),
@@ -16222,7 +17812,9 @@ class _TLSCertConfig extends TLSCertConfig {
       usage,
       ocspStapling,
       oneTimeLoading,
-      buildChain);
+      buildChain,
+    );
+  }
 
   @override
   String toString() {
@@ -16234,19 +17826,21 @@ class _TLSCertConfig extends TLSCertConfig {
 abstract mixin class _$TLSCertConfigCopyWith<$Res>
     implements $TLSCertConfigCopyWith<$Res> {
   factory _$TLSCertConfigCopyWith(
-          _TLSCertConfig value, $Res Function(_TLSCertConfig) _then) =
-      __$TLSCertConfigCopyWithImpl;
+    _TLSCertConfig value,
+    $Res Function(_TLSCertConfig) _then,
+  ) = __$TLSCertConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'certificateFile') String? certFile,
-      @JsonKey(name: 'certificate') List<String>? certStr,
-      String? keyFile,
-      @JsonKey(name: 'key') List<String>? keyStr,
-      TLSCertificateUsage? usage,
-      int? ocspStapling,
-      bool? oneTimeLoading,
-      bool? buildChain});
+  $Res call({
+    @JsonKey(name: 'certificateFile') String? certFile,
+    @JsonKey(name: 'certificate') List<String>? certStr,
+    String? keyFile,
+    @JsonKey(name: 'key') List<String>? keyStr,
+    TLSCertificateUsage? usage,
+    int? ocspStapling,
+    bool? oneTimeLoading,
+    bool? buildChain,
+  });
 }
 
 /// @nodoc
@@ -16271,40 +17865,42 @@ class __$TLSCertConfigCopyWithImpl<$Res>
     Object? oneTimeLoading = freezed,
     Object? buildChain = freezed,
   }) {
-    return _then(_TLSCertConfig(
-      certFile: freezed == certFile
-          ? _self.certFile
-          : certFile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      certStr: freezed == certStr
-          ? _self._certStr
-          : certStr // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      keyFile: freezed == keyFile
-          ? _self.keyFile
-          : keyFile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      keyStr: freezed == keyStr
-          ? _self._keyStr
-          : keyStr // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      usage: freezed == usage
-          ? _self.usage
-          : usage // ignore: cast_nullable_to_non_nullable
-              as TLSCertificateUsage?,
-      ocspStapling: freezed == ocspStapling
-          ? _self.ocspStapling
-          : ocspStapling // ignore: cast_nullable_to_non_nullable
-              as int?,
-      oneTimeLoading: freezed == oneTimeLoading
-          ? _self.oneTimeLoading
-          : oneTimeLoading // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      buildChain: freezed == buildChain
-          ? _self.buildChain
-          : buildChain // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _TLSCertConfig(
+        certFile: freezed == certFile
+            ? _self.certFile
+            : certFile // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        certStr: freezed == certStr
+            ? _self._certStr
+            : certStr // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        keyFile: freezed == keyFile
+            ? _self.keyFile
+            : keyFile // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        keyStr: freezed == keyStr
+            ? _self._keyStr
+            : keyStr // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        usage: freezed == usage
+            ? _self.usage
+            : usage // ignore: cast_nullable_to_non_nullable
+                  as TLSCertificateUsage?,
+        ocspStapling: freezed == ocspStapling
+            ? _self.ocspStapling
+            : ocspStapling // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        oneTimeLoading: freezed == oneTimeLoading
+            ? _self.oneTimeLoading
+            : oneTimeLoading // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        buildChain: freezed == buildChain
+            ? _self.buildChain
+            : buildChain // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
@@ -16342,71 +17938,86 @@ mixin _$TLSConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as TLSConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TLSConfig &&
-            (identical(other.allowInsecure, allowInsecure) ||
-                other.allowInsecure == allowInsecure) &&
-            const DeepCollectionEquality().equals(other.certs, certs) &&
-            (identical(other.serverName, serverName) ||
-                other.serverName == serverName) &&
-            (identical(other.alpn, alpn) || other.alpn == alpn) &&
+            (identical(other.allowInsecure, _this.allowInsecure) ||
+                other.allowInsecure == _this.allowInsecure) &&
+            const DeepCollectionEquality().equals(other.certs, _this.certs) &&
+            (identical(other.serverName, _this.serverName) ||
+                other.serverName == _this.serverName) &&
+            (identical(other.alpn, _this.alpn) || other.alpn == _this.alpn) &&
             (identical(
-                    other.enableSessionResumption, enableSessionResumption) ||
-                other.enableSessionResumption == enableSessionResumption) &&
-            (identical(other.disableSystemRoot, disableSystemRoot) ||
-                other.disableSystemRoot == disableSystemRoot) &&
-            (identical(other.minVersion, minVersion) ||
-                other.minVersion == minVersion) &&
-            (identical(other.maxVersion, maxVersion) ||
-                other.maxVersion == maxVersion) &&
-            (identical(other.cipherSuites, cipherSuites) ||
-                other.cipherSuites == cipherSuites) &&
-            (identical(other.fingerprint, fingerprint) ||
-                other.fingerprint == fingerprint) &&
-            (identical(other.rejectUnknownSNI, rejectUnknownSNI) ||
-                other.rejectUnknownSNI == rejectUnknownSNI) &&
-            (identical(other.curvePreferences, curvePreferences) ||
-                other.curvePreferences == curvePreferences) &&
-            (identical(other.masterKeyLog, masterKeyLog) ||
-                other.masterKeyLog == masterKeyLog) &&
-            (identical(other.pinnedPeerCertSha256, pinnedPeerCertSha256) ||
-                other.pinnedPeerCertSha256 == pinnedPeerCertSha256) &&
-            (identical(other.verifyPeerCertByName, verifyPeerCertByName) ||
-                other.verifyPeerCertByName == verifyPeerCertByName) &&
-            (identical(other.echServerKeys, echServerKeys) ||
-                other.echServerKeys == echServerKeys) &&
-            (identical(other.echConfigList, echConfigList) ||
-                other.echConfigList == echConfigList) &&
-            (identical(other.echSocketSettings, echSocketSettings) ||
-                other.echSocketSettings == echSocketSettings));
+                  other.enableSessionResumption,
+                  _this.enableSessionResumption,
+                ) ||
+                other.enableSessionResumption ==
+                    _this.enableSessionResumption) &&
+            (identical(other.disableSystemRoot, _this.disableSystemRoot) ||
+                other.disableSystemRoot == _this.disableSystemRoot) &&
+            (identical(other.minVersion, _this.minVersion) ||
+                other.minVersion == _this.minVersion) &&
+            (identical(other.maxVersion, _this.maxVersion) ||
+                other.maxVersion == _this.maxVersion) &&
+            (identical(other.cipherSuites, _this.cipherSuites) ||
+                other.cipherSuites == _this.cipherSuites) &&
+            (identical(other.fingerprint, _this.fingerprint) ||
+                other.fingerprint == _this.fingerprint) &&
+            (identical(other.rejectUnknownSNI, _this.rejectUnknownSNI) ||
+                other.rejectUnknownSNI == _this.rejectUnknownSNI) &&
+            (identical(other.curvePreferences, _this.curvePreferences) ||
+                other.curvePreferences == _this.curvePreferences) &&
+            (identical(other.masterKeyLog, _this.masterKeyLog) ||
+                other.masterKeyLog == _this.masterKeyLog) &&
+            (identical(
+                  other.pinnedPeerCertSha256,
+                  _this.pinnedPeerCertSha256,
+                ) ||
+                other.pinnedPeerCertSha256 == _this.pinnedPeerCertSha256) &&
+            (identical(
+                  other.verifyPeerCertByName,
+                  _this.verifyPeerCertByName,
+                ) ||
+                other.verifyPeerCertByName == _this.verifyPeerCertByName) &&
+            (identical(other.echServerKeys, _this.echServerKeys) ||
+                other.echServerKeys == _this.echServerKeys) &&
+            (identical(other.echConfigList, _this.echConfigList) ||
+                other.echConfigList == _this.echConfigList) &&
+            (identical(other.echSocketSettings, _this.echSocketSettings) ||
+                other.echSocketSettings == _this.echSocketSettings));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as TLSConfig;
+    return Object.hash(
       runtimeType,
-      allowInsecure,
-      const DeepCollectionEquality().hash(certs),
-      serverName,
-      alpn,
-      enableSessionResumption,
-      disableSystemRoot,
-      minVersion,
-      maxVersion,
-      cipherSuites,
-      fingerprint,
-      rejectUnknownSNI,
-      curvePreferences,
-      masterKeyLog,
-      pinnedPeerCertSha256,
-      verifyPeerCertByName,
-      echServerKeys,
-      echConfigList,
-      echSocketSettings);
+      _this.allowInsecure,
+      const DeepCollectionEquality().hash(_this.certs),
+      _this.serverName,
+      _this.alpn,
+      _this.enableSessionResumption,
+      _this.disableSystemRoot,
+      _this.minVersion,
+      _this.maxVersion,
+      _this.cipherSuites,
+      _this.fingerprint,
+      _this.rejectUnknownSNI,
+      _this.curvePreferences,
+      _this.masterKeyLog,
+      _this.pinnedPeerCertSha256,
+      _this.verifyPeerCertByName,
+      _this.echServerKeys,
+      _this.echConfigList,
+      _this.echSocketSettings,
+    );
+  }
 
   @override
   String toString() {
-    return 'TLSConfig(allowInsecure: $allowInsecure, certs: $certs, serverName: $serverName, alpn: $alpn, enableSessionResumption: $enableSessionResumption, disableSystemRoot: $disableSystemRoot, minVersion: $minVersion, maxVersion: $maxVersion, cipherSuites: $cipherSuites, fingerprint: $fingerprint, rejectUnknownSNI: $rejectUnknownSNI, curvePreferences: $curvePreferences, masterKeyLog: $masterKeyLog, pinnedPeerCertSha256: $pinnedPeerCertSha256, verifyPeerCertByName: $verifyPeerCertByName, echServerKeys: $echServerKeys, echConfigList: $echConfigList, echSocketSettings: $echSocketSettings)';
+    final _this = this as TLSConfig;
+    return 'TLSConfig(allowInsecure: ${_this.allowInsecure}, certs: ${_this.certs}, serverName: ${_this.serverName}, alpn: ${_this.alpn}, enableSessionResumption: ${_this.enableSessionResumption}, disableSystemRoot: ${_this.disableSystemRoot}, minVersion: ${_this.minVersion}, maxVersion: ${_this.maxVersion}, cipherSuites: ${_this.cipherSuites}, fingerprint: ${_this.fingerprint}, rejectUnknownSNI: ${_this.rejectUnknownSNI}, curvePreferences: ${_this.curvePreferences}, masterKeyLog: ${_this.masterKeyLog}, pinnedPeerCertSha256: ${_this.pinnedPeerCertSha256}, verifyPeerCertByName: ${_this.verifyPeerCertByName}, echServerKeys: ${_this.echServerKeys}, echConfigList: ${_this.echConfigList}, echSocketSettings: ${_this.echSocketSettings})';
   }
 }
 
@@ -16415,25 +18026,26 @@ abstract mixin class $TLSConfigCopyWith<$Res> {
   factory $TLSConfigCopyWith(TLSConfig value, $Res Function(TLSConfig) _then) =
       _$TLSConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {bool? allowInsecure,
-      @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
-      String? serverName,
-      @JsonKey(name: 'alpn') XrayStringList? alpn,
-      bool? enableSessionResumption,
-      bool? disableSystemRoot,
-      String? minVersion,
-      String? maxVersion,
-      String? cipherSuites,
-      String? fingerprint,
-      @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
-      XrayStringList? curvePreferences,
-      String? masterKeyLog,
-      String? pinnedPeerCertSha256,
-      String? verifyPeerCertByName,
-      String? echServerKeys,
-      String? echConfigList,
-      @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings});
+  $Res call({
+    bool? allowInsecure,
+    @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
+    String? serverName,
+    @JsonKey(name: 'alpn') XrayStringList? alpn,
+    bool? enableSessionResumption,
+    bool? disableSystemRoot,
+    String? minVersion,
+    String? maxVersion,
+    String? cipherSuites,
+    String? fingerprint,
+    @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
+    XrayStringList? curvePreferences,
+    String? masterKeyLog,
+    String? pinnedPeerCertSha256,
+    String? verifyPeerCertByName,
+    String? echServerKeys,
+    String? echConfigList,
+    @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+  });
 
   $SocketConfigCopyWith<$Res>? get echSocketSettings;
 }
@@ -16469,80 +18081,82 @@ class _$TLSConfigCopyWithImpl<$Res> implements $TLSConfigCopyWith<$Res> {
     Object? echConfigList = freezed,
     Object? echSocketSettings = freezed,
   }) {
-    return _then(_self.copyWith(
-      allowInsecure: freezed == allowInsecure
-          ? _self.allowInsecure
-          : allowInsecure // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      certs: freezed == certs
-          ? _self.certs
-          : certs // ignore: cast_nullable_to_non_nullable
-              as List<TLSCertConfig>?,
-      serverName: freezed == serverName
-          ? _self.serverName
-          : serverName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alpn: freezed == alpn
-          ? _self.alpn
-          : alpn // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      enableSessionResumption: freezed == enableSessionResumption
-          ? _self.enableSessionResumption
-          : enableSessionResumption // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      disableSystemRoot: freezed == disableSystemRoot
-          ? _self.disableSystemRoot
-          : disableSystemRoot // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      minVersion: freezed == minVersion
-          ? _self.minVersion
-          : minVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxVersion: freezed == maxVersion
-          ? _self.maxVersion
-          : maxVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cipherSuites: freezed == cipherSuites
-          ? _self.cipherSuites
-          : cipherSuites // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fingerprint: freezed == fingerprint
-          ? _self.fingerprint
-          : fingerprint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectUnknownSNI: freezed == rejectUnknownSNI
-          ? _self.rejectUnknownSNI
-          : rejectUnknownSNI // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      curvePreferences: freezed == curvePreferences
-          ? _self.curvePreferences
-          : curvePreferences // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      masterKeyLog: freezed == masterKeyLog
-          ? _self.masterKeyLog
-          : masterKeyLog // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pinnedPeerCertSha256: freezed == pinnedPeerCertSha256
-          ? _self.pinnedPeerCertSha256
-          : pinnedPeerCertSha256 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      verifyPeerCertByName: freezed == verifyPeerCertByName
-          ? _self.verifyPeerCertByName
-          : verifyPeerCertByName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      echServerKeys: freezed == echServerKeys
-          ? _self.echServerKeys
-          : echServerKeys // ignore: cast_nullable_to_non_nullable
-              as String?,
-      echConfigList: freezed == echConfigList
-          ? _self.echConfigList
-          : echConfigList // ignore: cast_nullable_to_non_nullable
-              as String?,
-      echSocketSettings: freezed == echSocketSettings
-          ? _self.echSocketSettings
-          : echSocketSettings // ignore: cast_nullable_to_non_nullable
-              as SocketConfig?,
-    ));
+    return _then(
+      TLSConfig(
+        allowInsecure: freezed == allowInsecure
+            ? _self.allowInsecure
+            : allowInsecure // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        certs: freezed == certs
+            ? _self.certs
+            : certs // ignore: cast_nullable_to_non_nullable
+                  as List<TLSCertConfig>?,
+        serverName: freezed == serverName
+            ? _self.serverName
+            : serverName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        alpn: freezed == alpn
+            ? _self.alpn
+            : alpn // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        enableSessionResumption: freezed == enableSessionResumption
+            ? _self.enableSessionResumption
+            : enableSessionResumption // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableSystemRoot: freezed == disableSystemRoot
+            ? _self.disableSystemRoot
+            : disableSystemRoot // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        minVersion: freezed == minVersion
+            ? _self.minVersion
+            : minVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxVersion: freezed == maxVersion
+            ? _self.maxVersion
+            : maxVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        cipherSuites: freezed == cipherSuites
+            ? _self.cipherSuites
+            : cipherSuites // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        fingerprint: freezed == fingerprint
+            ? _self.fingerprint
+            : fingerprint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        rejectUnknownSNI: freezed == rejectUnknownSNI
+            ? _self.rejectUnknownSNI
+            : rejectUnknownSNI // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        curvePreferences: freezed == curvePreferences
+            ? _self.curvePreferences
+            : curvePreferences // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        masterKeyLog: freezed == masterKeyLog
+            ? _self.masterKeyLog
+            : masterKeyLog // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        pinnedPeerCertSha256: freezed == pinnedPeerCertSha256
+            ? _self.pinnedPeerCertSha256
+            : pinnedPeerCertSha256 // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        verifyPeerCertByName: freezed == verifyPeerCertByName
+            ? _self.verifyPeerCertByName
+            : verifyPeerCertByName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        echServerKeys: freezed == echServerKeys
+            ? _self.echServerKeys
+            : echServerKeys // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        echConfigList: freezed == echConfigList
+            ? _self.echConfigList
+            : echConfigList // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        echSocketSettings: freezed == echSocketSettings
+            ? _self.echSocketSettings
+            : echSocketSettings // ignore: cast_nullable_to_non_nullable
+                  as SocketConfig?,
+      ),
+    );
   }
 
   /// Create a copy of TLSConfig
@@ -16654,49 +18268,51 @@ extension TLSConfigPatterns on TLSConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            bool? allowInsecure,
-            @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
-            String? serverName,
-            @JsonKey(name: 'alpn') XrayStringList? alpn,
-            bool? enableSessionResumption,
-            bool? disableSystemRoot,
-            String? minVersion,
-            String? maxVersion,
-            String? cipherSuites,
-            String? fingerprint,
-            @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
-            XrayStringList? curvePreferences,
-            String? masterKeyLog,
-            String? pinnedPeerCertSha256,
-            String? verifyPeerCertByName,
-            String? echServerKeys,
-            String? echConfigList,
-            @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings)?
-        $default, {
+      bool? allowInsecure,
+      @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
+      String? serverName,
+      @JsonKey(name: 'alpn') XrayStringList? alpn,
+      bool? enableSessionResumption,
+      bool? disableSystemRoot,
+      String? minVersion,
+      String? maxVersion,
+      String? cipherSuites,
+      String? fingerprint,
+      @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
+      XrayStringList? curvePreferences,
+      String? masterKeyLog,
+      String? pinnedPeerCertSha256,
+      String? verifyPeerCertByName,
+      String? echServerKeys,
+      String? echConfigList,
+      @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _TLSConfig() when $default != null:
         return $default(
-            _that.allowInsecure,
-            _that.certs,
-            _that.serverName,
-            _that.alpn,
-            _that.enableSessionResumption,
-            _that.disableSystemRoot,
-            _that.minVersion,
-            _that.maxVersion,
-            _that.cipherSuites,
-            _that.fingerprint,
-            _that.rejectUnknownSNI,
-            _that.curvePreferences,
-            _that.masterKeyLog,
-            _that.pinnedPeerCertSha256,
-            _that.verifyPeerCertByName,
-            _that.echServerKeys,
-            _that.echConfigList,
-            _that.echSocketSettings);
+          _that.allowInsecure,
+          _that.certs,
+          _that.serverName,
+          _that.alpn,
+          _that.enableSessionResumption,
+          _that.disableSystemRoot,
+          _that.minVersion,
+          _that.maxVersion,
+          _that.cipherSuites,
+          _that.fingerprint,
+          _that.rejectUnknownSNI,
+          _that.curvePreferences,
+          _that.masterKeyLog,
+          _that.pinnedPeerCertSha256,
+          _that.verifyPeerCertByName,
+          _that.echServerKeys,
+          _that.echConfigList,
+          _that.echSocketSettings,
+        );
       case _:
         return orElse();
     }
@@ -16718,48 +18334,50 @@ extension TLSConfigPatterns on TLSConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            bool? allowInsecure,
-            @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
-            String? serverName,
-            @JsonKey(name: 'alpn') XrayStringList? alpn,
-            bool? enableSessionResumption,
-            bool? disableSystemRoot,
-            String? minVersion,
-            String? maxVersion,
-            String? cipherSuites,
-            String? fingerprint,
-            @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
-            XrayStringList? curvePreferences,
-            String? masterKeyLog,
-            String? pinnedPeerCertSha256,
-            String? verifyPeerCertByName,
-            String? echServerKeys,
-            String? echConfigList,
-            @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings)
-        $default,
+      bool? allowInsecure,
+      @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
+      String? serverName,
+      @JsonKey(name: 'alpn') XrayStringList? alpn,
+      bool? enableSessionResumption,
+      bool? disableSystemRoot,
+      String? minVersion,
+      String? maxVersion,
+      String? cipherSuites,
+      String? fingerprint,
+      @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
+      XrayStringList? curvePreferences,
+      String? masterKeyLog,
+      String? pinnedPeerCertSha256,
+      String? verifyPeerCertByName,
+      String? echServerKeys,
+      String? echConfigList,
+      @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TLSConfig():
         return $default(
-            _that.allowInsecure,
-            _that.certs,
-            _that.serverName,
-            _that.alpn,
-            _that.enableSessionResumption,
-            _that.disableSystemRoot,
-            _that.minVersion,
-            _that.maxVersion,
-            _that.cipherSuites,
-            _that.fingerprint,
-            _that.rejectUnknownSNI,
-            _that.curvePreferences,
-            _that.masterKeyLog,
-            _that.pinnedPeerCertSha256,
-            _that.verifyPeerCertByName,
-            _that.echServerKeys,
-            _that.echConfigList,
-            _that.echSocketSettings);
+          _that.allowInsecure,
+          _that.certs,
+          _that.serverName,
+          _that.alpn,
+          _that.enableSessionResumption,
+          _that.disableSystemRoot,
+          _that.minVersion,
+          _that.maxVersion,
+          _that.cipherSuites,
+          _that.fingerprint,
+          _that.rejectUnknownSNI,
+          _that.curvePreferences,
+          _that.masterKeyLog,
+          _that.pinnedPeerCertSha256,
+          _that.verifyPeerCertByName,
+          _that.echServerKeys,
+          _that.echConfigList,
+          _that.echSocketSettings,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -16780,48 +18398,50 @@ extension TLSConfigPatterns on TLSConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            bool? allowInsecure,
-            @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
-            String? serverName,
-            @JsonKey(name: 'alpn') XrayStringList? alpn,
-            bool? enableSessionResumption,
-            bool? disableSystemRoot,
-            String? minVersion,
-            String? maxVersion,
-            String? cipherSuites,
-            String? fingerprint,
-            @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
-            XrayStringList? curvePreferences,
-            String? masterKeyLog,
-            String? pinnedPeerCertSha256,
-            String? verifyPeerCertByName,
-            String? echServerKeys,
-            String? echConfigList,
-            @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings)?
-        $default,
+      bool? allowInsecure,
+      @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
+      String? serverName,
+      @JsonKey(name: 'alpn') XrayStringList? alpn,
+      bool? enableSessionResumption,
+      bool? disableSystemRoot,
+      String? minVersion,
+      String? maxVersion,
+      String? cipherSuites,
+      String? fingerprint,
+      @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
+      XrayStringList? curvePreferences,
+      String? masterKeyLog,
+      String? pinnedPeerCertSha256,
+      String? verifyPeerCertByName,
+      String? echServerKeys,
+      String? echConfigList,
+      @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _TLSConfig() when $default != null:
         return $default(
-            _that.allowInsecure,
-            _that.certs,
-            _that.serverName,
-            _that.alpn,
-            _that.enableSessionResumption,
-            _that.disableSystemRoot,
-            _that.minVersion,
-            _that.maxVersion,
-            _that.cipherSuites,
-            _that.fingerprint,
-            _that.rejectUnknownSNI,
-            _that.curvePreferences,
-            _that.masterKeyLog,
-            _that.pinnedPeerCertSha256,
-            _that.verifyPeerCertByName,
-            _that.echServerKeys,
-            _that.echConfigList,
-            _that.echSocketSettings);
+          _that.allowInsecure,
+          _that.certs,
+          _that.serverName,
+          _that.alpn,
+          _that.enableSessionResumption,
+          _that.disableSystemRoot,
+          _that.minVersion,
+          _that.maxVersion,
+          _that.cipherSuites,
+          _that.fingerprint,
+          _that.rejectUnknownSNI,
+          _that.curvePreferences,
+          _that.masterKeyLog,
+          _that.pinnedPeerCertSha256,
+          _that.verifyPeerCertByName,
+          _that.echServerKeys,
+          _that.echConfigList,
+          _that.echSocketSettings,
+        );
       case _:
         return null;
     }
@@ -16831,27 +18451,27 @@ extension TLSConfigPatterns on TLSConfig {
 /// @nodoc
 
 class _TLSConfig extends TLSConfig {
-  const _TLSConfig(
-      {this.allowInsecure,
-      @JsonKey(name: 'certificates') final List<TLSCertConfig>? certs,
-      this.serverName,
-      @JsonKey(name: 'alpn') this.alpn,
-      this.enableSessionResumption,
-      this.disableSystemRoot,
-      this.minVersion,
-      this.maxVersion,
-      this.cipherSuites,
-      this.fingerprint,
-      @JsonKey(name: 'rejectUnknownSni') this.rejectUnknownSNI,
-      this.curvePreferences,
-      this.masterKeyLog,
-      this.pinnedPeerCertSha256,
-      this.verifyPeerCertByName,
-      this.echServerKeys,
-      this.echConfigList,
-      @JsonKey(name: 'echSockopt') this.echSocketSettings})
-      : _certs = certs,
-        super._();
+  const _TLSConfig({
+    this.allowInsecure,
+    @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
+    this.serverName,
+    @JsonKey(name: 'alpn') this.alpn,
+    this.enableSessionResumption,
+    this.disableSystemRoot,
+    this.minVersion,
+    this.maxVersion,
+    this.cipherSuites,
+    this.fingerprint,
+    @JsonKey(name: 'rejectUnknownSni') this.rejectUnknownSNI,
+    this.curvePreferences,
+    this.masterKeyLog,
+    this.pinnedPeerCertSha256,
+    this.verifyPeerCertByName,
+    this.echServerKeys,
+    this.echConfigList,
+    @JsonKey(name: 'echSockopt') this.echSocketSettings,
+  }) : _certs = certs,
+       super._();
 
   @override
   final bool? allowInsecure;
@@ -16917,12 +18537,14 @@ class _TLSConfig extends TLSConfig {
             other is _TLSConfig &&
             (identical(other.allowInsecure, allowInsecure) ||
                 other.allowInsecure == allowInsecure) &&
-            const DeepCollectionEquality().equals(other._certs, _certs) &&
+            const DeepCollectionEquality().equals(other.certs, _certs) &&
             (identical(other.serverName, serverName) ||
                 other.serverName == serverName) &&
             (identical(other.alpn, alpn) || other.alpn == alpn) &&
             (identical(
-                    other.enableSessionResumption, enableSessionResumption) ||
+                  other.enableSessionResumption,
+                  enableSessionResumption,
+                ) ||
                 other.enableSessionResumption == enableSessionResumption) &&
             (identical(other.disableSystemRoot, disableSystemRoot) ||
                 other.disableSystemRoot == disableSystemRoot) &&
@@ -16953,7 +18575,8 @@ class _TLSConfig extends TLSConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       allowInsecure,
       const DeepCollectionEquality().hash(_certs),
@@ -16972,7 +18595,9 @@ class _TLSConfig extends TLSConfig {
       verifyPeerCertByName,
       echServerKeys,
       echConfigList,
-      echSocketSettings);
+      echSocketSettings,
+    );
+  }
 
   @override
   String toString() {
@@ -16984,29 +18609,31 @@ class _TLSConfig extends TLSConfig {
 abstract mixin class _$TLSConfigCopyWith<$Res>
     implements $TLSConfigCopyWith<$Res> {
   factory _$TLSConfigCopyWith(
-          _TLSConfig value, $Res Function(_TLSConfig) _then) =
-      __$TLSConfigCopyWithImpl;
+    _TLSConfig value,
+    $Res Function(_TLSConfig) _then,
+  ) = __$TLSConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {bool? allowInsecure,
-      @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
-      String? serverName,
-      @JsonKey(name: 'alpn') XrayStringList? alpn,
-      bool? enableSessionResumption,
-      bool? disableSystemRoot,
-      String? minVersion,
-      String? maxVersion,
-      String? cipherSuites,
-      String? fingerprint,
-      @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
-      XrayStringList? curvePreferences,
-      String? masterKeyLog,
-      String? pinnedPeerCertSha256,
-      String? verifyPeerCertByName,
-      String? echServerKeys,
-      String? echConfigList,
-      @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings});
+  $Res call({
+    bool? allowInsecure,
+    @JsonKey(name: 'certificates') List<TLSCertConfig>? certs,
+    String? serverName,
+    @JsonKey(name: 'alpn') XrayStringList? alpn,
+    bool? enableSessionResumption,
+    bool? disableSystemRoot,
+    String? minVersion,
+    String? maxVersion,
+    String? cipherSuites,
+    String? fingerprint,
+    @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
+    XrayStringList? curvePreferences,
+    String? masterKeyLog,
+    String? pinnedPeerCertSha256,
+    String? verifyPeerCertByName,
+    String? echServerKeys,
+    String? echConfigList,
+    @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+  });
 
   @override
   $SocketConfigCopyWith<$Res>? get echSocketSettings;
@@ -17043,80 +18670,82 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
     Object? echConfigList = freezed,
     Object? echSocketSettings = freezed,
   }) {
-    return _then(_TLSConfig(
-      allowInsecure: freezed == allowInsecure
-          ? _self.allowInsecure
-          : allowInsecure // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      certs: freezed == certs
-          ? _self._certs
-          : certs // ignore: cast_nullable_to_non_nullable
-              as List<TLSCertConfig>?,
-      serverName: freezed == serverName
-          ? _self.serverName
-          : serverName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alpn: freezed == alpn
-          ? _self.alpn
-          : alpn // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      enableSessionResumption: freezed == enableSessionResumption
-          ? _self.enableSessionResumption
-          : enableSessionResumption // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      disableSystemRoot: freezed == disableSystemRoot
-          ? _self.disableSystemRoot
-          : disableSystemRoot // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      minVersion: freezed == minVersion
-          ? _self.minVersion
-          : minVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maxVersion: freezed == maxVersion
-          ? _self.maxVersion
-          : maxVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cipherSuites: freezed == cipherSuites
-          ? _self.cipherSuites
-          : cipherSuites // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fingerprint: freezed == fingerprint
-          ? _self.fingerprint
-          : fingerprint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectUnknownSNI: freezed == rejectUnknownSNI
-          ? _self.rejectUnknownSNI
-          : rejectUnknownSNI // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      curvePreferences: freezed == curvePreferences
-          ? _self.curvePreferences
-          : curvePreferences // ignore: cast_nullable_to_non_nullable
-              as XrayStringList?,
-      masterKeyLog: freezed == masterKeyLog
-          ? _self.masterKeyLog
-          : masterKeyLog // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pinnedPeerCertSha256: freezed == pinnedPeerCertSha256
-          ? _self.pinnedPeerCertSha256
-          : pinnedPeerCertSha256 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      verifyPeerCertByName: freezed == verifyPeerCertByName
-          ? _self.verifyPeerCertByName
-          : verifyPeerCertByName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      echServerKeys: freezed == echServerKeys
-          ? _self.echServerKeys
-          : echServerKeys // ignore: cast_nullable_to_non_nullable
-              as String?,
-      echConfigList: freezed == echConfigList
-          ? _self.echConfigList
-          : echConfigList // ignore: cast_nullable_to_non_nullable
-              as String?,
-      echSocketSettings: freezed == echSocketSettings
-          ? _self.echSocketSettings
-          : echSocketSettings // ignore: cast_nullable_to_non_nullable
-              as SocketConfig?,
-    ));
+    return _then(
+      _TLSConfig(
+        allowInsecure: freezed == allowInsecure
+            ? _self.allowInsecure
+            : allowInsecure // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        certs: freezed == certs
+            ? _self._certs
+            : certs // ignore: cast_nullable_to_non_nullable
+                  as List<TLSCertConfig>?,
+        serverName: freezed == serverName
+            ? _self.serverName
+            : serverName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        alpn: freezed == alpn
+            ? _self.alpn
+            : alpn // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        enableSessionResumption: freezed == enableSessionResumption
+            ? _self.enableSessionResumption
+            : enableSessionResumption // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        disableSystemRoot: freezed == disableSystemRoot
+            ? _self.disableSystemRoot
+            : disableSystemRoot // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        minVersion: freezed == minVersion
+            ? _self.minVersion
+            : minVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        maxVersion: freezed == maxVersion
+            ? _self.maxVersion
+            : maxVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        cipherSuites: freezed == cipherSuites
+            ? _self.cipherSuites
+            : cipherSuites // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        fingerprint: freezed == fingerprint
+            ? _self.fingerprint
+            : fingerprint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        rejectUnknownSNI: freezed == rejectUnknownSNI
+            ? _self.rejectUnknownSNI
+            : rejectUnknownSNI // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        curvePreferences: freezed == curvePreferences
+            ? _self.curvePreferences
+            : curvePreferences // ignore: cast_nullable_to_non_nullable
+                  as XrayStringList?,
+        masterKeyLog: freezed == masterKeyLog
+            ? _self.masterKeyLog
+            : masterKeyLog // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        pinnedPeerCertSha256: freezed == pinnedPeerCertSha256
+            ? _self.pinnedPeerCertSha256
+            : pinnedPeerCertSha256 // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        verifyPeerCertByName: freezed == verifyPeerCertByName
+            ? _self.verifyPeerCertByName
+            : verifyPeerCertByName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        echServerKeys: freezed == echServerKeys
+            ? _self.echServerKeys
+            : echServerKeys // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        echConfigList: freezed == echConfigList
+            ? _self.echConfigList
+            : echConfigList // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        echSocketSettings: freezed == echSocketSettings
+            ? _self.echSocketSettings
+            : echSocketSettings // ignore: cast_nullable_to_non_nullable
+                  as SocketConfig?,
+      ),
+    );
   }
 
   /// Create a copy of TLSConfig
@@ -17135,74 +18764,135 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
 }
 
 /// @nodoc
-mixin _$UdpHop {
-  XrayPortList? get ports;
+mixin _$UDPHop {
+  SocketConfig? get sockopt;
+  String? get mode;
+  XrayPortList? get remotePorts;
+  List<String>? get remoteIPs;
   XrayInt32Range? get interval;
 
-  /// Create a copy of UdpHop
+  /// Create a copy of UDPHop
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $UdpHopCopyWith<UdpHop> get copyWith =>
-      _$UdpHopCopyWithImpl<UdpHop>(this as UdpHop, _$identity);
+  $UDPHopCopyWith<UDPHop> get copyWith =>
+      _$UDPHopCopyWithImpl<UDPHop>(this as UDPHop, _$identity);
 
   @override
   bool operator ==(Object other) {
+    final _this = this as UDPHop;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UdpHop &&
-            (identical(other.ports, ports) || other.ports == ports) &&
-            (identical(other.interval, interval) ||
-                other.interval == interval));
+            other is UDPHop &&
+            (identical(other.sockopt, _this.sockopt) ||
+                other.sockopt == _this.sockopt) &&
+            (identical(other.mode, _this.mode) || other.mode == _this.mode) &&
+            (identical(other.remotePorts, _this.remotePorts) ||
+                other.remotePorts == _this.remotePorts) &&
+            const DeepCollectionEquality().equals(
+              other.remoteIPs,
+              _this.remoteIPs,
+            ) &&
+            (identical(other.interval, _this.interval) ||
+                other.interval == _this.interval));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, ports, interval);
+  int get hashCode {
+    final _this = this as UDPHop;
+    return Object.hash(
+      runtimeType,
+      _this.sockopt,
+      _this.mode,
+      _this.remotePorts,
+      const DeepCollectionEquality().hash(_this.remoteIPs),
+      _this.interval,
+    );
+  }
 
   @override
   String toString() {
-    return 'UdpHop(ports: $ports, interval: $interval)';
+    final _this = this as UDPHop;
+    return 'UDPHop(sockopt: ${_this.sockopt}, mode: ${_this.mode}, remotePorts: ${_this.remotePorts}, remoteIPs: ${_this.remoteIPs}, interval: ${_this.interval})';
   }
 }
 
 /// @nodoc
-abstract mixin class $UdpHopCopyWith<$Res> {
-  factory $UdpHopCopyWith(UdpHop value, $Res Function(UdpHop) _then) =
-      _$UdpHopCopyWithImpl;
+abstract mixin class $UDPHopCopyWith<$Res> {
+  factory $UDPHopCopyWith(UDPHop value, $Res Function(UDPHop) _then) =
+      _$UDPHopCopyWithImpl;
   @useResult
-  $Res call({XrayPortList? ports, XrayInt32Range? interval});
+  $Res call({
+    SocketConfig? sockopt,
+    String? mode,
+    XrayPortList? remotePorts,
+    List<String>? remoteIPs,
+    XrayInt32Range? interval,
+  });
 
+  $SocketConfigCopyWith<$Res>? get sockopt;
   $XrayInt32RangeCopyWith<$Res>? get interval;
 }
 
 /// @nodoc
-class _$UdpHopCopyWithImpl<$Res> implements $UdpHopCopyWith<$Res> {
-  _$UdpHopCopyWithImpl(this._self, this._then);
+class _$UDPHopCopyWithImpl<$Res> implements $UDPHopCopyWith<$Res> {
+  _$UDPHopCopyWithImpl(this._self, this._then);
 
-  final UdpHop _self;
-  final $Res Function(UdpHop) _then;
+  final UDPHop _self;
+  final $Res Function(UDPHop) _then;
 
-  /// Create a copy of UdpHop
+  /// Create a copy of UDPHop
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ports = freezed,
+    Object? sockopt = freezed,
+    Object? mode = freezed,
+    Object? remotePorts = freezed,
+    Object? remoteIPs = freezed,
     Object? interval = freezed,
   }) {
-    return _then(_self.copyWith(
-      ports: freezed == ports
-          ? _self.ports
-          : ports // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      interval: freezed == interval
-          ? _self.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      UDPHop(
+        sockopt: freezed == sockopt
+            ? _self.sockopt
+            : sockopt // ignore: cast_nullable_to_non_nullable
+                  as SocketConfig?,
+        mode: freezed == mode
+            ? _self.mode
+            : mode // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        remotePorts: freezed == remotePorts
+            ? _self.remotePorts
+            : remotePorts // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        remoteIPs: freezed == remoteIPs
+            ? _self.remoteIPs
+            : remoteIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        interval: freezed == interval
+            ? _self.interval
+            : interval // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
-  /// Create a copy of UdpHop
+  /// Create a copy of UDPHop
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SocketConfigCopyWith<$Res>? get sockopt {
+    if (_self.sockopt == null) {
+      return null;
+    }
+
+    return $SocketConfigCopyWith<$Res>(_self.sockopt!, (value) {
+      return _then(_self.copyWith(sockopt: value));
+    });
+  }
+
+  /// Create a copy of UDPHop
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -17217,8 +18907,8 @@ class _$UdpHopCopyWithImpl<$Res> implements $UdpHopCopyWith<$Res> {
   }
 }
 
-/// Adds pattern-matching-related methods to [UdpHop].
-extension UdpHopPatterns on UdpHop {
+/// Adds pattern-matching-related methods to [UDPHop].
+extension UDPHopPatterns on UDPHop {
   /// A variant of `map` that fallback to returning `orElse`.
   ///
   /// It is equivalent to doing:
@@ -17233,12 +18923,12 @@ extension UdpHopPatterns on UdpHop {
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_UdpHop value)? $default, {
+    TResult Function(_UDPHop value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _UdpHop() when $default != null:
+      case _UDPHop() when $default != null:
         return $default(_that);
       case _:
         return orElse();
@@ -17260,11 +18950,11 @@ extension UdpHopPatterns on UdpHop {
 
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_UdpHop value) $default,
+    TResult Function(_UDPHop value) $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _UdpHop():
+      case _UDPHop():
         return $default(_that);
       case _:
         throw StateError('Unexpected subclass');
@@ -17285,11 +18975,11 @@ extension UdpHopPatterns on UdpHop {
 
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_UdpHop value)? $default,
+    TResult? Function(_UDPHop value)? $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _UdpHop() when $default != null:
+      case _UDPHop() when $default != null:
         return $default(_that);
       case _:
         return null;
@@ -17310,13 +19000,26 @@ extension UdpHopPatterns on UdpHop {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(XrayPortList? ports, XrayInt32Range? interval)? $default, {
+    TResult Function(
+      SocketConfig? sockopt,
+      String? mode,
+      XrayPortList? remotePorts,
+      List<String>? remoteIPs,
+      XrayInt32Range? interval,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _UdpHop() when $default != null:
-        return $default(_that.ports, _that.interval);
+      case _UDPHop() when $default != null:
+        return $default(
+          _that.sockopt,
+          _that.mode,
+          _that.remotePorts,
+          _that.remoteIPs,
+          _that.interval,
+        );
       case _:
         return orElse();
     }
@@ -17337,12 +19040,25 @@ extension UdpHopPatterns on UdpHop {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(XrayPortList? ports, XrayInt32Range? interval) $default,
+    TResult Function(
+      SocketConfig? sockopt,
+      String? mode,
+      XrayPortList? remotePorts,
+      List<String>? remoteIPs,
+      XrayInt32Range? interval,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _UdpHop():
-        return $default(_that.ports, _that.interval);
+      case _UDPHop():
+        return $default(
+          _that.sockopt,
+          _that.mode,
+          _that.remotePorts,
+          _that.remoteIPs,
+          _that.interval,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -17362,12 +19078,25 @@ extension UdpHopPatterns on UdpHop {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(XrayPortList? ports, XrayInt32Range? interval)? $default,
+    TResult? Function(
+      SocketConfig? sockopt,
+      String? mode,
+      XrayPortList? remotePorts,
+      List<String>? remoteIPs,
+      XrayInt32Range? interval,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _UdpHop() when $default != null:
-        return $default(_that.ports, _that.interval);
+      case _UDPHop() when $default != null:
+        return $default(
+          _that.sockopt,
+          _that.mode,
+          _that.remotePorts,
+          _that.remoteIPs,
+          _that.interval,
+        );
       case _:
         return null;
     }
@@ -17376,81 +19105,157 @@ extension UdpHopPatterns on UdpHop {
 
 /// @nodoc
 
-class _UdpHop extends UdpHop {
-  const _UdpHop({this.ports, this.interval}) : super._();
+class _UDPHop extends UDPHop {
+  const _UDPHop({
+    this.sockopt,
+    this.mode,
+    this.remotePorts,
+    List<String>? remoteIPs,
+    this.interval,
+  }) : _remoteIPs = remoteIPs,
+       super._();
 
   @override
-  final XrayPortList? ports;
+  final SocketConfig? sockopt;
+  @override
+  final String? mode;
+  @override
+  final XrayPortList? remotePorts;
+  final List<String>? _remoteIPs;
+  @override
+  List<String>? get remoteIPs {
+    final value = _remoteIPs;
+    if (value == null) return null;
+    if (_remoteIPs is EqualUnmodifiableListView) return _remoteIPs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final XrayInt32Range? interval;
 
-  /// Create a copy of UdpHop
+  /// Create a copy of UDPHop
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$UdpHopCopyWith<_UdpHop> get copyWith =>
-      __$UdpHopCopyWithImpl<_UdpHop>(this, _$identity);
+  _$UDPHopCopyWith<_UDPHop> get copyWith =>
+      __$UDPHopCopyWithImpl<_UDPHop>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UdpHop &&
-            (identical(other.ports, ports) || other.ports == ports) &&
+            other is _UDPHop &&
+            (identical(other.sockopt, sockopt) || other.sockopt == sockopt) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.remotePorts, remotePorts) ||
+                other.remotePorts == remotePorts) &&
+            const DeepCollectionEquality().equals(
+              other.remoteIPs,
+              _remoteIPs,
+            ) &&
             (identical(other.interval, interval) ||
                 other.interval == interval));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, ports, interval);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      sockopt,
+      mode,
+      remotePorts,
+      const DeepCollectionEquality().hash(_remoteIPs),
+      interval,
+    );
+  }
 
   @override
   String toString() {
-    return 'UdpHop(ports: $ports, interval: $interval)';
+    return 'UDPHop(sockopt: $sockopt, mode: $mode, remotePorts: $remotePorts, remoteIPs: $remoteIPs, interval: $interval)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$UdpHopCopyWith<$Res> implements $UdpHopCopyWith<$Res> {
-  factory _$UdpHopCopyWith(_UdpHop value, $Res Function(_UdpHop) _then) =
-      __$UdpHopCopyWithImpl;
+abstract mixin class _$UDPHopCopyWith<$Res> implements $UDPHopCopyWith<$Res> {
+  factory _$UDPHopCopyWith(_UDPHop value, $Res Function(_UDPHop) _then) =
+      __$UDPHopCopyWithImpl;
   @override
   @useResult
-  $Res call({XrayPortList? ports, XrayInt32Range? interval});
+  $Res call({
+    SocketConfig? sockopt,
+    String? mode,
+    XrayPortList? remotePorts,
+    List<String>? remoteIPs,
+    XrayInt32Range? interval,
+  });
 
+  @override
+  $SocketConfigCopyWith<$Res>? get sockopt;
   @override
   $XrayInt32RangeCopyWith<$Res>? get interval;
 }
 
 /// @nodoc
-class __$UdpHopCopyWithImpl<$Res> implements _$UdpHopCopyWith<$Res> {
-  __$UdpHopCopyWithImpl(this._self, this._then);
+class __$UDPHopCopyWithImpl<$Res> implements _$UDPHopCopyWith<$Res> {
+  __$UDPHopCopyWithImpl(this._self, this._then);
 
-  final _UdpHop _self;
-  final $Res Function(_UdpHop) _then;
+  final _UDPHop _self;
+  final $Res Function(_UDPHop) _then;
 
-  /// Create a copy of UdpHop
+  /// Create a copy of UDPHop
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? ports = freezed,
+    Object? sockopt = freezed,
+    Object? mode = freezed,
+    Object? remotePorts = freezed,
+    Object? remoteIPs = freezed,
     Object? interval = freezed,
   }) {
-    return _then(_UdpHop(
-      ports: freezed == ports
-          ? _self.ports
-          : ports // ignore: cast_nullable_to_non_nullable
-              as XrayPortList?,
-      interval: freezed == interval
-          ? _self.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-    ));
+    return _then(
+      _UDPHop(
+        sockopt: freezed == sockopt
+            ? _self.sockopt
+            : sockopt // ignore: cast_nullable_to_non_nullable
+                  as SocketConfig?,
+        mode: freezed == mode
+            ? _self.mode
+            : mode // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        remotePorts: freezed == remotePorts
+            ? _self.remotePorts
+            : remotePorts // ignore: cast_nullable_to_non_nullable
+                  as XrayPortList?,
+        remoteIPs: freezed == remoteIPs
+            ? _self._remoteIPs
+            : remoteIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        interval: freezed == interval
+            ? _self.interval
+            : interval // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+      ),
+    );
   }
 
-  /// Create a copy of UdpHop
+  /// Create a copy of UDPHop
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SocketConfigCopyWith<$Res>? get sockopt {
+    if (_self.sockopt == null) {
+      return null;
+    }
+
+    return $SocketConfigCopyWith<$Res>(_self.sockopt!, (value) {
+      return _then(_self.copyWith(sockopt: value));
+    });
+  }
+
+  /// Create a copy of UDPHop
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -17484,27 +19289,42 @@ mixin _$UDPItem {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as UDPItem;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UDPItem &&
-            (identical(other.rand, rand) || other.rand == rand) &&
-            (identical(other.randRange, randRange) ||
-                other.randRange == randRange) &&
-            (identical(other.capture, capture) || other.capture == capture) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.reuse, reuse) || other.reuse == reuse) &&
-            (identical(other.transform, transform) ||
-                other.transform == transform) &&
-            const DeepCollectionEquality().equals(other.packet, packet));
+            (identical(other.rand, _this.rand) || other.rand == _this.rand) &&
+            (identical(other.randRange, _this.randRange) ||
+                other.randRange == _this.randRange) &&
+            (identical(other.capture, _this.capture) ||
+                other.capture == _this.capture) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.reuse, _this.reuse) ||
+                other.reuse == _this.reuse) &&
+            (identical(other.transform, _this.transform) ||
+                other.transform == _this.transform) &&
+            const DeepCollectionEquality().equals(other.packet, _this.packet));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rand, randRange, capture, type,
-      reuse, transform, const DeepCollectionEquality().hash(packet));
+  int get hashCode {
+    final _this = this as UDPItem;
+    return Object.hash(
+      runtimeType,
+      _this.rand,
+      _this.randRange,
+      _this.capture,
+      _this.type,
+      _this.reuse,
+      _this.transform,
+      const DeepCollectionEquality().hash(_this.packet),
+    );
+  }
 
   @override
   String toString() {
-    return 'UDPItem(rand: $rand, randRange: $randRange, capture: $capture, type: $type, reuse: $reuse, transform: $transform, packet: $packet)';
+    final _this = this as UDPItem;
+    return 'UDPItem(rand: ${_this.rand}, randRange: ${_this.randRange}, capture: ${_this.capture}, type: ${_this.type}, reuse: ${_this.reuse}, transform: ${_this.transform}, packet: ${_this.packet})';
   }
 }
 
@@ -17513,14 +19333,15 @@ abstract mixin class $UDPItemCopyWith<$Res> {
   factory $UDPItemCopyWith(UDPItem value, $Res Function(UDPItem) _then) =
       _$UDPItemCopyWithImpl;
   @useResult
-  $Res call(
-      {int? rand,
-      XrayInt32Range? randRange,
-      String? capture,
-      String? type,
-      String? reuse,
-      CustomTransform? transform,
-      Object? packet});
+  $Res call({
+    int? rand,
+    XrayInt32Range? randRange,
+    String? capture,
+    String? type,
+    String? reuse,
+    CustomTransform? transform,
+    Object? packet,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get randRange;
   $CustomTransformCopyWith<$Res>? get transform;
@@ -17546,33 +19367,35 @@ class _$UDPItemCopyWithImpl<$Res> implements $UDPItemCopyWith<$Res> {
     Object? transform = freezed,
     Object? packet = freezed,
   }) {
-    return _then(_self.copyWith(
-      rand: freezed == rand
-          ? _self.rand
-          : rand // ignore: cast_nullable_to_non_nullable
-              as int?,
-      randRange: freezed == randRange
-          ? _self.randRange
-          : randRange // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      capture: freezed == capture
-          ? _self.capture
-          : capture // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reuse: freezed == reuse
-          ? _self.reuse
-          : reuse // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transform: freezed == transform
-          ? _self.transform
-          : transform // ignore: cast_nullable_to_non_nullable
-              as CustomTransform?,
-      packet: freezed == packet ? _self.packet : packet,
-    ));
+    return _then(
+      UDPItem(
+        rand: freezed == rand
+            ? _self.rand
+            : rand // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        randRange: freezed == randRange
+            ? _self.randRange
+            : randRange // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        capture: freezed == capture
+            ? _self.capture
+            : capture // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reuse: freezed == reuse
+            ? _self.reuse
+            : reuse // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        transform: freezed == transform
+            ? _self.transform
+            : transform // ignore: cast_nullable_to_non_nullable
+                  as CustomTransform?,
+        packet: freezed == packet ? _self.packet : packet,
+      ),
+    );
   }
 
   /// Create a copy of UDPItem
@@ -17698,21 +19521,29 @@ extension UDPItemPatterns on UDPItem {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            int? rand,
-            XrayInt32Range? randRange,
-            String? capture,
-            String? type,
-            String? reuse,
-            CustomTransform? transform,
-            Object? packet)?
-        $default, {
+      int? rand,
+      XrayInt32Range? randRange,
+      String? capture,
+      String? type,
+      String? reuse,
+      CustomTransform? transform,
+      Object? packet,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _UDPItem() when $default != null:
-        return $default(_that.rand, _that.randRange, _that.capture, _that.type,
-            _that.reuse, _that.transform, _that.packet);
+        return $default(
+          _that.rand,
+          _that.randRange,
+          _that.capture,
+          _that.type,
+          _that.reuse,
+          _that.transform,
+          _that.packet,
+        );
       case _:
         return orElse();
     }
@@ -17734,20 +19565,28 @@ extension UDPItemPatterns on UDPItem {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            int? rand,
-            XrayInt32Range? randRange,
-            String? capture,
-            String? type,
-            String? reuse,
-            CustomTransform? transform,
-            Object? packet)
-        $default,
+      int? rand,
+      XrayInt32Range? randRange,
+      String? capture,
+      String? type,
+      String? reuse,
+      CustomTransform? transform,
+      Object? packet,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _UDPItem():
-        return $default(_that.rand, _that.randRange, _that.capture, _that.type,
-            _that.reuse, _that.transform, _that.packet);
+        return $default(
+          _that.rand,
+          _that.randRange,
+          _that.capture,
+          _that.type,
+          _that.reuse,
+          _that.transform,
+          _that.packet,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -17768,20 +19607,28 @@ extension UDPItemPatterns on UDPItem {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            int? rand,
-            XrayInt32Range? randRange,
-            String? capture,
-            String? type,
-            String? reuse,
-            CustomTransform? transform,
-            Object? packet)?
-        $default,
+      int? rand,
+      XrayInt32Range? randRange,
+      String? capture,
+      String? type,
+      String? reuse,
+      CustomTransform? transform,
+      Object? packet,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _UDPItem() when $default != null:
-        return $default(_that.rand, _that.randRange, _that.capture, _that.type,
-            _that.reuse, _that.transform, _that.packet);
+        return $default(
+          _that.rand,
+          _that.randRange,
+          _that.capture,
+          _that.type,
+          _that.reuse,
+          _that.transform,
+          _that.packet,
+        );
       case _:
         return null;
     }
@@ -17791,15 +19638,15 @@ extension UDPItemPatterns on UDPItem {
 /// @nodoc
 
 class _UDPItem extends UDPItem {
-  const _UDPItem(
-      {this.rand,
-      this.randRange,
-      this.capture,
-      this.type,
-      this.reuse,
-      this.transform,
-      this.packet})
-      : super._();
+  const _UDPItem({
+    this.rand,
+    this.randRange,
+    this.capture,
+    this.type,
+    this.reuse,
+    this.transform,
+    this.packet,
+  }) : super._();
 
   @override
   final int? rand;
@@ -17841,8 +19688,18 @@ class _UDPItem extends UDPItem {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rand, randRange, capture, type,
-      reuse, transform, const DeepCollectionEquality().hash(packet));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      rand,
+      randRange,
+      capture,
+      type,
+      reuse,
+      transform,
+      const DeepCollectionEquality().hash(packet),
+    );
+  }
 
   @override
   String toString() {
@@ -17856,14 +19713,15 @@ abstract mixin class _$UDPItemCopyWith<$Res> implements $UDPItemCopyWith<$Res> {
       __$UDPItemCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {int? rand,
-      XrayInt32Range? randRange,
-      String? capture,
-      String? type,
-      String? reuse,
-      CustomTransform? transform,
-      Object? packet});
+  $Res call({
+    int? rand,
+    XrayInt32Range? randRange,
+    String? capture,
+    String? type,
+    String? reuse,
+    CustomTransform? transform,
+    Object? packet,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get randRange;
@@ -17891,33 +19749,35 @@ class __$UDPItemCopyWithImpl<$Res> implements _$UDPItemCopyWith<$Res> {
     Object? transform = freezed,
     Object? packet = freezed,
   }) {
-    return _then(_UDPItem(
-      rand: freezed == rand
-          ? _self.rand
-          : rand // ignore: cast_nullable_to_non_nullable
-              as int?,
-      randRange: freezed == randRange
-          ? _self.randRange
-          : randRange // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      capture: freezed == capture
-          ? _self.capture
-          : capture // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reuse: freezed == reuse
-          ? _self.reuse
-          : reuse // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transform: freezed == transform
-          ? _self.transform
-          : transform // ignore: cast_nullable_to_non_nullable
-              as CustomTransform?,
-      packet: freezed == packet ? _self.packet : packet,
-    ));
+    return _then(
+      _UDPItem(
+        rand: freezed == rand
+            ? _self.rand
+            : rand // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        randRange: freezed == randRange
+            ? _self.randRange
+            : randRange // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        capture: freezed == capture
+            ? _self.capture
+            : capture // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        reuse: freezed == reuse
+            ? _self.reuse
+            : reuse // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        transform: freezed == transform
+            ? _self.transform
+            : transform // ignore: cast_nullable_to_non_nullable
+                  as CustomTransform?,
+        packet: freezed == packet ? _self.packet : packet,
+      ),
+    );
   }
 
   /// Create a copy of UDPItem
@@ -17963,49 +19823,62 @@ mixin _$WebSocketConfig {
   @pragma('vm:prefer-inline')
   $WebSocketConfigCopyWith<WebSocketConfig> get copyWith =>
       _$WebSocketConfigCopyWithImpl<WebSocketConfig>(
-          this as WebSocketConfig, _$identity);
+        this as WebSocketConfig,
+        _$identity,
+      );
 
   @override
   bool operator ==(Object other) {
+    final _this = this as WebSocketConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WebSocketConfig &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.path, path) || other.path == path) &&
-            const DeepCollectionEquality().equals(other.headers, headers) &&
-            (identical(other.acceptProxyProtocol, acceptProxyProtocol) ||
-                other.acceptProxyProtocol == acceptProxyProtocol) &&
-            (identical(other.heartbeatPeriod, heartbeatPeriod) ||
-                other.heartbeatPeriod == heartbeatPeriod));
+            (identical(other.host, _this.host) || other.host == _this.host) &&
+            (identical(other.path, _this.path) || other.path == _this.path) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ) &&
+            (identical(other.acceptProxyProtocol, _this.acceptProxyProtocol) ||
+                other.acceptProxyProtocol == _this.acceptProxyProtocol) &&
+            (identical(other.heartbeatPeriod, _this.heartbeatPeriod) ||
+                other.heartbeatPeriod == _this.heartbeatPeriod));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as WebSocketConfig;
+    return Object.hash(
       runtimeType,
-      host,
-      path,
-      const DeepCollectionEquality().hash(headers),
-      acceptProxyProtocol,
-      heartbeatPeriod);
+      _this.host,
+      _this.path,
+      const DeepCollectionEquality().hash(_this.headers),
+      _this.acceptProxyProtocol,
+      _this.heartbeatPeriod,
+    );
+  }
 
   @override
   String toString() {
-    return 'WebSocketConfig(host: $host, path: $path, headers: $headers, acceptProxyProtocol: $acceptProxyProtocol, heartbeatPeriod: $heartbeatPeriod)';
+    final _this = this as WebSocketConfig;
+    return 'WebSocketConfig(host: ${_this.host}, path: ${_this.path}, headers: ${_this.headers}, acceptProxyProtocol: ${_this.acceptProxyProtocol}, heartbeatPeriod: ${_this.heartbeatPeriod})';
   }
 }
 
 /// @nodoc
 abstract mixin class $WebSocketConfigCopyWith<$Res> {
   factory $WebSocketConfigCopyWith(
-          WebSocketConfig value, $Res Function(WebSocketConfig) _then) =
-      _$WebSocketConfigCopyWithImpl;
+    WebSocketConfig value,
+    $Res Function(WebSocketConfig) _then,
+  ) = _$WebSocketConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {String? host,
-      String? path,
-      Map<String, String>? headers,
-      bool? acceptProxyProtocol,
-      int? heartbeatPeriod});
+  $Res call({
+    String? host,
+    String? path,
+    Map<String, String>? headers,
+    bool? acceptProxyProtocol,
+    int? heartbeatPeriod,
+  });
 }
 
 /// @nodoc
@@ -18027,28 +19900,30 @@ class _$WebSocketConfigCopyWithImpl<$Res>
     Object? acceptProxyProtocol = freezed,
     Object? heartbeatPeriod = freezed,
   }) {
-    return _then(_self.copyWith(
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      heartbeatPeriod: freezed == heartbeatPeriod
-          ? _self.heartbeatPeriod
-          : heartbeatPeriod // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      WebSocketConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        heartbeatPeriod: freezed == heartbeatPeriod
+            ? _self.heartbeatPeriod
+            : heartbeatPeriod // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -18145,16 +20020,26 @@ extension WebSocketConfigPatterns on WebSocketConfig {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? host, String? path, Map<String, String>? headers,
-            bool? acceptProxyProtocol, int? heartbeatPeriod)?
-        $default, {
+    TResult Function(
+      String? host,
+      String? path,
+      Map<String, String>? headers,
+      bool? acceptProxyProtocol,
+      int? heartbeatPeriod,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _WebSocketConfig() when $default != null:
-        return $default(_that.host, _that.path, _that.headers,
-            _that.acceptProxyProtocol, _that.heartbeatPeriod);
+        return $default(
+          _that.host,
+          _that.path,
+          _that.headers,
+          _that.acceptProxyProtocol,
+          _that.heartbeatPeriod,
+        );
       case _:
         return orElse();
     }
@@ -18175,15 +20060,25 @@ extension WebSocketConfigPatterns on WebSocketConfig {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? host, String? path, Map<String, String>? headers,
-            bool? acceptProxyProtocol, int? heartbeatPeriod)
-        $default,
+    TResult Function(
+      String? host,
+      String? path,
+      Map<String, String>? headers,
+      bool? acceptProxyProtocol,
+      int? heartbeatPeriod,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WebSocketConfig():
-        return $default(_that.host, _that.path, _that.headers,
-            _that.acceptProxyProtocol, _that.heartbeatPeriod);
+        return $default(
+          _that.host,
+          _that.path,
+          _that.headers,
+          _that.acceptProxyProtocol,
+          _that.heartbeatPeriod,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -18203,15 +20098,25 @@ extension WebSocketConfigPatterns on WebSocketConfig {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? host, String? path, Map<String, String>? headers,
-            bool? acceptProxyProtocol, int? heartbeatPeriod)?
-        $default,
+    TResult? Function(
+      String? host,
+      String? path,
+      Map<String, String>? headers,
+      bool? acceptProxyProtocol,
+      int? heartbeatPeriod,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _WebSocketConfig() when $default != null:
-        return $default(_that.host, _that.path, _that.headers,
-            _that.acceptProxyProtocol, _that.heartbeatPeriod);
+        return $default(
+          _that.host,
+          _that.path,
+          _that.headers,
+          _that.acceptProxyProtocol,
+          _that.heartbeatPeriod,
+        );
       case _:
         return null;
     }
@@ -18221,14 +20126,14 @@ extension WebSocketConfigPatterns on WebSocketConfig {
 /// @nodoc
 
 class _WebSocketConfig extends WebSocketConfig {
-  const _WebSocketConfig(
-      {this.host,
-      this.path,
-      final Map<String, String>? headers,
-      this.acceptProxyProtocol,
-      this.heartbeatPeriod})
-      : _headers = headers,
-        super._();
+  const _WebSocketConfig({
+    this.host,
+    this.path,
+    Map<String, String>? headers,
+    this.acceptProxyProtocol,
+    this.heartbeatPeriod,
+  }) : _headers = headers,
+       super._();
 
   @override
   final String? host;
@@ -18264,7 +20169,7 @@ class _WebSocketConfig extends WebSocketConfig {
             other is _WebSocketConfig &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.path, path) || other.path == path) &&
-            const DeepCollectionEquality().equals(other._headers, _headers) &&
+            const DeepCollectionEquality().equals(other.headers, _headers) &&
             (identical(other.acceptProxyProtocol, acceptProxyProtocol) ||
                 other.acceptProxyProtocol == acceptProxyProtocol) &&
             (identical(other.heartbeatPeriod, heartbeatPeriod) ||
@@ -18272,13 +20177,16 @@ class _WebSocketConfig extends WebSocketConfig {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       host,
       path,
       const DeepCollectionEquality().hash(_headers),
       acceptProxyProtocol,
-      heartbeatPeriod);
+      heartbeatPeriod,
+    );
+  }
 
   @override
   String toString() {
@@ -18290,16 +20198,18 @@ class _WebSocketConfig extends WebSocketConfig {
 abstract mixin class _$WebSocketConfigCopyWith<$Res>
     implements $WebSocketConfigCopyWith<$Res> {
   factory _$WebSocketConfigCopyWith(
-          _WebSocketConfig value, $Res Function(_WebSocketConfig) _then) =
-      __$WebSocketConfigCopyWithImpl;
+    _WebSocketConfig value,
+    $Res Function(_WebSocketConfig) _then,
+  ) = __$WebSocketConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? host,
-      String? path,
-      Map<String, String>? headers,
-      bool? acceptProxyProtocol,
-      int? heartbeatPeriod});
+  $Res call({
+    String? host,
+    String? path,
+    Map<String, String>? headers,
+    bool? acceptProxyProtocol,
+    int? heartbeatPeriod,
+  });
 }
 
 /// @nodoc
@@ -18321,28 +20231,30 @@ class __$WebSocketConfigCopyWithImpl<$Res>
     Object? acceptProxyProtocol = freezed,
     Object? heartbeatPeriod = freezed,
   }) {
-    return _then(_WebSocketConfig(
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      path: freezed == path
-          ? _self.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _self._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-      acceptProxyProtocol: freezed == acceptProxyProtocol
-          ? _self.acceptProxyProtocol
-          : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      heartbeatPeriod: freezed == heartbeatPeriod
-          ? _self.heartbeatPeriod
-          : heartbeatPeriod // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _WebSocketConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+        acceptProxyProtocol: freezed == acceptProxyProtocol
+            ? _self.acceptProxyProtocol
+            : acceptProxyProtocol // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        heartbeatPeriod: freezed == heartbeatPeriod
+            ? _self.heartbeatPeriod
+            : heartbeatPeriod // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 }
 
@@ -18361,23 +20273,35 @@ mixin _$XMC {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as XMC;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XMC &&
-            (identical(other.hostname, hostname) ||
-                other.hostname == hostname) &&
-            const DeepCollectionEquality().equals(other.profiles, profiles) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.hostname, _this.hostname) ||
+                other.hostname == _this.hostname) &&
+            const DeepCollectionEquality().equals(
+              other.profiles,
+              _this.profiles,
+            ) &&
+            (identical(other.password, _this.password) ||
+                other.password == _this.password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, hostname,
-      const DeepCollectionEquality().hash(profiles), password);
+  int get hashCode {
+    final _this = this as XMC;
+    return Object.hash(
+      runtimeType,
+      _this.hostname,
+      const DeepCollectionEquality().hash(_this.profiles),
+      _this.password,
+    );
+  }
 
   @override
   String toString() {
-    return 'XMC(hostname: $hostname, profiles: $profiles, password: $password)';
+    final _this = this as XMC;
+    return 'XMC(hostname: ${_this.hostname}, profiles: ${_this.profiles}, password: ${_this.password})';
   }
 }
 
@@ -18404,20 +20328,22 @@ class _$XMCCopyWithImpl<$Res> implements $XMCCopyWith<$Res> {
     Object? profiles = null,
     Object? password = null,
   }) {
-    return _then(_self.copyWith(
-      hostname: freezed == hostname
-          ? _self.hostname
-          : hostname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      profiles: null == profiles
-          ? _self.profiles
-          : profiles // ignore: cast_nullable_to_non_nullable
-              as List<XMCProfile>,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      XMC(
+        hostname: freezed == hostname
+            ? _self.hostname
+            : hostname // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        profiles: null == profiles
+            ? _self.profiles
+            : profiles // ignore: cast_nullable_to_non_nullable
+                  as List<XMCProfile>,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -18463,9 +20389,7 @@ extension XMCPatterns on XMC {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_XMC value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_XMC value) $default) {
     final _that = this;
     switch (_that) {
       case _XMC():
@@ -18515,8 +20439,11 @@ extension XMCPatterns on XMC {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String? hostname, List<XMCProfile> profiles, String password)?
-        $default, {
+      String? hostname,
+      List<XMCProfile> profiles,
+      String password,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -18544,8 +20471,11 @@ extension XMCPatterns on XMC {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String? hostname, List<XMCProfile> profiles, String password)
-        $default,
+      String? hostname,
+      List<XMCProfile> profiles,
+      String password,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -18571,8 +20501,11 @@ extension XMCPatterns on XMC {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String? hostname, List<XMCProfile> profiles, String password)?
-        $default,
+      String? hostname,
+      List<XMCProfile> profiles,
+      String password,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -18587,12 +20520,12 @@ extension XMCPatterns on XMC {
 /// @nodoc
 
 class _XMC extends XMC {
-  const _XMC(
-      {this.hostname,
-      required final List<XMCProfile> profiles,
-      required this.password})
-      : _profiles = profiles,
-        super._();
+  const _XMC({
+    this.hostname,
+    required List<XMCProfile> profiles,
+    required this.password,
+  }) : _profiles = profiles,
+       super._();
 
   @override
   final String? hostname;
@@ -18622,14 +20555,20 @@ class _XMC extends XMC {
             other is _XMC &&
             (identical(other.hostname, hostname) ||
                 other.hostname == hostname) &&
-            const DeepCollectionEquality().equals(other._profiles, _profiles) &&
+            const DeepCollectionEquality().equals(other.profiles, _profiles) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, hostname,
-      const DeepCollectionEquality().hash(_profiles), password);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      hostname,
+      const DeepCollectionEquality().hash(_profiles),
+      password,
+    );
+  }
 
   @override
   String toString() {
@@ -18662,20 +20601,22 @@ class __$XMCCopyWithImpl<$Res> implements _$XMCCopyWith<$Res> {
     Object? profiles = null,
     Object? password = null,
   }) {
-    return _then(_XMC(
-      hostname: freezed == hostname
-          ? _self.hostname
-          : hostname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      profiles: null == profiles
-          ? _self._profiles
-          : profiles // ignore: cast_nullable_to_non_nullable
-              as List<XMCProfile>,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _XMC(
+        hostname: freezed == hostname
+            ? _self.hostname
+            : hostname // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        profiles: null == profiles
+            ? _self._profiles
+            : profiles // ignore: cast_nullable_to_non_nullable
+                  as List<XMCProfile>,
+        password: null == password
+            ? _self.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -18695,39 +20636,51 @@ mixin _$XMCProfile {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as XMCProfile;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XMCProfile &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.uuid, uuid) || other.uuid == uuid) &&
-            (identical(other.texturesValue, texturesValue) ||
-                other.texturesValue == texturesValue) &&
-            (identical(other.texturesSignature, texturesSignature) ||
-                other.texturesSignature == texturesSignature));
+            (identical(other.username, _this.username) ||
+                other.username == _this.username) &&
+            (identical(other.uuid, _this.uuid) || other.uuid == _this.uuid) &&
+            (identical(other.texturesValue, _this.texturesValue) ||
+                other.texturesValue == _this.texturesValue) &&
+            (identical(other.texturesSignature, _this.texturesSignature) ||
+                other.texturesSignature == _this.texturesSignature));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, username, uuid, texturesValue, texturesSignature);
+  int get hashCode {
+    final _this = this as XMCProfile;
+    return Object.hash(
+      runtimeType,
+      _this.username,
+      _this.uuid,
+      _this.texturesValue,
+      _this.texturesSignature,
+    );
+  }
 
   @override
   String toString() {
-    return 'XMCProfile(username: $username, uuid: $uuid, texturesValue: $texturesValue, texturesSignature: $texturesSignature)';
+    final _this = this as XMCProfile;
+    return 'XMCProfile(username: ${_this.username}, uuid: ${_this.uuid}, texturesValue: ${_this.texturesValue}, texturesSignature: ${_this.texturesSignature})';
   }
 }
 
 /// @nodoc
 abstract mixin class $XMCProfileCopyWith<$Res> {
   factory $XMCProfileCopyWith(
-          XMCProfile value, $Res Function(XMCProfile) _then) =
-      _$XMCProfileCopyWithImpl;
+    XMCProfile value,
+    $Res Function(XMCProfile) _then,
+  ) = _$XMCProfileCopyWithImpl;
   @useResult
-  $Res call(
-      {String username,
-      String uuid,
-      String texturesValue,
-      String texturesSignature});
+  $Res call({
+    String username,
+    String uuid,
+    String texturesValue,
+    String texturesSignature,
+  });
 }
 
 /// @nodoc
@@ -18747,24 +20700,26 @@ class _$XMCProfileCopyWithImpl<$Res> implements $XMCProfileCopyWith<$Res> {
     Object? texturesValue = null,
     Object? texturesSignature = null,
   }) {
-    return _then(_self.copyWith(
-      username: null == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      uuid: null == uuid
-          ? _self.uuid
-          : uuid // ignore: cast_nullable_to_non_nullable
-              as String,
-      texturesValue: null == texturesValue
-          ? _self.texturesValue
-          : texturesValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      texturesSignature: null == texturesSignature
-          ? _self.texturesSignature
-          : texturesSignature // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      XMCProfile(
+        username: null == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String,
+        uuid: null == uuid
+            ? _self.uuid
+            : uuid // ignore: cast_nullable_to_non_nullable
+                  as String,
+        texturesValue: null == texturesValue
+            ? _self.texturesValue
+            : texturesValue // ignore: cast_nullable_to_non_nullable
+                  as String,
+        texturesSignature: null == texturesSignature
+            ? _self.texturesSignature
+            : texturesSignature // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -18861,16 +20816,24 @@ extension XMCProfilePatterns on XMCProfile {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String uuid, String texturesValue,
-            String texturesSignature)?
-        $default, {
+    TResult Function(
+      String username,
+      String uuid,
+      String texturesValue,
+      String texturesSignature,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _XMCProfile() when $default != null:
-        return $default(_that.username, _that.uuid, _that.texturesValue,
-            _that.texturesSignature);
+        return $default(
+          _that.username,
+          _that.uuid,
+          _that.texturesValue,
+          _that.texturesSignature,
+        );
       case _:
         return orElse();
     }
@@ -18891,15 +20854,23 @@ extension XMCProfilePatterns on XMCProfile {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String uuid, String texturesValue,
-            String texturesSignature)
-        $default,
+    TResult Function(
+      String username,
+      String uuid,
+      String texturesValue,
+      String texturesSignature,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XMCProfile():
-        return $default(_that.username, _that.uuid, _that.texturesValue,
-            _that.texturesSignature);
+        return $default(
+          _that.username,
+          _that.uuid,
+          _that.texturesValue,
+          _that.texturesSignature,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -18919,15 +20890,23 @@ extension XMCProfilePatterns on XMCProfile {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String username, String uuid, String texturesValue,
-            String texturesSignature)?
-        $default,
+    TResult? Function(
+      String username,
+      String uuid,
+      String texturesValue,
+      String texturesSignature,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XMCProfile() when $default != null:
-        return $default(_that.username, _that.uuid, _that.texturesValue,
-            _that.texturesSignature);
+        return $default(
+          _that.username,
+          _that.uuid,
+          _that.texturesValue,
+          _that.texturesSignature,
+        );
       case _:
         return null;
     }
@@ -18937,12 +20916,12 @@ extension XMCProfilePatterns on XMCProfile {
 /// @nodoc
 
 class _XMCProfile extends XMCProfile {
-  const _XMCProfile(
-      {required this.username,
-      required this.uuid,
-      required this.texturesValue,
-      required this.texturesSignature})
-      : super._();
+  const _XMCProfile({
+    required this.username,
+    required this.uuid,
+    required this.texturesValue,
+    required this.texturesSignature,
+  }) : super._();
 
   @override
   final String username;
@@ -18976,8 +20955,15 @@ class _XMCProfile extends XMCProfile {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, username, uuid, texturesValue, texturesSignature);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      username,
+      uuid,
+      texturesValue,
+      texturesSignature,
+    );
+  }
 
   @override
   String toString() {
@@ -18989,15 +20975,17 @@ class _XMCProfile extends XMCProfile {
 abstract mixin class _$XMCProfileCopyWith<$Res>
     implements $XMCProfileCopyWith<$Res> {
   factory _$XMCProfileCopyWith(
-          _XMCProfile value, $Res Function(_XMCProfile) _then) =
-      __$XMCProfileCopyWithImpl;
+    _XMCProfile value,
+    $Res Function(_XMCProfile) _then,
+  ) = __$XMCProfileCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String username,
-      String uuid,
-      String texturesValue,
-      String texturesSignature});
+  $Res call({
+    String username,
+    String uuid,
+    String texturesValue,
+    String texturesSignature,
+  });
 }
 
 /// @nodoc
@@ -19017,24 +21005,26 @@ class __$XMCProfileCopyWithImpl<$Res> implements _$XMCProfileCopyWith<$Res> {
     Object? texturesValue = null,
     Object? texturesSignature = null,
   }) {
-    return _then(_XMCProfile(
-      username: null == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      uuid: null == uuid
-          ? _self.uuid
-          : uuid // ignore: cast_nullable_to_non_nullable
-              as String,
-      texturesValue: null == texturesValue
-          ? _self.texturesValue
-          : texturesValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      texturesSignature: null == texturesSignature
-          ? _self.texturesSignature
-          : texturesSignature // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _XMCProfile(
+        username: null == username
+            ? _self.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String,
+        uuid: null == uuid
+            ? _self.uuid
+            : uuid // ignore: cast_nullable_to_non_nullable
+                  as String,
+        texturesValue: null == texturesValue
+            ? _self.texturesValue
+            : texturesValue // ignore: cast_nullable_to_non_nullable
+                  as String,
+        texturesSignature: null == texturesSignature
+            ? _self.texturesSignature
+            : texturesSignature // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -19053,24 +21043,36 @@ mixin _$Xdns {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Xdns;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Xdns &&
-            const DeepCollectionEquality().equals(other.domain, domain) &&
-            const DeepCollectionEquality().equals(other.domains, domains) &&
-            const DeepCollectionEquality().equals(other.resolvers, resolvers));
+            const DeepCollectionEquality().equals(other.domain, _this.domain) &&
+            const DeepCollectionEquality().equals(
+              other.domains,
+              _this.domains,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.resolvers,
+              _this.resolvers,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    final _this = this as Xdns;
+    return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(domain),
-      const DeepCollectionEquality().hash(domains),
-      const DeepCollectionEquality().hash(resolvers));
+      const DeepCollectionEquality().hash(_this.domain),
+      const DeepCollectionEquality().hash(_this.domains),
+      const DeepCollectionEquality().hash(_this.resolvers),
+    );
+  }
 
   @override
   String toString() {
-    return 'Xdns(domain: $domain, domains: $domains, resolvers: $resolvers)';
+    final _this = this as Xdns;
+    return 'Xdns(domain: ${_this.domain}, domains: ${_this.domains}, resolvers: ${_this.resolvers})';
   }
 }
 
@@ -19098,17 +21100,19 @@ class _$XdnsCopyWithImpl<$Res> implements $XdnsCopyWith<$Res> {
     Object? domains = freezed,
     Object? resolvers = freezed,
   }) {
-    return _then(_self.copyWith(
-      domain: freezed == domain ? _self.domain : domain,
-      domains: freezed == domains
-          ? _self.domains
-          : domains // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      resolvers: freezed == resolvers
-          ? _self.resolvers
-          : resolvers // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+    return _then(
+      Xdns(
+        domain: freezed == domain ? _self.domain : domain,
+        domains: freezed == domains
+            ? _self.domains
+            : domains // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        resolvers: freezed == resolvers
+            ? _self.resolvers
+            : resolvers // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
   }
 }
 
@@ -19154,9 +21158,7 @@ extension XdnsPatterns on Xdns {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Xdns value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_Xdns value) $default) {
     final _that = this;
     switch (_that) {
       case _Xdns():
@@ -19206,8 +21208,11 @@ extension XdnsPatterns on Xdns {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            Object? domain, List<String>? domains, List<String>? resolvers)?
-        $default, {
+      Object? domain,
+      List<String>? domains,
+      List<String>? resolvers,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
@@ -19235,8 +21240,11 @@ extension XdnsPatterns on Xdns {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            Object? domain, List<String>? domains, List<String>? resolvers)
-        $default,
+      Object? domain,
+      List<String>? domains,
+      List<String>? resolvers,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -19262,8 +21270,11 @@ extension XdnsPatterns on Xdns {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            Object? domain, List<String>? domains, List<String>? resolvers)?
-        $default,
+      Object? domain,
+      List<String>? domains,
+      List<String>? resolvers,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
@@ -19278,11 +21289,10 @@ extension XdnsPatterns on Xdns {
 /// @nodoc
 
 class _Xdns extends Xdns {
-  const _Xdns(
-      {this.domain, final List<String>? domains, final List<String>? resolvers})
-      : _domains = domains,
-        _resolvers = resolvers,
-        super._();
+  const _Xdns({this.domain, List<String>? domains, List<String>? resolvers})
+    : _domains = domains,
+      _resolvers = resolvers,
+      super._();
 
   @override
   final Object? domain;
@@ -19320,17 +21330,19 @@ class _Xdns extends Xdns {
         (other.runtimeType == runtimeType &&
             other is _Xdns &&
             const DeepCollectionEquality().equals(other.domain, domain) &&
-            const DeepCollectionEquality().equals(other._domains, _domains) &&
-            const DeepCollectionEquality()
-                .equals(other._resolvers, _resolvers));
+            const DeepCollectionEquality().equals(other.domains, _domains) &&
+            const DeepCollectionEquality().equals(other.resolvers, _resolvers));
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode {
+    return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(domain),
       const DeepCollectionEquality().hash(_domains),
-      const DeepCollectionEquality().hash(_resolvers));
+      const DeepCollectionEquality().hash(_resolvers),
+    );
+  }
 
   @override
   String toString() {
@@ -19363,17 +21375,19 @@ class __$XdnsCopyWithImpl<$Res> implements _$XdnsCopyWith<$Res> {
     Object? domains = freezed,
     Object? resolvers = freezed,
   }) {
-    return _then(_Xdns(
-      domain: freezed == domain ? _self.domain : domain,
-      domains: freezed == domains
-          ? _self._domains
-          : domains // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      resolvers: freezed == resolvers
-          ? _self._resolvers
-          : resolvers // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+    return _then(
+      _Xdns(
+        domain: freezed == domain ? _self.domain : domain,
+        domains: freezed == domains
+            ? _self._domains
+            : domains // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        resolvers: freezed == resolvers
+            ? _self._resolvers
+            : resolvers // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
   }
 }
 
@@ -19391,20 +21405,29 @@ mixin _$Xicmp {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as Xicmp;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Xicmp &&
-            (identical(other.dgram, dgram) || other.dgram == dgram) &&
-            const DeepCollectionEquality().equals(other.ips, ips));
+            (identical(other.dgram, _this.dgram) ||
+                other.dgram == _this.dgram) &&
+            const DeepCollectionEquality().equals(other.ips, _this.ips));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, dgram, const DeepCollectionEquality().hash(ips));
+  int get hashCode {
+    final _this = this as Xicmp;
+    return Object.hash(
+      runtimeType,
+      _this.dgram,
+      const DeepCollectionEquality().hash(_this.ips),
+    );
+  }
 
   @override
   String toString() {
-    return 'Xicmp(dgram: $dgram, ips: $ips)';
+    final _this = this as Xicmp;
+    return 'Xicmp(dgram: ${_this.dgram}, ips: ${_this.ips})';
   }
 }
 
@@ -19427,20 +21450,19 @@ class _$XicmpCopyWithImpl<$Res> implements $XicmpCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? dgram = freezed,
-    Object? ips = freezed,
-  }) {
-    return _then(_self.copyWith(
-      dgram: freezed == dgram
-          ? _self.dgram
-          : dgram // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ips: freezed == ips
-          ? _self.ips
-          : ips // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+  $Res call({Object? dgram = freezed, Object? ips = freezed}) {
+    return _then(
+      Xicmp(
+        dgram: freezed == dgram
+            ? _self.dgram
+            : dgram // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        ips: freezed == ips
+            ? _self.ips
+            : ips // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
   }
 }
 
@@ -19604,9 +21626,7 @@ extension XicmpPatterns on Xicmp {
 /// @nodoc
 
 class _Xicmp extends Xicmp {
-  const _Xicmp({this.dgram, final List<String>? ips})
-      : _ips = ips,
-        super._();
+  const _Xicmp({this.dgram, List<String>? ips}) : _ips = ips, super._();
 
   @override
   final bool? dgram;
@@ -19634,12 +21654,17 @@ class _Xicmp extends Xicmp {
         (other.runtimeType == runtimeType &&
             other is _Xicmp &&
             (identical(other.dgram, dgram) || other.dgram == dgram) &&
-            const DeepCollectionEquality().equals(other._ips, _ips));
+            const DeepCollectionEquality().equals(other.ips, _ips));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, dgram, const DeepCollectionEquality().hash(_ips));
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      dgram,
+      const DeepCollectionEquality().hash(_ips),
+    );
+  }
 
   @override
   String toString() {
@@ -19667,20 +21692,19 @@ class __$XicmpCopyWithImpl<$Res> implements _$XicmpCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? dgram = freezed,
-    Object? ips = freezed,
-  }) {
-    return _then(_Xicmp(
-      dgram: freezed == dgram
-          ? _self.dgram
-          : dgram // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ips: freezed == ips
-          ? _self._ips
-          : ips // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+  $Res call({Object? dgram = freezed, Object? ips = freezed}) {
+    return _then(
+      _Xicmp(
+        dgram: freezed == dgram
+            ? _self.dgram
+            : dgram // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        ips: freezed == ips
+            ? _self._ips
+            : ips // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
   }
 }
 
@@ -19702,46 +21726,60 @@ mixin _$XmuxConfig {
 
   @override
   bool operator ==(Object other) {
+    final _this = this as XmuxConfig;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XmuxConfig &&
-            (identical(other.maxConcurrency, maxConcurrency) ||
-                other.maxConcurrency == maxConcurrency) &&
-            (identical(other.maxConnections, maxConnections) ||
-                other.maxConnections == maxConnections) &&
-            (identical(other.cMaxReuseTimes, cMaxReuseTimes) ||
-                other.cMaxReuseTimes == cMaxReuseTimes) &&
-            (identical(other.hMaxRequestTimes, hMaxRequestTimes) ||
-                other.hMaxRequestTimes == hMaxRequestTimes) &&
-            (identical(other.hMaxReusableSecs, hMaxReusableSecs) ||
-                other.hMaxReusableSecs == hMaxReusableSecs) &&
-            (identical(other.hKeepAlivePeriod, hKeepAlivePeriod) ||
-                other.hKeepAlivePeriod == hKeepAlivePeriod));
+            (identical(other.maxConcurrency, _this.maxConcurrency) ||
+                other.maxConcurrency == _this.maxConcurrency) &&
+            (identical(other.maxConnections, _this.maxConnections) ||
+                other.maxConnections == _this.maxConnections) &&
+            (identical(other.cMaxReuseTimes, _this.cMaxReuseTimes) ||
+                other.cMaxReuseTimes == _this.cMaxReuseTimes) &&
+            (identical(other.hMaxRequestTimes, _this.hMaxRequestTimes) ||
+                other.hMaxRequestTimes == _this.hMaxRequestTimes) &&
+            (identical(other.hMaxReusableSecs, _this.hMaxReusableSecs) ||
+                other.hMaxReusableSecs == _this.hMaxReusableSecs) &&
+            (identical(other.hKeepAlivePeriod, _this.hKeepAlivePeriod) ||
+                other.hKeepAlivePeriod == _this.hKeepAlivePeriod));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, maxConcurrency, maxConnections,
-      cMaxReuseTimes, hMaxRequestTimes, hMaxReusableSecs, hKeepAlivePeriod);
+  int get hashCode {
+    final _this = this as XmuxConfig;
+    return Object.hash(
+      runtimeType,
+      _this.maxConcurrency,
+      _this.maxConnections,
+      _this.cMaxReuseTimes,
+      _this.hMaxRequestTimes,
+      _this.hMaxReusableSecs,
+      _this.hKeepAlivePeriod,
+    );
+  }
 
   @override
   String toString() {
-    return 'XmuxConfig(maxConcurrency: $maxConcurrency, maxConnections: $maxConnections, cMaxReuseTimes: $cMaxReuseTimes, hMaxRequestTimes: $hMaxRequestTimes, hMaxReusableSecs: $hMaxReusableSecs, hKeepAlivePeriod: $hKeepAlivePeriod)';
+    final _this = this as XmuxConfig;
+    return 'XmuxConfig(maxConcurrency: ${_this.maxConcurrency}, maxConnections: ${_this.maxConnections}, cMaxReuseTimes: ${_this.cMaxReuseTimes}, hMaxRequestTimes: ${_this.hMaxRequestTimes}, hMaxReusableSecs: ${_this.hMaxReusableSecs}, hKeepAlivePeriod: ${_this.hKeepAlivePeriod})';
   }
 }
 
 /// @nodoc
 abstract mixin class $XmuxConfigCopyWith<$Res> {
   factory $XmuxConfigCopyWith(
-          XmuxConfig value, $Res Function(XmuxConfig) _then) =
-      _$XmuxConfigCopyWithImpl;
+    XmuxConfig value,
+    $Res Function(XmuxConfig) _then,
+  ) = _$XmuxConfigCopyWithImpl;
   @useResult
-  $Res call(
-      {XrayInt32Range? maxConcurrency,
-      XrayInt32Range? maxConnections,
-      XrayInt32Range? cMaxReuseTimes,
-      XrayInt32Range? hMaxRequestTimes,
-      XrayInt32Range? hMaxReusableSecs,
-      int? hKeepAlivePeriod});
+  $Res call({
+    XrayInt32Range? maxConcurrency,
+    XrayInt32Range? maxConnections,
+    XrayInt32Range? cMaxReuseTimes,
+    XrayInt32Range? hMaxRequestTimes,
+    XrayInt32Range? hMaxReusableSecs,
+    int? hKeepAlivePeriod,
+  });
 
   $XrayInt32RangeCopyWith<$Res>? get maxConcurrency;
   $XrayInt32RangeCopyWith<$Res>? get maxConnections;
@@ -19769,32 +21807,34 @@ class _$XmuxConfigCopyWithImpl<$Res> implements $XmuxConfigCopyWith<$Res> {
     Object? hMaxReusableSecs = freezed,
     Object? hKeepAlivePeriod = freezed,
   }) {
-    return _then(_self.copyWith(
-      maxConcurrency: freezed == maxConcurrency
-          ? _self.maxConcurrency
-          : maxConcurrency // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      maxConnections: freezed == maxConnections
-          ? _self.maxConnections
-          : maxConnections // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      cMaxReuseTimes: freezed == cMaxReuseTimes
-          ? _self.cMaxReuseTimes
-          : cMaxReuseTimes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      hMaxRequestTimes: freezed == hMaxRequestTimes
-          ? _self.hMaxRequestTimes
-          : hMaxRequestTimes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      hMaxReusableSecs: freezed == hMaxReusableSecs
-          ? _self.hMaxReusableSecs
-          : hMaxReusableSecs // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      hKeepAlivePeriod: freezed == hKeepAlivePeriod
-          ? _self.hKeepAlivePeriod
-          : hKeepAlivePeriod // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      XmuxConfig(
+        maxConcurrency: freezed == maxConcurrency
+            ? _self.maxConcurrency
+            : maxConcurrency // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        maxConnections: freezed == maxConnections
+            ? _self.maxConnections
+            : maxConnections // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        cMaxReuseTimes: freezed == cMaxReuseTimes
+            ? _self.cMaxReuseTimes
+            : cMaxReuseTimes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        hMaxRequestTimes: freezed == hMaxRequestTimes
+            ? _self.hMaxRequestTimes
+            : hMaxRequestTimes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        hMaxReusableSecs: freezed == hMaxReusableSecs
+            ? _self.hMaxReusableSecs
+            : hMaxReusableSecs // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        hKeepAlivePeriod: freezed == hKeepAlivePeriod
+            ? _self.hKeepAlivePeriod
+            : hKeepAlivePeriod // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 
   /// Create a copy of XmuxConfig
@@ -19962,25 +22002,27 @@ extension XmuxConfigPatterns on XmuxConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            XrayInt32Range? maxConcurrency,
-            XrayInt32Range? maxConnections,
-            XrayInt32Range? cMaxReuseTimes,
-            XrayInt32Range? hMaxRequestTimes,
-            XrayInt32Range? hMaxReusableSecs,
-            int? hKeepAlivePeriod)?
-        $default, {
+      XrayInt32Range? maxConcurrency,
+      XrayInt32Range? maxConnections,
+      XrayInt32Range? cMaxReuseTimes,
+      XrayInt32Range? hMaxRequestTimes,
+      XrayInt32Range? hMaxReusableSecs,
+      int? hKeepAlivePeriod,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _XmuxConfig() when $default != null:
         return $default(
-            _that.maxConcurrency,
-            _that.maxConnections,
-            _that.cMaxReuseTimes,
-            _that.hMaxRequestTimes,
-            _that.hMaxReusableSecs,
-            _that.hKeepAlivePeriod);
+          _that.maxConcurrency,
+          _that.maxConnections,
+          _that.cMaxReuseTimes,
+          _that.hMaxRequestTimes,
+          _that.hMaxReusableSecs,
+          _that.hKeepAlivePeriod,
+        );
       case _:
         return orElse();
     }
@@ -20002,24 +22044,26 @@ extension XmuxConfigPatterns on XmuxConfig {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            XrayInt32Range? maxConcurrency,
-            XrayInt32Range? maxConnections,
-            XrayInt32Range? cMaxReuseTimes,
-            XrayInt32Range? hMaxRequestTimes,
-            XrayInt32Range? hMaxReusableSecs,
-            int? hKeepAlivePeriod)
-        $default,
+      XrayInt32Range? maxConcurrency,
+      XrayInt32Range? maxConnections,
+      XrayInt32Range? cMaxReuseTimes,
+      XrayInt32Range? hMaxRequestTimes,
+      XrayInt32Range? hMaxReusableSecs,
+      int? hKeepAlivePeriod,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XmuxConfig():
         return $default(
-            _that.maxConcurrency,
-            _that.maxConnections,
-            _that.cMaxReuseTimes,
-            _that.hMaxRequestTimes,
-            _that.hMaxReusableSecs,
-            _that.hKeepAlivePeriod);
+          _that.maxConcurrency,
+          _that.maxConnections,
+          _that.cMaxReuseTimes,
+          _that.hMaxRequestTimes,
+          _that.hMaxReusableSecs,
+          _that.hKeepAlivePeriod,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -20040,24 +22084,26 @@ extension XmuxConfigPatterns on XmuxConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            XrayInt32Range? maxConcurrency,
-            XrayInt32Range? maxConnections,
-            XrayInt32Range? cMaxReuseTimes,
-            XrayInt32Range? hMaxRequestTimes,
-            XrayInt32Range? hMaxReusableSecs,
-            int? hKeepAlivePeriod)?
-        $default,
+      XrayInt32Range? maxConcurrency,
+      XrayInt32Range? maxConnections,
+      XrayInt32Range? cMaxReuseTimes,
+      XrayInt32Range? hMaxRequestTimes,
+      XrayInt32Range? hMaxReusableSecs,
+      int? hKeepAlivePeriod,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XmuxConfig() when $default != null:
         return $default(
-            _that.maxConcurrency,
-            _that.maxConnections,
-            _that.cMaxReuseTimes,
-            _that.hMaxRequestTimes,
-            _that.hMaxReusableSecs,
-            _that.hKeepAlivePeriod);
+          _that.maxConcurrency,
+          _that.maxConnections,
+          _that.cMaxReuseTimes,
+          _that.hMaxRequestTimes,
+          _that.hMaxReusableSecs,
+          _that.hKeepAlivePeriod,
+        );
       case _:
         return null;
     }
@@ -20067,14 +22113,14 @@ extension XmuxConfigPatterns on XmuxConfig {
 /// @nodoc
 
 class _XmuxConfig extends XmuxConfig {
-  const _XmuxConfig(
-      {this.maxConcurrency,
-      this.maxConnections,
-      this.cMaxReuseTimes,
-      this.hMaxRequestTimes,
-      this.hMaxReusableSecs,
-      this.hKeepAlivePeriod})
-      : super._();
+  const _XmuxConfig({
+    this.maxConcurrency,
+    this.maxConnections,
+    this.cMaxReuseTimes,
+    this.hMaxRequestTimes,
+    this.hMaxReusableSecs,
+    this.hKeepAlivePeriod,
+  }) : super._();
 
   @override
   final XrayInt32Range? maxConcurrency;
@@ -20117,8 +22163,17 @@ class _XmuxConfig extends XmuxConfig {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, maxConcurrency, maxConnections,
-      cMaxReuseTimes, hMaxRequestTimes, hMaxReusableSecs, hKeepAlivePeriod);
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      maxConcurrency,
+      maxConnections,
+      cMaxReuseTimes,
+      hMaxRequestTimes,
+      hMaxReusableSecs,
+      hKeepAlivePeriod,
+    );
+  }
 
   @override
   String toString() {
@@ -20130,17 +22185,19 @@ class _XmuxConfig extends XmuxConfig {
 abstract mixin class _$XmuxConfigCopyWith<$Res>
     implements $XmuxConfigCopyWith<$Res> {
   factory _$XmuxConfigCopyWith(
-          _XmuxConfig value, $Res Function(_XmuxConfig) _then) =
-      __$XmuxConfigCopyWithImpl;
+    _XmuxConfig value,
+    $Res Function(_XmuxConfig) _then,
+  ) = __$XmuxConfigCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {XrayInt32Range? maxConcurrency,
-      XrayInt32Range? maxConnections,
-      XrayInt32Range? cMaxReuseTimes,
-      XrayInt32Range? hMaxRequestTimes,
-      XrayInt32Range? hMaxReusableSecs,
-      int? hKeepAlivePeriod});
+  $Res call({
+    XrayInt32Range? maxConcurrency,
+    XrayInt32Range? maxConnections,
+    XrayInt32Range? cMaxReuseTimes,
+    XrayInt32Range? hMaxRequestTimes,
+    XrayInt32Range? hMaxReusableSecs,
+    int? hKeepAlivePeriod,
+  });
 
   @override
   $XrayInt32RangeCopyWith<$Res>? get maxConcurrency;
@@ -20173,32 +22230,34 @@ class __$XmuxConfigCopyWithImpl<$Res> implements _$XmuxConfigCopyWith<$Res> {
     Object? hMaxReusableSecs = freezed,
     Object? hKeepAlivePeriod = freezed,
   }) {
-    return _then(_XmuxConfig(
-      maxConcurrency: freezed == maxConcurrency
-          ? _self.maxConcurrency
-          : maxConcurrency // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      maxConnections: freezed == maxConnections
-          ? _self.maxConnections
-          : maxConnections // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      cMaxReuseTimes: freezed == cMaxReuseTimes
-          ? _self.cMaxReuseTimes
-          : cMaxReuseTimes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      hMaxRequestTimes: freezed == hMaxRequestTimes
-          ? _self.hMaxRequestTimes
-          : hMaxRequestTimes // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      hMaxReusableSecs: freezed == hMaxReusableSecs
-          ? _self.hMaxReusableSecs
-          : hMaxReusableSecs // ignore: cast_nullable_to_non_nullable
-              as XrayInt32Range?,
-      hKeepAlivePeriod: freezed == hKeepAlivePeriod
-          ? _self.hKeepAlivePeriod
-          : hKeepAlivePeriod // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _XmuxConfig(
+        maxConcurrency: freezed == maxConcurrency
+            ? _self.maxConcurrency
+            : maxConcurrency // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        maxConnections: freezed == maxConnections
+            ? _self.maxConnections
+            : maxConnections // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        cMaxReuseTimes: freezed == cMaxReuseTimes
+            ? _self.cMaxReuseTimes
+            : cMaxReuseTimes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        hMaxRequestTimes: freezed == hMaxRequestTimes
+            ? _self.hMaxRequestTimes
+            : hMaxRequestTimes // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        hMaxReusableSecs: freezed == hMaxReusableSecs
+            ? _self.hMaxReusableSecs
+            : hMaxReusableSecs // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        hKeepAlivePeriod: freezed == hKeepAlivePeriod
+            ? _self.hKeepAlivePeriod
+            : hKeepAlivePeriod // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
   }
 
   /// Create a copy of XmuxConfig
@@ -20271,5 +22330,3 @@ class __$XmuxConfigCopyWithImpl<$Res> implements _$XmuxConfigCopyWith<$Res> {
     });
   }
 }
-
-// dart format on

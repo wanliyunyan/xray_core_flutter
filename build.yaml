@@ -1,0 +1,11 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          format: true
+      source_gen:combining_builder:
+        options:
+          # Field maps are read by the source parity checker, not at runtime.
+          ignore_for_file:
+            - unused_element

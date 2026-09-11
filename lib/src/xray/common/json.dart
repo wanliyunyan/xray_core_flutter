@@ -1,3 +1,6 @@
+// Preserve the handwritten parsers' rejection of fractional JSON numbers.
+int? nullableIntFromJson(Object? value) => value as int?;
+
 Map<String, dynamic> withoutNulls(Map<String, dynamic> json) {
   json.removeWhere((_, value) => value == null);
   return json;

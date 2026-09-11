@@ -143,6 +143,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       TextEditingController(text: 'example.com:51820');
   final _wireguardMtuController = TextEditingController(text: '1420');
   final _wireguardReservedController = TextEditingController();
+  final _wireguardRemoteDnsController = TextEditingController();
   final _wireguardPreSharedKeyController = TextEditingController();
   final _wireguardKeepAliveController = TextEditingController(text: '25');
   final _wireguardPeersJsonController = TextEditingController(text: '[]');
@@ -235,8 +236,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _quicBbrProfileController = TextEditingController();
   final _quicBrutalUpController = TextEditingController();
   final _quicBrutalDownController = TextEditingController();
-  final _quicUdpHopPortsController = TextEditingController();
-  final _quicUdpHopIntervalController = TextEditingController();
   final _quicInitStreamWindowController = TextEditingController();
   final _quicMaxStreamWindowController = TextEditingController();
   final _quicInitConnectionWindowController = TextEditingController();
@@ -347,7 +346,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _policyLevelsJsonController = TextEditingController(text: '{\n}');
   final _muxConcurrencyController = TextEditingController(text: '8');
   final _muxXudpConcurrencyController = TextEditingController();
-  final _proxySettingsTagController = TextEditingController(text: 'proxy');
   final _sockoptTcpFastOpenValueController = TextEditingController();
   final _sockoptMarkController = TextEditingController();
   final _sockoptInterfaceController = TextEditingController();
@@ -369,12 +367,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _observatoryIntervalController = TextEditingController(text: '30s');
   final _apiTagController = TextEditingController(text: 'api');
   final _apiListenController = TextEditingController(text: '127.0.0.1:10085');
-  final _reverseDomainController =
-      TextEditingController(text: 'reverse.example');
-  final _reverseBridgeTagController = TextEditingController(text: 'bridge');
-  final _reversePortalTagController = TextEditingController(text: 'portal');
-  final _reverseBridgesJsonController = TextEditingController(text: '[]');
-  final _reversePortalsJsonController = TextEditingController(text: '[]');
   final _burstDestinationController =
       TextEditingController(text: 'https://www.gstatic.com/generate_204');
   final _burstConnectivityController = TextEditingController(
@@ -413,6 +405,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _routeLocalIpController = TextEditingController();
   final _routeLocalPortController = TextEditingController();
   final _routeProcessController = TextEditingController();
+  final _routeLocalOsController = TextEditingController();
   final _routeWebhookUrlController = TextEditingController();
   final _routeWebhookDedupController = TextEditingController();
   final _routeWebhookHeadersController = TextEditingController(text: '{\n}');
@@ -452,11 +445,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _splitHttpDownloadSettingsController = TextEditingController();
   final _splitHttpExtraController = TextEditingController(text: '{\n}');
   final _transportHeadersController = TextEditingController(text: '{\n}');
-  final _hysteriaCongestionController = TextEditingController();
-  final _hysteriaUpController = TextEditingController();
-  final _hysteriaDownController = TextEditingController();
-  final _hysteriaUdpHopPortsController = TextEditingController();
-  final _hysteriaUdpHopIntervalController = TextEditingController();
   final _hysteriaUdpIdleTimeoutController = TextEditingController();
   final _hysteriaMasqueradeTypeController = TextEditingController();
   final _hysteriaMasqueradeDirController = TextEditingController();
@@ -544,13 +532,12 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _addDirectOutbound = true;
   bool _addBlockOutbound = true;
   bool _addDnsOutbound = false;
-  bool _enableProxySettings = false;
-  bool _proxySettingsTransportLayer = false;
   bool _directEnableFragment = false;
   bool _directEnableNoise = false;
   bool _directEnableNoises = false;
   bool _wireguardEnablePeersJson = false;
-  bool _blockHttpResponse = false;
+  String _blockResponseType = 'none';
+  final _blockCustomResponseController = TextEditingController();
   bool _enableFakeDns = false;
   bool _fakeDnsUsePoolsJson = false;
   bool _enableMetrics = false;
@@ -570,8 +557,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _apiStatsService = true;
   bool _apiObservatoryService = true;
   bool _apiRoutingService = true;
-  bool _enableReverse = false;
-  bool _reverseUseJsonLists = false;
   bool _enableBurstObservatory = false;
   bool _enableVersion = false;
   bool _enableGeodata = false;
@@ -622,6 +607,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _finalMaskUdpWireguard = false;
   bool _enableFinalMaskQuicFields = false;
   bool _quicDebug = false;
+  bool _quicBrutalDisableLossCompensation = false;
+  bool _quicDisableChromeParrot = false;
+  bool _quicDisableGSO = false;
+  bool _quicDisableStatelessReset = false;
   bool _quicDisablePathMtuDiscovery = false;
   bool _muxXudpUdp443Reject = false;
   bool _tlsAllowInsecure = false;
@@ -659,9 +648,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _splitHttpEnableXmux = false;
   bool _splitHttpEnableDownloadSettings = false;
   bool _enableTransportHeaders = false;
-  bool _hysteriaEnableUdpHop = false;
   bool _hysteriaEnableMasquerade = false;
   bool _hysteriaMasqueradeRewriteHost = false;
+  bool _hysteriaMasqueradeXForwarded = false;
   bool _hysteriaMasqueradeInsecure = false;
   bool _observatoryConcurrency = true;
   bool _enableSockopt = false;
@@ -733,6 +722,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _wireguardEndpointController.dispose();
     _wireguardMtuController.dispose();
     _wireguardReservedController.dispose();
+    _wireguardRemoteDnsController.dispose();
     _wireguardPreSharedKeyController.dispose();
     _wireguardKeepAliveController.dispose();
     _wireguardPeersJsonController.dispose();
@@ -815,8 +805,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _quicBbrProfileController.dispose();
     _quicBrutalUpController.dispose();
     _quicBrutalDownController.dispose();
-    _quicUdpHopPortsController.dispose();
-    _quicUdpHopIntervalController.dispose();
     _quicInitStreamWindowController.dispose();
     _quicMaxStreamWindowController.dispose();
     _quicInitConnectionWindowController.dispose();
@@ -919,7 +907,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _policyLevelsJsonController.dispose();
     _muxConcurrencyController.dispose();
     _muxXudpConcurrencyController.dispose();
-    _proxySettingsTagController.dispose();
     _sockoptTcpFastOpenValueController.dispose();
     _sockoptMarkController.dispose();
     _sockoptInterfaceController.dispose();
@@ -940,11 +927,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _observatoryIntervalController.dispose();
     _apiTagController.dispose();
     _apiListenController.dispose();
-    _reverseDomainController.dispose();
-    _reverseBridgeTagController.dispose();
-    _reversePortalTagController.dispose();
-    _reverseBridgesJsonController.dispose();
-    _reversePortalsJsonController.dispose();
     _burstDestinationController.dispose();
     _burstConnectivityController.dispose();
     _burstIntervalController.dispose();
@@ -976,7 +958,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _routeAttrsController.dispose();
     _routeLocalIpController.dispose();
     _routeLocalPortController.dispose();
+    _blockCustomResponseController.dispose();
     _routeProcessController.dispose();
+    _routeLocalOsController.dispose();
     _routeWebhookUrlController.dispose();
     _routeWebhookDedupController.dispose();
     _routeWebhookHeadersController.dispose();
@@ -1014,11 +998,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _splitHttpDownloadSettingsController.dispose();
     _splitHttpExtraController.dispose();
     _transportHeadersController.dispose();
-    _hysteriaCongestionController.dispose();
-    _hysteriaUpController.dispose();
-    _hysteriaDownController.dispose();
-    _hysteriaUdpHopPortsController.dispose();
-    _hysteriaUdpHopIntervalController.dispose();
     _hysteriaUdpIdleTimeoutController.dispose();
     _hysteriaMasqueradeTypeController.dispose();
     _hysteriaMasqueradeDirController.dispose();
@@ -1058,7 +1037,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       stats: _enableStats ? const StatsConfig() : null,
       policy: _enablePolicy ? _policyConfig() : null,
       api: _enableApi ? _apiConfig() : null,
-      reverse: _enableReverse ? _reverseConfig() : null,
       observatory: _enableObservatory
           ? ObservatoryConfig(
               subjectSelector: _csv(_observatorySubjectController.text),
@@ -1288,8 +1266,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                       flow: _vlessFlowValue(),
                       seed: _emptyToNull(_vlessSeedController.text),
                       encryption: _emptyToNull(_vlessEncryptionController.text),
-                      reverse:
-                          _vlessEnableReverse ? _vlessReverseConfig() : null,
+                      reverse: _vlessEnableReverse
+                          ? _vlessReverseConfig(inbound: true)
+                          : null,
                       testpre: _nullableInt(_vlessTestPreController),
                       testseed: _intCsv(_vlessTestSeedController.text),
                     ),
@@ -1449,6 +1428,11 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     final address = XrayAddress(_serverController.text.trim());
     final port = _intValue(_serverPortController, 443);
     final streamSettings = _streamSettings();
+    // HTTP, SOCKS and WireGuard previously used their native connection setup.
+    // Carry socket options for chaining without adding a transport/security layer.
+    final socketStream = streamSettings?.sockopt == null
+        ? null
+        : StreamConfig(sockopt: streamSettings!.sockopt);
     final mux = _enableMux
         ? MuxConfig(
             enabled: _muxEnabled,
@@ -1458,7 +1442,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           )
         : null;
     final sendThrough = _emptyToNull(_sendThroughController.text);
-    final proxySettings = _proxySettings();
 
     return switch (_protocol) {
       ProxyProtocol.vless => OutboundDetourConfig.vless(
@@ -1466,7 +1449,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           sendThrough: sendThrough,
           settings: _vlessOutboundSettings(address, port),
           streamSettings: streamSettings,
-          proxySettings: proxySettings,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1475,7 +1457,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           sendThrough: sendThrough,
           settings: _vmessOutboundSettings(address, port),
           streamSettings: streamSettings,
-          proxySettings: proxySettings,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1497,7 +1478,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                 : null,
           ),
           streamSettings: streamSettings,
-          proxySettings: proxySettings,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1506,7 +1486,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           sendThrough: sendThrough,
           settings: _shadowsocksOutboundSettings(address, port),
           streamSettings: streamSettings,
-          proxySettings: proxySettings,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1514,7 +1493,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           tag: _proxyTag,
           sendThrough: sendThrough,
           settings: _httpOutboundSettings(address, port),
-          proxySettings: proxySettings,
+          streamSettings: socketStream,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1522,7 +1501,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           tag: _proxyTag,
           sendThrough: sendThrough,
           settings: _socksOutboundSettings(address, port),
-          proxySettings: proxySettings,
+          streamSettings: socketStream,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1530,7 +1509,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           tag: _proxyTag,
           sendThrough: sendThrough,
           settings: _wireGuardSettings(),
-          proxySettings: proxySettings,
+          streamSettings: socketStream,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1543,7 +1522,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             port: port,
           ),
           streamSettings: streamSettings,
-          proxySettings: proxySettings,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1554,7 +1532,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           settings: LoopbackConfig(
             inboundTag: _emptyToNull(_loopbackInboundTagController.text),
           ),
-          proxySettings: proxySettings,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
@@ -1566,26 +1543,12 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             _mapFromJson(_rawOutboundSettingsController),
           ),
           streamSettings: streamSettings,
-          proxySettings: proxySettings,
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
     };
   }
 
-  ProxyConfig? _proxySettings() {
-    if (!_enableProxySettings) {
-      return null;
-    }
-    final tag = _emptyToNull(_proxySettingsTagController.text);
-    if (tag == null) {
-      return null;
-    }
-    return ProxyConfig(
-      tag: tag,
-      transportLayer: _proxySettingsTransportLayer,
-    );
-  }
 
   VLessOutboundConfig _vlessOutboundSettings(XrayAddress address, int port) {
     return VLessOutboundConfig(
@@ -1685,6 +1648,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       address: _csv(_wireguardAddressController.text),
       mtu: _intValue(_wireguardMtuController, 1420),
       reserved: _intCsv(_wireguardReservedController.text),
+      remoteDNS: _csv(_wireguardRemoteDnsController.text),
       domainStrategy: _targetStrategy,
       peers: _wireguardEnablePeersJson
           ? _listFromJson(
@@ -2131,19 +2095,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     return HysteriaConfig(
       version: _intValue(_hysteriaVersionController, 2),
       auth: _emptyToNull(_passwordController.text),
-      congestion: _emptyToNull(_hysteriaCongestionController.text),
-      up: _emptyToNull(_hysteriaUpController.text) == null
-          ? null
-          : Bandwidth(_hysteriaUpController.text.trim()),
-      down: _emptyToNull(_hysteriaDownController.text) == null
-          ? null
-          : Bandwidth(_hysteriaDownController.text.trim()),
-      udpHop: _hysteriaEnableUdpHop
-          ? UdpHop(
-              ports: _portListFromText(_hysteriaUdpHopPortsController.text),
-              interval: _rangeFromText(_hysteriaUdpHopIntervalController.text),
-            )
-          : null,
       udpIdleTimeout: _nullableInt(_hysteriaUdpIdleTimeoutController),
       masquerade: _hysteriaEnableMasquerade ? _hysteriaMasquerade() : null,
     );
@@ -2155,6 +2106,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       dir: _emptyToNull(_hysteriaMasqueradeDirController.text),
       url: _emptyToNull(_hysteriaMasqueradeUrlController.text),
       rewriteHost: _hysteriaMasqueradeRewriteHost,
+      xForwarded: _hysteriaMasqueradeXForwarded,
       insecure: _hysteriaMasqueradeInsecure,
       content: _emptyToNull(_hysteriaMasqueradeContentController.text),
       headers: _stringMapFromJson(_hysteriaMasqueradeHeadersController),
@@ -2365,28 +2317,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     );
   }
 
-  ReverseConfig _reverseConfig() {
-    final domain = _reverseDomainController.text.trim();
-    return ReverseConfig(
-      bridges: _reverseUseJsonLists
-          ? _listFromJson(_reverseBridgesJsonController, BridgeConfig.fromJson)
-          : [
-              BridgeConfig(
-                tag: _emptyToNull(_reverseBridgeTagController.text) ?? 'bridge',
-                domain: domain,
-              ),
-            ],
-      portals: _reverseUseJsonLists
-          ? _listFromJson(_reversePortalsJsonController, PortalConfig.fromJson)
-          : [
-              PortalConfig(
-                tag: _emptyToNull(_reversePortalTagController.text) ?? 'portal',
-                domain: domain,
-              ),
-            ],
-    );
-  }
-
   BurstObservatoryConfig _burstObservatoryConfig() {
     return BurstObservatoryConfig(
       subjectSelector: _csv(_observatorySubjectController.text),
@@ -2535,6 +2465,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       localIP: _csvStringList(_routeLocalIpController.text),
       localPort: _portListFromText(_routeLocalPortController.text),
       process: _csvStringList(_routeProcessController.text),
+      localOS: _csvStringList(_routeLocalOsController.text),
       webhook: _routeEnableWebhook ? _routeWebhook() : null,
     );
   }
@@ -2588,10 +2519,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     );
   }
 
-  VLessReverseConfig _vlessReverseConfig() {
+  VLessReverseConfig _vlessReverseConfig({bool inbound = false}) {
     return VLessReverseConfig(
       tag: _emptyToNull(_vlessReverseTagController.text) ?? 'reverse',
-      sniffing: _vlessReverseUseSniffing && _enableSniffing
+      sniffing: !inbound && _vlessReverseUseSniffing && _enableSniffing
           ? SniffingConfig(
               enabled: true,
               destOverride: XrayStringList([
@@ -2998,6 +2929,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     return QuicParamsConfig(
       congestion: _emptyToNull(_quicCongestionController.text),
       debug: _quicDebug,
+      brutalDisableLossCompensation: _quicBrutalDisableLossCompensation,
+      disableChromeParrot: _quicDisableChromeParrot,
+      disableGSO: _quicDisableGSO,
+      disableStatelessReset: _quicDisableStatelessReset,
       bbrProfile: _emptyToNull(_quicBbrProfileController.text),
       brutalUp: _emptyToNull(_quicBrutalUpController.text) == null
           ? null
@@ -3005,13 +2940,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       brutalDown: _emptyToNull(_quicBrutalDownController.text) == null
           ? null
           : Bandwidth(_quicBrutalDownController.text.trim()),
-      udpHop: _emptyToNull(_quicUdpHopPortsController.text) == null &&
-              _emptyToNull(_quicUdpHopIntervalController.text) == null
-          ? null
-          : UdpHop(
-              ports: _portListFromText(_quicUdpHopPortsController.text),
-              interval: _rangeFromText(_quicUdpHopIntervalController.text),
-            ),
       initStreamReceiveWindow: _nullableInt(_quicInitStreamWindowController),
       maxStreamReceiveWindow: _nullableInt(_quicMaxStreamWindowController),
       initConnectionReceiveWindow:
@@ -3116,9 +3044,11 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     return OutboundDetourConfig.block(
       tag: _blockTag,
       settings: BlackholeConfig(
-        response: _blockHttpResponse
-            ? const BlackholeResponse.http()
-            : const BlackholeResponse.none(),
+        response: switch (_blockResponseType) {
+          'http' => const BlackholeResponse.http(),
+          'custom' => BlackholeResponse.custom(_blockCustomResponseController.text),
+          _ => const BlackholeResponse.none(),
+        },
       ),
     );
   }
@@ -3271,28 +3201,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           icon: Icons.outbound_rounded,
           onChanged: _refresh,
         ),
-        _CheckRow(
-          value: _enableProxySettings,
-          title: '添加 outbound proxySettings',
-          icon: Icons.swap_calls_rounded,
-          onChanged: (value) => setState(() => _enableProxySettings = value),
-        ),
-        if (_enableProxySettings) ...[
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _proxySettingsTagController,
-            label: 'proxySettings tag',
-            icon: Icons.sell_rounded,
-            onChanged: _refresh,
-          ),
-          _CheckRow(
-            value: _proxySettingsTransportLayer,
-            title: 'proxySettings transportLayer',
-            icon: Icons.layers_rounded,
-            onChanged: (value) =>
-                setState(() => _proxySettingsTransportLayer = value),
-          ),
-        ],
         const Divider(height: 28),
         _SectionLabel('入站'),
         _CheckRow(
@@ -3378,6 +3286,13 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             onChanged: _refresh,
           ),
         ] else if (_inbound == InboundKind.wireguard) ...[
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _wireguardRemoteDnsController,
+            label: 'WireGuard remoteDNS 逗号分隔',
+            icon: Icons.edit_rounded,
+            onChanged: _refresh,
+          ),
           _TextInput(
             controller: _wireguardSecretController,
             label: 'WireGuard secretKey',
@@ -4159,6 +4074,13 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         ],
         if (_protocol == ProxyProtocol.wireguard) ...[
           const SizedBox(height: 12),
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _wireguardRemoteDnsController,
+            label: 'WireGuard remoteDNS 逗号分隔',
+            icon: Icons.edit_rounded,
+            onChanged: _refresh,
+          ),
           _TextInput(
             controller: _wireguardSecretController,
             label: 'WireGuard secretKey',
@@ -4545,19 +4467,29 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                   icon: Icons.download_rounded,
                   onChanged: _refresh,
                 ),
-                const SizedBox(height: 12),
-                _TextInput(
-                  controller: _quicUdpHopPortsController,
-                  label: 'quic udpHop ports',
-                  icon: Icons.tag_rounded,
-                  onChanged: _refresh,
+                _CheckRow(
+                  value: _quicBrutalDisableLossCompensation,
+                  title: 'quic brutalDisableLossCompensation',
+                  icon: Icons.tune_rounded,
+                  onChanged: (value) => setState(() => _quicBrutalDisableLossCompensation = value),
                 ),
-                const SizedBox(height: 12),
-                _TextInput(
-                  controller: _quicUdpHopIntervalController,
-                  label: 'quic udpHop interval',
-                  icon: Icons.timer_rounded,
-                  onChanged: _refresh,
+                _CheckRow(
+                  value: _quicDisableChromeParrot,
+                  title: 'quic disableChromeParrot',
+                  icon: Icons.tune_rounded,
+                  onChanged: (value) => setState(() => _quicDisableChromeParrot = value),
+                ),
+                _CheckRow(
+                  value: _quicDisableGSO,
+                  title: 'quic disableGSO',
+                  icon: Icons.tune_rounded,
+                  onChanged: (value) => setState(() => _quicDisableGSO = value),
+                ),
+                _CheckRow(
+                  value: _quicDisableStatelessReset,
+                  title: 'quic disableStatelessReset',
+                  icon: Icons.tune_rounded,
+                  onChanged: (value) => setState(() => _quicDisableStatelessReset = value),
                 ),
                 _CheckRow(
                   value: _quicDebug,
@@ -5282,55 +5214,12 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
           const SizedBox(height: 12),
           _TextInput(
-            controller: _hysteriaCongestionController,
-            label: 'Hysteria congestion',
-            icon: Icons.traffic_rounded,
-            onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _hysteriaUpController,
-            label: 'Hysteria up bandwidth',
-            icon: Icons.upload_rounded,
-            onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _hysteriaDownController,
-            label: 'Hysteria down bandwidth',
-            icon: Icons.download_rounded,
-            onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
             controller: _hysteriaUdpIdleTimeoutController,
             label: 'Hysteria udpIdleTimeout',
             icon: Icons.timer_rounded,
             keyboardType: TextInputType.number,
             onChanged: _refresh,
           ),
-          _CheckRow(
-            value: _hysteriaEnableUdpHop,
-            title: 'Hysteria udphop',
-            icon: Icons.sync_alt_rounded,
-            onChanged: (value) => setState(() => _hysteriaEnableUdpHop = value),
-          ),
-          if (_hysteriaEnableUdpHop) ...[
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _hysteriaUdpHopPortsController,
-              label: 'udphop ports',
-              icon: Icons.tag_rounded,
-              onChanged: _refresh,
-            ),
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _hysteriaUdpHopIntervalController,
-              label: 'udphop interval',
-              icon: Icons.timer_rounded,
-              onChanged: _refresh,
-            ),
-          ],
           _CheckRow(
             value: _hysteriaEnableMasquerade,
             title: 'Hysteria masquerade',
@@ -5366,6 +5255,12 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
               icon: Icons.edit_rounded,
               onChanged: (value) =>
                   setState(() => _hysteriaMasqueradeRewriteHost = value),
+            ),
+            _CheckRow(
+              value: _hysteriaMasqueradeXForwarded,
+              title: 'masquerade xForwarded',
+              icon: Icons.tune_rounded,
+              onChanged: (value) => setState(() => _hysteriaMasqueradeXForwarded = value),
             ),
             _CheckRow(
               value: _hysteriaMasqueradeInsecure,
@@ -6674,6 +6569,13 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             icon: Icons.memory_rounded,
             onChanged: _refresh,
           ),
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _routeLocalOsController,
+            label: 'localOS 逗号分隔（android, linux 等）',
+            icon: Icons.edit_rounded,
+            onChanged: _refresh,
+          ),
           _CheckRow(
             value: _routeEnableWebhook,
             title: 'rule webhook',
@@ -6864,12 +6766,23 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             icon: Icons.sell_rounded,
             onChanged: _refresh,
           ),
-          _CheckRow(
-            value: _blockHttpResponse,
-            title: 'block response http',
-            icon: Icons.http_rounded,
-            onChanged: (value) => setState(() => _blockHttpResponse = value),
+          _DropdownInput<String>(
+            value: _blockResponseType,
+            label: 'block response type',
+            icon: Icons.block_rounded,
+            values: const ['none', 'http', 'custom'],
+            labelOf: (value) => value,
+            onChanged: (value) => setState(() => _blockResponseType = value),
           ),
+          if (_blockResponseType == 'custom') ...[
+            const SizedBox(height: 12),
+            _TextInput(
+              controller: _blockCustomResponseController,
+              label: 'customResponseData（Base64）',
+              icon: Icons.edit_rounded,
+              onChanged: _refresh,
+            ),
+          ],
         ],
         _CheckRow(
           value: _addDnsOutbound,
@@ -7204,59 +7117,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             icon: Icons.alt_route_rounded,
             onChanged: (value) => setState(() => _apiRoutingService = value),
           ),
-        ],
-        _CheckRow(
-          value: _enableReverse,
-          title: '添加 reverse',
-          icon: Icons.compare_arrows_rounded,
-          onChanged: (value) => setState(() => _enableReverse = value),
-        ),
-        if (_enableReverse) ...[
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _reverseDomainController,
-            label: 'reverse domain',
-            icon: Icons.domain_rounded,
-            onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _reverseBridgeTagController,
-            label: 'reverse bridge tag',
-            icon: Icons.sell_rounded,
-            onChanged: _refresh,
-          ),
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _reversePortalTagController,
-            label: 'reverse portal tag',
-            icon: Icons.sell_rounded,
-            onChanged: _refresh,
-          ),
-          _CheckRow(
-            value: _reverseUseJsonLists,
-            title: 'reverse bridges/portals JSON',
-            icon: Icons.data_array_rounded,
-            onChanged: (value) => setState(() => _reverseUseJsonLists = value),
-          ),
-          if (_reverseUseJsonLists) ...[
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _reverseBridgesJsonController,
-              label: 'reverse bridges JSON 数组',
-              icon: Icons.data_array_rounded,
-              maxLines: 4,
-              onChanged: _refresh,
-            ),
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _reversePortalsJsonController,
-              label: 'reverse portals JSON 数组',
-              icon: Icons.data_array_rounded,
-              maxLines: 4,
-              onChanged: _refresh,
-            ),
-          ],
         ],
         _CheckRow(
           value: _enableObservatory,
