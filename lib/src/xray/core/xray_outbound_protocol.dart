@@ -13,6 +13,7 @@ enum XrayOutboundProtocol {
   vmess,
   trojan,
   hysteria,
+  masque,
   dns,
   wireguard;
 
@@ -31,6 +32,7 @@ enum XrayOutboundProtocol {
         'vmess' => XrayOutboundProtocol.vmess,
         'trojan' => XrayOutboundProtocol.trojan,
         'hysteria' => XrayOutboundProtocol.hysteria,
+        'masque' => XrayOutboundProtocol.masque,
         'dns' => XrayOutboundProtocol.dns,
         'wireguard' => XrayOutboundProtocol.wireguard,
         _ => throw FormatException('unknown outbound protocol: $json'),

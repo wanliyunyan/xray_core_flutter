@@ -1,3 +1,5 @@
+import 'dart:convert' show utf8;
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../apps/apps.dart';
@@ -15,3 +17,4 @@ part 'xray_config.dart';
 part 'xray_inbound_protocol.dart';
 part 'xray_outbound_protocol.dart';
 part 'xray_validation.dart';
+part 'xray_validation_26_9_30.dart';

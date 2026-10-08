@@ -113,7 +113,7 @@ void main() {
     ]);
   });
 
-  test('checks nested stream and UDPHop dialerProxy references', () {
+  test('checks nested stream dialerProxy references', () {
     for (final tag in ['', 'direct', 'reverse-node', 'missing']) {
       final sockopt = SocketConfig(dialerProxy: tag);
       final config =
@@ -129,7 +129,6 @@ void main() {
                         settings: UDPHop(
                           mode: 'intervallocal',
                           interval: XrayInt32Range.single(5),
-                          sockopt: sockopt,
                         ),
                       ),
                     ],
@@ -156,11 +155,7 @@ void main() {
       const prefix =
           'outbounds[0].streamSettings.xhttpSettings.downloadSettings';
       _expectPaths(config, [
-        if (tag == 'missing') ...[
-          '$prefix.sockopt.dialerProxy',
-          '$prefix.finalmask.udp[0].settings.sockopt.dialerProxy',
-        ],
-        if (tag.isNotEmpty) '$prefix.finalmask.udp[0].type',
+        if (tag == 'missing') ...['$prefix.sockopt.dialerProxy'],
       ]);
     }
   });
@@ -183,10 +178,7 @@ void main() {
       ),
     );
     expect(config.validate(), isEmpty);
-    // Importing known settings turns them into typed UDPHop options.
-    expect(
-      XrayConfig.fromJson(config.toJson()).validate().single.path,
-      'outbounds[0].streamSettings.finalmask.udp[0].settings.sockopt.dialerProxy',
-    );
+    // Core and the typed model ignore the removed mask-owned socket options.
+    expect(XrayConfig.fromJson(config.toJson()).validate(), isEmpty);
   });
 }

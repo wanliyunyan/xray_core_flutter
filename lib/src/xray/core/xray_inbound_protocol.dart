@@ -13,6 +13,7 @@ enum XrayInboundProtocol {
   trojan,
   wireguard,
   hysteria,
+  masque,
   tun;
 
   factory XrayInboundProtocol.fromJson(Object? json) {
@@ -29,6 +30,7 @@ enum XrayInboundProtocol {
         'trojan' => XrayInboundProtocol.trojan,
         'wireguard' => XrayInboundProtocol.wireguard,
         'hysteria' => XrayInboundProtocol.hysteria,
+        'masque' => XrayInboundProtocol.masque,
         'tun' => XrayInboundProtocol.tun,
         _ => throw FormatException('unknown inbound protocol: $json'),
       };
@@ -48,6 +50,7 @@ enum XrayInboundProtocol {
     XrayInboundProtocol.trojan => 'trojan',
     XrayInboundProtocol.wireguard => 'wireguard',
     XrayInboundProtocol.hysteria => 'hysteria',
+    XrayInboundProtocol.masque => 'masque',
     XrayInboundProtocol.tun => 'tun',
   };
 }

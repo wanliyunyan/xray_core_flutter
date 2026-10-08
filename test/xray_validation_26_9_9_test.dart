@@ -294,7 +294,7 @@ void main() {
     }
   });
 
-  test('missing UDP hop mode and interval cannot pass validation', () {
+  test('missing UDP hop mode fails but omitted interval uses Core default', () {
     final config = XrayConfig(
       outbounds: [
         OutboundDetourConfig(
@@ -305,7 +305,6 @@ void main() {
     );
     expect(config.validate().map((i) => i.path), [
       'outbounds[0].streamSettings.finalmask.udp[0].settings.mode',
-      'outbounds[0].streamSettings.finalmask.udp[0].settings.interval',
     ]);
   });
 

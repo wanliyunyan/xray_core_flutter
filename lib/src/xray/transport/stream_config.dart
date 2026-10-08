@@ -17,6 +17,8 @@ abstract class StreamConfig with _$StreamConfig {
     HttpUpgradeConfig? httpupgradeSettings,
     SplitHTTPConfig? splithttpSettings,
     GRPCConfig? grpcSettings,
+    MasqueConfig? masqueSettings,
+    XDriveConfig? xdriveSettings,
     HysteriaConfig? hysteriaSettings,
     TLSConfig? tlsSettings,
     REALITYConfig? realitySettings,
@@ -33,19 +35,18 @@ abstract class StreamConfig with _$StreamConfig {
     SplitHTTPConfig? splithttpSettings,
     GRPCConfig? grpcSettings,
     SocketConfig? sockopt,
-  }) =>
-      StreamConfig(
-        method: method,
-        network: network,
-        security: SecurityProtocol.reality,
-        realitySettings: realitySettings,
-        rawSettings: rawSettings,
-        tcpSettings: tcpSettings,
-        xhttpSettings: xhttpSettings,
-        splithttpSettings: splithttpSettings,
-        grpcSettings: grpcSettings,
-        sockopt: sockopt,
-      );
+  }) => StreamConfig(
+    method: method,
+    network: network,
+    security: SecurityProtocol.reality,
+    realitySettings: realitySettings,
+    rawSettings: rawSettings,
+    tcpSettings: tcpSettings,
+    xhttpSettings: xhttpSettings,
+    splithttpSettings: splithttpSettings,
+    grpcSettings: grpcSettings,
+    sockopt: sockopt,
+  );
 
   factory StreamConfig.tls({
     TransportProtocol? method,
@@ -59,31 +60,35 @@ abstract class StreamConfig with _$StreamConfig {
     HttpUpgradeConfig? httpupgradeSettings,
     SplitHTTPConfig? splithttpSettings,
     GRPCConfig? grpcSettings,
+    MasqueConfig? masqueSettings,
+    XDriveConfig? xdriveSettings,
     HysteriaConfig? hysteriaSettings,
     SocketConfig? sockopt,
-  }) =>
-      StreamConfig(
-        method: method,
-        network: network,
-        security: SecurityProtocol.tls,
-        rawSettings: rawSettings,
-        tcpSettings: tcpSettings,
-        xhttpSettings: xhttpSettings,
-        kcpSettings: kcpSettings,
-        wsSettings: wsSettings,
-        httpupgradeSettings: httpupgradeSettings,
-        splithttpSettings: splithttpSettings,
-        grpcSettings: grpcSettings,
-        hysteriaSettings: hysteriaSettings,
-        tlsSettings: tlsSettings,
-        sockopt: sockopt,
-      );
+  }) => StreamConfig(
+    method: method,
+    network: network,
+    security: SecurityProtocol.tls,
+    rawSettings: rawSettings,
+    tcpSettings: tcpSettings,
+    xhttpSettings: xhttpSettings,
+    kcpSettings: kcpSettings,
+    wsSettings: wsSettings,
+    httpupgradeSettings: httpupgradeSettings,
+    splithttpSettings: splithttpSettings,
+    grpcSettings: grpcSettings,
+    masqueSettings: masqueSettings,
+    xdriveSettings: xdriveSettings,
+    hysteriaSettings: hysteriaSettings,
+    tlsSettings: tlsSettings,
+    sockopt: sockopt,
+  );
 
   factory StreamConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'streamSettings');
     return StreamConfig(
-      address:
-          map['address'] == null ? null : XrayAddress.fromJson(map['address']),
+      address: map['address'] == null
+          ? null
+          : XrayAddress.fromJson(map['address']),
       port: map['port'] as int?,
       method: map['method'] == null
           ? null
@@ -124,37 +129,46 @@ abstract class StreamConfig with _$StreamConfig {
       kcpSettings: map['kcpSettings'] == null
           ? null
           : KCPConfig.fromJson(map['kcpSettings']),
+      masqueSettings: map['masqueSettings'] == null
+          ? null
+          : MasqueConfig.fromJson(map['masqueSettings']),
+      xdriveSettings: map['xdriveSettings'] == null
+          ? null
+          : XDriveConfig.fromJson(map['xdriveSettings']),
       hysteriaSettings: map['hysteriaSettings'] == null
           ? null
           : HysteriaConfig.fromJson(map['hysteriaSettings']),
       tlsSettings: map['tlsSettings'] == null
           ? null
           : TLSConfig.fromJson(map['tlsSettings']),
-      sockopt:
-          map['sockopt'] == null ? null : SocketConfig.fromJson(map['sockopt']),
+      sockopt: map['sockopt'] == null
+          ? null
+          : SocketConfig.fromJson(map['sockopt']),
     );
   }
 
   const StreamConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-        'address': address?.toJson(),
-        'port': port,
-        'method': method?.toJson(),
-        'network': network?.toJson(),
-        'security': security?.toJson(),
-        'finalmask': finalmask?.toJson(),
-        'rawSettings': rawSettings?.toJson(),
-        'tcpSettings': tcpSettings?.toJson(),
-        'xhttpSettings': xhttpSettings?.toJson(),
-        'kcpSettings': kcpSettings?.toJson(),
-        'wsSettings': wsSettings?.toJson(),
-        'httpupgradeSettings': httpupgradeSettings?.toJson(),
-        'splithttpSettings': splithttpSettings?.toJson(),
-        'grpcSettings': grpcSettings?.toJson(),
-        'hysteriaSettings': hysteriaSettings?.toJson(),
-        'tlsSettings': tlsSettings?.toJson(),
-        'realitySettings': realitySettings?.toJson(),
-        'sockopt': sockopt?.toJson(),
-      });
+    'address': address?.toJson(),
+    'port': port,
+    'method': method?.toJson(),
+    'network': network?.toJson(),
+    'security': security?.toJson(),
+    'finalmask': finalmask?.toJson(),
+    'rawSettings': rawSettings?.toJson(),
+    'tcpSettings': tcpSettings?.toJson(),
+    'xhttpSettings': xhttpSettings?.toJson(),
+    'kcpSettings': kcpSettings?.toJson(),
+    'wsSettings': wsSettings?.toJson(),
+    'httpupgradeSettings': httpupgradeSettings?.toJson(),
+    'splithttpSettings': splithttpSettings?.toJson(),
+    'grpcSettings': grpcSettings?.toJson(),
+    'masqueSettings': masqueSettings?.toJson(),
+    'xdriveSettings': xdriveSettings?.toJson(),
+    'hysteriaSettings': hysteriaSettings?.toJson(),
+    'tlsSettings': tlsSettings?.toJson(),
+    'realitySettings': realitySettings?.toJson(),
+    'sockopt': sockopt?.toJson(),
+  });
 }

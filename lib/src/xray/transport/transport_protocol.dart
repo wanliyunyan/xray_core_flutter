@@ -30,7 +30,9 @@ enum TransportProtocol {
   @JsonValue('quic')
   quic,
   @JsonValue('hysteria')
-  hysteria;
+  hysteria,
+  masque,
+  xdrive;
 
   factory TransportProtocol.fromJson(Object? json) {
     if (json is String) {
@@ -49,6 +51,8 @@ enum TransportProtocol {
         'h3' => TransportProtocol.h3,
         'http' => TransportProtocol.http,
         'quic' => TransportProtocol.quic,
+        'masque' => TransportProtocol.masque,
+        'xdrive' => TransportProtocol.xdrive,
         'hysteria' => TransportProtocol.hysteria,
         _ => throw FormatException('unknown transport protocol: $json'),
       };
@@ -57,20 +61,22 @@ enum TransportProtocol {
   }
 
   String toJson() => switch (this) {
-        TransportProtocol.tcp => 'tcp',
-        TransportProtocol.raw => 'raw',
-        TransportProtocol.websocket => 'websocket',
-        TransportProtocol.ws => 'ws',
-        TransportProtocol.grpc => 'grpc',
-        TransportProtocol.httpupgrade => 'httpupgrade',
-        TransportProtocol.splithttp => 'splithttp',
-        TransportProtocol.xhttp => 'xhttp',
-        TransportProtocol.mkcp => 'mkcp',
-        TransportProtocol.kcp => 'kcp',
-        TransportProtocol.h2 => 'h2',
-        TransportProtocol.h3 => 'h3',
-        TransportProtocol.http => 'http',
-        TransportProtocol.quic => 'quic',
-        TransportProtocol.hysteria => 'hysteria',
-      };
+    TransportProtocol.tcp => 'tcp',
+    TransportProtocol.raw => 'raw',
+    TransportProtocol.websocket => 'websocket',
+    TransportProtocol.ws => 'ws',
+    TransportProtocol.grpc => 'grpc',
+    TransportProtocol.httpupgrade => 'httpupgrade',
+    TransportProtocol.splithttp => 'splithttp',
+    TransportProtocol.xhttp => 'xhttp',
+    TransportProtocol.mkcp => 'mkcp',
+    TransportProtocol.kcp => 'kcp',
+    TransportProtocol.h2 => 'h2',
+    TransportProtocol.h3 => 'h3',
+    TransportProtocol.http => 'http',
+    TransportProtocol.quic => 'quic',
+    TransportProtocol.masque => 'masque',
+    TransportProtocol.xdrive => 'xdrive',
+    TransportProtocol.hysteria => 'hysteria',
+  };
 }

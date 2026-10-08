@@ -180,6 +180,13 @@ extension on InboundDetourConfig {
     if (!allowRawSettings && settings is XrayRawInboundSettings) {
       issues.add(XrayValidationIssue('$path.settings', 'raw settings used'));
     }
+    _validateNewProtocolSettings(
+      protocol,
+      settings,
+      streamSettings,
+      issues,
+      path,
+    );
     final vlessSettings = settings;
     if (knownProtocol == XrayInboundProtocol.vless &&
         vlessSettings is VLessInboundConfig) {
@@ -251,6 +258,18 @@ extension on OutboundDetourConfig {
           '$path.settings',
           'settings type does not match protocol "$protocol"',
         ),
+      );
+    }
+    _validateNewProtocolSettings(
+      protocol,
+      settings,
+      streamSettings,
+      issues,
+      path,
+    );
+    if (knownProtocol == XrayOutboundProtocol.masque && mux?.enabled == true) {
+      issues.add(
+        XrayValidationIssue('$path.mux', 'MASQUE does not support mux'),
       );
     }
     _validateOutboundSecurity(this, issues, path);
@@ -341,7 +360,7 @@ bool _isCoreSocketPath(String address) {
       RegExp(r'^(?:[a-zA-Z]:[\\/]|\\\\[^\\]+\\[^\\]+)').hasMatch(address);
 }
 
-// Mirrors common/net.ParseAddress in v26.9.9 using dart:core for Flutter web.
+// Mirrors common/net.ParseAddress in v26.9.30 using dart:core for Flutter web.
 String _normalizeCoreAddress(String address) {
   if (address.startsWith('[') && address.endsWith(']')) {
     address = address.substring(1, address.length - 1);
@@ -479,6 +498,7 @@ void _validateStream(
   SocketConfig? inheritedSockopt,
 }) {
   if (stream == null) return;
+  _validateNewTransportSettings(stream, issues, path, inbound: inbound);
   final sockopt = inheritedSockopt ?? stream.sockopt;
   // Inherited options were already checked where they were declared.
   if (!inbound && inheritedSockopt == null) {
@@ -505,11 +525,20 @@ void _validateStream(
   }
   final tcpMasks = stream.finalmask?.tcp ?? const <Mask>[];
   for (var index = 0; index < tcpMasks.length; index++) {
-    if (tcpMasks[index].type.toLowerCase() == 'udphop') {
+    final type = tcpMasks[index].type.toLowerCase();
+    if (const {
+      'mkcp-legacy',
+      'noise',
+      'salamander',
+      'xdns',
+      'xicmp',
+      'realm',
+      'udphop',
+    }.contains(type)) {
       issues.add(
         XrayValidationIssue(
           '$path.finalmask.tcp[$index].type',
-          'udphop is only supported in finalmask.udp',
+          '$type is only supported in finalmask.udp',
         ),
       );
     }
@@ -517,6 +546,14 @@ void _validateStream(
   final masks = stream.finalmask?.udp ?? const <Mask>[];
   for (var index = 0; index < masks.length; index++) {
     final mask = masks[index];
+    if (const {'fragment', 'xmc'}.contains(mask.type.toLowerCase())) {
+      issues.add(
+        XrayValidationIssue(
+          '$path.finalmask.udp[$index].type',
+          '${mask.type} is only supported in finalmask.tcp',
+        ),
+      );
+    }
     if (mask.type.toLowerCase() != 'udphop') continue;
     final settings = mask.settings;
     // Raw settings remain an explicit escape hatch.
@@ -532,7 +569,6 @@ void _validateStream(
       continue;
     }
     final hop = settings as UDPHop?;
-    _validateDialerProxy(hop?.sockopt, issues, '$prefix.sockopt', outboundTags);
     if ((hop?.mode ?? '')
         .split(',')
         .any(
@@ -549,8 +585,10 @@ void _validateStream(
         ),
       );
     }
-    if ((hop?.interval?.from ?? 0) < 5 ||
-        (hop?.interval?.to ?? 0) > 0x7fffffff) {
+    final from = hop?.interval?.from ?? 0;
+    final to = hop?.interval?.to ?? 0;
+    // Core defaults the all-zero interval to 30 seconds.
+    if ((from != 0 || to != 0) && (from < 5 || to > 0x7fffffff)) {
       issues.add(
         XrayValidationIssue(
           '$prefix.interval',
@@ -571,25 +609,16 @@ void _validateStream(
     }
   }
   for (var index = 0; index < masks.length; index++) {
-    if (masks[index].type.toLowerCase() != 'udphop') continue;
+    final type = masks[index].type.toLowerCase();
+    if (type != 'udphop' && type != 'xicmp') continue;
     final maskPath = '$path.finalmask.udp[$index].type';
-    if (inbound) {
+    if (inbound && type == 'udphop') {
       issues.add(XrayValidationIssue(maskPath, 'udphop is client-only'));
     } else if (index != masks.length - 1) {
       // Xray reverses UDP masks before wrapping them, so the final JSON entry
-      // is level 0 (the outermost layer).
+      // is level 0. HandleDial/HandleListen masks must occupy this layer.
       issues.add(
-        XrayValidationIssue(maskPath, 'udphop must be the outermost UDP mask'),
-      );
-    } else if (sockopt?.dialerProxy?.isNotEmpty ?? false) {
-      // DialSystem redirects outer proxy connections through FakePacketConn,
-      // which UDPHop cannot wrap. UDPHop's own sockopt is a separate dialer.
-      issues.add(
-        XrayValidationIssue(
-          maskPath,
-          'udphop cannot wrap a stream using sockopt.dialerProxy; '
-          'configure the proxy in udphop settings.sockopt instead',
-        ),
+        XrayValidationIssue(maskPath, '$type must be the outermost UDP mask'),
       );
     }
   }
@@ -760,6 +789,7 @@ bool _inboundSettingsRequired(String protocol) {
     'trojan' ||
     'wireguard' ||
     'hysteria' ||
+    'masque' ||
     'tun' => true,
     _ => false,
   };
@@ -774,6 +804,7 @@ bool _outboundSettingsRequired(String protocol) {
     'vmess' ||
     'trojan' ||
     'hysteria' ||
+    'masque' ||
     'dns' ||
     'wireguard' => true,
     _ => false,
@@ -794,6 +825,7 @@ bool _matchesInboundSettings(String protocol, XrayInboundSettings? settings) {
     'trojan' => settings is TrojanServerConfig,
     'wireguard' => settings is WireGuardConfig,
     'hysteria' => settings is HysteriaServerConfig,
+    'masque' => settings is MasqueServerConfig,
     'tun' => settings is TunConfig,
     _ => true,
   };
@@ -814,6 +846,7 @@ bool _matchesOutboundSettings(String protocol, XrayOutboundSettings? settings) {
     'trojan' => settings is TrojanClientConfig,
     'shadowsocks' => settings is ShadowsocksClientConfig,
     'hysteria' => settings is HysteriaClientConfig,
+    'masque' => settings is MasqueClientConfig,
     'dns' => settings is DNSOutboundConfig,
     'wireguard' => settings is WireGuardConfig,
     _ => true,

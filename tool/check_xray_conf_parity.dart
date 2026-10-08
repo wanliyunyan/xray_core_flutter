@@ -343,6 +343,11 @@ Map<String, Set<String>> collectGeneratedJsonKeys(List<File> files) {
 
 const creatorLoaderSpecs = [
   CreatorLoaderSpec(
+    label: 'xdns resolver',
+    goLoader: 'xdnsLoader',
+    dartFunction: '_parseXDNSResolverSettings',
+  ),
+  CreatorLoaderSpec(
     label: 'inbound',
     goLoader: 'inboundConfigLoader',
     dartFactory: 'XrayInboundProtocol',

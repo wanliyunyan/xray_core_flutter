@@ -11,6 +11,8 @@ abstract class TunConfig with _$TunConfig implements XrayInboundSettings {
     int? userLevel,
     List<String>? autoSystemRoutingTable,
     String? autoOutboundsInterface,
+    bool? autoSystemDnsToGateway,
+    List<String>? autoSystemWfpBlockLeak,
   }) = _TunConfig;
 
   factory TunConfig.fromJson(Object? json) {
@@ -22,9 +24,12 @@ abstract class TunConfig with _$TunConfig implements XrayInboundSettings {
       gateway: (map['gateway'] as List?)?.cast<String>(),
       dns: (map['dns'] as List?)?.cast<String>(),
       userLevel: map['userLevel'] as int?,
-      autoSystemRoutingTable:
-          (map['autoSystemRoutingTable'] as List?)?.cast<String>(),
+      autoSystemRoutingTable: (map['autoSystemRoutingTable'] as List?)
+          ?.cast<String>(),
       autoOutboundsInterface: map['autoOutboundsInterface'] as String?,
+      autoSystemDnsToGateway: map['autoSystemDnsToGateway'] as bool?,
+      autoSystemWfpBlockLeak: (map['autoSystemWfpBlockLeak'] as List?)
+          ?.cast<String>(),
     );
   }
 
@@ -32,13 +37,15 @@ abstract class TunConfig with _$TunConfig implements XrayInboundSettings {
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-        'name': name,
-        'desc': desc,
-        'mtu': mtu,
-        'gateway': gateway,
-        'dns': dns,
-        'userLevel': userLevel,
-        'autoSystemRoutingTable': autoSystemRoutingTable,
-        'autoOutboundsInterface': autoOutboundsInterface,
-      });
+    'name': name,
+    'desc': desc,
+    'mtu': mtu,
+    'gateway': gateway,
+    'dns': dns,
+    'userLevel': userLevel,
+    'autoSystemRoutingTable': autoSystemRoutingTable,
+    'autoOutboundsInterface': autoOutboundsInterface,
+    'autoSystemDnsToGateway': autoSystemDnsToGateway,
+    'autoSystemWfpBlockLeak': autoSystemWfpBlockLeak,
+  });
 }

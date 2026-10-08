@@ -8,6 +8,7 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     String? tag,
     XrayOutboundSettings? settings,
     StreamConfig? streamSettings,
+
     /// Legacy JSON retained for import. Validation rejects this removed field;
     /// use streamSettings.sockopt.dialerProxy for proxy chaining.
     Map<String, dynamic>? proxySettings,
@@ -24,17 +25,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig(
-        protocol: protocol.toJson(),
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig(
+    protocol: protocol.toJson(),
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.vless({
     required VLessOutboundConfig settings,
@@ -44,17 +44,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.vless,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.vless,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.vmess({
     required VMessOutboundConfig settings,
@@ -64,17 +63,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.vmess,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.vmess,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.trojan({
     required TrojanClientConfig settings,
@@ -84,17 +82,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.trojan,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.trojan,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.shadowsocks({
     required ShadowsocksClientConfig settings,
@@ -104,17 +101,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.shadowsocks,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.shadowsocks,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.socks({
     required SocksClientConfig settings,
@@ -124,17 +120,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.socks,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.socks,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.http({
     required HTTPClientConfig settings,
@@ -144,17 +139,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.http,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.http,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.direct({
     String? tag,
@@ -164,37 +158,34 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.freedom,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.freedom,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.block({
     String? tag,
     BlackholeConfig? settings,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.blackhole,
-        tag: tag,
-        settings: settings,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.blackhole,
+    tag: tag,
+    settings: settings,
+  );
 
   factory OutboundDetourConfig.loopback({
     String? tag,
     LoopbackConfig? settings,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.loopback,
-        tag: tag,
-        settings: settings,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.loopback,
+    tag: tag,
+    settings: settings,
+  );
 
   factory OutboundDetourConfig.dns({
     required DNSOutboundConfig settings,
@@ -204,17 +195,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.dns,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.dns,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.wireguard({
     required WireGuardConfig settings,
@@ -224,17 +214,16 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.wireguard,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.wireguard,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.hysteria({
     required HysteriaClientConfig settings,
@@ -244,17 +233,35 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
     Map<String, dynamic>? proxySettings,
     MuxConfig? mux,
     XrayTargetStrategy? targetStrategy,
-  }) =>
-      OutboundDetourConfig.fromProtocol(
-        protocol: XrayOutboundProtocol.hysteria,
-        sendThrough: sendThrough,
-        tag: tag,
-        settings: settings,
-        streamSettings: streamSettings,
-        proxySettings: proxySettings,
-        mux: mux,
-        targetStrategy: targetStrategy,
-      );
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.hysteria,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
+
+  factory OutboundDetourConfig.masque({
+    required MasqueClientConfig settings,
+    String? tag,
+    String? sendThrough,
+    StreamConfig? streamSettings,
+    Map<String, dynamic>? proxySettings,
+    MuxConfig? mux,
+    XrayTargetStrategy? targetStrategy,
+  }) => OutboundDetourConfig.fromProtocol(
+    protocol: XrayOutboundProtocol.masque,
+    sendThrough: sendThrough,
+    tag: tag,
+    settings: settings,
+    streamSettings: streamSettings,
+    proxySettings: proxySettings,
+    mux: mux,
+    targetStrategy: targetStrategy,
+  );
 
   factory OutboundDetourConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'outbound');
@@ -284,15 +291,15 @@ abstract class OutboundDetourConfig with _$OutboundDetourConfig {
   const OutboundDetourConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-        'protocol': protocol,
-        'sendThrough': sendThrough,
-        'tag': tag,
-        'settings': settings?.toJson(),
-        'streamSettings': streamSettings?.toJson(),
-        'proxySettings': proxySettings,
-        'mux': mux?.toJson(),
-        'targetStrategy': targetStrategy?.toJson(),
-      });
+    'protocol': protocol,
+    'sendThrough': sendThrough,
+    'tag': tag,
+    'settings': settings?.toJson(),
+    'streamSettings': streamSettings?.toJson(),
+    'proxySettings': proxySettings,
+    'mux': mux?.toJson(),
+    'targetStrategy': targetStrategy?.toJson(),
+  });
 }
 
 XrayOutboundSettings _parseOutboundSettings(String protocol, Object? json) {
@@ -307,6 +314,7 @@ XrayOutboundSettings _parseOutboundSettings(String protocol, Object? json) {
     'trojan' => TrojanClientConfig.fromJson(json),
     'shadowsocks' => ShadowsocksClientConfig.fromJson(json),
     'hysteria' => HysteriaClientConfig.fromJson(json),
+    'masque' => MasqueClientConfig.fromJson(json),
     'dns' => DNSOutboundConfig.fromJson(json),
     'wireguard' => WireGuardConfig.fromJson(json),
     _ => XrayRawOutboundSettings(asJsonMap(json, '$protocol settings')),

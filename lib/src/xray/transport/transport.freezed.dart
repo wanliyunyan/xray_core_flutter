@@ -14647,6 +14647,8 @@ mixin _$StreamConfig {
   HttpUpgradeConfig? get httpupgradeSettings;
   SplitHTTPConfig? get splithttpSettings;
   GRPCConfig? get grpcSettings;
+  MasqueConfig? get masqueSettings;
+  XDriveConfig? get xdriveSettings;
   HysteriaConfig? get hysteriaSettings;
   TLSConfig? get tlsSettings;
   REALITYConfig? get realitySettings;
@@ -14695,6 +14697,10 @@ mixin _$StreamConfig {
                 other.splithttpSettings == _this.splithttpSettings) &&
             (identical(other.grpcSettings, _this.grpcSettings) ||
                 other.grpcSettings == _this.grpcSettings) &&
+            (identical(other.masqueSettings, _this.masqueSettings) ||
+                other.masqueSettings == _this.masqueSettings) &&
+            (identical(other.xdriveSettings, _this.xdriveSettings) ||
+                other.xdriveSettings == _this.xdriveSettings) &&
             (identical(other.hysteriaSettings, _this.hysteriaSettings) ||
                 other.hysteriaSettings == _this.hysteriaSettings) &&
             (identical(other.tlsSettings, _this.tlsSettings) ||
@@ -14708,7 +14714,7 @@ mixin _$StreamConfig {
   @override
   int get hashCode {
     final _this = this as StreamConfig;
-    return Object.hash(
+    return Object.hashAll([
       runtimeType,
       _this.address,
       _this.port,
@@ -14724,17 +14730,19 @@ mixin _$StreamConfig {
       _this.httpupgradeSettings,
       _this.splithttpSettings,
       _this.grpcSettings,
+      _this.masqueSettings,
+      _this.xdriveSettings,
       _this.hysteriaSettings,
       _this.tlsSettings,
       _this.realitySettings,
       _this.sockopt,
-    );
+    ]);
   }
 
   @override
   String toString() {
     final _this = this as StreamConfig;
-    return 'StreamConfig(address: ${_this.address}, port: ${_this.port}, method: ${_this.method}, network: ${_this.network}, security: ${_this.security}, finalmask: ${_this.finalmask}, rawSettings: ${_this.rawSettings}, tcpSettings: ${_this.tcpSettings}, xhttpSettings: ${_this.xhttpSettings}, kcpSettings: ${_this.kcpSettings}, wsSettings: ${_this.wsSettings}, httpupgradeSettings: ${_this.httpupgradeSettings}, splithttpSettings: ${_this.splithttpSettings}, grpcSettings: ${_this.grpcSettings}, hysteriaSettings: ${_this.hysteriaSettings}, tlsSettings: ${_this.tlsSettings}, realitySettings: ${_this.realitySettings}, sockopt: ${_this.sockopt})';
+    return 'StreamConfig(address: ${_this.address}, port: ${_this.port}, method: ${_this.method}, network: ${_this.network}, security: ${_this.security}, finalmask: ${_this.finalmask}, rawSettings: ${_this.rawSettings}, tcpSettings: ${_this.tcpSettings}, xhttpSettings: ${_this.xhttpSettings}, kcpSettings: ${_this.kcpSettings}, wsSettings: ${_this.wsSettings}, httpupgradeSettings: ${_this.httpupgradeSettings}, splithttpSettings: ${_this.splithttpSettings}, grpcSettings: ${_this.grpcSettings}, masqueSettings: ${_this.masqueSettings}, xdriveSettings: ${_this.xdriveSettings}, hysteriaSettings: ${_this.hysteriaSettings}, tlsSettings: ${_this.tlsSettings}, realitySettings: ${_this.realitySettings}, sockopt: ${_this.sockopt})';
   }
 }
 
@@ -14760,6 +14768,8 @@ abstract mixin class $StreamConfigCopyWith<$Res> {
     HttpUpgradeConfig? httpupgradeSettings,
     SplitHTTPConfig? splithttpSettings,
     GRPCConfig? grpcSettings,
+    MasqueConfig? masqueSettings,
+    XDriveConfig? xdriveSettings,
     HysteriaConfig? hysteriaSettings,
     TLSConfig? tlsSettings,
     REALITYConfig? realitySettings,
@@ -14775,6 +14785,8 @@ abstract mixin class $StreamConfigCopyWith<$Res> {
   $HttpUpgradeConfigCopyWith<$Res>? get httpupgradeSettings;
   $SplitHTTPConfigCopyWith<$Res>? get splithttpSettings;
   $GRPCConfigCopyWith<$Res>? get grpcSettings;
+  $MasqueConfigCopyWith<$Res>? get masqueSettings;
+  $XDriveConfigCopyWith<$Res>? get xdriveSettings;
   $HysteriaConfigCopyWith<$Res>? get hysteriaSettings;
   $TLSConfigCopyWith<$Res>? get tlsSettings;
   $REALITYConfigCopyWith<$Res>? get realitySettings;
@@ -14807,6 +14819,8 @@ class _$StreamConfigCopyWithImpl<$Res> implements $StreamConfigCopyWith<$Res> {
     Object? httpupgradeSettings = freezed,
     Object? splithttpSettings = freezed,
     Object? grpcSettings = freezed,
+    Object? masqueSettings = freezed,
+    Object? xdriveSettings = freezed,
     Object? hysteriaSettings = freezed,
     Object? tlsSettings = freezed,
     Object? realitySettings = freezed,
@@ -14870,6 +14884,14 @@ class _$StreamConfigCopyWithImpl<$Res> implements $StreamConfigCopyWith<$Res> {
             ? _self.grpcSettings
             : grpcSettings // ignore: cast_nullable_to_non_nullable
                   as GRPCConfig?,
+        masqueSettings: freezed == masqueSettings
+            ? _self.masqueSettings
+            : masqueSettings // ignore: cast_nullable_to_non_nullable
+                  as MasqueConfig?,
+        xdriveSettings: freezed == xdriveSettings
+            ? _self.xdriveSettings
+            : xdriveSettings // ignore: cast_nullable_to_non_nullable
+                  as XDriveConfig?,
         hysteriaSettings: freezed == hysteriaSettings
             ? _self.hysteriaSettings
             : hysteriaSettings // ignore: cast_nullable_to_non_nullable
@@ -15015,6 +15037,34 @@ class _$StreamConfigCopyWithImpl<$Res> implements $StreamConfigCopyWith<$Res> {
 
     return $GRPCConfigCopyWith<$Res>(_self.grpcSettings!, (value) {
       return _then(_self.copyWith(grpcSettings: value));
+    });
+  }
+
+  /// Create a copy of StreamConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MasqueConfigCopyWith<$Res>? get masqueSettings {
+    if (_self.masqueSettings == null) {
+      return null;
+    }
+
+    return $MasqueConfigCopyWith<$Res>(_self.masqueSettings!, (value) {
+      return _then(_self.copyWith(masqueSettings: value));
+    });
+  }
+
+  /// Create a copy of StreamConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XDriveConfigCopyWith<$Res>? get xdriveSettings {
+    if (_self.xdriveSettings == null) {
+      return null;
+    }
+
+    return $XDriveConfigCopyWith<$Res>(_self.xdriveSettings!, (value) {
+      return _then(_self.copyWith(xdriveSettings: value));
     });
   }
 
@@ -15183,6 +15233,8 @@ extension StreamConfigPatterns on StreamConfig {
       HttpUpgradeConfig? httpupgradeSettings,
       SplitHTTPConfig? splithttpSettings,
       GRPCConfig? grpcSettings,
+      MasqueConfig? masqueSettings,
+      XDriveConfig? xdriveSettings,
       HysteriaConfig? hysteriaSettings,
       TLSConfig? tlsSettings,
       REALITYConfig? realitySettings,
@@ -15209,6 +15261,8 @@ extension StreamConfigPatterns on StreamConfig {
           _that.httpupgradeSettings,
           _that.splithttpSettings,
           _that.grpcSettings,
+          _that.masqueSettings,
+          _that.xdriveSettings,
           _that.hysteriaSettings,
           _that.tlsSettings,
           _that.realitySettings,
@@ -15249,6 +15303,8 @@ extension StreamConfigPatterns on StreamConfig {
       HttpUpgradeConfig? httpupgradeSettings,
       SplitHTTPConfig? splithttpSettings,
       GRPCConfig? grpcSettings,
+      MasqueConfig? masqueSettings,
+      XDriveConfig? xdriveSettings,
       HysteriaConfig? hysteriaSettings,
       TLSConfig? tlsSettings,
       REALITYConfig? realitySettings,
@@ -15274,6 +15330,8 @@ extension StreamConfigPatterns on StreamConfig {
           _that.httpupgradeSettings,
           _that.splithttpSettings,
           _that.grpcSettings,
+          _that.masqueSettings,
+          _that.xdriveSettings,
           _that.hysteriaSettings,
           _that.tlsSettings,
           _that.realitySettings,
@@ -15313,6 +15371,8 @@ extension StreamConfigPatterns on StreamConfig {
       HttpUpgradeConfig? httpupgradeSettings,
       SplitHTTPConfig? splithttpSettings,
       GRPCConfig? grpcSettings,
+      MasqueConfig? masqueSettings,
+      XDriveConfig? xdriveSettings,
       HysteriaConfig? hysteriaSettings,
       TLSConfig? tlsSettings,
       REALITYConfig? realitySettings,
@@ -15338,6 +15398,8 @@ extension StreamConfigPatterns on StreamConfig {
           _that.httpupgradeSettings,
           _that.splithttpSettings,
           _that.grpcSettings,
+          _that.masqueSettings,
+          _that.xdriveSettings,
           _that.hysteriaSettings,
           _that.tlsSettings,
           _that.realitySettings,
@@ -15367,6 +15429,8 @@ class _StreamConfig extends StreamConfig {
     this.httpupgradeSettings,
     this.splithttpSettings,
     this.grpcSettings,
+    this.masqueSettings,
+    this.xdriveSettings,
     this.hysteriaSettings,
     this.tlsSettings,
     this.realitySettings,
@@ -15401,6 +15465,10 @@ class _StreamConfig extends StreamConfig {
   final SplitHTTPConfig? splithttpSettings;
   @override
   final GRPCConfig? grpcSettings;
+  @override
+  final MasqueConfig? masqueSettings;
+  @override
+  final XDriveConfig? xdriveSettings;
   @override
   final HysteriaConfig? hysteriaSettings;
   @override
@@ -15447,6 +15515,10 @@ class _StreamConfig extends StreamConfig {
                 other.splithttpSettings == splithttpSettings) &&
             (identical(other.grpcSettings, grpcSettings) ||
                 other.grpcSettings == grpcSettings) &&
+            (identical(other.masqueSettings, masqueSettings) ||
+                other.masqueSettings == masqueSettings) &&
+            (identical(other.xdriveSettings, xdriveSettings) ||
+                other.xdriveSettings == xdriveSettings) &&
             (identical(other.hysteriaSettings, hysteriaSettings) ||
                 other.hysteriaSettings == hysteriaSettings) &&
             (identical(other.tlsSettings, tlsSettings) ||
@@ -15458,7 +15530,7 @@ class _StreamConfig extends StreamConfig {
 
   @override
   int get hashCode {
-    return Object.hash(
+    return Object.hashAll([
       runtimeType,
       address,
       port,
@@ -15474,16 +15546,18 @@ class _StreamConfig extends StreamConfig {
       httpupgradeSettings,
       splithttpSettings,
       grpcSettings,
+      masqueSettings,
+      xdriveSettings,
       hysteriaSettings,
       tlsSettings,
       realitySettings,
       sockopt,
-    );
+    ]);
   }
 
   @override
   String toString() {
-    return 'StreamConfig(address: $address, port: $port, method: $method, network: $network, security: $security, finalmask: $finalmask, rawSettings: $rawSettings, tcpSettings: $tcpSettings, xhttpSettings: $xhttpSettings, kcpSettings: $kcpSettings, wsSettings: $wsSettings, httpupgradeSettings: $httpupgradeSettings, splithttpSettings: $splithttpSettings, grpcSettings: $grpcSettings, hysteriaSettings: $hysteriaSettings, tlsSettings: $tlsSettings, realitySettings: $realitySettings, sockopt: $sockopt)';
+    return 'StreamConfig(address: $address, port: $port, method: $method, network: $network, security: $security, finalmask: $finalmask, rawSettings: $rawSettings, tcpSettings: $tcpSettings, xhttpSettings: $xhttpSettings, kcpSettings: $kcpSettings, wsSettings: $wsSettings, httpupgradeSettings: $httpupgradeSettings, splithttpSettings: $splithttpSettings, grpcSettings: $grpcSettings, masqueSettings: $masqueSettings, xdriveSettings: $xdriveSettings, hysteriaSettings: $hysteriaSettings, tlsSettings: $tlsSettings, realitySettings: $realitySettings, sockopt: $sockopt)';
   }
 }
 
@@ -15511,6 +15585,8 @@ abstract mixin class _$StreamConfigCopyWith<$Res>
     HttpUpgradeConfig? httpupgradeSettings,
     SplitHTTPConfig? splithttpSettings,
     GRPCConfig? grpcSettings,
+    MasqueConfig? masqueSettings,
+    XDriveConfig? xdriveSettings,
     HysteriaConfig? hysteriaSettings,
     TLSConfig? tlsSettings,
     REALITYConfig? realitySettings,
@@ -15535,6 +15611,10 @@ abstract mixin class _$StreamConfigCopyWith<$Res>
   $SplitHTTPConfigCopyWith<$Res>? get splithttpSettings;
   @override
   $GRPCConfigCopyWith<$Res>? get grpcSettings;
+  @override
+  $MasqueConfigCopyWith<$Res>? get masqueSettings;
+  @override
+  $XDriveConfigCopyWith<$Res>? get xdriveSettings;
   @override
   $HysteriaConfigCopyWith<$Res>? get hysteriaSettings;
   @override
@@ -15572,6 +15652,8 @@ class __$StreamConfigCopyWithImpl<$Res>
     Object? httpupgradeSettings = freezed,
     Object? splithttpSettings = freezed,
     Object? grpcSettings = freezed,
+    Object? masqueSettings = freezed,
+    Object? xdriveSettings = freezed,
     Object? hysteriaSettings = freezed,
     Object? tlsSettings = freezed,
     Object? realitySettings = freezed,
@@ -15635,6 +15717,14 @@ class __$StreamConfigCopyWithImpl<$Res>
             ? _self.grpcSettings
             : grpcSettings // ignore: cast_nullable_to_non_nullable
                   as GRPCConfig?,
+        masqueSettings: freezed == masqueSettings
+            ? _self.masqueSettings
+            : masqueSettings // ignore: cast_nullable_to_non_nullable
+                  as MasqueConfig?,
+        xdriveSettings: freezed == xdriveSettings
+            ? _self.xdriveSettings
+            : xdriveSettings // ignore: cast_nullable_to_non_nullable
+                  as XDriveConfig?,
         hysteriaSettings: freezed == hysteriaSettings
             ? _self.hysteriaSettings
             : hysteriaSettings // ignore: cast_nullable_to_non_nullable
@@ -15780,6 +15870,34 @@ class __$StreamConfigCopyWithImpl<$Res>
 
     return $GRPCConfigCopyWith<$Res>(_self.grpcSettings!, (value) {
       return _then(_self.copyWith(grpcSettings: value));
+    });
+  }
+
+  /// Create a copy of StreamConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MasqueConfigCopyWith<$Res>? get masqueSettings {
+    if (_self.masqueSettings == null) {
+      return null;
+    }
+
+    return $MasqueConfigCopyWith<$Res>(_self.masqueSettings!, (value) {
+      return _then(_self.copyWith(masqueSettings: value));
+    });
+  }
+
+  /// Create a copy of StreamConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XDriveConfigCopyWith<$Res>? get xdriveSettings {
+    if (_self.xdriveSettings == null) {
+      return null;
+    }
+
+    return $XDriveConfigCopyWith<$Res>(_self.xdriveSettings!, (value) {
+      return _then(_self.copyWith(xdriveSettings: value));
     });
   }
 
@@ -18765,7 +18883,6 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
 
 /// @nodoc
 mixin _$UDPHop {
-  SocketConfig? get sockopt;
   String? get mode;
   XrayPortList? get remotePorts;
   List<String>? get remoteIPs;
@@ -18784,8 +18901,6 @@ mixin _$UDPHop {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UDPHop &&
-            (identical(other.sockopt, _this.sockopt) ||
-                other.sockopt == _this.sockopt) &&
             (identical(other.mode, _this.mode) || other.mode == _this.mode) &&
             (identical(other.remotePorts, _this.remotePorts) ||
                 other.remotePorts == _this.remotePorts) &&
@@ -18802,7 +18917,6 @@ mixin _$UDPHop {
     final _this = this as UDPHop;
     return Object.hash(
       runtimeType,
-      _this.sockopt,
       _this.mode,
       _this.remotePorts,
       const DeepCollectionEquality().hash(_this.remoteIPs),
@@ -18813,7 +18927,7 @@ mixin _$UDPHop {
   @override
   String toString() {
     final _this = this as UDPHop;
-    return 'UDPHop(sockopt: ${_this.sockopt}, mode: ${_this.mode}, remotePorts: ${_this.remotePorts}, remoteIPs: ${_this.remoteIPs}, interval: ${_this.interval})';
+    return 'UDPHop(mode: ${_this.mode}, remotePorts: ${_this.remotePorts}, remoteIPs: ${_this.remoteIPs}, interval: ${_this.interval})';
   }
 }
 
@@ -18823,14 +18937,12 @@ abstract mixin class $UDPHopCopyWith<$Res> {
       _$UDPHopCopyWithImpl;
   @useResult
   $Res call({
-    SocketConfig? sockopt,
     String? mode,
     XrayPortList? remotePorts,
     List<String>? remoteIPs,
     XrayInt32Range? interval,
   });
 
-  $SocketConfigCopyWith<$Res>? get sockopt;
   $XrayInt32RangeCopyWith<$Res>? get interval;
 }
 
@@ -18846,7 +18958,6 @@ class _$UDPHopCopyWithImpl<$Res> implements $UDPHopCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sockopt = freezed,
     Object? mode = freezed,
     Object? remotePorts = freezed,
     Object? remoteIPs = freezed,
@@ -18854,10 +18965,6 @@ class _$UDPHopCopyWithImpl<$Res> implements $UDPHopCopyWith<$Res> {
   }) {
     return _then(
       UDPHop(
-        sockopt: freezed == sockopt
-            ? _self.sockopt
-            : sockopt // ignore: cast_nullable_to_non_nullable
-                  as SocketConfig?,
         mode: freezed == mode
             ? _self.mode
             : mode // ignore: cast_nullable_to_non_nullable
@@ -18876,20 +18983,6 @@ class _$UDPHopCopyWithImpl<$Res> implements $UDPHopCopyWith<$Res> {
                   as XrayInt32Range?,
       ),
     );
-  }
-
-  /// Create a copy of UDPHop
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SocketConfigCopyWith<$Res>? get sockopt {
-    if (_self.sockopt == null) {
-      return null;
-    }
-
-    return $SocketConfigCopyWith<$Res>(_self.sockopt!, (value) {
-      return _then(_self.copyWith(sockopt: value));
-    });
   }
 
   /// Create a copy of UDPHop
@@ -19001,7 +19094,6 @@ extension UDPHopPatterns on UDPHop {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-      SocketConfig? sockopt,
       String? mode,
       XrayPortList? remotePorts,
       List<String>? remoteIPs,
@@ -19014,7 +19106,6 @@ extension UDPHopPatterns on UDPHop {
     switch (_that) {
       case _UDPHop() when $default != null:
         return $default(
-          _that.sockopt,
           _that.mode,
           _that.remotePorts,
           _that.remoteIPs,
@@ -19041,7 +19132,6 @@ extension UDPHopPatterns on UDPHop {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-      SocketConfig? sockopt,
       String? mode,
       XrayPortList? remotePorts,
       List<String>? remoteIPs,
@@ -19053,7 +19143,6 @@ extension UDPHopPatterns on UDPHop {
     switch (_that) {
       case _UDPHop():
         return $default(
-          _that.sockopt,
           _that.mode,
           _that.remotePorts,
           _that.remoteIPs,
@@ -19079,7 +19168,6 @@ extension UDPHopPatterns on UDPHop {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-      SocketConfig? sockopt,
       String? mode,
       XrayPortList? remotePorts,
       List<String>? remoteIPs,
@@ -19091,7 +19179,6 @@ extension UDPHopPatterns on UDPHop {
     switch (_that) {
       case _UDPHop() when $default != null:
         return $default(
-          _that.sockopt,
           _that.mode,
           _that.remotePorts,
           _that.remoteIPs,
@@ -19107,7 +19194,6 @@ extension UDPHopPatterns on UDPHop {
 
 class _UDPHop extends UDPHop {
   const _UDPHop({
-    this.sockopt,
     this.mode,
     this.remotePorts,
     List<String>? remoteIPs,
@@ -19115,8 +19201,6 @@ class _UDPHop extends UDPHop {
   }) : _remoteIPs = remoteIPs,
        super._();
 
-  @override
-  final SocketConfig? sockopt;
   @override
   final String? mode;
   @override
@@ -19147,7 +19231,6 @@ class _UDPHop extends UDPHop {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _UDPHop &&
-            (identical(other.sockopt, sockopt) || other.sockopt == sockopt) &&
             (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.remotePorts, remotePorts) ||
                 other.remotePorts == remotePorts) &&
@@ -19163,7 +19246,6 @@ class _UDPHop extends UDPHop {
   int get hashCode {
     return Object.hash(
       runtimeType,
-      sockopt,
       mode,
       remotePorts,
       const DeepCollectionEquality().hash(_remoteIPs),
@@ -19173,7 +19255,7 @@ class _UDPHop extends UDPHop {
 
   @override
   String toString() {
-    return 'UDPHop(sockopt: $sockopt, mode: $mode, remotePorts: $remotePorts, remoteIPs: $remoteIPs, interval: $interval)';
+    return 'UDPHop(mode: $mode, remotePorts: $remotePorts, remoteIPs: $remoteIPs, interval: $interval)';
   }
 }
 
@@ -19184,15 +19266,12 @@ abstract mixin class _$UDPHopCopyWith<$Res> implements $UDPHopCopyWith<$Res> {
   @override
   @useResult
   $Res call({
-    SocketConfig? sockopt,
     String? mode,
     XrayPortList? remotePorts,
     List<String>? remoteIPs,
     XrayInt32Range? interval,
   });
 
-  @override
-  $SocketConfigCopyWith<$Res>? get sockopt;
   @override
   $XrayInt32RangeCopyWith<$Res>? get interval;
 }
@@ -19209,7 +19288,6 @@ class __$UDPHopCopyWithImpl<$Res> implements _$UDPHopCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? sockopt = freezed,
     Object? mode = freezed,
     Object? remotePorts = freezed,
     Object? remoteIPs = freezed,
@@ -19217,10 +19295,6 @@ class __$UDPHopCopyWithImpl<$Res> implements _$UDPHopCopyWith<$Res> {
   }) {
     return _then(
       _UDPHop(
-        sockopt: freezed == sockopt
-            ? _self.sockopt
-            : sockopt // ignore: cast_nullable_to_non_nullable
-                  as SocketConfig?,
         mode: freezed == mode
             ? _self.mode
             : mode // ignore: cast_nullable_to_non_nullable
@@ -19239,20 +19313,6 @@ class __$UDPHopCopyWithImpl<$Res> implements _$UDPHopCopyWith<$Res> {
                   as XrayInt32Range?,
       ),
     );
-  }
-
-  /// Create a copy of UDPHop
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SocketConfigCopyWith<$Res>? get sockopt {
-    if (_self.sockopt == null) {
-      return null;
-    }
-
-    return $SocketConfigCopyWith<$Res>(_self.sockopt!, (value) {
-      return _then(_self.copyWith(sockopt: value));
-    });
   }
 
   /// Create a copy of UDPHop
@@ -21029,25 +21089,24 @@ class __$XMCProfileCopyWithImpl<$Res> implements _$XMCProfileCopyWith<$Res> {
 }
 
 /// @nodoc
-mixin _$Xdns {
-  Object? get domain;
-  List<String>? get domains;
-  List<String>? get resolvers;
+mixin _$XDNS {
+  List<XDNSDomain>? get domains;
+  List<XDNSResolver>? get resolvers;
+  int? get extraPoll;
 
-  /// Create a copy of Xdns
+  /// Create a copy of XDNS
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $XdnsCopyWith<Xdns> get copyWith =>
-      _$XdnsCopyWithImpl<Xdns>(this as Xdns, _$identity);
+  $XDNSCopyWith<XDNS> get copyWith =>
+      _$XDNSCopyWithImpl<XDNS>(this as XDNS, _$identity);
 
   @override
   bool operator ==(Object other) {
-    final _this = this as Xdns;
+    final _this = this as XDNS;
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Xdns &&
-            const DeepCollectionEquality().equals(other.domain, _this.domain) &&
+            other is XDNS &&
             const DeepCollectionEquality().equals(
               other.domains,
               _this.domains,
@@ -21055,69 +21114,78 @@ mixin _$Xdns {
             const DeepCollectionEquality().equals(
               other.resolvers,
               _this.resolvers,
-            ));
+            ) &&
+            (identical(other.extraPoll, _this.extraPoll) ||
+                other.extraPoll == _this.extraPoll));
   }
 
   @override
   int get hashCode {
-    final _this = this as Xdns;
+    final _this = this as XDNS;
     return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_this.domain),
       const DeepCollectionEquality().hash(_this.domains),
       const DeepCollectionEquality().hash(_this.resolvers),
+      _this.extraPoll,
     );
   }
 
   @override
   String toString() {
-    final _this = this as Xdns;
-    return 'Xdns(domain: ${_this.domain}, domains: ${_this.domains}, resolvers: ${_this.resolvers})';
+    final _this = this as XDNS;
+    return 'XDNS(domains: ${_this.domains}, resolvers: ${_this.resolvers}, extraPoll: ${_this.extraPoll})';
   }
 }
 
 /// @nodoc
-abstract mixin class $XdnsCopyWith<$Res> {
-  factory $XdnsCopyWith(Xdns value, $Res Function(Xdns) _then) =
-      _$XdnsCopyWithImpl;
+abstract mixin class $XDNSCopyWith<$Res> {
+  factory $XDNSCopyWith(XDNS value, $Res Function(XDNS) _then) =
+      _$XDNSCopyWithImpl;
   @useResult
-  $Res call({Object? domain, List<String>? domains, List<String>? resolvers});
+  $Res call({
+    List<XDNSDomain>? domains,
+    List<XDNSResolver>? resolvers,
+    int? extraPoll,
+  });
 }
 
 /// @nodoc
-class _$XdnsCopyWithImpl<$Res> implements $XdnsCopyWith<$Res> {
-  _$XdnsCopyWithImpl(this._self, this._then);
+class _$XDNSCopyWithImpl<$Res> implements $XDNSCopyWith<$Res> {
+  _$XDNSCopyWithImpl(this._self, this._then);
 
-  final Xdns _self;
-  final $Res Function(Xdns) _then;
+  final XDNS _self;
+  final $Res Function(XDNS) _then;
 
-  /// Create a copy of Xdns
+  /// Create a copy of XDNS
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? domain = freezed,
     Object? domains = freezed,
     Object? resolvers = freezed,
+    Object? extraPoll = freezed,
   }) {
     return _then(
-      Xdns(
-        domain: freezed == domain ? _self.domain : domain,
+      XDNS(
         domains: freezed == domains
             ? _self.domains
             : domains // ignore: cast_nullable_to_non_nullable
-                  as List<String>?,
+                  as List<XDNSDomain>?,
         resolvers: freezed == resolvers
             ? _self.resolvers
             : resolvers // ignore: cast_nullable_to_non_nullable
-                  as List<String>?,
+                  as List<XDNSResolver>?,
+        extraPoll: freezed == extraPoll
+            ? _self.extraPoll
+            : extraPoll // ignore: cast_nullable_to_non_nullable
+                  as int?,
       ),
     );
   }
 }
 
-/// Adds pattern-matching-related methods to [Xdns].
-extension XdnsPatterns on Xdns {
+/// Adds pattern-matching-related methods to [XDNS].
+extension XDNSPatterns on XDNS {
   /// A variant of `map` that fallback to returning `orElse`.
   ///
   /// It is equivalent to doing:
@@ -21132,12 +21200,12 @@ extension XdnsPatterns on Xdns {
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Xdns value)? $default, {
+    TResult Function(_XDNS value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _Xdns() when $default != null:
+      case _XDNS() when $default != null:
         return $default(_that);
       case _:
         return orElse();
@@ -21158,10 +21226,10 @@ extension XdnsPatterns on Xdns {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(TResult Function(_Xdns value) $default) {
+  TResult map<TResult extends Object?>(TResult Function(_XDNS value) $default) {
     final _that = this;
     switch (_that) {
-      case _Xdns():
+      case _XDNS():
         return $default(_that);
       case _:
         throw StateError('Unexpected subclass');
@@ -21182,11 +21250,11 @@ extension XdnsPatterns on Xdns {
 
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Xdns value)? $default,
+    TResult? Function(_XDNS value)? $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _Xdns() when $default != null:
+      case _XDNS() when $default != null:
         return $default(_that);
       case _:
         return null;
@@ -21208,17 +21276,17 @@ extension XdnsPatterns on Xdns {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-      Object? domain,
-      List<String>? domains,
-      List<String>? resolvers,
+      List<XDNSDomain>? domains,
+      List<XDNSResolver>? resolvers,
+      int? extraPoll,
     )?
     $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _Xdns() when $default != null:
-        return $default(_that.domain, _that.domains, _that.resolvers);
+      case _XDNS() when $default != null:
+        return $default(_that.domains, _that.resolvers, _that.extraPoll);
       case _:
         return orElse();
     }
@@ -21240,16 +21308,16 @@ extension XdnsPatterns on Xdns {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-      Object? domain,
-      List<String>? domains,
-      List<String>? resolvers,
+      List<XDNSDomain>? domains,
+      List<XDNSResolver>? resolvers,
+      int? extraPoll,
     )
     $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _Xdns():
-        return $default(_that.domain, _that.domains, _that.resolvers);
+      case _XDNS():
+        return $default(_that.domains, _that.resolvers, _that.extraPoll);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -21270,16 +21338,16 @@ extension XdnsPatterns on Xdns {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-      Object? domain,
-      List<String>? domains,
-      List<String>? resolvers,
+      List<XDNSDomain>? domains,
+      List<XDNSResolver>? resolvers,
+      int? extraPoll,
     )?
     $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _Xdns() when $default != null:
-        return $default(_that.domain, _that.domains, _that.resolvers);
+      case _XDNS() when $default != null:
+        return $default(_that.domains, _that.resolvers, _that.extraPoll);
       case _:
         return null;
     }
@@ -21288,17 +21356,18 @@ extension XdnsPatterns on Xdns {
 
 /// @nodoc
 
-class _Xdns extends Xdns {
-  const _Xdns({this.domain, List<String>? domains, List<String>? resolvers})
-    : _domains = domains,
-      _resolvers = resolvers,
-      super._();
+class _XDNS extends XDNS {
+  const _XDNS({
+    List<XDNSDomain>? domains,
+    List<XDNSResolver>? resolvers,
+    this.extraPoll,
+  }) : _domains = domains,
+       _resolvers = resolvers,
+       super._();
 
+  final List<XDNSDomain>? _domains;
   @override
-  final Object? domain;
-  final List<String>? _domains;
-  @override
-  List<String>? get domains {
+  List<XDNSDomain>? get domains {
     final value = _domains;
     if (value == null) return null;
     if (_domains is EqualUnmodifiableListView) return _domains;
@@ -21306,9 +21375,9 @@ class _Xdns extends Xdns {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String>? _resolvers;
+  final List<XDNSResolver>? _resolvers;
   @override
-  List<String>? get resolvers {
+  List<XDNSResolver>? get resolvers {
     final value = _resolvers;
     if (value == null) return null;
     if (_resolvers is EqualUnmodifiableListView) return _resolvers;
@@ -21316,76 +21385,90 @@ class _Xdns extends Xdns {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Create a copy of Xdns
+  @override
+  final int? extraPoll;
+
+  /// Create a copy of XDNS
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$XdnsCopyWith<_Xdns> get copyWith =>
-      __$XdnsCopyWithImpl<_Xdns>(this, _$identity);
+  _$XDNSCopyWith<_XDNS> get copyWith =>
+      __$XDNSCopyWithImpl<_XDNS>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Xdns &&
-            const DeepCollectionEquality().equals(other.domain, domain) &&
+            other is _XDNS &&
             const DeepCollectionEquality().equals(other.domains, _domains) &&
-            const DeepCollectionEquality().equals(other.resolvers, _resolvers));
+            const DeepCollectionEquality().equals(
+              other.resolvers,
+              _resolvers,
+            ) &&
+            (identical(other.extraPoll, extraPoll) ||
+                other.extraPoll == extraPoll));
   }
 
   @override
   int get hashCode {
     return Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(domain),
       const DeepCollectionEquality().hash(_domains),
       const DeepCollectionEquality().hash(_resolvers),
+      extraPoll,
     );
   }
 
   @override
   String toString() {
-    return 'Xdns(domain: $domain, domains: $domains, resolvers: $resolvers)';
+    return 'XDNS(domains: $domains, resolvers: $resolvers, extraPoll: $extraPoll)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$XdnsCopyWith<$Res> implements $XdnsCopyWith<$Res> {
-  factory _$XdnsCopyWith(_Xdns value, $Res Function(_Xdns) _then) =
-      __$XdnsCopyWithImpl;
+abstract mixin class _$XDNSCopyWith<$Res> implements $XDNSCopyWith<$Res> {
+  factory _$XDNSCopyWith(_XDNS value, $Res Function(_XDNS) _then) =
+      __$XDNSCopyWithImpl;
   @override
   @useResult
-  $Res call({Object? domain, List<String>? domains, List<String>? resolvers});
+  $Res call({
+    List<XDNSDomain>? domains,
+    List<XDNSResolver>? resolvers,
+    int? extraPoll,
+  });
 }
 
 /// @nodoc
-class __$XdnsCopyWithImpl<$Res> implements _$XdnsCopyWith<$Res> {
-  __$XdnsCopyWithImpl(this._self, this._then);
+class __$XDNSCopyWithImpl<$Res> implements _$XDNSCopyWith<$Res> {
+  __$XDNSCopyWithImpl(this._self, this._then);
 
-  final _Xdns _self;
-  final $Res Function(_Xdns) _then;
+  final _XDNS _self;
+  final $Res Function(_XDNS) _then;
 
-  /// Create a copy of Xdns
+  /// Create a copy of XDNS
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? domain = freezed,
     Object? domains = freezed,
     Object? resolvers = freezed,
+    Object? extraPoll = freezed,
   }) {
     return _then(
-      _Xdns(
-        domain: freezed == domain ? _self.domain : domain,
+      _XDNS(
         domains: freezed == domains
             ? _self._domains
             : domains // ignore: cast_nullable_to_non_nullable
-                  as List<String>?,
+                  as List<XDNSDomain>?,
         resolvers: freezed == resolvers
             ? _self._resolvers
             : resolvers // ignore: cast_nullable_to_non_nullable
-                  as List<String>?,
+                  as List<XDNSResolver>?,
+        extraPoll: freezed == extraPoll
+            ? _self.extraPoll
+            : extraPoll // ignore: cast_nullable_to_non_nullable
+                  as int?,
       ),
     );
   }
@@ -22328,5 +22411,2440 @@ class __$XmuxConfigCopyWithImpl<$Res> implements _$XmuxConfigCopyWith<$Res> {
     return $XrayInt32RangeCopyWith<$Res>(_self.hMaxReusableSecs!, (value) {
       return _then(_self.copyWith(hMaxReusableSecs: value));
     });
+  }
+}
+
+/// @nodoc
+mixin _$MasqueConfig {
+  String? get host;
+  String? get path;
+  String? get user;
+  String? get pass;
+  Map<String, String>? get headers;
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MasqueConfigCopyWith<MasqueConfig> get copyWith =>
+      _$MasqueConfigCopyWithImpl<MasqueConfig>(
+        this as MasqueConfig,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as MasqueConfig;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MasqueConfig &&
+            (identical(other.host, _this.host) || other.host == _this.host) &&
+            (identical(other.path, _this.path) || other.path == _this.path) &&
+            (identical(other.user, _this.user) || other.user == _this.user) &&
+            (identical(other.pass, _this.pass) || other.pass == _this.pass) &&
+            const DeepCollectionEquality().equals(
+              other.headers,
+              _this.headers,
+            ));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as MasqueConfig;
+    return Object.hash(
+      runtimeType,
+      _this.host,
+      _this.path,
+      _this.user,
+      _this.pass,
+      const DeepCollectionEquality().hash(_this.headers),
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as MasqueConfig;
+    return 'MasqueConfig(host: ${_this.host}, path: ${_this.path}, user: ${_this.user}, pass: ${_this.pass}, headers: ${_this.headers})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MasqueConfigCopyWith<$Res> {
+  factory $MasqueConfigCopyWith(
+    MasqueConfig value,
+    $Res Function(MasqueConfig) _then,
+  ) = _$MasqueConfigCopyWithImpl;
+  @useResult
+  $Res call({
+    String? host,
+    String? path,
+    String? user,
+    String? pass,
+    Map<String, String>? headers,
+  });
+}
+
+/// @nodoc
+class _$MasqueConfigCopyWithImpl<$Res> implements $MasqueConfigCopyWith<$Res> {
+  _$MasqueConfigCopyWithImpl(this._self, this._then);
+
+  final MasqueConfig _self;
+  final $Res Function(MasqueConfig) _then;
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? host = freezed,
+    Object? path = freezed,
+    Object? user = freezed,
+    Object? pass = freezed,
+    Object? headers = freezed,
+  }) {
+    return _then(
+      MasqueConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        user: freezed == user
+            ? _self.user
+            : user // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        pass: freezed == pass
+            ? _self.pass
+            : pass // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self.headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [MasqueConfig].
+extension MasqueConfigPatterns on MasqueConfig {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MasqueConfig value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MasqueConfig value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueConfig():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MasqueConfig value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      String? host,
+      String? path,
+      String? user,
+      String? pass,
+      Map<String, String>? headers,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueConfig() when $default != null:
+        return $default(
+          _that.host,
+          _that.path,
+          _that.user,
+          _that.pass,
+          _that.headers,
+        );
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      String? host,
+      String? path,
+      String? user,
+      String? pass,
+      Map<String, String>? headers,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueConfig():
+        return $default(
+          _that.host,
+          _that.path,
+          _that.user,
+          _that.pass,
+          _that.headers,
+        );
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      String? host,
+      String? path,
+      String? user,
+      String? pass,
+      Map<String, String>? headers,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueConfig() when $default != null:
+        return $default(
+          _that.host,
+          _that.path,
+          _that.user,
+          _that.pass,
+          _that.headers,
+        );
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _MasqueConfig extends MasqueConfig {
+  const _MasqueConfig({
+    this.host,
+    this.path,
+    this.user,
+    this.pass,
+    Map<String, String>? headers,
+  }) : _headers = headers,
+       super._();
+
+  @override
+  final String? host;
+  @override
+  final String? path;
+  @override
+  final String? user;
+  @override
+  final String? pass;
+  final Map<String, String>? _headers;
+  @override
+  Map<String, String>? get headers {
+    final value = _headers;
+    if (value == null) return null;
+    if (_headers is EqualUnmodifiableMapView) return _headers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MasqueConfigCopyWith<_MasqueConfig> get copyWith =>
+      __$MasqueConfigCopyWithImpl<_MasqueConfig>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MasqueConfig &&
+            (identical(other.host, host) || other.host == host) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.pass, pass) || other.pass == pass) &&
+            const DeepCollectionEquality().equals(other.headers, _headers));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      host,
+      path,
+      user,
+      pass,
+      const DeepCollectionEquality().hash(_headers),
+    );
+  }
+
+  @override
+  String toString() {
+    return 'MasqueConfig(host: $host, path: $path, user: $user, pass: $pass, headers: $headers)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MasqueConfigCopyWith<$Res>
+    implements $MasqueConfigCopyWith<$Res> {
+  factory _$MasqueConfigCopyWith(
+    _MasqueConfig value,
+    $Res Function(_MasqueConfig) _then,
+  ) = __$MasqueConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call({
+    String? host,
+    String? path,
+    String? user,
+    String? pass,
+    Map<String, String>? headers,
+  });
+}
+
+/// @nodoc
+class __$MasqueConfigCopyWithImpl<$Res>
+    implements _$MasqueConfigCopyWith<$Res> {
+  __$MasqueConfigCopyWithImpl(this._self, this._then);
+
+  final _MasqueConfig _self;
+  final $Res Function(_MasqueConfig) _then;
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? host = freezed,
+    Object? path = freezed,
+    Object? user = freezed,
+    Object? pass = freezed,
+    Object? headers = freezed,
+  }) {
+    return _then(
+      _MasqueConfig(
+        host: freezed == host
+            ? _self.host
+            : host // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        path: freezed == path
+            ? _self.path
+            : path // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        user: freezed == user
+            ? _self.user
+            : user // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        pass: freezed == pass
+            ? _self.pass
+            : pass // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        headers: freezed == headers
+            ? _self._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+mixin _$XDriveConfig {
+  String? get remoteFolder;
+  String? get service;
+  List<String>? get secrets;
+  int? get segmentBytes;
+  int? get flushIntervalMs;
+  int? get pollIntervalMs;
+  int? get maxPollIntervalMs;
+  int? get sessionTtlSeconds;
+  int? get concurrency;
+  int? get eagerWindowMs;
+  int? get holeTimeoutMs;
+  Object? get template;
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XDriveConfigCopyWith<XDriveConfig> get copyWith =>
+      _$XDriveConfigCopyWithImpl<XDriveConfig>(
+        this as XDriveConfig,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as XDriveConfig;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XDriveConfig &&
+            (identical(other.remoteFolder, _this.remoteFolder) ||
+                other.remoteFolder == _this.remoteFolder) &&
+            (identical(other.service, _this.service) ||
+                other.service == _this.service) &&
+            const DeepCollectionEquality().equals(
+              other.secrets,
+              _this.secrets,
+            ) &&
+            (identical(other.segmentBytes, _this.segmentBytes) ||
+                other.segmentBytes == _this.segmentBytes) &&
+            (identical(other.flushIntervalMs, _this.flushIntervalMs) ||
+                other.flushIntervalMs == _this.flushIntervalMs) &&
+            (identical(other.pollIntervalMs, _this.pollIntervalMs) ||
+                other.pollIntervalMs == _this.pollIntervalMs) &&
+            (identical(other.maxPollIntervalMs, _this.maxPollIntervalMs) ||
+                other.maxPollIntervalMs == _this.maxPollIntervalMs) &&
+            (identical(other.sessionTtlSeconds, _this.sessionTtlSeconds) ||
+                other.sessionTtlSeconds == _this.sessionTtlSeconds) &&
+            (identical(other.concurrency, _this.concurrency) ||
+                other.concurrency == _this.concurrency) &&
+            (identical(other.eagerWindowMs, _this.eagerWindowMs) ||
+                other.eagerWindowMs == _this.eagerWindowMs) &&
+            (identical(other.holeTimeoutMs, _this.holeTimeoutMs) ||
+                other.holeTimeoutMs == _this.holeTimeoutMs) &&
+            const DeepCollectionEquality().equals(
+              other.template,
+              _this.template,
+            ));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as XDriveConfig;
+    return Object.hash(
+      runtimeType,
+      _this.remoteFolder,
+      _this.service,
+      const DeepCollectionEquality().hash(_this.secrets),
+      _this.segmentBytes,
+      _this.flushIntervalMs,
+      _this.pollIntervalMs,
+      _this.maxPollIntervalMs,
+      _this.sessionTtlSeconds,
+      _this.concurrency,
+      _this.eagerWindowMs,
+      _this.holeTimeoutMs,
+      const DeepCollectionEquality().hash(_this.template),
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as XDriveConfig;
+    return 'XDriveConfig(remoteFolder: ${_this.remoteFolder}, service: ${_this.service}, secrets: ${_this.secrets}, segmentBytes: ${_this.segmentBytes}, flushIntervalMs: ${_this.flushIntervalMs}, pollIntervalMs: ${_this.pollIntervalMs}, maxPollIntervalMs: ${_this.maxPollIntervalMs}, sessionTtlSeconds: ${_this.sessionTtlSeconds}, concurrency: ${_this.concurrency}, eagerWindowMs: ${_this.eagerWindowMs}, holeTimeoutMs: ${_this.holeTimeoutMs}, template: ${_this.template})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XDriveConfigCopyWith<$Res> {
+  factory $XDriveConfigCopyWith(
+    XDriveConfig value,
+    $Res Function(XDriveConfig) _then,
+  ) = _$XDriveConfigCopyWithImpl;
+  @useResult
+  $Res call({
+    String? remoteFolder,
+    String? service,
+    List<String>? secrets,
+    int? segmentBytes,
+    int? flushIntervalMs,
+    int? pollIntervalMs,
+    int? maxPollIntervalMs,
+    int? sessionTtlSeconds,
+    int? concurrency,
+    int? eagerWindowMs,
+    int? holeTimeoutMs,
+    Object? template,
+  });
+}
+
+/// @nodoc
+class _$XDriveConfigCopyWithImpl<$Res> implements $XDriveConfigCopyWith<$Res> {
+  _$XDriveConfigCopyWithImpl(this._self, this._then);
+
+  final XDriveConfig _self;
+  final $Res Function(XDriveConfig) _then;
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? remoteFolder = freezed,
+    Object? service = freezed,
+    Object? secrets = freezed,
+    Object? segmentBytes = freezed,
+    Object? flushIntervalMs = freezed,
+    Object? pollIntervalMs = freezed,
+    Object? maxPollIntervalMs = freezed,
+    Object? sessionTtlSeconds = freezed,
+    Object? concurrency = freezed,
+    Object? eagerWindowMs = freezed,
+    Object? holeTimeoutMs = freezed,
+    Object? template = freezed,
+  }) {
+    return _then(
+      XDriveConfig(
+        remoteFolder: freezed == remoteFolder
+            ? _self.remoteFolder
+            : remoteFolder // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        service: freezed == service
+            ? _self.service
+            : service // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        secrets: freezed == secrets
+            ? _self.secrets
+            : secrets // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        segmentBytes: freezed == segmentBytes
+            ? _self.segmentBytes
+            : segmentBytes // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        flushIntervalMs: freezed == flushIntervalMs
+            ? _self.flushIntervalMs
+            : flushIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        pollIntervalMs: freezed == pollIntervalMs
+            ? _self.pollIntervalMs
+            : pollIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxPollIntervalMs: freezed == maxPollIntervalMs
+            ? _self.maxPollIntervalMs
+            : maxPollIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        sessionTtlSeconds: freezed == sessionTtlSeconds
+            ? _self.sessionTtlSeconds
+            : sessionTtlSeconds // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        concurrency: freezed == concurrency
+            ? _self.concurrency
+            : concurrency // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        eagerWindowMs: freezed == eagerWindowMs
+            ? _self.eagerWindowMs
+            : eagerWindowMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        holeTimeoutMs: freezed == holeTimeoutMs
+            ? _self.holeTimeoutMs
+            : holeTimeoutMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        template: freezed == template ? _self.template : template,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [XDriveConfig].
+extension XDriveConfigPatterns on XDriveConfig {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XDriveConfig value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XDriveConfig value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveConfig():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XDriveConfig value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      String? remoteFolder,
+      String? service,
+      List<String>? secrets,
+      int? segmentBytes,
+      int? flushIntervalMs,
+      int? pollIntervalMs,
+      int? maxPollIntervalMs,
+      int? sessionTtlSeconds,
+      int? concurrency,
+      int? eagerWindowMs,
+      int? holeTimeoutMs,
+      Object? template,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveConfig() when $default != null:
+        return $default(
+          _that.remoteFolder,
+          _that.service,
+          _that.secrets,
+          _that.segmentBytes,
+          _that.flushIntervalMs,
+          _that.pollIntervalMs,
+          _that.maxPollIntervalMs,
+          _that.sessionTtlSeconds,
+          _that.concurrency,
+          _that.eagerWindowMs,
+          _that.holeTimeoutMs,
+          _that.template,
+        );
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      String? remoteFolder,
+      String? service,
+      List<String>? secrets,
+      int? segmentBytes,
+      int? flushIntervalMs,
+      int? pollIntervalMs,
+      int? maxPollIntervalMs,
+      int? sessionTtlSeconds,
+      int? concurrency,
+      int? eagerWindowMs,
+      int? holeTimeoutMs,
+      Object? template,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveConfig():
+        return $default(
+          _that.remoteFolder,
+          _that.service,
+          _that.secrets,
+          _that.segmentBytes,
+          _that.flushIntervalMs,
+          _that.pollIntervalMs,
+          _that.maxPollIntervalMs,
+          _that.sessionTtlSeconds,
+          _that.concurrency,
+          _that.eagerWindowMs,
+          _that.holeTimeoutMs,
+          _that.template,
+        );
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      String? remoteFolder,
+      String? service,
+      List<String>? secrets,
+      int? segmentBytes,
+      int? flushIntervalMs,
+      int? pollIntervalMs,
+      int? maxPollIntervalMs,
+      int? sessionTtlSeconds,
+      int? concurrency,
+      int? eagerWindowMs,
+      int? holeTimeoutMs,
+      Object? template,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveConfig() when $default != null:
+        return $default(
+          _that.remoteFolder,
+          _that.service,
+          _that.secrets,
+          _that.segmentBytes,
+          _that.flushIntervalMs,
+          _that.pollIntervalMs,
+          _that.maxPollIntervalMs,
+          _that.sessionTtlSeconds,
+          _that.concurrency,
+          _that.eagerWindowMs,
+          _that.holeTimeoutMs,
+          _that.template,
+        );
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XDriveConfig extends XDriveConfig {
+  const _XDriveConfig({
+    this.remoteFolder,
+    this.service,
+    List<String>? secrets,
+    this.segmentBytes,
+    this.flushIntervalMs,
+    this.pollIntervalMs,
+    this.maxPollIntervalMs,
+    this.sessionTtlSeconds,
+    this.concurrency,
+    this.eagerWindowMs,
+    this.holeTimeoutMs,
+    this.template,
+  }) : _secrets = secrets,
+       super._();
+
+  @override
+  final String? remoteFolder;
+  @override
+  final String? service;
+  final List<String>? _secrets;
+  @override
+  List<String>? get secrets {
+    final value = _secrets;
+    if (value == null) return null;
+    if (_secrets is EqualUnmodifiableListView) return _secrets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? segmentBytes;
+  @override
+  final int? flushIntervalMs;
+  @override
+  final int? pollIntervalMs;
+  @override
+  final int? maxPollIntervalMs;
+  @override
+  final int? sessionTtlSeconds;
+  @override
+  final int? concurrency;
+  @override
+  final int? eagerWindowMs;
+  @override
+  final int? holeTimeoutMs;
+  @override
+  final Object? template;
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XDriveConfigCopyWith<_XDriveConfig> get copyWith =>
+      __$XDriveConfigCopyWithImpl<_XDriveConfig>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XDriveConfig &&
+            (identical(other.remoteFolder, remoteFolder) ||
+                other.remoteFolder == remoteFolder) &&
+            (identical(other.service, service) || other.service == service) &&
+            const DeepCollectionEquality().equals(other.secrets, _secrets) &&
+            (identical(other.segmentBytes, segmentBytes) ||
+                other.segmentBytes == segmentBytes) &&
+            (identical(other.flushIntervalMs, flushIntervalMs) ||
+                other.flushIntervalMs == flushIntervalMs) &&
+            (identical(other.pollIntervalMs, pollIntervalMs) ||
+                other.pollIntervalMs == pollIntervalMs) &&
+            (identical(other.maxPollIntervalMs, maxPollIntervalMs) ||
+                other.maxPollIntervalMs == maxPollIntervalMs) &&
+            (identical(other.sessionTtlSeconds, sessionTtlSeconds) ||
+                other.sessionTtlSeconds == sessionTtlSeconds) &&
+            (identical(other.concurrency, concurrency) ||
+                other.concurrency == concurrency) &&
+            (identical(other.eagerWindowMs, eagerWindowMs) ||
+                other.eagerWindowMs == eagerWindowMs) &&
+            (identical(other.holeTimeoutMs, holeTimeoutMs) ||
+                other.holeTimeoutMs == holeTimeoutMs) &&
+            const DeepCollectionEquality().equals(other.template, template));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      remoteFolder,
+      service,
+      const DeepCollectionEquality().hash(_secrets),
+      segmentBytes,
+      flushIntervalMs,
+      pollIntervalMs,
+      maxPollIntervalMs,
+      sessionTtlSeconds,
+      concurrency,
+      eagerWindowMs,
+      holeTimeoutMs,
+      const DeepCollectionEquality().hash(template),
+    );
+  }
+
+  @override
+  String toString() {
+    return 'XDriveConfig(remoteFolder: $remoteFolder, service: $service, secrets: $secrets, segmentBytes: $segmentBytes, flushIntervalMs: $flushIntervalMs, pollIntervalMs: $pollIntervalMs, maxPollIntervalMs: $maxPollIntervalMs, sessionTtlSeconds: $sessionTtlSeconds, concurrency: $concurrency, eagerWindowMs: $eagerWindowMs, holeTimeoutMs: $holeTimeoutMs, template: $template)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XDriveConfigCopyWith<$Res>
+    implements $XDriveConfigCopyWith<$Res> {
+  factory _$XDriveConfigCopyWith(
+    _XDriveConfig value,
+    $Res Function(_XDriveConfig) _then,
+  ) = __$XDriveConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call({
+    String? remoteFolder,
+    String? service,
+    List<String>? secrets,
+    int? segmentBytes,
+    int? flushIntervalMs,
+    int? pollIntervalMs,
+    int? maxPollIntervalMs,
+    int? sessionTtlSeconds,
+    int? concurrency,
+    int? eagerWindowMs,
+    int? holeTimeoutMs,
+    Object? template,
+  });
+}
+
+/// @nodoc
+class __$XDriveConfigCopyWithImpl<$Res>
+    implements _$XDriveConfigCopyWith<$Res> {
+  __$XDriveConfigCopyWithImpl(this._self, this._then);
+
+  final _XDriveConfig _self;
+  final $Res Function(_XDriveConfig) _then;
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? remoteFolder = freezed,
+    Object? service = freezed,
+    Object? secrets = freezed,
+    Object? segmentBytes = freezed,
+    Object? flushIntervalMs = freezed,
+    Object? pollIntervalMs = freezed,
+    Object? maxPollIntervalMs = freezed,
+    Object? sessionTtlSeconds = freezed,
+    Object? concurrency = freezed,
+    Object? eagerWindowMs = freezed,
+    Object? holeTimeoutMs = freezed,
+    Object? template = freezed,
+  }) {
+    return _then(
+      _XDriveConfig(
+        remoteFolder: freezed == remoteFolder
+            ? _self.remoteFolder
+            : remoteFolder // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        service: freezed == service
+            ? _self.service
+            : service // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        secrets: freezed == secrets
+            ? _self._secrets
+            : secrets // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        segmentBytes: freezed == segmentBytes
+            ? _self.segmentBytes
+            : segmentBytes // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        flushIntervalMs: freezed == flushIntervalMs
+            ? _self.flushIntervalMs
+            : flushIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        pollIntervalMs: freezed == pollIntervalMs
+            ? _self.pollIntervalMs
+            : pollIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxPollIntervalMs: freezed == maxPollIntervalMs
+            ? _self.maxPollIntervalMs
+            : maxPollIntervalMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        sessionTtlSeconds: freezed == sessionTtlSeconds
+            ? _self.sessionTtlSeconds
+            : sessionTtlSeconds // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        concurrency: freezed == concurrency
+            ? _self.concurrency
+            : concurrency // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        eagerWindowMs: freezed == eagerWindowMs
+            ? _self.eagerWindowMs
+            : eagerWindowMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        holeTimeoutMs: freezed == holeTimeoutMs
+            ? _self.holeTimeoutMs
+            : holeTimeoutMs // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        template: freezed == template ? _self.template : template,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+mixin _$XDNSDomain {
+  String? get name;
+  int? get lenLimit;
+  int? get labelLimit;
+  List<int>? get types;
+  int? get edns0;
+
+  /// Create a copy of XDNSDomain
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XDNSDomainCopyWith<XDNSDomain> get copyWith =>
+      _$XDNSDomainCopyWithImpl<XDNSDomain>(this as XDNSDomain, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as XDNSDomain;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XDNSDomain &&
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.lenLimit, _this.lenLimit) ||
+                other.lenLimit == _this.lenLimit) &&
+            (identical(other.labelLimit, _this.labelLimit) ||
+                other.labelLimit == _this.labelLimit) &&
+            const DeepCollectionEquality().equals(other.types, _this.types) &&
+            (identical(other.edns0, _this.edns0) ||
+                other.edns0 == _this.edns0));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as XDNSDomain;
+    return Object.hash(
+      runtimeType,
+      _this.name,
+      _this.lenLimit,
+      _this.labelLimit,
+      const DeepCollectionEquality().hash(_this.types),
+      _this.edns0,
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as XDNSDomain;
+    return 'XDNSDomain(name: ${_this.name}, lenLimit: ${_this.lenLimit}, labelLimit: ${_this.labelLimit}, types: ${_this.types}, edns0: ${_this.edns0})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XDNSDomainCopyWith<$Res> {
+  factory $XDNSDomainCopyWith(
+    XDNSDomain value,
+    $Res Function(XDNSDomain) _then,
+  ) = _$XDNSDomainCopyWithImpl;
+  @useResult
+  $Res call({
+    String? name,
+    int? lenLimit,
+    int? labelLimit,
+    List<int>? types,
+    int? edns0,
+  });
+}
+
+/// @nodoc
+class _$XDNSDomainCopyWithImpl<$Res> implements $XDNSDomainCopyWith<$Res> {
+  _$XDNSDomainCopyWithImpl(this._self, this._then);
+
+  final XDNSDomain _self;
+  final $Res Function(XDNSDomain) _then;
+
+  /// Create a copy of XDNSDomain
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? lenLimit = freezed,
+    Object? labelLimit = freezed,
+    Object? types = freezed,
+    Object? edns0 = freezed,
+  }) {
+    return _then(
+      XDNSDomain(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        lenLimit: freezed == lenLimit
+            ? _self.lenLimit
+            : lenLimit // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        labelLimit: freezed == labelLimit
+            ? _self.labelLimit
+            : labelLimit // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        types: freezed == types
+            ? _self.types
+            : types // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+        edns0: freezed == edns0
+            ? _self.edns0
+            : edns0 // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [XDNSDomain].
+extension XDNSDomainPatterns on XDNSDomain {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XDNSDomain value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSDomain() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XDNSDomain value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSDomain():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XDNSDomain value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSDomain() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      String? name,
+      int? lenLimit,
+      int? labelLimit,
+      List<int>? types,
+      int? edns0,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSDomain() when $default != null:
+        return $default(
+          _that.name,
+          _that.lenLimit,
+          _that.labelLimit,
+          _that.types,
+          _that.edns0,
+        );
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      String? name,
+      int? lenLimit,
+      int? labelLimit,
+      List<int>? types,
+      int? edns0,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSDomain():
+        return $default(
+          _that.name,
+          _that.lenLimit,
+          _that.labelLimit,
+          _that.types,
+          _that.edns0,
+        );
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      String? name,
+      int? lenLimit,
+      int? labelLimit,
+      List<int>? types,
+      int? edns0,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSDomain() when $default != null:
+        return $default(
+          _that.name,
+          _that.lenLimit,
+          _that.labelLimit,
+          _that.types,
+          _that.edns0,
+        );
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XDNSDomain extends XDNSDomain {
+  const _XDNSDomain({
+    this.name,
+    this.lenLimit,
+    this.labelLimit,
+    List<int>? types,
+    this.edns0,
+  }) : _types = types,
+       super._();
+
+  @override
+  final String? name;
+  @override
+  final int? lenLimit;
+  @override
+  final int? labelLimit;
+  final List<int>? _types;
+  @override
+  List<int>? get types {
+    final value = _types;
+    if (value == null) return null;
+    if (_types is EqualUnmodifiableListView) return _types;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? edns0;
+
+  /// Create a copy of XDNSDomain
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XDNSDomainCopyWith<_XDNSDomain> get copyWith =>
+      __$XDNSDomainCopyWithImpl<_XDNSDomain>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XDNSDomain &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.lenLimit, lenLimit) ||
+                other.lenLimit == lenLimit) &&
+            (identical(other.labelLimit, labelLimit) ||
+                other.labelLimit == labelLimit) &&
+            const DeepCollectionEquality().equals(other.types, _types) &&
+            (identical(other.edns0, edns0) || other.edns0 == edns0));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      name,
+      lenLimit,
+      labelLimit,
+      const DeepCollectionEquality().hash(_types),
+      edns0,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'XDNSDomain(name: $name, lenLimit: $lenLimit, labelLimit: $labelLimit, types: $types, edns0: $edns0)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XDNSDomainCopyWith<$Res>
+    implements $XDNSDomainCopyWith<$Res> {
+  factory _$XDNSDomainCopyWith(
+    _XDNSDomain value,
+    $Res Function(_XDNSDomain) _then,
+  ) = __$XDNSDomainCopyWithImpl;
+  @override
+  @useResult
+  $Res call({
+    String? name,
+    int? lenLimit,
+    int? labelLimit,
+    List<int>? types,
+    int? edns0,
+  });
+}
+
+/// @nodoc
+class __$XDNSDomainCopyWithImpl<$Res> implements _$XDNSDomainCopyWith<$Res> {
+  __$XDNSDomainCopyWithImpl(this._self, this._then);
+
+  final _XDNSDomain _self;
+  final $Res Function(_XDNSDomain) _then;
+
+  /// Create a copy of XDNSDomain
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = freezed,
+    Object? lenLimit = freezed,
+    Object? labelLimit = freezed,
+    Object? types = freezed,
+    Object? edns0 = freezed,
+  }) {
+    return _then(
+      _XDNSDomain(
+        name: freezed == name
+            ? _self.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        lenLimit: freezed == lenLimit
+            ? _self.lenLimit
+            : lenLimit // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        labelLimit: freezed == labelLimit
+            ? _self.labelLimit
+            : labelLimit // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        types: freezed == types
+            ? _self._types
+            : types // ignore: cast_nullable_to_non_nullable
+                  as List<int>?,
+        edns0: freezed == edns0
+            ? _self.edns0
+            : edns0 // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+mixin _$XDNSResolverTCP {
+  String? get addr;
+
+  /// Create a copy of XDNSResolverTCP
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XDNSResolverTCPCopyWith<XDNSResolverTCP> get copyWith =>
+      _$XDNSResolverTCPCopyWithImpl<XDNSResolverTCP>(
+        this as XDNSResolverTCP,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as XDNSResolverTCP;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XDNSResolverTCP &&
+            (identical(other.addr, _this.addr) || other.addr == _this.addr));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as XDNSResolverTCP;
+    return Object.hash(runtimeType, _this.addr);
+  }
+
+  @override
+  String toString() {
+    final _this = this as XDNSResolverTCP;
+    return 'XDNSResolverTCP(addr: ${_this.addr})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XDNSResolverTCPCopyWith<$Res> {
+  factory $XDNSResolverTCPCopyWith(
+    XDNSResolverTCP value,
+    $Res Function(XDNSResolverTCP) _then,
+  ) = _$XDNSResolverTCPCopyWithImpl;
+  @useResult
+  $Res call({String? addr});
+}
+
+/// @nodoc
+class _$XDNSResolverTCPCopyWithImpl<$Res>
+    implements $XDNSResolverTCPCopyWith<$Res> {
+  _$XDNSResolverTCPCopyWithImpl(this._self, this._then);
+
+  final XDNSResolverTCP _self;
+  final $Res Function(XDNSResolverTCP) _then;
+
+  /// Create a copy of XDNSResolverTCP
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? addr = freezed}) {
+    return _then(
+      XDNSResolverTCP(
+        addr: freezed == addr
+            ? _self.addr
+            : addr // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [XDNSResolverTCP].
+extension XDNSResolverTCPPatterns on XDNSResolverTCP {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XDNSResolverTCP value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverTCP() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XDNSResolverTCP value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverTCP():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XDNSResolverTCP value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverTCP() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? addr)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverTCP() when $default != null:
+        return $default(_that.addr);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? addr) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverTCP():
+        return $default(_that.addr);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? addr)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverTCP() when $default != null:
+        return $default(_that.addr);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XDNSResolverTCP extends XDNSResolverTCP {
+  const _XDNSResolverTCP({this.addr}) : super._();
+
+  @override
+  final String? addr;
+
+  /// Create a copy of XDNSResolverTCP
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XDNSResolverTCPCopyWith<_XDNSResolverTCP> get copyWith =>
+      __$XDNSResolverTCPCopyWithImpl<_XDNSResolverTCP>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XDNSResolverTCP &&
+            (identical(other.addr, addr) || other.addr == addr));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, addr);
+  }
+
+  @override
+  String toString() {
+    return 'XDNSResolverTCP(addr: $addr)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XDNSResolverTCPCopyWith<$Res>
+    implements $XDNSResolverTCPCopyWith<$Res> {
+  factory _$XDNSResolverTCPCopyWith(
+    _XDNSResolverTCP value,
+    $Res Function(_XDNSResolverTCP) _then,
+  ) = __$XDNSResolverTCPCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? addr});
+}
+
+/// @nodoc
+class __$XDNSResolverTCPCopyWithImpl<$Res>
+    implements _$XDNSResolverTCPCopyWith<$Res> {
+  __$XDNSResolverTCPCopyWithImpl(this._self, this._then);
+
+  final _XDNSResolverTCP _self;
+  final $Res Function(_XDNSResolverTCP) _then;
+
+  /// Create a copy of XDNSResolverTCP
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({Object? addr = freezed}) {
+    return _then(
+      _XDNSResolverTCP(
+        addr: freezed == addr
+            ? _self.addr
+            : addr // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+mixin _$XDNSResolverUDP {
+  String? get addr;
+
+  /// Create a copy of XDNSResolverUDP
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XDNSResolverUDPCopyWith<XDNSResolverUDP> get copyWith =>
+      _$XDNSResolverUDPCopyWithImpl<XDNSResolverUDP>(
+        this as XDNSResolverUDP,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as XDNSResolverUDP;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XDNSResolverUDP &&
+            (identical(other.addr, _this.addr) || other.addr == _this.addr));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as XDNSResolverUDP;
+    return Object.hash(runtimeType, _this.addr);
+  }
+
+  @override
+  String toString() {
+    final _this = this as XDNSResolverUDP;
+    return 'XDNSResolverUDP(addr: ${_this.addr})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XDNSResolverUDPCopyWith<$Res> {
+  factory $XDNSResolverUDPCopyWith(
+    XDNSResolverUDP value,
+    $Res Function(XDNSResolverUDP) _then,
+  ) = _$XDNSResolverUDPCopyWithImpl;
+  @useResult
+  $Res call({String? addr});
+}
+
+/// @nodoc
+class _$XDNSResolverUDPCopyWithImpl<$Res>
+    implements $XDNSResolverUDPCopyWith<$Res> {
+  _$XDNSResolverUDPCopyWithImpl(this._self, this._then);
+
+  final XDNSResolverUDP _self;
+  final $Res Function(XDNSResolverUDP) _then;
+
+  /// Create a copy of XDNSResolverUDP
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? addr = freezed}) {
+    return _then(
+      XDNSResolverUDP(
+        addr: freezed == addr
+            ? _self.addr
+            : addr // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [XDNSResolverUDP].
+extension XDNSResolverUDPPatterns on XDNSResolverUDP {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XDNSResolverUDP value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverUDP() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XDNSResolverUDP value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverUDP():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XDNSResolverUDP value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverUDP() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? addr)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverUDP() when $default != null:
+        return $default(_that.addr);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? addr) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverUDP():
+        return $default(_that.addr);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? addr)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolverUDP() when $default != null:
+        return $default(_that.addr);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XDNSResolverUDP extends XDNSResolverUDP {
+  const _XDNSResolverUDP({this.addr}) : super._();
+
+  @override
+  final String? addr;
+
+  /// Create a copy of XDNSResolverUDP
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XDNSResolverUDPCopyWith<_XDNSResolverUDP> get copyWith =>
+      __$XDNSResolverUDPCopyWithImpl<_XDNSResolverUDP>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XDNSResolverUDP &&
+            (identical(other.addr, addr) || other.addr == addr));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, addr);
+  }
+
+  @override
+  String toString() {
+    return 'XDNSResolverUDP(addr: $addr)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XDNSResolverUDPCopyWith<$Res>
+    implements $XDNSResolverUDPCopyWith<$Res> {
+  factory _$XDNSResolverUDPCopyWith(
+    _XDNSResolverUDP value,
+    $Res Function(_XDNSResolverUDP) _then,
+  ) = __$XDNSResolverUDPCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? addr});
+}
+
+/// @nodoc
+class __$XDNSResolverUDPCopyWithImpl<$Res>
+    implements _$XDNSResolverUDPCopyWith<$Res> {
+  __$XDNSResolverUDPCopyWithImpl(this._self, this._then);
+
+  final _XDNSResolverUDP _self;
+  final $Res Function(_XDNSResolverUDP) _then;
+
+  /// Create a copy of XDNSResolverUDP
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({Object? addr = freezed}) {
+    return _then(
+      _XDNSResolverUDP(
+        addr: freezed == addr
+            ? _self.addr
+            : addr // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+mixin _$XDNSResolver {
+  String? get type;
+  XDNSResolverSettings? get settings;
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XDNSResolverCopyWith<XDNSResolver> get copyWith =>
+      _$XDNSResolverCopyWithImpl<XDNSResolver>(
+        this as XDNSResolver,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as XDNSResolver;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XDNSResolver &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.settings, _this.settings) ||
+                other.settings == _this.settings));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as XDNSResolver;
+    return Object.hash(runtimeType, _this.type, _this.settings);
+  }
+
+  @override
+  String toString() {
+    final _this = this as XDNSResolver;
+    return 'XDNSResolver(type: ${_this.type}, settings: ${_this.settings})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XDNSResolverCopyWith<$Res> {
+  factory $XDNSResolverCopyWith(
+    XDNSResolver value,
+    $Res Function(XDNSResolver) _then,
+  ) = _$XDNSResolverCopyWithImpl;
+  @useResult
+  $Res call({String? type, XDNSResolverSettings? settings});
+}
+
+/// @nodoc
+class _$XDNSResolverCopyWithImpl<$Res> implements $XDNSResolverCopyWith<$Res> {
+  _$XDNSResolverCopyWithImpl(this._self, this._then);
+
+  final XDNSResolver _self;
+  final $Res Function(XDNSResolver) _then;
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? type = freezed, Object? settings = freezed}) {
+    return _then(
+      XDNSResolver(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XDNSResolverSettings?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [XDNSResolver].
+extension XDNSResolverPatterns on XDNSResolver {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XDNSResolver value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolver() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XDNSResolver value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolver():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XDNSResolver value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolver() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? type, XDNSResolverSettings? settings)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolver() when $default != null:
+        return $default(_that.type, _that.settings);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? type, XDNSResolverSettings? settings) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolver():
+        return $default(_that.type, _that.settings);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? type, XDNSResolverSettings? settings)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDNSResolver() when $default != null:
+        return $default(_that.type, _that.settings);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XDNSResolver extends XDNSResolver {
+  const _XDNSResolver({this.type, this.settings}) : super._();
+
+  @override
+  final String? type;
+  @override
+  final XDNSResolverSettings? settings;
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XDNSResolverCopyWith<_XDNSResolver> get copyWith =>
+      __$XDNSResolverCopyWithImpl<_XDNSResolver>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XDNSResolver &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.settings, settings) ||
+                other.settings == settings));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, type, settings);
+  }
+
+  @override
+  String toString() {
+    return 'XDNSResolver(type: $type, settings: $settings)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XDNSResolverCopyWith<$Res>
+    implements $XDNSResolverCopyWith<$Res> {
+  factory _$XDNSResolverCopyWith(
+    _XDNSResolver value,
+    $Res Function(_XDNSResolver) _then,
+  ) = __$XDNSResolverCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? type, XDNSResolverSettings? settings});
+}
+
+/// @nodoc
+class __$XDNSResolverCopyWithImpl<$Res>
+    implements _$XDNSResolverCopyWith<$Res> {
+  __$XDNSResolverCopyWithImpl(this._self, this._then);
+
+  final _XDNSResolver _self;
+  final $Res Function(_XDNSResolver) _then;
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({Object? type = freezed, Object? settings = freezed}) {
+    return _then(
+      _XDNSResolver(
+        type: freezed == type
+            ? _self.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        settings: freezed == settings
+            ? _self.settings
+            : settings // ignore: cast_nullable_to_non_nullable
+                  as XDNSResolverSettings?,
+      ),
+    );
   }
 }

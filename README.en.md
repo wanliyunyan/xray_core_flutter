@@ -55,7 +55,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## Config Parity
 
-The Dart models currently track Xray-core `infra/conf` v26.9.9. The parity
+The Dart models currently track Xray-core `infra/conf` v26.9.30. The parity
 checker compares Go JSON tags, struct fields, unexpected Dart keys, and config
 creator loader IDs:
 
@@ -64,7 +64,7 @@ dart run tool/check_xray_conf_parity.dart ../Xray-core/infra/conf
 ```
 
 `validate()` checks ports for IP listeners and transport security for public
-VLESS/Trojan targets, using Core v26.9.9's built-in private address rules. TUN
+VLESS/Trojan targets, using Core v26.9.30's built-in private address rules. TUN
 and Unix socket listeners do not require ports. Core resolves `env:` addresses
 on the target device; this package defers their port and public-target checks.
 Raw protocol settings still follow `allowRawSettings`. Successful validation
@@ -85,6 +85,45 @@ Legacy `proxySettings` JSON is retained as a raw map but rejected by validation.
 Move Hysteria congestion and bandwidth options to `FinalMask.quicParams`.
 Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
 `FinalMask.udp`, using `mode`, `remotePorts`, and `interval`.
+
+## v26.9.30 and Migration to 0.7.0
+
+MASQUE now has typed inbound/outbound settings (`MasqueServerConfig`,
+`MasqueClientConfig`), users and `MasqueConfig` transport settings. Use
+`TransportProtocol.masque` with TLS; outbound mux is unsupported.
+MASQUE inbound `address` entries must be usable host CIDRs with addresses left
+for clients. Subnet addresses, IPv4 broadcasts, IPv4-mapped IPv6 addresses and
+pools too small to assign clients are rejected.
+`XDriveConfig` supports `local`, `Google Drive` and `template` services.
+Core remains responsible for default values. XDrive cannot use REALITY; TLS is
+supported. XDNS requires domains on both sides and resolvers on clients;
+validation checks record types, length limits, EDNS0 and minimum payload capacity.
+
+TUN adds `autoSystemDnsToGateway` (Linux) and `autoSystemWfpBlockLeak`
+(Windows: `dns` / `misconfigtun`). OS-specific prerequisites are checked by Core
+on the target device. Noise masks accept expressions such as
+`NoiseItem(type: 'exp', packet: '<b 01><r 8><t>')`.
+XICMP must be the final entry in `finalmask.udp` (the outermost layer) on both
+clients and servers. UDPHop also requires this position and is client-only,
+so it cannot share a mask chain with XICMP.
+
+Breaking migrations:
+
+- Remove `WireGuardConfig.domainStrategy`.
+- Move `UDPHop.sockopt` to `StreamConfig.sockopt`. Outer `dialerProxy` is now
+  supported. Omitted/zero intervals use Core's 30-second default.
+- Replace `Xdns` with `XDNS`. Replace string arrays with structured domains and
+  resolvers; the old `domain` field is no longer supported:
+
+```dart
+const XDNS(
+  domains: [XDNSDomain(name: 'tunnel.example.com', types: [16])],
+  resolvers: [
+    XDNSResolver(type: 'udp', settings: XDNSResolverUDP(addr: '1.1.1.1:53')),
+  ],
+  extraPoll: 1,
+);
+```
 
 ## Development Checks
 

@@ -1,3 +1,43 @@
+## 0.7.0
+
+- Synced typed config models and loader parity checks with Xray-core
+  `infra/conf` v26.9.30.
+- Added MASQUE inbound/outbound settings, users, protocol constructors, and
+  transport settings; added XDrive transport with all options and raw templates.
+- Added TUN `autoSystemDnsToGateway` and `autoSystemWfpBlockLeak`.
+- Breaking: replaced `Xdns` with `XDNS`, structured `XDNSDomain` entries and
+  `XDNSResolver` entries with typed TCP/UDP settings; added `extraPoll`.
+  Legacy string domains/resolvers must be migrated to the new object schema.
+- Breaking: removed `WireGuardConfig.domainStrategy` and `UDPHop.sockopt`.
+  UDPHop now uses stream socket options, supports outer `dialerProxy`, and
+  accepts omitted/zero intervals (Core supplies its 30-second default).
+- Validate MASQUE transport/TLS pairing, mux restrictions, addresses, users,
+  paths and headers; validate XDrive services, TUN leak option names, XDNS
+  resolvers/extraPoll and Noise `exp` expressions. Platform-specific TUN
+  prerequisites remain Core checks on the target device.
+- Reject invalid XDNS domain limits, record types, EDNS0 and insufficient payload
+  capacity; require domains on both sides and resolvers on clients. Preserve
+  Core's zero defaults and integer conversions without rewriting JSON.
+- Reject normalized MASQUE hosts that Core cannot build, missing XDrive service
+  settings, and REALITY on unsupported transports (including XDrive).
+- Keep MASQUE outbound transport separate from non-MASQUE inbounds in the
+  example; expose and retain MASQUE inbound TLS certificates. XDrive selections
+  now use a compatible security layer instead of retaining REALITY.
+- Updated the visual example for MASQUE, XDrive, structured XDNS and TUN options;
+  regenerated Freezed models and added config and form regression coverage.
+- Show recoverable errors for malformed or incorrectly typed MASQUE, XDrive
+  and XDNS JSON inputs in the example, disabling copy until corrected.
+- Reject forbidden ASCII characters in MASQUE hosts and keep opaque XDrive
+  template JSON outside numeric option validation.
+- Check XDNS client resolver address syntax and ports; match Go whitespace and
+  hex-prefix handling in Noise expressions. Reject known finalmask types on
+  the wrong transport and remove the example's unsupported UDP fragment option.
+- Validate MASQUE address pools against Core initialization requirements:
+  reject subnet/broadcast addresses, mapped IPv6 and pools without client
+  addresses. Match Go host/port syntax without Dart URI normalization.
+- Require XICMP to be the last UDP mask on both clients and servers, including
+  nested download streams; keep it last when exporting example form selections.
+
 ## 0.6.0
 
 - Respect XHTTP `sockopt.penetrate` when validating download streams. Reject

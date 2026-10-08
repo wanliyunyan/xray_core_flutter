@@ -36,6 +36,7 @@ enum InboundKind {
   dokodemo,
   wireguard,
   hysteria,
+  masque,
   tun,
   raw,
 }
@@ -49,11 +50,13 @@ enum ProxyProtocol {
   socks,
   wireguard,
   hysteria,
+  masque,
   loopback,
   raw,
 }
 
 enum TransportKind {
+  xdrive,
   tcp,
   raw,
   ws,
@@ -64,6 +67,7 @@ enum TransportKind {
   mkcp,
   kcp,
   hysteria,
+  masque,
 }
 
 enum SecurityKind {
@@ -82,6 +86,15 @@ class ConfigBuilderPage extends StatefulWidget {
 }
 
 class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
+  final _masqueInboundController = TextEditingController(
+      text:
+          '{"address":["10.0.0.1/24"],"users":[{"email":"user","pass":"change-me"}]}');
+  final _masqueTransportController =
+      TextEditingController(text: '{"user":"user","pass":"change-me"}');
+  final _masqueRemoteDnsController = TextEditingController(text: '1.1.1.1');
+  final _xdriveController = TextEditingController(
+      text: '{"service":"local","remoteFolder":"/tmp/xdrive"}');
+  final _tunWfpController = TextEditingController(text: '');
   final _listenController = TextEditingController(text: '127.0.0.1');
   final _inboundTagController = TextEditingController();
   final _inboundPortController = TextEditingController(text: '10808');
@@ -214,7 +227,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _finalMaskDnsDomainController = TextEditingController();
   final _finalMaskSalamanderPasswordController = TextEditingController();
   final _finalMaskAesPasswordController = TextEditingController();
-  final _finalMaskXdnsDomainController = TextEditingController();
+  final _finalMaskXdnsExtraPollController = TextEditingController();
   final _finalMaskXdnsDomainsController = TextEditingController();
   final _finalMaskXdnsResolversController = TextEditingController();
   final _finalMaskXicmpIpsController = TextEditingController();
@@ -579,6 +592,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _finalMaskTcpDns = false;
   bool _finalMaskTcpSalamander = false;
   bool _finalMaskTcpAes = false;
+  bool _tunDnsToGateway = false;
   bool _finalMaskTcpXdns = false;
   bool _finalMaskTcpXicmp = false;
   bool _finalMaskTcpHeaderCustom = false;
@@ -671,6 +685,11 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
 
   @override
   void dispose() {
+    _masqueInboundController.dispose();
+    _masqueTransportController.dispose();
+    _masqueRemoteDnsController.dispose();
+    _xdriveController.dispose();
+    _tunWfpController.dispose();
     _listenController.dispose();
     _inboundTagController.dispose();
     _inboundPortController.dispose();
@@ -785,7 +804,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _finalMaskDnsDomainController.dispose();
     _finalMaskSalamanderPasswordController.dispose();
     _finalMaskAesPasswordController.dispose();
-    _finalMaskXdnsDomainController.dispose();
+    _finalMaskXdnsExtraPollController.dispose();
     _finalMaskXdnsDomainsController.dispose();
     _finalMaskXdnsResolversController.dispose();
     _finalMaskXicmpIpsController.dispose();
@@ -1057,16 +1076,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     );
   }
 
-  List<XrayValidationIssue> get _issues => _config.validate();
-
-  String get _jsonText {
-    return const JsonEncoder.withIndent('  ').convert(_jsonMap);
-  }
-
-  Map<String, dynamic> get _jsonMap {
-    return Map<String, dynamic>.from(_config.toJson());
-  }
-
   List<InboundDetourConfig> _inbounds() {
     if (_enableInboundsJson) {
       return _listFromJson(
@@ -1105,6 +1114,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   }
 
   TransportKind get _effectiveTransport {
+    if (_protocol == ProxyProtocol.masque) return TransportKind.masque;
     if (_protocol == ProxyProtocol.http ||
         _protocol == ProxyProtocol.socks ||
         _protocol == ProxyProtocol.wireguard ||
@@ -1113,18 +1123,29 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         _protocol == ProxyProtocol.raw) {
       return TransportKind.raw;
     }
-    return _transport;
+    return _transport == TransportKind.masque ? TransportKind.raw : _transport;
   }
 
   SecurityKind get _effectiveSecurity {
-    if (_security == SecurityKind.reality && _protocol != ProxyProtocol.vless) {
+    if (_protocol == ProxyProtocol.masque) return SecurityKind.tls;
+    if (_security == SecurityKind.reality &&
+        (_protocol != ProxyProtocol.vless || !_realityTransportEnabled)) {
       return SecurityKind.tls;
     }
     return _security;
   }
 
+  bool get _realityTransportEnabled => const {
+        TransportKind.tcp,
+        TransportKind.raw,
+        TransportKind.grpc,
+        TransportKind.splitHttp,
+        TransportKind.xhttp,
+      }.contains(_effectiveTransport);
+
   bool get _usesTlsTransport {
-    return _effectiveSecurity == SecurityKind.tls;
+    return _effectiveSecurity == SecurityKind.tls ||
+        _inbound == InboundKind.masque;
   }
 
   bool get _usesWebSocketSettings {
@@ -1278,7 +1299,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             flow: _emptyToNull(_vlessFlowController.text),
             testseed: _intCsv(_vlessTestSeedController.text),
           ),
-          streamSettings: _streamSettings(),
+          streamSettings: _streamSettings(inbound: true),
           sniffing: sniffing,
         ),
       InboundKind.vmess => InboundDetourConfig.vmess(
@@ -1304,7 +1325,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                     level: _nullableInt(_vmessDefaultLevelController),
                   ),
           ),
-          streamSettings: _streamSettings(),
+          streamSettings: _streamSettings(inbound: true),
           sniffing: sniffing,
         ),
       InboundKind.trojan => InboundDetourConfig.trojan(
@@ -1327,7 +1348,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                   ],
             fallbacks: _trojanEnableFallback ? _trojanInboundFallbacks() : null,
           ),
-          streamSettings: _streamSettings(),
+          streamSettings: _streamSettings(inbound: true),
           sniffing: sniffing,
         ),
       InboundKind.shadowsocks => InboundDetourConfig.shadowsocks(
@@ -1393,7 +1414,16 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                     ),
                   ],
           ),
-          streamSettings: _streamSettings(),
+          streamSettings: _streamSettings(inbound: true),
+          sniffing: sniffing,
+        ),
+      InboundKind.masque => InboundDetourConfig.masque(
+          tag: _defaultInboundTag('masque-in'),
+          listen: listen,
+          port: port,
+          settings: _typedJson(_masqueInboundController,
+              MasqueServerConfig.fromJson, 'MASQUE 入站 settings JSON'),
+          streamSettings: _streamSettings(inbound: true),
           sniffing: sniffing,
         ),
       InboundKind.tun => InboundDetourConfig.tun(
@@ -1406,6 +1436,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             dns: _csv(_tunDnsController.text),
             userLevel: _nullableInt(_inboundUserLevelController),
             autoSystemRoutingTable: _csv(_tunAutoRoutingTableController.text),
+            autoSystemDnsToGateway: _tunDnsToGateway,
+            autoSystemWfpBlockLeak: _csv(_tunWfpController.text),
             autoOutboundsInterface:
                 _emptyToNull(_tunAutoOutboundsInterfaceController.text),
           ),
@@ -1525,6 +1557,17 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           mux: mux,
           targetStrategy: _targetStrategy,
         ),
+      ProxyProtocol.masque => OutboundDetourConfig.masque(
+          tag: _proxyTag,
+          sendThrough: sendThrough,
+          settings: MasqueClientConfig(
+              address: address,
+              port: port,
+              remoteDNS: _csv(_masqueRemoteDnsController.text)),
+          streamSettings: streamSettings,
+          mux: mux,
+          targetStrategy: _targetStrategy,
+        ),
       ProxyProtocol.loopback => OutboundDetourConfig(
           protocol: XrayOutboundProtocol.loopback.toJson(),
           tag: _proxyTag,
@@ -1548,7 +1591,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         ),
     };
   }
-
 
   VLessOutboundConfig _vlessOutboundSettings(XrayAddress address, int port) {
     return VLessOutboundConfig(
@@ -1649,7 +1691,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       mtu: _intValue(_wireguardMtuController, 1420),
       reserved: _intCsv(_wireguardReservedController.text),
       remoteDNS: _csv(_wireguardRemoteDnsController.text),
-      domainStrategy: _targetStrategy,
       peers: _wireguardEnablePeersJson
           ? _listFromJson(
               _wireguardPeersJsonController,
@@ -1668,7 +1709,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     );
   }
 
-  StreamConfig? _streamSettings() {
+  StreamConfig? _streamSettings({bool inbound = false}) {
     final serverName = _serverController.text.trim();
     final sockopt = _enableSockopt
         ? SocketConfig(
@@ -1713,11 +1754,29 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       header: _tcpHeaderConfig(),
     );
 
-    return switch (_effectiveSecurity) {
-      SecurityKind.none => _plainStream(tcpSettings, sockopt),
-      SecurityKind.tls => _tlsStream(tcpSettings, sockopt, serverName),
-      SecurityKind.reality => _realityStream(tcpSettings, sockopt, serverName),
-    };
+    final transport = inbound && _inbound == InboundKind.masque
+        ? TransportKind.masque
+        : inbound && _protocol == ProxyProtocol.masque
+            ? _transport
+            : _effectiveTransport;
+    final security = inbound && _inbound == InboundKind.masque
+        ? SecurityKind.tls
+        : _effectiveSecurity;
+    return _streamFor(
+      transport: transport,
+      tcpSettings: tcpSettings,
+      sockopt: sockopt,
+      security: switch (security) {
+        SecurityKind.none => null,
+        SecurityKind.tls => SecurityProtocol.tls,
+        SecurityKind.reality => SecurityProtocol.reality,
+      },
+      tlsSettings:
+          security == SecurityKind.tls ? _tlsSettings(serverName) : null,
+      realitySettings: security == SecurityKind.reality
+          ? _realitySettings(serverName)
+          : null,
+    );
   }
 
   TCPHeaderConfig _tcpHeaderConfig() {
@@ -1777,39 +1836,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     );
   }
 
-  StreamConfig _plainStream(TCPConfig tcpSettings, SocketConfig? sockopt) {
-    return _streamFor(
-      tcpSettings: tcpSettings,
-      sockopt: sockopt,
-    );
-  }
-
-  StreamConfig _tlsStream(
-    TCPConfig tcpSettings,
-    SocketConfig? sockopt,
-    String serverName,
-  ) {
-    return _streamFor(
-      tcpSettings: tcpSettings,
-      sockopt: sockopt,
-      security: SecurityProtocol.tls,
-      tlsSettings: _tlsSettings(serverName),
-    );
-  }
-
-  StreamConfig _realityStream(
-    TCPConfig tcpSettings,
-    SocketConfig? sockopt,
-    String serverName,
-  ) {
-    return _streamFor(
-      tcpSettings: tcpSettings,
-      sockopt: sockopt,
-      security: SecurityProtocol.reality,
-      realitySettings: _realitySettings(serverName),
-    );
-  }
-
   REALITYConfig _realitySettings(String serverName) {
     if (_realityServerMode) {
       return REALITYConfig(
@@ -1863,6 +1889,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   }
 
   StreamConfig _streamFor({
+    required TransportKind transport,
     required TCPConfig tcpSettings,
     required SocketConfig? sockopt,
     SecurityProtocol? security,
@@ -1877,7 +1904,30 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         _enableStreamEndpoint ? _nullableInt(_streamPortController) : null;
     final finalmask = _enableFinalMask ? _finalMaskFromJson() : null;
 
-    return switch (_effectiveTransport) {
+    return switch (transport) {
+      TransportKind.masque => StreamConfig(
+          address: streamAddress,
+          port: streamPort,
+          network: TransportProtocol.masque,
+          security: security,
+          finalmask: finalmask,
+          tlsSettings: tlsSettings,
+          masqueSettings: _typedJson(_masqueTransportController,
+              MasqueConfig.fromJson, 'MASQUE transport JSON'),
+          sockopt: sockopt,
+        ),
+      TransportKind.xdrive => StreamConfig(
+          address: streamAddress,
+          port: streamPort,
+          network: TransportProtocol.xdrive,
+          security: security,
+          finalmask: finalmask,
+          tlsSettings: tlsSettings,
+          realitySettings: realitySettings,
+          xdriveSettings: _typedJson(
+              _xdriveController, XDriveConfig.fromJson, 'XDrive settings JSON'),
+          sockopt: sockopt,
+        ),
       TransportKind.tcp => StreamConfig(
           address: streamAddress,
           port: streamPort,
@@ -2643,6 +2693,26 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     return {};
   }
 
+  T _typedJson<T>(TextEditingController controller, T Function(Object?) parse,
+      String label) {
+    try {
+      return parse(jsonDecode(controller.text));
+    } on FormatException {
+      throw FormatException('$label: JSON 格式或结构错误');
+    } on TypeError {
+      throw FormatException('$label: JSON 字段类型错误');
+    }
+  }
+
+  List<T> _typedJsonList<T>(TextEditingController controller,
+      T Function(Object?) parse, String label) {
+    if (controller.text.trim().isEmpty) return [];
+    return _typedJson(controller, (json) {
+      if (json is! List) throw const FormatException('expected array');
+      return json.map(parse).toList();
+    }, label);
+  }
+
   Object? _jsonOrString(TextEditingController controller) {
     final trimmed = controller.text.trim();
     if (trimmed.isEmpty) {
@@ -2773,13 +2843,11 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       );
     }
     final masks = <Mask>[
-      if (_finalMaskUdpFragment) _finalMaskFragmentMask(),
       if (_finalMaskUdpNoise) _finalMaskNoiseMask(),
       if (_finalMaskUdpDns) _finalMaskDnsMask(),
       if (_finalMaskUdpSalamander) _finalMaskSalamanderMask(),
       if (_finalMaskUdpAes) _finalMaskAesMask(),
       if (_finalMaskUdpXdns) _finalMaskXdnsMask(),
-      if (_finalMaskUdpXicmp) _finalMaskXicmpMask(),
       if (_finalMaskUdpHeaderCustom) _finalMaskUdpHeaderCustomMask(),
       if (_finalMaskUdpSudoku) _finalMaskSudokuMask(),
       if (_finalMaskUdpOriginal) _finalMaskMkcpLegacyMask(),
@@ -2788,6 +2856,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       if (_finalMaskUdpUtp) _finalMaskMkcpLegacyMask(header: 'utp'),
       if (_finalMaskUdpWechat) _finalMaskMkcpLegacyMask(header: 'wechat'),
       if (_finalMaskUdpWireguard) _finalMaskMkcpLegacyMask(header: 'wireguard'),
+      if (_finalMaskUdpXicmp) _finalMaskXicmpMask(),
     ];
     return masks.isEmpty ? null : masks;
   }
@@ -2852,10 +2921,12 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   Mask _finalMaskXdnsMask() {
     return Mask(
       type: 'xdns',
-      settings: Xdns(
-        domain: _jsonOrString(_finalMaskXdnsDomainController),
-        domains: _csv(_finalMaskXdnsDomainsController.text),
-        resolvers: _csv(_finalMaskXdnsResolversController.text),
+      settings: XDNS(
+        extraPoll: _nullableInt(_finalMaskXdnsExtraPollController),
+        domains: _typedJsonList(_finalMaskXdnsDomainsController,
+            XDNSDomain.fromJson, 'xdns domains JSON 数组'),
+        resolvers: _typedJsonList(_finalMaskXdnsResolversController,
+            XDNSResolver.fromJson, 'xdns resolvers JSON 数组'),
       ),
     );
   }
@@ -3046,7 +3117,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       settings: BlackholeConfig(
         response: switch (_blockResponseType) {
           'http' => const BlackholeResponse.http(),
-          'custom' => BlackholeResponse.custom(_blockCustomResponseController.text),
+          'custom' =>
+            BlackholeResponse.custom(_blockCustomResponseController.text),
           _ => const BlackholeResponse.none(),
         },
       ),
@@ -3085,8 +3157,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     );
   }
 
-  Future<void> _copyJson() async {
-    await Clipboard.setData(ClipboardData(text: _jsonText));
+  Future<void> _copyJson(String jsonText) async {
+    await Clipboard.setData(ClipboardData(text: jsonText));
     if (!mounted) {
       return;
     }
@@ -3097,14 +3169,28 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
 
   @override
   Widget build(BuildContext context) {
+    String? jsonText;
+    var issues = <XrayValidationIssue>[];
+    try {
+      final config = _config;
+      issues = config.validate();
+      jsonText = const JsonEncoder.withIndent('  ').convert(config.toJson());
+    } on FormatException catch (error) {
+      issues = [XrayValidationIssue('JSON', error.message)];
+    } on TypeError {
+      issues = [const XrayValidationIssue('JSON', '字段类型错误，请检查 JSON 输入')];
+    }
+    final textToCopy = jsonText;
+    final VoidCallback? onCopy =
+        textToCopy == null ? null : () => _copyJson(textToCopy);
     final wide = MediaQuery.sizeOf(context).width >= 920;
     final controls = _ControlPane(child: _buildControls());
     final preview = _JsonPane(
       title: '生成的 Xray 配置',
       subtitle: _summary,
-      issues: _issues,
-      jsonText: _jsonText,
-      onCopy: _copyJson,
+      issues: issues,
+      jsonText: jsonText ?? '请修正 JSON 输入后生成配置。',
+      onCopy: onCopy,
     );
 
     return Scaffold(
@@ -3112,7 +3198,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         title: const Text('Xray 配置生成器'),
         actions: [
           TextButton.icon(
-            onPressed: _copyJson,
+            onPressed: onCopy,
             icon: const Icon(Icons.copy_rounded),
             label: const Text('复制 JSON'),
           ),
@@ -3285,6 +3371,16 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             icon: Icons.settings_input_component_rounded,
             onChanged: _refresh,
           ),
+          _TextInput(
+              controller: _tunWfpController,
+              label: 'TUN autoSystemWfpBlockLeak（dns,misconfigtun）',
+              icon: Icons.edit_rounded,
+              onChanged: _refresh),
+          _CheckRow(
+              value: _tunDnsToGateway,
+              title: 'TUN autoSystemDnsToGateway',
+              icon: Icons.dns_rounded,
+              onChanged: (value) => setState(() => _tunDnsToGateway = value)),
         ] else if (_inbound == InboundKind.wireguard) ...[
           const SizedBox(height: 12),
           _TextInput(
@@ -3542,6 +3638,18 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             onChanged: _refresh,
           ),
         ],
+        if (_inbound == InboundKind.masque) ...[
+          _TextInput(
+              controller: _masqueInboundController,
+              label: 'MASQUE 入站 settings JSON',
+              icon: Icons.edit_rounded,
+              onChanged: _refresh),
+          _TextInput(
+              controller: _masqueTransportController,
+              label: 'MASQUE transport JSON',
+              icon: Icons.edit_rounded,
+              onChanged: _refresh),
+        ],
         if (_inbound == InboundKind.hysteria) ...[
           const SizedBox(height: 12),
           _TextInput(
@@ -3705,7 +3813,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             }
             setState(() {
               _protocol = value;
-              if (_effectiveTransport != _transport) {
+              _security = _effectiveSecurity;
+              if (_protocol != ProxyProtocol.masque &&
+                  _effectiveTransport != _transport) {
                 _transport = _effectiveTransport;
               }
             });
@@ -4152,6 +4262,13 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             onChanged: _refresh,
           ),
         ],
+        if (_protocol == ProxyProtocol.masque) ...[
+          _TextInput(
+              controller: _masqueRemoteDnsController,
+              label: 'MASQUE remoteDNS 逗号分隔',
+              icon: Icons.edit_rounded,
+              onChanged: _refresh),
+        ],
         if (_protocol == ProxyProtocol.hysteria) ...[
           const SizedBox(height: 12),
           _TextInput(
@@ -4182,8 +4299,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         const Divider(height: 28),
         _SectionLabel('传输'),
         DropdownButtonFormField<TransportKind>(
-          key: ValueKey(_transport),
-          initialValue: _transport,
+          key: ValueKey(_effectiveTransport),
+          initialValue: _effectiveTransport,
           decoration: const InputDecoration(
             labelText: '传输方式',
             prefixIcon: Icon(Icons.security_rounded),
@@ -4198,15 +4315,17 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             );
           }).toList(),
           onChanged: (value) {
-            if (value != null && _transportEnabled(value)) {
+            if (value != null &&
+                value != TransportKind.masque &&
+                _transportEnabled(value)) {
               setState(() => _transport = value);
             }
           },
         ),
         const SizedBox(height: 12),
         DropdownButtonFormField<SecurityKind>(
-          key: ValueKey(_security),
-          initialValue: _security,
+          key: ValueKey(_effectiveSecurity),
+          initialValue: _effectiveSecurity,
           decoration: const InputDecoration(
             labelText: '传输安全层',
             prefixIcon: Icon(Icons.shield_rounded),
@@ -4471,13 +4590,15 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                   value: _quicBrutalDisableLossCompensation,
                   title: 'quic brutalDisableLossCompensation',
                   icon: Icons.tune_rounded,
-                  onChanged: (value) => setState(() => _quicBrutalDisableLossCompensation = value),
+                  onChanged: (value) => setState(
+                      () => _quicBrutalDisableLossCompensation = value),
                 ),
                 _CheckRow(
                   value: _quicDisableChromeParrot,
                   title: 'quic disableChromeParrot',
                   icon: Icons.tune_rounded,
-                  onChanged: (value) => setState(() => _quicDisableChromeParrot = value),
+                  onChanged: (value) =>
+                      setState(() => _quicDisableChromeParrot = value),
                 ),
                 _CheckRow(
                   value: _quicDisableGSO,
@@ -4489,7 +4610,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                   value: _quicDisableStatelessReset,
                   title: 'quic disableStatelessReset',
                   icon: Icons.tune_rounded,
-                  onChanged: (value) => setState(() => _quicDisableStatelessReset = value),
+                  onChanged: (value) =>
+                      setState(() => _quicDisableStatelessReset = value),
                 ),
                 _CheckRow(
                   value: _quicDebug,
@@ -5196,6 +5318,18 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                 setState(() => _grpcPermitWithoutStream = value),
           ),
         ],
+        if (_effectiveTransport == TransportKind.masque)
+          _TextInput(
+              controller: _masqueTransportController,
+              label: 'MASQUE transport JSON',
+              icon: Icons.edit_rounded,
+              onChanged: _refresh),
+        if (_effectiveTransport == TransportKind.xdrive)
+          _TextInput(
+              controller: _xdriveController,
+              label: 'XDrive settings JSON',
+              icon: Icons.edit_rounded,
+              onChanged: _refresh),
         if (_usesHysteriaTransportSettings) ...[
           const SizedBox(height: 12),
           _TextInput(
@@ -5260,7 +5394,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
               value: _hysteriaMasqueradeXForwarded,
               title: 'masquerade xForwarded',
               icon: Icons.tune_rounded,
-              onChanged: (value) => setState(() => _hysteriaMasqueradeXForwarded = value),
+              onChanged: (value) =>
+                  setState(() => _hysteriaMasqueradeXForwarded = value),
             ),
             _CheckRow(
               value: _hysteriaMasqueradeInsecure,
@@ -7376,13 +7511,14 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     required ValueChanged<bool> onWireguardChanged,
   }) {
     return [
-      _CheckRow(
-        value: fragmentValue,
-        title: '添加 fragment mask',
-        icon: Icons.call_split_rounded,
-        onChanged: onFragmentChanged,
-      ),
-      if (fragmentValue) ...[
+      if (!udp)
+        _CheckRow(
+          value: fragmentValue,
+          title: '添加 fragment mask',
+          icon: Icons.call_split_rounded,
+          onChanged: onFragmentChanged,
+        ),
+      if (!udp && fragmentValue) ...[
         const SizedBox(height: 12),
         _TextInput(
           controller: _finalMaskFragmentPacketsController,
@@ -7490,22 +7626,22 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         if (xdnsValue) ...[
           const SizedBox(height: 12),
           _TextInput(
-            controller: _finalMaskXdnsDomainController,
-            label: 'xdns domain',
+            controller: _finalMaskXdnsExtraPollController,
+            label: 'xdns extraPoll（0–3）',
             icon: Icons.language_rounded,
             onChanged: _refresh,
           ),
           const SizedBox(height: 12),
           _TextInput(
             controller: _finalMaskXdnsDomainsController,
-            label: 'xdns domains 逗号分隔',
+            label: 'xdns domains JSON 数组',
             icon: Icons.language_rounded,
             onChanged: _refresh,
           ),
           const SizedBox(height: 12),
           _TextInput(
             controller: _finalMaskXdnsResolversController,
-            label: 'xdns resolvers 逗号分隔',
+            label: 'xdns resolvers JSON 数组',
             icon: Icons.dns_rounded,
             onChanged: _refresh,
           ),
@@ -7684,6 +7820,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   }
 
   bool _transportEnabled(TransportKind transport) {
+    if (_protocol == ProxyProtocol.masque) {
+      return transport == TransportKind.masque;
+    }
+    if (transport == TransportKind.masque) return false;
     if (_protocol == ProxyProtocol.http ||
         _protocol == ProxyProtocol.socks ||
         _protocol == ProxyProtocol.wireguard ||
@@ -7696,8 +7836,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   }
 
   bool _securityEnabled(SecurityKind security) {
+    if (_protocol == ProxyProtocol.masque) return security == SecurityKind.tls;
     if (security == SecurityKind.reality) {
-      return _protocol == ProxyProtocol.vless;
+      return _protocol == ProxyProtocol.vless && _realityTransportEnabled;
     }
     return true;
   }
@@ -7735,7 +7876,7 @@ class _JsonPane extends StatelessWidget {
   final String subtitle;
   final List<XrayValidationIssue> issues;
   final String jsonText;
-  final VoidCallback onCopy;
+  final VoidCallback? onCopy;
 
   @override
   Widget build(BuildContext context) {
@@ -7995,6 +8136,7 @@ extension on InboundKind {
       InboundKind.dokodemo => 'Dokodemo-door',
       InboundKind.wireguard => 'WireGuard',
       InboundKind.hysteria => 'Hysteria',
+      InboundKind.masque => 'MASQUE',
       InboundKind.tun => 'TUN',
       InboundKind.raw => 'Raw',
     };
@@ -8012,6 +8154,7 @@ extension on ProxyProtocol {
       ProxyProtocol.socks => 'SOCKS',
       ProxyProtocol.wireguard => 'WireGuard',
       ProxyProtocol.hysteria => 'Hysteria',
+      ProxyProtocol.masque => 'MASQUE',
       ProxyProtocol.loopback => 'Loopback',
       ProxyProtocol.raw => 'Raw',
     };
@@ -8099,6 +8242,8 @@ extension on TransportKind {
       TransportKind.mkcp => 'mKCP',
       TransportKind.kcp => 'KCP',
       TransportKind.hysteria => 'Hysteria',
+      TransportKind.masque => 'MASQUE',
+      TransportKind.xdrive => 'XDrive',
     };
   }
 }

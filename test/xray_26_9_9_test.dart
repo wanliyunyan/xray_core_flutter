@@ -15,7 +15,6 @@ void main() {
             'type': 'udphop',
             'settings': {
               'mode': 'intervalremote,intervallocal',
-              'sockopt': {'mark': 7},
               'remotePorts': '20000-20010',
               'remoteIPs': ['192.0.2.1', '198.51.100.0/24'],
               'interval': '5-10',
@@ -82,44 +81,60 @@ void main() {
         {'protocol': 'freedom', 'proxySettings': {}},
       ],
     });
-    expect(legacy.validate().map((i) => i.path),
-        contains('outbounds[0].proxySettings'));
+    expect(
+      legacy.validate().map((i) => i.path),
+      contains('outbounds[0].proxySettings'),
+    );
     expect(legacy.assertValid, throwsA(isA<XrayConfigValidationException>()));
-    const migrated = XrayConfig(outbounds: [
-      OutboundDetourConfig(
-        protocol: 'freedom',
-        streamSettings:
-            StreamConfig(sockopt: SocketConfig(dialerProxy: 'upstream')),
-      ),
-      OutboundDetourConfig(protocol: 'freedom', tag: 'upstream'),
-    ]);
+    const migrated = XrayConfig(
+      outbounds: [
+        OutboundDetourConfig(
+          protocol: 'freedom',
+          streamSettings: StreamConfig(
+            sockopt: SocketConfig(dialerProxy: 'upstream'),
+          ),
+        ),
+        OutboundDetourConfig(protocol: 'freedom', tag: 'upstream'),
+      ],
+    );
     expect(migrated.validate(), isEmpty);
-    expect((migrated.toJson()['outbounds'] as List).first,
-        isNot(contains('proxySettings')));
+    expect(
+      (migrated.toJson()['outbounds'] as List).first,
+      isNot(contains('proxySettings')),
+    );
   });
 
   test('rejects freedom addressPortStrategy except none', () {
     for (final protocol in ['freedom', 'direct', 'FREEDOM', 'DiReCt']) {
-      final config = XrayConfig(outbounds: [
-        OutboundDetourConfig(
-          protocol: protocol,
-          streamSettings: const StreamConfig(
-            sockopt: SocketConfig(
-                addressPortStrategy: AddressPortStrategy.srvportonly),
+      final config = XrayConfig(
+        outbounds: [
+          OutboundDetourConfig(
+            protocol: protocol,
+            streamSettings: const StreamConfig(
+              sockopt: SocketConfig(
+                addressPortStrategy: AddressPortStrategy.srvportonly,
+              ),
+            ),
           ),
-        ),
-      ]);
-      expect(config.validate().single.path,
-          'outbounds[0].streamSettings.sockopt.addressPortStrategy');
+        ],
+      );
+      expect(
+        config.validate().single.path,
+        'outbounds[0].streamSettings.sockopt.addressPortStrategy',
+      );
     }
-    const valid = XrayConfig(outbounds: [
-      OutboundDetourConfig(
+    const valid = XrayConfig(
+      outbounds: [
+        OutboundDetourConfig(
           protocol: 'freedom',
           streamSettings: StreamConfig(
-            sockopt:
-                SocketConfig(addressPortStrategy: AddressPortStrategy.none),
-          )),
-    ]);
+            sockopt: SocketConfig(
+              addressPortStrategy: AddressPortStrategy.none,
+            ),
+          ),
+        ),
+      ],
+    );
     expect(valid.validate(), isEmpty);
   });
 
@@ -133,9 +148,10 @@ void main() {
     });
     expect(hysteria.toJson(), {'version': 2});
     expect(
-        QuicParamsConfig.fromJson({
-          'udpHop': {'ports': 1000}
-        }).toJson(),
-        isEmpty);
+      QuicParamsConfig.fromJson({
+        'udpHop': {'ports': 1000},
+      }).toJson(),
+      isEmpty,
+    );
   });
 }

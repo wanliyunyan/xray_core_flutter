@@ -37,7 +37,7 @@ FinalMaskSettings _parseFinalMaskSettings(
     'salamander' => Salamander.fromJson(json),
     'sudoku' => Sudoku.fromJson(json),
     'xmc' => XMC.fromJson(json),
-    'xdns' => Xdns.fromJson(json),
+    'xdns' => XDNS.fromJson(json),
     'xicmp' => Xicmp.fromJson(json),
     'realm' => Realm.fromJson(json),
     'udphop' => UDPHop.fromJson(json),

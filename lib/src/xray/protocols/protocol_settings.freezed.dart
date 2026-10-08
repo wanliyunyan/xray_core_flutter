@@ -5928,6 +5928,1123 @@ class __$HysteriaUserConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$MasqueClientConfig {
+  XrayAddress? get address;
+  int? get port;
+  List<String>? get remoteDNS;
+
+  /// Create a copy of MasqueClientConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MasqueClientConfigCopyWith<MasqueClientConfig> get copyWith =>
+      _$MasqueClientConfigCopyWithImpl<MasqueClientConfig>(
+        this as MasqueClientConfig,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as MasqueClientConfig;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MasqueClientConfig &&
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            (identical(other.port, _this.port) || other.port == _this.port) &&
+            const DeepCollectionEquality().equals(
+              other.remoteDNS,
+              _this.remoteDNS,
+            ));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as MasqueClientConfig;
+    return Object.hash(
+      runtimeType,
+      _this.address,
+      _this.port,
+      const DeepCollectionEquality().hash(_this.remoteDNS),
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as MasqueClientConfig;
+    return 'MasqueClientConfig(address: ${_this.address}, port: ${_this.port}, remoteDNS: ${_this.remoteDNS})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MasqueClientConfigCopyWith<$Res> {
+  factory $MasqueClientConfigCopyWith(
+    MasqueClientConfig value,
+    $Res Function(MasqueClientConfig) _then,
+  ) = _$MasqueClientConfigCopyWithImpl;
+  @useResult
+  $Res call({XrayAddress? address, int? port, List<String>? remoteDNS});
+}
+
+/// @nodoc
+class _$MasqueClientConfigCopyWithImpl<$Res>
+    implements $MasqueClientConfigCopyWith<$Res> {
+  _$MasqueClientConfigCopyWithImpl(this._self, this._then);
+
+  final MasqueClientConfig _self;
+  final $Res Function(MasqueClientConfig) _then;
+
+  /// Create a copy of MasqueClientConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = freezed,
+    Object? port = freezed,
+    Object? remoteDNS = freezed,
+  }) {
+    return _then(
+      MasqueClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        remoteDNS: freezed == remoteDNS
+            ? _self.remoteDNS
+            : remoteDNS // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [MasqueClientConfig].
+extension MasqueClientConfigPatterns on MasqueClientConfig {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MasqueClientConfig value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueClientConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MasqueClientConfig value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueClientConfig():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MasqueClientConfig value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueClientConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(XrayAddress? address, int? port, List<String>? remoteDNS)?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueClientConfig() when $default != null:
+        return $default(_that.address, _that.port, _that.remoteDNS);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(XrayAddress? address, int? port, List<String>? remoteDNS)
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueClientConfig():
+        return $default(_that.address, _that.port, _that.remoteDNS);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(XrayAddress? address, int? port, List<String>? remoteDNS)?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueClientConfig() when $default != null:
+        return $default(_that.address, _that.port, _that.remoteDNS);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _MasqueClientConfig extends MasqueClientConfig {
+  const _MasqueClientConfig({this.address, this.port, List<String>? remoteDNS})
+    : _remoteDNS = remoteDNS,
+      super._();
+
+  @override
+  final XrayAddress? address;
+  @override
+  final int? port;
+  final List<String>? _remoteDNS;
+  @override
+  List<String>? get remoteDNS {
+    final value = _remoteDNS;
+    if (value == null) return null;
+    if (_remoteDNS is EqualUnmodifiableListView) return _remoteDNS;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Create a copy of MasqueClientConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MasqueClientConfigCopyWith<_MasqueClientConfig> get copyWith =>
+      __$MasqueClientConfigCopyWithImpl<_MasqueClientConfig>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MasqueClientConfig &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.port, port) || other.port == port) &&
+            const DeepCollectionEquality().equals(other.remoteDNS, _remoteDNS));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      address,
+      port,
+      const DeepCollectionEquality().hash(_remoteDNS),
+    );
+  }
+
+  @override
+  String toString() {
+    return 'MasqueClientConfig(address: $address, port: $port, remoteDNS: $remoteDNS)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MasqueClientConfigCopyWith<$Res>
+    implements $MasqueClientConfigCopyWith<$Res> {
+  factory _$MasqueClientConfigCopyWith(
+    _MasqueClientConfig value,
+    $Res Function(_MasqueClientConfig) _then,
+  ) = __$MasqueClientConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call({XrayAddress? address, int? port, List<String>? remoteDNS});
+}
+
+/// @nodoc
+class __$MasqueClientConfigCopyWithImpl<$Res>
+    implements _$MasqueClientConfigCopyWith<$Res> {
+  __$MasqueClientConfigCopyWithImpl(this._self, this._then);
+
+  final _MasqueClientConfig _self;
+  final $Res Function(_MasqueClientConfig) _then;
+
+  /// Create a copy of MasqueClientConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = freezed,
+    Object? port = freezed,
+    Object? remoteDNS = freezed,
+  }) {
+    return _then(
+      _MasqueClientConfig(
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as XrayAddress?,
+        port: freezed == port
+            ? _self.port
+            : port // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        remoteDNS: freezed == remoteDNS
+            ? _self._remoteDNS
+            : remoteDNS // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+mixin _$MasqueUserConfig {
+  String? get pass;
+  int? get level;
+  String? get email;
+
+  /// Create a copy of MasqueUserConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MasqueUserConfigCopyWith<MasqueUserConfig> get copyWith =>
+      _$MasqueUserConfigCopyWithImpl<MasqueUserConfig>(
+        this as MasqueUserConfig,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as MasqueUserConfig;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MasqueUserConfig &&
+            (identical(other.pass, _this.pass) || other.pass == _this.pass) &&
+            (identical(other.level, _this.level) ||
+                other.level == _this.level) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as MasqueUserConfig;
+    return Object.hash(runtimeType, _this.pass, _this.level, _this.email);
+  }
+
+  @override
+  String toString() {
+    final _this = this as MasqueUserConfig;
+    return 'MasqueUserConfig(pass: ${_this.pass}, level: ${_this.level}, email: ${_this.email})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MasqueUserConfigCopyWith<$Res> {
+  factory $MasqueUserConfigCopyWith(
+    MasqueUserConfig value,
+    $Res Function(MasqueUserConfig) _then,
+  ) = _$MasqueUserConfigCopyWithImpl;
+  @useResult
+  $Res call({String? pass, int? level, String? email});
+}
+
+/// @nodoc
+class _$MasqueUserConfigCopyWithImpl<$Res>
+    implements $MasqueUserConfigCopyWith<$Res> {
+  _$MasqueUserConfigCopyWithImpl(this._self, this._then);
+
+  final MasqueUserConfig _self;
+  final $Res Function(MasqueUserConfig) _then;
+
+  /// Create a copy of MasqueUserConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pass = freezed,
+    Object? level = freezed,
+    Object? email = freezed,
+  }) {
+    return _then(
+      MasqueUserConfig(
+        pass: freezed == pass
+            ? _self.pass
+            : pass // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [MasqueUserConfig].
+extension MasqueUserConfigPatterns on MasqueUserConfig {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MasqueUserConfig value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueUserConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MasqueUserConfig value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueUserConfig():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MasqueUserConfig value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueUserConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? pass, int? level, String? email)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueUserConfig() when $default != null:
+        return $default(_that.pass, _that.level, _that.email);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? pass, int? level, String? email) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueUserConfig():
+        return $default(_that.pass, _that.level, _that.email);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? pass, int? level, String? email)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueUserConfig() when $default != null:
+        return $default(_that.pass, _that.level, _that.email);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _MasqueUserConfig extends MasqueUserConfig {
+  const _MasqueUserConfig({this.pass, this.level, this.email}) : super._();
+
+  @override
+  final String? pass;
+  @override
+  final int? level;
+  @override
+  final String? email;
+
+  /// Create a copy of MasqueUserConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MasqueUserConfigCopyWith<_MasqueUserConfig> get copyWith =>
+      __$MasqueUserConfigCopyWithImpl<_MasqueUserConfig>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MasqueUserConfig &&
+            (identical(other.pass, pass) || other.pass == pass) &&
+            (identical(other.level, level) || other.level == level) &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, pass, level, email);
+  }
+
+  @override
+  String toString() {
+    return 'MasqueUserConfig(pass: $pass, level: $level, email: $email)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MasqueUserConfigCopyWith<$Res>
+    implements $MasqueUserConfigCopyWith<$Res> {
+  factory _$MasqueUserConfigCopyWith(
+    _MasqueUserConfig value,
+    $Res Function(_MasqueUserConfig) _then,
+  ) = __$MasqueUserConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? pass, int? level, String? email});
+}
+
+/// @nodoc
+class __$MasqueUserConfigCopyWithImpl<$Res>
+    implements _$MasqueUserConfigCopyWith<$Res> {
+  __$MasqueUserConfigCopyWithImpl(this._self, this._then);
+
+  final _MasqueUserConfig _self;
+  final $Res Function(_MasqueUserConfig) _then;
+
+  /// Create a copy of MasqueUserConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? pass = freezed,
+    Object? level = freezed,
+    Object? email = freezed,
+  }) {
+    return _then(
+      _MasqueUserConfig(
+        pass: freezed == pass
+            ? _self.pass
+            : pass // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        level: freezed == level
+            ? _self.level
+            : level // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        email: freezed == email
+            ? _self.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+mixin _$MasqueServerConfig {
+  List<MasqueUserConfig>? get users;
+  List<MasqueUserConfig>? get clients;
+  List<String>? get address;
+  int? get mtu;
+
+  /// Create a copy of MasqueServerConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MasqueServerConfigCopyWith<MasqueServerConfig> get copyWith =>
+      _$MasqueServerConfigCopyWithImpl<MasqueServerConfig>(
+        this as MasqueServerConfig,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as MasqueServerConfig;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MasqueServerConfig &&
+            const DeepCollectionEquality().equals(other.users, _this.users) &&
+            const DeepCollectionEquality().equals(
+              other.clients,
+              _this.clients,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.address,
+              _this.address,
+            ) &&
+            (identical(other.mtu, _this.mtu) || other.mtu == _this.mtu));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as MasqueServerConfig;
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_this.users),
+      const DeepCollectionEquality().hash(_this.clients),
+      const DeepCollectionEquality().hash(_this.address),
+      _this.mtu,
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as MasqueServerConfig;
+    return 'MasqueServerConfig(users: ${_this.users}, clients: ${_this.clients}, address: ${_this.address}, mtu: ${_this.mtu})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MasqueServerConfigCopyWith<$Res> {
+  factory $MasqueServerConfigCopyWith(
+    MasqueServerConfig value,
+    $Res Function(MasqueServerConfig) _then,
+  ) = _$MasqueServerConfigCopyWithImpl;
+  @useResult
+  $Res call({
+    List<MasqueUserConfig>? users,
+    List<MasqueUserConfig>? clients,
+    List<String>? address,
+    int? mtu,
+  });
+}
+
+/// @nodoc
+class _$MasqueServerConfigCopyWithImpl<$Res>
+    implements $MasqueServerConfigCopyWith<$Res> {
+  _$MasqueServerConfigCopyWithImpl(this._self, this._then);
+
+  final MasqueServerConfig _self;
+  final $Res Function(MasqueServerConfig) _then;
+
+  /// Create a copy of MasqueServerConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? users = freezed,
+    Object? clients = freezed,
+    Object? address = freezed,
+    Object? mtu = freezed,
+  }) {
+    return _then(
+      MasqueServerConfig(
+        users: freezed == users
+            ? _self.users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<MasqueUserConfig>?,
+        clients: freezed == clients
+            ? _self.clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<MasqueUserConfig>?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [MasqueServerConfig].
+extension MasqueServerConfigPatterns on MasqueServerConfig {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MasqueServerConfig value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueServerConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MasqueServerConfig value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueServerConfig():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MasqueServerConfig value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueServerConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      List<MasqueUserConfig>? users,
+      List<MasqueUserConfig>? clients,
+      List<String>? address,
+      int? mtu,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueServerConfig() when $default != null:
+        return $default(_that.users, _that.clients, _that.address, _that.mtu);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      List<MasqueUserConfig>? users,
+      List<MasqueUserConfig>? clients,
+      List<String>? address,
+      int? mtu,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueServerConfig():
+        return $default(_that.users, _that.clients, _that.address, _that.mtu);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      List<MasqueUserConfig>? users,
+      List<MasqueUserConfig>? clients,
+      List<String>? address,
+      int? mtu,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueServerConfig() when $default != null:
+        return $default(_that.users, _that.clients, _that.address, _that.mtu);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _MasqueServerConfig extends MasqueServerConfig {
+  const _MasqueServerConfig({
+    List<MasqueUserConfig>? users,
+    List<MasqueUserConfig>? clients,
+    List<String>? address,
+    this.mtu,
+  }) : _users = users,
+       _clients = clients,
+       _address = address,
+       super._();
+
+  final List<MasqueUserConfig>? _users;
+  @override
+  List<MasqueUserConfig>? get users {
+    final value = _users;
+    if (value == null) return null;
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<MasqueUserConfig>? _clients;
+  @override
+  List<MasqueUserConfig>? get clients {
+    final value = _clients;
+    if (value == null) return null;
+    if (_clients is EqualUnmodifiableListView) return _clients;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _address;
+  @override
+  List<String>? get address {
+    final value = _address;
+    if (value == null) return null;
+    if (_address is EqualUnmodifiableListView) return _address;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? mtu;
+
+  /// Create a copy of MasqueServerConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MasqueServerConfigCopyWith<_MasqueServerConfig> get copyWith =>
+      __$MasqueServerConfigCopyWithImpl<_MasqueServerConfig>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MasqueServerConfig &&
+            const DeepCollectionEquality().equals(other.users, _users) &&
+            const DeepCollectionEquality().equals(other.clients, _clients) &&
+            const DeepCollectionEquality().equals(other.address, _address) &&
+            (identical(other.mtu, mtu) || other.mtu == mtu));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_users),
+      const DeepCollectionEquality().hash(_clients),
+      const DeepCollectionEquality().hash(_address),
+      mtu,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'MasqueServerConfig(users: $users, clients: $clients, address: $address, mtu: $mtu)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MasqueServerConfigCopyWith<$Res>
+    implements $MasqueServerConfigCopyWith<$Res> {
+  factory _$MasqueServerConfigCopyWith(
+    _MasqueServerConfig value,
+    $Res Function(_MasqueServerConfig) _then,
+  ) = __$MasqueServerConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call({
+    List<MasqueUserConfig>? users,
+    List<MasqueUserConfig>? clients,
+    List<String>? address,
+    int? mtu,
+  });
+}
+
+/// @nodoc
+class __$MasqueServerConfigCopyWithImpl<$Res>
+    implements _$MasqueServerConfigCopyWith<$Res> {
+  __$MasqueServerConfigCopyWithImpl(this._self, this._then);
+
+  final _MasqueServerConfig _self;
+  final $Res Function(_MasqueServerConfig) _then;
+
+  /// Create a copy of MasqueServerConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? users = freezed,
+    Object? clients = freezed,
+    Object? address = freezed,
+    Object? mtu = freezed,
+  }) {
+    return _then(
+      _MasqueServerConfig(
+        users: freezed == users
+            ? _self._users
+            : users // ignore: cast_nullable_to_non_nullable
+                  as List<MasqueUserConfig>?,
+        clients: freezed == clients
+            ? _self._clients
+            : clients // ignore: cast_nullable_to_non_nullable
+                  as List<MasqueUserConfig>?,
+        address: freezed == address
+            ? _self._address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        mtu: freezed == mtu
+            ? _self.mtu
+            : mtu // ignore: cast_nullable_to_non_nullable
+                  as int?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
 mixin _$LoopbackConfig {
   String? get inboundTag;
   SniffingConfig? get sniffing;
@@ -12540,6 +13657,8 @@ mixin _$TunConfig {
   int? get userLevel;
   List<String>? get autoSystemRoutingTable;
   String? get autoOutboundsInterface;
+  bool? get autoSystemDnsToGateway;
+  List<String>? get autoSystemWfpBlockLeak;
 
   /// Create a copy of TunConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -12572,7 +13691,16 @@ mixin _$TunConfig {
                   other.autoOutboundsInterface,
                   _this.autoOutboundsInterface,
                 ) ||
-                other.autoOutboundsInterface == _this.autoOutboundsInterface));
+                other.autoOutboundsInterface == _this.autoOutboundsInterface) &&
+            (identical(
+                  other.autoSystemDnsToGateway,
+                  _this.autoSystemDnsToGateway,
+                ) ||
+                other.autoSystemDnsToGateway == _this.autoSystemDnsToGateway) &&
+            const DeepCollectionEquality().equals(
+              other.autoSystemWfpBlockLeak,
+              _this.autoSystemWfpBlockLeak,
+            ));
   }
 
   @override
@@ -12588,13 +13716,15 @@ mixin _$TunConfig {
       _this.userLevel,
       const DeepCollectionEquality().hash(_this.autoSystemRoutingTable),
       _this.autoOutboundsInterface,
+      _this.autoSystemDnsToGateway,
+      const DeepCollectionEquality().hash(_this.autoSystemWfpBlockLeak),
     );
   }
 
   @override
   String toString() {
     final _this = this as TunConfig;
-    return 'TunConfig(name: ${_this.name}, desc: ${_this.desc}, mtu: ${_this.mtu}, gateway: ${_this.gateway}, dns: ${_this.dns}, userLevel: ${_this.userLevel}, autoSystemRoutingTable: ${_this.autoSystemRoutingTable}, autoOutboundsInterface: ${_this.autoOutboundsInterface})';
+    return 'TunConfig(name: ${_this.name}, desc: ${_this.desc}, mtu: ${_this.mtu}, gateway: ${_this.gateway}, dns: ${_this.dns}, userLevel: ${_this.userLevel}, autoSystemRoutingTable: ${_this.autoSystemRoutingTable}, autoOutboundsInterface: ${_this.autoOutboundsInterface}, autoSystemDnsToGateway: ${_this.autoSystemDnsToGateway}, autoSystemWfpBlockLeak: ${_this.autoSystemWfpBlockLeak})';
   }
 }
 
@@ -12612,6 +13742,8 @@ abstract mixin class $TunConfigCopyWith<$Res> {
     int? userLevel,
     List<String>? autoSystemRoutingTable,
     String? autoOutboundsInterface,
+    bool? autoSystemDnsToGateway,
+    List<String>? autoSystemWfpBlockLeak,
   });
 }
 
@@ -12635,6 +13767,8 @@ class _$TunConfigCopyWithImpl<$Res> implements $TunConfigCopyWith<$Res> {
     Object? userLevel = freezed,
     Object? autoSystemRoutingTable = freezed,
     Object? autoOutboundsInterface = freezed,
+    Object? autoSystemDnsToGateway = freezed,
+    Object? autoSystemWfpBlockLeak = freezed,
   }) {
     return _then(
       TunConfig(
@@ -12670,6 +13804,14 @@ class _$TunConfigCopyWithImpl<$Res> implements $TunConfigCopyWith<$Res> {
             ? _self.autoOutboundsInterface
             : autoOutboundsInterface // ignore: cast_nullable_to_non_nullable
                   as String?,
+        autoSystemDnsToGateway: freezed == autoSystemDnsToGateway
+            ? _self.autoSystemDnsToGateway
+            : autoSystemDnsToGateway // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        autoSystemWfpBlockLeak: freezed == autoSystemWfpBlockLeak
+            ? _self.autoSystemWfpBlockLeak
+            : autoSystemWfpBlockLeak // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
       ),
     );
   }
@@ -12777,6 +13919,8 @@ extension TunConfigPatterns on TunConfig {
       int? userLevel,
       List<String>? autoSystemRoutingTable,
       String? autoOutboundsInterface,
+      bool? autoSystemDnsToGateway,
+      List<String>? autoSystemWfpBlockLeak,
     )?
     $default, {
     required TResult orElse(),
@@ -12793,6 +13937,8 @@ extension TunConfigPatterns on TunConfig {
           _that.userLevel,
           _that.autoSystemRoutingTable,
           _that.autoOutboundsInterface,
+          _that.autoSystemDnsToGateway,
+          _that.autoSystemWfpBlockLeak,
         );
       case _:
         return orElse();
@@ -12823,6 +13969,8 @@ extension TunConfigPatterns on TunConfig {
       int? userLevel,
       List<String>? autoSystemRoutingTable,
       String? autoOutboundsInterface,
+      bool? autoSystemDnsToGateway,
+      List<String>? autoSystemWfpBlockLeak,
     )
     $default,
   ) {
@@ -12838,6 +13986,8 @@ extension TunConfigPatterns on TunConfig {
           _that.userLevel,
           _that.autoSystemRoutingTable,
           _that.autoOutboundsInterface,
+          _that.autoSystemDnsToGateway,
+          _that.autoSystemWfpBlockLeak,
         );
       case _:
         throw StateError('Unexpected subclass');
@@ -12867,6 +14017,8 @@ extension TunConfigPatterns on TunConfig {
       int? userLevel,
       List<String>? autoSystemRoutingTable,
       String? autoOutboundsInterface,
+      bool? autoSystemDnsToGateway,
+      List<String>? autoSystemWfpBlockLeak,
     )?
     $default,
   ) {
@@ -12882,6 +14034,8 @@ extension TunConfigPatterns on TunConfig {
           _that.userLevel,
           _that.autoSystemRoutingTable,
           _that.autoOutboundsInterface,
+          _that.autoSystemDnsToGateway,
+          _that.autoSystemWfpBlockLeak,
         );
       case _:
         return null;
@@ -12901,9 +14055,12 @@ class _TunConfig extends TunConfig {
     this.userLevel,
     List<String>? autoSystemRoutingTable,
     this.autoOutboundsInterface,
+    this.autoSystemDnsToGateway,
+    List<String>? autoSystemWfpBlockLeak,
   }) : _gateway = gateway,
        _dns = dns,
        _autoSystemRoutingTable = autoSystemRoutingTable,
+       _autoSystemWfpBlockLeak = autoSystemWfpBlockLeak,
        super._();
 
   @override
@@ -12949,6 +14106,18 @@ class _TunConfig extends TunConfig {
 
   @override
   final String? autoOutboundsInterface;
+  @override
+  final bool? autoSystemDnsToGateway;
+  final List<String>? _autoSystemWfpBlockLeak;
+  @override
+  List<String>? get autoSystemWfpBlockLeak {
+    final value = _autoSystemWfpBlockLeak;
+    if (value == null) return null;
+    if (_autoSystemWfpBlockLeak is EqualUnmodifiableListView)
+      return _autoSystemWfpBlockLeak;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// Create a copy of TunConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -12975,7 +14144,13 @@ class _TunConfig extends TunConfig {
               _autoSystemRoutingTable,
             ) &&
             (identical(other.autoOutboundsInterface, autoOutboundsInterface) ||
-                other.autoOutboundsInterface == autoOutboundsInterface));
+                other.autoOutboundsInterface == autoOutboundsInterface) &&
+            (identical(other.autoSystemDnsToGateway, autoSystemDnsToGateway) ||
+                other.autoSystemDnsToGateway == autoSystemDnsToGateway) &&
+            const DeepCollectionEquality().equals(
+              other.autoSystemWfpBlockLeak,
+              _autoSystemWfpBlockLeak,
+            ));
   }
 
   @override
@@ -12990,12 +14165,14 @@ class _TunConfig extends TunConfig {
       userLevel,
       const DeepCollectionEquality().hash(_autoSystemRoutingTable),
       autoOutboundsInterface,
+      autoSystemDnsToGateway,
+      const DeepCollectionEquality().hash(_autoSystemWfpBlockLeak),
     );
   }
 
   @override
   String toString() {
-    return 'TunConfig(name: $name, desc: $desc, mtu: $mtu, gateway: $gateway, dns: $dns, userLevel: $userLevel, autoSystemRoutingTable: $autoSystemRoutingTable, autoOutboundsInterface: $autoOutboundsInterface)';
+    return 'TunConfig(name: $name, desc: $desc, mtu: $mtu, gateway: $gateway, dns: $dns, userLevel: $userLevel, autoSystemRoutingTable: $autoSystemRoutingTable, autoOutboundsInterface: $autoOutboundsInterface, autoSystemDnsToGateway: $autoSystemDnsToGateway, autoSystemWfpBlockLeak: $autoSystemWfpBlockLeak)';
   }
 }
 
@@ -13017,6 +14194,8 @@ abstract mixin class _$TunConfigCopyWith<$Res>
     int? userLevel,
     List<String>? autoSystemRoutingTable,
     String? autoOutboundsInterface,
+    bool? autoSystemDnsToGateway,
+    List<String>? autoSystemWfpBlockLeak,
   });
 }
 
@@ -13040,6 +14219,8 @@ class __$TunConfigCopyWithImpl<$Res> implements _$TunConfigCopyWith<$Res> {
     Object? userLevel = freezed,
     Object? autoSystemRoutingTable = freezed,
     Object? autoOutboundsInterface = freezed,
+    Object? autoSystemDnsToGateway = freezed,
+    Object? autoSystemWfpBlockLeak = freezed,
   }) {
     return _then(
       _TunConfig(
@@ -13075,6 +14256,14 @@ class __$TunConfigCopyWithImpl<$Res> implements _$TunConfigCopyWith<$Res> {
             ? _self.autoOutboundsInterface
             : autoOutboundsInterface // ignore: cast_nullable_to_non_nullable
                   as String?,
+        autoSystemDnsToGateway: freezed == autoSystemDnsToGateway
+            ? _self.autoSystemDnsToGateway
+            : autoSystemDnsToGateway // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        autoSystemWfpBlockLeak: freezed == autoSystemWfpBlockLeak
+            ? _self._autoSystemWfpBlockLeak
+            : autoSystemWfpBlockLeak // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
       ),
     );
   }
@@ -18404,7 +19593,6 @@ mixin _$WireGuardConfig {
   @JsonKey(name: 'mtu')
   int? get mtu;
   List<int>? get reserved;
-  XrayTargetStrategy? get domainStrategy;
 
   /// Create a copy of WireGuardConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -18439,9 +19627,7 @@ mixin _$WireGuardConfig {
             const DeepCollectionEquality().equals(
               other.reserved,
               _this.reserved,
-            ) &&
-            (identical(other.domainStrategy, _this.domainStrategy) ||
-                other.domainStrategy == _this.domainStrategy));
+            ));
   }
 
   @override
@@ -18456,14 +19642,13 @@ mixin _$WireGuardConfig {
       const DeepCollectionEquality().hash(_this.peers),
       _this.mtu,
       const DeepCollectionEquality().hash(_this.reserved),
-      _this.domainStrategy,
     );
   }
 
   @override
   String toString() {
     final _this = this as WireGuardConfig;
-    return 'WireGuardConfig(noKernelTun: ${_this.noKernelTun}, secretKey: ${_this.secretKey}, address: ${_this.address}, remoteDNS: ${_this.remoteDNS}, peers: ${_this.peers}, mtu: ${_this.mtu}, reserved: ${_this.reserved}, domainStrategy: ${_this.domainStrategy})';
+    return 'WireGuardConfig(noKernelTun: ${_this.noKernelTun}, secretKey: ${_this.secretKey}, address: ${_this.address}, remoteDNS: ${_this.remoteDNS}, peers: ${_this.peers}, mtu: ${_this.mtu}, reserved: ${_this.reserved})';
   }
 }
 
@@ -18482,7 +19667,6 @@ abstract mixin class $WireGuardConfigCopyWith<$Res> {
     List<WireGuardPeerConfig>? peers,
     @JsonKey(name: 'mtu') int? mtu,
     List<int>? reserved,
-    XrayTargetStrategy? domainStrategy,
   });
 }
 
@@ -18506,7 +19690,6 @@ class _$WireGuardConfigCopyWithImpl<$Res>
     Object? peers = freezed,
     Object? mtu = freezed,
     Object? reserved = freezed,
-    Object? domainStrategy = freezed,
   }) {
     return _then(
       WireGuardConfig(
@@ -18538,10 +19721,6 @@ class _$WireGuardConfigCopyWithImpl<$Res>
             ? _self.reserved
             : reserved // ignore: cast_nullable_to_non_nullable
                   as List<int>?,
-        domainStrategy: freezed == domainStrategy
-            ? _self.domainStrategy
-            : domainStrategy // ignore: cast_nullable_to_non_nullable
-                  as XrayTargetStrategy?,
       ),
     );
   }
@@ -18648,7 +19827,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
       List<WireGuardPeerConfig>? peers,
       @JsonKey(name: 'mtu') int? mtu,
       List<int>? reserved,
-      XrayTargetStrategy? domainStrategy,
     )?
     $default, {
     required TResult orElse(),
@@ -18664,7 +19842,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
           _that.peers,
           _that.mtu,
           _that.reserved,
-          _that.domainStrategy,
         );
       case _:
         return orElse();
@@ -18694,7 +19871,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
       List<WireGuardPeerConfig>? peers,
       @JsonKey(name: 'mtu') int? mtu,
       List<int>? reserved,
-      XrayTargetStrategy? domainStrategy,
     )
     $default,
   ) {
@@ -18709,7 +19885,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
           _that.peers,
           _that.mtu,
           _that.reserved,
-          _that.domainStrategy,
         );
       case _:
         throw StateError('Unexpected subclass');
@@ -18738,7 +19913,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
       List<WireGuardPeerConfig>? peers,
       @JsonKey(name: 'mtu') int? mtu,
       List<int>? reserved,
-      XrayTargetStrategy? domainStrategy,
     )?
     $default,
   ) {
@@ -18753,7 +19927,6 @@ extension WireGuardConfigPatterns on WireGuardConfig {
           _that.peers,
           _that.mtu,
           _that.reserved,
-          _that.domainStrategy,
         );
       case _:
         return null;
@@ -18772,7 +19945,6 @@ class _WireGuardConfig extends WireGuardConfig {
     List<WireGuardPeerConfig>? peers,
     @JsonKey(name: 'mtu') this.mtu,
     List<int>? reserved,
-    this.domainStrategy,
   }) : _address = address,
        _remoteDNS = remoteDNS,
        _peers = peers,
@@ -18826,9 +19998,6 @@ class _WireGuardConfig extends WireGuardConfig {
     return EqualUnmodifiableListView(value);
   }
 
-  @override
-  final XrayTargetStrategy? domainStrategy;
-
   /// Create a copy of WireGuardConfig
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -18853,9 +20022,7 @@ class _WireGuardConfig extends WireGuardConfig {
             ) &&
             const DeepCollectionEquality().equals(other.peers, _peers) &&
             (identical(other.mtu, mtu) || other.mtu == mtu) &&
-            const DeepCollectionEquality().equals(other.reserved, _reserved) &&
-            (identical(other.domainStrategy, domainStrategy) ||
-                other.domainStrategy == domainStrategy));
+            const DeepCollectionEquality().equals(other.reserved, _reserved));
   }
 
   @override
@@ -18869,13 +20036,12 @@ class _WireGuardConfig extends WireGuardConfig {
       const DeepCollectionEquality().hash(_peers),
       mtu,
       const DeepCollectionEquality().hash(_reserved),
-      domainStrategy,
     );
   }
 
   @override
   String toString() {
-    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, remoteDNS: $remoteDNS, peers: $peers, mtu: $mtu, reserved: $reserved, domainStrategy: $domainStrategy)';
+    return 'WireGuardConfig(noKernelTun: $noKernelTun, secretKey: $secretKey, address: $address, remoteDNS: $remoteDNS, peers: $peers, mtu: $mtu, reserved: $reserved)';
   }
 }
 
@@ -18896,7 +20062,6 @@ abstract mixin class _$WireGuardConfigCopyWith<$Res>
     List<WireGuardPeerConfig>? peers,
     @JsonKey(name: 'mtu') int? mtu,
     List<int>? reserved,
-    XrayTargetStrategy? domainStrategy,
   });
 }
 
@@ -18920,7 +20085,6 @@ class __$WireGuardConfigCopyWithImpl<$Res>
     Object? peers = freezed,
     Object? mtu = freezed,
     Object? reserved = freezed,
-    Object? domainStrategy = freezed,
   }) {
     return _then(
       _WireGuardConfig(
@@ -18952,10 +20116,6 @@ class __$WireGuardConfigCopyWithImpl<$Res>
             ? _self._reserved
             : reserved // ignore: cast_nullable_to_non_nullable
                   as List<int>?,
-        domainStrategy: freezed == domainStrategy
-            ? _self.domainStrategy
-            : domainStrategy // ignore: cast_nullable_to_non_nullable
-                  as XrayTargetStrategy?,
       ),
     );
   }

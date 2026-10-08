@@ -1,28 +1,32 @@
 part of 'transport.dart';
 
 @freezed
-abstract class Xdns with _$Xdns implements FinalMaskSettings {
-  const factory Xdns({
-    Object? domain,
-    List<String>? domains,
-    List<String>? resolvers,
-  }) = _Xdns;
+abstract class XDNS with _$XDNS implements FinalMaskSettings {
+  const factory XDNS({
+    List<XDNSDomain>? domains,
+    List<XDNSResolver>? resolvers,
+    int? extraPoll,
+  }) = _XDNS;
 
-  factory Xdns.fromJson(Object? json) {
-    final map = asJsonMap(json, 'xdns mask');
-    return Xdns(
-      domain: map['domain'],
-      domains: (map['domains'] as List?)?.cast<String>(),
-      resolvers: (map['resolvers'] as List?)?.cast<String>(),
+  factory XDNS.fromJson(Object? json) {
+    final map = asJsonMap(json, 'XDNS');
+    return XDNS(
+      domains: map['domains'] == null
+          ? null
+          : asJsonList(map['domains'], XDNSDomain.fromJson),
+      resolvers: map['resolvers'] == null
+          ? null
+          : asJsonList(map['resolvers'], XDNSResolver.fromJson),
+      extraPoll: map['extraPoll'] as int?,
     );
   }
 
-  const Xdns._();
+  const XDNS._();
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-    'domain': domain,
-    'domains': domains,
-    'resolvers': resolvers,
+    'domains': domains?.map((item) => item.toJson()).toList(),
+    'resolvers': resolvers?.map((item) => item.toJson()).toList(),
+    'extraPoll': extraPoll,
   });
 }

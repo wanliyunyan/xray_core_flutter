@@ -34,7 +34,7 @@ void _expectPaths(StreamConfig stream, List<String> paths) {
 }
 
 void main() {
-  test('UDPHop rejects outer dialerProxy even with raw mask settings', () {
+  test('UDPHop accepts outer dialerProxy with typed and raw settings', () {
     for (final mask in [
       _hop,
       const Mask(
@@ -50,12 +50,12 @@ void main() {
           sockopt: const SocketConfig(dialerProxy: 'upstream'),
           finalmask: FinalMask(udp: [mask]),
         ),
-        ['outbounds[1].streamSettings.finalmask.udp[0].type'],
+        [],
       );
     }
   });
 
-  test('UDPHop allows its own proxy and absent or empty outer proxy', () {
+  test('UDPHop allows absent or empty outer proxy', () {
     for (final sockopt in <SocketConfig?>[
       null,
       const SocketConfig(),
@@ -64,15 +64,7 @@ void main() {
       _expectPaths(
         StreamConfig(
           sockopt: sockopt,
-          finalmask: FinalMask(
-            udp: [
-              _hop.copyWith(
-                settings: (_hop.settings! as UDPHop).copyWith(
-                  sockopt: const SocketConfig(dialerProxy: 'upstream'),
-                ),
-              ),
-            ],
-          ),
+          finalmask: FinalMask(udp: [_hop]),
         ),
         [],
       );
@@ -124,40 +116,9 @@ void main() {
             ),
           ),
         ),
-        tag == 'upstream'
-            ? [
-                'outbounds[1].streamSettings.xhttpSettings.downloadSettings'
-                    '.xhttpSettings.downloadSettings.finalmask.udp[0].type',
-              ]
-            : [],
+        [],
       );
     }
-  });
-
-  test('overriding download sockopt still validates mask-owned sockopt', () {
-    _expectPaths(
-      StreamConfig(
-        sockopt: const SocketConfig(penetrate: true),
-        xhttpSettings: SplitHTTPConfig(
-          downloadSettings: StreamConfig(
-            sockopt: const SocketConfig(dialerProxy: 'ignored'),
-            finalmask: FinalMask(
-              udp: [
-                _hop.copyWith(
-                  settings: (_hop.settings! as UDPHop).copyWith(
-                    sockopt: const SocketConfig(dialerProxy: 'missing'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      [
-        'outbounds[1].streamSettings.xhttpSettings.downloadSettings'
-            '.finalmask.udp[0].settings.sockopt.dialerProxy',
-      ],
-    );
   });
 
   test('invalid inherited proxy is reported once at its source', () {

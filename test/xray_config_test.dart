@@ -680,28 +680,34 @@ void main() {
     });
   });
 
-  test('preserves removed outbound proxy settings for migration diagnostics', () {
-    final config = XrayConfig.fromJson({
-      'outbounds': [
+  test(
+    'preserves removed outbound proxy settings for migration diagnostics',
+    () {
+      final config = XrayConfig.fromJson({
+        'outbounds': [
+          {
+            'protocol': 'freedom',
+            'tag': 'direct-via-proxy',
+            'settings': {},
+            'proxySettings': {'tag': 'upstream', 'transportLayer': true},
+          },
+        ],
+      });
+
+      expect(
+        config.outbounds?.single.proxySettings,
+        isA<Map<String, dynamic>>(),
+      );
+      expect(config.toJson()['outbounds'], [
         {
           'protocol': 'freedom',
           'tag': 'direct-via-proxy',
           'settings': {},
           'proxySettings': {'tag': 'upstream', 'transportLayer': true},
         },
-      ],
-    });
-
-    expect(config.outbounds?.single.proxySettings, isA<Map<String, dynamic>>());
-    expect(config.toJson()['outbounds'], [
-      {
-        'protocol': 'freedom',
-        'tag': 'direct-via-proxy',
-        'settings': {},
-        'proxySettings': {'tag': 'upstream', 'transportLayer': true},
-      },
-    ]);
-  });
+      ]);
+    },
+  );
 
   test('imports top-level app configs from json', () {
     final config = XrayConfig.fromJson({
@@ -1627,10 +1633,7 @@ void main() {
       ],
       'password': 'test-password',
     });
-    final tun = TunConfig.fromJson({
-      'name': 'utun10',
-      'desc': 'Wintun',
-    });
+    final tun = TunConfig.fromJson({'name': 'utun10', 'desc': 'Wintun'});
 
     expect(xmc.profiles.single.username, 'TestUser');
     expect(xmc.toJson(), {
@@ -1676,18 +1679,12 @@ void main() {
         'uplinkCapacity': 50,
         'header': {'type': 'none'},
       },
-      'hysteriaSettings': {
-        'version': 2,
-        'auth': 'token',
-      },
+      'hysteriaSettings': {'version': 2, 'auth': 'token'},
       'finalmask': {
         'tcp': [
           {
             'type': 'fragment',
-            'settings': {
-              'packets': 'tlshello',
-              'length': '10-20',
-            },
+            'settings': {'packets': 'tlshello', 'length': '10-20'},
           },
           {
             'type': 'sudoku',
@@ -1707,7 +1704,12 @@ void main() {
           {
             'type': 'xdns',
             'settings': {
-              'resolvers': ['https+udp://1.1.1.1/dns-query'],
+              'resolvers': [
+                {
+                  'type': 'udp',
+                  'settings': {'addr': '1.1.1.1:53'},
+                },
+              ],
             },
           },
           {
@@ -1739,7 +1741,7 @@ void main() {
     expect(stream.finalmask?.tcp?.first.settings, isA<FragmentMask>());
     expect(stream.finalmask?.tcp?[1].settings, isA<Sudoku>());
     expect(stream.finalmask?.udp?.first.settings, isA<NoiseMask>());
-    expect(stream.finalmask?.udp?[1].settings, isA<Xdns>());
+    expect(stream.finalmask?.udp?[1].settings, isA<XDNS>());
     expect(stream.finalmask?.udp?[2].settings, isA<Salamander>());
     expect(stream.finalmask?.udp?[3].settings, isA<Xicmp>());
     expect(stream.finalmask?.udp?[4].settings, isA<Realm>());
@@ -1750,10 +1752,7 @@ void main() {
         'tcp': [
           {
             'type': 'fragment',
-            'settings': {
-              'packets': 'tlshello',
-              'length': '10-20',
-            },
+            'settings': {'packets': 'tlshello', 'length': '10-20'},
           },
           {
             'type': 'sudoku',
@@ -1773,7 +1772,12 @@ void main() {
           {
             'type': 'xdns',
             'settings': {
-              'resolvers': ['https+udp://1.1.1.1/dns-query'],
+              'resolvers': [
+                {
+                  'type': 'udp',
+                  'settings': {'addr': '1.1.1.1:53'},
+                },
+              ],
             },
           },
           {
@@ -1803,10 +1807,7 @@ void main() {
         'uplinkCapacity': 50,
         'header': {'type': 'none'},
       },
-      'hysteriaSettings': {
-        'version': 2,
-        'auth': 'token',
-      },
+      'hysteriaSettings': {'version': 2, 'auth': 'token'},
     });
   });
 
@@ -1841,8 +1842,18 @@ void main() {
           {
             'type': 'xdns',
             'settings': {
-              'domains': ['geosite:private'],
-              'resolvers': ['https+udp://1.1.1.1/dns-query'],
+              'domains': [
+                {
+                  'name': 'tunnel.example.com',
+                  'types': [16],
+                },
+              ],
+              'resolvers': [
+                {
+                  'type': 'udp',
+                  'settings': {'addr': '1.1.1.1:53'},
+                },
+              ],
             },
           },
         ],
@@ -1857,7 +1868,7 @@ void main() {
 
     expect(stream.tlsSettings?.certs?.single, isA<TLSCertConfig>());
     expect(stream.hysteriaSettings?.masquerade, isA<Masquerade>());
-    expect(stream.finalmask?.udp?.single.settings, isA<Xdns>());
+    expect(stream.finalmask?.udp?.single.settings, isA<XDNS>());
     expect(stream.toJson(), {
       'network': 'hysteria',
       'security': 'tls',
@@ -1866,8 +1877,18 @@ void main() {
           {
             'type': 'xdns',
             'settings': {
-              'domains': ['geosite:private'],
-              'resolvers': ['https+udp://1.1.1.1/dns-query'],
+              'domains': [
+                {
+                  'name': 'tunnel.example.com',
+                  'types': [16],
+                },
+              ],
+              'resolvers': [
+                {
+                  'type': 'udp',
+                  'settings': {'addr': '1.1.1.1:53'},
+                },
+              ],
             },
           },
         ],
@@ -2398,8 +2419,13 @@ void main() {
                 ),
                 Mask(
                   type: 'xdns',
-                  settings: const Xdns(
-                    resolvers: ['https+udp://1.1.1.1/dns-query'],
+                  settings: const XDNS(
+                    resolvers: [
+                      XDNSResolver(
+                        type: 'udp',
+                        settings: XDNSResolverUDP(addr: '1.1.1.1:53'),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -2493,7 +2519,12 @@ void main() {
                 {
                   'type': 'xdns',
                   'settings': {
-                    'resolvers': ['https+udp://1.1.1.1/dns-query'],
+                    'resolvers': [
+                      {
+                        'type': 'udp',
+                        'settings': {'addr': '1.1.1.1:53'},
+                      },
+                    ],
                   },
                 },
               ],

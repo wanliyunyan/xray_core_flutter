@@ -20,16 +20,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig(
-        protocol: protocol.toJson(),
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig(
+    protocol: protocol.toJson(),
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.socks({
     required XrayPortList port,
@@ -38,16 +37,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.socks,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.socks,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.http({
     required XrayPortList port,
@@ -56,16 +54,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.http,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.http,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.tunnel({
     required XrayPortList port,
@@ -74,16 +71,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.tunnel,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.tunnel,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.dokodemoDoor({
     required XrayPortList port,
@@ -92,16 +88,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.dokodemoDoor,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.dokodemoDoor,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.vless({
     required XrayPortList port,
@@ -110,16 +105,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.vless,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.vless,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.vmess({
     required XrayPortList port,
@@ -128,16 +122,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.vmess,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.vmess,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.trojan({
     required XrayPortList port,
@@ -146,16 +139,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.trojan,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.trojan,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.shadowsocks({
     required XrayPortList port,
@@ -164,16 +156,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.shadowsocks,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.shadowsocks,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.mixed({
     required XrayPortList port,
@@ -182,30 +173,28 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.mixed,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.mixed,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.tun({
     required TunConfig settings,
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.tun,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.tun,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.wireguard({
     required XrayPortList port,
@@ -214,16 +203,15 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.wireguard,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.wireguard,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.hysteria({
     required XrayPortList port,
@@ -232,16 +220,32 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     String? tag,
     StreamConfig? streamSettings,
     SniffingConfig? sniffing,
-  }) =>
-      InboundDetourConfig.fromProtocol(
-        protocol: XrayInboundProtocol.hysteria,
-        port: port,
-        listen: listen,
-        settings: settings,
-        tag: tag,
-        streamSettings: streamSettings,
-        sniffing: sniffing,
-      );
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.hysteria,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
+
+  factory InboundDetourConfig.masque({
+    required XrayPortList port,
+    required MasqueServerConfig settings,
+    XrayAddress? listen,
+    String? tag,
+    StreamConfig? streamSettings,
+    SniffingConfig? sniffing,
+  }) => InboundDetourConfig.fromProtocol(
+    protocol: XrayInboundProtocol.masque,
+    port: port,
+    listen: listen,
+    settings: settings,
+    tag: tag,
+    streamSettings: streamSettings,
+    sniffing: sniffing,
+  );
 
   factory InboundDetourConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'inbound');
@@ -250,8 +254,9 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
     return InboundDetourConfig(
       protocol: protocol,
       port: map['port'] == null ? null : XrayPortList.fromJson(map['port']),
-      listen:
-          map['listen'] == null ? null : XrayAddress.fromJson(map['listen']),
+      listen: map['listen'] == null
+          ? null
+          : XrayAddress.fromJson(map['listen']),
       settings: settingsJson == null
           ? null
           : _parseInboundSettings(protocol, settingsJson),
@@ -268,14 +273,14 @@ abstract class InboundDetourConfig with _$InboundDetourConfig {
   const InboundDetourConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-        'protocol': protocol,
-        'port': port?.toJson(),
-        'listen': listen?.toJson(),
-        'settings': settings?.toJson(),
-        'tag': tag,
-        'streamSettings': streamSettings?.toJson(),
-        'sniffing': sniffing?.toJson(),
-      });
+    'protocol': protocol,
+    'port': port?.toJson(),
+    'listen': listen?.toJson(),
+    'settings': settings?.toJson(),
+    'tag': tag,
+    'streamSettings': streamSettings?.toJson(),
+    'sniffing': sniffing?.toJson(),
+  });
 }
 
 XrayInboundSettings _parseInboundSettings(String protocol, Object? json) {
@@ -289,6 +294,7 @@ XrayInboundSettings _parseInboundSettings(String protocol, Object? json) {
     'trojan' => TrojanServerConfig.fromJson(json),
     'wireguard' => WireGuardConfig.fromJson(json),
     'hysteria' => HysteriaServerConfig.fromJson(json),
+    'masque' => MasqueServerConfig.fromJson(json),
     'tun' => TunConfig.fromJson(json),
     _ => XrayRawInboundSettings(asJsonMap(json, '$protocol settings')),
   };

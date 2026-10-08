@@ -3,7 +3,6 @@ part of 'transport.dart';
 @freezed
 abstract class UDPHop with _$UDPHop implements FinalMaskSettings {
   const factory UDPHop({
-    SocketConfig? sockopt,
     String? mode,
     XrayPortList? remotePorts,
     List<String>? remoteIPs,
@@ -13,8 +12,6 @@ abstract class UDPHop with _$UDPHop implements FinalMaskSettings {
   factory UDPHop.fromJson(Object? json) {
     final map = asJsonMap(json, 'udp hop');
     return UDPHop(
-      sockopt:
-          map['sockopt'] == null ? null : SocketConfig.fromJson(map['sockopt']),
       mode: map['mode'] as String?,
       remotePorts: map['remotePorts'] == null
           ? null
@@ -30,10 +27,9 @@ abstract class UDPHop with _$UDPHop implements FinalMaskSettings {
 
   @override
   Map<String, dynamic> toJson() => withoutNulls({
-        'sockopt': sockopt?.toJson(),
-        'mode': mode,
-        'remotePorts': remotePorts?.toJson(),
-        'remoteIPs': remoteIPs,
-        'interval': interval?.toJson(),
-      });
+    'mode': mode,
+    'remotePorts': remotePorts?.toJson(),
+    'remoteIPs': remoteIPs,
+    'interval': interval?.toJson(),
+  });
 }
