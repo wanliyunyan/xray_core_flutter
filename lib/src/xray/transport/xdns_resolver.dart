@@ -2,12 +2,17 @@ part of 'transport.dart';
 
 @freezed
 abstract class XDNSResolver with _$XDNSResolver {
-  const factory XDNSResolver({String? type, XDNSResolverSettings? settings}) =
-      _XDNSResolver;
+  const factory XDNSResolver({
+    List<String>? addrs,
+    @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
+    @Deprecated('Use addrs, matching Xray 26.10.10')
+    XDNSResolverSettings? settings,
+  }) = _XDNSResolver;
 
   factory XDNSResolver.fromJson(Object? json) {
     final map = asJsonMap(json, 'XDNSResolver');
     return XDNSResolver(
+      addrs: (map['addrs'] as List?)?.cast<String>(),
       type: map['type'] as String?,
       settings: map['settings'] == null
           ? null
@@ -20,8 +25,10 @@ abstract class XDNSResolver with _$XDNSResolver {
 
   const XDNSResolver._();
 
-  Map<String, dynamic> toJson() =>
-      withoutNulls({'type': type, 'settings': settings?.toJson()});
+  Map<String, dynamic> toJson() {
+    if (addrs != null) return withoutNulls({'addrs': addrs});
+    return withoutNulls({'type': type, 'settings': settings?.toJson()});
+  }
 }
 
 abstract interface class XDNSResolverSettings {

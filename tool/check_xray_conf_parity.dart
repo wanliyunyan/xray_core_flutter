@@ -84,6 +84,9 @@ const allowedUntaggedConfigKeys = {
   // JSON field names live on the generated proto struct outside infra/conf.
   'regexp',
   'match',
+  // Deprecated XDNS resolver constructors remain source-compatible with
+  // pre-26.10.10 configs; new JSON uses resolver addrs.
+  'addr',
 };
 
 const goStructClassAliases = {
@@ -96,6 +99,11 @@ const allowedClassExtraKeys = {
   // TCP header config includes the loader discriminator alongside the concrete
   // Authenticator settings.
   'Authenticator': {'type'},
+  // 26.10.10 replaced the typed XDNS resolver union with addrs. Keep the
+  // legacy fields available for source compatibility while serializing the
+  // new shape when addrs is provided.
+  'XDNSDomain': {'name'},
+  'XDNSResolver': {'type', 'settings'},
 };
 
 Map<String, List<String>> collectGoJsonTags(Directory goConf) {
@@ -346,6 +354,7 @@ const creatorLoaderSpecs = [
     label: 'xdns resolver',
     goLoader: 'xdnsLoader',
     dartFunction: '_parseXDNSResolverSettings',
+    allowDartSuperset: true,
   ),
   CreatorLoaderSpec(
     label: 'inbound',

@@ -1,6 +1,32 @@
 part of 'transport.dart';
 
 @freezed
+abstract class MasqueWarpConfig with _$MasqueWarpConfig {
+  const factory MasqueWarpConfig({
+    String? privateKey,
+    String? publicKey,
+    List<String>? address,
+  }) = _MasqueWarpConfig;
+
+  factory MasqueWarpConfig.fromJson(Object? json) {
+    final map = asJsonMap(json, 'MasqueWarpConfig');
+    return MasqueWarpConfig(
+      privateKey: map['privateKey'] as String?,
+      publicKey: map['publicKey'] as String?,
+      address: (map['address'] as List?)?.cast<String>(),
+    );
+  }
+
+  const MasqueWarpConfig._();
+
+  Map<String, dynamic> toJson() => withoutNulls({
+    'privateKey': privateKey,
+    'publicKey': publicKey,
+    'address': address,
+  });
+}
+
+@freezed
 abstract class MasqueConfig with _$MasqueConfig {
   const factory MasqueConfig({
     String? host,
@@ -8,6 +34,7 @@ abstract class MasqueConfig with _$MasqueConfig {
     String? user,
     String? pass,
     Map<String, String>? headers,
+    MasqueWarpConfig? warp,
   }) = _MasqueConfig;
 
   factory MasqueConfig.fromJson(Object? json) {
@@ -20,6 +47,7 @@ abstract class MasqueConfig with _$MasqueConfig {
       headers: map['headers'] == null
           ? null
           : asJsonMap(map['headers'], 'headers').cast<String, String>(),
+      warp: map['warp'] == null ? null : MasqueWarpConfig.fromJson(map['warp']),
     );
   }
 
@@ -31,5 +59,6 @@ abstract class MasqueConfig with _$MasqueConfig {
     'user': user,
     'pass': pass,
     'headers': headers,
+    'warp': warp?.toJson(),
   });
 }

@@ -24,11 +24,11 @@ cd example
 ./run_macos_app.sh
 ```
 
-The form tracks Xray v26.9.30, including MASQUE, XDrive, TUN DNS/leak options
-and structured XDNS domains/resolvers. MASQUE and XDrive have JSON settings
-editors so all upstream fields can be configured. XDNS arrays use objects such
-as `{"name":"tunnel.example.com","types":[16]}` and
-`{"type":"udp","settings":{"addr":"1.1.1.1:53"}}`.
+The form tracks Xray v26.10.10, including MASQUE WARP, XDrive, TUN DNS/leak
+options and structured XDNS domains/resolvers. MASQUE and XDrive have JSON
+settings editors so all upstream fields can be configured. XDNS arrays use
+objects such as `{"names":["tunnel.example.com"]}` and
+`{"addrs":["1.1.1.1:53"]}`.
 
 The example generates configuration JSON; it does not bundle or run Xray Core.
 Before using the exported configuration, replace the sample server addresses,

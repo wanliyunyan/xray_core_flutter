@@ -6,6 +6,7 @@ abstract class RouterConfig with _$RouterConfig {
     @JsonKey(name: 'rules') List<RouterRule>? ruleList,
     RouterDomainStrategy? domainStrategy,
     List<BalancingRule>? balancers,
+    String? script,
   }) = _RouterConfig;
 
   factory RouterConfig.fromJson(Object? json) {
@@ -20,6 +21,7 @@ abstract class RouterConfig with _$RouterConfig {
       balancers: map['balancers'] == null
           ? null
           : asJsonList(map['balancers'], BalancingRule.fromJson),
+      script: map['script'] as String?,
     );
   }
 
@@ -29,5 +31,6 @@ abstract class RouterConfig with _$RouterConfig {
     'rules': ruleList?.map((item) => item.toJson()).toList(),
     'domainStrategy': domainStrategy?.toJson(),
     'balancers': balancers?.map((item) => item.toJson()).toList(),
+    'script': script,
   });
 }

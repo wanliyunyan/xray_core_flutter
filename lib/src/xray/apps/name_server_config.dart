@@ -4,6 +4,7 @@ part of 'apps.dart';
 abstract class NameServerConfig with _$NameServerConfig {
   const factory NameServerConfig({
     required XrayAddress address,
+    String? id,
     XrayAddress? clientIp,
     int? port,
     bool? skipFallback,
@@ -30,6 +31,7 @@ abstract class NameServerConfig with _$NameServerConfig {
     final map = asJsonMap(json, 'name server');
     return NameServerConfig(
       address: XrayAddress.fromJson(map['address']),
+      id: map['id'] as String?,
       clientIp: map['clientIp'] == null
           ? null
           : XrayAddress.fromJson(map['clientIp']),
@@ -68,6 +70,7 @@ abstract class NameServerConfig with _$NameServerConfig {
     }
     return withoutNulls({
       'address': address.toJson(),
+      'id': id,
       'clientIp': clientIp?.toJson(),
       'port': port,
       'skipFallback': skipFallback,

@@ -54,7 +54,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## 配置覆盖和校验
 
-当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.9.30。仓库内的 parity
+当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.10。仓库内的 parity
 checker 会核对 Go JSON tag、结构字段、Dart 额外 key 和 config creator loader
 ID：
 
@@ -63,7 +63,7 @@ dart run tool/check_xray_conf_parity.dart ../Xray-core/infra/conf
 ```
 
 `validate()` 会检查 IP 监听的端口，以及公网 VLESS/Trojan 出站的传输安全要求，
-私有地址范围按 v26.9.30 Core 的内置规则判断。TUN 和 Unix socket 监听不要求端口。
+私有地址范围按 v26.10.10 Core 的内置规则判断。TUN 和 Unix socket 监听不要求端口。
 普通域名不能用作监听地址（`localhost` 除外）。VLESS 入站用户的 `reverse.tag`
 可用于 `dialerProxy`、路由出站及负载均衡回退引用；`clients` 优先于 `users`。
 VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
@@ -72,7 +72,14 @@ VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
 原始协议 settings 仍遵循 `allowRawSettings` 选项。校验通过不代表已执行 Core
 的全部配置构建及运行时检查。
 
-## v26.9.30 新配置
+## v26.10.10 新配置
+
+DNS nameserver 支持 `id`，DNS 和 routing 支持 Lua `script`，TLS 支持
+`useSystemCA`。MASQUE transport 支持 `warp`（`privateKey`、`publicKey` 和
+IPv4/IPv6 `address`）。XDNS 的新 JSON 结构使用 `names` 数组和 `addrs` 数组，
+省略 `types` 时由 Core 使用 A、CNAME、TXT 和 AAAA 默认值。
+
+以下配置能力继续保留：
 
 新增 MASQUE 入站/出站（`MasqueServerConfig` / `MasqueClientConfig`）、
 `MasqueConfig` 传输和 `XDriveConfig` 传输。MASQUE 使用
@@ -90,7 +97,7 @@ UDPHop 也需要此位置，但只支持出站，因此不能与 XICMP 放在同
 
 ## 从旧版升级
 
-升级到 0.7.0 时：
+升级到 v0.7.0 时：
 
 - 删除 `WireGuardConfig.domainStrategy`。
 - 将 `UDPHop.sockopt` 移到外层 `StreamConfig.sockopt`；现在支持外层
@@ -100,9 +107,9 @@ UDPHop 也需要此位置，但只支持出站，因此不能与 XICMP 放在同
 
 ```dart
 const XDNS(
-  domains: [XDNSDomain(name: 'tunnel.example.com', types: [16])],
+  domains: [XDNSDomain(names: ['tunnel.example.com'], types: [16])],
   resolvers: [
-    XDNSResolver(type: 'udp', settings: XDNSResolverUDP(addr: '1.1.1.1:53')),
+    XDNSResolver(addrs: ['1.1.1.1:53']),
   ],
   extraPoll: 1,
 );

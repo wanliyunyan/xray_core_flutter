@@ -55,7 +55,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## Config Parity
 
-The Dart models currently track Xray-core `infra/conf` v26.9.30. The parity
+The Dart models currently track Xray-core `infra/conf` v26.10.10. The parity
 checker compares Go JSON tags, struct fields, unexpected Dart keys, and config
 creator loader IDs:
 
@@ -64,7 +64,7 @@ dart run tool/check_xray_conf_parity.dart ../Xray-core/infra/conf
 ```
 
 `validate()` checks ports for IP listeners and transport security for public
-VLESS/Trojan targets, using Core v26.9.30's built-in private address rules. TUN
+VLESS/Trojan targets, using Core v26.10.10's built-in private address rules. TUN
 and Unix socket listeners do not require ports. Core resolves `env:` addresses
 on the target device; this package defers their port and public-target checks.
 Raw protocol settings still follow `allowRawSettings`. Successful validation
@@ -86,7 +86,14 @@ Move Hysteria congestion and bandwidth options to `FinalMask.quicParams`.
 Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
 `FinalMask.udp`, using `mode`, `remotePorts`, and `interval`.
 
-## v26.9.30 and Migration to 0.7.0
+## v26.10.10 and Migration to v0.8.0
+
+DNS nameservers support `id`; DNS and routing support Lua `script`; TLS supports
+`useSystemCA`; and MASQUE transport supports `warp` keys and IPv4/IPv6
+addresses. XDNS uses `names` and resolver `addrs`, with Core defaulting omitted
+record types to A, CNAME, TXT and AAAA.
+
+## v26.9.30 and Migration to v0.7.0
 
 MASQUE now has typed inbound/outbound settings (`MasqueServerConfig`,
 `MasqueClientConfig`), users and `MasqueConfig` transport settings. Use
@@ -113,13 +120,13 @@ Breaking migrations:
 - Move `UDPHop.sockopt` to `StreamConfig.sockopt`. Outer `dialerProxy` is now
   supported. Omitted/zero intervals use Core's 30-second default.
 - Replace `Xdns` with `XDNS`. Replace string arrays with structured domains and
-  resolvers; the old `domain` field is no longer supported:
+  resolvers; use the `names` and `addrs` fields for Xray 26.10.10 JSON:
 
 ```dart
 const XDNS(
-  domains: [XDNSDomain(name: 'tunnel.example.com', types: [16])],
+  domains: [XDNSDomain(names: ['tunnel.example.com'], types: [16])],
   resolvers: [
-    XDNSResolver(type: 'udp', settings: XDNSResolverUDP(addr: '1.1.1.1:53')),
+    XDNSResolver(addrs: ['1.1.1.1:53']),
   ],
   extraPoll: 1,
 );

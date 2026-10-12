@@ -1,4 +1,15 @@
-## 0.7.0
+## v0.8.0
+
+- Synced typed config models and parity checks with Xray-core
+  `infra/conf` v26.10.10.
+- Added DNS nameserver IDs, DNS/routing Lua scripts, TLS `useSystemCA`, and
+  MASQUE WARP transport settings.
+- Updated XDNS JSON support to `names` and resolver `addrs`, including Core's
+  default record types; legacy typed resolver constructors remain readable for
+  source compatibility.
+- Added 26.10.10 round-trip and validation regression coverage.
+
+## v0.7.0
 
 - Synced typed config models and loader parity checks with Xray-core
   `infra/conf` v26.9.30.
@@ -38,7 +49,7 @@
 - Require XICMP to be the last UDP mask on both clients and servers, including
   nested download streams; keep it last when exporting example form selections.
 
-## 0.6.0
+## v0.6.0
 
 - Respect XHTTP `sockopt.penetrate` when validating download streams. Reject
   UDPHop wrapping a stream with `sockopt.dialerProxy`, while allowing proxy
@@ -95,7 +106,7 @@
 - Removed retired controls from the example; use its socket options and
   finalmask editors for the supported configuration paths.
 
-## 0.5.0
+## v0.5.0
 
 - Focused the public package on Flutter/Dart config models, JSON conversion,
   and validation.
@@ -104,13 +115,13 @@
 - Added the canonical `package:xray_core_flutter/xray_core_flutter.dart`
   library entrypoint.
 
-## 0.3.1
+## v0.3.1
 
 - Synced the typed Dart config models with Xray-core `infra/conf` v26.7.11.
 - Added coverage for the new root `env`, stream `method`, SplitHTTP session ID, Loopback sniffing, WireGuard peer metadata, Fragment multi-range, and XMC finalmask fields.
 - Removed fields no longer present in Xray-core `infra/conf` v26.7.11, including Shadowsocks UoT options, WireGuard workers, and removed TLS ECH force query / peer-name-list options.
 
-## 0.3.0
+## v0.3.0
 
 - Synced the typed Dart config models with Xray-core `infra/conf` v26.6.1.
 - Added coverage for newly exposed protocol, transport, app, finalmask, and helper config fields.
@@ -118,7 +129,7 @@
 - Added broader realistic config round-trip and contract tests for Xray-compatible JSON output.
 - Updated the example into a visual Xray config builder app.
 
-## 0.1.0
+## v0.1.0
 
 - Initial open source release.
 - Added strongly typed Dart models for Xray `infra/conf` JSON configuration.

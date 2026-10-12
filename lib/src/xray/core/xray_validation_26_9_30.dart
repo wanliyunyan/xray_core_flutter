@@ -183,6 +183,40 @@ void _validateNewTransportSettings(
         issue('masqueSettings.headers', 'invalid HTTP header: ${header.key}');
       }
     }
+    final warp = masque.warp;
+    if (warp != null) {
+      if (credentials) {
+        issue(
+          'masqueSettings.warp',
+          'user and pass cannot be combined with warp',
+        );
+      }
+      if ((warp.privateKey ?? '').isEmpty) {
+        issue('masqueSettings.warp.privateKey', 'private key required');
+      }
+      if ((warp.publicKey ?? '').isEmpty) {
+        issue('masqueSettings.warp.publicKey', 'public key required');
+      }
+      final addresses = warp.address ?? const <String>[];
+      if (addresses.isEmpty) {
+        issue('masqueSettings.warp.address', 'at least one address required');
+      }
+      final families = <bool>{};
+      for (var i = 0; i < addresses.length; i++) {
+        final address = addresses[i];
+        if (!_isIPOrPrefix(address)) {
+          issue(
+            'masqueSettings.warp.address[$i]',
+            'expected IP address or prefix',
+          );
+        } else if (!families.add(address.contains(':'))) {
+          issue(
+            'masqueSettings.warp.address[$i]',
+            'at most one address per IP family',
+          );
+        }
+      }
+    }
   }
   final drive =
       stream.xdriveSettings ??
@@ -242,6 +276,26 @@ void _validateNewTransportSettings(
       }
       for (var j = 0; j < resolvers.length; j++) {
         final resolver = resolvers[j];
+        final addrs = resolver.addrs;
+        if (addrs != null) {
+          if (!inbound && addrs.isEmpty) {
+            issue(
+              '$prefix.resolvers[$j].addrs',
+              'at least one resolver address required',
+            );
+          }
+          if (!inbound) {
+            for (var k = 0; k < addrs.length; k++) {
+              if (!_validXDNSResolverDestination(addrs[k])) {
+                issue(
+                  '$prefix.resolvers[$j].addrs[$k]',
+                  'expected tcp:// or udp:// host with optional port 0–65535',
+                );
+              }
+            }
+          }
+          continue;
+        }
         final type = resolver.type?.toLowerCase();
         if (type != 'tcp' && type != 'udp') {
           issue('$prefix.resolvers[$j].type', 'expected tcp or udp');
@@ -326,6 +380,19 @@ bool _validXDNSResolverAddress(String address) {
   return number != null && number >= 0 && number <= 65535;
 }
 
+bool _validXDNSResolverDestination(String address) {
+  final value = address.contains('://') ? address : 'udp://$address';
+  final uri = Uri.tryParse(value);
+  if (uri == null || (uri.scheme != 'tcp' && uri.scheme != 'udp')) return false;
+  if (uri.host.isEmpty ||
+      uri.userInfo.isNotEmpty ||
+      uri.query.isNotEmpty ||
+      uri.fragment.isNotEmpty) {
+    return false;
+  }
+  return uri.port >= 0 && uri.port <= 65535;
+}
+
 // Go's strings.Fields/TrimSpace use Unicode White_Space, whereas RE2's \s
 // only matches ASCII space, tab, CR, LF and form feed. Dart's \s/trim differ.
 final _goWhitespace = RegExp(
@@ -386,7 +453,7 @@ bool _validNoiseExpression(String expression) {
       expression.substring(end).replaceAll(_goWhitespace, '').isEmpty;
 }
 
-// Mirrors infra/conf.XDNS.Build and xdns.NewDomain. Defaults and uint16
+// Mirrors infra/conf.XDNS.Build in v26.10.10 and xdns.NewDomain. Defaults and uint16
 // conversions are used for validation only; the exported JSON stays intact.
 void _validateXDNSDomain(
   XDNSDomain domain,
@@ -395,10 +462,18 @@ void _validateXDNSDomain(
 ) {
   void issue(String key, String message) =>
       issues.add(XrayValidationIssue('$path.$key', message));
-  final name = domain.name ?? '';
-  final nameLength = utf8.encode('$name.').length;
-  if (name.contains('..') || nameLength > 255) {
-    issue('name', 'invalid XDNS domain name');
+  final legacyName = domain.names == null;
+  final names =
+      domain.names ?? (domain.name == null ? const <String>[] : [domain.name!]);
+  if (names.isEmpty) {
+    issue(legacyName ? 'name' : 'names', 'at least one domain name required');
+  }
+  for (var i = 0; i < names.length; i++) {
+    final current = names[i];
+    final nameLength = utf8.encode('$current.').length;
+    if (current.contains('..') || nameLength > 255) {
+      issue(legacyName ? 'name' : 'names[$i]', 'invalid XDNS domain name');
+    }
   }
   final lenLimit = (domain.lenLimit ?? 0) == 0 ? 255 : domain.lenLimit!;
   final labelLimit = (domain.labelLimit ?? 0) == 0 ? 63 : domain.labelLimit!;
@@ -409,18 +484,24 @@ void _validateXDNSDomain(
     issue('labelLimit', 'expected value between 0 and 63');
   }
   if (lenLimit >= 0 && lenLimit <= 255 && labelLimit > 0 && labelLimit <= 63) {
-    final available = lenLimit - nameLength - 1;
-    final remainder = available % (labelLimit + 1);
-    final encodedBytes = available < 0
-        ? 0
-        : (available ~/ (labelLimit + 1)) * labelLimit +
-              (remainder > 1 ? remainder - 1 : 0);
-    if (available < 0 || encodedBytes * 5 ~/ 8 < 17) {
-      issue('lenLimit', 'domain limits leave fewer than 17 payload bytes');
+    for (var i = 0; i < names.length; i++) {
+      final nameLength = utf8.encode('${names[i]}.').length;
+      final available = lenLimit - nameLength - 1;
+      final remainder = available % (labelLimit + 1);
+      final encodedBytes = available < 0
+          ? 0
+          : (available ~/ (labelLimit + 1)) * labelLimit +
+                (remainder > 1 ? remainder - 1 : 0);
+      if (available < 0 || encodedBytes * 5 ~/ 8 < 17) {
+        issue('lenLimit', 'domain limits leave fewer than 17 payload bytes');
+      }
     }
   }
   final types = domain.types ?? const <int>[];
-  if (types.isEmpty) issue('types', 'at least one DNS record type required');
+  // Xray 26.10.10 defaults omitted types to A, CNAME, TXT and AAAA.
+  if (types.isEmpty && legacyName) {
+    issue('types', 'at least one DNS record type required');
+  }
   for (var i = 0; i < types.length; i++) {
     if (types[i] < -0x80000000 ||
         types[i] > 0x7fffffff ||

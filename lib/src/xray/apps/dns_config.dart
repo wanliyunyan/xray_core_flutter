@@ -4,6 +4,7 @@ part of 'apps.dart';
 abstract class DNSConfig with _$DNSConfig {
   const factory DNSConfig({
     List<NameServerConfig>? servers,
+    String? script,
     HostsWrapper? hosts,
     XrayAddress? clientIp,
     String? tag,
@@ -19,6 +20,7 @@ abstract class DNSConfig with _$DNSConfig {
 
   factory DNSConfig.withServers(
     List<NameServerConfig> servers, {
+    String? script,
     HostsWrapper? hosts,
     XrayAddress? clientIp,
     String? tag,
@@ -32,6 +34,7 @@ abstract class DNSConfig with _$DNSConfig {
     bool? useSystemHosts,
   }) => DNSConfig(
     servers: servers,
+    script: script,
     hosts: hosts,
     clientIp: clientIp,
     tag: tag,
@@ -51,6 +54,7 @@ abstract class DNSConfig with _$DNSConfig {
       servers: map['servers'] == null
           ? null
           : asJsonList(map['servers'], NameServerConfig.fromJson),
+      script: map['script'] as String?,
       hosts: map['hosts'] == null ? null : HostsWrapper.fromJson(map['hosts']),
       clientIp: map['clientIp'] == null
           ? null
@@ -73,6 +77,7 @@ abstract class DNSConfig with _$DNSConfig {
 
   Map<String, dynamic> toJson() => withoutNulls({
     'servers': servers?.map((item) => item.toJson()).toList(),
+    'script': script,
     'hosts': hosts?.toJson(),
     'clientIp': clientIp?.toJson(),
     'tag': tag,

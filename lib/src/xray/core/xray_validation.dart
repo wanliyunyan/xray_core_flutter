@@ -360,7 +360,7 @@ bool _isCoreSocketPath(String address) {
       RegExp(r'^(?:[a-zA-Z]:[\\/]|\\\\[^\\]+\\[^\\]+)').hasMatch(address);
 }
 
-// Mirrors common/net.ParseAddress in v26.9.30 using dart:core for Flutter web.
+// Mirrors common/net.ParseAddress in v26.10.10 using dart:core for Flutter web.
 String _normalizeCoreAddress(String address) {
   if (address.startsWith('[') && address.endsWith(']')) {
     address = address.substring(1, address.length - 1);

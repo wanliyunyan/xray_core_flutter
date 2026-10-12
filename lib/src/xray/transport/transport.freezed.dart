@@ -18046,6 +18046,7 @@ mixin _$TLSConfig {
   String? get echConfigList;
   @JsonKey(name: 'echSockopt')
   SocketConfig? get echSocketSettings;
+  bool? get useSystemCA;
 
   /// Create a copy of TLSConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -18103,13 +18104,15 @@ mixin _$TLSConfig {
             (identical(other.echConfigList, _this.echConfigList) ||
                 other.echConfigList == _this.echConfigList) &&
             (identical(other.echSocketSettings, _this.echSocketSettings) ||
-                other.echSocketSettings == _this.echSocketSettings));
+                other.echSocketSettings == _this.echSocketSettings) &&
+            (identical(other.useSystemCA, _this.useSystemCA) ||
+                other.useSystemCA == _this.useSystemCA));
   }
 
   @override
   int get hashCode {
     final _this = this as TLSConfig;
-    return Object.hash(
+    return Object.hashAll([
       runtimeType,
       _this.allowInsecure,
       const DeepCollectionEquality().hash(_this.certs),
@@ -18129,13 +18132,14 @@ mixin _$TLSConfig {
       _this.echServerKeys,
       _this.echConfigList,
       _this.echSocketSettings,
-    );
+      _this.useSystemCA,
+    ]);
   }
 
   @override
   String toString() {
     final _this = this as TLSConfig;
-    return 'TLSConfig(allowInsecure: ${_this.allowInsecure}, certs: ${_this.certs}, serverName: ${_this.serverName}, alpn: ${_this.alpn}, enableSessionResumption: ${_this.enableSessionResumption}, disableSystemRoot: ${_this.disableSystemRoot}, minVersion: ${_this.minVersion}, maxVersion: ${_this.maxVersion}, cipherSuites: ${_this.cipherSuites}, fingerprint: ${_this.fingerprint}, rejectUnknownSNI: ${_this.rejectUnknownSNI}, curvePreferences: ${_this.curvePreferences}, masterKeyLog: ${_this.masterKeyLog}, pinnedPeerCertSha256: ${_this.pinnedPeerCertSha256}, verifyPeerCertByName: ${_this.verifyPeerCertByName}, echServerKeys: ${_this.echServerKeys}, echConfigList: ${_this.echConfigList}, echSocketSettings: ${_this.echSocketSettings})';
+    return 'TLSConfig(allowInsecure: ${_this.allowInsecure}, certs: ${_this.certs}, serverName: ${_this.serverName}, alpn: ${_this.alpn}, enableSessionResumption: ${_this.enableSessionResumption}, disableSystemRoot: ${_this.disableSystemRoot}, minVersion: ${_this.minVersion}, maxVersion: ${_this.maxVersion}, cipherSuites: ${_this.cipherSuites}, fingerprint: ${_this.fingerprint}, rejectUnknownSNI: ${_this.rejectUnknownSNI}, curvePreferences: ${_this.curvePreferences}, masterKeyLog: ${_this.masterKeyLog}, pinnedPeerCertSha256: ${_this.pinnedPeerCertSha256}, verifyPeerCertByName: ${_this.verifyPeerCertByName}, echServerKeys: ${_this.echServerKeys}, echConfigList: ${_this.echConfigList}, echSocketSettings: ${_this.echSocketSettings}, useSystemCA: ${_this.useSystemCA})';
   }
 }
 
@@ -18163,6 +18167,7 @@ abstract mixin class $TLSConfigCopyWith<$Res> {
     String? echServerKeys,
     String? echConfigList,
     @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+    bool? useSystemCA,
   });
 
   $SocketConfigCopyWith<$Res>? get echSocketSettings;
@@ -18198,6 +18203,7 @@ class _$TLSConfigCopyWithImpl<$Res> implements $TLSConfigCopyWith<$Res> {
     Object? echServerKeys = freezed,
     Object? echConfigList = freezed,
     Object? echSocketSettings = freezed,
+    Object? useSystemCA = freezed,
   }) {
     return _then(
       TLSConfig(
@@ -18273,6 +18279,10 @@ class _$TLSConfigCopyWithImpl<$Res> implements $TLSConfigCopyWith<$Res> {
             ? _self.echSocketSettings
             : echSocketSettings // ignore: cast_nullable_to_non_nullable
                   as SocketConfig?,
+        useSystemCA: freezed == useSystemCA
+            ? _self.useSystemCA
+            : useSystemCA // ignore: cast_nullable_to_non_nullable
+                  as bool?,
       ),
     );
   }
@@ -18404,6 +18414,7 @@ extension TLSConfigPatterns on TLSConfig {
       String? echServerKeys,
       String? echConfigList,
       @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+      bool? useSystemCA,
     )?
     $default, {
     required TResult orElse(),
@@ -18430,6 +18441,7 @@ extension TLSConfigPatterns on TLSConfig {
           _that.echServerKeys,
           _that.echConfigList,
           _that.echSocketSettings,
+          _that.useSystemCA,
         );
       case _:
         return orElse();
@@ -18470,6 +18482,7 @@ extension TLSConfigPatterns on TLSConfig {
       String? echServerKeys,
       String? echConfigList,
       @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+      bool? useSystemCA,
     )
     $default,
   ) {
@@ -18495,6 +18508,7 @@ extension TLSConfigPatterns on TLSConfig {
           _that.echServerKeys,
           _that.echConfigList,
           _that.echSocketSettings,
+          _that.useSystemCA,
         );
       case _:
         throw StateError('Unexpected subclass');
@@ -18534,6 +18548,7 @@ extension TLSConfigPatterns on TLSConfig {
       String? echServerKeys,
       String? echConfigList,
       @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+      bool? useSystemCA,
     )?
     $default,
   ) {
@@ -18559,6 +18574,7 @@ extension TLSConfigPatterns on TLSConfig {
           _that.echServerKeys,
           _that.echConfigList,
           _that.echSocketSettings,
+          _that.useSystemCA,
         );
       case _:
         return null;
@@ -18588,6 +18604,7 @@ class _TLSConfig extends TLSConfig {
     this.echServerKeys,
     this.echConfigList,
     @JsonKey(name: 'echSockopt') this.echSocketSettings,
+    this.useSystemCA,
   }) : _certs = certs,
        super._();
 
@@ -18639,6 +18656,8 @@ class _TLSConfig extends TLSConfig {
   @override
   @JsonKey(name: 'echSockopt')
   final SocketConfig? echSocketSettings;
+  @override
+  final bool? useSystemCA;
 
   /// Create a copy of TLSConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -18689,12 +18708,14 @@ class _TLSConfig extends TLSConfig {
             (identical(other.echConfigList, echConfigList) ||
                 other.echConfigList == echConfigList) &&
             (identical(other.echSocketSettings, echSocketSettings) ||
-                other.echSocketSettings == echSocketSettings));
+                other.echSocketSettings == echSocketSettings) &&
+            (identical(other.useSystemCA, useSystemCA) ||
+                other.useSystemCA == useSystemCA));
   }
 
   @override
   int get hashCode {
-    return Object.hash(
+    return Object.hashAll([
       runtimeType,
       allowInsecure,
       const DeepCollectionEquality().hash(_certs),
@@ -18714,12 +18735,13 @@ class _TLSConfig extends TLSConfig {
       echServerKeys,
       echConfigList,
       echSocketSettings,
-    );
+      useSystemCA,
+    ]);
   }
 
   @override
   String toString() {
-    return 'TLSConfig(allowInsecure: $allowInsecure, certs: $certs, serverName: $serverName, alpn: $alpn, enableSessionResumption: $enableSessionResumption, disableSystemRoot: $disableSystemRoot, minVersion: $minVersion, maxVersion: $maxVersion, cipherSuites: $cipherSuites, fingerprint: $fingerprint, rejectUnknownSNI: $rejectUnknownSNI, curvePreferences: $curvePreferences, masterKeyLog: $masterKeyLog, pinnedPeerCertSha256: $pinnedPeerCertSha256, verifyPeerCertByName: $verifyPeerCertByName, echServerKeys: $echServerKeys, echConfigList: $echConfigList, echSocketSettings: $echSocketSettings)';
+    return 'TLSConfig(allowInsecure: $allowInsecure, certs: $certs, serverName: $serverName, alpn: $alpn, enableSessionResumption: $enableSessionResumption, disableSystemRoot: $disableSystemRoot, minVersion: $minVersion, maxVersion: $maxVersion, cipherSuites: $cipherSuites, fingerprint: $fingerprint, rejectUnknownSNI: $rejectUnknownSNI, curvePreferences: $curvePreferences, masterKeyLog: $masterKeyLog, pinnedPeerCertSha256: $pinnedPeerCertSha256, verifyPeerCertByName: $verifyPeerCertByName, echServerKeys: $echServerKeys, echConfigList: $echConfigList, echSocketSettings: $echSocketSettings, useSystemCA: $useSystemCA)';
   }
 }
 
@@ -18751,6 +18773,7 @@ abstract mixin class _$TLSConfigCopyWith<$Res>
     String? echServerKeys,
     String? echConfigList,
     @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+    bool? useSystemCA,
   });
 
   @override
@@ -18787,6 +18810,7 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
     Object? echServerKeys = freezed,
     Object? echConfigList = freezed,
     Object? echSocketSettings = freezed,
+    Object? useSystemCA = freezed,
   }) {
     return _then(
       _TLSConfig(
@@ -18862,6 +18886,10 @@ class __$TLSConfigCopyWithImpl<$Res> implements _$TLSConfigCopyWith<$Res> {
             ? _self.echSocketSettings
             : echSocketSettings // ignore: cast_nullable_to_non_nullable
                   as SocketConfig?,
+        useSystemCA: freezed == useSystemCA
+            ? _self.useSystemCA
+            : useSystemCA // ignore: cast_nullable_to_non_nullable
+                  as bool?,
       ),
     );
   }
@@ -22415,12 +22443,389 @@ class __$XmuxConfigCopyWithImpl<$Res> implements _$XmuxConfigCopyWith<$Res> {
 }
 
 /// @nodoc
+mixin _$MasqueWarpConfig {
+  String? get privateKey;
+  String? get publicKey;
+  List<String>? get address;
+
+  /// Create a copy of MasqueWarpConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MasqueWarpConfigCopyWith<MasqueWarpConfig> get copyWith =>
+      _$MasqueWarpConfigCopyWithImpl<MasqueWarpConfig>(
+        this as MasqueWarpConfig,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as MasqueWarpConfig;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MasqueWarpConfig &&
+            (identical(other.privateKey, _this.privateKey) ||
+                other.privateKey == _this.privateKey) &&
+            (identical(other.publicKey, _this.publicKey) ||
+                other.publicKey == _this.publicKey) &&
+            const DeepCollectionEquality().equals(
+              other.address,
+              _this.address,
+            ));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as MasqueWarpConfig;
+    return Object.hash(
+      runtimeType,
+      _this.privateKey,
+      _this.publicKey,
+      const DeepCollectionEquality().hash(_this.address),
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as MasqueWarpConfig;
+    return 'MasqueWarpConfig(privateKey: ${_this.privateKey}, publicKey: ${_this.publicKey}, address: ${_this.address})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MasqueWarpConfigCopyWith<$Res> {
+  factory $MasqueWarpConfigCopyWith(
+    MasqueWarpConfig value,
+    $Res Function(MasqueWarpConfig) _then,
+  ) = _$MasqueWarpConfigCopyWithImpl;
+  @useResult
+  $Res call({String? privateKey, String? publicKey, List<String>? address});
+}
+
+/// @nodoc
+class _$MasqueWarpConfigCopyWithImpl<$Res>
+    implements $MasqueWarpConfigCopyWith<$Res> {
+  _$MasqueWarpConfigCopyWithImpl(this._self, this._then);
+
+  final MasqueWarpConfig _self;
+  final $Res Function(MasqueWarpConfig) _then;
+
+  /// Create a copy of MasqueWarpConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? privateKey = freezed,
+    Object? publicKey = freezed,
+    Object? address = freezed,
+  }) {
+    return _then(
+      MasqueWarpConfig(
+        privateKey: freezed == privateKey
+            ? _self.privateKey
+            : privateKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        publicKey: freezed == publicKey
+            ? _self.publicKey
+            : publicKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        address: freezed == address
+            ? _self.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [MasqueWarpConfig].
+extension MasqueWarpConfigPatterns on MasqueWarpConfig {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MasqueWarpConfig value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueWarpConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MasqueWarpConfig value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueWarpConfig():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MasqueWarpConfig value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueWarpConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      String? privateKey,
+      String? publicKey,
+      List<String>? address,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueWarpConfig() when $default != null:
+        return $default(_that.privateKey, _that.publicKey, _that.address);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      String? privateKey,
+      String? publicKey,
+      List<String>? address,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueWarpConfig():
+        return $default(_that.privateKey, _that.publicKey, _that.address);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      String? privateKey,
+      String? publicKey,
+      List<String>? address,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MasqueWarpConfig() when $default != null:
+        return $default(_that.privateKey, _that.publicKey, _that.address);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _MasqueWarpConfig extends MasqueWarpConfig {
+  const _MasqueWarpConfig({
+    this.privateKey,
+    this.publicKey,
+    List<String>? address,
+  }) : _address = address,
+       super._();
+
+  @override
+  final String? privateKey;
+  @override
+  final String? publicKey;
+  final List<String>? _address;
+  @override
+  List<String>? get address {
+    final value = _address;
+    if (value == null) return null;
+    if (_address is EqualUnmodifiableListView) return _address;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Create a copy of MasqueWarpConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MasqueWarpConfigCopyWith<_MasqueWarpConfig> get copyWith =>
+      __$MasqueWarpConfigCopyWithImpl<_MasqueWarpConfig>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MasqueWarpConfig &&
+            (identical(other.privateKey, privateKey) ||
+                other.privateKey == privateKey) &&
+            (identical(other.publicKey, publicKey) ||
+                other.publicKey == publicKey) &&
+            const DeepCollectionEquality().equals(other.address, _address));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      privateKey,
+      publicKey,
+      const DeepCollectionEquality().hash(_address),
+    );
+  }
+
+  @override
+  String toString() {
+    return 'MasqueWarpConfig(privateKey: $privateKey, publicKey: $publicKey, address: $address)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MasqueWarpConfigCopyWith<$Res>
+    implements $MasqueWarpConfigCopyWith<$Res> {
+  factory _$MasqueWarpConfigCopyWith(
+    _MasqueWarpConfig value,
+    $Res Function(_MasqueWarpConfig) _then,
+  ) = __$MasqueWarpConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? privateKey, String? publicKey, List<String>? address});
+}
+
+/// @nodoc
+class __$MasqueWarpConfigCopyWithImpl<$Res>
+    implements _$MasqueWarpConfigCopyWith<$Res> {
+  __$MasqueWarpConfigCopyWithImpl(this._self, this._then);
+
+  final _MasqueWarpConfig _self;
+  final $Res Function(_MasqueWarpConfig) _then;
+
+  /// Create a copy of MasqueWarpConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? privateKey = freezed,
+    Object? publicKey = freezed,
+    Object? address = freezed,
+  }) {
+    return _then(
+      _MasqueWarpConfig(
+        privateKey: freezed == privateKey
+            ? _self.privateKey
+            : privateKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        publicKey: freezed == publicKey
+            ? _self.publicKey
+            : publicKey // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        address: freezed == address
+            ? _self._address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
 mixin _$MasqueConfig {
   String? get host;
   String? get path;
   String? get user;
   String? get pass;
   Map<String, String>? get headers;
+  MasqueWarpConfig? get warp;
 
   /// Create a copy of MasqueConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -22445,7 +22850,8 @@ mixin _$MasqueConfig {
             const DeepCollectionEquality().equals(
               other.headers,
               _this.headers,
-            ));
+            ) &&
+            (identical(other.warp, _this.warp) || other.warp == _this.warp));
   }
 
   @override
@@ -22458,13 +22864,14 @@ mixin _$MasqueConfig {
       _this.user,
       _this.pass,
       const DeepCollectionEquality().hash(_this.headers),
+      _this.warp,
     );
   }
 
   @override
   String toString() {
     final _this = this as MasqueConfig;
-    return 'MasqueConfig(host: ${_this.host}, path: ${_this.path}, user: ${_this.user}, pass: ${_this.pass}, headers: ${_this.headers})';
+    return 'MasqueConfig(host: ${_this.host}, path: ${_this.path}, user: ${_this.user}, pass: ${_this.pass}, headers: ${_this.headers}, warp: ${_this.warp})';
   }
 }
 
@@ -22481,7 +22888,10 @@ abstract mixin class $MasqueConfigCopyWith<$Res> {
     String? user,
     String? pass,
     Map<String, String>? headers,
+    MasqueWarpConfig? warp,
   });
+
+  $MasqueWarpConfigCopyWith<$Res>? get warp;
 }
 
 /// @nodoc
@@ -22501,6 +22911,7 @@ class _$MasqueConfigCopyWithImpl<$Res> implements $MasqueConfigCopyWith<$Res> {
     Object? user = freezed,
     Object? pass = freezed,
     Object? headers = freezed,
+    Object? warp = freezed,
   }) {
     return _then(
       MasqueConfig(
@@ -22524,8 +22935,26 @@ class _$MasqueConfigCopyWithImpl<$Res> implements $MasqueConfigCopyWith<$Res> {
             ? _self.headers
             : headers // ignore: cast_nullable_to_non_nullable
                   as Map<String, String>?,
+        warp: freezed == warp
+            ? _self.warp
+            : warp // ignore: cast_nullable_to_non_nullable
+                  as MasqueWarpConfig?,
       ),
     );
+  }
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MasqueWarpConfigCopyWith<$Res>? get warp {
+    if (_self.warp == null) {
+      return null;
+    }
+
+    return $MasqueWarpConfigCopyWith<$Res>(_self.warp!, (value) {
+      return _then(_self.copyWith(warp: value));
+    });
   }
 }
 
@@ -22628,6 +23057,7 @@ extension MasqueConfigPatterns on MasqueConfig {
       String? user,
       String? pass,
       Map<String, String>? headers,
+      MasqueWarpConfig? warp,
     )?
     $default, {
     required TResult orElse(),
@@ -22641,6 +23071,7 @@ extension MasqueConfigPatterns on MasqueConfig {
           _that.user,
           _that.pass,
           _that.headers,
+          _that.warp,
         );
       case _:
         return orElse();
@@ -22668,6 +23099,7 @@ extension MasqueConfigPatterns on MasqueConfig {
       String? user,
       String? pass,
       Map<String, String>? headers,
+      MasqueWarpConfig? warp,
     )
     $default,
   ) {
@@ -22680,6 +23112,7 @@ extension MasqueConfigPatterns on MasqueConfig {
           _that.user,
           _that.pass,
           _that.headers,
+          _that.warp,
         );
       case _:
         throw StateError('Unexpected subclass');
@@ -22706,6 +23139,7 @@ extension MasqueConfigPatterns on MasqueConfig {
       String? user,
       String? pass,
       Map<String, String>? headers,
+      MasqueWarpConfig? warp,
     )?
     $default,
   ) {
@@ -22718,6 +23152,7 @@ extension MasqueConfigPatterns on MasqueConfig {
           _that.user,
           _that.pass,
           _that.headers,
+          _that.warp,
         );
       case _:
         return null;
@@ -22734,6 +23169,7 @@ class _MasqueConfig extends MasqueConfig {
     this.user,
     this.pass,
     Map<String, String>? headers,
+    this.warp,
   }) : _headers = headers,
        super._();
 
@@ -22755,6 +23191,9 @@ class _MasqueConfig extends MasqueConfig {
     return EqualUnmodifiableMapView(value);
   }
 
+  @override
+  final MasqueWarpConfig? warp;
+
   /// Create a copy of MasqueConfig
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -22772,7 +23211,8 @@ class _MasqueConfig extends MasqueConfig {
             (identical(other.path, path) || other.path == path) &&
             (identical(other.user, user) || other.user == user) &&
             (identical(other.pass, pass) || other.pass == pass) &&
-            const DeepCollectionEquality().equals(other.headers, _headers));
+            const DeepCollectionEquality().equals(other.headers, _headers) &&
+            (identical(other.warp, warp) || other.warp == warp));
   }
 
   @override
@@ -22784,12 +23224,13 @@ class _MasqueConfig extends MasqueConfig {
       user,
       pass,
       const DeepCollectionEquality().hash(_headers),
+      warp,
     );
   }
 
   @override
   String toString() {
-    return 'MasqueConfig(host: $host, path: $path, user: $user, pass: $pass, headers: $headers)';
+    return 'MasqueConfig(host: $host, path: $path, user: $user, pass: $pass, headers: $headers, warp: $warp)';
   }
 }
 
@@ -22808,7 +23249,11 @@ abstract mixin class _$MasqueConfigCopyWith<$Res>
     String? user,
     String? pass,
     Map<String, String>? headers,
+    MasqueWarpConfig? warp,
   });
+
+  @override
+  $MasqueWarpConfigCopyWith<$Res>? get warp;
 }
 
 /// @nodoc
@@ -22829,6 +23274,7 @@ class __$MasqueConfigCopyWithImpl<$Res>
     Object? user = freezed,
     Object? pass = freezed,
     Object? headers = freezed,
+    Object? warp = freezed,
   }) {
     return _then(
       _MasqueConfig(
@@ -22852,8 +23298,26 @@ class __$MasqueConfigCopyWithImpl<$Res>
             ? _self._headers
             : headers // ignore: cast_nullable_to_non_nullable
                   as Map<String, String>?,
+        warp: freezed == warp
+            ? _self.warp
+            : warp // ignore: cast_nullable_to_non_nullable
+                  as MasqueWarpConfig?,
       ),
     );
+  }
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MasqueWarpConfigCopyWith<$Res>? get warp {
+    if (_self.warp == null) {
+      return null;
+    }
+
+    return $MasqueWarpConfigCopyWith<$Res>(_self.warp!, (value) {
+      return _then(_self.copyWith(warp: value));
+    });
   }
 }
 
@@ -23501,6 +23965,8 @@ class __$XDriveConfigCopyWithImpl<$Res>
 
 /// @nodoc
 mixin _$XDNSDomain {
+  List<String>? get names;
+  @Deprecated('Use names, matching Xray 26.10.10')
   String? get name;
   int? get lenLimit;
   int? get labelLimit;
@@ -23520,6 +23986,7 @@ mixin _$XDNSDomain {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XDNSDomain &&
+            const DeepCollectionEquality().equals(other.names, _this.names) &&
             (identical(other.name, _this.name) || other.name == _this.name) &&
             (identical(other.lenLimit, _this.lenLimit) ||
                 other.lenLimit == _this.lenLimit) &&
@@ -23535,6 +24002,7 @@ mixin _$XDNSDomain {
     final _this = this as XDNSDomain;
     return Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(_this.names),
       _this.name,
       _this.lenLimit,
       _this.labelLimit,
@@ -23546,7 +24014,7 @@ mixin _$XDNSDomain {
   @override
   String toString() {
     final _this = this as XDNSDomain;
-    return 'XDNSDomain(name: ${_this.name}, lenLimit: ${_this.lenLimit}, labelLimit: ${_this.labelLimit}, types: ${_this.types}, edns0: ${_this.edns0})';
+    return 'XDNSDomain(names: ${_this.names}, name: ${_this.name}, lenLimit: ${_this.lenLimit}, labelLimit: ${_this.labelLimit}, types: ${_this.types}, edns0: ${_this.edns0})';
   }
 }
 
@@ -23558,7 +24026,8 @@ abstract mixin class $XDNSDomainCopyWith<$Res> {
   ) = _$XDNSDomainCopyWithImpl;
   @useResult
   $Res call({
-    String? name,
+    List<String>? names,
+    @Deprecated('Use names, matching Xray 26.10.10') String? name,
     int? lenLimit,
     int? labelLimit,
     List<int>? types,
@@ -23578,6 +24047,7 @@ class _$XDNSDomainCopyWithImpl<$Res> implements $XDNSDomainCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? names = freezed,
     Object? name = freezed,
     Object? lenLimit = freezed,
     Object? labelLimit = freezed,
@@ -23586,6 +24056,10 @@ class _$XDNSDomainCopyWithImpl<$Res> implements $XDNSDomainCopyWith<$Res> {
   }) {
     return _then(
       XDNSDomain(
+        names: freezed == names
+            ? _self.names
+            : names // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
         name: freezed == name
             ? _self.name
             : name // ignore: cast_nullable_to_non_nullable
@@ -23705,7 +24179,8 @@ extension XDNSDomainPatterns on XDNSDomain {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-      String? name,
+      List<String>? names,
+      @Deprecated('Use names, matching Xray 26.10.10') String? name,
       int? lenLimit,
       int? labelLimit,
       List<int>? types,
@@ -23718,6 +24193,7 @@ extension XDNSDomainPatterns on XDNSDomain {
     switch (_that) {
       case _XDNSDomain() when $default != null:
         return $default(
+          _that.names,
           _that.name,
           _that.lenLimit,
           _that.labelLimit,
@@ -23745,7 +24221,8 @@ extension XDNSDomainPatterns on XDNSDomain {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-      String? name,
+      List<String>? names,
+      @Deprecated('Use names, matching Xray 26.10.10') String? name,
       int? lenLimit,
       int? labelLimit,
       List<int>? types,
@@ -23757,6 +24234,7 @@ extension XDNSDomainPatterns on XDNSDomain {
     switch (_that) {
       case _XDNSDomain():
         return $default(
+          _that.names,
           _that.name,
           _that.lenLimit,
           _that.labelLimit,
@@ -23783,7 +24261,8 @@ extension XDNSDomainPatterns on XDNSDomain {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-      String? name,
+      List<String>? names,
+      @Deprecated('Use names, matching Xray 26.10.10') String? name,
       int? lenLimit,
       int? labelLimit,
       List<int>? types,
@@ -23795,6 +24274,7 @@ extension XDNSDomainPatterns on XDNSDomain {
     switch (_that) {
       case _XDNSDomain() when $default != null:
         return $default(
+          _that.names,
           _that.name,
           _that.lenLimit,
           _that.labelLimit,
@@ -23811,15 +24291,28 @@ extension XDNSDomainPatterns on XDNSDomain {
 
 class _XDNSDomain extends XDNSDomain {
   const _XDNSDomain({
-    this.name,
+    List<String>? names,
+    @Deprecated('Use names, matching Xray 26.10.10') this.name,
     this.lenLimit,
     this.labelLimit,
     List<int>? types,
     this.edns0,
-  }) : _types = types,
+  }) : _names = names,
+       _types = types,
        super._();
 
+  final List<String>? _names;
   @override
+  List<String>? get names {
+    final value = _names;
+    if (value == null) return null;
+    if (_names is EqualUnmodifiableListView) return _names;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @Deprecated('Use names, matching Xray 26.10.10')
   final String? name;
   @override
   final int? lenLimit;
@@ -23851,6 +24344,7 @@ class _XDNSDomain extends XDNSDomain {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _XDNSDomain &&
+            const DeepCollectionEquality().equals(other.names, _names) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.lenLimit, lenLimit) ||
                 other.lenLimit == lenLimit) &&
@@ -23864,6 +24358,7 @@ class _XDNSDomain extends XDNSDomain {
   int get hashCode {
     return Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(_names),
       name,
       lenLimit,
       labelLimit,
@@ -23874,7 +24369,7 @@ class _XDNSDomain extends XDNSDomain {
 
   @override
   String toString() {
-    return 'XDNSDomain(name: $name, lenLimit: $lenLimit, labelLimit: $labelLimit, types: $types, edns0: $edns0)';
+    return 'XDNSDomain(names: $names, name: $name, lenLimit: $lenLimit, labelLimit: $labelLimit, types: $types, edns0: $edns0)';
   }
 }
 
@@ -23888,7 +24383,8 @@ abstract mixin class _$XDNSDomainCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    String? name,
+    List<String>? names,
+    @Deprecated('Use names, matching Xray 26.10.10') String? name,
     int? lenLimit,
     int? labelLimit,
     List<int>? types,
@@ -23908,6 +24404,7 @@ class __$XDNSDomainCopyWithImpl<$Res> implements _$XDNSDomainCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? names = freezed,
     Object? name = freezed,
     Object? lenLimit = freezed,
     Object? labelLimit = freezed,
@@ -23916,6 +24413,10 @@ class __$XDNSDomainCopyWithImpl<$Res> implements _$XDNSDomainCopyWith<$Res> {
   }) {
     return _then(
       _XDNSDomain(
+        names: freezed == names
+            ? _self._names
+            : names // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
         name: freezed == name
             ? _self.name
             : name // ignore: cast_nullable_to_non_nullable
@@ -24539,7 +25040,10 @@ class __$XDNSResolverUDPCopyWithImpl<$Res>
 
 /// @nodoc
 mixin _$XDNSResolver {
+  List<String>? get addrs;
+  @Deprecated('Use addrs, matching Xray 26.10.10')
   String? get type;
+  @Deprecated('Use addrs, matching Xray 26.10.10')
   XDNSResolverSettings? get settings;
 
   /// Create a copy of XDNSResolver
@@ -24558,6 +25062,7 @@ mixin _$XDNSResolver {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is XDNSResolver &&
+            const DeepCollectionEquality().equals(other.addrs, _this.addrs) &&
             (identical(other.type, _this.type) || other.type == _this.type) &&
             (identical(other.settings, _this.settings) ||
                 other.settings == _this.settings));
@@ -24566,13 +25071,18 @@ mixin _$XDNSResolver {
   @override
   int get hashCode {
     final _this = this as XDNSResolver;
-    return Object.hash(runtimeType, _this.type, _this.settings);
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_this.addrs),
+      _this.type,
+      _this.settings,
+    );
   }
 
   @override
   String toString() {
     final _this = this as XDNSResolver;
-    return 'XDNSResolver(type: ${_this.type}, settings: ${_this.settings})';
+    return 'XDNSResolver(addrs: ${_this.addrs}, type: ${_this.type}, settings: ${_this.settings})';
   }
 }
 
@@ -24583,7 +25093,12 @@ abstract mixin class $XDNSResolverCopyWith<$Res> {
     $Res Function(XDNSResolver) _then,
   ) = _$XDNSResolverCopyWithImpl;
   @useResult
-  $Res call({String? type, XDNSResolverSettings? settings});
+  $Res call({
+    List<String>? addrs,
+    @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
+    @Deprecated('Use addrs, matching Xray 26.10.10')
+    XDNSResolverSettings? settings,
+  });
 }
 
 /// @nodoc
@@ -24597,9 +25112,17 @@ class _$XDNSResolverCopyWithImpl<$Res> implements $XDNSResolverCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? type = freezed, Object? settings = freezed}) {
+  $Res call({
+    Object? addrs = freezed,
+    Object? type = freezed,
+    Object? settings = freezed,
+  }) {
     return _then(
       XDNSResolver(
+        addrs: freezed == addrs
+            ? _self.addrs
+            : addrs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
         type: freezed == type
             ? _self.type
             : type // ignore: cast_nullable_to_non_nullable
@@ -24706,13 +25229,19 @@ extension XDNSResolverPatterns on XDNSResolver {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? type, XDNSResolverSettings? settings)? $default, {
+    TResult Function(
+      List<String>? addrs,
+      @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
+      @Deprecated('Use addrs, matching Xray 26.10.10')
+      XDNSResolverSettings? settings,
+    )?
+    $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _XDNSResolver() when $default != null:
-        return $default(_that.type, _that.settings);
+        return $default(_that.addrs, _that.type, _that.settings);
       case _:
         return orElse();
     }
@@ -24733,12 +25262,18 @@ extension XDNSResolverPatterns on XDNSResolver {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? type, XDNSResolverSettings? settings) $default,
+    TResult Function(
+      List<String>? addrs,
+      @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
+      @Deprecated('Use addrs, matching Xray 26.10.10')
+      XDNSResolverSettings? settings,
+    )
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XDNSResolver():
-        return $default(_that.type, _that.settings);
+        return $default(_that.addrs, _that.type, _that.settings);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -24758,12 +25293,18 @@ extension XDNSResolverPatterns on XDNSResolver {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? type, XDNSResolverSettings? settings)? $default,
+    TResult? Function(
+      List<String>? addrs,
+      @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
+      @Deprecated('Use addrs, matching Xray 26.10.10')
+      XDNSResolverSettings? settings,
+    )?
+    $default,
   ) {
     final _that = this;
     switch (_that) {
       case _XDNSResolver() when $default != null:
-        return $default(_that.type, _that.settings);
+        return $default(_that.addrs, _that.type, _that.settings);
       case _:
         return null;
     }
@@ -24773,11 +25314,28 @@ extension XDNSResolverPatterns on XDNSResolver {
 /// @nodoc
 
 class _XDNSResolver extends XDNSResolver {
-  const _XDNSResolver({this.type, this.settings}) : super._();
+  const _XDNSResolver({
+    List<String>? addrs,
+    @Deprecated('Use addrs, matching Xray 26.10.10') this.type,
+    @Deprecated('Use addrs, matching Xray 26.10.10') this.settings,
+  }) : _addrs = addrs,
+       super._();
+
+  final List<String>? _addrs;
+  @override
+  List<String>? get addrs {
+    final value = _addrs;
+    if (value == null) return null;
+    if (_addrs is EqualUnmodifiableListView) return _addrs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
+  @Deprecated('Use addrs, matching Xray 26.10.10')
   final String? type;
   @override
+  @Deprecated('Use addrs, matching Xray 26.10.10')
   final XDNSResolverSettings? settings;
 
   /// Create a copy of XDNSResolver
@@ -24793,6 +25351,7 @@ class _XDNSResolver extends XDNSResolver {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _XDNSResolver &&
+            const DeepCollectionEquality().equals(other.addrs, _addrs) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.settings, settings) ||
                 other.settings == settings));
@@ -24800,12 +25359,17 @@ class _XDNSResolver extends XDNSResolver {
 
   @override
   int get hashCode {
-    return Object.hash(runtimeType, type, settings);
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_addrs),
+      type,
+      settings,
+    );
   }
 
   @override
   String toString() {
-    return 'XDNSResolver(type: $type, settings: $settings)';
+    return 'XDNSResolver(addrs: $addrs, type: $type, settings: $settings)';
   }
 }
 
@@ -24818,7 +25382,12 @@ abstract mixin class _$XDNSResolverCopyWith<$Res>
   ) = __$XDNSResolverCopyWithImpl;
   @override
   @useResult
-  $Res call({String? type, XDNSResolverSettings? settings});
+  $Res call({
+    List<String>? addrs,
+    @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
+    @Deprecated('Use addrs, matching Xray 26.10.10')
+    XDNSResolverSettings? settings,
+  });
 }
 
 /// @nodoc
@@ -24833,9 +25402,17 @@ class __$XDNSResolverCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({Object? type = freezed, Object? settings = freezed}) {
+  $Res call({
+    Object? addrs = freezed,
+    Object? type = freezed,
+    Object? settings = freezed,
+  }) {
     return _then(
       _XDNSResolver(
+        addrs: freezed == addrs
+            ? _self._addrs
+            : addrs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
         type: freezed == type
             ? _self.type
             : type // ignore: cast_nullable_to_non_nullable

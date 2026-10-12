@@ -21,6 +21,7 @@ abstract class TLSConfig with _$TLSConfig {
     String? echServerKeys,
     String? echConfigList,
     @JsonKey(name: 'echSockopt') SocketConfig? echSocketSettings,
+    bool? useSystemCA,
   }) = _TLSConfig;
 
   factory TLSConfig.fromJson(Object? json) {
@@ -50,29 +51,31 @@ abstract class TLSConfig with _$TLSConfig {
       echSocketSettings: map['echSockopt'] == null
           ? null
           : SocketConfig.fromJson(map['echSockopt']),
+      useSystemCA: map['useSystemCA'] as bool?,
     );
   }
 
   const TLSConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-        'allowInsecure': allowInsecure,
-        'certificates': certs?.map((item) => item.toJson()).toList(),
-        'serverName': serverName,
-        'alpn': alpn?.toJson(),
-        'enableSessionResumption': enableSessionResumption,
-        'disableSystemRoot': disableSystemRoot,
-        'minVersion': minVersion,
-        'maxVersion': maxVersion,
-        'cipherSuites': cipherSuites,
-        'fingerprint': fingerprint,
-        'rejectUnknownSni': rejectUnknownSNI,
-        'curvePreferences': curvePreferences?.toJson(),
-        'masterKeyLog': masterKeyLog,
-        'pinnedPeerCertSha256': pinnedPeerCertSha256,
-        'verifyPeerCertByName': verifyPeerCertByName,
-        'echServerKeys': echServerKeys,
-        'echConfigList': echConfigList,
-        'echSockopt': echSocketSettings?.toJson(),
-      });
+    'allowInsecure': allowInsecure,
+    'certificates': certs?.map((item) => item.toJson()).toList(),
+    'serverName': serverName,
+    'alpn': alpn?.toJson(),
+    'enableSessionResumption': enableSessionResumption,
+    'disableSystemRoot': disableSystemRoot,
+    'minVersion': minVersion,
+    'maxVersion': maxVersion,
+    'cipherSuites': cipherSuites,
+    'fingerprint': fingerprint,
+    'rejectUnknownSni': rejectUnknownSNI,
+    'curvePreferences': curvePreferences?.toJson(),
+    'masterKeyLog': masterKeyLog,
+    'pinnedPeerCertSha256': pinnedPeerCertSha256,
+    'verifyPeerCertByName': verifyPeerCertByName,
+    'echServerKeys': echServerKeys,
+    'echConfigList': echConfigList,
+    'echSockopt': echSocketSettings?.toJson(),
+    'useSystemCA': useSystemCA,
+  });
 }

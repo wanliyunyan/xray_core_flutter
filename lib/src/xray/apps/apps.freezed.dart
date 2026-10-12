@@ -1506,6 +1506,7 @@ class __$BurstObservatoryConfigCopyWithImpl<$Res>
 /// @nodoc
 mixin _$DNSConfig {
   List<NameServerConfig>? get servers;
+  String? get script;
   HostsWrapper? get hosts;
   XrayAddress? get clientIp;
   String? get tag;
@@ -1535,6 +1536,8 @@ mixin _$DNSConfig {
               other.servers,
               _this.servers,
             ) &&
+            (identical(other.script, _this.script) ||
+                other.script == _this.script) &&
             (identical(other.hosts, _this.hosts) ||
                 other.hosts == _this.hosts) &&
             (identical(other.clientIp, _this.clientIp) ||
@@ -1567,6 +1570,7 @@ mixin _$DNSConfig {
     return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_this.servers),
+      _this.script,
       _this.hosts,
       _this.clientIp,
       _this.tag,
@@ -1584,7 +1588,7 @@ mixin _$DNSConfig {
   @override
   String toString() {
     final _this = this as DNSConfig;
-    return 'DNSConfig(servers: ${_this.servers}, hosts: ${_this.hosts}, clientIp: ${_this.clientIp}, tag: ${_this.tag}, queryStrategy: ${_this.queryStrategy}, disableCache: ${_this.disableCache}, serveStale: ${_this.serveStale}, serveExpiredTTL: ${_this.serveExpiredTTL}, disableFallback: ${_this.disableFallback}, disableFallbackIfMatch: ${_this.disableFallbackIfMatch}, enableParallelQuery: ${_this.enableParallelQuery}, useSystemHosts: ${_this.useSystemHosts})';
+    return 'DNSConfig(servers: ${_this.servers}, script: ${_this.script}, hosts: ${_this.hosts}, clientIp: ${_this.clientIp}, tag: ${_this.tag}, queryStrategy: ${_this.queryStrategy}, disableCache: ${_this.disableCache}, serveStale: ${_this.serveStale}, serveExpiredTTL: ${_this.serveExpiredTTL}, disableFallback: ${_this.disableFallback}, disableFallbackIfMatch: ${_this.disableFallbackIfMatch}, enableParallelQuery: ${_this.enableParallelQuery}, useSystemHosts: ${_this.useSystemHosts})';
   }
 }
 
@@ -1595,6 +1599,7 @@ abstract mixin class $DNSConfigCopyWith<$Res> {
   @useResult
   $Res call({
     List<NameServerConfig>? servers,
+    String? script,
     HostsWrapper? hosts,
     XrayAddress? clientIp,
     String? tag,
@@ -1624,6 +1629,7 @@ class _$DNSConfigCopyWithImpl<$Res> implements $DNSConfigCopyWith<$Res> {
   @override
   $Res call({
     Object? servers = freezed,
+    Object? script = freezed,
     Object? hosts = freezed,
     Object? clientIp = freezed,
     Object? tag = freezed,
@@ -1642,6 +1648,10 @@ class _$DNSConfigCopyWithImpl<$Res> implements $DNSConfigCopyWith<$Res> {
             ? _self.servers
             : servers // ignore: cast_nullable_to_non_nullable
                   as List<NameServerConfig>?,
+        script: freezed == script
+            ? _self.script
+            : script // ignore: cast_nullable_to_non_nullable
+                  as String?,
         hosts: freezed == hosts
             ? _self.hosts
             : hosts // ignore: cast_nullable_to_non_nullable
@@ -1800,6 +1810,7 @@ extension DNSConfigPatterns on DNSConfig {
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
       List<NameServerConfig>? servers,
+      String? script,
       HostsWrapper? hosts,
       XrayAddress? clientIp,
       String? tag,
@@ -1820,6 +1831,7 @@ extension DNSConfigPatterns on DNSConfig {
       case _DNSConfig() when $default != null:
         return $default(
           _that.servers,
+          _that.script,
           _that.hosts,
           _that.clientIp,
           _that.tag,
@@ -1854,6 +1866,7 @@ extension DNSConfigPatterns on DNSConfig {
   TResult when<TResult extends Object?>(
     TResult Function(
       List<NameServerConfig>? servers,
+      String? script,
       HostsWrapper? hosts,
       XrayAddress? clientIp,
       String? tag,
@@ -1873,6 +1886,7 @@ extension DNSConfigPatterns on DNSConfig {
       case _DNSConfig():
         return $default(
           _that.servers,
+          _that.script,
           _that.hosts,
           _that.clientIp,
           _that.tag,
@@ -1906,6 +1920,7 @@ extension DNSConfigPatterns on DNSConfig {
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
       List<NameServerConfig>? servers,
+      String? script,
       HostsWrapper? hosts,
       XrayAddress? clientIp,
       String? tag,
@@ -1925,6 +1940,7 @@ extension DNSConfigPatterns on DNSConfig {
       case _DNSConfig() when $default != null:
         return $default(
           _that.servers,
+          _that.script,
           _that.hosts,
           _that.clientIp,
           _that.tag,
@@ -1948,6 +1964,7 @@ extension DNSConfigPatterns on DNSConfig {
 class _DNSConfig extends DNSConfig {
   const _DNSConfig({
     List<NameServerConfig>? servers,
+    this.script,
     this.hosts,
     this.clientIp,
     this.tag,
@@ -1972,6 +1989,8 @@ class _DNSConfig extends DNSConfig {
     return EqualUnmodifiableListView(value);
   }
 
+  @override
+  final String? script;
   @override
   final HostsWrapper? hosts;
   @override
@@ -2009,6 +2028,7 @@ class _DNSConfig extends DNSConfig {
         (other.runtimeType == runtimeType &&
             other is _DNSConfig &&
             const DeepCollectionEquality().equals(other.servers, _servers) &&
+            (identical(other.script, script) || other.script == script) &&
             (identical(other.hosts, hosts) || other.hosts == hosts) &&
             (identical(other.clientIp, clientIp) ||
                 other.clientIp == clientIp) &&
@@ -2036,6 +2056,7 @@ class _DNSConfig extends DNSConfig {
     return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_servers),
+      script,
       hosts,
       clientIp,
       tag,
@@ -2052,7 +2073,7 @@ class _DNSConfig extends DNSConfig {
 
   @override
   String toString() {
-    return 'DNSConfig(servers: $servers, hosts: $hosts, clientIp: $clientIp, tag: $tag, queryStrategy: $queryStrategy, disableCache: $disableCache, serveStale: $serveStale, serveExpiredTTL: $serveExpiredTTL, disableFallback: $disableFallback, disableFallbackIfMatch: $disableFallbackIfMatch, enableParallelQuery: $enableParallelQuery, useSystemHosts: $useSystemHosts)';
+    return 'DNSConfig(servers: $servers, script: $script, hosts: $hosts, clientIp: $clientIp, tag: $tag, queryStrategy: $queryStrategy, disableCache: $disableCache, serveStale: $serveStale, serveExpiredTTL: $serveExpiredTTL, disableFallback: $disableFallback, disableFallbackIfMatch: $disableFallbackIfMatch, enableParallelQuery: $enableParallelQuery, useSystemHosts: $useSystemHosts)';
   }
 }
 
@@ -2067,6 +2088,7 @@ abstract mixin class _$DNSConfigCopyWith<$Res>
   @useResult
   $Res call({
     List<NameServerConfig>? servers,
+    String? script,
     HostsWrapper? hosts,
     XrayAddress? clientIp,
     String? tag,
@@ -2097,6 +2119,7 @@ class __$DNSConfigCopyWithImpl<$Res> implements _$DNSConfigCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   $Res call({
     Object? servers = freezed,
+    Object? script = freezed,
     Object? hosts = freezed,
     Object? clientIp = freezed,
     Object? tag = freezed,
@@ -2115,6 +2138,10 @@ class __$DNSConfigCopyWithImpl<$Res> implements _$DNSConfigCopyWith<$Res> {
             ? _self._servers
             : servers // ignore: cast_nullable_to_non_nullable
                   as List<NameServerConfig>?,
+        script: freezed == script
+            ? _self.script
+            : script // ignore: cast_nullable_to_non_nullable
+                  as String?,
         hosts: freezed == hosts
             ? _self.hosts
             : hosts // ignore: cast_nullable_to_non_nullable
@@ -4310,6 +4337,7 @@ class __$MetricsConfigCopyWithImpl<$Res>
 /// @nodoc
 mixin _$NameServerConfig {
   XrayAddress get address;
+  String? get id;
   XrayAddress? get clientIp;
   int? get port;
   bool? get skipFallback;
@@ -4344,6 +4372,7 @@ mixin _$NameServerConfig {
             other is NameServerConfig &&
             (identical(other.address, _this.address) ||
                 other.address == _this.address) &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
             (identical(other.clientIp, _this.clientIp) ||
                 other.clientIp == _this.clientIp) &&
             (identical(other.port, _this.port) || other.port == _this.port) &&
@@ -4380,6 +4409,7 @@ mixin _$NameServerConfig {
     return Object.hash(
       runtimeType,
       _this.address,
+      _this.id,
       _this.clientIp,
       _this.port,
       _this.skipFallback,
@@ -4401,7 +4431,7 @@ mixin _$NameServerConfig {
   @override
   String toString() {
     final _this = this as NameServerConfig;
-    return 'NameServerConfig(address: ${_this.address}, clientIp: ${_this.clientIp}, port: ${_this.port}, skipFallback: ${_this.skipFallback}, domains: ${_this.domains}, expectedIPs: ${_this.expectedIPs}, expectIPs: ${_this.expectIPs}, queryStrategy: ${_this.queryStrategy}, tag: ${_this.tag}, timeoutMs: ${_this.timeoutMs}, disableCache: ${_this.disableCache}, serveStale: ${_this.serveStale}, serveExpiredTTL: ${_this.serveExpiredTTL}, finalQuery: ${_this.finalQuery}, unexpectedIPs: ${_this.unexpectedIPs}, simplified: ${_this.simplified})';
+    return 'NameServerConfig(address: ${_this.address}, id: ${_this.id}, clientIp: ${_this.clientIp}, port: ${_this.port}, skipFallback: ${_this.skipFallback}, domains: ${_this.domains}, expectedIPs: ${_this.expectedIPs}, expectIPs: ${_this.expectIPs}, queryStrategy: ${_this.queryStrategy}, tag: ${_this.tag}, timeoutMs: ${_this.timeoutMs}, disableCache: ${_this.disableCache}, serveStale: ${_this.serveStale}, serveExpiredTTL: ${_this.serveExpiredTTL}, finalQuery: ${_this.finalQuery}, unexpectedIPs: ${_this.unexpectedIPs}, simplified: ${_this.simplified})';
   }
 }
 
@@ -4414,6 +4444,7 @@ abstract mixin class $NameServerConfigCopyWith<$Res> {
   @useResult
   $Res call({
     XrayAddress address,
+    String? id,
     XrayAddress? clientIp,
     int? port,
     bool? skipFallback,
@@ -4446,6 +4477,7 @@ class _$NameServerConfigCopyWithImpl<$Res>
   @override
   $Res call({
     Object? address = null,
+    Object? id = freezed,
     Object? clientIp = freezed,
     Object? port = freezed,
     Object? skipFallback = freezed,
@@ -4468,6 +4500,10 @@ class _$NameServerConfigCopyWithImpl<$Res>
             ? _self.address
             : address // ignore: cast_nullable_to_non_nullable
                   as XrayAddress,
+        id: freezed == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
         clientIp: freezed == clientIp
             ? _self.clientIp
             : clientIp // ignore: cast_nullable_to_non_nullable
@@ -4628,6 +4664,7 @@ extension NameServerConfigPatterns on NameServerConfig {
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
       XrayAddress address,
+      String? id,
       XrayAddress? clientIp,
       int? port,
       bool? skipFallback,
@@ -4652,6 +4689,7 @@ extension NameServerConfigPatterns on NameServerConfig {
       case _NameServerConfig() when $default != null:
         return $default(
           _that.address,
+          _that.id,
           _that.clientIp,
           _that.port,
           _that.skipFallback,
@@ -4690,6 +4728,7 @@ extension NameServerConfigPatterns on NameServerConfig {
   TResult when<TResult extends Object?>(
     TResult Function(
       XrayAddress address,
+      String? id,
       XrayAddress? clientIp,
       int? port,
       bool? skipFallback,
@@ -4713,6 +4752,7 @@ extension NameServerConfigPatterns on NameServerConfig {
       case _NameServerConfig():
         return $default(
           _that.address,
+          _that.id,
           _that.clientIp,
           _that.port,
           _that.skipFallback,
@@ -4750,6 +4790,7 @@ extension NameServerConfigPatterns on NameServerConfig {
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
       XrayAddress address,
+      String? id,
       XrayAddress? clientIp,
       int? port,
       bool? skipFallback,
@@ -4773,6 +4814,7 @@ extension NameServerConfigPatterns on NameServerConfig {
       case _NameServerConfig() when $default != null:
         return $default(
           _that.address,
+          _that.id,
           _that.clientIp,
           _that.port,
           _that.skipFallback,
@@ -4800,6 +4842,7 @@ extension NameServerConfigPatterns on NameServerConfig {
 class _NameServerConfig extends NameServerConfig {
   const _NameServerConfig({
     required this.address,
+    this.id,
     this.clientIp,
     this.port,
     this.skipFallback,
@@ -4819,6 +4862,8 @@ class _NameServerConfig extends NameServerConfig {
 
   @override
   final XrayAddress address;
+  @override
+  final String? id;
   @override
   final XrayAddress? clientIp;
   @override
@@ -4864,6 +4909,7 @@ class _NameServerConfig extends NameServerConfig {
         (other.runtimeType == runtimeType &&
             other is _NameServerConfig &&
             (identical(other.address, address) || other.address == address) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.clientIp, clientIp) ||
                 other.clientIp == clientIp) &&
             (identical(other.port, port) || other.port == port) &&
@@ -4898,6 +4944,7 @@ class _NameServerConfig extends NameServerConfig {
     return Object.hash(
       runtimeType,
       address,
+      id,
       clientIp,
       port,
       skipFallback,
@@ -4918,7 +4965,7 @@ class _NameServerConfig extends NameServerConfig {
 
   @override
   String toString() {
-    return 'NameServerConfig(address: $address, clientIp: $clientIp, port: $port, skipFallback: $skipFallback, domains: $domains, expectedIPs: $expectedIPs, expectIPs: $expectIPs, queryStrategy: $queryStrategy, tag: $tag, timeoutMs: $timeoutMs, disableCache: $disableCache, serveStale: $serveStale, serveExpiredTTL: $serveExpiredTTL, finalQuery: $finalQuery, unexpectedIPs: $unexpectedIPs, simplified: $simplified)';
+    return 'NameServerConfig(address: $address, id: $id, clientIp: $clientIp, port: $port, skipFallback: $skipFallback, domains: $domains, expectedIPs: $expectedIPs, expectIPs: $expectIPs, queryStrategy: $queryStrategy, tag: $tag, timeoutMs: $timeoutMs, disableCache: $disableCache, serveStale: $serveStale, serveExpiredTTL: $serveExpiredTTL, finalQuery: $finalQuery, unexpectedIPs: $unexpectedIPs, simplified: $simplified)';
   }
 }
 
@@ -4933,6 +4980,7 @@ abstract mixin class _$NameServerConfigCopyWith<$Res>
   @useResult
   $Res call({
     XrayAddress address,
+    String? id,
     XrayAddress? clientIp,
     int? port,
     bool? skipFallback,
@@ -4965,6 +5013,7 @@ class __$NameServerConfigCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? address = null,
+    Object? id = freezed,
     Object? clientIp = freezed,
     Object? port = freezed,
     Object? skipFallback = freezed,
@@ -4987,6 +5036,10 @@ class __$NameServerConfigCopyWithImpl<$Res>
             ? _self.address
             : address // ignore: cast_nullable_to_non_nullable
                   as XrayAddress,
+        id: freezed == id
+            ? _self.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
         clientIp: freezed == clientIp
             ? _self.clientIp
             : clientIp // ignore: cast_nullable_to_non_nullable
@@ -7053,6 +7106,7 @@ mixin _$RouterConfig {
   List<RouterRule>? get ruleList;
   RouterDomainStrategy? get domainStrategy;
   List<BalancingRule>? get balancers;
+  String? get script;
 
   /// Create a copy of RouterConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -7079,7 +7133,9 @@ mixin _$RouterConfig {
             const DeepCollectionEquality().equals(
               other.balancers,
               _this.balancers,
-            ));
+            ) &&
+            (identical(other.script, _this.script) ||
+                other.script == _this.script));
   }
 
   @override
@@ -7090,13 +7146,14 @@ mixin _$RouterConfig {
       const DeepCollectionEquality().hash(_this.ruleList),
       _this.domainStrategy,
       const DeepCollectionEquality().hash(_this.balancers),
+      _this.script,
     );
   }
 
   @override
   String toString() {
     final _this = this as RouterConfig;
-    return 'RouterConfig(ruleList: ${_this.ruleList}, domainStrategy: ${_this.domainStrategy}, balancers: ${_this.balancers})';
+    return 'RouterConfig(ruleList: ${_this.ruleList}, domainStrategy: ${_this.domainStrategy}, balancers: ${_this.balancers}, script: ${_this.script})';
   }
 }
 
@@ -7111,6 +7168,7 @@ abstract mixin class $RouterConfigCopyWith<$Res> {
     @JsonKey(name: 'rules') List<RouterRule>? ruleList,
     RouterDomainStrategy? domainStrategy,
     List<BalancingRule>? balancers,
+    String? script,
   });
 }
 
@@ -7129,6 +7187,7 @@ class _$RouterConfigCopyWithImpl<$Res> implements $RouterConfigCopyWith<$Res> {
     Object? ruleList = freezed,
     Object? domainStrategy = freezed,
     Object? balancers = freezed,
+    Object? script = freezed,
   }) {
     return _then(
       RouterConfig(
@@ -7144,6 +7203,10 @@ class _$RouterConfigCopyWithImpl<$Res> implements $RouterConfigCopyWith<$Res> {
             ? _self.balancers
             : balancers // ignore: cast_nullable_to_non_nullable
                   as List<BalancingRule>?,
+        script: freezed == script
+            ? _self.script
+            : script // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -7246,6 +7309,7 @@ extension RouterConfigPatterns on RouterConfig {
       @JsonKey(name: 'rules') List<RouterRule>? ruleList,
       RouterDomainStrategy? domainStrategy,
       List<BalancingRule>? balancers,
+      String? script,
     )?
     $default, {
     required TResult orElse(),
@@ -7253,7 +7317,12 @@ extension RouterConfigPatterns on RouterConfig {
     final _that = this;
     switch (_that) {
       case _RouterConfig() when $default != null:
-        return $default(_that.ruleList, _that.domainStrategy, _that.balancers);
+        return $default(
+          _that.ruleList,
+          _that.domainStrategy,
+          _that.balancers,
+          _that.script,
+        );
       case _:
         return orElse();
     }
@@ -7278,13 +7347,19 @@ extension RouterConfigPatterns on RouterConfig {
       @JsonKey(name: 'rules') List<RouterRule>? ruleList,
       RouterDomainStrategy? domainStrategy,
       List<BalancingRule>? balancers,
+      String? script,
     )
     $default,
   ) {
     final _that = this;
     switch (_that) {
       case _RouterConfig():
-        return $default(_that.ruleList, _that.domainStrategy, _that.balancers);
+        return $default(
+          _that.ruleList,
+          _that.domainStrategy,
+          _that.balancers,
+          _that.script,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -7308,13 +7383,19 @@ extension RouterConfigPatterns on RouterConfig {
       @JsonKey(name: 'rules') List<RouterRule>? ruleList,
       RouterDomainStrategy? domainStrategy,
       List<BalancingRule>? balancers,
+      String? script,
     )?
     $default,
   ) {
     final _that = this;
     switch (_that) {
       case _RouterConfig() when $default != null:
-        return $default(_that.ruleList, _that.domainStrategy, _that.balancers);
+        return $default(
+          _that.ruleList,
+          _that.domainStrategy,
+          _that.balancers,
+          _that.script,
+        );
       case _:
         return null;
     }
@@ -7328,6 +7409,7 @@ class _RouterConfig extends RouterConfig {
     @JsonKey(name: 'rules') List<RouterRule>? ruleList,
     this.domainStrategy,
     List<BalancingRule>? balancers,
+    this.script,
   }) : _ruleList = ruleList,
        _balancers = balancers,
        super._();
@@ -7355,6 +7437,9 @@ class _RouterConfig extends RouterConfig {
     return EqualUnmodifiableListView(value);
   }
 
+  @override
+  final String? script;
+
   /// Create a copy of RouterConfig
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -7371,7 +7456,11 @@ class _RouterConfig extends RouterConfig {
             const DeepCollectionEquality().equals(other.ruleList, _ruleList) &&
             (identical(other.domainStrategy, domainStrategy) ||
                 other.domainStrategy == domainStrategy) &&
-            const DeepCollectionEquality().equals(other.balancers, _balancers));
+            const DeepCollectionEquality().equals(
+              other.balancers,
+              _balancers,
+            ) &&
+            (identical(other.script, script) || other.script == script));
   }
 
   @override
@@ -7381,12 +7470,13 @@ class _RouterConfig extends RouterConfig {
       const DeepCollectionEquality().hash(_ruleList),
       domainStrategy,
       const DeepCollectionEquality().hash(_balancers),
+      script,
     );
   }
 
   @override
   String toString() {
-    return 'RouterConfig(ruleList: $ruleList, domainStrategy: $domainStrategy, balancers: $balancers)';
+    return 'RouterConfig(ruleList: $ruleList, domainStrategy: $domainStrategy, balancers: $balancers, script: $script)';
   }
 }
 
@@ -7403,6 +7493,7 @@ abstract mixin class _$RouterConfigCopyWith<$Res>
     @JsonKey(name: 'rules') List<RouterRule>? ruleList,
     RouterDomainStrategy? domainStrategy,
     List<BalancingRule>? balancers,
+    String? script,
   });
 }
 
@@ -7422,6 +7513,7 @@ class __$RouterConfigCopyWithImpl<$Res>
     Object? ruleList = freezed,
     Object? domainStrategy = freezed,
     Object? balancers = freezed,
+    Object? script = freezed,
   }) {
     return _then(
       _RouterConfig(
@@ -7437,6 +7529,10 @@ class __$RouterConfigCopyWithImpl<$Res>
             ? _self._balancers
             : balancers // ignore: cast_nullable_to_non_nullable
                   as List<BalancingRule>?,
+        script: freezed == script
+            ? _self.script
+            : script // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
