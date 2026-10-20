@@ -5,6 +5,7 @@ abstract class NoiseMask with _$NoiseMask implements FinalMaskSettings {
   const factory NoiseMask({
     XrayInt32Range? reset,
     @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+    String? script,
   }) = _NoiseMask;
 
   factory NoiseMask.fromJson(Object? json) {
@@ -16,6 +17,7 @@ abstract class NoiseMask with _$NoiseMask implements FinalMaskSettings {
       noiseItems: map['noise'] == null
           ? null
           : asJsonList(map['noise'], NoiseItem.fromJson),
+      script: map['script'] as String?,
     );
   }
 
@@ -25,5 +27,6 @@ abstract class NoiseMask with _$NoiseMask implements FinalMaskSettings {
   Map<String, dynamic> toJson() => withoutNulls({
     'reset': reset?.toJson(),
     'noise': noiseItems?.map((item) => item.toJson()).toList(),
+    'script': script,
   });
 }

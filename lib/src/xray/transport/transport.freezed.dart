@@ -8883,6 +8883,7 @@ mixin _$NoiseMask {
   XrayInt32Range? get reset;
   @JsonKey(name: 'noise')
   List<NoiseItem>? get noiseItems;
+  String? get script;
 
   /// Create a copy of NoiseMask
   /// with the given fields replaced by the non-null parameter values.
@@ -8902,7 +8903,9 @@ mixin _$NoiseMask {
             const DeepCollectionEquality().equals(
               other.noiseItems,
               _this.noiseItems,
-            ));
+            ) &&
+            (identical(other.script, _this.script) ||
+                other.script == _this.script));
   }
 
   @override
@@ -8912,13 +8915,14 @@ mixin _$NoiseMask {
       runtimeType,
       _this.reset,
       const DeepCollectionEquality().hash(_this.noiseItems),
+      _this.script,
     );
   }
 
   @override
   String toString() {
     final _this = this as NoiseMask;
-    return 'NoiseMask(reset: ${_this.reset}, noiseItems: ${_this.noiseItems})';
+    return 'NoiseMask(reset: ${_this.reset}, noiseItems: ${_this.noiseItems}, script: ${_this.script})';
   }
 }
 
@@ -8930,6 +8934,7 @@ abstract mixin class $NoiseMaskCopyWith<$Res> {
   $Res call({
     XrayInt32Range? reset,
     @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+    String? script,
   });
 
   $XrayInt32RangeCopyWith<$Res>? get reset;
@@ -8946,7 +8951,11 @@ class _$NoiseMaskCopyWithImpl<$Res> implements $NoiseMaskCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? reset = freezed, Object? noiseItems = freezed}) {
+  $Res call({
+    Object? reset = freezed,
+    Object? noiseItems = freezed,
+    Object? script = freezed,
+  }) {
     return _then(
       NoiseMask(
         reset: freezed == reset
@@ -8957,6 +8966,10 @@ class _$NoiseMaskCopyWithImpl<$Res> implements $NoiseMaskCopyWith<$Res> {
             ? _self.noiseItems
             : noiseItems // ignore: cast_nullable_to_non_nullable
                   as List<NoiseItem>?,
+        script: freezed == script
+            ? _self.script
+            : script // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -9072,6 +9085,7 @@ extension NoiseMaskPatterns on NoiseMask {
     TResult Function(
       XrayInt32Range? reset,
       @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+      String? script,
     )?
     $default, {
     required TResult orElse(),
@@ -9079,7 +9093,7 @@ extension NoiseMaskPatterns on NoiseMask {
     final _that = this;
     switch (_that) {
       case _NoiseMask() when $default != null:
-        return $default(_that.reset, _that.noiseItems);
+        return $default(_that.reset, _that.noiseItems, _that.script);
       case _:
         return orElse();
     }
@@ -9103,13 +9117,14 @@ extension NoiseMaskPatterns on NoiseMask {
     TResult Function(
       XrayInt32Range? reset,
       @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+      String? script,
     )
     $default,
   ) {
     final _that = this;
     switch (_that) {
       case _NoiseMask():
-        return $default(_that.reset, _that.noiseItems);
+        return $default(_that.reset, _that.noiseItems, _that.script);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -9132,13 +9147,14 @@ extension NoiseMaskPatterns on NoiseMask {
     TResult? Function(
       XrayInt32Range? reset,
       @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+      String? script,
     )?
     $default,
   ) {
     final _that = this;
     switch (_that) {
       case _NoiseMask() when $default != null:
-        return $default(_that.reset, _that.noiseItems);
+        return $default(_that.reset, _that.noiseItems, _that.script);
       case _:
         return null;
     }
@@ -9151,6 +9167,7 @@ class _NoiseMask extends NoiseMask {
   const _NoiseMask({
     this.reset,
     @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+    this.script,
   }) : _noiseItems = noiseItems,
        super._();
 
@@ -9166,6 +9183,9 @@ class _NoiseMask extends NoiseMask {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
+
+  @override
+  final String? script;
 
   /// Create a copy of NoiseMask
   /// with the given fields replaced by the non-null parameter values.
@@ -9184,7 +9204,8 @@ class _NoiseMask extends NoiseMask {
             const DeepCollectionEquality().equals(
               other.noiseItems,
               _noiseItems,
-            ));
+            ) &&
+            (identical(other.script, script) || other.script == script));
   }
 
   @override
@@ -9193,12 +9214,13 @@ class _NoiseMask extends NoiseMask {
       runtimeType,
       reset,
       const DeepCollectionEquality().hash(_noiseItems),
+      script,
     );
   }
 
   @override
   String toString() {
-    return 'NoiseMask(reset: $reset, noiseItems: $noiseItems)';
+    return 'NoiseMask(reset: $reset, noiseItems: $noiseItems, script: $script)';
   }
 }
 
@@ -9214,6 +9236,7 @@ abstract mixin class _$NoiseMaskCopyWith<$Res>
   $Res call({
     XrayInt32Range? reset,
     @JsonKey(name: 'noise') List<NoiseItem>? noiseItems,
+    String? script,
   });
 
   @override
@@ -9231,7 +9254,11 @@ class __$NoiseMaskCopyWithImpl<$Res> implements _$NoiseMaskCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $Res call({Object? reset = freezed, Object? noiseItems = freezed}) {
+  $Res call({
+    Object? reset = freezed,
+    Object? noiseItems = freezed,
+    Object? script = freezed,
+  }) {
     return _then(
       _NoiseMask(
         reset: freezed == reset
@@ -9242,6 +9269,10 @@ class __$NoiseMaskCopyWithImpl<$Res> implements _$NoiseMaskCopyWith<$Res> {
             ? _self._noiseItems
             : noiseItems // ignore: cast_nullable_to_non_nullable
                   as List<NoiseItem>?,
+        script: freezed == script
+            ? _self.script
+            : script // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -22826,6 +22857,7 @@ mixin _$MasqueConfig {
   String? get pass;
   Map<String, String>? get headers;
   MasqueWarpConfig? get warp;
+  XmuxConfig? get xmux;
 
   /// Create a copy of MasqueConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -22851,7 +22883,8 @@ mixin _$MasqueConfig {
               other.headers,
               _this.headers,
             ) &&
-            (identical(other.warp, _this.warp) || other.warp == _this.warp));
+            (identical(other.warp, _this.warp) || other.warp == _this.warp) &&
+            (identical(other.xmux, _this.xmux) || other.xmux == _this.xmux));
   }
 
   @override
@@ -22865,13 +22898,14 @@ mixin _$MasqueConfig {
       _this.pass,
       const DeepCollectionEquality().hash(_this.headers),
       _this.warp,
+      _this.xmux,
     );
   }
 
   @override
   String toString() {
     final _this = this as MasqueConfig;
-    return 'MasqueConfig(host: ${_this.host}, path: ${_this.path}, user: ${_this.user}, pass: ${_this.pass}, headers: ${_this.headers}, warp: ${_this.warp})';
+    return 'MasqueConfig(host: ${_this.host}, path: ${_this.path}, user: ${_this.user}, pass: ${_this.pass}, headers: ${_this.headers}, warp: ${_this.warp}, xmux: ${_this.xmux})';
   }
 }
 
@@ -22889,9 +22923,11 @@ abstract mixin class $MasqueConfigCopyWith<$Res> {
     String? pass,
     Map<String, String>? headers,
     MasqueWarpConfig? warp,
+    XmuxConfig? xmux,
   });
 
   $MasqueWarpConfigCopyWith<$Res>? get warp;
+  $XmuxConfigCopyWith<$Res>? get xmux;
 }
 
 /// @nodoc
@@ -22912,6 +22948,7 @@ class _$MasqueConfigCopyWithImpl<$Res> implements $MasqueConfigCopyWith<$Res> {
     Object? pass = freezed,
     Object? headers = freezed,
     Object? warp = freezed,
+    Object? xmux = freezed,
   }) {
     return _then(
       MasqueConfig(
@@ -22939,6 +22976,10 @@ class _$MasqueConfigCopyWithImpl<$Res> implements $MasqueConfigCopyWith<$Res> {
             ? _self.warp
             : warp // ignore: cast_nullable_to_non_nullable
                   as MasqueWarpConfig?,
+        xmux: freezed == xmux
+            ? _self.xmux
+            : xmux // ignore: cast_nullable_to_non_nullable
+                  as XmuxConfig?,
       ),
     );
   }
@@ -22954,6 +22995,20 @@ class _$MasqueConfigCopyWithImpl<$Res> implements $MasqueConfigCopyWith<$Res> {
 
     return $MasqueWarpConfigCopyWith<$Res>(_self.warp!, (value) {
       return _then(_self.copyWith(warp: value));
+    });
+  }
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XmuxConfigCopyWith<$Res>? get xmux {
+    if (_self.xmux == null) {
+      return null;
+    }
+
+    return $XmuxConfigCopyWith<$Res>(_self.xmux!, (value) {
+      return _then(_self.copyWith(xmux: value));
     });
   }
 }
@@ -23058,6 +23113,7 @@ extension MasqueConfigPatterns on MasqueConfig {
       String? pass,
       Map<String, String>? headers,
       MasqueWarpConfig? warp,
+      XmuxConfig? xmux,
     )?
     $default, {
     required TResult orElse(),
@@ -23072,6 +23128,7 @@ extension MasqueConfigPatterns on MasqueConfig {
           _that.pass,
           _that.headers,
           _that.warp,
+          _that.xmux,
         );
       case _:
         return orElse();
@@ -23100,6 +23157,7 @@ extension MasqueConfigPatterns on MasqueConfig {
       String? pass,
       Map<String, String>? headers,
       MasqueWarpConfig? warp,
+      XmuxConfig? xmux,
     )
     $default,
   ) {
@@ -23113,6 +23171,7 @@ extension MasqueConfigPatterns on MasqueConfig {
           _that.pass,
           _that.headers,
           _that.warp,
+          _that.xmux,
         );
       case _:
         throw StateError('Unexpected subclass');
@@ -23140,6 +23199,7 @@ extension MasqueConfigPatterns on MasqueConfig {
       String? pass,
       Map<String, String>? headers,
       MasqueWarpConfig? warp,
+      XmuxConfig? xmux,
     )?
     $default,
   ) {
@@ -23153,6 +23213,7 @@ extension MasqueConfigPatterns on MasqueConfig {
           _that.pass,
           _that.headers,
           _that.warp,
+          _that.xmux,
         );
       case _:
         return null;
@@ -23170,6 +23231,7 @@ class _MasqueConfig extends MasqueConfig {
     this.pass,
     Map<String, String>? headers,
     this.warp,
+    this.xmux,
   }) : _headers = headers,
        super._();
 
@@ -23193,6 +23255,8 @@ class _MasqueConfig extends MasqueConfig {
 
   @override
   final MasqueWarpConfig? warp;
+  @override
+  final XmuxConfig? xmux;
 
   /// Create a copy of MasqueConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -23212,7 +23276,8 @@ class _MasqueConfig extends MasqueConfig {
             (identical(other.user, user) || other.user == user) &&
             (identical(other.pass, pass) || other.pass == pass) &&
             const DeepCollectionEquality().equals(other.headers, _headers) &&
-            (identical(other.warp, warp) || other.warp == warp));
+            (identical(other.warp, warp) || other.warp == warp) &&
+            (identical(other.xmux, xmux) || other.xmux == xmux));
   }
 
   @override
@@ -23225,12 +23290,13 @@ class _MasqueConfig extends MasqueConfig {
       pass,
       const DeepCollectionEquality().hash(_headers),
       warp,
+      xmux,
     );
   }
 
   @override
   String toString() {
-    return 'MasqueConfig(host: $host, path: $path, user: $user, pass: $pass, headers: $headers, warp: $warp)';
+    return 'MasqueConfig(host: $host, path: $path, user: $user, pass: $pass, headers: $headers, warp: $warp, xmux: $xmux)';
   }
 }
 
@@ -23250,10 +23316,13 @@ abstract mixin class _$MasqueConfigCopyWith<$Res>
     String? pass,
     Map<String, String>? headers,
     MasqueWarpConfig? warp,
+    XmuxConfig? xmux,
   });
 
   @override
   $MasqueWarpConfigCopyWith<$Res>? get warp;
+  @override
+  $XmuxConfigCopyWith<$Res>? get xmux;
 }
 
 /// @nodoc
@@ -23275,6 +23344,7 @@ class __$MasqueConfigCopyWithImpl<$Res>
     Object? pass = freezed,
     Object? headers = freezed,
     Object? warp = freezed,
+    Object? xmux = freezed,
   }) {
     return _then(
       _MasqueConfig(
@@ -23302,6 +23372,10 @@ class __$MasqueConfigCopyWithImpl<$Res>
             ? _self.warp
             : warp // ignore: cast_nullable_to_non_nullable
                   as MasqueWarpConfig?,
+        xmux: freezed == xmux
+            ? _self.xmux
+            : xmux // ignore: cast_nullable_to_non_nullable
+                  as XmuxConfig?,
       ),
     );
   }
@@ -23317,6 +23391,20 @@ class __$MasqueConfigCopyWithImpl<$Res>
 
     return $MasqueWarpConfigCopyWith<$Res>(_self.warp!, (value) {
       return _then(_self.copyWith(warp: value));
+    });
+  }
+
+  /// Create a copy of MasqueConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XmuxConfigCopyWith<$Res>? get xmux {
+    if (_self.xmux == null) {
+      return null;
+    }
+
+    return $XmuxConfigCopyWith<$Res>(_self.xmux!, (value) {
+      return _then(_self.copyWith(xmux: value));
     });
   }
 }
@@ -25041,6 +25129,9 @@ class __$XDNSResolverUDPCopyWithImpl<$Res>
 /// @nodoc
 mixin _$XDNSResolver {
   List<String>? get addrs;
+  int? get worker;
+  TLSConfig? get tlsConfig;
+  QuicParamsConfig? get quicConfig;
   @Deprecated('Use addrs, matching Xray 26.10.10')
   String? get type;
   @Deprecated('Use addrs, matching Xray 26.10.10')
@@ -25063,6 +25154,12 @@ mixin _$XDNSResolver {
         (other.runtimeType == runtimeType &&
             other is XDNSResolver &&
             const DeepCollectionEquality().equals(other.addrs, _this.addrs) &&
+            (identical(other.worker, _this.worker) ||
+                other.worker == _this.worker) &&
+            (identical(other.tlsConfig, _this.tlsConfig) ||
+                other.tlsConfig == _this.tlsConfig) &&
+            (identical(other.quicConfig, _this.quicConfig) ||
+                other.quicConfig == _this.quicConfig) &&
             (identical(other.type, _this.type) || other.type == _this.type) &&
             (identical(other.settings, _this.settings) ||
                 other.settings == _this.settings));
@@ -25074,6 +25171,9 @@ mixin _$XDNSResolver {
     return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_this.addrs),
+      _this.worker,
+      _this.tlsConfig,
+      _this.quicConfig,
       _this.type,
       _this.settings,
     );
@@ -25082,7 +25182,7 @@ mixin _$XDNSResolver {
   @override
   String toString() {
     final _this = this as XDNSResolver;
-    return 'XDNSResolver(addrs: ${_this.addrs}, type: ${_this.type}, settings: ${_this.settings})';
+    return 'XDNSResolver(addrs: ${_this.addrs}, worker: ${_this.worker}, tlsConfig: ${_this.tlsConfig}, quicConfig: ${_this.quicConfig}, type: ${_this.type}, settings: ${_this.settings})';
   }
 }
 
@@ -25095,10 +25195,16 @@ abstract mixin class $XDNSResolverCopyWith<$Res> {
   @useResult
   $Res call({
     List<String>? addrs,
+    int? worker,
+    TLSConfig? tlsConfig,
+    QuicParamsConfig? quicConfig,
     @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
     @Deprecated('Use addrs, matching Xray 26.10.10')
     XDNSResolverSettings? settings,
   });
+
+  $TLSConfigCopyWith<$Res>? get tlsConfig;
+  $QuicParamsConfigCopyWith<$Res>? get quicConfig;
 }
 
 /// @nodoc
@@ -25114,6 +25220,9 @@ class _$XDNSResolverCopyWithImpl<$Res> implements $XDNSResolverCopyWith<$Res> {
   @override
   $Res call({
     Object? addrs = freezed,
+    Object? worker = freezed,
+    Object? tlsConfig = freezed,
+    Object? quicConfig = freezed,
     Object? type = freezed,
     Object? settings = freezed,
   }) {
@@ -25123,6 +25232,18 @@ class _$XDNSResolverCopyWithImpl<$Res> implements $XDNSResolverCopyWith<$Res> {
             ? _self.addrs
             : addrs // ignore: cast_nullable_to_non_nullable
                   as List<String>?,
+        worker: freezed == worker
+            ? _self.worker
+            : worker // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tlsConfig: freezed == tlsConfig
+            ? _self.tlsConfig
+            : tlsConfig // ignore: cast_nullable_to_non_nullable
+                  as TLSConfig?,
+        quicConfig: freezed == quicConfig
+            ? _self.quicConfig
+            : quicConfig // ignore: cast_nullable_to_non_nullable
+                  as QuicParamsConfig?,
         type: freezed == type
             ? _self.type
             : type // ignore: cast_nullable_to_non_nullable
@@ -25133,6 +25254,34 @@ class _$XDNSResolverCopyWithImpl<$Res> implements $XDNSResolverCopyWith<$Res> {
                   as XDNSResolverSettings?,
       ),
     );
+  }
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TLSConfigCopyWith<$Res>? get tlsConfig {
+    if (_self.tlsConfig == null) {
+      return null;
+    }
+
+    return $TLSConfigCopyWith<$Res>(_self.tlsConfig!, (value) {
+      return _then(_self.copyWith(tlsConfig: value));
+    });
+  }
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $QuicParamsConfigCopyWith<$Res>? get quicConfig {
+    if (_self.quicConfig == null) {
+      return null;
+    }
+
+    return $QuicParamsConfigCopyWith<$Res>(_self.quicConfig!, (value) {
+      return _then(_self.copyWith(quicConfig: value));
+    });
   }
 }
 
@@ -25231,6 +25380,9 @@ extension XDNSResolverPatterns on XDNSResolver {
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
       List<String>? addrs,
+      int? worker,
+      TLSConfig? tlsConfig,
+      QuicParamsConfig? quicConfig,
       @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
       @Deprecated('Use addrs, matching Xray 26.10.10')
       XDNSResolverSettings? settings,
@@ -25241,7 +25393,14 @@ extension XDNSResolverPatterns on XDNSResolver {
     final _that = this;
     switch (_that) {
       case _XDNSResolver() when $default != null:
-        return $default(_that.addrs, _that.type, _that.settings);
+        return $default(
+          _that.addrs,
+          _that.worker,
+          _that.tlsConfig,
+          _that.quicConfig,
+          _that.type,
+          _that.settings,
+        );
       case _:
         return orElse();
     }
@@ -25264,6 +25423,9 @@ extension XDNSResolverPatterns on XDNSResolver {
   TResult when<TResult extends Object?>(
     TResult Function(
       List<String>? addrs,
+      int? worker,
+      TLSConfig? tlsConfig,
+      QuicParamsConfig? quicConfig,
       @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
       @Deprecated('Use addrs, matching Xray 26.10.10')
       XDNSResolverSettings? settings,
@@ -25273,7 +25435,14 @@ extension XDNSResolverPatterns on XDNSResolver {
     final _that = this;
     switch (_that) {
       case _XDNSResolver():
-        return $default(_that.addrs, _that.type, _that.settings);
+        return $default(
+          _that.addrs,
+          _that.worker,
+          _that.tlsConfig,
+          _that.quicConfig,
+          _that.type,
+          _that.settings,
+        );
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -25295,6 +25464,9 @@ extension XDNSResolverPatterns on XDNSResolver {
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
       List<String>? addrs,
+      int? worker,
+      TLSConfig? tlsConfig,
+      QuicParamsConfig? quicConfig,
       @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
       @Deprecated('Use addrs, matching Xray 26.10.10')
       XDNSResolverSettings? settings,
@@ -25304,7 +25476,14 @@ extension XDNSResolverPatterns on XDNSResolver {
     final _that = this;
     switch (_that) {
       case _XDNSResolver() when $default != null:
-        return $default(_that.addrs, _that.type, _that.settings);
+        return $default(
+          _that.addrs,
+          _that.worker,
+          _that.tlsConfig,
+          _that.quicConfig,
+          _that.type,
+          _that.settings,
+        );
       case _:
         return null;
     }
@@ -25316,6 +25495,9 @@ extension XDNSResolverPatterns on XDNSResolver {
 class _XDNSResolver extends XDNSResolver {
   const _XDNSResolver({
     List<String>? addrs,
+    this.worker,
+    this.tlsConfig,
+    this.quicConfig,
     @Deprecated('Use addrs, matching Xray 26.10.10') this.type,
     @Deprecated('Use addrs, matching Xray 26.10.10') this.settings,
   }) : _addrs = addrs,
@@ -25331,6 +25513,12 @@ class _XDNSResolver extends XDNSResolver {
     return EqualUnmodifiableListView(value);
   }
 
+  @override
+  final int? worker;
+  @override
+  final TLSConfig? tlsConfig;
+  @override
+  final QuicParamsConfig? quicConfig;
   @override
   @Deprecated('Use addrs, matching Xray 26.10.10')
   final String? type;
@@ -25352,6 +25540,11 @@ class _XDNSResolver extends XDNSResolver {
         (other.runtimeType == runtimeType &&
             other is _XDNSResolver &&
             const DeepCollectionEquality().equals(other.addrs, _addrs) &&
+            (identical(other.worker, worker) || other.worker == worker) &&
+            (identical(other.tlsConfig, tlsConfig) ||
+                other.tlsConfig == tlsConfig) &&
+            (identical(other.quicConfig, quicConfig) ||
+                other.quicConfig == quicConfig) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.settings, settings) ||
                 other.settings == settings));
@@ -25362,6 +25555,9 @@ class _XDNSResolver extends XDNSResolver {
     return Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_addrs),
+      worker,
+      tlsConfig,
+      quicConfig,
       type,
       settings,
     );
@@ -25369,7 +25565,7 @@ class _XDNSResolver extends XDNSResolver {
 
   @override
   String toString() {
-    return 'XDNSResolver(addrs: $addrs, type: $type, settings: $settings)';
+    return 'XDNSResolver(addrs: $addrs, worker: $worker, tlsConfig: $tlsConfig, quicConfig: $quicConfig, type: $type, settings: $settings)';
   }
 }
 
@@ -25384,10 +25580,18 @@ abstract mixin class _$XDNSResolverCopyWith<$Res>
   @useResult
   $Res call({
     List<String>? addrs,
+    int? worker,
+    TLSConfig? tlsConfig,
+    QuicParamsConfig? quicConfig,
     @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
     @Deprecated('Use addrs, matching Xray 26.10.10')
     XDNSResolverSettings? settings,
   });
+
+  @override
+  $TLSConfigCopyWith<$Res>? get tlsConfig;
+  @override
+  $QuicParamsConfigCopyWith<$Res>? get quicConfig;
 }
 
 /// @nodoc
@@ -25404,6 +25608,9 @@ class __$XDNSResolverCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? addrs = freezed,
+    Object? worker = freezed,
+    Object? tlsConfig = freezed,
+    Object? quicConfig = freezed,
     Object? type = freezed,
     Object? settings = freezed,
   }) {
@@ -25413,6 +25620,18 @@ class __$XDNSResolverCopyWithImpl<$Res>
             ? _self._addrs
             : addrs // ignore: cast_nullable_to_non_nullable
                   as List<String>?,
+        worker: freezed == worker
+            ? _self.worker
+            : worker // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        tlsConfig: freezed == tlsConfig
+            ? _self.tlsConfig
+            : tlsConfig // ignore: cast_nullable_to_non_nullable
+                  as TLSConfig?,
+        quicConfig: freezed == quicConfig
+            ? _self.quicConfig
+            : quicConfig // ignore: cast_nullable_to_non_nullable
+                  as QuicParamsConfig?,
         type: freezed == type
             ? _self.type
             : type // ignore: cast_nullable_to_non_nullable
@@ -25423,5 +25642,33 @@ class __$XDNSResolverCopyWithImpl<$Res>
                   as XDNSResolverSettings?,
       ),
     );
+  }
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TLSConfigCopyWith<$Res>? get tlsConfig {
+    if (_self.tlsConfig == null) {
+      return null;
+    }
+
+    return $TLSConfigCopyWith<$Res>(_self.tlsConfig!, (value) {
+      return _then(_self.copyWith(tlsConfig: value));
+    });
+  }
+
+  /// Create a copy of XDNSResolver
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $QuicParamsConfigCopyWith<$Res>? get quicConfig {
+    if (_self.quicConfig == null) {
+      return null;
+    }
+
+    return $QuicParamsConfigCopyWith<$Res>(_self.quicConfig!, (value) {
+      return _then(_self.copyWith(quicConfig: value));
+    });
   }
 }

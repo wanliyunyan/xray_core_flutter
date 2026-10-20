@@ -4,6 +4,9 @@ part of 'transport.dart';
 abstract class XDNSResolver with _$XDNSResolver {
   const factory XDNSResolver({
     List<String>? addrs,
+    int? worker,
+    TLSConfig? tlsConfig,
+    QuicParamsConfig? quicConfig,
     @Deprecated('Use addrs, matching Xray 26.10.10') String? type,
     @Deprecated('Use addrs, matching Xray 26.10.10')
     XDNSResolverSettings? settings,
@@ -13,6 +16,13 @@ abstract class XDNSResolver with _$XDNSResolver {
     final map = asJsonMap(json, 'XDNSResolver');
     return XDNSResolver(
       addrs: (map['addrs'] as List?)?.cast<String>(),
+      worker: map['worker'] as int?,
+      tlsConfig: map['tlsConfig'] == null
+          ? null
+          : TLSConfig.fromJson(map['tlsConfig']),
+      quicConfig: map['quicConfig'] == null
+          ? null
+          : QuicParamsConfig.fromJson(map['quicConfig']),
       type: map['type'] as String?,
       settings: map['settings'] == null
           ? null
@@ -26,8 +36,21 @@ abstract class XDNSResolver with _$XDNSResolver {
   const XDNSResolver._();
 
   Map<String, dynamic> toJson() {
-    if (addrs != null) return withoutNulls({'addrs': addrs});
-    return withoutNulls({'type': type, 'settings': settings?.toJson()});
+    if (addrs != null) {
+      return withoutNulls({
+        'addrs': addrs,
+        'worker': worker,
+        'tlsConfig': tlsConfig?.toJson(),
+        'quicConfig': quicConfig?.toJson(),
+      });
+    }
+    return withoutNulls({
+      'type': type,
+      'settings': settings?.toJson(),
+      'worker': worker,
+      'tlsConfig': tlsConfig?.toJson(),
+      'quicConfig': quicConfig?.toJson(),
+    });
   }
 }
 

@@ -1,3 +1,16 @@
+## v0.9.0
+
+- Synced typed config models and parity checks with Xray-core
+  `infra/conf` v26.10.17.
+- Added Noise Lua scripts, XDNS DoH resolver options (`worker`, `tlsConfig`,
+  and `quicConfig`), and MASQUE XMUX settings.
+- Accepted the canonical `google-drive` XDrive service name while retaining
+  compatibility with `Google Drive` input.
+- Updated MASQUE validation and documentation for Xray 26.10.17 outbound mux support.
+- Documented the Xray TUN `autoSystemDnsToGateway` support on Linux and FreeBSD.
+- Added validation for Xray script conflicts, HTTPS resolver requirements, and
+  MASQUE XMUX range conflicts.
+
 ## v0.8.0
 
 - Synced typed config models and parity checks with Xray-core

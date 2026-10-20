@@ -24,7 +24,7 @@ cd example
 ./run_macos_app.sh
 ```
 
-The form tracks Xray v26.10.10, including MASQUE WARP, XDrive, TUN DNS/leak
+The form tracks Xray v26.10.17, including MASQUE WARP, XDrive, TUN DNS/leak
 options and structured XDNS domains/resolvers. MASQUE and XDrive have JSON
 settings editors so all upstream fields can be configured. XDNS arrays use
 objects such as `{"names":["tunnel.example.com"]}` and

@@ -217,6 +217,15 @@ void _validateNewTransportSettings(
         }
       }
     }
+    final xmux = masque.xmux;
+    if (xmux != null &&
+        (xmux.maxConnections?.to ?? 0) > 0 &&
+        (xmux.maxConcurrency?.to ?? 0) > 0) {
+      issue(
+        'masqueSettings.xmux',
+        'maxConnections cannot be specified together with maxConcurrency',
+      );
+    }
   }
   final drive =
       stream.xdriveSettings ??
@@ -226,6 +235,7 @@ void _validateNewTransportSettings(
       case 'local':
         break;
       case 'Google Drive':
+      case 'google-drive':
         if (drive.secrets?.length != 3) {
           issue(
             'xdriveSettings.secrets',
@@ -239,7 +249,7 @@ void _validateNewTransportSettings(
       default:
         issue(
           'xdriveSettings.service',
-          'expected local, Google Drive, or template',
+          'expected local, google-drive, Google Drive, or template',
         );
     }
     for (final entry in drive.toJson().entries) {
@@ -277,6 +287,13 @@ void _validateNewTransportSettings(
       for (var j = 0; j < resolvers.length; j++) {
         final resolver = resolvers[j];
         final addrs = resolver.addrs;
+        final worker = resolver.worker;
+        if (worker != null && (worker < 0 || worker > 0x7fffffff)) {
+          issue(
+            '$prefix.resolvers[$j].worker',
+            'expected a non-negative int32 worker count',
+          );
+        }
         if (addrs != null) {
           if (!inbound && addrs.isEmpty) {
             issue(
@@ -289,7 +306,15 @@ void _validateNewTransportSettings(
               if (!_validXDNSResolverDestination(addrs[k])) {
                 issue(
                   '$prefix.resolvers[$j].addrs[$k]',
-                  'expected tcp:// or udp:// host with optional port 0–65535',
+                  'expected tcp://, udp://, or https:// resolver destination',
+                );
+              }
+              final destination = addrs[k];
+              if (destination.toLowerCase().startsWith('https://') &&
+                  resolver.tlsConfig == null) {
+                issue(
+                  '$prefix.resolvers[$j].tlsConfig',
+                  'HTTPS resolvers require tlsConfig',
                 );
               }
             }
@@ -323,6 +348,12 @@ void _validateNewTransportSettings(
     }
     if (mask.type.toLowerCase() == 'noise' && settings is NoiseMask) {
       final noise = settings.noiseItems ?? const <NoiseItem>[];
+      if (settings.script?.isNotEmpty == true && noise.isNotEmpty) {
+        issue(
+          '$prefix.script',
+          'noise script cannot be used together with noise items',
+        );
+      }
       for (var j = 0; j < noise.length; j++) {
         final item = noise[j];
         if (item.type?.toLowerCase() != 'exp') continue;
@@ -383,12 +414,19 @@ bool _validXDNSResolverAddress(String address) {
 bool _validXDNSResolverDestination(String address) {
   final value = address.contains('://') ? address : 'udp://$address';
   final uri = Uri.tryParse(value);
-  if (uri == null || (uri.scheme != 'tcp' && uri.scheme != 'udp')) return false;
-  if (uri.host.isEmpty ||
-      uri.userInfo.isNotEmpty ||
-      uri.query.isNotEmpty ||
-      uri.fragment.isNotEmpty) {
+  if (uri == null ||
+      (uri.scheme != 'tcp' && uri.scheme != 'udp' && uri.scheme != 'https')) {
     return false;
+  }
+  if (uri.host.isEmpty || uri.userInfo.isNotEmpty) {
+    return false;
+  }
+  if (uri.scheme != 'https' &&
+      (uri.query.isNotEmpty || uri.fragment.isNotEmpty)) {
+    return false;
+  }
+  if (uri.scheme == 'https') {
+    return uri.port >= 0 && uri.port <= 65535;
   }
   return uri.port >= 0 && uri.port <= 65535;
 }
@@ -453,7 +491,7 @@ bool _validNoiseExpression(String expression) {
       expression.substring(end).replaceAll(_goWhitespace, '').isEmpty;
 }
 
-// Mirrors infra/conf.XDNS.Build in v26.10.10 and xdns.NewDomain. Defaults and uint16
+// Mirrors infra/conf.XDNS.Build in v26.10.17 and xdns.NewDomain. Defaults and uint16
 // conversions are used for validation only; the exported JSON stays intact.
 void _validateXDNSDomain(
   XDNSDomain domain,
@@ -498,7 +536,7 @@ void _validateXDNSDomain(
     }
   }
   final types = domain.types ?? const <int>[];
-  // Xray 26.10.10 defaults omitted types to A, CNAME, TXT and AAAA.
+  // Xray 26.10.17 defaults omitted types to A, CNAME, TXT and AAAA.
   if (types.isEmpty && legacyName) {
     issue('types', 'at least one DNS record type required');
   }

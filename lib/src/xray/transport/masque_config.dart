@@ -35,6 +35,7 @@ abstract class MasqueConfig with _$MasqueConfig {
     String? pass,
     Map<String, String>? headers,
     MasqueWarpConfig? warp,
+    XmuxConfig? xmux,
   }) = _MasqueConfig;
 
   factory MasqueConfig.fromJson(Object? json) {
@@ -48,6 +49,7 @@ abstract class MasqueConfig with _$MasqueConfig {
           ? null
           : asJsonMap(map['headers'], 'headers').cast<String, String>(),
       warp: map['warp'] == null ? null : MasqueWarpConfig.fromJson(map['warp']),
+      xmux: map['xmux'] == null ? null : XmuxConfig.fromJson(map['xmux']),
     );
   }
 
@@ -60,5 +62,6 @@ abstract class MasqueConfig with _$MasqueConfig {
     'pass': pass,
     'headers': headers,
     'warp': warp?.toJson(),
+    'xmux': xmux?.toJson(),
   });
 }

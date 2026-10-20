@@ -72,7 +72,7 @@ void main() {
   });
 
   test(
-    'MASQUE requires its transport and TLS, rejects mux and mismatched settings',
+    'MASQUE requires its transport and TLS and accepts outbound mux',
     () {
       final config = outbound(
         const StreamConfig(),
@@ -85,8 +85,16 @@ void main() {
         containsAll([
           'outbounds[0].streamSettings.network',
           'outbounds[0].streamSettings.security',
-          'outbounds[0].mux',
         ]),
+      );
+      expect(
+        outbound(
+          masqueStream,
+          protocol: 'masque',
+          settings: client,
+          mux: const MuxConfig(enabled: true),
+        ).validate(),
+        isEmpty,
       );
       expect(
         outbound(masqueStream).validate().single.path,

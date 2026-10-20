@@ -119,6 +119,8 @@ extension XrayConfigValidation on XrayConfig {
       );
     }
 
+    _validateScriptConflicts(dns, routing, issues);
+
     return issues;
   }
 
@@ -132,6 +134,77 @@ extension XrayConfigValidation on XrayConfig {
     );
     if (issues.isNotEmpty) {
       throw XrayConfigValidationException(issues);
+    }
+  }
+}
+
+void _validateScriptConflicts(
+  DNSConfig? dns,
+  RouterConfig? routing,
+  List<XrayValidationIssue> issues,
+) {
+  if (dns?.script case final script? when script.isNotEmpty) {
+    if (dns!.disableFallback == true) {
+      issues.add(
+        const XrayValidationIssue(
+          'dns.script',
+          'DNS script cannot be used with disableFallback',
+        ),
+      );
+    }
+    if (dns.disableFallbackIfMatch == true) {
+      issues.add(
+        const XrayValidationIssue(
+          'dns.script',
+          'DNS script cannot be used with disableFallbackIfMatch',
+        ),
+      );
+    }
+    if (dns.enableParallelQuery == true) {
+      issues.add(
+        const XrayValidationIssue(
+          'dns.script',
+          'DNS script cannot be used with enableParallelQuery',
+        ),
+      );
+    }
+    for (var i = 0; i < (dns.servers?.length ?? 0); i++) {
+      final server = dns.servers![i];
+      if (server.domains?.values.isNotEmpty == true) {
+        issues.add(
+          XrayValidationIssue(
+            'dns.servers[$i].domains',
+            'DNS script cannot be used with server domains',
+          ),
+        );
+      }
+      if (server.skipFallback == true) {
+        issues.add(
+          XrayValidationIssue(
+            'dns.servers[$i].skipFallback',
+            'DNS script cannot be used with skipFallback',
+          ),
+        );
+      }
+      if (server.finalQuery == true) {
+        issues.add(
+          XrayValidationIssue(
+            'dns.servers[$i].finalQuery',
+            'DNS script cannot be used with finalQuery',
+          ),
+        );
+      }
+    }
+  }
+  if (routing?.script case final script? when script.isNotEmpty) {
+    if (routing!.domainStrategy != null ||
+        routing.ruleList?.isNotEmpty == true) {
+      issues.add(
+        const XrayValidationIssue(
+          'routing.script',
+          'routing script cannot be used with domainStrategy or rules',
+        ),
+      );
     }
   }
 }
@@ -267,11 +340,6 @@ extension on OutboundDetourConfig {
       issues,
       path,
     );
-    if (knownProtocol == XrayOutboundProtocol.masque && mux?.enabled == true) {
-      issues.add(
-        XrayValidationIssue('$path.mux', 'MASQUE does not support mux'),
-      );
-    }
     _validateOutboundSecurity(this, issues, path);
     if (proxySettings != null) {
       issues.add(
@@ -360,7 +428,7 @@ bool _isCoreSocketPath(String address) {
       RegExp(r'^(?:[a-zA-Z]:[\\/]|\\\\[^\\]+\\[^\\]+)').hasMatch(address);
 }
 
-// Mirrors common/net.ParseAddress in v26.10.10 using dart:core for Flutter web.
+// Mirrors common/net.ParseAddress in v26.10.17 using dart:core for Flutter web.
 String _normalizeCoreAddress(String address) {
   if (address.startsWith('[') && address.endsWith(']')) {
     address = address.substring(1, address.length - 1);
