@@ -54,7 +54,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## 配置覆盖和校验
 
-当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.17。仓库内的 parity
+当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.21。仓库内的 parity
 checker 会核对 Go JSON tag、结构字段、Dart 额外 key 和 config creator loader
 ID：
 
@@ -71,6 +71,57 @@ VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
 `env:` 地址由目标设备上的 Core 解析，本包不会据此判断端口或公网安全要求；
 原始协议 settings 仍遵循 `allowRawSettings` 选项。校验通过不代表已执行 Core
 的全部配置构建及运行时检查。
+
+## v26.10.21 新配置
+
+TCP/UDP finalmask 新增 `Filter`，通过 `blockedSourceIPs` / `allowedSourceIPs`
+配置来源 IP 规则，支持 IP、CIDR、`geoip:cn`、`ext-ip:file.dat:cn` 和 `!` 反选。
+过滤仅在入站生效，出站不执行过滤；黑名单优先，非空白名单只允许匹配来源。
+空列表不限制来源。GeoIP 数据文件及国家代码由目标设备 Core 检查。
+
+```dart
+const FinalMask(tcp: [
+  Mask(type: 'filter', settings: Filter(
+    blockedSourceIPs: ['192.0.2.0/24'],
+    allowedSourceIPs: ['10.0.0.0/8'],
+  )),
+]);
+```
+
+XDrive 新增 `xmux: XmuxConfig(...)`，`maxConnections` 与 `maxConcurrency`
+的范围上限不能同时大于 0。使用 TLS 且 ALPN 精确为 `['h3']` 时启用 HTTP/3；
+此时 Google Drive 的 UDP mask 只支持 `noise`，所有 XDrive 服务均不能使用
+`brutal` / `force-brutal` 拥塞控制。默认连接数等参数由 Core 提供。
+`template` 保持原始 JSON，支持两步操作的 `hrefPath` 和 `hrefMethod`。
+示例表单提供 Filter、XDrive HTTP/3 和 XMUX 控件。校验报错时会保留
+JSON 预览并禁用复制，修正后恢复。完整的两步模板 settings 示例见
+[示例文件](example/configs/xdrive_template_settings.json)，需替换存储服务端点。
+
+```dart
+const stream = StreamConfig(
+  network: TransportProtocol.xdrive,
+  security: SecurityProtocol.tls,
+  tlsSettings: TLSConfig(alpn: XrayStringList(['h3'])),
+  xdriveSettings: XDriveConfig(
+    service: 'google-drive',
+    remoteFolder: 'YOUR_FOLDER_ID',
+    secrets: ['CLIENT_ID', 'CLIENT_SECRET', 'REFRESH_TOKEN'],
+    xmux: XmuxConfig(
+      maxConnections: XrayInt32Range(left: 1, right: 2),
+      hKeepAlivePeriod: 30,
+    ),
+  ),
+);
+```
+
+XDrive、MASQUE 和 XHTTP 共用 XMUX 数值及连接/并发冲突校验。
+XHTTP 校验遵循 `xhttpSettings` 优先于 `splithttpSettings` 的规则；提供原始
+`extra` 时，由 Core 检查其覆盖后的设置。
+XMUX 的 JSON 数字必须位于 int32 范围；字符串范围按 Core 的十进制解析和
+int32 转换处理。`hKeepAlivePeriod` 单位为秒，负数关闭 HTTP/2 保活探测，
+0 使用 Core 默认行为；它不控制 HTTP 连接复用。HTTP/3 优先采用显式设置的
+`finalmask.quicParams.keepAlivePeriod`。示例切换 XMUX 编辑模式会保留参数；
+输入错误时需先修正。
 
 ## v26.10.17 新配置
 

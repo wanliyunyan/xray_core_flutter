@@ -3120,6 +3120,367 @@ class __$FinalMaskCopyWithImpl<$Res> implements _$FinalMaskCopyWith<$Res> {
 }
 
 /// @nodoc
+mixin _$Filter {
+  List<String>? get blockedSourceIPs;
+  List<String>? get allowedSourceIPs;
+
+  /// Create a copy of Filter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $FilterCopyWith<Filter> get copyWith =>
+      _$FilterCopyWithImpl<Filter>(this as Filter, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as Filter;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Filter &&
+            const DeepCollectionEquality().equals(
+              other.blockedSourceIPs,
+              _this.blockedSourceIPs,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.allowedSourceIPs,
+              _this.allowedSourceIPs,
+            ));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as Filter;
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_this.blockedSourceIPs),
+      const DeepCollectionEquality().hash(_this.allowedSourceIPs),
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as Filter;
+    return 'Filter(blockedSourceIPs: ${_this.blockedSourceIPs}, allowedSourceIPs: ${_this.allowedSourceIPs})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $FilterCopyWith<$Res> {
+  factory $FilterCopyWith(Filter value, $Res Function(Filter) _then) =
+      _$FilterCopyWithImpl;
+  @useResult
+  $Res call({List<String>? blockedSourceIPs, List<String>? allowedSourceIPs});
+}
+
+/// @nodoc
+class _$FilterCopyWithImpl<$Res> implements $FilterCopyWith<$Res> {
+  _$FilterCopyWithImpl(this._self, this._then);
+
+  final Filter _self;
+  final $Res Function(Filter) _then;
+
+  /// Create a copy of Filter
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? blockedSourceIPs = freezed,
+    Object? allowedSourceIPs = freezed,
+  }) {
+    return _then(
+      Filter(
+        blockedSourceIPs: freezed == blockedSourceIPs
+            ? _self.blockedSourceIPs
+            : blockedSourceIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        allowedSourceIPs: freezed == allowedSourceIPs
+            ? _self.allowedSourceIPs
+            : allowedSourceIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [Filter].
+extension FilterPatterns on Filter {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Filter value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Filter() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Filter value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Filter():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Filter value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Filter() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      List<String>? blockedSourceIPs,
+      List<String>? allowedSourceIPs,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Filter() when $default != null:
+        return $default(_that.blockedSourceIPs, _that.allowedSourceIPs);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      List<String>? blockedSourceIPs,
+      List<String>? allowedSourceIPs,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Filter():
+        return $default(_that.blockedSourceIPs, _that.allowedSourceIPs);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      List<String>? blockedSourceIPs,
+      List<String>? allowedSourceIPs,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Filter() when $default != null:
+        return $default(_that.blockedSourceIPs, _that.allowedSourceIPs);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _Filter extends Filter {
+  const _Filter({
+    List<String>? blockedSourceIPs,
+    List<String>? allowedSourceIPs,
+  }) : _blockedSourceIPs = blockedSourceIPs,
+       _allowedSourceIPs = allowedSourceIPs,
+       super._();
+
+  final List<String>? _blockedSourceIPs;
+  @override
+  List<String>? get blockedSourceIPs {
+    final value = _blockedSourceIPs;
+    if (value == null) return null;
+    if (_blockedSourceIPs is EqualUnmodifiableListView)
+      return _blockedSourceIPs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _allowedSourceIPs;
+  @override
+  List<String>? get allowedSourceIPs {
+    final value = _allowedSourceIPs;
+    if (value == null) return null;
+    if (_allowedSourceIPs is EqualUnmodifiableListView)
+      return _allowedSourceIPs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Create a copy of Filter
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FilterCopyWith<_Filter> get copyWith =>
+      __$FilterCopyWithImpl<_Filter>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Filter &&
+            const DeepCollectionEquality().equals(
+              other.blockedSourceIPs,
+              _blockedSourceIPs,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other.allowedSourceIPs,
+              _allowedSourceIPs,
+            ));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_blockedSourceIPs),
+      const DeepCollectionEquality().hash(_allowedSourceIPs),
+    );
+  }
+
+  @override
+  String toString() {
+    return 'Filter(blockedSourceIPs: $blockedSourceIPs, allowedSourceIPs: $allowedSourceIPs)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$FilterCopyWith<$Res> implements $FilterCopyWith<$Res> {
+  factory _$FilterCopyWith(_Filter value, $Res Function(_Filter) _then) =
+      __$FilterCopyWithImpl;
+  @override
+  @useResult
+  $Res call({List<String>? blockedSourceIPs, List<String>? allowedSourceIPs});
+}
+
+/// @nodoc
+class __$FilterCopyWithImpl<$Res> implements _$FilterCopyWith<$Res> {
+  __$FilterCopyWithImpl(this._self, this._then);
+
+  final _Filter _self;
+  final $Res Function(_Filter) _then;
+
+  /// Create a copy of Filter
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? blockedSourceIPs = freezed,
+    Object? allowedSourceIPs = freezed,
+  }) {
+    return _then(
+      _Filter(
+        blockedSourceIPs: freezed == blockedSourceIPs
+            ? _self._blockedSourceIPs
+            : blockedSourceIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        allowedSourceIPs: freezed == allowedSourceIPs
+            ? _self._allowedSourceIPs
+            : allowedSourceIPs // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
 mixin _$FragmentMask {
   String? get packets;
   XrayInt32Range? get length;
@@ -23423,6 +23784,7 @@ mixin _$XDriveConfig {
   int? get eagerWindowMs;
   int? get holeTimeoutMs;
   Object? get template;
+  XmuxConfig? get xmux;
 
   /// Create a copy of XDriveConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -23467,7 +23829,8 @@ mixin _$XDriveConfig {
             const DeepCollectionEquality().equals(
               other.template,
               _this.template,
-            ));
+            ) &&
+            (identical(other.xmux, _this.xmux) || other.xmux == _this.xmux));
   }
 
   @override
@@ -23487,13 +23850,14 @@ mixin _$XDriveConfig {
       _this.eagerWindowMs,
       _this.holeTimeoutMs,
       const DeepCollectionEquality().hash(_this.template),
+      _this.xmux,
     );
   }
 
   @override
   String toString() {
     final _this = this as XDriveConfig;
-    return 'XDriveConfig(remoteFolder: ${_this.remoteFolder}, service: ${_this.service}, secrets: ${_this.secrets}, segmentBytes: ${_this.segmentBytes}, flushIntervalMs: ${_this.flushIntervalMs}, pollIntervalMs: ${_this.pollIntervalMs}, maxPollIntervalMs: ${_this.maxPollIntervalMs}, sessionTtlSeconds: ${_this.sessionTtlSeconds}, concurrency: ${_this.concurrency}, eagerWindowMs: ${_this.eagerWindowMs}, holeTimeoutMs: ${_this.holeTimeoutMs}, template: ${_this.template})';
+    return 'XDriveConfig(remoteFolder: ${_this.remoteFolder}, service: ${_this.service}, secrets: ${_this.secrets}, segmentBytes: ${_this.segmentBytes}, flushIntervalMs: ${_this.flushIntervalMs}, pollIntervalMs: ${_this.pollIntervalMs}, maxPollIntervalMs: ${_this.maxPollIntervalMs}, sessionTtlSeconds: ${_this.sessionTtlSeconds}, concurrency: ${_this.concurrency}, eagerWindowMs: ${_this.eagerWindowMs}, holeTimeoutMs: ${_this.holeTimeoutMs}, template: ${_this.template}, xmux: ${_this.xmux})';
   }
 }
 
@@ -23517,7 +23881,10 @@ abstract mixin class $XDriveConfigCopyWith<$Res> {
     int? eagerWindowMs,
     int? holeTimeoutMs,
     Object? template,
+    XmuxConfig? xmux,
   });
+
+  $XmuxConfigCopyWith<$Res>? get xmux;
 }
 
 /// @nodoc
@@ -23544,6 +23911,7 @@ class _$XDriveConfigCopyWithImpl<$Res> implements $XDriveConfigCopyWith<$Res> {
     Object? eagerWindowMs = freezed,
     Object? holeTimeoutMs = freezed,
     Object? template = freezed,
+    Object? xmux = freezed,
   }) {
     return _then(
       XDriveConfig(
@@ -23592,8 +23960,26 @@ class _$XDriveConfigCopyWithImpl<$Res> implements $XDriveConfigCopyWith<$Res> {
             : holeTimeoutMs // ignore: cast_nullable_to_non_nullable
                   as int?,
         template: freezed == template ? _self.template : template,
+        xmux: freezed == xmux
+            ? _self.xmux
+            : xmux // ignore: cast_nullable_to_non_nullable
+                  as XmuxConfig?,
       ),
     );
+  }
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XmuxConfigCopyWith<$Res>? get xmux {
+    if (_self.xmux == null) {
+      return null;
+    }
+
+    return $XmuxConfigCopyWith<$Res>(_self.xmux!, (value) {
+      return _then(_self.copyWith(xmux: value));
+    });
   }
 }
 
@@ -23703,6 +24089,7 @@ extension XDriveConfigPatterns on XDriveConfig {
       int? eagerWindowMs,
       int? holeTimeoutMs,
       Object? template,
+      XmuxConfig? xmux,
     )?
     $default, {
     required TResult orElse(),
@@ -23723,6 +24110,7 @@ extension XDriveConfigPatterns on XDriveConfig {
           _that.eagerWindowMs,
           _that.holeTimeoutMs,
           _that.template,
+          _that.xmux,
         );
       case _:
         return orElse();
@@ -23757,6 +24145,7 @@ extension XDriveConfigPatterns on XDriveConfig {
       int? eagerWindowMs,
       int? holeTimeoutMs,
       Object? template,
+      XmuxConfig? xmux,
     )
     $default,
   ) {
@@ -23776,6 +24165,7 @@ extension XDriveConfigPatterns on XDriveConfig {
           _that.eagerWindowMs,
           _that.holeTimeoutMs,
           _that.template,
+          _that.xmux,
         );
       case _:
         throw StateError('Unexpected subclass');
@@ -23809,6 +24199,7 @@ extension XDriveConfigPatterns on XDriveConfig {
       int? eagerWindowMs,
       int? holeTimeoutMs,
       Object? template,
+      XmuxConfig? xmux,
     )?
     $default,
   ) {
@@ -23828,6 +24219,7 @@ extension XDriveConfigPatterns on XDriveConfig {
           _that.eagerWindowMs,
           _that.holeTimeoutMs,
           _that.template,
+          _that.xmux,
         );
       case _:
         return null;
@@ -23851,6 +24243,7 @@ class _XDriveConfig extends XDriveConfig {
     this.eagerWindowMs,
     this.holeTimeoutMs,
     this.template,
+    this.xmux,
   }) : _secrets = secrets,
        super._();
 
@@ -23886,6 +24279,8 @@ class _XDriveConfig extends XDriveConfig {
   final int? holeTimeoutMs;
   @override
   final Object? template;
+  @override
+  final XmuxConfig? xmux;
 
   /// Create a copy of XDriveConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -23920,7 +24315,8 @@ class _XDriveConfig extends XDriveConfig {
                 other.eagerWindowMs == eagerWindowMs) &&
             (identical(other.holeTimeoutMs, holeTimeoutMs) ||
                 other.holeTimeoutMs == holeTimeoutMs) &&
-            const DeepCollectionEquality().equals(other.template, template));
+            const DeepCollectionEquality().equals(other.template, template) &&
+            (identical(other.xmux, xmux) || other.xmux == xmux));
   }
 
   @override
@@ -23939,12 +24335,13 @@ class _XDriveConfig extends XDriveConfig {
       eagerWindowMs,
       holeTimeoutMs,
       const DeepCollectionEquality().hash(template),
+      xmux,
     );
   }
 
   @override
   String toString() {
-    return 'XDriveConfig(remoteFolder: $remoteFolder, service: $service, secrets: $secrets, segmentBytes: $segmentBytes, flushIntervalMs: $flushIntervalMs, pollIntervalMs: $pollIntervalMs, maxPollIntervalMs: $maxPollIntervalMs, sessionTtlSeconds: $sessionTtlSeconds, concurrency: $concurrency, eagerWindowMs: $eagerWindowMs, holeTimeoutMs: $holeTimeoutMs, template: $template)';
+    return 'XDriveConfig(remoteFolder: $remoteFolder, service: $service, secrets: $secrets, segmentBytes: $segmentBytes, flushIntervalMs: $flushIntervalMs, pollIntervalMs: $pollIntervalMs, maxPollIntervalMs: $maxPollIntervalMs, sessionTtlSeconds: $sessionTtlSeconds, concurrency: $concurrency, eagerWindowMs: $eagerWindowMs, holeTimeoutMs: $holeTimeoutMs, template: $template, xmux: $xmux)';
   }
 }
 
@@ -23970,7 +24367,11 @@ abstract mixin class _$XDriveConfigCopyWith<$Res>
     int? eagerWindowMs,
     int? holeTimeoutMs,
     Object? template,
+    XmuxConfig? xmux,
   });
+
+  @override
+  $XmuxConfigCopyWith<$Res>? get xmux;
 }
 
 /// @nodoc
@@ -23998,6 +24399,7 @@ class __$XDriveConfigCopyWithImpl<$Res>
     Object? eagerWindowMs = freezed,
     Object? holeTimeoutMs = freezed,
     Object? template = freezed,
+    Object? xmux = freezed,
   }) {
     return _then(
       _XDriveConfig(
@@ -24046,8 +24448,26 @@ class __$XDriveConfigCopyWithImpl<$Res>
             : holeTimeoutMs // ignore: cast_nullable_to_non_nullable
                   as int?,
         template: freezed == template ? _self.template : template,
+        xmux: freezed == xmux
+            ? _self.xmux
+            : xmux // ignore: cast_nullable_to_non_nullable
+                  as XmuxConfig?,
       ),
     );
+  }
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XmuxConfigCopyWith<$Res>? get xmux {
+    if (_self.xmux == null) {
+      return null;
+    }
+
+    return $XmuxConfigCopyWith<$Res>(_self.xmux!, (value) {
+      return _then(_self.copyWith(xmux: value));
+    });
   }
 }
 

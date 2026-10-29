@@ -567,6 +567,7 @@ void _validateStream(
 }) {
   if (stream == null) return;
   _validateNewTransportSettings(stream, issues, path, inbound: inbound);
+  _validateTransport261021(stream, issues, path);
   final sockopt = inheritedSockopt ?? stream.sockopt;
   // Inherited options were already checked where they were declared.
   if (!inbound && inheritedSockopt == null) {

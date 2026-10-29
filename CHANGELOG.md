@@ -1,3 +1,30 @@
+## v0.10.0
+
+- Disable example copying for validation errors while retaining the JSON preview
+  and restoring copy after correction. Add a complete two-step XDrive template
+  settings reference with all four storage operations.
+
+- Synced typed config models and parity checks with Xray-core
+  `infra/conf` v26.10.21.
+- Added typed TCP/UDP `Filter` masks with blocked/allowed source IP rules.
+  Validation checks IP/CIDR, GeoIP/external rule syntax and inversion; target
+  asset checks remain Core's responsibility. Filtering takes effect on inbounds.
+- Added XDrive XMUX and validation for conflicting concurrency/connection ranges.
+- Added XDrive HTTP/3 checks for Google Drive UDP masks and brutal congestion.
+  Raw two-step template options (`hrefPath`, `hrefMethod`) remain preserved.
+- Added example controls for source IP filters, XDrive HTTP/3 and XMUX, including
+  recoverable errors for malformed XMUX field input.
+- Reject typed Filter settings attached to another mask type instead of silently
+  exporting ineffective source rules; match Go's Unicode whitespace for IP rules.
+- Preserve existing XMUX values and edits when switching example editor modes.
+- Match Core's XMUX decimal range parsing, JSON int32 bounds and string-to-int32
+  conversion; validate invalid typed XDrive XMUX JSON numbers before export.
+- Share XMUX parsing with example fields and verify recovery from invalid input
+  when changing editor modes. Add an XDrive HTTP/3 and XMUX usage example.
+- Apply shared XMUX bounds and connection/concurrency conflict validation to
+  XDrive, MASQUE and XHTTP, including nested streams. Respect XHTTP alias and
+  raw extra precedence.
+
 ## v0.9.0
 
 - Synced typed config models and parity checks with Xray-core

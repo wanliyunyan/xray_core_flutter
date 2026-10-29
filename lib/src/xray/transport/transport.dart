@@ -18,6 +18,7 @@ part 'dns.dart';
 part 'dtls.dart';
 part 'final_mask.dart';
 part 'final_mask_settings.dart';
+part 'filter.dart';
 part 'fragment_mask.dart';
 part 'grpc_config.dart';
 part 'happy_eyeballs_config.dart';

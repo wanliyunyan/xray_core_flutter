@@ -1,0 +1,34 @@
+{
+  "service": "template",
+  "remoteFolder": "YOUR_FOLDER_ID",
+  "xmux": {
+    "maxConnections": "1-2",
+    "hKeepAlivePeriod": 30
+  },
+  "template": {
+    "auth": {
+      "type": "none"
+    },
+    "put": {
+      "method": "GET",
+      "url": "https://storage.example/upload?folder={folder}&name={name}",
+      "hrefPath": "href",
+      "hrefMethod": "PUT"
+    },
+    "get": {
+      "method": "GET",
+      "url": "https://storage.example/download?folder={folder}&name={name}",
+      "hrefPath": "href",
+      "hrefMethod": "GET"
+    },
+    "list": {
+      "method": "PROPFIND",
+      "url": "https://storage.example/objects/{folder}/{prefix}",
+      "namesRegex": "<d:href>([^<]+)</d:href>"
+    },
+    "delete": {
+      "method": "DELETE",
+      "url": "https://storage.example/objects/{folder}/{name}"
+    }
+  }
+}

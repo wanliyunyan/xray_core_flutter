@@ -55,7 +55,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## Config Parity
 
-The Dart models currently track Xray-core `infra/conf` v26.10.17. The parity
+The Dart models currently track Xray-core `infra/conf` v26.10.21. The parity
 checker compares Go JSON tags, struct fields, unexpected Dart keys, and config
 creator loader IDs:
 
@@ -85,6 +85,53 @@ Legacy `proxySettings` JSON is retained as a raw map but rejected by validation.
 Move Hysteria congestion and bandwidth options to `FinalMask.quicParams`.
 Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
 `FinalMask.udp`, using `mode`, `remotePorts`, and `interval`.
+
+## v26.10.21 and Migration to v0.10.0
+
+TCP/UDP finalmask supports typed `Filter` settings with `blockedSourceIPs` and
+`allowedSourceIPs`. Rules accept IPs, CIDRs, `geoip:cn`, `ext-ip:file.dat:cn`,
+and `!` inversion. Filtering applies to inbounds; outbound filters are a no-op.
+Blocked rules take precedence. A nonempty allowlist restricts sources to its
+matches; empty lists impose no restriction. Core checks GeoIP assets and country
+codes on the target device.
+
+XDrive supports `xmux: XmuxConfig(...)`; the upper endpoints of `maxConnections`
+and `maxConcurrency` cannot both be positive. TLS with ALPN exactly `['h3']`
+enables HTTP/3. Google Drive then supports only `noise` UDP masks, and all XDrive
+services reject `brutal` / `force-brutal` congestion. Core supplies defaults.
+Raw `template` JSON preserves two-step `hrefPath` and `hrefMethod` options.
+The example includes source filter, XDrive HTTP/3 and XMUX controls. Copying is disabled
+while validation reports errors; the JSON preview remains visible for correction.
+A complete two-step template settings schema is available in the
+[example file](example/configs/xdrive_template_settings.json); replace its storage
+service endpoints before use.
+
+```dart
+const stream = StreamConfig(
+  network: TransportProtocol.xdrive,
+  security: SecurityProtocol.tls,
+  tlsSettings: TLSConfig(alpn: XrayStringList(['h3'])),
+  xdriveSettings: XDriveConfig(
+    service: 'google-drive',
+    remoteFolder: 'YOUR_FOLDER_ID',
+    secrets: ['CLIENT_ID', 'CLIENT_SECRET', 'REFRESH_TOKEN'],
+    xmux: XmuxConfig(
+      maxConnections: XrayInt32Range(left: 1, right: 2),
+      hKeepAlivePeriod: 30,
+    ),
+  ),
+);
+```
+
+XDrive, MASQUE and XHTTP share XMUX bounds and connection/concurrency conflict
+validation. XHTTP gives `xhttpSettings` precedence over `splithttpSettings`; raw
+`extra` overrides remain Core checks.
+XMUX JSON numbers must fit int32; decimal string ranges use Core's int32
+conversion. `hKeepAlivePeriod` is in seconds: negative values disable HTTP/2
+keepalive pings, and zero uses Core's defaults. This does not disable connection
+reuse. HTTP/3 gives an explicit `finalmask.quicParams.keepAlivePeriod` precedence.
+The example preserves settings when switching XMUX editor modes and retains
+invalid input until corrected.
 
 ## v26.10.17 and Migration to v0.9.0
 

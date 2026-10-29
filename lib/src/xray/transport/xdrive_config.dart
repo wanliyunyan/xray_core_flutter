@@ -15,6 +15,7 @@ abstract class XDriveConfig with _$XDriveConfig {
     int? eagerWindowMs,
     int? holeTimeoutMs,
     Object? template,
+    XmuxConfig? xmux,
   }) = _XDriveConfig;
 
   factory XDriveConfig.fromJson(Object? json) {
@@ -32,6 +33,7 @@ abstract class XDriveConfig with _$XDriveConfig {
       eagerWindowMs: map['eagerWindowMs'] as int?,
       holeTimeoutMs: map['holeTimeoutMs'] as int?,
       template: map['template'],
+      xmux: map['xmux'] == null ? null : XmuxConfig.fromJson(map['xmux']),
     );
   }
 
@@ -50,5 +52,6 @@ abstract class XDriveConfig with _$XDriveConfig {
     'eagerWindowMs': eagerWindowMs,
     'holeTimeoutMs': holeTimeoutMs,
     'template': template,
+    'xmux': xmux?.toJson(),
   });
 }

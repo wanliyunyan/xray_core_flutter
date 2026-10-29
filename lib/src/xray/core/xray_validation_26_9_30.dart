@@ -217,15 +217,6 @@ void _validateNewTransportSettings(
         }
       }
     }
-    final xmux = masque.xmux;
-    if (xmux != null &&
-        (xmux.maxConnections?.to ?? 0) > 0 &&
-        (xmux.maxConcurrency?.to ?? 0) > 0) {
-      issue(
-        'masqueSettings.xmux',
-        'maxConnections cannot be specified together with maxConcurrency',
-      );
-    }
   }
   final drive =
       stream.xdriveSettings ??

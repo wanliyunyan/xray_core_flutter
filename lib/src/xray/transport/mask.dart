@@ -29,6 +29,7 @@ FinalMaskSettings _parseFinalMaskSettings(
   required bool udp,
 }) {
   return switch (type.toLowerCase()) {
+    'filter' => Filter.fromJson(json),
     'header-custom' =>
       udp ? HeaderCustomUDP.fromJson(json) : HeaderCustomTCP.fromJson(json),
     'fragment' => FragmentMask.fromJson(json),

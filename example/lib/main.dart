@@ -94,6 +94,20 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _masqueRemoteDnsController = TextEditingController(text: '1.1.1.1');
   final _xdriveController = TextEditingController(
       text: '{"service":"local","remoteFolder":"/tmp/xdrive"}');
+  final _xdriveXmuxControllers = <String, TextEditingController>{
+    for (final key in ['maxConcurrency', 'maxConnections', 'cMaxReuseTimes',
+      'hMaxRequestTimes', 'hMaxReusableSecs', 'hKeepAlivePeriod'])
+      key: TextEditingController(),
+  };
+  final _filterControllers = <String, TextEditingController>{
+    for (final network in ['tcp', 'udp'])
+      for (final field in ['blockedSourceIPs', 'allowedSourceIPs'])
+        '$network.$field': TextEditingController(),
+  };
+  bool _xdriveH3 = false;
+  bool _xdriveXmuxFields = false;
+  bool _finalMaskTcpFilter = false;
+  bool _finalMaskUdpFilter = false;
   final _tunWfpController = TextEditingController(text: '');
   final _listenController = TextEditingController(text: '127.0.0.1');
   final _inboundTagController = TextEditingController();
@@ -689,6 +703,12 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _masqueTransportController.dispose();
     _masqueRemoteDnsController.dispose();
     _xdriveController.dispose();
+    for (final controller in _xdriveXmuxControllers.values) {
+      controller.dispose();
+    }
+    for (final controller in _filterControllers.values) {
+      controller.dispose();
+    }
     _tunWfpController.dispose();
     _listenController.dispose();
     _inboundTagController.dispose();
@@ -1127,7 +1147,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   }
 
   SecurityKind get _effectiveSecurity {
-    if (_protocol == ProxyProtocol.masque) return SecurityKind.tls;
+    if (_protocol == ProxyProtocol.masque ||
+        (_effectiveTransport == TransportKind.xdrive && _xdriveH3)) {
+      return SecurityKind.tls;
+    }
     if (_security == SecurityKind.reality &&
         (_protocol != ProxyProtocol.vless || !_realityTransportEnabled)) {
       return SecurityKind.tls;
@@ -1924,8 +1947,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           finalmask: finalmask,
           tlsSettings: tlsSettings,
           realitySettings: realitySettings,
-          xdriveSettings: _typedJson(
-              _xdriveController, XDriveConfig.fromJson, 'XDrive settings JSON'),
+          xdriveSettings: _xdriveSettings(),
           sockopt: sockopt,
         ),
       TransportKind.tcp => StreamConfig(
@@ -2125,6 +2147,53 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     return host == null ? null : {'Host': host};
   }
 
+  XDriveConfig _xdriveSettings() {
+    final drive = _typedJson(
+        _xdriveController, XDriveConfig.fromJson, 'XDrive settings JSON');
+    if (!_xdriveXmuxFields) return drive;
+    final fields = <String, dynamic>{};
+    for (final entry in _xdriveXmuxControllers.entries) {
+      final value = entry.value.text.trim();
+      if (value.isEmpty) continue;
+      try {
+        fields.addAll(XmuxConfig.fromJson({
+          entry.key: entry.key == 'hKeepAlivePeriod' ? int.parse(value) : value,
+        }).toJson());
+      } on FormatException {
+        throw FormatException('XDrive xmux ${entry.key}: 整数或范围格式错误');
+      }
+    }
+    return drive.copyWith(xmux: XmuxConfig.fromJson(fields));
+  }
+
+  void _changeXdriveXmuxMode(bool value) {
+    try {
+      final json = _typedJson(_xdriveController, (json) {
+        if (json is! Map<String, dynamic>) {
+          throw const FormatException('expected settings object');
+        }
+        return json;
+      }, 'XDrive settings JSON');
+      if (value) {
+        final xmux = json['xmux'] == null
+            ? <String, dynamic>{}
+            : XmuxConfig.fromJson(json['xmux']).toJson();
+        for (final entry in _xdriveXmuxControllers.entries) {
+          entry.value.text = xmux[entry.key]?.toString() ?? '';
+        }
+      } else {
+        json['xmux'] = _xdriveSettings().xmux?.toJson();
+        _xdriveController.text = const JsonEncoder.withIndent('  ').convert(json);
+      }
+      setState(() => _xdriveXmuxFields = value);
+    } on FormatException {
+      // Retain the current mode and inputs; build displays the parse error.
+      _refresh();
+    } on TypeError {
+      _refresh();
+    }
+  }
+
   XmuxConfig _xmuxSettings() {
     return XmuxConfig(
       maxConcurrency:
@@ -2186,7 +2255,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     final tlsServerName = _tlsServerNameOverride
         ? (_emptyToNull(_tlsServerNameController.text) ?? serverName)
         : serverName;
-    final alpn = _tlsAlpnCustom
+    final alpn = _effectiveTransport == TransportKind.xdrive && _xdriveH3
+        ? <String>['h3']
+        : _tlsAlpnCustom
         ? (_csv(_tlsAlpnCustomController.text) ?? const <String>[])
         : <String>[
             if (_tlsAlpnH2) 'h2',
@@ -2825,6 +2896,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       return _listFromJson(_finalMaskTcpJsonController, Mask.fromJson);
     }
     final masks = <Mask>[
+      if (_finalMaskTcpFilter) _finalMaskFilter('tcp'),
       if (_finalMaskTcpFragment) _finalMaskFragmentMask(),
       if (_finalMaskTcpHeaderCustom) _finalMaskTcpHeaderCustomMask(),
       if (_finalMaskTcpSudoku) _finalMaskSudokuMask(),
@@ -2843,6 +2915,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       );
     }
     final masks = <Mask>[
+      if (_finalMaskUdpFilter) _finalMaskFilter('udp'),
       if (_finalMaskUdpNoise) _finalMaskNoiseMask(),
       if (_finalMaskUdpDns) _finalMaskDnsMask(),
       if (_finalMaskUdpSalamander) _finalMaskSalamanderMask(),
@@ -2860,6 +2933,14 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     ];
     return masks.isEmpty ? null : masks;
   }
+
+  Mask _finalMaskFilter(String network) => Mask(
+    type: 'filter',
+    settings: Filter(
+      blockedSourceIPs: _csv(_filterControllers['$network.blockedSourceIPs']!.text),
+      allowedSourceIPs: _csv(_filterControllers['$network.allowedSourceIPs']!.text),
+    ),
+  );
 
   Mask _finalMaskFragmentMask() {
     return Mask(
@@ -3182,7 +3263,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     }
     final textToCopy = jsonText;
     final VoidCallback? onCopy =
-        textToCopy == null ? null : () => _copyJson(textToCopy);
+        textToCopy == null || issues.isNotEmpty ? null : () => _copyJson(textToCopy);
     final wide = MediaQuery.sizeOf(context).width >= 920;
     final controls = _ControlPane(child: _buildControls());
     final preview = _JsonPane(
@@ -4411,6 +4492,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
               if (_enableFinalMaskTcpFields)
                 ..._buildFinalMaskMaskControls(
                   udp: false,
+                  filterValue: _finalMaskTcpFilter,
+                  onFilterChanged: (value) => setState(() => _finalMaskTcpFilter = value),
                   fragmentValue: _finalMaskTcpFragment,
                   noiseValue: _finalMaskTcpNoise,
                   dnsValue: _finalMaskTcpDns,
@@ -4485,6 +4568,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
               if (_enableFinalMaskUdpFields)
                 ..._buildFinalMaskMaskControls(
                   udp: true,
+                  filterValue: _finalMaskUdpFilter,
+                  onFilterChanged: (value) => setState(() => _finalMaskUdpFilter = value),
                   fragmentValue: _finalMaskUdpFragment,
                   noiseValue: _finalMaskUdpNoise,
                   dnsValue: _finalMaskUdpDns,
@@ -5324,12 +5409,37 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
               label: 'MASQUE transport JSON',
               icon: Icons.edit_rounded,
               onChanged: _refresh),
-        if (_effectiveTransport == TransportKind.xdrive)
+        if (_effectiveTransport == TransportKind.xdrive) ...[
           _TextInput(
               controller: _xdriveController,
               label: 'XDrive settings JSON',
               icon: Icons.edit_rounded,
+              maxLines: 5,
               onChanged: _refresh),
+          _CheckRow(
+            value: _xdriveH3,
+            title: 'XDrive HTTP/3',
+            icon: Icons.speed_rounded,
+            onChanged: (value) => setState(() => _xdriveH3 = value),
+          ),
+          const Text('HTTP/3 使用 TLS ALPN h3；Google Drive 仅支持 noise UDP mask，不能使用 brutal 拥塞控制。'),
+          _CheckRow(
+            value: _xdriveXmuxFields,
+            title: 'XDrive XMUX 字段配置',
+            icon: Icons.call_split_rounded,
+            onChanged: _changeXdriveXmuxMode,
+          ),
+          if (_xdriveXmuxFields)
+            for (final entry in _xdriveXmuxControllers.entries) ...[
+              const SizedBox(height: 12),
+              _TextInput(
+                controller: entry.value,
+                label: 'XDrive xmux ${entry.key}',
+                icon: Icons.numbers_rounded,
+                onChanged: _refresh,
+              ),
+            ],
+        ],
         if (_usesHysteriaTransportSettings) ...[
           const SizedBox(height: 12),
           _TextInput(
@@ -7479,6 +7589,8 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
 
   List<Widget> _buildFinalMaskMaskControls({
     required bool udp,
+    required bool filterValue,
+    required ValueChanged<bool> onFilterChanged,
     required bool fragmentValue,
     required bool noiseValue,
     required bool dnsValue,
@@ -7510,7 +7622,26 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     required ValueChanged<bool> onWechatChanged,
     required ValueChanged<bool> onWireguardChanged,
   }) {
+    final network = udp ? 'udp' : 'tcp';
     return [
+      _CheckRow(
+        value: filterValue,
+        title: '添加 filter mask',
+        icon: Icons.filter_alt_rounded,
+        onChanged: onFilterChanged,
+      ),
+      if (filterValue) ...[
+        const Text('仅在入站过滤来源 IP；黑名单优先，非空白名单只允许匹配来源。支持 IP/CIDR、geoip:、ext-ip: 和 ! 反选。'),
+        for (final field in ['blockedSourceIPs', 'allowedSourceIPs']) ...[
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _filterControllers['$network.$field']!,
+            label: '$network filter $field',
+            icon: Icons.filter_alt_rounded,
+            onChanged: _refresh,
+          ),
+        ],
+      ],
       if (!udp)
         _CheckRow(
           value: fragmentValue,
@@ -7836,7 +7967,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   }
 
   bool _securityEnabled(SecurityKind security) {
-    if (_protocol == ProxyProtocol.masque) return security == SecurityKind.tls;
+    if (_protocol == ProxyProtocol.masque ||
+        (_effectiveTransport == TransportKind.xdrive && _xdriveH3)) {
+      return security == SecurityKind.tls;
+    }
     if (security == SecurityKind.reality) {
       return _protocol == ProxyProtocol.vless && _realityTransportEnabled;
     }
@@ -7932,7 +8066,7 @@ class _JsonPane extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '校验提示',
+                    '请修正以下问题后复制配置',
                     style: TextStyle(
                       color: colorScheme.onErrorContainer,
                       fontWeight: FontWeight.w700,
