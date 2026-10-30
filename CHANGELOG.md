@@ -1,3 +1,23 @@
+## v0.11.0
+
+- Synced typed config models and parity checks with local Xray-core
+  `infra/conf` v26.10.29 (0afec660).
+- Added XDrive S3 storage with typed `XDriveS3Config`, preserving omitted
+  defaults and validating endpoints, regions, bucket/prefix names, addressing
+  modes and credential structure for inbound and outbound streams.
+- Aligned VLESS/Trojan transport security exemptions with Core's private,
+  loopback and link-local unicast IP checks. Reserved/test, CGNAT, unspecified
+  and multicast addresses now require transport security or VLESS encryption.
+- Added an S3 example settings reference, editor regression coverage and
+  migration notes for deprecated Freedom fragment/noises. Google Drive ring
+  slots and geodata file handling remain Core runtime responsibilities.
+- Align S3 URL host parsing with Go, including Unicode host characters,
+  escaped hostnames, scoped IPv6 UTF-8 validation and port syntax. Reject
+  percent-encoded non-ASCII zone bytes while preserving raw Unicode zones.
+- Check active Geodata schedules for the new 100-asset limit, `.dat` file
+  extensions and `@every` intervals of at least one minute. Add S3 effective
+  transport, HTTP/3 and nested download-stream regression coverage.
+
 ## v0.10.0
 
 - Disable example copying for validation errors while retaining the JSON preview

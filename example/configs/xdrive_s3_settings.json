@@ -1,0 +1,11 @@
+{
+  "service": "s3",
+  "remoteFolder": "xray/sessions",
+  "secrets": ["YOUR_ACCESS_KEY_ID", "YOUR_SECRET_ACCESS_KEY"],
+  "s3": {
+    "endpoint": "https://s3.example.com",
+    "region": "us-east-1",
+    "bucket": "xray-bucket",
+    "pathStyle": true
+  }
+}

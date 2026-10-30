@@ -5410,6 +5410,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
               icon: Icons.edit_rounded,
               onChanged: _refresh),
         if (_effectiveTransport == TransportKind.xdrive) ...[
+          const Text('XDrive 支持 local、google-drive、template 和 s3。S3 在 JSON 中配置 s3 对象，secrets 为 AccessKeyID、SecretAccessKey 和可选 SessionToken。'),
           _TextInput(
               controller: _xdriveController,
               label: 'XDrive settings JSON',
@@ -6914,6 +6915,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             icon: Icons.call_split_rounded,
             onChanged: (value) => setState(() => _directEnableFragment = value),
           ),
+          const Text('Core v26.10.29 已弃用 Freedom fragment/noises；建议改用 streamSettings.finalmask.tcp fragment 和 finalmask.udp noise。'),
           if (_directEnableFragment) ...[
             const SizedBox(height: 12),
             _TextInput(

@@ -55,7 +55,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## Config Parity
 
-The Dart models currently track Xray-core `infra/conf` v26.10.21. The parity
+The Dart models currently track Xray-core `infra/conf` v26.10.29. The parity
 checker compares Go JSON tags, struct fields, unexpected Dart keys, and config
 creator loader IDs:
 
@@ -64,7 +64,7 @@ dart run tool/check_xray_conf_parity.dart ../Xray-core/infra/conf
 ```
 
 `validate()` checks ports for IP listeners and transport security for public
-VLESS/Trojan targets, using Core v26.10.17's built-in private address rules. TUN
+VLESS/Trojan targets, using Core v26.10.29's private, loopback and link-local unicast IP rules. TUN
 and Unix socket listeners do not require ports. Core resolves `env:` addresses
 on the target device; this package defers their port and public-target checks.
 Raw protocol settings still follow `allowRawSettings`. Successful validation
@@ -85,6 +85,31 @@ Legacy `proxySettings` JSON is retained as a raw map but rejected by validation.
 Move Hysteria congestion and bandwidth options to `FinalMask.quicParams`.
 Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
 `FinalMask.udp`, using `mode`, `remotePorts`, and `interval`.
+
+## v26.10.29 and Migration to v0.11.0
+
+XDrive adds `service: 's3'` with typed `XDriveS3Config(endpoint:, region:,
+bucket:, pathStyle:)`. Set `remoteFolder` to a nonempty relative prefix (one
+trailing slash is allowed), and `secrets` to AccessKeyID, SecretAccessKey and an
+optional SessionToken. Endpoints must be HTTP(S) URLs without credentials,
+query or fragment. Omitted `region` and `pathStyle` retain Core's defaults of
+`us-east-1` and `true` without adding them to exported JSON. Virtual-hosted
+addressing (`pathStyle: false`) requires a DNS endpoint and compatible bucket.
+See the [S3 settings reference](example/configs/xdrive_s3_settings.json), which
+can be pasted into the example's XDrive JSON editor.
+
+Unencrypted VLESS/Trojan outbounds no longer exempt CGNAT, documentation/test,
+unspecified or multicast IP addresses. IP exemptions now follow Go's
+`IsPrivate`, `IsLoopback` and `IsLinkLocalUnicast`; private domain rules are
+unchanged. Enable TLS/REALITY or VLESS encryption for affected targets.
+Freedom `fragment` and `noises` still serialize, but Core deprecates them in
+favor of `streamSettings.finalmask.tcp` fragment and `finalmask.udp` noise.
+Active Geodata schedules allow at most 100 assets, require `.dat` file
+extensions (case insensitive), and require `@every` intervals of at least one
+minute. Dart checks these limits; asset paths, file availability, timezones and
+full cron syntax remain target-device checks. Core limits each asset download
+to 256 MiB. Google Drive
+ring slots are implemented by Core without new JSON fields.
 
 ## v26.10.21 and Migration to v0.10.0
 
@@ -153,7 +178,7 @@ MASQUE now has typed inbound/outbound settings (`MasqueServerConfig`,
 MASQUE inbound `address` entries must be usable host CIDRs with addresses left
 for clients. Subnet addresses, IPv4 broadcasts, IPv4-mapped IPv6 addresses and
 pools too small to assign clients are rejected.
-`XDriveConfig` supports `local`, `google-drive` (and legacy `Google Drive`) and
+`XDriveConfig` supports `local`, `google-drive` (and legacy `Google Drive`), `s3` and
 `template` services.
 Core remains responsible for default values. XDrive cannot use REALITY; TLS is
 supported. XDNS requires domains on both sides and resolvers on clients;

@@ -237,10 +237,12 @@ void _validateNewTransportSettings(
         if (drive.template == null) {
           issue('xdriveSettings.template', 'template required');
         }
+      case 's3':
+        _validateXDriveS3(drive, issues, '$path.xdriveSettings');
       default:
         issue(
           'xdriveSettings.service',
-          'expected local, google-drive, Google Drive, or template',
+          'expected local, google-drive, Google Drive, template, or s3',
         );
     }
     for (final entry in drive.toJson().entries) {

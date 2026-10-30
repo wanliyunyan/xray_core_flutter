@@ -54,7 +54,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## 配置覆盖和校验
 
-当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.21。仓库内的 parity
+当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.29。仓库内的 parity
 checker 会核对 Go JSON tag、结构字段、Dart 额外 key 和 config creator loader
 ID：
 
@@ -63,7 +63,7 @@ dart run tool/check_xray_conf_parity.dart ../Xray-core/infra/conf
 ```
 
 `validate()` 会检查 IP 监听的端口，以及公网 VLESS/Trojan 出站的传输安全要求，
-私有地址范围按 v26.10.17 Core 的内置规则判断。TUN 和 Unix socket 监听不要求端口。
+IP 豁免范围按 v26.10.29 Core 的 `IsPrivate`、`IsLoopback` 和 `IsLinkLocalUnicast` 判断，私有域名规则保持一致。TUN 和 Unix socket 监听不要求端口。
 普通域名不能用作监听地址（`localhost` 除外）。VLESS 入站用户的 `reverse.tag`
 可用于 `dialerProxy`、路由出站及负载均衡回退引用；`clients` 优先于 `users`。
 VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
@@ -71,6 +71,39 @@ VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
 `env:` 地址由目标设备上的 Core 解析，本包不会据此判断端口或公网安全要求；
 原始协议 settings 仍遵循 `allowRawSettings` 选项。校验通过不代表已执行 Core
 的全部配置构建及运行时检查。
+
+## v26.10.29 新配置
+
+XDrive 新增 `service: 's3'` 和类型化 `XDriveS3Config`：
+
+```dart
+const drive = XDriveConfig(
+  service: 's3',
+  remoteFolder: 'xray/sessions',
+  secrets: ['YOUR_ACCESS_KEY_ID', 'YOUR_SECRET_ACCESS_KEY'],
+  s3: XDriveS3Config(
+    endpoint: 'https://s3.example.com',
+    region: 'us-east-1',
+    bucket: 'xray-bucket',
+    pathStyle: true,
+  ),
+);
+```
+
+`secrets` 可添加第三项 SessionToken。省略 `region` 时 Core 使用 `us-east-1`，
+省略 `pathStyle` 时使用 `true`；Dart 保留省略状态，不写入默认值。
+`pathStyle: false` 需要 DNS 端点和兼容 DNS 的 bucket 名称。
+`remoteFolder` 是非空相对前缀，可带一个结尾 `/`；端点不能包含凭据、查询参数或片段。
+示例的 XDrive JSON 编辑器可直接使用 [S3 配置参考](example/configs/xdrive_s3_settings.json)。
+
+迁移到 v0.11.0 时，注意未启用 TLS/REALITY 或 VLESS 加密的 VLESS/Trojan 出站，
+不再豁免 CGNAT、文档/测试网段、未指定地址和组播地址；请为这些目标启用加密。
+Freedom 的 `fragment` 和 `noises` 仍可序列化，Core 已弃用它们，建议迁移到
+`streamSettings.finalmask.tcp` 的 `fragment` 和 `streamSettings.finalmask.udp` 的 `noise`。
+Geodata 启用调度时最多支持 100 个资产，文件扩展名必须为 `.dat`（不区分大小写），
+`@every` 间隔至少 1 分钟；Dart 会提前检查这些限制。资产路径、文件存在性、时区
+及完整 cron 语法仍由目标设备 Core 检查，每次资产下载上限为 256 MiB。
+Google Drive 的环形槽位传输由 Core 实现，没有新增 JSON 配置字段。
 
 ## v26.10.21 新配置
 
@@ -139,7 +172,7 @@ XDNS resolver 现在支持 DoH `https://` 地址、`worker`、`tlsConfig` 和
 新增 MASQUE 入站/出站（`MasqueServerConfig` / `MasqueClientConfig`）、
 `MasqueConfig` 传输和 `XDriveConfig` 传输。MASQUE 使用
 `TransportProtocol.masque` 和 TLS，26.10.17 起支持出站 mux。XDrive 的 `service`
-支持 `local`、`google-drive`（兼容旧的 `Google Drive`）、`template`，默认参数仍由 Core 提供。
+支持 `local`、`google-drive`（兼容旧的 `Google Drive`）、`template`、`s3`，默认参数仍由 Core 提供。
 MASQUE 入站 `address` 必须是可用的主机 CIDR，并保留客户端可分配地址；
 不接受网络地址、IPv4 广播地址、IPv4 映射的 IPv6 地址和过小的网段。
 TUN 新增 `autoSystemDnsToGateway`（Linux、FreeBSD）和 `autoSystemWfpBlockLeak`

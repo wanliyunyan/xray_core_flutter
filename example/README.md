@@ -24,7 +24,7 @@ cd example
 ./run_macos_app.sh
 ```
 
-The form tracks Xray v26.10.21, including MASQUE WARP, XDrive, TUN DNS/leak
+The form tracks Xray v26.10.29, including MASQUE WARP, XDrive, TUN DNS/leak
 options and structured XDNS domains/resolvers. MASQUE and XDrive have JSON
 settings editors so all upstream fields can be configured. Dedicated controls
 also expose XDrive HTTP/3, XMUX ranges and TCP/UDP source IP filters. HTTP/3
@@ -62,3 +62,15 @@ The first upload/download request must return JSON such as
 using `hrefMethod`; the returned URL is used literally, without first-step
 authentication headers. Configure the first-step `auth` object for your service
 if required. The example uses no authentication and is a schema reference.
+
+[`configs/xdrive_s3_settings.json`](configs/xdrive_s3_settings.json) is an S3
+settings reference for the XDrive JSON editor. Replace endpoint, bucket, folder
+and credentials; append SessionToken as the third secret when needed. Core
+defaults omitted region to `us-east-1` and pathStyle to true. Setting pathStyle
+to false requires a DNS endpoint and DNS-compatible bucket. Validation errors
+and malformed nested S3 JSON disable copying until corrected.
+
+Active Geodata schedules allow at most 100 assets with `.dat` file extensions
+(case insensitive) and `@every` intervals of at least one minute. Invalid
+values disable copying until corrected. File availability and full cron/timezone
+validation remain Core checks on the target device.

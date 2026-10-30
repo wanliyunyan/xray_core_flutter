@@ -120,6 +120,7 @@ extension XrayConfigValidation on XrayConfig {
     }
 
     _validateScriptConflicts(dns, routing, issues);
+    _validateGeodata261029(geodata, issues);
 
     return issues;
   }
@@ -473,25 +474,17 @@ bool _isCorePrivateAddress(String address) {
   final ip = _parseCoreIP(address);
   if (ip != null) {
     if (ip.length == 16) {
-      return (ip.take(15).every((b) => b == 0) && ip[15] <= 1) ||
+      return (ip.take(15).every((b) => b == 0) && ip[15] == 1) ||
           (ip[0] & 0xfe) == 0xfc ||
-          (ip[0] == 0xfe && (ip[1] & 0xc0) == 0x80) ||
-          ip[0] == 0xff;
+          (ip[0] == 0xfe && (ip[1] & 0xc0) == 0x80);
     }
-    final a = ip[0], b = ip[1], c = ip[2];
-    return a == 0 ||
-        a == 10 ||
+    final a = ip[0], b = ip[1];
+    // Go net.IP.IsPrivate / IsLoopback / IsLinkLocalUnicast, v26.10.29.
+    return a == 10 ||
         a == 127 ||
-        a >= 224 ||
-        (a == 100 && b >= 64 && b <= 127) ||
         (a == 169 && b == 254) ||
         (a == 172 && b >= 16 && b <= 31) ||
-        (a == 192 &&
-            (b == 168 ||
-                (b == 0 && (c == 0 || c == 2)) ||
-                (b == 88 && c == 99))) ||
-        (a == 198 && (b == 18 || b == 19 || (b == 51 && c == 100))) ||
-        (a == 203 && b == 0 && c == 113);
+        (a == 192 && b == 168);
   }
   var domain = address.toLowerCase();
   if (domain.endsWith('.')) domain = domain.substring(0, domain.length - 1);

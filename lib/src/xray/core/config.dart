@@ -19,4 +19,5 @@ part 'xray_outbound_protocol.dart';
 part 'xray_validation.dart';
 part 'xray_validation_26_9_30.dart';
 part 'xray_validation_26_10_21.dart';
+part 'xray_validation_26_10_29.dart';
 part 'xmux_validation.dart';

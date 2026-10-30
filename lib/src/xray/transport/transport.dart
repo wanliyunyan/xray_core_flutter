@@ -70,6 +70,7 @@ part 'xicmp.dart';
 part 'xmux_config.dart';
 part 'masque_config.dart';
 part 'xdrive_config.dart';
+part 'xdrive_s3_config.dart';
 part 'xdns_domain.dart';
 part 'xdns_resolver_tcp.dart';
 part 'xdns_resolver_udp.dart';

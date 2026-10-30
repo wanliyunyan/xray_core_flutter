@@ -23784,6 +23784,7 @@ mixin _$XDriveConfig {
   int? get eagerWindowMs;
   int? get holeTimeoutMs;
   Object? get template;
+  XDriveS3Config? get s3;
   XmuxConfig? get xmux;
 
   /// Create a copy of XDriveConfig
@@ -23830,6 +23831,7 @@ mixin _$XDriveConfig {
               other.template,
               _this.template,
             ) &&
+            (identical(other.s3, _this.s3) || other.s3 == _this.s3) &&
             (identical(other.xmux, _this.xmux) || other.xmux == _this.xmux));
   }
 
@@ -23850,6 +23852,7 @@ mixin _$XDriveConfig {
       _this.eagerWindowMs,
       _this.holeTimeoutMs,
       const DeepCollectionEquality().hash(_this.template),
+      _this.s3,
       _this.xmux,
     );
   }
@@ -23857,7 +23860,7 @@ mixin _$XDriveConfig {
   @override
   String toString() {
     final _this = this as XDriveConfig;
-    return 'XDriveConfig(remoteFolder: ${_this.remoteFolder}, service: ${_this.service}, secrets: ${_this.secrets}, segmentBytes: ${_this.segmentBytes}, flushIntervalMs: ${_this.flushIntervalMs}, pollIntervalMs: ${_this.pollIntervalMs}, maxPollIntervalMs: ${_this.maxPollIntervalMs}, sessionTtlSeconds: ${_this.sessionTtlSeconds}, concurrency: ${_this.concurrency}, eagerWindowMs: ${_this.eagerWindowMs}, holeTimeoutMs: ${_this.holeTimeoutMs}, template: ${_this.template}, xmux: ${_this.xmux})';
+    return 'XDriveConfig(remoteFolder: ${_this.remoteFolder}, service: ${_this.service}, secrets: ${_this.secrets}, segmentBytes: ${_this.segmentBytes}, flushIntervalMs: ${_this.flushIntervalMs}, pollIntervalMs: ${_this.pollIntervalMs}, maxPollIntervalMs: ${_this.maxPollIntervalMs}, sessionTtlSeconds: ${_this.sessionTtlSeconds}, concurrency: ${_this.concurrency}, eagerWindowMs: ${_this.eagerWindowMs}, holeTimeoutMs: ${_this.holeTimeoutMs}, template: ${_this.template}, s3: ${_this.s3}, xmux: ${_this.xmux})';
   }
 }
 
@@ -23881,9 +23884,11 @@ abstract mixin class $XDriveConfigCopyWith<$Res> {
     int? eagerWindowMs,
     int? holeTimeoutMs,
     Object? template,
+    XDriveS3Config? s3,
     XmuxConfig? xmux,
   });
 
+  $XDriveS3ConfigCopyWith<$Res>? get s3;
   $XmuxConfigCopyWith<$Res>? get xmux;
 }
 
@@ -23911,6 +23916,7 @@ class _$XDriveConfigCopyWithImpl<$Res> implements $XDriveConfigCopyWith<$Res> {
     Object? eagerWindowMs = freezed,
     Object? holeTimeoutMs = freezed,
     Object? template = freezed,
+    Object? s3 = freezed,
     Object? xmux = freezed,
   }) {
     return _then(
@@ -23960,12 +23966,30 @@ class _$XDriveConfigCopyWithImpl<$Res> implements $XDriveConfigCopyWith<$Res> {
             : holeTimeoutMs // ignore: cast_nullable_to_non_nullable
                   as int?,
         template: freezed == template ? _self.template : template,
+        s3: freezed == s3
+            ? _self.s3
+            : s3 // ignore: cast_nullable_to_non_nullable
+                  as XDriveS3Config?,
         xmux: freezed == xmux
             ? _self.xmux
             : xmux // ignore: cast_nullable_to_non_nullable
                   as XmuxConfig?,
       ),
     );
+  }
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XDriveS3ConfigCopyWith<$Res>? get s3 {
+    if (_self.s3 == null) {
+      return null;
+    }
+
+    return $XDriveS3ConfigCopyWith<$Res>(_self.s3!, (value) {
+      return _then(_self.copyWith(s3: value));
+    });
   }
 
   /// Create a copy of XDriveConfig
@@ -24089,6 +24113,7 @@ extension XDriveConfigPatterns on XDriveConfig {
       int? eagerWindowMs,
       int? holeTimeoutMs,
       Object? template,
+      XDriveS3Config? s3,
       XmuxConfig? xmux,
     )?
     $default, {
@@ -24110,6 +24135,7 @@ extension XDriveConfigPatterns on XDriveConfig {
           _that.eagerWindowMs,
           _that.holeTimeoutMs,
           _that.template,
+          _that.s3,
           _that.xmux,
         );
       case _:
@@ -24145,6 +24171,7 @@ extension XDriveConfigPatterns on XDriveConfig {
       int? eagerWindowMs,
       int? holeTimeoutMs,
       Object? template,
+      XDriveS3Config? s3,
       XmuxConfig? xmux,
     )
     $default,
@@ -24165,6 +24192,7 @@ extension XDriveConfigPatterns on XDriveConfig {
           _that.eagerWindowMs,
           _that.holeTimeoutMs,
           _that.template,
+          _that.s3,
           _that.xmux,
         );
       case _:
@@ -24199,6 +24227,7 @@ extension XDriveConfigPatterns on XDriveConfig {
       int? eagerWindowMs,
       int? holeTimeoutMs,
       Object? template,
+      XDriveS3Config? s3,
       XmuxConfig? xmux,
     )?
     $default,
@@ -24219,6 +24248,7 @@ extension XDriveConfigPatterns on XDriveConfig {
           _that.eagerWindowMs,
           _that.holeTimeoutMs,
           _that.template,
+          _that.s3,
           _that.xmux,
         );
       case _:
@@ -24243,6 +24273,7 @@ class _XDriveConfig extends XDriveConfig {
     this.eagerWindowMs,
     this.holeTimeoutMs,
     this.template,
+    this.s3,
     this.xmux,
   }) : _secrets = secrets,
        super._();
@@ -24280,6 +24311,8 @@ class _XDriveConfig extends XDriveConfig {
   @override
   final Object? template;
   @override
+  final XDriveS3Config? s3;
+  @override
   final XmuxConfig? xmux;
 
   /// Create a copy of XDriveConfig
@@ -24316,6 +24349,7 @@ class _XDriveConfig extends XDriveConfig {
             (identical(other.holeTimeoutMs, holeTimeoutMs) ||
                 other.holeTimeoutMs == holeTimeoutMs) &&
             const DeepCollectionEquality().equals(other.template, template) &&
+            (identical(other.s3, s3) || other.s3 == s3) &&
             (identical(other.xmux, xmux) || other.xmux == xmux));
   }
 
@@ -24335,13 +24369,14 @@ class _XDriveConfig extends XDriveConfig {
       eagerWindowMs,
       holeTimeoutMs,
       const DeepCollectionEquality().hash(template),
+      s3,
       xmux,
     );
   }
 
   @override
   String toString() {
-    return 'XDriveConfig(remoteFolder: $remoteFolder, service: $service, secrets: $secrets, segmentBytes: $segmentBytes, flushIntervalMs: $flushIntervalMs, pollIntervalMs: $pollIntervalMs, maxPollIntervalMs: $maxPollIntervalMs, sessionTtlSeconds: $sessionTtlSeconds, concurrency: $concurrency, eagerWindowMs: $eagerWindowMs, holeTimeoutMs: $holeTimeoutMs, template: $template, xmux: $xmux)';
+    return 'XDriveConfig(remoteFolder: $remoteFolder, service: $service, secrets: $secrets, segmentBytes: $segmentBytes, flushIntervalMs: $flushIntervalMs, pollIntervalMs: $pollIntervalMs, maxPollIntervalMs: $maxPollIntervalMs, sessionTtlSeconds: $sessionTtlSeconds, concurrency: $concurrency, eagerWindowMs: $eagerWindowMs, holeTimeoutMs: $holeTimeoutMs, template: $template, s3: $s3, xmux: $xmux)';
   }
 }
 
@@ -24367,9 +24402,12 @@ abstract mixin class _$XDriveConfigCopyWith<$Res>
     int? eagerWindowMs,
     int? holeTimeoutMs,
     Object? template,
+    XDriveS3Config? s3,
     XmuxConfig? xmux,
   });
 
+  @override
+  $XDriveS3ConfigCopyWith<$Res>? get s3;
   @override
   $XmuxConfigCopyWith<$Res>? get xmux;
 }
@@ -24399,6 +24437,7 @@ class __$XDriveConfigCopyWithImpl<$Res>
     Object? eagerWindowMs = freezed,
     Object? holeTimeoutMs = freezed,
     Object? template = freezed,
+    Object? s3 = freezed,
     Object? xmux = freezed,
   }) {
     return _then(
@@ -24448,12 +24487,30 @@ class __$XDriveConfigCopyWithImpl<$Res>
             : holeTimeoutMs // ignore: cast_nullable_to_non_nullable
                   as int?,
         template: freezed == template ? _self.template : template,
+        s3: freezed == s3
+            ? _self.s3
+            : s3 // ignore: cast_nullable_to_non_nullable
+                  as XDriveS3Config?,
         xmux: freezed == xmux
             ? _self.xmux
             : xmux // ignore: cast_nullable_to_non_nullable
                   as XmuxConfig?,
       ),
     );
+  }
+
+  /// Create a copy of XDriveConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XDriveS3ConfigCopyWith<$Res>? get s3 {
+    if (_self.s3 == null) {
+      return null;
+    }
+
+    return $XDriveS3ConfigCopyWith<$Res>(_self.s3!, (value) {
+      return _then(_self.copyWith(s3: value));
+    });
   }
 
   /// Create a copy of XDriveConfig
@@ -24468,6 +24525,413 @@ class __$XDriveConfigCopyWithImpl<$Res>
     return $XmuxConfigCopyWith<$Res>(_self.xmux!, (value) {
       return _then(_self.copyWith(xmux: value));
     });
+  }
+}
+
+/// @nodoc
+mixin _$XDriveS3Config {
+  String? get endpoint;
+  String? get region;
+  String? get bucket;
+  bool? get pathStyle;
+
+  /// Create a copy of XDriveS3Config
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $XDriveS3ConfigCopyWith<XDriveS3Config> get copyWith =>
+      _$XDriveS3ConfigCopyWithImpl<XDriveS3Config>(
+        this as XDriveS3Config,
+        _$identity,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as XDriveS3Config;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is XDriveS3Config &&
+            (identical(other.endpoint, _this.endpoint) ||
+                other.endpoint == _this.endpoint) &&
+            (identical(other.region, _this.region) ||
+                other.region == _this.region) &&
+            (identical(other.bucket, _this.bucket) ||
+                other.bucket == _this.bucket) &&
+            (identical(other.pathStyle, _this.pathStyle) ||
+                other.pathStyle == _this.pathStyle));
+  }
+
+  @override
+  int get hashCode {
+    final _this = this as XDriveS3Config;
+    return Object.hash(
+      runtimeType,
+      _this.endpoint,
+      _this.region,
+      _this.bucket,
+      _this.pathStyle,
+    );
+  }
+
+  @override
+  String toString() {
+    final _this = this as XDriveS3Config;
+    return 'XDriveS3Config(endpoint: ${_this.endpoint}, region: ${_this.region}, bucket: ${_this.bucket}, pathStyle: ${_this.pathStyle})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $XDriveS3ConfigCopyWith<$Res> {
+  factory $XDriveS3ConfigCopyWith(
+    XDriveS3Config value,
+    $Res Function(XDriveS3Config) _then,
+  ) = _$XDriveS3ConfigCopyWithImpl;
+  @useResult
+  $Res call({
+    String? endpoint,
+    String? region,
+    String? bucket,
+    bool? pathStyle,
+  });
+}
+
+/// @nodoc
+class _$XDriveS3ConfigCopyWithImpl<$Res>
+    implements $XDriveS3ConfigCopyWith<$Res> {
+  _$XDriveS3ConfigCopyWithImpl(this._self, this._then);
+
+  final XDriveS3Config _self;
+  final $Res Function(XDriveS3Config) _then;
+
+  /// Create a copy of XDriveS3Config
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? endpoint = freezed,
+    Object? region = freezed,
+    Object? bucket = freezed,
+    Object? pathStyle = freezed,
+  }) {
+    return _then(
+      XDriveS3Config(
+        endpoint: freezed == endpoint
+            ? _self.endpoint
+            : endpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        region: freezed == region
+            ? _self.region
+            : region // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        bucket: freezed == bucket
+            ? _self.bucket
+            : bucket // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        pathStyle: freezed == pathStyle
+            ? _self.pathStyle
+            : pathStyle // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
+  }
+}
+
+/// Adds pattern-matching-related methods to [XDriveS3Config].
+extension XDriveS3ConfigPatterns on XDriveS3Config {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XDriveS3Config value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveS3Config() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XDriveS3Config value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveS3Config():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XDriveS3Config value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveS3Config() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+      String? endpoint,
+      String? region,
+      String? bucket,
+      bool? pathStyle,
+    )?
+    $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveS3Config() when $default != null:
+        return $default(
+          _that.endpoint,
+          _that.region,
+          _that.bucket,
+          _that.pathStyle,
+        );
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+      String? endpoint,
+      String? region,
+      String? bucket,
+      bool? pathStyle,
+    )
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveS3Config():
+        return $default(
+          _that.endpoint,
+          _that.region,
+          _that.bucket,
+          _that.pathStyle,
+        );
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+      String? endpoint,
+      String? region,
+      String? bucket,
+      bool? pathStyle,
+    )?
+    $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XDriveS3Config() when $default != null:
+        return $default(
+          _that.endpoint,
+          _that.region,
+          _that.bucket,
+          _that.pathStyle,
+        );
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _XDriveS3Config extends XDriveS3Config {
+  const _XDriveS3Config({
+    this.endpoint,
+    this.region,
+    this.bucket,
+    this.pathStyle,
+  }) : super._();
+
+  @override
+  final String? endpoint;
+  @override
+  final String? region;
+  @override
+  final String? bucket;
+  @override
+  final bool? pathStyle;
+
+  /// Create a copy of XDriveS3Config
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$XDriveS3ConfigCopyWith<_XDriveS3Config> get copyWith =>
+      __$XDriveS3ConfigCopyWithImpl<_XDriveS3Config>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _XDriveS3Config &&
+            (identical(other.endpoint, endpoint) ||
+                other.endpoint == endpoint) &&
+            (identical(other.region, region) || other.region == region) &&
+            (identical(other.bucket, bucket) || other.bucket == bucket) &&
+            (identical(other.pathStyle, pathStyle) ||
+                other.pathStyle == pathStyle));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, endpoint, region, bucket, pathStyle);
+  }
+
+  @override
+  String toString() {
+    return 'XDriveS3Config(endpoint: $endpoint, region: $region, bucket: $bucket, pathStyle: $pathStyle)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$XDriveS3ConfigCopyWith<$Res>
+    implements $XDriveS3ConfigCopyWith<$Res> {
+  factory _$XDriveS3ConfigCopyWith(
+    _XDriveS3Config value,
+    $Res Function(_XDriveS3Config) _then,
+  ) = __$XDriveS3ConfigCopyWithImpl;
+  @override
+  @useResult
+  $Res call({
+    String? endpoint,
+    String? region,
+    String? bucket,
+    bool? pathStyle,
+  });
+}
+
+/// @nodoc
+class __$XDriveS3ConfigCopyWithImpl<$Res>
+    implements _$XDriveS3ConfigCopyWith<$Res> {
+  __$XDriveS3ConfigCopyWithImpl(this._self, this._then);
+
+  final _XDriveS3Config _self;
+  final $Res Function(_XDriveS3Config) _then;
+
+  /// Create a copy of XDriveS3Config
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? endpoint = freezed,
+    Object? region = freezed,
+    Object? bucket = freezed,
+    Object? pathStyle = freezed,
+  }) {
+    return _then(
+      _XDriveS3Config(
+        endpoint: freezed == endpoint
+            ? _self.endpoint
+            : endpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        region: freezed == region
+            ? _self.region
+            : region // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        bucket: freezed == bucket
+            ? _self.bucket
+            : bucket // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        pathStyle: freezed == pathStyle
+            ? _self.pathStyle
+            : pathStyle // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
