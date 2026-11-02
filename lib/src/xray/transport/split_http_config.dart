@@ -32,6 +32,9 @@ abstract class SplitHTTPConfig with _$SplitHTTPConfig {
     int? serverMaxHeaderBytes,
     XmuxConfig? xmux,
     StreamConfig? downloadSettings,
+
+    /// Raw server HTTP/2 options. Core parses these as Go http.HTTP2Config.
+    Object? h2Params,
     Map<String, dynamic>? extra,
   }) = _SplitHTTPConfig;
 
@@ -91,6 +94,7 @@ abstract class SplitHTTPConfig with _$SplitHTTPConfig {
       downloadSettings: map['downloadSettings'] == null
           ? null
           : StreamConfig.fromJson(map['downloadSettings']),
+      h2Params: map['h2Params'],
       extra: map['extra'] == null ? null : asJsonMap(map['extra'], 'extra'),
     );
   }
@@ -128,6 +132,7 @@ abstract class SplitHTTPConfig with _$SplitHTTPConfig {
       'serverMaxHeaderBytes': serverMaxHeaderBytes,
       'xmux': xmux?.toJson(),
       'downloadSettings': downloadSettings?.toJson(),
+      'h2Params': h2Params,
       'extra': extra,
     });
   }

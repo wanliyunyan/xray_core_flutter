@@ -55,7 +55,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## Config Parity
 
-The Dart models currently track Xray-core `infra/conf` v26.10.29. The parity
+The Dart models currently track Xray-core `infra/conf` v26.10.31 (a4a3dff5). The parity
 checker compares Go JSON tags, struct fields, unexpected Dart keys, and config
 creator loader IDs:
 
@@ -85,6 +85,32 @@ Legacy `proxySettings` JSON is retained as a raw map but rejected by validation.
 Move Hysteria congestion and bandwidth options to `FinalMask.quicParams`.
 Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
 `FinalMask.udp`, using `mode`, `remotePorts`, and `interval`.
+
+## v26.10.31
+
+XHTTP/SplitHTTP now preserves raw server HTTP/2 options in `h2Params`, using
+Go `http.HTTP2Config` field names and values:
+
+```dart
+const xhttp = SplitHTTPConfig(
+  uplinkHTTPMethod: 'OPTIONS',
+  h2Params: {'MaxConcurrentStreams': 128},
+);
+```
+
+The field also works in `extra` and nested `downloadSettings`. Core's `extra`
+replaces outer settings except `host`, `path` and `mode`; place `h2Params`
+inside `extra` when using it. Core checks HTTP/2 option structure, ranges and
+runtime behavior when starting the server. The example includes an h2Params
+JSON editor that disables copying on JSON syntax errors.
+
+TUN `autoSystemWfpBlockLeak` accepts case-insensitive `dns`, `misconfigtun`,
+`windnsclient`, `tcp/port` and `udp/port`. Ports must be decimal digits in
+1–65535; leading zeroes are allowed. Dart preserves input; Core expands `dns`,
+normalizes values and removes duplicates. `dns` covers TCP/UDP 53, Windows DNS
+Client and TCP/UDP 853. On Windows, WFP rules require `autoSystemRoutingTable`;
+blocking port 53 or Windows DNS Client also requires TUN `dns`. Core checks
+these platform prerequisites on the target device.
 
 ## v26.10.29 and Migration to v0.11.0
 

@@ -225,8 +225,9 @@ void main() {
     addTearDown(() => tester.binding.setSurfaceSize(null));
     await tester.pumpWidget(const XrayConfigBuilderApp());
     await select<InboundKind>(tester, 'TUN');
-    await enter(tester, 'TUN autoSystemWfpBlockLeak（dns,misconfigtun）',
-        'dns,misconfigtun');
+    await enter(tester,
+        'TUN autoSystemWfpBlockLeak（dns,misconfigtun,windnsclient,tcp/端口,udp/端口）',
+        'dns,misconfigtun,windnsclient,TCP/0853,udp/853');
     await enable(tester, 'TUN autoSystemDnsToGateway');
     final json = jsonDecode(
             tester.widget<SelectableText>(find.byType(SelectableText)).data!)
@@ -234,6 +235,7 @@ void main() {
     final settings =
         ((json['inbounds'] as List).single as Map)['settings'] as Map;
     expect(settings['autoSystemDnsToGateway'], true);
-    expect(settings['autoSystemWfpBlockLeak'], ['dns', 'misconfigtun']);
+    expect(settings['autoSystemWfpBlockLeak'],
+        ['dns', 'misconfigtun', 'windnsclient', 'TCP/0853', 'udp/853']);
   });
 }

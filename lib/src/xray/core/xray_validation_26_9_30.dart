@@ -29,10 +29,10 @@ void _validateNewProtocolSettings(
   if (settings is TunConfig) {
     final values = settings.autoSystemWfpBlockLeak ?? const <String>[];
     for (var i = 0; i < values.length; i++) {
-      if (!const {'dns', 'misconfigtun'}.contains(values[i].toLowerCase())) {
+      if (!_validTunWfpLeak(values[i])) {
         issue(
           'settings.autoSystemWfpBlockLeak[$i]',
-          'expected dns or misconfigtun',
+          'expected dns, misconfigtun, windnsclient, tcp/port or udp/port (1-65535)',
         );
       }
     }
@@ -95,6 +95,19 @@ void _validateNewProtocolSettings(
       issue('settings.mtu', 'MTU must be zero or between 1280 and 65535');
     }
   }
+}
+
+bool _validTunWfpLeak(String input) {
+  final value = input.toLowerCase();
+  if (const {'dns', 'misconfigtun', 'windnsclient'}.contains(value)) {
+    return true;
+  }
+  // Match Go strconv.ParseUint(base 10, bitSize 16): ASCII digits only,
+  // no sign or whitespace, with leading zeroes allowed.
+  final match = RegExp(r'^(tcp|udp)/([0-9]+)$').firstMatch(value);
+  if (match == null || match.end != value.length) return false;
+  final port = int.tryParse(match.group(2)!);
+  return port != null && port >= 1 && port <= 65535;
 }
 
 // proxy/masque.newAddressPool reserves the subnet address and server address,

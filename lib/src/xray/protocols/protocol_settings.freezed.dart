@@ -13658,6 +13658,9 @@ mixin _$TunConfig {
   List<String>? get autoSystemRoutingTable;
   String? get autoOutboundsInterface;
   bool? get autoSystemDnsToGateway;
+
+  /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
+  /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
   List<String>? get autoSystemWfpBlockLeak;
 
   /// Create a copy of TunConfig
@@ -14108,7 +14111,13 @@ class _TunConfig extends TunConfig {
   final String? autoOutboundsInterface;
   @override
   final bool? autoSystemDnsToGateway;
+
+  /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
+  /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
   final List<String>? _autoSystemWfpBlockLeak;
+
+  /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
+  /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
   @override
   List<String>? get autoSystemWfpBlockLeak {
     final value = _autoSystemWfpBlockLeak;

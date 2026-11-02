@@ -13645,6 +13645,9 @@ mixin _$SplitHTTPConfig {
   int? get serverMaxHeaderBytes;
   XmuxConfig? get xmux;
   StreamConfig? get downloadSettings;
+
+  /// Raw server HTTP/2 options. Core parses these as Go http.HTTP2Config.
+  Object? get h2Params;
   Map<String, dynamic>? get extra;
 
   /// Create a copy of SplitHTTPConfig
@@ -13728,6 +13731,10 @@ mixin _$SplitHTTPConfig {
             (identical(other.xmux, _this.xmux) || other.xmux == _this.xmux) &&
             (identical(other.downloadSettings, _this.downloadSettings) ||
                 other.downloadSettings == _this.downloadSettings) &&
+            const DeepCollectionEquality().equals(
+              other.h2Params,
+              _this.h2Params,
+            ) &&
             const DeepCollectionEquality().equals(other.extra, _this.extra));
   }
 
@@ -13765,6 +13772,7 @@ mixin _$SplitHTTPConfig {
       _this.serverMaxHeaderBytes,
       _this.xmux,
       _this.downloadSettings,
+      const DeepCollectionEquality().hash(_this.h2Params),
       const DeepCollectionEquality().hash(_this.extra),
     ]);
   }
@@ -13772,7 +13780,7 @@ mixin _$SplitHTTPConfig {
   @override
   String toString() {
     final _this = this as SplitHTTPConfig;
-    return 'SplitHTTPConfig(host: ${_this.host}, path: ${_this.path}, mode: ${_this.mode}, headers: ${_this.headers}, xPaddingBytes: ${_this.xPaddingBytes}, xPaddingObfsMode: ${_this.xPaddingObfsMode}, xPaddingKey: ${_this.xPaddingKey}, xPaddingHeader: ${_this.xPaddingHeader}, xPaddingPlacement: ${_this.xPaddingPlacement}, xPaddingMethod: ${_this.xPaddingMethod}, uplinkHTTPMethod: ${_this.uplinkHTTPMethod}, sessionIDPlacement: ${_this.sessionIDPlacement}, sessionIDKey: ${_this.sessionIDKey}, sessionIDTable: ${_this.sessionIDTable}, sessionIDLength: ${_this.sessionIDLength}, seqPlacement: ${_this.seqPlacement}, seqKey: ${_this.seqKey}, uplinkDataPlacement: ${_this.uplinkDataPlacement}, uplinkDataKey: ${_this.uplinkDataKey}, uplinkChunkSize: ${_this.uplinkChunkSize}, noGRPCHeader: ${_this.noGRPCHeader}, noSSEHeader: ${_this.noSSEHeader}, scMaxEachPostBytes: ${_this.scMaxEachPostBytes}, scMinPostsIntervalMs: ${_this.scMinPostsIntervalMs}, scMaxBufferedPosts: ${_this.scMaxBufferedPosts}, scStreamUpServerSecs: ${_this.scStreamUpServerSecs}, serverMaxHeaderBytes: ${_this.serverMaxHeaderBytes}, xmux: ${_this.xmux}, downloadSettings: ${_this.downloadSettings}, extra: ${_this.extra})';
+    return 'SplitHTTPConfig(host: ${_this.host}, path: ${_this.path}, mode: ${_this.mode}, headers: ${_this.headers}, xPaddingBytes: ${_this.xPaddingBytes}, xPaddingObfsMode: ${_this.xPaddingObfsMode}, xPaddingKey: ${_this.xPaddingKey}, xPaddingHeader: ${_this.xPaddingHeader}, xPaddingPlacement: ${_this.xPaddingPlacement}, xPaddingMethod: ${_this.xPaddingMethod}, uplinkHTTPMethod: ${_this.uplinkHTTPMethod}, sessionIDPlacement: ${_this.sessionIDPlacement}, sessionIDKey: ${_this.sessionIDKey}, sessionIDTable: ${_this.sessionIDTable}, sessionIDLength: ${_this.sessionIDLength}, seqPlacement: ${_this.seqPlacement}, seqKey: ${_this.seqKey}, uplinkDataPlacement: ${_this.uplinkDataPlacement}, uplinkDataKey: ${_this.uplinkDataKey}, uplinkChunkSize: ${_this.uplinkChunkSize}, noGRPCHeader: ${_this.noGRPCHeader}, noSSEHeader: ${_this.noSSEHeader}, scMaxEachPostBytes: ${_this.scMaxEachPostBytes}, scMinPostsIntervalMs: ${_this.scMinPostsIntervalMs}, scMaxBufferedPosts: ${_this.scMaxBufferedPosts}, scStreamUpServerSecs: ${_this.scStreamUpServerSecs}, serverMaxHeaderBytes: ${_this.serverMaxHeaderBytes}, xmux: ${_this.xmux}, downloadSettings: ${_this.downloadSettings}, h2Params: ${_this.h2Params}, extra: ${_this.extra})';
   }
 }
 
@@ -13813,6 +13821,7 @@ abstract mixin class $SplitHTTPConfigCopyWith<$Res> {
     int? serverMaxHeaderBytes,
     XmuxConfig? xmux,
     StreamConfig? downloadSettings,
+    Object? h2Params,
     Map<String, dynamic>? extra,
   });
 
@@ -13868,6 +13877,7 @@ class _$SplitHTTPConfigCopyWithImpl<$Res>
     Object? serverMaxHeaderBytes = freezed,
     Object? xmux = freezed,
     Object? downloadSettings = freezed,
+    Object? h2Params = freezed,
     Object? extra = freezed,
   }) {
     return _then(
@@ -13988,6 +13998,7 @@ class _$SplitHTTPConfigCopyWithImpl<$Res>
             ? _self.downloadSettings
             : downloadSettings // ignore: cast_nullable_to_non_nullable
                   as StreamConfig?,
+        h2Params: freezed == h2Params ? _self.h2Params : h2Params,
         extra: freezed == extra
             ? _self.extra
             : extra // ignore: cast_nullable_to_non_nullable
@@ -14232,6 +14243,7 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
       int? serverMaxHeaderBytes,
       XmuxConfig? xmux,
       StreamConfig? downloadSettings,
+      Object? h2Params,
       Map<String, dynamic>? extra,
     )?
     $default, {
@@ -14270,6 +14282,7 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
           _that.serverMaxHeaderBytes,
           _that.xmux,
           _that.downloadSettings,
+          _that.h2Params,
           _that.extra,
         );
       case _:
@@ -14322,6 +14335,7 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
       int? serverMaxHeaderBytes,
       XmuxConfig? xmux,
       StreamConfig? downloadSettings,
+      Object? h2Params,
       Map<String, dynamic>? extra,
     )
     $default,
@@ -14359,6 +14373,7 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
           _that.serverMaxHeaderBytes,
           _that.xmux,
           _that.downloadSettings,
+          _that.h2Params,
           _that.extra,
         );
       case _:
@@ -14410,6 +14425,7 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
       int? serverMaxHeaderBytes,
       XmuxConfig? xmux,
       StreamConfig? downloadSettings,
+      Object? h2Params,
       Map<String, dynamic>? extra,
     )?
     $default,
@@ -14447,6 +14463,7 @@ extension SplitHTTPConfigPatterns on SplitHTTPConfig {
           _that.serverMaxHeaderBytes,
           _that.xmux,
           _that.downloadSettings,
+          _that.h2Params,
           _that.extra,
         );
       case _:
@@ -14488,6 +14505,7 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
     this.serverMaxHeaderBytes,
     this.xmux,
     this.downloadSettings,
+    this.h2Params,
     Map<String, dynamic>? extra,
   }) : _headers = headers,
        _extra = extra,
@@ -14559,6 +14577,10 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
   final XmuxConfig? xmux;
   @override
   final StreamConfig? downloadSettings;
+
+  /// Raw server HTTP/2 options. Core parses these as Go http.HTTP2Config.
+  @override
+  final Object? h2Params;
   final Map<String, dynamic>? _extra;
   @override
   Map<String, dynamic>? get extra {
@@ -14634,6 +14656,7 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
             (identical(other.xmux, xmux) || other.xmux == xmux) &&
             (identical(other.downloadSettings, downloadSettings) ||
                 other.downloadSettings == downloadSettings) &&
+            const DeepCollectionEquality().equals(other.h2Params, h2Params) &&
             const DeepCollectionEquality().equals(other.extra, _extra));
   }
 
@@ -14670,13 +14693,14 @@ class _SplitHTTPConfig extends SplitHTTPConfig {
       serverMaxHeaderBytes,
       xmux,
       downloadSettings,
+      const DeepCollectionEquality().hash(h2Params),
       const DeepCollectionEquality().hash(_extra),
     ]);
   }
 
   @override
   String toString() {
-    return 'SplitHTTPConfig(host: $host, path: $path, mode: $mode, headers: $headers, xPaddingBytes: $xPaddingBytes, xPaddingObfsMode: $xPaddingObfsMode, xPaddingKey: $xPaddingKey, xPaddingHeader: $xPaddingHeader, xPaddingPlacement: $xPaddingPlacement, xPaddingMethod: $xPaddingMethod, uplinkHTTPMethod: $uplinkHTTPMethod, sessionIDPlacement: $sessionIDPlacement, sessionIDKey: $sessionIDKey, sessionIDTable: $sessionIDTable, sessionIDLength: $sessionIDLength, seqPlacement: $seqPlacement, seqKey: $seqKey, uplinkDataPlacement: $uplinkDataPlacement, uplinkDataKey: $uplinkDataKey, uplinkChunkSize: $uplinkChunkSize, noGRPCHeader: $noGRPCHeader, noSSEHeader: $noSSEHeader, scMaxEachPostBytes: $scMaxEachPostBytes, scMinPostsIntervalMs: $scMinPostsIntervalMs, scMaxBufferedPosts: $scMaxBufferedPosts, scStreamUpServerSecs: $scStreamUpServerSecs, serverMaxHeaderBytes: $serverMaxHeaderBytes, xmux: $xmux, downloadSettings: $downloadSettings, extra: $extra)';
+    return 'SplitHTTPConfig(host: $host, path: $path, mode: $mode, headers: $headers, xPaddingBytes: $xPaddingBytes, xPaddingObfsMode: $xPaddingObfsMode, xPaddingKey: $xPaddingKey, xPaddingHeader: $xPaddingHeader, xPaddingPlacement: $xPaddingPlacement, xPaddingMethod: $xPaddingMethod, uplinkHTTPMethod: $uplinkHTTPMethod, sessionIDPlacement: $sessionIDPlacement, sessionIDKey: $sessionIDKey, sessionIDTable: $sessionIDTable, sessionIDLength: $sessionIDLength, seqPlacement: $seqPlacement, seqKey: $seqKey, uplinkDataPlacement: $uplinkDataPlacement, uplinkDataKey: $uplinkDataKey, uplinkChunkSize: $uplinkChunkSize, noGRPCHeader: $noGRPCHeader, noSSEHeader: $noSSEHeader, scMaxEachPostBytes: $scMaxEachPostBytes, scMinPostsIntervalMs: $scMinPostsIntervalMs, scMaxBufferedPosts: $scMaxBufferedPosts, scStreamUpServerSecs: $scStreamUpServerSecs, serverMaxHeaderBytes: $serverMaxHeaderBytes, xmux: $xmux, downloadSettings: $downloadSettings, h2Params: $h2Params, extra: $extra)';
   }
 }
 
@@ -14719,6 +14743,7 @@ abstract mixin class _$SplitHTTPConfigCopyWith<$Res>
     int? serverMaxHeaderBytes,
     XmuxConfig? xmux,
     StreamConfig? downloadSettings,
+    Object? h2Params,
     Map<String, dynamic>? extra,
   });
 
@@ -14782,6 +14807,7 @@ class __$SplitHTTPConfigCopyWithImpl<$Res>
     Object? serverMaxHeaderBytes = freezed,
     Object? xmux = freezed,
     Object? downloadSettings = freezed,
+    Object? h2Params = freezed,
     Object? extra = freezed,
   }) {
     return _then(
@@ -14902,6 +14928,7 @@ class __$SplitHTTPConfigCopyWithImpl<$Res>
             ? _self.downloadSettings
             : downloadSettings // ignore: cast_nullable_to_non_nullable
                   as StreamConfig?,
+        h2Params: freezed == h2Params ? _self.h2Params : h2Params,
         extra: freezed == extra
             ? _self._extra
             : extra // ignore: cast_nullable_to_non_nullable

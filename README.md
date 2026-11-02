@@ -54,7 +54,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## 配置覆盖和校验
 
-当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.29。仓库内的 parity
+当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.31（a4a3dff5）。仓库内的 parity
 checker 会核对 Go JSON tag、结构字段、Dart 额外 key 和 config creator loader
 ID：
 
@@ -71,6 +71,30 @@ VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
 `env:` 地址由目标设备上的 Core 解析，本包不会据此判断端口或公网安全要求；
 原始协议 settings 仍遵循 `allowRawSettings` 选项。校验通过不代表已执行 Core
 的全部配置构建及运行时检查。
+
+## v26.10.31 新配置
+
+XHTTP/SplitHTTP 新增服务端 HTTP/2 参数，使用原始 JSON 保留 Go
+`http.HTTP2Config` 的字段名和值：
+
+```dart
+const xhttp = SplitHTTPConfig(
+  uplinkHTTPMethod: 'OPTIONS',
+  h2Params: {'MaxConcurrentStreams': 128},
+);
+```
+
+该字段也可用于 `extra` 和嵌套 `downloadSettings`；Core 的 `extra` 会替换
+除 `host`、`path`、`mode` 之外的外层配置，因此设置 `extra` 时应把 `h2Params`
+放入其中。HTTP/2 参数的结构、范围和运行时生效由 Core 在启动服务端时检查。
+示例编辑器已提供 `h2Params JSON` 输入框，JSON 语法错误时禁用复制。
+
+TUN `autoSystemWfpBlockLeak` 现在接受 `dns`、`misconfigtun`、`windnsclient`、
+`tcp/端口` 和 `udp/端口`，名称不区分大小写；端口为 1–65535 的十进制数字，
+允许前导零。Dart 保留输入内容，由 Core 展开 `dns`、规范化并去重。
+`dns` 覆盖 TCP/UDP 53、Windows DNS Client 和 TCP/UDP 853。
+Windows 上启用 WFP 规则需要 `autoSystemRoutingTable`；阻止端口 53 或
+Windows DNS Client 还需要 TUN `dns`，这些平台前提由目标设备上的 Core 检查。
 
 ## v26.10.29 新配置
 

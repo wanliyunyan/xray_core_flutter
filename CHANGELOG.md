@@ -1,3 +1,18 @@
+## v0.12.0
+
+- Synced config models and parity checks with local Xray-core `infra/conf`
+  v26.10.31 (a4a3dff5).
+- Added raw `SplitHTTPConfig.h2Params` JSON for server HTTP/2 options, including
+  XHTTP/SplitHTTP aliases, nested download streams and `extra`. Core parses
+  these options as Go `http.HTTP2Config` when starting the server.
+- Accept TUN WFP leak rules `windnsclient`, `tcp/port` and `udp/port`, using
+  case-insensitive names and strict decimal ports 1–65535. Preserve input JSON;
+  Core expands `dns` to UDP/TCP 53, Windows DNS Client and TCP/UDP 853.
+- Added an XHTTP h2Params example editor with recoverable JSON errors, updated
+  TUN option hints, and regression coverage for `OPTIONS` uplinks.
+- Geodata gzip downloads, HTTP 100 Continue forwarding, QUIC sniffing fixes,
+  MPTCP defaults and API command fixes remain Core runtime responsibilities.
+
 ## v0.11.0
 
 - Synced typed config models and parity checks with local Xray-core

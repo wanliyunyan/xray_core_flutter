@@ -12,6 +12,9 @@ abstract class TunConfig with _$TunConfig implements XrayInboundSettings {
     List<String>? autoSystemRoutingTable,
     String? autoOutboundsInterface,
     bool? autoSystemDnsToGateway,
+
+    /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
+    /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
     List<String>? autoSystemWfpBlockLeak,
   }) = _TunConfig;
 

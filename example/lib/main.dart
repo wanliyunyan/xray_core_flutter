@@ -470,6 +470,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _splitHttpXmuxHMaxReusableSecsController = TextEditingController();
   final _splitHttpXmuxHKeepAlivePeriodController = TextEditingController();
   final _splitHttpDownloadSettingsController = TextEditingController();
+  final _splitHttpH2ParamsController = TextEditingController();
   final _splitHttpExtraController = TextEditingController(text: '{\n}');
   final _transportHeadersController = TextEditingController(text: '{\n}');
   final _hysteriaUdpIdleTimeoutController = TextEditingController();
@@ -1035,6 +1036,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _splitHttpXmuxHMaxReusableSecsController.dispose();
     _splitHttpXmuxHKeepAlivePeriodController.dispose();
     _splitHttpDownloadSettingsController.dispose();
+    _splitHttpH2ParamsController.dispose();
     _splitHttpExtraController.dispose();
     _transportHeadersController.dispose();
     _hysteriaUdpIdleTimeoutController.dispose();
@@ -2131,6 +2133,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       serverMaxHeaderBytes:
           _nullableInt(_splitHttpServerMaxHeaderBytesController),
       xmux: _splitHttpEnableXmux ? _xmuxSettings() : null,
+      h2Params: _splitHttpH2ParamsController.text.trim().isEmpty
+          ? null
+          : _typedJson<Object?>(_splitHttpH2ParamsController,
+              (json) => json, 'SplitHTTP/XHTTP h2Params'),
       downloadSettings:
           _splitHttpEnableDownloadSettings && downloadSettings.isNotEmpty
               ? StreamConfig.fromJson(downloadSettings)
@@ -3454,7 +3460,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
           _TextInput(
               controller: _tunWfpController,
-              label: 'TUN autoSystemWfpBlockLeak（dns,misconfigtun）',
+              label: 'TUN autoSystemWfpBlockLeak（dns,misconfigtun,windnsclient,tcp/端口,udp/端口）',
               icon: Icons.edit_rounded,
               onChanged: _refresh),
           _CheckRow(
@@ -5167,6 +5173,14 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           _TextInput(
             controller: _splitHttpExtraController,
             label: 'SplitHTTP/XHTTP extra JSON',
+            icon: Icons.data_object_rounded,
+            maxLines: 4,
+            onChanged: _refresh,
+          ),
+          const SizedBox(height: 12),
+          _TextInput(
+            controller: _splitHttpH2ParamsController,
+            label: 'SplitHTTP/XHTTP h2Params JSON',
             icon: Icons.data_object_rounded,
             maxLines: 4,
             onChanged: _refresh,
