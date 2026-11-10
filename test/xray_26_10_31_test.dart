@@ -79,7 +79,6 @@ void main() {
     for (final value in [
       '',
       'ip',
-      'tcp',
       'tcp/',
       'tcp/0',
       'udp/65536',

@@ -32,7 +32,7 @@ void _validateNewProtocolSettings(
       if (!_validTunWfpLeak(values[i])) {
         issue(
           'settings.autoSystemWfpBlockLeak[$i]',
-          'expected dns, misconfigtun, windnsclient, tcp/port or udp/port (1-65535)',
+          'expected a WFP leak action, port range, or CIDR-scoped action',
         );
       }
     }
@@ -101,16 +101,64 @@ void _validateNewProtocolSettings(
 }
 
 bool _validTunWfpLeak(String input) {
-  final value = input.toLowerCase();
-  if (const {'dns', 'misconfigtun', 'windnsclient'}.contains(value)) {
+  var value = input.toLowerCase();
+  if (value.startsWith('[')) {
+    final separator = value.indexOf(']:');
+    if (separator < 0 ||
+        !_validTunWfpPrefix(value.substring(1, separator), ipv6: true)) {
+      return false;
+    }
+    value = value.substring(separator + 2);
+  } else {
+    final separator = value.indexOf(':');
+    if (separator >= 0) {
+      if (!_validTunWfpPrefix(value.substring(0, separator), ipv6: false)) {
+        return false;
+      }
+      value = value.substring(separator + 1);
+    }
+  }
+
+  final slash = value.indexOf('/');
+  if (slash >= 0) {
+    final protocol = value.substring(0, slash);
+    return const {'tcp', 'udp'}.contains(protocol) &&
+        _validTunWfpPortRange(value.substring(slash + 1));
+  }
+  if (const {
+    'dns',
+    'windnsclient',
+    'misconfigtun',
+    'all',
+    'allexceptlan',
+    'icmp',
+    'tcp',
+    'udp',
+  }.contains(value)) {
     return true;
   }
-  // Match Go strconv.ParseUint(base 10, bitSize 16): ASCII digits only,
-  // no sign or whitespace, with leading zeroes allowed.
-  final match = RegExp(r'^(tcp|udp)/([0-9]+)$').firstMatch(value);
-  if (match == null || match.end != value.length) return false;
-  final port = int.tryParse(match.group(2)!);
-  return port != null && port >= 1 && port <= 65535;
+  return _validTunWfpPortRange(value);
+}
+
+bool _validTunWfpPrefix(String value, {required bool ipv6}) {
+  final slash = value.indexOf('/');
+  if (slash <= 0 || slash != value.lastIndexOf('/')) return false;
+  final address = value.substring(0, slash);
+  if (address.contains(':') != ipv6 || !_isIPOrPrefix(value)) return false;
+  final bytes = _parseCoreIP(address);
+  return bytes != null && bytes.length == (ipv6 ? 16 : 4);
+}
+
+bool _validTunWfpPortRange(String value) {
+  final match = RegExp(r'^([0-9]+)(?:-([0-9]+))?$').firstMatch(value);
+  if (match == null) return false;
+  final low = int.tryParse(match.group(1)!);
+  final high = int.tryParse(match.group(2) ?? match.group(1)!);
+  return low != null &&
+      high != null &&
+      low >= 1 &&
+      high <= 65535 &&
+      low <= high;
 }
 
 // proxy/masque.newAddressPool reserves the subnet address and server address,
