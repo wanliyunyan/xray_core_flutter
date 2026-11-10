@@ -3460,7 +3460,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
           _TextInput(
               controller: _tunWfpController,
-              label: 'TUN autoSystemWfpBlockLeak（dns,misconfigtun,windnsclient,tcp/端口,udp/端口）',
+              label: 'TUN autoSystemWfpBlockLeak（规则或 CIDR:规则，逗号分隔）',
               icon: Icons.edit_rounded,
               onChanged: _refresh),
           _CheckRow(

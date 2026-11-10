@@ -6,6 +6,7 @@ build/
 DerivedData/
 .generated/
 .codex/
+docs/superpowers/
 example/*
 !example/xray_core_flutter_example.dart
 AGENTS.md

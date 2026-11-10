@@ -779,7 +779,7 @@ void main() {
       'log': {
         'access': 'none',
         'error': 'error.log',
-        'loglevel': 'debug',
+        'logLevel': 'debug',
         'dnsLog': true,
       },
       'policy': {

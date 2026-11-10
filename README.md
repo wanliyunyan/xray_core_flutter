@@ -54,7 +54,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## 配置覆盖和校验
 
-当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.10.31（a4a3dff5）。仓库内的 parity
+当前 Dart 配置模型已对照 Xray-core `infra/conf` v26.11.9（676eaf66）。仓库内的 parity
 checker 会核对 Go JSON tag、结构字段、Dart 额外 key 和 config creator loader
 ID：
 
@@ -71,6 +71,28 @@ VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
 `env:` 地址由目标设备上的 Core 解析，本包不会据此判断端口或公网安全要求；
 原始协议 settings 仍遵循 `allowRawSettings` 选项。校验通过不代表已执行 Core
 的全部配置构建及运行时检查。
+
+## v26.11.9 新配置
+
+Freedom `finalRules` 新增 `delay` 和 `logLevel`。两者只适用于
+`action: 'block'`；`logLevel` 接受 `debug`、`info`、`none`、`warning` 和
+`error`（不区分大小写）。旧 `blockDelay` 仍可导入和导出，但 Core 已将它标记为
+`delay` 的弃用别名。
+
+根日志配置的规范 JSON 键改为 `logLevel`。`LogConfig.fromJson` 仍可读取旧
+`loglevel`，两者同时出现时优先使用 `logLevel`；导出始终使用规范键。为保持 Dart
+源码兼容，构造参数和属性名仍为 `LogConfig.loglevel`。
+
+TUN `autoSystemWfpBlockLeak` 除原有值外，还接受 `all`、`allexceptlan`、
+`icmp`、裸 `tcp`/`udp`、独立端口或端口范围，以及带 IPv4 CIDR 或方括号 IPv6
+CIDR 的规则，例如 `53`、`tcp/8000-9000`、`1.1.1.0/24:dns` 和
+`[::/0]:icmp`。端口范围为 1–65535 且下界不能大于上界。Dart 仅校验语法并保留
+原始输入；规范化 CIDR、展开 `dns`/`allexceptlan`、去重及 Windows 平台前提仍由
+Core 处理。
+
+对于 XTLS/Xray-rules-dat 的 GitHub 或 raw GitHub `.dat` URL，Core 会在运行时迁移
+为 `.dat.gz` 下载地址。Core 还新增 `hellochrome_155` uTLS 指纹并更新自动 Chrome
+指纹行为；这些变化没有新增 JSON 字段，因此本包不重复实现。
 
 ## v26.10.31 新配置
 

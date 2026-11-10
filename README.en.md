@@ -55,7 +55,7 @@ import 'package:xray_core_flutter/xray_core_flutter.dart';
 
 ## Config Parity
 
-The Dart models currently track Xray-core `infra/conf` v26.10.31 (a4a3dff5). The parity
+The Dart models currently track Xray-core `infra/conf` v26.11.9 (676eaf66). The parity
 checker compares Go JSON tags, struct fields, unexpected Dart keys, and config
 creator loader IDs:
 
@@ -85,6 +85,31 @@ Legacy `proxySettings` JSON is retained as a raw map but rejected by validation.
 Move Hysteria congestion and bandwidth options to `FinalMask.quicParams`.
 Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
 `FinalMask.udp`, using `mode`, `remotePorts`, and `interval`.
+
+## v26.11.9
+
+Freedom `finalRules` adds `delay` and `logLevel`. Both are valid only for
+`action: 'block'`; `logLevel` accepts `debug`, `info`, `none`, `warning` and
+`error` case-insensitively. Legacy `blockDelay` still imports and exports, but
+Core now treats it as a deprecated alias for `delay`.
+
+The canonical root log JSON key is now `logLevel`. `LogConfig.fromJson` still
+accepts legacy `loglevel`, preferring `logLevel` when both are present, and
+always exports the canonical key. The Dart constructor/property remains
+`LogConfig.loglevel` for source compatibility.
+
+TUN `autoSystemWfpBlockLeak` now also accepts `all`, `allexceptlan`, `icmp`,
+bare `tcp`/`udp`, standalone ports or port ranges, and rules scoped by an IPv4
+CIDR or bracketed IPv6 CIDR. Examples include `53`, `tcp/8000-9000`,
+`1.1.1.0/24:dns` and `[::/0]:icmp`. Ports must be in 1–65535 and range bounds
+must be ordered. Dart validates syntax and preserves the original input; Core
+still masks CIDRs, expands `dns`/`allexceptlan`, removes duplicates and checks
+Windows platform prerequisites.
+
+For XTLS/Xray-rules-dat GitHub or raw GitHub `.dat` URLs, Core migrates the
+runtime download to `.dat.gz`. Core also registers the `hellochrome_155` uTLS
+fingerprint and updates automatic Chrome fingerprint behavior. Neither runtime
+change adds a JSON field, so it is not duplicated in the Dart models.
 
 ## v26.10.31
 

@@ -1,3 +1,17 @@
+## v0.13.0
+
+- Synced config models, validation and parity checks with local Xray-core
+  `infra/conf` v26.11.9 (676eaf66).
+- Added Freedom `finalRules.delay` and `logLevel` with block-only validation;
+  retained the deprecated `blockDelay` field for legacy config round trips.
+- Emit the canonical root log key `logLevel` while continuing to import the
+  legacy `loglevel` spelling and preserving the Dart `LogConfig.loglevel` API.
+- Accept the expanded TUN WFP grammar: all-port TCP/UDP, ICMP, `all`,
+  `allexceptlan`, decimal port ranges and IPv4/bracketed-IPv6 CIDR scopes.
+  Input spelling, order and duplicates remain unchanged for Core to process.
+- Updated the example hint and regression coverage. Xray-rules-dat `.dat.gz`
+  URL migration and uTLS `hellochrome_155` behavior remain Core runtime work.
+
 ## v0.12.0
 
 - Synced config models and parity checks with local Xray-core `infra/conf`

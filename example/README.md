@@ -24,7 +24,7 @@ cd example
 ./run_macos_app.sh
 ```
 
-The form tracks Xray v26.10.31, including MASQUE WARP, XDrive, TUN DNS/leak
+The form tracks Xray v26.11.9, including MASQUE WARP, XDrive, TUN DNS/leak
 options and structured XDNS domains/resolvers. MASQUE and XDrive have JSON
 settings editors so all upstream fields can be configured. Dedicated controls
 also expose XDrive HTTP/3, XMUX ranges and TCP/UDP source IP filters. HTTP/3
@@ -34,8 +34,9 @@ XDrive settings, including template JSON.
 XHTTP/SplitHTTP exposes raw server `h2Params` JSON and supports `OPTIONS`
 uplinks. Malformed h2Params JSON disables copying until corrected. When using
 `extra`, put `h2Params` inside it because Core replaces outer options with
-`extra` (except host, path and mode). TUN WFP hints include `windnsclient`,
-`tcp/port` and `udp/port`; `dns` also covers TCP/UDP 853 in Core.
+`extra` (except host, path and mode). TUN WFP rules include `all`,
+`allexceptlan`, `icmp`, bare `tcp`/`udp`, port ranges and CIDR-scoped rules;
+the form preserves the entered spelling and leaves expansion to Core.
 Malformed XMUX field input shows an error and disables copying. XDNS arrays use
 objects such as `{"names":["tunnel.example.com"]}` and
 `{"addrs":["1.1.1.1:53"]}`.
