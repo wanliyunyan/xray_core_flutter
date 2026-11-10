@@ -13,8 +13,13 @@ abstract class TunConfig with _$TunConfig implements XrayInboundSettings {
     String? autoOutboundsInterface,
     bool? autoSystemDnsToGateway,
 
-    /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
-    /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
+    /// Windows WFP rules: named actions, TCP/UDP ports or ranges, optionally
+    /// scoped by an IPv4 CIDR or a bracketed IPv6 CIDR. Core expands dns and
+    /// allexceptlan, while always allowing loopback, DHCP and IPv6 discovery.
+    /// On Windows, any nonempty rule list requires autoSystemRoutingTable.
+    /// Rules that block system DNS also require dns to be configured.
+    /// If Windows DisabledComponents turns IPv6 off, Core logs IPv6 setup
+    /// failures and misconfigtun blocks IPv6 outside the TUN.
     List<String>? autoSystemWfpBlockLeak,
   }) = _TunConfig;
 

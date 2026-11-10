@@ -33,6 +33,14 @@ extension XrayConfigValidation on XrayConfig {
         ),
       );
     }
+    if (transport?.isNotEmpty == true) {
+      issues.add(
+        const XrayValidationIssue(
+          'transport',
+          'global transport has been removed; use streamSettings in each inbound or outbound',
+        ),
+      );
+    }
     final inboundTags = _collectTags(
       inbounds?.map((item) => item.tag),
       'inbounds',
@@ -309,6 +317,7 @@ extension on OutboundDetourConfig {
       inbound: false,
       outboundTags: outboundTags,
     );
+    _validateMux(mux, issues, '$path.mux');
     if (settings is BlackholeConfig) {
       _validateBlackhole(
         (settings as BlackholeConfig).response,

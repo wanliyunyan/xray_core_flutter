@@ -4,8 +4,19 @@ part of 'config.dart';
 abstract class MuxConfig with _$MuxConfig {
   const factory MuxConfig({
     bool? enabled,
+
+    /// Mux concurrency, limited to the signed int16 range -32768..32767.
+    /// Core v26.11.9 normalizes nonnegative values through 128 to 128; a
+    /// negative value disables mux.
     int? concurrency,
+
+    /// XUDP concurrency, limited to the signed int16 range -32768..32767.
+    /// Core v26.11.9 lets each mux and XUDP worker serve up to 1024 connections
+    /// before replacement.
     int? xudpConcurrency,
+
+    /// Exact, case-sensitive UDP/443 policy: reject (the Core default), allow
+    /// or skip. An omitted or empty value also selects reject.
     String? xudpProxyUDP443,
   }) = _MuxConfig;
 

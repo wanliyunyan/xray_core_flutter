@@ -136,7 +136,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _directRedirectController = TextEditingController();
   final _directUserLevelController = TextEditingController();
   final _directProxyProtocolController = TextEditingController();
-  final _directIpsBlockedController = TextEditingController();
+  final _directFinalRulesJsonController = TextEditingController(text: '[]');
   final _directFragmentPacketsController =
       TextEditingController(text: 'tlshello');
   final _directFragmentLengthController =
@@ -144,11 +144,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _directFragmentIntervalController =
       TextEditingController(text: '10-20');
   final _directFragmentMaxSplitController = TextEditingController();
-  final _directNoiseTypeController = TextEditingController(text: 'rand');
-  final _directNoisePacketController =
-      TextEditingController(text: 'base64,AAAA');
-  final _directNoiseDelayController = TextEditingController(text: '10-20');
-  final _directNoiseApplyToController = TextEditingController();
   final _directNoisesJsonController = TextEditingController(text: '[]');
   final _dnsOutboundAddressController = TextEditingController(text: '8.8.8.8');
   final _dnsOutboundPortController = TextEditingController(text: '53');
@@ -371,7 +366,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   final _policyDownlinkOnlyController = TextEditingController(text: '5');
   final _policyBufferSizeController = TextEditingController(text: '10240');
   final _policyLevelsJsonController = TextEditingController(text: '{\n}');
-  final _muxConcurrencyController = TextEditingController(text: '8');
+  final _muxConcurrencyController = TextEditingController(text: '128');
   final _muxXudpConcurrencyController = TextEditingController();
   final _sockoptTcpFastOpenValueController = TextEditingController();
   final _sockoptMarkController = TextEditingController();
@@ -412,8 +407,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
       TextEditingController(text: 'geosite.dat');
   final _geodataOutboundController = TextEditingController();
   final _geodataAssetsJsonController = TextEditingController(text: '[]');
-  final _transportJsonController =
-      TextEditingController(text: '{\n  "tcpSettings": {}\n}');
   final _routeRuleTagController = TextEditingController(text: 'custom-rule');
   final _routeOutboundTagController = TextEditingController(text: 'proxy');
   final _routeBalancerTagController = TextEditingController();
@@ -561,7 +554,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _addBlockOutbound = true;
   bool _addDnsOutbound = false;
   bool _directEnableFragment = false;
-  bool _directEnableNoise = false;
   bool _directEnableNoises = false;
   bool _wireguardEnablePeersJson = false;
   String _blockResponseType = 'none';
@@ -591,7 +583,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _geodataUseAssetsJson = false;
   bool _fallbacksUseJson = false;
   bool _vlessReverseUseSniffing = true;
-  bool _enableTransport = false;
   bool _enableMux = false;
   bool _muxEnabled = true;
   bool _enableStreamEndpoint = false;
@@ -641,8 +632,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
   bool _quicDisableGSO = false;
   bool _quicDisableStatelessReset = false;
   bool _quicDisablePathMtuDiscovery = false;
-  bool _muxXudpUdp443Reject = false;
-  bool _tlsAllowInsecure = false;
+  String _muxXudpUdp443Policy = 'reject';
   bool _tlsAlpnH2 = true;
   bool _tlsAlpnHttp11 = true;
   bool _tlsAlpnCustom = false;
@@ -737,15 +727,11 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _directRedirectController.dispose();
     _directUserLevelController.dispose();
     _directProxyProtocolController.dispose();
-    _directIpsBlockedController.dispose();
+    _directFinalRulesJsonController.dispose();
     _directFragmentPacketsController.dispose();
     _directFragmentLengthController.dispose();
     _directFragmentIntervalController.dispose();
     _directFragmentMaxSplitController.dispose();
-    _directNoiseTypeController.dispose();
-    _directNoisePacketController.dispose();
-    _directNoiseDelayController.dispose();
-    _directNoiseApplyToController.dispose();
     _directNoisesJsonController.dispose();
     _dnsOutboundAddressController.dispose();
     _dnsOutboundPortController.dispose();
@@ -980,7 +966,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     _geodataAssetFileController.dispose();
     _geodataOutboundController.dispose();
     _geodataAssetsJsonController.dispose();
-    _transportJsonController.dispose();
     _routeRuleTagController.dispose();
     _routeOutboundTagController.dispose();
     _routeBalancerTagController.dispose();
@@ -1055,8 +1040,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     final outbounds = _outbounds();
 
     return XrayConfig(
-      transport:
-          _enableTransport ? _mapFromJson(_transportJsonController) : null,
       log: LogConfig(
         access: _emptyToNull(_logAccessController.text),
         error: _emptyToNull(_logErrorController.text),
@@ -1368,7 +1351,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                       password: _passwordController.text.trim(),
                       email: _emptyToNull(_userEmailController.text),
                       level: _nullableInt(_userLevelController),
-                      flow: _emptyToNull(_vlessFlowController.text),
                     ),
                   ],
             fallbacks: _trojanEnableFallback ? _trojanInboundFallbacks() : null,
@@ -1493,9 +1475,9 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
     final mux = _enableMux
         ? MuxConfig(
             enabled: _muxEnabled,
-            concurrency: _intValue(_muxConcurrencyController, 8),
+            concurrency: _intValue(_muxConcurrencyController, 128),
             xudpConcurrency: _nullableInt(_muxXudpConcurrencyController),
-            xudpProxyUDP443: _muxXudpUdp443Reject ? 'reject' : null,
+            xudpProxyUDP443: _muxXudpUdp443Policy,
           )
         : null;
     final sendThrough = _emptyToNull(_sendThroughController.text);
@@ -1526,7 +1508,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             level: _nullableInt(_userLevelController),
             email: _emptyToNull(_userEmailController.text),
             password: _passwordController.text.trim(),
-            flow: _emptyToNull(_vlessFlowController.text),
             servers: _enableOutboundTargets
                 ? _listFromJson(
                     _outboundTargetsJsonController,
@@ -2271,7 +2252,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ];
     return TLSConfig(
       serverName: tlsServerName,
-      allowInsecure: _tlsAllowInsecure,
       alpn: alpn.isEmpty ? null : XrayStringList(alpn),
       enableSessionResumption: _tlsSessionResumption,
       disableSystemRoot: _tlsDisableSystemRoot,
@@ -3172,7 +3152,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         redirect: _emptyToNull(_directRedirectController.text),
         userLevel: _nullableInt(_directUserLevelController),
         proxyProtocol: _nullableInt(_directProxyProtocolController),
-        ipsBlocked: _csvStringList(_directIpsBlockedController.text),
+        finalRules: _directFinalRulesFromJson(),
         fragment: _directEnableFragment
             ? Fragment(
                 packets: _emptyToNull(_directFragmentPacketsController.text),
@@ -3183,19 +3163,20 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
                     _rangeFromText(_directFragmentMaxSplitController.text),
               )
             : null,
-        noise: _directEnableNoise
-            ? Noise(
-                type: _emptyToNull(_directNoiseTypeController.text),
-                packet: _emptyToNull(_directNoisePacketController.text),
-                delay: _rangeFromText(_directNoiseDelayController.text),
-                applyTo: _emptyToNull(_directNoiseApplyToController.text),
-              )
-            : null,
         noises: _directEnableNoises
             ? _listFromJson(_directNoisesJsonController, Noise.fromJson)
             : null,
       ),
     );
+  }
+
+  List<FreedomFinalRuleConfig>? _directFinalRulesFromJson() {
+    final rules = _typedJsonList(
+      _directFinalRulesJsonController,
+      FreedomFinalRuleConfig.fromJson,
+      'direct finalRules',
+    );
+    return rules.isEmpty ? null : rules;
   }
 
   OutboundDetourConfig _blockOutbound() {
@@ -4046,9 +4027,7 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
         ],
         if (_protocol == ProxyProtocol.vless ||
-            _inbound == InboundKind.vless ||
-            _protocol == ProxyProtocol.trojan ||
-            _inbound == InboundKind.trojan) ...[
+            _inbound == InboundKind.vless) ...[
           const SizedBox(height: 12),
           _TextInput(
             controller: _vlessFlowController,
@@ -5767,12 +5746,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
         ],
         if (_usesTlsTransport) ...[
           _CheckRow(
-            value: _tlsAllowInsecure,
-            title: 'TLS allowInsecure',
-            icon: Icons.warning_rounded,
-            onChanged: (value) => setState(() => _tlsAllowInsecure = value),
-          ),
-          _CheckRow(
             value: _tlsServerNameOverride,
             title: 'TLS serverName 自定义',
             icon: Icons.badge_rounded,
@@ -6918,9 +6891,10 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ),
           const SizedBox(height: 12),
           _TextInput(
-            controller: _directIpsBlockedController,
-            label: 'direct ipsBlocked 逗号分隔',
-            icon: Icons.block_rounded,
+            controller: _directFinalRulesJsonController,
+            label: 'direct finalRules JSON 数组',
+            icon: Icons.rule_rounded,
+            maxLines: 5,
             onChanged: _refresh,
           ),
           _CheckRow(
@@ -6957,42 +6931,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
               controller: _directFragmentMaxSplitController,
               label: 'fragment maxSplit',
               icon: Icons.call_split_rounded,
-              onChanged: _refresh,
-            ),
-          ],
-          _CheckRow(
-            value: _directEnableNoise,
-            title: 'direct noise',
-            icon: Icons.graphic_eq_rounded,
-            onChanged: (value) => setState(() => _directEnableNoise = value),
-          ),
-          if (_directEnableNoise) ...[
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _directNoiseTypeController,
-              label: 'noise type',
-              icon: Icons.category_rounded,
-              onChanged: _refresh,
-            ),
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _directNoisePacketController,
-              label: 'noise packet',
-              icon: Icons.inventory_2_rounded,
-              onChanged: _refresh,
-            ),
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _directNoiseDelayController,
-              label: 'noise delay',
-              icon: Icons.timer_rounded,
-              onChanged: _refresh,
-            ),
-            const SizedBox(height: 12),
-            _TextInput(
-              controller: _directNoiseApplyToController,
-              label: 'noise applyTo',
-              icon: Icons.filter_alt_rounded,
               onChanged: _refresh,
             ),
           ],
@@ -7548,22 +7486,6 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
           ],
         ],
         _CheckRow(
-          value: _enableTransport,
-          title: '添加顶层 transport JSON',
-          icon: Icons.data_object_rounded,
-          onChanged: (value) => setState(() => _enableTransport = value),
-        ),
-        if (_enableTransport) ...[
-          const SizedBox(height: 12),
-          _TextInput(
-            controller: _transportJsonController,
-            label: 'transport JSON',
-            icon: Icons.code_rounded,
-            maxLines: 5,
-            onChanged: _refresh,
-          ),
-        ],
-        _CheckRow(
           value: _enableMux,
           title: '添加 mux',
           icon: Icons.call_split_rounded,
@@ -7592,11 +7514,14 @@ class _ConfigBuilderPageState extends State<ConfigBuilderPage> {
             keyboardType: TextInputType.number,
             onChanged: _refresh,
           ),
-          _CheckRow(
-            value: _muxXudpUdp443Reject,
-            title: 'mux 拒绝 XUDP UDP/443',
-            icon: Icons.block_rounded,
-            onChanged: (value) => setState(() => _muxXudpUdp443Reject = value),
+          const SizedBox(height: 12),
+          _DropdownInput<String>(
+            value: _muxXudpUdp443Policy,
+            label: 'mux XUDP UDP/443 policy',
+            icon: Icons.policy_rounded,
+            values: const ['reject', 'allow', 'skip'],
+            labelOf: (value) => value,
+            onChanged: (value) => setState(() => _muxXudpUdp443Policy = value),
           ),
         ],
       ],

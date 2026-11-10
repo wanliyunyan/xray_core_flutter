@@ -1009,8 +1009,19 @@ class __$LogConfigCopyWithImpl<$Res> implements _$LogConfigCopyWith<$Res> {
 /// @nodoc
 mixin _$MuxConfig {
   bool? get enabled;
+
+  /// Mux concurrency, limited to the signed int16 range -32768..32767.
+  /// Core v26.11.9 normalizes nonnegative values through 128 to 128; a
+  /// negative value disables mux.
   int? get concurrency;
+
+  /// XUDP concurrency, limited to the signed int16 range -32768..32767.
+  /// Core v26.11.9 lets each mux and XUDP worker serve up to 1024 connections
+  /// before replacement.
   int? get xudpConcurrency;
+
+  /// Exact, case-sensitive UDP/443 policy: reject (the Core default), allow
+  /// or skip. An omitted or empty value also selects reject.
   String? get xudpProxyUDP443;
 
   /// Create a copy of MuxConfig
@@ -1310,10 +1321,21 @@ class _MuxConfig extends MuxConfig {
 
   @override
   final bool? enabled;
+
+  /// Mux concurrency, limited to the signed int16 range -32768..32767.
+  /// Core v26.11.9 normalizes nonnegative values through 128 to 128; a
+  /// negative value disables mux.
   @override
   final int? concurrency;
+
+  /// XUDP concurrency, limited to the signed int16 range -32768..32767.
+  /// Core v26.11.9 lets each mux and XUDP worker serve up to 1024 connections
+  /// before replacement.
   @override
   final int? xudpConcurrency;
+
+  /// Exact, case-sensitive UDP/443 policy: reject (the Core default), allow
+  /// or skip. An omitted or empty value also selects reject.
   @override
   final String? xudpProxyUDP443;
 

@@ -77,22 +77,38 @@ VLESS 简化出站的 `settings.reverse.tag` 可用于路由 `inboundTag`。
 Freedom `finalRules` 新增 `delay` 和 `logLevel`。两者只适用于
 `action: 'block'`；`logLevel` 接受 `debug`、`info`、`none`、`warning` 和
 `error`（不区分大小写）。旧 `blockDelay` 仍可导入和导出，但 Core 已将它标记为
-`delay` 的弃用别名。
+`delay` 的弃用别名；两者同时出现时，Core 使用 `blockDelay` 覆盖 `delay`。
+省略延迟时，Core 随机阻断 30 到 90 秒；省略用户规则的 `logLevel` 时默认使用
+`info`，Core 内置的安全阻断规则使用 `warning`。
 
 根日志配置的规范 JSON 键改为 `logLevel`。`LogConfig.fromJson` 仍可读取旧
-`loglevel`，两者同时出现时优先使用 `logLevel`；导出始终使用规范键。为保持 Dart
-源码兼容，构造参数和属性名仍为 `LogConfig.loglevel`。
+`loglevel`；两者均为非空值时优先使用 `logLevel`，规范键为 `null` 时回退旧键。
+空字符串或未知值按 Core 行为规范化为 `warning`，导出始终使用规范键。为保持
+Dart 源码兼容，构造参数和属性名仍为 `LogConfig.loglevel`。
 
 TUN `autoSystemWfpBlockLeak` 除原有值外，还接受 `all`、`allexceptlan`、
 `icmp`、裸 `tcp`/`udp`、独立端口或端口范围，以及带 IPv4 CIDR 或方括号 IPv6
 CIDR 的规则，例如 `53`、`tcp/8000-9000`、`1.1.1.0/24:dns` 和
 `[::/0]:icmp`。端口范围为 1–65535 且下界不能大于上界。Dart 仅校验语法并保留
 原始输入；规范化 CIDR、展开 `dns`/`allexceptlan`、去重及 Windows 平台前提仍由
-Core 处理。
+Core 处理。在 Windows 上，任何非空规则列表都要求设置 `autoSystemRoutingTable`；
+包含 `all`、`allexceptlan`、`dns`、`windnsclient` 或 TCP/UDP 端口 53 的规则还要求
+设置 TUN `dns`。WFP 过滤器始终放行 loopback、DHCP、DHCPv6 和 IPv6 邻居发现流量，
+并放行 Xray 自身的出站连接。Windows `DisabledComponents` 关闭 IPv6 时，Core 会
+记录 IPv6 配置错误并继续启动；`misconfigtun` 会阻断 TUN 外部的 IPv6 流量。
+
+Mux 的 `concurrency` 在 v26.11.9 中会将 0 到 128 的非负值统一为 128，负值仍会
+禁用 Mux。Mux 与 XUDP worker 的连接复用上限从 128 提高到 1024。
+
+XDrive 的 `concurrency` 上限从 64 提高到 256。`google-drive` 省略或设为 0 时，
+`concurrency`、`flushIntervalMs` 和 `maxPollIntervalMs` 分别默认使用 64、10 和
+200；其他后端仍分别使用 8、20 和 500。
 
 对于 XTLS/Xray-rules-dat 的 GitHub 或 raw GitHub `.dat` URL，Core 会在运行时迁移
-为 `.dat.gz` 下载地址。Core 还新增 `hellochrome_155` uTLS 指纹并更新自动 Chrome
-指纹行为；这些变化没有新增 JSON 字段，因此本包不重复实现。
+为 `.dat.gz` 下载地址。uTLS `fingerprint` 为空或为 `chrome` 时使用
+`HelloChrome_Auto`，Core v26.11.9 还可显式选择 `hellochrome_155`。Core 并将
+Freedom 默认的私网地址阻断策略应用到来自 MASQUE 入站的流量。
+这些变化没有新增 JSON 字段，因此本包不重复实现。
 
 ## v26.10.31 新配置
 

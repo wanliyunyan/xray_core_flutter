@@ -7,8 +7,16 @@ abstract class FreedomFinalRuleConfig with _$FreedomFinalRuleConfig {
     XrayNetworkList? network,
     XrayPortList? port,
     XrayStringList? ip,
+
+    /// Block duration in seconds. Core defaults to a random 30-90 seconds.
     XrayInt32Range? delay,
+
+    /// Block event log level. Core defaults user-defined rules to `info`; its
+    /// built-in safe blocking rules use `warning`.
     String? logLevel,
+
+    /// Deprecated alias of `delay`. Core gives `blockDelay` precedence when
+    /// both fields are present.
     XrayInt32Range? blockDelay,
   }) = _FreedomFinalRuleConfig;
 

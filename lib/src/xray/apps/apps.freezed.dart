@@ -2531,6 +2531,8 @@ class __$FakeDNSPoolElementConfigCopyWithImpl<$Res>
 
 /// @nodoc
 mixin _$GeodataAssetConfig {
+  /// HTTPS asset URL. Core v26.11.9 rewrites XTLS/Xray-rules-dat GitHub and
+  /// raw GitHub URLs ending in .dat to .dat.gz and emits a deprecation warning.
   String get url;
   String get file;
 
@@ -2774,6 +2776,8 @@ class _GeodataAssetConfig implements GeodataAssetConfig {
   factory _GeodataAssetConfig.fromJson(Map<String, dynamic> json) =>
       _$GeodataAssetConfigFromJson(json);
 
+  /// HTTPS asset URL. Core v26.11.9 rewrites XTLS/Xray-rules-dat GitHub and
+  /// raw GitHub URLs ending in .dat to .dat.gz and emits a deprecation warning.
   @override
   final String url;
   @override

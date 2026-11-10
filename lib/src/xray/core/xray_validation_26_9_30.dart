@@ -38,7 +38,41 @@ void _validateNewProtocolSettings(
     }
   }
   if (settings is FreedomConfig) {
+    if (settings.noise != null) {
+      issue(
+        'settings.noise',
+        'singular Freedom noise has been removed; use noises or streamSettings.finalmask.udp',
+      );
+    }
     _validateFreedomFinalRules(settings, issues, path);
+  }
+  if (protocol.toLowerCase() == 'trojan') {
+    if (settings is TrojanClientConfig) {
+      if (settings.address != null) {
+        if ((settings.flow ?? '').isNotEmpty) {
+          issue('settings.flow', 'flow has been removed from Trojan');
+        }
+      } else {
+        final servers = settings.servers ?? const <TrojanServerTarget>[];
+        for (var i = 0; i < servers.length; i++) {
+          if ((servers[i].flow ?? '').isNotEmpty) {
+            issue(
+              'settings.servers[$i].flow',
+              'flow has been removed from Trojan',
+            );
+          }
+        }
+      }
+    } else if (settings is TrojanServerConfig) {
+      final users =
+          settings.clients ?? settings.users ?? const <TrojanUserConfig>[];
+      final key = settings.clients != null ? 'clients' : 'users';
+      for (var i = 0; i < users.length; i++) {
+        if ((users[i].flow ?? '').isNotEmpty) {
+          issue('settings.$key[$i].flow', 'flow has been removed from Trojan');
+        }
+      }
+    }
   }
   if (settings is MasqueClientConfig) {
     if (settings.address == null) issue('settings.address', 'address required');
@@ -192,7 +226,38 @@ void _validateNewTransportSettings(
 }) {
   void issue(String key, String message) =>
       issues.add(XrayValidationIssue('$path.$key', message));
+  void validateTLSConfig(TLSConfig? config, String key) {
+    if (config?.allowInsecure == true) {
+      issue(
+        '$key.allowInsecure',
+        'allowInsecure has been removed; use pinnedPeerCertSha256 and verifyPeerCertByName',
+      );
+    }
+  }
+
   final network = stream.method ?? stream.network ?? TransportProtocol.tcp;
+  if (const {
+    TransportProtocol.h2,
+    TransportProtocol.h3,
+    TransportProtocol.http,
+    TransportProtocol.quic,
+  }.contains(network)) {
+    issue(
+      stream.method == null ? 'network' : 'method',
+      network == TransportProtocol.quic
+          ? 'QUIC transport has been removed; use XHTTP stream-one H3'
+          : 'HTTP transport has been removed; use XHTTP stream-one H2 or H3',
+    );
+  }
+  if (stream.security == SecurityProtocol.xtls) {
+    issue(
+      'security',
+      'legacy XTLS has been removed; use xtls-rprx-vision with TLS or REALITY',
+    );
+  }
+  if (stream.security == SecurityProtocol.tls) {
+    validateTLSConfig(stream.tlsSettings, 'tlsSettings');
+  }
   if (stream.security == SecurityProtocol.reality &&
       !const {
         TransportProtocol.tcp,
@@ -343,6 +408,10 @@ void _validateNewTransportSettings(
       }
       for (var j = 0; j < resolvers.length; j++) {
         final resolver = resolvers[j];
+        validateTLSConfig(
+          resolver.tlsConfig,
+          '$prefix.resolvers[$j].tlsConfig',
+        );
         final addrs = resolver.addrs;
         final worker = resolver.worker;
         if (worker != null && (worker < 0 || worker > 0x7fffffff)) {
@@ -402,6 +471,9 @@ void _validateNewTransportSettings(
           }
         }
       }
+    }
+    if (mask.type.toLowerCase() == 'realm' && settings is Realm) {
+      validateTLSConfig(settings.tlsConfig, '$prefix.tlsConfig');
     }
     if (mask.type.toLowerCase() == 'noise' && settings is NoiseMask) {
       final noise = settings.noiseItems ?? const <NoiseItem>[];

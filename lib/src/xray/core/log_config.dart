@@ -12,13 +12,11 @@ abstract class LogConfig with _$LogConfig {
 
   factory LogConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'log');
-    final logLevel = map.containsKey('logLevel')
-        ? map['logLevel']
-        : map['loglevel'];
+    final logLevel = map['logLevel'] ?? map['loglevel'];
     return LogConfig(
       access: map['access'] as String?,
       error: map['error'] as String?,
-      loglevel: logLevel == null ? null : LogLevel.fromJson(logLevel),
+      loglevel: logLevel == null ? null : _rootLogLevelFromJson(logLevel),
       dnsLog: map['dnsLog'] as bool?,
       maskAddress: map['maskAddress'] as String?,
     );
@@ -57,4 +55,13 @@ enum LogLevel {
   }
 
   String toJson() => name;
+}
+
+LogLevel _rootLogLevelFromJson(Object? json) {
+  try {
+    return LogLevel.fromJson(json);
+  } on FormatException {
+    if (json is String) return LogLevel.warning;
+    rethrow;
+  }
 }

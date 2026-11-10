@@ -91,12 +91,18 @@ Replace `UdpHop` with `Mask(type: 'udphop', settings: UDPHop(...))` inside
 Freedom `finalRules` adds `delay` and `logLevel`. Both are valid only for
 `action: 'block'`; `logLevel` accepts `debug`, `info`, `none`, `warning` and
 `error` case-insensitively. Legacy `blockDelay` still imports and exports, but
-Core now treats it as a deprecated alias for `delay`.
+Core now treats it as a deprecated alias for `delay`. When both fields are
+present, Core gives `blockDelay` precedence over `delay`.
+When no delay is given, Core blocks for a random 30 to 90 seconds. An omitted
+`logLevel` defaults to `info` for user-defined rules; Core's built-in safe
+blocking rules use `warning`.
 
 The canonical root log JSON key is now `logLevel`. `LogConfig.fromJson` still
-accepts legacy `loglevel`, preferring `logLevel` when both are present, and
-always exports the canonical key. The Dart constructor/property remains
-`LogConfig.loglevel` for source compatibility.
+accepts legacy `loglevel`. A non-null canonical value wins when both are
+present, while a null canonical value falls back to the legacy key. Empty or
+unknown values normalize to `warning`, matching Core, and export always uses
+the canonical key. The Dart constructor/property remains `LogConfig.loglevel`
+for source compatibility.
 
 TUN `autoSystemWfpBlockLeak` now also accepts `all`, `allexceptlan`, `icmp`,
 bare `tcp`/`udp`, standalone ports or port ranges, and rules scoped by an IPv4
@@ -104,12 +110,29 @@ CIDR or bracketed IPv6 CIDR. Examples include `53`, `tcp/8000-9000`,
 `1.1.1.0/24:dns` and `[::/0]:icmp`. Ports must be in 1–65535 and range bounds
 must be ordered. Dart validates syntax and preserves the original input; Core
 still masks CIDRs, expands `dns`/`allexceptlan`, removes duplicates and checks
-Windows platform prerequisites.
+Windows platform prerequisites. On Windows, any nonempty rule list requires
+`autoSystemRoutingTable`; rules containing `all`, `allexceptlan`, `dns`,
+`windnsclient`, or TCP/UDP port 53 also require TUN `dns`. WFP filters always
+allow loopback, DHCP, DHCPv6 and IPv6 neighbor discovery, as well as Xray's own
+outbound traffic.
+When Windows `DisabledComponents` turns IPv6 off, Core logs IPv6 setup failures
+and continues; `misconfigtun` blocks IPv6 traffic outside the TUN.
+
+In v26.11.9, Mux normalizes nonnegative `concurrency` values from 0 through 128
+to 128; negative values still disable Mux. The connection reuse limit for Mux
+and XUDP workers increases from 128 to 1024.
+
+XDrive raises its `concurrency` cap from 64 to 256. When omitted or zero,
+`google-drive` defaults `concurrency`, `flushIntervalMs` and `maxPollIntervalMs`
+to 64, 10 and 200 respectively; other backends retain 8, 20 and 500.
 
 For XTLS/Xray-rules-dat GitHub or raw GitHub `.dat` URLs, Core migrates the
-runtime download to `.dat.gz`. Core also registers the `hellochrome_155` uTLS
-fingerprint and updates automatic Chrome fingerprint behavior. Neither runtime
-change adds a JSON field, so it is not duplicated in the Dart models.
+runtime download to `.dat.gz`. An empty uTLS `fingerprint` or `chrome` uses
+`HelloChrome_Auto`, and Core v26.11.9 also accepts the explicit
+`hellochrome_155` profile. Core applies
+Freedom's default private-address blocking policy to traffic from MASQUE
+inbounds. None of these runtime changes adds a JSON field, so they are not
+duplicated in the Dart models.
 
 ## v26.10.31
 

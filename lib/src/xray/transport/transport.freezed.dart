@@ -11383,6 +11383,9 @@ mixin _$REALITYConfig {
   String? get mldsa65Seed;
   LimitFallback? get limitFallbackUpload;
   LimitFallback? get limitFallbackDownload;
+
+  /// Client uTLS fingerprint. Empty or chrome uses HelloChrome_Auto;
+  /// Core v26.11.9 also accepts the explicit hellochrome_155 profile.
   String? get fingerprint;
   String? get serverName;
   String? get password;
@@ -12055,6 +12058,9 @@ class _REALITYConfig extends REALITYConfig {
   final LimitFallback? limitFallbackUpload;
   @override
   final LimitFallback? limitFallbackDownload;
+
+  /// Client uTLS fingerprint. Empty or chrome uses HelloChrome_Auto;
+  /// Core v26.11.9 also accepts the explicit hellochrome_155 profile.
   @override
   final String? fingerprint;
   @override
@@ -18454,6 +18460,9 @@ mixin _$TLSConfig {
   String? get minVersion;
   String? get maxVersion;
   String? get cipherSuites;
+
+  /// Client uTLS fingerprint. Empty or chrome uses HelloChrome_Auto;
+  /// Core v26.11.9 also accepts the explicit hellochrome_155 profile.
   String? get fingerprint;
   @JsonKey(name: 'rejectUnknownSni')
   bool? get rejectUnknownSNI;
@@ -19055,6 +19064,9 @@ class _TLSConfig extends TLSConfig {
   final String? maxVersion;
   @override
   final String? cipherSuites;
+
+  /// Client uTLS fingerprint. Empty or chrome uses HelloChrome_Auto;
+  /// Core v26.11.9 also accepts the explicit hellochrome_155 profile.
   @override
   final String? fingerprint;
   @override
@@ -23803,10 +23815,19 @@ mixin _$XDriveConfig {
   String? get service;
   List<String>? get secrets;
   int? get segmentBytes;
+
+  /// Flush interval in milliseconds. Core defaults Google Drive to 10 ms
+  /// and other backends to 20 ms when this is omitted or zero.
   int? get flushIntervalMs;
   int? get pollIntervalMs;
+
+  /// Maximum poll interval in milliseconds. Core defaults Google Drive to
+  /// 200 ms and other backends to 500 ms when this is omitted or zero.
   int? get maxPollIntervalMs;
   int? get sessionTtlSeconds;
+
+  /// Core defaults Google Drive concurrency to 64 and other backends to 8;
+  /// values above 256 are capped at 256.
   int? get concurrency;
   int? get eagerWindowMs;
   int? get holeTimeoutMs;
@@ -24321,14 +24342,23 @@ class _XDriveConfig extends XDriveConfig {
 
   @override
   final int? segmentBytes;
+
+  /// Flush interval in milliseconds. Core defaults Google Drive to 10 ms
+  /// and other backends to 20 ms when this is omitted or zero.
   @override
   final int? flushIntervalMs;
   @override
   final int? pollIntervalMs;
+
+  /// Maximum poll interval in milliseconds. Core defaults Google Drive to
+  /// 200 ms and other backends to 500 ms when this is omitted or zero.
   @override
   final int? maxPollIntervalMs;
   @override
   final int? sessionTtlSeconds;
+
+  /// Core defaults Google Drive concurrency to 64 and other backends to 8;
+  /// values above 256 are capped at 256.
   @override
   final int? concurrency;
   @override

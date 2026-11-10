@@ -2726,8 +2726,16 @@ mixin _$FreedomFinalRuleConfig {
   XrayNetworkList? get network;
   XrayPortList? get port;
   XrayStringList? get ip;
+
+  /// Block duration in seconds. Core defaults to a random 30-90 seconds.
   XrayInt32Range? get delay;
+
+  /// Block event log level. Core defaults user-defined rules to `info`; its
+  /// built-in safe blocking rules use `warning`.
   String? get logLevel;
+
+  /// Deprecated alias of `delay`. Core gives `blockDelay` precedence when
+  /// both fields are present.
   XrayInt32Range? get blockDelay;
 
   /// Create a copy of FreedomFinalRuleConfig
@@ -3116,10 +3124,18 @@ class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
   final XrayPortList? port;
   @override
   final XrayStringList? ip;
+
+  /// Block duration in seconds. Core defaults to a random 30-90 seconds.
   @override
   final XrayInt32Range? delay;
+
+  /// Block event log level. Core defaults user-defined rules to `info`; its
+  /// built-in safe blocking rules use `warning`.
   @override
   final String? logLevel;
+
+  /// Deprecated alias of `delay`. Core gives `blockDelay` precedence when
+  /// both fields are present.
   @override
   final XrayInt32Range? blockDelay;
 
@@ -13752,8 +13768,13 @@ mixin _$TunConfig {
   String? get autoOutboundsInterface;
   bool? get autoSystemDnsToGateway;
 
-  /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
-  /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
+  /// Windows WFP rules: named actions, TCP/UDP ports or ranges, optionally
+  /// scoped by an IPv4 CIDR or a bracketed IPv6 CIDR. Core expands dns and
+  /// allexceptlan, while always allowing loopback, DHCP and IPv6 discovery.
+  /// On Windows, any nonempty rule list requires autoSystemRoutingTable.
+  /// Rules that block system DNS also require dns to be configured.
+  /// If Windows DisabledComponents turns IPv6 off, Core logs IPv6 setup
+  /// failures and misconfigtun blocks IPv6 outside the TUN.
   List<String>? get autoSystemWfpBlockLeak;
 
   /// Create a copy of TunConfig
@@ -14205,12 +14226,22 @@ class _TunConfig extends TunConfig {
   @override
   final bool? autoSystemDnsToGateway;
 
-  /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
-  /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
+  /// Windows WFP rules: named actions, TCP/UDP ports or ranges, optionally
+  /// scoped by an IPv4 CIDR or a bracketed IPv6 CIDR. Core expands dns and
+  /// allexceptlan, while always allowing loopback, DHCP and IPv6 discovery.
+  /// On Windows, any nonempty rule list requires autoSystemRoutingTable.
+  /// Rules that block system DNS also require dns to be configured.
+  /// If Windows DisabledComponents turns IPv6 off, Core logs IPv6 setup
+  /// failures and misconfigtun blocks IPv6 outside the TUN.
   final List<String>? _autoSystemWfpBlockLeak;
 
-  /// Windows WFP rules: dns, misconfigtun, windnsclient, tcp/port, udp/port.
-  /// Core expands dns to port 53, Windows DNS Client and TCP/UDP port 853.
+  /// Windows WFP rules: named actions, TCP/UDP ports or ranges, optionally
+  /// scoped by an IPv4 CIDR or a bracketed IPv6 CIDR. Core expands dns and
+  /// allexceptlan, while always allowing loopback, DHCP and IPv6 discovery.
+  /// On Windows, any nonempty rule list requires autoSystemRoutingTable.
+  /// Rules that block system DNS also require dns to be configured.
+  /// If Windows DisabledComponents turns IPv6 off, Core logs IPv6 setup
+  /// failures and misconfigtun blocks IPv6 outside the TUN.
   @override
   List<String>? get autoSystemWfpBlockLeak {
     final value = _autoSystemWfpBlockLeak;

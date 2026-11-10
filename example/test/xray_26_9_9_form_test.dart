@@ -9,6 +9,8 @@ Future<void> reveal(WidgetTester tester, Finder finder) async {
     scrollable: find.byType(Scrollable).first,
     maxScrolls: 200,
   );
+  await tester.ensureVisible(finder);
+  await tester.pumpAndSettle();
 }
 
 Future<void> enable(WidgetTester tester, String title) async {
@@ -58,7 +60,9 @@ void main() {
       'block response type',
     );
     await reveal(tester, response);
-    await tester.tap(response);
+    final center = tester.getCenter(response);
+    final visibleBottom = tester.getBottomRight(response).dy - 8;
+    await tester.tapAt(Offset(center.dx, visibleBottom));
     await tester.pumpAndSettle();
     await tester.tap(find.text('custom').last);
     await tester.pumpAndSettle();

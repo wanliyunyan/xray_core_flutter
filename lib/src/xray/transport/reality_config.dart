@@ -18,6 +18,9 @@ abstract class REALITYConfig with _$REALITYConfig {
     String? mldsa65Seed,
     LimitFallback? limitFallbackUpload,
     LimitFallback? limitFallbackDownload,
+
+    /// Client uTLS fingerprint. Empty or chrome uses HelloChrome_Auto;
+    /// Core v26.11.9 also accepts the explicit hellochrome_155 profile.
     String? fingerprint,
     String? serverName,
     String? password,

@@ -11,6 +11,12 @@ XrayConfig _freedomWithRules(List<Map<String, Object?>> rules) =>
       ],
     });
 
+XrayConfig _configWithMux(Map<String, Object?> mux) => XrayConfig.fromJson({
+  'outbounds': [
+    {'protocol': 'freedom', 'settings': <String, Object?>{}, 'mux': mux},
+  ],
+});
+
 void main() {
   test('root log emits canonical logLevel and accepts the legacy casing', () {
     expect(LogConfig.fromJson({'logLevel': 'DEBUG'}).toJson(), {
@@ -25,6 +31,58 @@ void main() {
     );
   });
 
+  test('root log falls back to legacy when canonical logLevel is null', () {
+    expect(
+      LogConfig.fromJson({'loglevel': 'info', 'logLevel': null}).toJson(),
+      {'logLevel': 'info'},
+    );
+  });
+
+  test('root log normalizes empty and unknown levels to Core warning', () {
+    for (final level in ['', 'trace']) {
+      expect(LogConfig.fromJson({'logLevel': level}).toJson(), {
+        'logLevel': 'warning',
+      }, reason: level);
+    }
+  });
+
+  test('direct LogLevel parsing remains strict for unknown values', () {
+    expect(() => LogLevel.fromJson('trace'), throwsFormatException);
+  });
+
+  test('root log rejects non-string log levels', () {
+    expect(() => LogConfig.fromJson({'logLevel': 1}), throwsFormatException);
+  });
+
+  test('Mux accepts Core int16 boundaries and UDP 443 policies', () {
+    for (final policy in ['', 'reject', 'allow', 'skip']) {
+      final config = _configWithMux({
+        'concurrency': -32768,
+        'xudpConcurrency': 32767,
+        'xudpProxyUDP443': policy,
+      });
+
+      expect(config.validate(), isEmpty, reason: policy);
+    }
+  });
+
+  test('Mux rejects values that Core cannot decode or build', () {
+    final issues = _configWithMux({
+      'concurrency': -32769,
+      'xudpConcurrency': 32768,
+      'xudpProxyUDP443': 'ALLOW',
+    }).validate();
+
+    expect(
+      issues.map((issue) => issue.path),
+      orderedEquals([
+        'outbounds[0].mux.concurrency',
+        'outbounds[0].mux.xudpConcurrency',
+        'outbounds[0].mux.xudpProxyUDP443',
+      ]),
+    );
+  });
+
   test('Freedom final rules retain delay, logLevel and legacy blockDelay', () {
     final json = {
       'finalRules': [
@@ -35,6 +93,14 @@ void main() {
           'blockDelay': 5,
         },
       ],
+    };
+
+    expect(FreedomConfig.fromJson(json).toJson(), json);
+  });
+
+  test('Freedom retains legacy ipsBlocked for config migration', () {
+    final json = {
+      'ipsBlocked': ['geoip:private'],
     };
 
     expect(FreedomConfig.fromJson(json).toJson(), json);
@@ -78,6 +144,63 @@ void main() {
         'outbounds[0].settings.finalRules[0].blockDelay',
       ]),
     );
+  });
+
+  test('Freedom final rules require an allow or block action', () {
+    final issues = _freedomWithRules([
+      {},
+      {'action': 'drop'},
+    ]).validate();
+
+    expect(
+      issues.map((issue) => issue.path),
+      orderedEquals([
+        'outbounds[0].settings.finalRules[0].action',
+        'outbounds[0].settings.finalRules[1].action',
+      ]),
+    );
+  });
+
+  test('Freedom final rule actions are case-insensitive', () {
+    final config = _freedomWithRules([
+      {'action': 'ALLOW'},
+      {'action': 'BLOCK'},
+    ]);
+
+    expect(config.validate(), isEmpty);
+  });
+
+  test('Freedom delays accept Core int32 boundaries', () {
+    final config = _freedomWithRules([
+      {'action': 'block', 'delay': -2147483648},
+      {'action': 'block', 'blockDelay': 2147483647},
+    ]);
+
+    expect(config.validate(), isEmpty);
+  });
+
+  test('Freedom delay JSON numbers must fit Core int32', () {
+    final issues = _freedomWithRules([
+      {'action': 'block', 'delay': -2147483649},
+      {'action': 'block', 'blockDelay': 2147483648},
+    ]).validate();
+
+    expect(
+      issues.map((issue) => issue.path),
+      orderedEquals([
+        'outbounds[0].settings.finalRules[0].delay',
+        'outbounds[0].settings.finalRules[1].blockDelay',
+      ]),
+    );
+  });
+
+  test('Freedom delay string ranges follow Core int32 conversion', () {
+    final config = _freedomWithRules([
+      {'action': 'block', 'delay': '2147483648-2147483649'},
+      {'action': 'block', 'blockDelay': '-2147483649--2147483648'},
+    ]);
+
+    expect(config.validate(), isEmpty);
   });
 
   test('TUN accepts the expanded WFP grammar without rewriting input', () {

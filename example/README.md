@@ -36,7 +36,12 @@ uplinks. Malformed h2Params JSON disables copying until corrected. When using
 `extra`, put `h2Params` inside it because Core replaces outer options with
 `extra` (except host, path and mode). TUN WFP rules include `all`,
 `allexceptlan`, `icmp`, bare `tcp`/`udp`, port ranges and CIDR-scoped rules;
-the form preserves the entered spelling and leaves expansion to Core.
+the form preserves the entered spelling and leaves expansion to Core. Core's
+WFP filters always allow loopback, DHCP/DHCPv6 and IPv6 neighbor discovery.
+On Windows, every nonempty WFP rule list requires `autoSystemRoutingTable`, and
+rules that block system DNS also require TUN `dns`. If `DisabledComponents`
+turns IPv6 off, Core logs IPv6 setup failures and `misconfigtun` blocks IPv6
+outside the TUN.
 Malformed XMUX field input shows an error and disables copying. XDNS arrays use
 objects such as `{"names":["tunnel.example.com"]}` and
 `{"addrs":["1.1.1.1:53"]}`.

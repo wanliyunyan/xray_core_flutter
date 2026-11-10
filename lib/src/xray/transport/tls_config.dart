@@ -12,6 +12,9 @@ abstract class TLSConfig with _$TLSConfig {
     String? minVersion,
     String? maxVersion,
     String? cipherSuites,
+
+    /// Client uTLS fingerprint. Empty or chrome uses HelloChrome_Auto;
+    /// Core v26.11.9 also accepts the explicit hellochrome_155 profile.
     String? fingerprint,
     @JsonKey(name: 'rejectUnknownSni') bool? rejectUnknownSNI,
     XrayStringList? curvePreferences,

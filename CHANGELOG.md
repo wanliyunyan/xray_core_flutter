@@ -2,15 +2,35 @@
 
 - Synced config models, validation and parity checks with local Xray-core
   `infra/conf` v26.11.9 (676eaf66).
-- Added Freedom `finalRules.delay` and `logLevel` with block-only validation;
-  retained the deprecated `blockDelay` field for legacy config round trips.
+- Added Freedom `finalRules.delay` and `logLevel` with action, block-only and
+  int32 JSON-number validation; retained the deprecated `blockDelay` field for
+  legacy config round trips and documented that Core gives it precedence when
+  both delay fields are present. Documented Core's random 30-90 second delay,
+  user-rule `info` log default and built-in safe-rule `warning` default.
 - Emit the canonical root log key `logLevel` while continuing to import the
   legacy `loglevel` spelling and preserving the Dart `LogConfig.loglevel` API.
+  A null canonical value falls back to the legacy key; empty and unknown levels
+  normalize to Core's `warning` default without relaxing direct
+  `LogLevel.fromJson` parsing.
 - Accept the expanded TUN WFP grammar: all-port TCP/UDP, ICMP, `all`,
   `allexceptlan`, decimal port ranges and IPv4/bracketed-IPv6 CIDR scopes.
-  Input spelling, order and duplicates remain unchanged for Core to process.
-- Updated the example hint and regression coverage. Xray-rules-dat `.dat.gz`
-  URL migration and uTLS `hellochrome_155` behavior remain Core runtime work.
+  Input spelling, order and duplicates remain unchanged for Core to process;
+  Windows requires `autoSystemRoutingTable` for any nonempty rule list and TUN
+  `dns` for rules that block system DNS. Core always allows loopback,
+  DHCP/DHCPv6 and IPv6 neighbor discovery. On
+  Windows with IPv6 disabled through `DisabledComponents`, setup failures are
+  logged and `misconfigtun` blocks IPv6 outside the TUN.
+- Documented Core runtime changes for existing fields: Mux normalizes
+  nonnegative concurrency values through 128 to 128 and raises the Mux/XUDP
+  worker reuse limit to 1024. Validation now enforces Core's int16 concurrency
+  range and `reject`/`allow`/`skip` UDP/443 policies. XDrive raises its
+  concurrency cap to 256 and uses Google Drive defaults of 64 concurrency,
+  10 ms flush and 200 ms max polling when omitted or zero, while other backends
+  retain 8, 20 ms and 500 ms.
+- Updated the example hint, public API notes and regression coverage.
+  Xray-rules-dat `.dat.gz` URL migration, uTLS `HelloChrome_Auto` and explicit
+  `hellochrome_155` behavior, and Freedom's default MASQUE private-address
+  policy remain Core runtime work.
 
 ## v0.12.0
 
