@@ -2726,6 +2726,8 @@ mixin _$FreedomFinalRuleConfig {
   XrayNetworkList? get network;
   XrayPortList? get port;
   XrayStringList? get ip;
+  XrayInt32Range? get delay;
+  String? get logLevel;
   XrayInt32Range? get blockDelay;
 
   /// Create a copy of FreedomFinalRuleConfig
@@ -2750,6 +2752,10 @@ mixin _$FreedomFinalRuleConfig {
                 other.network == _this.network) &&
             (identical(other.port, _this.port) || other.port == _this.port) &&
             (identical(other.ip, _this.ip) || other.ip == _this.ip) &&
+            (identical(other.delay, _this.delay) ||
+                other.delay == _this.delay) &&
+            (identical(other.logLevel, _this.logLevel) ||
+                other.logLevel == _this.logLevel) &&
             (identical(other.blockDelay, _this.blockDelay) ||
                 other.blockDelay == _this.blockDelay));
   }
@@ -2763,6 +2769,8 @@ mixin _$FreedomFinalRuleConfig {
       _this.network,
       _this.port,
       _this.ip,
+      _this.delay,
+      _this.logLevel,
       _this.blockDelay,
     );
   }
@@ -2770,7 +2778,7 @@ mixin _$FreedomFinalRuleConfig {
   @override
   String toString() {
     final _this = this as FreedomFinalRuleConfig;
-    return 'FreedomFinalRuleConfig(action: ${_this.action}, network: ${_this.network}, port: ${_this.port}, ip: ${_this.ip}, blockDelay: ${_this.blockDelay})';
+    return 'FreedomFinalRuleConfig(action: ${_this.action}, network: ${_this.network}, port: ${_this.port}, ip: ${_this.ip}, delay: ${_this.delay}, logLevel: ${_this.logLevel}, blockDelay: ${_this.blockDelay})';
   }
 }
 
@@ -2786,9 +2794,12 @@ abstract mixin class $FreedomFinalRuleConfigCopyWith<$Res> {
     XrayNetworkList? network,
     XrayPortList? port,
     XrayStringList? ip,
+    XrayInt32Range? delay,
+    String? logLevel,
     XrayInt32Range? blockDelay,
   });
 
+  $XrayInt32RangeCopyWith<$Res>? get delay;
   $XrayInt32RangeCopyWith<$Res>? get blockDelay;
 }
 
@@ -2809,6 +2820,8 @@ class _$FreedomFinalRuleConfigCopyWithImpl<$Res>
     Object? network = freezed,
     Object? port = freezed,
     Object? ip = freezed,
+    Object? delay = freezed,
+    Object? logLevel = freezed,
     Object? blockDelay = freezed,
   }) {
     return _then(
@@ -2829,12 +2842,34 @@ class _$FreedomFinalRuleConfigCopyWithImpl<$Res>
             ? _self.ip
             : ip // ignore: cast_nullable_to_non_nullable
                   as XrayStringList?,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        logLevel: freezed == logLevel
+            ? _self.logLevel
+            : logLevel // ignore: cast_nullable_to_non_nullable
+                  as String?,
         blockDelay: freezed == blockDelay
             ? _self.blockDelay
             : blockDelay // ignore: cast_nullable_to_non_nullable
                   as XrayInt32Range?,
       ),
     );
+  }
+
+  /// Create a copy of FreedomFinalRuleConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XrayInt32RangeCopyWith<$Res>? get delay {
+    if (_self.delay == null) {
+      return null;
+    }
+
+    return $XrayInt32RangeCopyWith<$Res>(_self.delay!, (value) {
+      return _then(_self.copyWith(delay: value));
+    });
   }
 
   /// Create a copy of FreedomFinalRuleConfig
@@ -2950,6 +2985,8 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
       XrayNetworkList? network,
       XrayPortList? port,
       XrayStringList? ip,
+      XrayInt32Range? delay,
+      String? logLevel,
       XrayInt32Range? blockDelay,
     )?
     $default, {
@@ -2963,6 +3000,8 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
           _that.network,
           _that.port,
           _that.ip,
+          _that.delay,
+          _that.logLevel,
           _that.blockDelay,
         );
       case _:
@@ -2990,6 +3029,8 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
       XrayNetworkList? network,
       XrayPortList? port,
       XrayStringList? ip,
+      XrayInt32Range? delay,
+      String? logLevel,
       XrayInt32Range? blockDelay,
     )
     $default,
@@ -3002,6 +3043,8 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
           _that.network,
           _that.port,
           _that.ip,
+          _that.delay,
+          _that.logLevel,
           _that.blockDelay,
         );
       case _:
@@ -3028,6 +3071,8 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
       XrayNetworkList? network,
       XrayPortList? port,
       XrayStringList? ip,
+      XrayInt32Range? delay,
+      String? logLevel,
       XrayInt32Range? blockDelay,
     )?
     $default,
@@ -3040,6 +3085,8 @@ extension FreedomFinalRuleConfigPatterns on FreedomFinalRuleConfig {
           _that.network,
           _that.port,
           _that.ip,
+          _that.delay,
+          _that.logLevel,
           _that.blockDelay,
         );
       case _:
@@ -3056,6 +3103,8 @@ class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
     this.network,
     this.port,
     this.ip,
+    this.delay,
+    this.logLevel,
     this.blockDelay,
   }) : super._();
 
@@ -3067,6 +3116,10 @@ class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
   final XrayPortList? port;
   @override
   final XrayStringList? ip;
+  @override
+  final XrayInt32Range? delay;
+  @override
+  final String? logLevel;
   @override
   final XrayInt32Range? blockDelay;
 
@@ -3090,18 +3143,30 @@ class _FreedomFinalRuleConfig extends FreedomFinalRuleConfig {
             (identical(other.network, network) || other.network == network) &&
             (identical(other.port, port) || other.port == port) &&
             (identical(other.ip, ip) || other.ip == ip) &&
+            (identical(other.delay, delay) || other.delay == delay) &&
+            (identical(other.logLevel, logLevel) ||
+                other.logLevel == logLevel) &&
             (identical(other.blockDelay, blockDelay) ||
                 other.blockDelay == blockDelay));
   }
 
   @override
   int get hashCode {
-    return Object.hash(runtimeType, action, network, port, ip, blockDelay);
+    return Object.hash(
+      runtimeType,
+      action,
+      network,
+      port,
+      ip,
+      delay,
+      logLevel,
+      blockDelay,
+    );
   }
 
   @override
   String toString() {
-    return 'FreedomFinalRuleConfig(action: $action, network: $network, port: $port, ip: $ip, blockDelay: $blockDelay)';
+    return 'FreedomFinalRuleConfig(action: $action, network: $network, port: $port, ip: $ip, delay: $delay, logLevel: $logLevel, blockDelay: $blockDelay)';
   }
 }
 
@@ -3119,9 +3184,13 @@ abstract mixin class _$FreedomFinalRuleConfigCopyWith<$Res>
     XrayNetworkList? network,
     XrayPortList? port,
     XrayStringList? ip,
+    XrayInt32Range? delay,
+    String? logLevel,
     XrayInt32Range? blockDelay,
   });
 
+  @override
+  $XrayInt32RangeCopyWith<$Res>? get delay;
   @override
   $XrayInt32RangeCopyWith<$Res>? get blockDelay;
 }
@@ -3143,6 +3212,8 @@ class __$FreedomFinalRuleConfigCopyWithImpl<$Res>
     Object? network = freezed,
     Object? port = freezed,
     Object? ip = freezed,
+    Object? delay = freezed,
+    Object? logLevel = freezed,
     Object? blockDelay = freezed,
   }) {
     return _then(
@@ -3163,12 +3234,34 @@ class __$FreedomFinalRuleConfigCopyWithImpl<$Res>
             ? _self.ip
             : ip // ignore: cast_nullable_to_non_nullable
                   as XrayStringList?,
+        delay: freezed == delay
+            ? _self.delay
+            : delay // ignore: cast_nullable_to_non_nullable
+                  as XrayInt32Range?,
+        logLevel: freezed == logLevel
+            ? _self.logLevel
+            : logLevel // ignore: cast_nullable_to_non_nullable
+                  as String?,
         blockDelay: freezed == blockDelay
             ? _self.blockDelay
             : blockDelay // ignore: cast_nullable_to_non_nullable
                   as XrayInt32Range?,
       ),
     );
+  }
+
+  /// Create a copy of FreedomFinalRuleConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $XrayInt32RangeCopyWith<$Res>? get delay {
+    if (_self.delay == null) {
+      return null;
+    }
+
+    return $XrayInt32RangeCopyWith<$Res>(_self.delay!, (value) {
+      return _then(_self.copyWith(delay: value));
+    });
   }
 
   /// Create a copy of FreedomFinalRuleConfig

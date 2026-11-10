@@ -87,6 +87,9 @@ const allowedUntaggedConfigKeys = {
   // Deprecated XDNS resolver constructors remain source-compatible with
   // pre-26.10.10 configs; new JSON uses resolver addrs.
   'addr',
+  // Xray v26.11.9 canonicalized the root log key to logLevel. Continue to
+  // read the legacy spelling without treating it as a Dart output field.
+  'loglevel',
 };
 
 const goStructClassAliases = {
@@ -104,6 +107,7 @@ const allowedClassExtraKeys = {
   // new shape when addrs is provided.
   'XDNSDomain': {'name'},
   'XDNSResolver': {'type', 'settings'},
+  'LogConfig': {'loglevel'},
 };
 
 Map<String, List<String>> collectGoJsonTags(Directory goConf) {

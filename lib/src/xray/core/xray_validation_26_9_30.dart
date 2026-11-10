@@ -37,6 +37,9 @@ void _validateNewProtocolSettings(
       }
     }
   }
+  if (settings is FreedomConfig) {
+    _validateFreedomFinalRules(settings, issues, path);
+  }
   if (settings is MasqueClientConfig) {
     if (settings.address == null) issue('settings.address', 'address required');
     if ((settings.port ?? 0) < 1 || settings.port! > 65535) {

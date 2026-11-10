@@ -12,12 +12,13 @@ abstract class LogConfig with _$LogConfig {
 
   factory LogConfig.fromJson(Object? json) {
     final map = asJsonMap(json, 'log');
+    final logLevel = map.containsKey('logLevel')
+        ? map['logLevel']
+        : map['loglevel'];
     return LogConfig(
       access: map['access'] as String?,
       error: map['error'] as String?,
-      loglevel: map['loglevel'] == null
-          ? null
-          : LogLevel.fromJson(map['loglevel']),
+      loglevel: logLevel == null ? null : LogLevel.fromJson(logLevel),
       dnsLog: map['dnsLog'] as bool?,
       maskAddress: map['maskAddress'] as String?,
     );
@@ -28,7 +29,7 @@ abstract class LogConfig with _$LogConfig {
   Map<String, dynamic> toJson() => withoutNulls({
     'access': access,
     'error': error,
-    'loglevel': loglevel?.toJson(),
+    'logLevel': loglevel?.toJson(),
     'dnsLog': dnsLog,
     'maskAddress': maskAddress,
   });

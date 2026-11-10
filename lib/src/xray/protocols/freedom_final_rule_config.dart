@@ -7,6 +7,8 @@ abstract class FreedomFinalRuleConfig with _$FreedomFinalRuleConfig {
     XrayNetworkList? network,
     XrayPortList? port,
     XrayStringList? ip,
+    XrayInt32Range? delay,
+    String? logLevel,
     XrayInt32Range? blockDelay,
   }) = _FreedomFinalRuleConfig;
 
@@ -19,6 +21,10 @@ abstract class FreedomFinalRuleConfig with _$FreedomFinalRuleConfig {
           : XrayNetworkList.fromJson(map['network']),
       port: map['port'] == null ? null : XrayPortList.fromJson(map['port']),
       ip: map['ip'] == null ? null : XrayStringList.fromJson(map['ip']),
+      delay: map['delay'] == null
+          ? null
+          : XrayInt32Range.fromJson(map['delay']),
+      logLevel: map['logLevel'] as String?,
       blockDelay: map['blockDelay'] == null
           ? null
           : XrayInt32Range.fromJson(map['blockDelay']),
@@ -28,10 +34,12 @@ abstract class FreedomFinalRuleConfig with _$FreedomFinalRuleConfig {
   const FreedomFinalRuleConfig._();
 
   Map<String, dynamic> toJson() => withoutNulls({
-        'action': action,
-        'network': network?.toJson(),
-        'port': port?.toJson(),
-        'ip': ip?.toJson(),
-        'blockDelay': blockDelay?.toJson(),
-      });
+    'action': action,
+    'network': network?.toJson(),
+    'port': port?.toJson(),
+    'ip': ip?.toJson(),
+    'delay': delay?.toJson(),
+    'logLevel': logLevel,
+    'blockDelay': blockDelay?.toJson(),
+  });
 }
